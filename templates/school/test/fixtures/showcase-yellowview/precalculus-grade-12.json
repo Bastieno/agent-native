@@ -1,0 +1,2470 @@
+{
+ "subject": "Precalculus",
+ "yearGroup": "Grade 12",
+ "weeks": {
+  "1": {
+   "topic": "Key features of polynomial and rational functions",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the key features of a function: domain, range, intercepts, intervals of increase, extrema and end behavior;\n2. graph polynomial functions, showing zeros, multiplicity and end behavior;\n3. graph rational functions and find the vertical, horizontal and slant asymptotes and any holes.\n\n## Materials\n\nGraphing handhelds or Desmos, graph paper, a feature checklist, whiteboards.\n\n## Starter (8 minutes)\n\nDisplay the graph of a rational function with one hole, one vertical asymptote and a horizontal asymptote, and ask students to write down everything they notice. Collect observations and sort them into the categories of the checklist: domain, range, intercepts, intervals of increase and decrease, extrema, asymptotes and end behavior.\n\n## Main activity\n\n1. Polynomials: f(x) = -x(x + 2)^2(x - 3). Zeros and their multiplicity, degree, end behavior, the sign on each interval by testing points.\n2. Rational functions: f(x) = (3x^2 - 12)/(x^2 - x - 2). Factor the top and bottom, cancel common factors to find holes, and find vertical and horizontal asymptotes from the degrees.\n3. Slant asymptotes: when the degree on top is one more than the degree on the bottom, divide to find the line. Do (x^2 + 3x + 1)/(x - 1).\n\n## Checking for understanding\n\nWhiteboards: \"What happens at x = 2 for (x^2 - 4)/(x - 2)? A hole or an asymptote? Write the coordinates.\"\n\n## Worksheet and quiz\n\nCollect the worksheet, then give the quiz.",
+   "reading": {
+    "title": "Reading a function from its features",
+    "content": "The first thing to do with any function is to read its features. The domain is the set of allowed inputs, and the range is the set of outputs that occur. For f(x) = -the square root of (x + 5) + 2, the radical needs x + 5 >= 0, so the domain is x >= -5. The root is never negative, so the negative of it is never positive, and adding 2 means the range is y <= 2. Intercepts are where the graph meets an axis. Intervals of increase and decrease say where the graph rises or falls, and extrema are the high and low points. End behavior says what happens as x goes far to the left or right.\n\nFor polynomials, the factored form tells almost everything. Take f(x) = -x(x + 2)^2(x - 3). The zeros are 0, -2 and 3. The zero -2 has multiplicity 2, so the graph touches the axis there and turns. The other two are simple, so the graph crosses. The degree is 1 + 2 + 1 = 4 and the leading coefficient is -1, so both ends point down. Test points give the sign on each interval: f(-3) = -18, f(-1) = -4, f(1) = 18 and f(4) = -144. The graph is therefore below the axis except between 0 and 3. The y-intercept is f(0) = 0.\n\nRational functions are quotients of polynomials, and their features come from the factors of the top and the bottom. A factor that appears in both cancels and leaves a hole, a single missing point. A factor that remains in the denominator gives a vertical asymptote. For f(x) = (3x^2 - 12)/(x^2 - x - 2), factor: 3(x - 2)(x + 2)/((x - 2)(x + 1)). The common factor (x - 2) leaves a hole at x = 2, where the reduced function 3(x + 2)/(x + 1) has value 12/3 = 4, so the hole is at (2, 4). The factor (x + 1) in the denominator gives a vertical asymptote at x = -1. When the degrees of the top and bottom are equal, the horizontal asymptote is the ratio of the leading coefficients, so y = 3. The x-intercept comes from the remaining numerator, at x = -2, and the y-intercept is f(0) = -12/-2 = 6.\n\nIf the degree of the top is exactly one more than the degree of the bottom, there is no horizontal asymptote but there is a slant one, found by division. For (x^2 + 3x + 1)/(x - 1), dividing gives x + 4 with a remainder of 5, so the function equals x + 4 + 5/(x - 1), and for large |x| the graph hugs the line y = x + 4. And for (x^2 - 4)/(x - 2), which simplifies to x + 2, the graph is a line with a hole at (2, 4)."
+   },
+   "cards": [
+    {
+     "front": "Domain and range",
+     "back": "The set of allowed inputs and the set of outputs that occur."
+    },
+    {
+     "front": "Interval of increase",
+     "back": "An interval on which the graph rises as x increases."
+    },
+    {
+     "front": "Extremum",
+     "back": "A maximum or minimum value of a function, a high or low point of the graph."
+    },
+    {
+     "front": "Multiplicity of a zero",
+     "back": "The number of times a factor appears. Even multiplicity touches the axis, odd crosses."
+    },
+    {
+     "front": "Hole",
+     "back": "A single missing point of a rational function, from a factor that cancels."
+    },
+    {
+     "front": "Vertical asymptote",
+     "back": "A vertical line the graph approaches, from a factor remaining in the denominator."
+    },
+    {
+     "front": "Horizontal asymptote",
+     "back": "For equal degrees it is the ratio of the leading coefficients. For a smaller degree on top it is y = 0."
+    },
+    {
+     "front": "Slant asymptote",
+     "back": "A line y = mx + b the graph approaches when the top has degree one more than the bottom. Found by division."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What are the domain and range of f(x) = -the square root of (x + 5) + 2?",
+     "options": [
+      "Domain x >= -5 and range y <= 2",
+      "Domain x >= 5 and range y <= 2",
+      "Domain x >= -5 and range y >= 2",
+      "Domain x <= -5 and range y <= 2"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What does the graph of f(x) = (x - 1)^2 (x + 3) do at x = 1?",
+     "options": [
+      "It crosses the x-axis",
+      "It touches the x-axis and turns around",
+      "It has a vertical asymptote",
+      "It has a local maximum at (1, 4)"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the horizontal asymptote of f(x) = (2x^2 - 8)/(x^2 - 1)?",
+     "options": [
+      "y = 0",
+      "y = -8",
+      "y = 2",
+      "There is none"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What feature does f(x) = (x^2 - 4)/(x - 2) have at x = 2?",
+     "options": [
+      "A vertical asymptote",
+      "An x-intercept at (2, 0)",
+      "A hole at (2, 0)",
+      "A hole at (2, 4)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What is the slant asymptote of f(x) = (x^2 + 3x + 1)/(x - 1)?",
+     "options": [
+      "y = x + 3",
+      "y = x + 4",
+      "y = x - 1",
+      "y = x + 2"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the graph of f(x) = -x(x + 2)^2(x - 3). Give the zeros and what the graph does at each, the degree and end behavior, the y-intercept, and the sign of f on each interval, using test points.",
+     "markScheme": [
+      "Gives the zeros 0, -2 and 3, with a touch and turn at -2 (multiplicity 2) and crossings at 0 and 3",
+      "States the degree 4 and the negative leading coefficient, so both ends point down",
+      "Gives the y-intercept f(0) = 0",
+      "Gives the signs: negative for x < -2 and -2 < x < 0, positive for 0 < x < 3, negative for x > 3, with test points"
+     ],
+     "modelAnswer": "The zeros are x = 0, x = -2 and x = 3. At -2 the multiplicity is 2, so the graph touches the axis and turns, and at 0 and 3 it crosses. The degree is 4 and the leading coefficient is -1, so both ends point down. The y-intercept is f(0) = 0. Test points: f(-3) = -18, f(-1) = -4, f(1) = 18 and f(4) = -144. So f is negative for x < -2 and for -2 < x < 0, positive for 0 < x < 3, and negative for x > 3.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Zeros are 0, -2 and 3. It crosses at 0 and 3 and just touches and turns at -2 because that factor is squared. It's degree 4 with a leading coefficient of -1, so both ends go down. f(0) = 0 so the y-intercept is 0. f(-3) = -18, f(-1) = -4, f(1) = 18, f(4) = -144, so it's negative everywhere except between 0 and 3 where it's positive.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Zeros are 0, -2 and 3. It crosses at 0 and 3 and just touches and turns at -2 because that factor is squared."
+        },
+        {
+         "point": 1,
+         "quote": "It's degree 4 with a leading coefficient of -1, so both ends go down."
+        },
+        {
+         "point": 2,
+         "quote": "f(0) = 0 so the y-intercept is 0."
+        },
+        {
+         "point": 3,
+         "quote": "f(-3) = -18, f(-1) = -4, f(1) = 18, f(4) = -144, so it's negative everywhere except between 0 and 3 where it's positive."
+        }
+       ],
+       "feedback": "Full marks. Your test points give the signs, and they match the touch at -2, where the sign does not change."
+      },
+      {
+       "tier": "full",
+       "text": "From the factors: x = 0 (crossing), x = -2 (touch and turn, double), x = 3 (crossing). Degree 1 + 2 + 1 = 4, negative leading coefficient, down on both ends. The y-intercept is at the origin because 0 is a zero. Signs: negative before -2, still negative between -2 and 0 since the sign doesn't change at a double zero, positive from 0 to 3, negative after 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x = 0 (crossing), x = -2 (touch and turn, double), x = 3 (crossing)"
+        },
+        {
+         "point": 1,
+         "quote": "Degree 1 + 2 + 1 = 4, negative leading coefficient, down on both ends"
+        },
+        {
+         "point": 2,
+         "quote": "The y-intercept is at the origin because 0 is a zero"
+        },
+        {
+         "point": 3,
+         "quote": "negative before -2, still negative between -2 and 0 since the sign doesn't change at a double zero, positive from 0 to 3, negative after 3"
+        }
+       ],
+       "feedback": "All four marks. Reasoning about the double zero is a good alternative to testing each interval."
+      },
+      {
+       "tier": "partial",
+       "text": "The zeros are 0, -2 and 3, and it touches at -2. Both ends point down. The y-intercept is -6 and it's positive between -2 and 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The zeros are 0, -2 and 3, and it touches at -2."
+        },
+        {
+         "point": 1,
+         "quote": "Both ends point down."
+        }
+       ],
+       "feedback": "Your zeros and end behavior are right. The y-intercept is f(0), and since 0 is a zero it is 0. And the graph is negative just to the right of -2, since the sign does not change there."
+      },
+      {
+       "tier": "partial",
+       "text": "It's negative for x < 0, positive between 0 and 3, and negative after 3. y-intercept is 0. The zeros are 0, 2 and -3 and the left end goes up.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "It's negative for x < 0, positive between 0 and 3, and negative after 3."
+        },
+        {
+         "point": 2,
+         "quote": "y-intercept is 0."
+        }
+       ],
+       "feedback": "Your signs and intercept are right. The zeros come from the factors: x + 2 = 0 gives -2 and x - 3 = 0 gives 3. And the end behavior is down on both sides for a degree 4 with a negative leading coefficient.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It crosses at all the zeros, 0, -2 and 3, because it's a polynomial. Both ends go up since the degree is even.",
+       "meets": [],
+       "feedback": "The zero at -2 has multiplicity 2, so the graph touches and turns there. And with a negative leading coefficient, the even-degree ends go down, not up."
+      },
+      {
+       "tier": "weak",
+       "text": "The zeros are 0, -2 and 3. f(-1) = -1(1)(-4) = 4 so it's positive on the left.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The zeros are 0, -2 and 3"
+        }
+       ],
+       "feedback": "The zeros are right. Check f(-1): -(-1) = 1, then (1)^2 = 1 and (-1 - 3) = -4, so f(-1) = 1 x 1 x (-4) = -4, which is negative."
+      }
+     ]
+    },
+    {
+     "prompt": "Let f(x) = (3x^2 - 12)/(x^2 - x - 2). Factor the numerator and denominator and find the hole, the vertical asymptote, the horizontal asymptote, and both intercepts.",
+     "markScheme": [
+      "Factors as 3(x - 2)(x + 2) over (x - 2)(x + 1), cancels (x - 2), and finds the hole at (2, 4)",
+      "Finds the vertical asymptote x = -1",
+      "Finds the horizontal asymptote y = 3 from the equal degrees and leading coefficients 3 and 1",
+      "Finds the x-intercept (-2, 0) and the y-intercept (0, 6)"
+     ],
+     "modelAnswer": "Factoring, f(x) = 3(x - 2)(x + 2)/((x - 2)(x + 1)). The factor (x - 2) cancels, leaving a hole at x = 2, where the reduced function 3(x + 2)/(x + 1) equals 12/3 = 4, so the hole is at (2, 4). The factor (x + 1) stays in the denominator, so there is a vertical asymptote x = -1. The degrees are equal and the leading coefficients are 3 and 1, so the horizontal asymptote is y = 3. The x-intercept is where 3(x + 2) = 0, at (-2, 0), and the y-intercept is f(0) = -12/-2 = 6, so (0, 6).",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "3(x - 2)(x + 2) over (x - 2)(x + 1). The (x - 2) cancels, so there's a hole at x = 2. Plugging 2 into 3(x + 2)/(x + 1) gives 12/3 = 4, so the hole is (2, 4). x + 1 stays on the bottom, so there's a vertical asymptote at x = -1. The degrees are the same, 3 over 1, so the horizontal asymptote is y = 3. The x-intercept is (-2, 0) and the y-intercept is f(0) = -12 / -2 = 6.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3(x - 2)(x + 2) over (x - 2)(x + 1). The (x - 2) cancels, so there's a hole at x = 2. Plugging 2 into 3(x + 2)/(x + 1) gives 12/3 = 4, so the hole is (2, 4)."
+        },
+        {
+         "point": 1,
+         "quote": "x + 1 stays on the bottom, so there's a vertical asymptote at x = -1."
+        },
+        {
+         "point": 2,
+         "quote": "The degrees are the same, 3 over 1, so the horizontal asymptote is y = 3."
+        },
+        {
+         "point": 3,
+         "quote": "The x-intercept is (-2, 0) and the y-intercept is f(0) = -12 / -2 = 6."
+        }
+       ],
+       "feedback": "Full marks. Finding the y-value of the hole from the reduced function is the step many students miss."
+      },
+      {
+       "tier": "full",
+       "text": "Numerator: 3(x^2 - 4) = 3(x - 2)(x + 2). Denominator: (x - 2)(x + 1). Cancelling x - 2 leaves a hole at x = 2 and the hole's height is 3(4)/3 = 4, so (2, 4). Remaining factor in the denominator: vertical asymptote x = -1. Equal degrees, ratio of leading coefficients 3/1 = 3, so y = 3. Intercepts: x-int (-2, 0) from the reduced numerator, y-int (0, 6) since f(0) = (-12)/(-2).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cancelling x - 2 leaves a hole at x = 2 and the hole's height is 3(4)/3 = 4, so (2, 4)"
+        },
+        {
+         "point": 1,
+         "quote": "Remaining factor in the denominator: vertical asymptote x = -1"
+        },
+        {
+         "point": 2,
+         "quote": "Equal degrees, ratio of leading coefficients 3/1 = 3, so y = 3"
+        },
+        {
+         "point": 3,
+         "quote": "Intercepts: x-int (-2, 0) from the reduced numerator, y-int (0, 6) since f(0) = (-12)/(-2)"
+        }
+       ],
+       "feedback": "All four marks. Using the reduced numerator for the x-intercept avoids confusing it with the hole at x = 2."
+      },
+      {
+       "tier": "partial",
+       "text": "There's a hole at (2, 4). The horizontal asymptote is y = 3. The vertical asymptotes are x = 2 and x = -1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There's a hole at (2, 4)."
+        },
+        {
+         "point": 2,
+         "quote": "The horizontal asymptote is y = 3."
+        }
+       ],
+       "feedback": "The hole and horizontal asymptote are right. The factor x - 2 cancels, so x = 2 is a hole, not an asymptote. Only x = -1 is a vertical asymptote."
+      },
+      {
+       "tier": "partial",
+       "text": "Vertical asymptote at x = -1. Intercepts (-2, 0) and (0, 6). There are no holes.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Vertical asymptote at x = -1."
+        },
+        {
+         "point": 3,
+         "quote": "Intercepts (-2, 0) and (0, 6)."
+        }
+       ],
+       "feedback": "The asymptote and intercepts are right. The numerator and denominator share the factor x - 2, so there is a hole at x = 2. Cancel it and find the value of what is left: 4.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The vertical asymptotes are where the top is zero, x = 2 and x = -2, and the horizontal asymptote is y = 0.",
+       "meets": [],
+       "feedback": "Vertical asymptotes come from the denominator's remaining factors. Since the top and bottom have equal degrees, the horizontal asymptote is the ratio 3/1."
+      },
+      {
+       "tier": "weak",
+       "text": "The y-intercept is 6. The hole is at x = -1 because that's what makes the bottom zero.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The y-intercept is 6."
+        }
+       ],
+       "feedback": "The y-intercept is right. A value that makes the bottom zero is a hole only if the factor cancels with the top. (x + 1) does not, so x = -1 is an asymptote, and the hole is at x = 2."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Logarithmic functions and transformations",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. graph logarithmic functions and relate them to exponential functions as inverses;\n2. describe how transformations change the graph and equation of a function.\n\n## Materials\n\nGraphing handhelds, graph paper, a table of powers of 2 and 3, the quiz and problem set.\n\n## Starter (8 minutes)\n\nShow the table of values of 2^x for x = -2 to 5. Ask: \"If I give you the output, 32, and ask for the input, what is it?\" Introduce log base 2 as the name for that question, and have students fill the table of log₂ values by flipping the exponential table. Plot both and look for the line y = x.\n\n## Main activity\n\n1. Write exponential equations in log form and back: 3^4 = 81 is log₃ 81 = 4.\n2. Graph y = log₃(x + 2) - 1: domain, vertical asymptote, x-intercept, a point, and the inverse function.\n3. Transformations of exponentials: g(x) = -2(1/2)^(x + 1) + 3 from (1/2)^x. Describe the transformations in order and find the horizontal asymptote and y-intercept.\n4. Solve log₂(x + 3) = 4 by rewriting as an exponential.\n\n## Checking for understanding\n\nWhiteboards: \"What is the vertical asymptote of log(x - 4) + 1? Why?\"\n\n## Quiz and problem set\n\nGive the quiz, then hand out the problem set.",
+   "reading": {
+    "title": "Logarithms as inverses of exponentials",
+    "content": "A logarithm answers the question \"what exponent?\" The statement 3^4 = 81 can be written as log₃ 81 = 4, which reads \"the logarithm base 3 of 81 is 4.\" In general, log_b(x) = y means b^y = x. The two forms say the same thing, and you should be able to switch between them. For example, log₂ 32 = 5, because 2^5 = 32. To solve log₂(x + 3) = 4, rewrite it in exponential form: x + 3 = 2^4 = 16, so x = 13.\n\nSince f(x) = b^x and g(x) = log_b(x) undo each other, they are inverse functions, and their graphs are reflections of each other across the line y = x. The exponential has a horizontal asymptote y = 0, so the logarithm has a vertical asymptote x = 0. The exponential has domain all real numbers and range y > 0, so the logarithm has domain x > 0 and range all real numbers. Both pass through special points: the exponential through (0, 1) and the logarithm through (1, 0), and the point (b, 1) lies on the logarithm.\n\nTransformations of logarithmic and exponential functions follow the same rules as any other function. Consider f(x) = log₃(x + 2) - 1. Replacing x by x + 2 shifts the graph 2 units to the left, so the vertical asymptote moves to x = -2 and the domain is x > -2. The -1 shifts the graph down 1. To find the x-intercept, set f(x) = 0: log₃(x + 2) = 1 means x + 2 = 3, so x = 1. Another point: x = 7 gives log₃ 9 - 1 = 2 - 1 = 1. To find the inverse, swap the variables and solve: x = log₃(y + 2) - 1, so x + 1 = log₃(y + 2), and y + 2 = 3^(x + 1), which gives f-inverse(x) = 3^(x + 1) - 2. That is an exponential function with horizontal asymptote y = -2, the reflection of the asymptote x = -2.\n\nFor an exponential, g(x) = -2(1/2)^(x + 1) + 3 is built from the parent (1/2)^x. The x + 1 shifts the graph left 1, the -2 reflects it over the x-axis and stretches it vertically by 2, and the +3 moves it up 3. The horizontal asymptote moves from y = 0 to y = 3. The y-intercept is g(0) = -2(1/2) + 3 = 2. As x grows, (1/2)^(x + 1) shrinks to 0, so g approaches 3 from below, never reaching it. The point (1, 2) is on the graph of 2 times 3^(x - 1), since 2 times 3^0 = 2."
+   },
+   "cards": [
+    {
+     "front": "Logarithm",
+     "back": "log_b(x) = y means b^y = x. It gives the exponent needed on b to produce x."
+    },
+    {
+     "front": "Inverse of an exponential",
+     "back": "The logarithm with the same base. Their graphs are reflections over y = x."
+    },
+    {
+     "front": "Domain of a logarithm",
+     "back": "Only positive inputs. For log(x - 4) it is x > 4."
+    },
+    {
+     "front": "Vertical asymptote of a log",
+     "back": "The line where the input of the log is 0. For log₃(x + 2) it is x = -2."
+    },
+    {
+     "front": "Horizontal asymptote of an exponential",
+     "back": "For a b^(x - h) + k it is y = k."
+    },
+    {
+     "front": "Rewriting a log equation",
+     "back": "log_b(u) = c becomes u = b^c."
+    },
+    {
+     "front": "Key points",
+     "back": "log_b(1) = 0 and log_b(b) = 1. The graph passes through (1, 0) and (b, 1)."
+    },
+    {
+     "front": "Order of transformations",
+     "back": "Reflections and stretches first, then shifts, when graphing a f(x - h) + k."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which is the logarithmic form of 3^4 = 81?",
+     "options": [
+      "log_4 81 = 3",
+      "log_81 3 = 4",
+      "log_3 81 = 4",
+      "log_3 4 = 81"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the vertical asymptote of f(x) = log(x - 4) + 1?",
+     "options": [
+      "x = 4",
+      "x = 1",
+      "y = 4",
+      "y = 1"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is the inverse of f(x) = 2^x + 3?",
+     "options": [
+      "log_2 x - 3",
+      "log_2(x - 3)",
+      "2^(x - 3)",
+      "log_3(x - 2)"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which point is on the graph of g(x) = 2 times 3^(x - 1)?",
+     "options": [
+      "(0, 2)",
+      "(1, 6)",
+      "(2, 2)",
+      "(1, 2)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Solve log_2(x + 3) = 4.",
+     "options": [
+      "13",
+      "7",
+      "19",
+      "1"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Let f(x) = log_3(x + 2) - 1. Give the domain and vertical asymptote, find the x-intercept, give another point on the graph, and find the inverse function.",
+     "markScheme": [
+      "States the domain x > -2 and the vertical asymptote x = -2, from the shift of log_3(x) left by 2",
+      "Finds the x-intercept (1, 0) by solving log_3(x + 2) = 1",
+      "Gives another point such as (7, 1) and shows it works",
+      "Finds the inverse f-inverse(x) = 3^(x + 1) - 2"
+     ],
+     "modelAnswer": "The input x + 2 must be positive, so the domain is x > -2 and the vertical asymptote is x = -2, because the graph of log_3(x) has been shifted 2 to the left. For the x-intercept, log_3(x + 2) - 1 = 0 gives log_3(x + 2) = 1, so x + 2 = 3 and x = 1: the point is (1, 0). Another point: x = 7 gives log_3(9) - 1 = 2 - 1 = 1, so (7, 1). For the inverse, swap: x = log_3(y + 2) - 1, so x + 1 = log_3(y + 2), then y + 2 = 3^(x + 1), so f-inverse(x) = 3^(x + 1) - 2.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The inside x + 2 has to be bigger than 0, so the domain is x > -2 and the vertical asymptote is x = -2. 0 = log_3(x + 2) - 1 means log_3(x + 2) = 1, so x + 2 = 3, x = 1, and the x-intercept is (1, 0). Another point: x = 7 gives log_3(9) - 1 = 2 - 1 = 1, so (7, 1) is on it. The inverse: swap and get x + 1 = log_3(y + 2), so y = 3^(x + 1) - 2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The inside x + 2 has to be bigger than 0, so the domain is x > -2 and the vertical asymptote is x = -2."
+        },
+        {
+         "point": 1,
+         "quote": "0 = log_3(x + 2) - 1 means log_3(x + 2) = 1, so x + 2 = 3, x = 1, and the x-intercept is (1, 0)."
+        },
+        {
+         "point": 2,
+         "quote": "Another point: x = 7 gives log_3(9) - 1 = 2 - 1 = 1, so (7, 1) is on it."
+        },
+        {
+         "point": 3,
+         "quote": "The inverse: swap and get x + 1 = log_3(y + 2), so y = 3^(x + 1) - 2."
+        }
+       ],
+       "feedback": "Full marks. The inverse is an exponential with horizontal asymptote y = -2, which mirrors the vertical asymptote x = -2."
+      },
+      {
+       "tier": "full",
+       "text": "Domain and asymptote: it's the parent log_3(x) shifted left 2, so x > -2 and the asymptote is x = -2. x-intercept: set it to 0, log_3(x + 2) = 1, rewrite as 3^1 = x + 2, so x = 1. A point: x = 1 gives 0, and x = -1 gives log_3(1) - 1 = -1, so (-1, -1). Inverse: y = log_3(x + 2) - 1 becomes x + 1 = log_3(y + 2), 3^(x + 1) = y + 2, y = 3^(x + 1) - 2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "it's the parent log_3(x) shifted left 2, so x > -2 and the asymptote is x = -2"
+        },
+        {
+         "point": 1,
+         "quote": "set it to 0, log_3(x + 2) = 1, rewrite as 3^1 = x + 2, so x = 1"
+        },
+        {
+         "point": 2,
+         "quote": "x = 1 gives 0, and x = -1 gives log_3(1) - 1 = -1, so (-1, -1)"
+        },
+        {
+         "point": 3,
+         "quote": "y = log_3(x + 2) - 1 becomes x + 1 = log_3(y + 2), 3^(x + 1) = y + 2, y = 3^(x + 1) - 2"
+        }
+       ],
+       "feedback": "All four marks. The point (-1, -1) works, since log_3(1) = 0."
+      },
+      {
+       "tier": "partial",
+       "text": "The domain is x > -2 and the asymptote is x = -2. The x-intercept is at x = 1. The inverse is log_3(x) + 2 + 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The domain is x > -2 and the asymptote is x = -2."
+        },
+        {
+         "point": 1,
+         "quote": "The x-intercept is at x = 1."
+        }
+       ],
+       "feedback": "Your domain and intercept are right. To find the inverse, you swap x and y and solve: it is an exponential, 3^(x + 1) - 2, not a log."
+      },
+      {
+       "tier": "partial",
+       "text": "(7, 1) is on the graph because log_3(9) is 2. The inverse is 3^(x + 1) - 2. The domain is all real numbers.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "(7, 1) is on the graph because log_3(9) is 2."
+        },
+        {
+         "point": 3,
+         "quote": "The inverse is 3^(x + 1) - 2."
+        }
+       ],
+       "feedback": "Your point and inverse are right. A logarithm only accepts positive inputs, so the domain is x > -2, with a vertical asymptote at x = -2.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The asymptote is y = -1 because of the minus 1, and the domain is x > 0.",
+       "meets": [],
+       "feedback": "The -1 moves the graph down, but a log's asymptote is vertical, where the input is 0. Here x + 2 = 0 gives x = -2."
+      },
+      {
+       "tier": "weak",
+       "text": "log_3(x + 2) = 1, so x = 1. The inverse is f(x) = 1/(log_3(x + 2) - 1).",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "log_3(x + 2) = 1, so x = 1."
+        }
+       ],
+       "feedback": "The intercept is right. An inverse function is not a reciprocal. It undoes f, which means swapping x and y and solving."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe how the graph of g(x) = -2(1/2)^(x + 1) + 3 is obtained from the graph of f(x) = (1/2)^x. Give the horizontal asymptote and the y-intercept, and say what happens to g as x gets large.",
+     "markScheme": [
+      "Says the graph is shifted left 1 unit, because of x + 1",
+      "Says it is reflected across the x-axis and stretched vertically by a factor of 2, because of the -2",
+      "Says it is shifted up 3, so the horizontal asymptote is y = 3",
+      "Finds the y-intercept g(0) = 2 and says g approaches 3 from below as x increases"
+     ],
+     "modelAnswer": "The x + 1 shifts the graph 1 unit to the left. The factor -2 reflects it across the x-axis and stretches it vertically by a factor of 2. The +3 shifts it up 3 units, so the horizontal asymptote moves from y = 0 to y = 3. The y-intercept is g(0) = -2(1/2) + 3 = 2. As x gets large, (1/2)^(x + 1) approaches 0, so g(x) approaches 3 from below, since the term -2(1/2)^(x + 1) is negative.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "x + 1 means it moves left 1. The -2 flips it over the x-axis and stretches it by 2. The + 3 moves it up 3, so the horizontal asymptote is y = 3. g(0) = -2(1/2) + 3 = 2, so the y-intercept is 2. As x gets big (1/2)^(x + 1) goes to 0 so g gets close to 3 from below.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x + 1 means it moves left 1."
+        },
+        {
+         "point": 1,
+         "quote": "The -2 flips it over the x-axis and stretches it by 2."
+        },
+        {
+         "point": 2,
+         "quote": "The + 3 moves it up 3, so the horizontal asymptote is y = 3."
+        },
+        {
+         "point": 3,
+         "quote": "g(0) = -2(1/2) + 3 = 2, so the y-intercept is 2. As x gets big (1/2)^(x + 1) goes to 0 so g gets close to 3 from below."
+        }
+       ],
+       "feedback": "Full marks. Saying from below, because the stretched term is negative, shows you checked the sign."
+      },
+      {
+       "tier": "full",
+       "text": "Transformations in order: shift left 1, reflect over the x-axis and vertically stretch by 2, shift up 3, which moves the asymptote to y = 3. y-intercept is g(0) = -2 x 0.5 + 3 = 2, and the graph rises toward the asymptote y = 3 but never touches it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "shift left 1"
+        },
+        {
+         "point": 1,
+         "quote": "reflect over the x-axis and vertically stretch by 2"
+        },
+        {
+         "point": 2,
+         "quote": "shift up 3, which moves the asymptote to y = 3"
+        },
+        {
+         "point": 3,
+         "quote": "y-intercept is g(0) = -2 x 0.5 + 3 = 2, and the graph rises toward the asymptote y = 3 but never touches it"
+        }
+       ],
+       "feedback": "All four marks. Rising toward the asymptote is the correct picture, since the graph starts at 2 and climbs."
+      },
+      {
+       "tier": "partial",
+       "text": "Left 1. Up 3 so the asymptote is at y = 3. The -2 makes it shrink. The y-intercept is 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Left 1."
+        },
+        {
+         "point": 2,
+         "quote": "Up 3 so the asymptote is at y = 3."
+        }
+       ],
+       "feedback": "Your shift and asymptote are right. The factor -2 reflects the graph and stretches it, since 2 is greater than 1. The y-intercept is g(0) = -2(1/2) + 3 = 2, not 3."
+      },
+      {
+       "tier": "partial",
+       "text": "It's flipped and stretched by 2. g(0) = 2 and it gets close to 3. The graph moves right 1 and up 3.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It's flipped and stretched by 2."
+        },
+        {
+         "point": 3,
+         "quote": "g(0) = 2 and it gets close to 3."
+        }
+       ],
+       "feedback": "The reflection, y-intercept and long-run behavior are right. x + 1 means the graph moves left, not right. Your y-intercept calculation agrees with a left shift.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The horizontal asymptote is y = -2 because that's the number in front.",
+       "meets": [],
+       "feedback": "The number in front stretches the graph. The horizontal asymptote comes from the number that is added, +3, so it is y = 3."
+      },
+      {
+       "tier": "weak",
+       "text": "It moves left 1. As x gets large, g gets bigger and bigger because it's an exponential.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It moves left 1"
+        }
+       ],
+       "feedback": "A base of 1/2 is less than 1, so (1/2)^(x + 1) gets smaller and shrinks to 0 as x grows. That makes g get close to 3, not grow."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Combining functions, composition and restricted inverses",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. combine functions by arithmetic and composition, and find the domain of the result;\n2. find the inverse of a function, restrict a domain so that an inverse exists, and state the domain and range of the inverse.\n\n## Materials\n\nGraphing handhelds, whiteboards, graph paper for reflecting over y = x, the problem set and differentiated worksheet.\n\n## Starter (8 minutes)\n\nGive: f(x) = 1/(x - 2) and g(x) = x + 3. Ask students to find f(g(x)) and its domain. Many will state the domain of the simplified function only. Walk through checking the domain of g first, then the domain of f applied to g's output.\n\n## Main activity\n\n1. Composition and domain: with f(x) = x^2 + 1 and g(x) = the square root of (x - 2), find f(g(x)) and state its domain. Compare the simplified form x - 1 with the original domain, x >= 2.\n2. Quotient: for f(x) = x^2 - 4 and g(x) = x + 2, simplify f/g and state its domain.\n3. A modeling composition: a puddle's radius grows as r(t) = 2 times the square root of t, and its area is pi r^2. Find A(r(t)) and invert.\n4. Inverses: restrict f(x) = (x - 3)^2 + 2 to x >= 3, find the inverse, and state the domain and range of both.\n\n## Checking for understanding\n\nWhiteboards: \"If f has domain x >= 3 and range y >= 2, what are the domain and range of the inverse?\"\n\n## Problem set\n\nCollect the problem set at the end of the lesson.",
+   "reading": {
+    "title": "Keeping track of domains",
+    "content": "When you combine functions, the domain of the result is limited by the domains of the pieces. The sum, difference and product of two functions are defined where both are. The quotient f/g is defined where both are defined and g is not zero. For f(x) = x^2 - 4 and g(x) = x + 2, the quotient (f/g)(x) = (x - 2)(x + 2)/(x + 2) simplifies to x - 2, but the quotient is not defined at x = -2, so the domain is x not equal to -2. The graph of f/g is the line y = x - 2 with a hole at x = -2. It is a common mistake to give the domain of the simplified formula, which is all real numbers.\n\nComposition requires even more care, because you feed the output of the inner function into the outer function. The composite f(g(x)) is defined for the x in the domain of g for which g(x) is in the domain of f. For f(x) = 1/(x - 2) and g(x) = x + 3, f(g(x)) = 1/(x + 1), and the domain is x not equal to -1, which is the value for which g(x) = 2. For f(x) = x^2 + 1 and g(x) = the square root of (x - 2), f(g(x)) = (x - 2) + 1 = x - 1, but the domain is x >= 2 because that is the domain of g. The simplified expression x - 1 would accept any number, but the composition does not.\n\nComposition models chains of relationships. A puddle spreads so that its radius after t seconds is r(t) = 2 times the square root of t feet, with domain t >= 0, and the area of a circle is A(r) = pi r^2. Then A(r(t)) = pi(2 times the square root of t)^2 = 4(pi)t. When does the area reach 100 square feet? Solve 4(pi)t = 100 to get t = 100/(4 pi), about 7.96 seconds. The inverse tells the time for a given area: t = A/(4 pi).\n\nTo find an inverse, swap x and y and solve for y. But a function must be one-to-one to have an inverse, so sometimes you restrict the domain first. The function f(x) = (x - 3)^2 + 2 is not one-to-one on all real numbers, since f(2) = f(4) = 3. Restrict it to x >= 3. Swap: x = (y - 3)^2 + 2, so x - 2 = (y - 3)^2 and y - 3 = plus or minus the square root of (x - 2). The original domain was x >= 3, so the inverse's outputs are y >= 3 and we take the positive root: f-inverse(x) = 3 + the square root of (x - 2). The domain and range swap: f has domain x >= 3 and range y >= 2, so f-inverse has domain x >= 2 and range y >= 3. A check: f(5) = 4 + 2 = 6, and f-inverse(6) = 3 + the square root of 4 = 5, so the inverse takes the output back to the input."
+   },
+   "cards": [
+    {
+     "front": "Domain of a quotient",
+     "back": "Where both functions are defined and the divisor is not zero. Find it before simplifying."
+    },
+    {
+     "front": "Domain of a composite",
+     "back": "The inputs of the inner function whose outputs are in the domain of the outer function."
+    },
+    {
+     "front": "Inner and outer function",
+     "back": "In f(g(x)), g is the inner function and is applied first."
+    },
+    {
+     "front": "One-to-one function",
+     "back": "A function in which each output comes from only one input. Only these have inverses."
+    },
+    {
+     "front": "Restricting a domain",
+     "back": "Limiting the inputs, such as x >= 3, so that a function becomes one-to-one."
+    },
+    {
+     "front": "Domain and range of an inverse",
+     "back": "The domain of the inverse is the range of the original, and the range of the inverse is the domain of the original."
+    },
+    {
+     "front": "Hole in a quotient",
+     "back": "When a common factor cancels, the original quotient is still undefined at that input."
+    },
+    {
+     "front": "Verifying an inverse",
+     "back": "Check that f-inverse(f(x)) = x and f(f-inverse(x)) = x for inputs in the domains."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Let f(x) = 1/(x - 2) and g(x) = x + 3. What is the domain of f(g(x))?",
+     "options": [
+      "x is not -1",
+      "x is not 2",
+      "x is not -3",
+      "x is not -1 and not 2"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Let f(x) = x^2 + 1 and g(x) = the square root of (x - 2). What is f(g(x)) and its domain?",
+     "options": [
+      "x - 1, for all real numbers",
+      "x - 1, for x >= 2",
+      "x^2 - 3, for x >= 2",
+      "x - 1, for x >= 1"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The function f(x) = x^2 - 4x + 1 is restricted to x >= 2. What is its inverse?",
+     "options": [
+      "2 - the square root of (x + 3)",
+      "2 + the square root of (x - 3)",
+      "2 + the square root of (x + 3)",
+      "(the square root of (x + 3)) - 2"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A function f has domain x >= 2 and range y >= -3. What is the domain of f-inverse?",
+     "options": [
+      "x >= 2",
+      "x >= -3",
+      "x <= -3",
+      "All real numbers"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Let f(x) = x^2 - 4 and g(x) = x + 2. What is f/g, and what is its domain?",
+     "options": [
+      "x - 2, for all real numbers",
+      "x + 2, for x is not -2",
+      "x^2 - 4, for x is not -2",
+      "x - 2, for x is not -2"
+     ],
+     "answer": "D"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A puddle's radius after t seconds is r(t) = 2 times the square root of t feet, and the area of a circle is A(r) = pi r^2. (a) Write the area as a function of time. (b) State the domain. (c) Find when the area is 100 square feet. (d) Write the time as a function of the area.",
+     "markScheme": [
+      "Writes A(r(t)) = pi(2 times the square root of t)^2 = 4(pi)t",
+      "States the domain t >= 0, since the square root and time need t not negative",
+      "Solves 4(pi)t = 100 to get t = 100/(4 pi), about 7.96 seconds",
+      "Writes the inverse t = A/(4 pi) as the time for a given area"
+     ],
+     "modelAnswer": "(a) A(r(t)) = pi(2 times the square root of t)^2 = pi(4t) = 4(pi)t. (b) The square root requires t >= 0, and time cannot be negative, so the domain is t >= 0. (c) 4(pi)t = 100 gives t = 100/(4 pi), which is about 7.96 seconds. (d) Solving A = 4(pi)t for t gives t = A/(4 pi), the time needed for the puddle to reach area A.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) A(r(t)) = pi times (2 sqrt t)^2 = pi times 4t = 4 pi t. (b) t >= 0 because of the square root, and anyway you can't have negative time. (c) 4 pi t = 100, t = 100/(4 pi), which is about 7.96 seconds. (d) t = A/(4 pi) is the time it takes to reach area A.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(r(t)) = pi times (2 sqrt t)^2 = pi times 4t = 4 pi t."
+        },
+        {
+         "point": 1,
+         "quote": "t >= 0 because of the square root, and anyway you can't have negative time."
+        },
+        {
+         "point": 2,
+         "quote": "4 pi t = 100, t = 100/(4 pi), which is about 7.96 seconds."
+        },
+        {
+         "point": 3,
+         "quote": "t = A/(4 pi) is the time it takes to reach area A."
+        }
+       ],
+       "feedback": "Full marks. Each part ends in the correct form and the units match the story."
+      },
+      {
+       "tier": "full",
+       "text": "Plug the radius into the area: A = pi(2 sqrt t)^2 = 4 pi t (the 2 gets squared too). The domain is t >= 0, as sqrt needs a non-negative input. For 100 square feet, t = 100 / (4 x 3.1416) = 7.96 s. Inverse: t = A / (4 pi), so for 200 square feet it takes about 15.9 s.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A = pi(2 sqrt t)^2 = 4 pi t (the 2 gets squared too)"
+        },
+        {
+         "point": 1,
+         "quote": "The domain is t >= 0, as sqrt needs a non-negative input"
+        },
+        {
+         "point": 2,
+         "quote": "For 100 square feet, t = 100 / (4 x 3.1416) = 7.96 s"
+        },
+        {
+         "point": 3,
+         "quote": "Inverse: t = A / (4 pi), so for 200 square feet it takes about 15.9 s"
+        }
+       ],
+       "feedback": "All four marks. Using the inverse on a second area value shows what it means."
+      },
+      {
+       "tier": "partial",
+       "text": "A(r(t)) = 4 pi t. t = 100/(4 pi) = 7.96 seconds. The domain is all real numbers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(r(t)) = 4 pi t."
+        },
+        {
+         "point": 2,
+         "quote": "t = 100/(4 pi) = 7.96 seconds."
+        }
+       ],
+       "feedback": "Your composition and time are right. The square root is not defined for negative t, and time cannot be negative, so the domain is t >= 0."
+      },
+      {
+       "tier": "partial",
+       "text": "The domain is t >= 0. The inverse is t = A/(4 pi). A(r(t)) = pi x 2 x t = 2 pi t.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The domain is t >= 0."
+        },
+        {
+         "point": 3,
+         "quote": "The inverse is t = A/(4 pi)."
+        }
+       ],
+       "feedback": "Your domain and inverse are right. In the composition the whole radius is squared, including the 2: (2 sqrt t)^2 = 4t, so A = 4 pi t, which also makes your inverse consistent.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A(r(t)) = pi + 2 sqrt t. When A = 100, t is about 2,350.",
+       "meets": [],
+       "feedback": "Composition means putting r(t) in place of r in A(r) = pi r^2, not adding. The area is pi times the radius squared."
+      },
+      {
+       "tier": "weak",
+       "text": "t has to be at least 0. A = pi x 2 sqrt t squared = pi x 2t = 2 pi t, so t = 100/(2 pi) = 15.9 seconds.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "t has to be at least 0."
+        }
+       ],
+       "feedback": "The domain is right. Squaring 2 sqrt t gives 4t, since both the 2 and the square root are squared. That makes the area 4 pi t, and the time 7.96 seconds."
+      }
+     ]
+    },
+    {
+     "prompt": "The function f(x) = (x - 3)^2 + 2 is not one-to-one on all real numbers. Restrict it to x >= 3 and find the inverse. State the domain and range of f and of its inverse, and check your inverse with the point (5, 6).",
+     "markScheme": [
+      "Swaps x and y and solves, getting y - 3 = plus or minus the square root of (x - 2)",
+      "Chooses the positive root, because the range of the inverse must be y >= 3, so f-inverse(x) = 3 + the square root of (x - 2)",
+      "States the domain and range: f has x >= 3 and y >= 2, and the inverse has x >= 2 and y >= 3",
+      "Checks with the point: f(5) = 6 and f-inverse(6) = 3 + 2 = 5"
+     ],
+     "modelAnswer": "Write x = (y - 3)^2 + 2, so (y - 3)^2 = x - 2 and y - 3 = plus or minus the square root of (x - 2). Because f was restricted to x >= 3, the inverse's outputs must be y >= 3, so we take the positive root: f-inverse(x) = 3 + the square root of (x - 2). The function f has domain x >= 3 and range y >= 2, and the inverse has domain x >= 2 and range y >= 3. Check: f(5) = 4 + 2 = 6 and f-inverse(6) = 3 + the square root of 4 = 5.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Swap: x = (y - 3)^2 + 2, so (y - 3)^2 = x - 2 and y - 3 = plus or minus sqrt(x - 2). The original inputs were x >= 3, so the inverse outputs are y >= 3, so I take the plus: f-inverse(x) = 3 + sqrt(x - 2). f: domain x >= 3, range y >= 2. The inverse: domain x >= 2, range y >= 3. They swap. f(5) = 2^2 + 2 = 6 and f-inverse(6) = 3 + sqrt(4) = 5, so it goes back.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Swap: x = (y - 3)^2 + 2, so (y - 3)^2 = x - 2 and y - 3 = plus or minus sqrt(x - 2)."
+        },
+        {
+         "point": 1,
+         "quote": "The original inputs were x >= 3, so the inverse outputs are y >= 3, so I take the plus: f-inverse(x) = 3 + sqrt(x - 2)."
+        },
+        {
+         "point": 2,
+         "quote": "f: domain x >= 3, range y >= 2. The inverse: domain x >= 2, range y >= 3. They swap."
+        },
+        {
+         "point": 3,
+         "quote": "f(5) = 2^2 + 2 = 6 and f-inverse(6) = 3 + sqrt(4) = 5, so it goes back."
+        }
+       ],
+       "feedback": "Full marks. Linking the choice of the plus sign to the restriction of the domain is the essential reasoning."
+      },
+      {
+       "tier": "full",
+       "text": "Restricting to x >= 3 makes it one-to-one, since only the right half of the parabola is used. Solve for the input: x - 2 = (y - 3)^2 so y = 3 plus or minus sqrt(x - 2). The positive root matches the right half, y >= 3, so f-inverse(x) = 3 + sqrt(x - 2). Domain of f is [3, infinity) and range [2, infinity); domain of the inverse is [2, infinity) and range [3, infinity). Test: f(5) = 6, f-inverse(6) = 3 + 2 = 5 works.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Solve for the input: x - 2 = (y - 3)^2 so y = 3 plus or minus sqrt(x - 2)"
+        },
+        {
+         "point": 1,
+         "quote": "The positive root matches the right half, y >= 3, so f-inverse(x) = 3 + sqrt(x - 2)"
+        },
+        {
+         "point": 2,
+         "quote": "Domain of f is [3, infinity) and range [2, infinity); domain of the inverse is [2, infinity) and range [3, infinity)"
+        },
+        {
+         "point": 3,
+         "quote": "Test: f(5) = 6, f-inverse(6) = 3 + 2 = 5 works"
+        }
+       ],
+       "feedback": "All four marks. Describing the restriction as using the right half of the parabola shows you can see the graph."
+      },
+      {
+       "tier": "partial",
+       "text": "x = (y - 3)^2 + 2 so y = 3 plus or minus sqrt(x - 2). The inverse has both roots. The domain and range just swap.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x = (y - 3)^2 + 2 so y = 3 plus or minus sqrt(x - 2)."
+        },
+        {
+         "point": 2,
+         "quote": "The domain and range just swap."
+        }
+       ],
+       "feedback": "Your solving is right. The inverse of a one-to-one function is a function, so you need only one root: the + root, because the restriction x >= 3 makes the inverse's outputs at least 3."
+      },
+      {
+       "tier": "partial",
+       "text": "f-inverse(x) = 3 + sqrt(x - 2). f(5) = 6 and f-inverse(6) = 5.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f-inverse(x) = 3 + sqrt(x - 2)."
+        },
+        {
+         "point": 3,
+         "quote": "f(5) = 6 and f-inverse(6) = 5."
+        }
+       ],
+       "feedback": "Your inverse and check are right. Show the steps to find it, and state the domain and range of both functions: f has x >= 3 and y >= 2.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The inverse is 1/((x - 3)^2 + 2).",
+       "meets": [],
+       "feedback": "The reciprocal is not the inverse. The inverse sends outputs back to inputs. Check it: with x = 6 the reciprocal gives a tiny fraction, not 5."
+      },
+      {
+       "tier": "weak",
+       "text": "The domain of f-inverse is x >= 3. The inverse is sqrt(x - 3) + 2 because you switch the numbers.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The domain of f-inverse is x >= 3."
+        }
+       ],
+       "feedback": "The domain of the inverse is x >= 2, the range of f. And switching the numbers is not the method: swap x and y, then undo the square and the +2 in reverse order."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "The remainder and factor theorems, rational zeros and long division",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the remainder and factor theorems to factor polynomials and find rational zeros;\n2. rewrite rational expressions by long division or by factoring, and use the result to find slant and vertical asymptotes.\n\n## Materials\n\nWhiteboards, synthetic division reference cards, graphing handhelds, the worksheet.\n\n## Starter (8 minutes)\n\nGive f(x) = 3x^3 + 5x^2 - 26x + 8 and ask for f(2). Students find it is 0. Ask what that means, and whether there is a way to find a zero like this without guessing. Discuss the list of possible rational zeros built from the factors of 8 and the factors of 3.\n\n## Main activity\n\n1. State the factor theorem. List the rational candidates for 3x^3 + 5x^2 - 26x + 8, test x = 2, divide, and factor the quotient.\n2. Long division: (x^3 + 2x^2 - 5x + 7) divided by (x - 1). Show that the remainder is f(1).\n3. Rewrite (2x^2 - 3x + 5)/(x + 1) as a polynomial plus a remainder term, and read off the slant and vertical asymptotes.\n4. Simplify (x^2 + 5x + 6)/(x + 2) by factoring and note the restriction.\n\n## Checking for understanding\n\nWhiteboards: \"Which of these could be a rational zero of 4x^3 - 5x + 6: 3/4, 4/3, 5/2?\" Look for the p over q rule.\n\n## Worksheet\n\nCollect the worksheet at the end of class.",
+   "reading": {
+    "title": "Dividing polynomials and finding zeros",
+    "content": "Dividing polynomials works like long division of numbers. Divide the leading terms, multiply back, subtract and bring down the next term. Take (x^3 + 2x^2 - 5x + 7) divided by (x - 1). The first term of the quotient is x^2, since x^3 divided by x is x^2. Multiply back, x^2(x - 1) = x^3 - x^2, and subtract to get 3x^2 - 5x. Next, 3x^2 divided by x is 3x, and 3x(x - 1) = 3x^2 - 3x, which leaves -2x + 7. Then -2x divided by x is -2, and -2(x - 1) = -2x + 2, which leaves a remainder of 5. So the quotient is x^2 + 3x - 2 with a remainder of 5, which means the original expression equals x^2 + 3x - 2 + 5/(x - 1). The remainder, 5, is f(1) = 1 + 2 - 5 + 7. That is the remainder theorem: dividing f(x) by x - a leaves f(a).\n\nThe factor theorem is the special case with remainder 0: x - a is a factor exactly when f(a) = 0. To find all the zeros of a polynomial with integer coefficients, use the rational zero theorem: every rational zero p/q has p dividing the constant term and q dividing the leading coefficient. For f(x) = 3x^3 + 5x^2 - 26x + 8, p divides 8 and q divides 3, so the candidates are plus or minus 1, 2, 4, 8, 1/3, 2/3, 4/3 and 8/3. Test x = 2: 24 + 20 - 52 + 8 = 0. So x - 2 is a factor. Dividing gives 3x^2 + 11x - 4, which factors as (3x - 1)(x + 4). The full factorization is f(x) = (x - 2)(3x - 1)(x + 4), with zeros 2, 1/3 and -4.\n\nDivision also helps with rational functions. A rational function whose top has degree one more than the bottom has a slant asymptote, and division finds it. Divide (2x^2 - 3x + 5) by (x + 1): 2x^2 divided by x is 2x, and 2x(x + 1) = 2x^2 + 2x, which leaves -5x + 5. Then -5x divided by x is -5, and -5(x + 1) = -5x - 5, which leaves a remainder of 10. So (2x^2 - 3x + 5)/(x + 1) = 2x - 5 + 10/(x + 1). For large |x| the fraction 10/(x + 1) is almost 0, so the graph approaches the line y = 2x - 5. The vertical asymptote is x = -1, where the denominator is zero.\n\nWhen the numerator and denominator share a factor, simplify by factoring instead. (x^2 + 5x + 6)/(x + 2) = (x + 2)(x + 3)/(x + 2) = x + 3, but only for x not equal to -2. The original expression is not defined at -2, and the simplified one is, which is why the restriction has to be recorded. For a polynomial x^3 + kx^2 - x - 2 to have x + 1 as a factor, f(-1) = -1 + k + 1 - 2 = k - 2 must be zero, so k = 2."
+   },
+   "cards": [
+    {
+     "front": "Remainder theorem",
+     "back": "The remainder when f(x) is divided by x - a is f(a)."
+    },
+    {
+     "front": "Factor theorem",
+     "back": "x - a is a factor of f(x) exactly when f(a) = 0."
+    },
+    {
+     "front": "Rational zero theorem",
+     "back": "A rational zero p/q has p dividing the constant term and q dividing the leading coefficient."
+    },
+    {
+     "front": "Polynomial long division",
+     "back": "Divide leading terms, multiply back, subtract, bring down, and repeat."
+    },
+    {
+     "front": "Rewriting a rational expression",
+     "back": "p(x)/d(x) = quotient + remainder/d(x). The quotient gives the slant asymptote."
+    },
+    {
+     "front": "Restriction after canceling",
+     "back": "A canceled factor still makes the original expression undefined, so its zero is excluded."
+    },
+    {
+     "front": "Synthetic division",
+     "back": "A shortcut for dividing by x - a that uses only the coefficients."
+    },
+    {
+     "front": "Candidate zeros",
+     "back": "The list from the rational zero theorem. Each candidate must be tested."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "The polynomial f(x) = 2x^3 - 3x^2 - 11x + 6 has x - 3 as a factor. What are all of its zeros?",
+     "options": [
+      "3, 1/2 and -2",
+      "3, -1/2 and 2",
+      "-3, 1/2 and 2",
+      "3, 2 and -1/2"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which of the following could be a rational zero of 4x^3 - 5x + 6?",
+     "options": [
+      "4/3",
+      "3/4",
+      "5/2",
+      "6/5"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What are the quotient and remainder when x^3 + 2x^2 - 5x + 7 is divided by x - 1?",
+     "options": [
+      "Quotient x^2 + 3x - 2, remainder 9",
+      "Quotient x^2 + x - 6, remainder 1",
+      "Quotient x^2 + 3x - 2, remainder 5",
+      "Quotient x^2 + 3x + 2, remainder 5"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "How can (x^2 + 5x + 6)/(x + 2) be simplified?",
+     "options": [
+      "x + 2, for x is not -2",
+      "x + 3, for x is not -3",
+      "x + 3, for all real x",
+      "x + 3, for x is not -2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "For what value of k is x + 1 a factor of x^3 + kx^2 - x - 2?",
+     "options": [
+      "-2",
+      "2",
+      "1",
+      "-1"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Factor f(x) = 3x^3 + 5x^2 - 26x + 8 completely. List the candidates from the rational zero theorem, show that one of them is a zero, divide, and give all the zeros.",
+     "markScheme": [
+      "Lists the candidates: plus or minus 1, 2, 4, 8, 1/3, 2/3, 4/3, 8/3",
+      "Shows f(2) = 24 + 20 - 52 + 8 = 0, so x - 2 is a factor",
+      "Divides to get the quotient 3x^2 + 11x - 4",
+      "Factors the quotient as (3x - 1)(x + 4) and gives the zeros 2, 1/3 and -4"
+     ],
+     "modelAnswer": "By the rational zero theorem, p divides 8 and q divides 3, so the candidates are plus or minus 1, 2, 4, 8, 1/3, 2/3, 4/3 and 8/3. Test x = 2: f(2) = 3(8) + 5(4) - 26(2) + 8 = 24 + 20 - 52 + 8 = 0, so x - 2 is a factor. Dividing gives 3x^2 + 11x - 4. This factors as (3x - 1)(x + 4). So f(x) = (x - 2)(3x - 1)(x + 4), and the zeros are 2, 1/3 and -4.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "p divides 8 and q divides 3, so the candidates are plus or minus 1, 2, 4, 8, 1/3, 2/3, 4/3 and 8/3. f(2) = 24 + 20 - 52 + 8 = 0, so x - 2 is a factor. Dividing by x - 2 gives 3x^2 + 11x - 4. That's (3x - 1)(x + 4), so the zeros are 2, 1/3 and -4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "p divides 8 and q divides 3, so the candidates are plus or minus 1, 2, 4, 8, 1/3, 2/3, 4/3 and 8/3."
+        },
+        {
+         "point": 1,
+         "quote": "f(2) = 24 + 20 - 52 + 8 = 0, so x - 2 is a factor."
+        },
+        {
+         "point": 2,
+         "quote": "Dividing by x - 2 gives 3x^2 + 11x - 4."
+        },
+        {
+         "point": 3,
+         "quote": "That's (3x - 1)(x + 4), so the zeros are 2, 1/3 and -4."
+        }
+       ],
+       "feedback": "Full marks. You can check the factorization by multiplying: (x - 2)(3x - 1)(x + 4) gives 3x^3 + 5x^2 - 26x + 8."
+      },
+      {
+       "tier": "full",
+       "text": "The rational zero theorem says factors of 8 over factors of 3: 1, 2, 4, 8 and these divided by 3. I try 2 first: 3(8) + 5(4) - 52 + 8 = 0, it works. Synthetic division with 2 uses coefficients 3, 5, -26, 8 and gives 3, 11, -4, 0, so the quotient is 3x^2 + 11x - 4. Factor that into (3x - 1)(x + 4), so f(x) = (x - 2)(3x - 1)(x + 4) and the zeros are 2, 1/3, -4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "factors of 8 over factors of 3: 1, 2, 4, 8 and these divided by 3"
+        },
+        {
+         "point": 1,
+         "quote": "I try 2 first: 3(8) + 5(4) - 52 + 8 = 0, it works"
+        },
+        {
+         "point": 2,
+         "quote": "the quotient is 3x^2 + 11x - 4"
+        },
+        {
+         "point": 3,
+         "quote": "Factor that into (3x - 1)(x + 4), so f(x) = (x - 2)(3x - 1)(x + 4) and the zeros are 2, 1/3, -4"
+        }
+       ],
+       "feedback": "All four marks. The synthetic division row ending in 0 is a nice confirmation."
+      },
+      {
+       "tier": "partial",
+       "text": "f(2) = 0 so x - 2 is a factor. After dividing I get 3x^2 + 11x - 4. The zeros are 2 and the roots of that, which are 4 and 1.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f(2) = 0 so x - 2 is a factor."
+        },
+        {
+         "point": 2,
+         "quote": "After dividing I get 3x^2 + 11x - 4."
+        }
+       ],
+       "feedback": "The factor and quotient are right. 3x^2 + 11x - 4 factors as (3x - 1)(x + 4), so its zeros are 1/3 and -4. Substitute your 4 and 1 to see they do not work."
+      },
+      {
+       "tier": "partial",
+       "text": "The candidates are the factors of 8 over the factors of 3. The zeros are 2, 1/3 and -4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The candidates are the factors of 8 over the factors of 3."
+        },
+        {
+         "point": 3,
+         "quote": "The zeros are 2, 1/3 and -4."
+        }
+       ],
+       "feedback": "The candidates and zeros are right. Show the test that proves 2 is a zero and the division that gives 3x^2 + 11x - 4.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The zeros are 3, 5, -26 and 8 since those are the numbers in the polynomial.",
+       "meets": [],
+       "feedback": "The coefficients are not the zeros. A zero is an input that makes the polynomial 0, found by testing candidates from the rational zero theorem."
+      },
+      {
+       "tier": "weak",
+       "text": "f(2) = 0 so it is a factor. Then 3x^3 divided by x is 3x^2, so the answer is 3x^2 + 5x - 26.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f(2) = 0 so it is a factor."
+        }
+       ],
+       "feedback": "Dividing the first term is just the first step of long division. You have to multiply back and subtract, then continue. The quotient is 3x^2 + 11x - 4."
+      }
+     ]
+    },
+    {
+     "prompt": "Divide 2x^2 - 3x + 5 by x + 1 and write the result as a polynomial plus a fraction. Use it to find the slant asymptote and the vertical asymptote of f(x) = (2x^2 - 3x + 5)/(x + 1), and explain why the graph approaches the slant line.",
+     "markScheme": [
+      "Performs the division correctly, getting quotient 2x - 5",
+      "Finds the remainder 10 and writes f(x) = 2x - 5 + 10/(x + 1)",
+      "Gives the slant asymptote y = 2x - 5 and the vertical asymptote x = -1",
+      "Explains that for large |x| the term 10/(x + 1) is close to 0, so f is close to 2x - 5"
+     ],
+     "modelAnswer": "2x^2 divided by x is 2x. Multiply back: 2x(x + 1) = 2x^2 + 2x. Subtract: -5x + 5. Then -5x divided by x is -5, and -5(x + 1) = -5x - 5. Subtract: 10. So the quotient is 2x - 5 with remainder 10, and f(x) = 2x - 5 + 10/(x + 1). The slant asymptote is y = 2x - 5 and the vertical asymptote is x = -1, where the denominator is zero. For large |x|, 10/(x + 1) is very close to 0, so f(x) is very close to 2x - 5.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "2x^2 / x = 2x, 2x(x + 1) = 2x^2 + 2x, subtract and get -5x + 5, then -5x / x = -5 and -5(x + 1) = -5x - 5, so the quotient is 2x - 5. The remainder is 10, so f(x) = 2x - 5 + 10/(x + 1). The slant asymptote is y = 2x - 5 and the vertical one is x = -1. When x is huge, 10/(x + 1) is almost zero, so the graph gets close to the line.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "2x^2 / x = 2x, 2x(x + 1) = 2x^2 + 2x, subtract and get -5x + 5, then -5x / x = -5 and -5(x + 1) = -5x - 5, so the quotient is 2x - 5."
+        },
+        {
+         "point": 1,
+         "quote": "The remainder is 10, so f(x) = 2x - 5 + 10/(x + 1)."
+        },
+        {
+         "point": 2,
+         "quote": "The slant asymptote is y = 2x - 5 and the vertical one is x = -1."
+        },
+        {
+         "point": 3,
+         "quote": "When x is huge, 10/(x + 1) is almost zero, so the graph gets close to the line."
+        }
+       ],
+       "feedback": "Full marks. Writing the work of each step makes the division easy to check."
+      },
+      {
+       "tier": "full",
+       "text": "Long division: first term 2x, then -5, subtracting each time. The remainder is 10, so 2x^2 - 3x + 5 = (x + 1)(2x - 5) + 10 and f(x) = 2x - 5 + 10/(x + 1). Asymptotes: slant y = 2x - 5, vertical x = -1 from the denominator. The fraction part 10/(x + 1) shrinks to 0 as |x| grows, so f(x) approaches 2x - 5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "first term 2x, then -5, subtracting each time"
+        },
+        {
+         "point": 1,
+         "quote": "The remainder is 10, so 2x^2 - 3x + 5 = (x + 1)(2x - 5) + 10 and f(x) = 2x - 5 + 10/(x + 1)"
+        },
+        {
+         "point": 2,
+         "quote": "Asymptotes: slant y = 2x - 5, vertical x = -1 from the denominator"
+        },
+        {
+         "point": 3,
+         "quote": "The fraction part 10/(x + 1) shrinks to 0 as |x| grows, so f(x) approaches 2x - 5"
+        }
+       ],
+       "feedback": "All four marks. Writing the division as (x + 1)(2x - 5) + 10 gives a quick check by multiplying."
+      },
+      {
+       "tier": "partial",
+       "text": "2x - 5 is the quotient. So the slant asymptote is y = 2x - 5 and the vertical asymptote is x = -1. The remainder is 5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "2x - 5"
+        },
+        {
+         "point": 2,
+         "quote": "So the slant asymptote is y = 2x - 5 and the vertical asymptote is x = -1."
+        }
+       ],
+       "feedback": "The quotient and asymptotes are right. The remainder is 10: -5x + 5 minus (-5x - 5) is 10, and you can check with f(-1) = 2 + 3 + 5 = 10."
+      },
+      {
+       "tier": "partial",
+       "text": "f(x) = 2x - 5 + 10/(x + 1). The fraction gets close to 0 for large x, so the graph gets close to the line.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f(x) = 2x - 5 + 10/(x + 1)."
+        },
+        {
+         "point": 3,
+         "quote": "The fraction gets close to 0 for large x, so the graph gets close to the line."
+        }
+       ],
+       "feedback": "The rewriting and the explanation are right. Name the asymptotes, y = 2x - 5 and x = -1, and show the steps of the division.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Divide 2x^2 by x and 5 by 1 to get 2x + 5. The asymptote is y = 2x + 5.",
+       "meets": [],
+       "feedback": "Long division is not done term by term. After 2x, you multiply back and subtract, which leaves -5x + 5 to continue with. The quotient is 2x - 5."
+      },
+      {
+       "tier": "weak",
+       "text": "The vertical asymptote is x = -1. There's no slant asymptote because the degrees are different.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The vertical asymptote is x = -1"
+        }
+       ],
+       "feedback": "The vertical asymptote is right. A slant asymptote occurs exactly when the top is one degree higher than the bottom, as here: 2x^2 over x + 1. It is y = 2x - 5."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "The fundamental theorem of algebra, rational equations and exponential models",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the fundamental theorem of algebra to count the zeros of a polynomial, including complex ones;\n2. solve rational and radical equations and rational inequalities;\n3. model growth and decay with exponential functions and solve for time with logarithms.\n\n## Materials\n\nGraphing handhelds, sign chart templates, whiteboards, the worksheet and differentiated worksheet.\n\n## Starter (8 minutes)\n\nWrite f(x) = 4x^5 - 3x^2 + 1 and ask: \"How many zeros does this have?\" Take answers from \"I can't tell\" to \"at most 5.\" Introduce the fundamental theorem of algebra: counting complex zeros and multiplicity, there are exactly 5. Ask why a graph might show fewer.\n\n## Main activity\n\n1. Counting zeros: x^4 - 16 has 4 zeros, 2 real and 2 imaginary. A polynomial with real coefficients and a zero 2 + 3i must also have 2 - 3i.\n2. Rational equation: 3/(x - 1) + 2/(x + 2) = 1. List the excluded values first, clear the denominators, solve, and check.\n3. Rational inequality with a sign chart: (x + 1)/(x - 2) <= 0, including the endpoints question.\n4. Radical equation: the square root of (2x + 9) = x + 3.\n5. Exponential growth: a suburb of 25,000 people growing 2.4% a year, and a drug that loses 8% per hour. Use logarithms to find times.\n\n## Checking for understanding\n\nWhiteboards: \"Why is x = 2 never allowed as a solution of (x + 1)/(x - 2) <= 0?\"\n\n## Worksheet\n\nCollect the worksheet and hand out the differentiated worksheet.",
+   "reading": {
+    "title": "How many zeros, and which answers are allowed",
+    "content": "The fundamental theorem of algebra says that a polynomial of degree n has exactly n zeros in the complex numbers, counting multiplicity. So f(x) = 4x^5 - 3x^2 + 1 has 5 zeros, even if its graph only crosses the x-axis once or twice, because the rest are complex. For polynomials with real coefficients, complex zeros come in conjugate pairs: if 2 + 3i is a zero, so is 2 - 3i. So x^4 - 16 = (x - 2)(x + 2)(x - 2i)(x + 2i) has two real zeros and two imaginary ones.\n\nRational equations need excluded values listed before any algebra. In 3/(x - 1) + 2/(x + 2) = 1, x cannot be 1 or -2. Multiply by (x - 1)(x + 2): 3(x + 2) + 2(x - 1) = (x - 1)(x + 2), so 5x + 4 = x^2 + x - 2. Rearranged, x^2 - 4x - 6 = 0, and the quadratic formula gives x = 2 plus or minus the square root of 10, about 5.16 and -1.16. Neither is 1 or -2, so both are valid. The check numerically: at x = 5.16, 3/4.16 + 2/7.16 is about 0.721 + 0.279 = 1.\n\nA rational inequality is solved with a sign chart. For (x + 1)/(x - 2) <= 0, the key numbers are x = -1, where the numerator is zero, and x = 2, where the denominator is zero. Test each region. For x < -1 both factors are negative, so the quotient is positive. For -1 < x < 2 the top is positive and the bottom is negative, so the quotient is negative. For x > 2 both are positive and the quotient is positive. We want the quotient at most zero, so the interval is between -1 and 2. The point x = -1 gives 0, which is allowed because the inequality has the equal sign, but x = 2 is never allowed since the expression is undefined there. The answer is -1 <= x < 2.\n\nRadical equations again require a check. Solve the square root of (2x + 9) = x + 3. Square both sides: 2x + 9 = x^2 + 6x + 9, so x^2 + 4x = 0, giving x = 0 or x = -4. Check x = 0: the square root of 9 is 3, and 0 + 3 = 3, so it works. Check x = -4: the square root of 1 is 1, but -4 + 3 = -1, so it fails. Only x = 0 is a solution.\n\nExponential models describe a quantity that changes by a fixed percentage each period. A suburb of 25,000 people growing at 2.4% a year has P(t) = 25,000(1.024)^t. To find when it reaches 35,000, solve 1.024^t = 1.4 by taking logarithms: t = ln 1.4 / ln 1.024, which is about 0.3365 / 0.0237, so about 14.2 years. A drug amount that falls by 8% each hour is A(t) = 100(0.92)^t, and it reaches 50 when t = ln 0.5 / ln 0.92, about 8.3 hours. Logarithms are what move the unknown out of the exponent."
+   },
+   "cards": [
+    {
+     "front": "Fundamental theorem of algebra",
+     "back": "A polynomial of degree n has exactly n complex zeros, counting multiplicity."
+    },
+    {
+     "front": "Conjugate pair theorem",
+     "back": "If a polynomial with real coefficients has a + bi as a zero, it also has a - bi."
+    },
+    {
+     "front": "Excluded value",
+     "back": "An input that makes a denominator zero. It is never a solution of a rational equation or inequality."
+    },
+    {
+     "front": "Sign chart",
+     "back": "A table of intervals between key numbers showing the sign of an expression on each."
+    },
+    {
+     "front": "Key numbers of a rational inequality",
+     "back": "The zeros of the numerator and of the denominator."
+    },
+    {
+     "front": "Extraneous solution",
+     "back": "A candidate that fails in the original equation, common after squaring."
+    },
+    {
+     "front": "Exponential growth model",
+     "back": "P(t) = P0(1 + r)^t, growing r per period."
+    },
+    {
+     "front": "Solving for an exponent",
+     "back": "Take a logarithm of both sides, so t = ln(value)/ln(base)."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How many zeros does f(x) = 4x^5 - 3x^2 + 1 have, counting multiplicity and complex zeros?",
+     "options": [
+      "5, by the fundamental theorem of algebra",
+      "At least 5 real zeros",
+      "Exactly 4",
+      "Exactly 2 real zeros"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Solve (x + 1)/(x - 2) <= 0.",
+     "options": [
+      "-1 < x <= 2",
+      "-1 <= x < 2",
+      "x <= -1 or x > 2",
+      "-1 <= x <= 2"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Solve the square root of (2x + 9) = x + 3.",
+     "options": [
+      "x = -4 only",
+      "x = 0 and x = -4",
+      "x = 0 only",
+      "No solution"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A suburb of 25,000 people grows 2.4% a year, so P(t) = 25,000(1.024)^t. About how many years until the population reaches 35,000?",
+     "options": [
+      "About 17.5 years",
+      "About 1.4 years",
+      "About 12.6 years",
+      "About 14.2 years"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "A medicine amount decays by 8% each hour, A(t) = 100(0.92)^t milligrams. About when does it fall to 50 milligrams?",
+     "options": [
+      "About 6.25 hours",
+      "About 12.5 hours",
+      "About 8.3 hours",
+      "About 4.6 hours"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Solve 3/(x - 1) + 2/(x + 2) = 1. State the excluded values first, clear the denominators, find exact solutions, and check that they are allowed.",
+     "markScheme": [
+      "States the excluded values x not equal to 1 and x not equal to -2",
+      "Multiplies through to get 3(x + 2) + 2(x - 1) = (x - 1)(x + 2), which simplifies to x^2 - 4x - 6 = 0",
+      "Solves with the quadratic formula to get x = 2 plus or minus the square root of 10",
+      "Checks that neither solution is an excluded value, and confirms numerically that one satisfies the equation"
+     ],
+     "modelAnswer": "The denominators are zero at x = 1 and x = -2, so those are excluded. Multiply both sides by (x - 1)(x + 2): 3(x + 2) + 2(x - 1) = (x - 1)(x + 2). The left side is 5x + 4 and the right side is x^2 + x - 2, so x^2 - 4x - 6 = 0. By the quadratic formula x = (4 plus or minus the square root of (16 + 24))/2 = 2 plus or minus the square root of 10. Neither value is 1 or -2, so both are valid. Numerically, x = 5.16 gives 3/4.16 + 2/7.16 = 0.721 + 0.279 = 1.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "x can't be 1 or -2 because those make a denominator zero. Multiply by (x - 1)(x + 2): 3(x + 2) + 2(x - 1) = (x - 1)(x + 2), so 5x + 4 = x^2 + x - 2, which gives x^2 - 4x - 6 = 0. x = (4 plus or minus sqrt(16 + 24))/2 = 2 plus or minus sqrt(10). Neither is 1 or -2, so they're both OK, and x = 5.16 gives 0.721 + 0.279 = 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x can't be 1 or -2 because those make a denominator zero."
+        },
+        {
+         "point": 1,
+         "quote": "Multiply by (x - 1)(x + 2): 3(x + 2) + 2(x - 1) = (x - 1)(x + 2), so 5x + 4 = x^2 + x - 2, which gives x^2 - 4x - 6 = 0."
+        },
+        {
+         "point": 2,
+         "quote": "x = (4 plus or minus sqrt(16 + 24))/2 = 2 plus or minus sqrt(10)."
+        },
+        {
+         "point": 3,
+         "quote": "Neither is 1 or -2, so they're both OK, and x = 5.16 gives 0.721 + 0.279 = 1."
+        }
+       ],
+       "feedback": "Full marks. Plugging in a decimal approximation is an efficient check on rational equations."
+      },
+      {
+       "tier": "full",
+       "text": "Excluded: x = 1 and x = -2. Common denominator: 3(x + 2) + 2(x - 1) over (x - 1)(x + 2) = 1, so 5x + 4 = x^2 + x - 2, so x^2 - 4x - 6 = 0. Quadratic formula: x = (4 plus or minus sqrt(40))/2 = 2 plus or minus sqrt(10). 2 + sqrt(10) is about 5.16 and 2 - sqrt(10) is about -1.16, neither is 1 or -2, and checking -1.16 gives 3/(-2.16) + 2/(0.84) = -1.39 + 2.38 = 0.99, about 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x = 1 and x = -2"
+        },
+        {
+         "point": 1,
+         "quote": "3(x + 2) + 2(x - 1) over (x - 1)(x + 2) = 1, so 5x + 4 = x^2 + x - 2, so x^2 - 4x - 6 = 0"
+        },
+        {
+         "point": 2,
+         "quote": "x = (4 plus or minus sqrt(40))/2 = 2 plus or minus sqrt(10)"
+        },
+        {
+         "point": 3,
+         "quote": "2 + sqrt(10) is about 5.16 and 2 - sqrt(10) is about -1.16, neither is 1 or -2, and checking -1.16 gives 3/(-2.16) + 2/(0.84) = -1.39 + 2.38 = 0.99, about 1"
+        }
+       ],
+       "feedback": "All four marks. Checking the negative solution as well gives confidence in both."
+      },
+      {
+       "tier": "partial",
+       "text": "3(x + 2) + 2(x - 1) = (x - 1)(x + 2), so x^2 - 4x - 6 = 0. x = 2 plus or minus sqrt(10). I didn't need to check because I did the algebra right.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "3(x + 2) + 2(x - 1) = (x - 1)(x + 2), so x^2 - 4x - 6 = 0."
+        },
+        {
+         "point": 2,
+         "quote": "x = 2 plus or minus sqrt(10)."
+        }
+       ],
+       "feedback": "Your algebra and answers are right. List the excluded values, 1 and -2, at the start, and check that the answers are not among them. That check is part of solving rational equations."
+      },
+      {
+       "tier": "partial",
+       "text": "The excluded values are 1 and -2. The answers aren't 1 or -2. Then I got 5x + 4 = x^2 + x + 2 so x^2 - 4x + 2 = 0, and x = 2 plus or minus sqrt(2).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The excluded values are 1 and -2."
+        },
+        {
+         "point": 3,
+         "quote": "The answers aren't 1 or -2."
+        }
+       ],
+       "feedback": "Your excluded values are right. When you multiply (x - 1)(x + 2) you get x^2 + x - 2, with a -2, not +2. That gives x^2 - 4x - 6 = 0.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Add the fractions: (3 + 2)/((x - 1) + (x + 2)) = 5/(2x + 1) = 1, so x = 2.",
+       "meets": [],
+       "feedback": "You cannot add fractions by adding the tops and bottoms. Use a common denominator, (x - 1)(x + 2), or multiply the whole equation by it."
+      },
+      {
+       "tier": "weak",
+       "text": "x = 2 plus or minus sqrt(10) is the answer because I put it in my calculator.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "x = 2 plus or minus sqrt(10)"
+        }
+       ],
+       "feedback": "The answer is right, but a solution needs to show the steps: the excluded values, clearing the denominators and the quadratic that results."
+      }
+     ]
+    },
+    {
+     "prompt": "A 200-milligram dose of a medicine decays by half every 6 hours, so A(t) = 200(1/2)^(t/6). Find the amount after 15 hours, and find when 25 milligrams remain. Show the logarithm or exponent reasoning.",
+     "markScheme": [
+      "Computes A(15) = 200(1/2)^2.5, about 35.4 milligrams",
+      "Sets 25 = 200(1/2)^(t/6) and divides to get (1/2)^(t/6) = 1/8",
+      "Solves for the exponent, either by recognizing 1/8 = (1/2)^3 or with logarithms, so t/6 = 3",
+      "Gives t = 18 hours, with a unit"
+     ],
+     "modelAnswer": "A(15) = 200(1/2)^(15/6) = 200(1/2)^2.5 = 200 x 0.1768, which is about 35.4 milligrams. For 25 milligrams: 25 = 200(1/2)^(t/6), so (1/2)^(t/6) = 25/200 = 1/8. Since 1/8 = (1/2)^3, t/6 = 3, or by logarithms t/6 = ln(1/8)/ln(1/2) = 3. So t = 18 hours.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A(15) = 200 x (1/2)^2.5, which is about 200 x 0.177 = 35.4 mg. For 25 mg, 25 = 200(1/2)^(t/6), divide by 200 and (1/2)^(t/6) = 1/8. 1/8 is (1/2)^3, so t/6 = 3. Or with logs, t/6 = ln(1/8)/ln(1/2) = 3. t = 18 hours.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(15) = 200 x (1/2)^2.5, which is about 200 x 0.177 = 35.4 mg."
+        },
+        {
+         "point": 1,
+         "quote": "For 25 mg, 25 = 200(1/2)^(t/6), divide by 200 and (1/2)^(t/6) = 1/8."
+        },
+        {
+         "point": 2,
+         "quote": "1/8 is (1/2)^3, so t/6 = 3. Or with logs, t/6 = ln(1/8)/ln(1/2) = 3."
+        },
+        {
+         "point": 3,
+         "quote": "t = 18 hours."
+        }
+       ],
+       "feedback": "Full marks. Recognizing 1/8 as (1/2)^3 gives the answer without a calculator, and logs confirm it."
+      },
+      {
+       "tier": "full",
+       "text": "15 hours is 2.5 half-lives, so 200 x (1/2)^2.5 = 35.36 mg, about 35.4. For 25 mg: it's 1/8 of 200. Divide both sides by 200 to get (1/2)^(t/6) = 1/8. Take ln of both sides: (t/6) ln(1/2) = ln(1/8), so t/6 = 3 (since 1/8 is three halvings). t = 18 hours, which is 3 half-lives of 6 hours each.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "200 x (1/2)^2.5 = 35.36 mg, about 35.4"
+        },
+        {
+         "point": 1,
+         "quote": "Divide both sides by 200 to get (1/2)^(t/6) = 1/8"
+        },
+        {
+         "point": 2,
+         "quote": "Take ln of both sides: (t/6) ln(1/2) = ln(1/8), so t/6 = 3 (since 1/8 is three halvings)"
+        },
+        {
+         "point": 3,
+         "quote": "t = 18 hours, which is 3 half-lives of 6 hours each"
+        }
+       ],
+       "feedback": "All four marks. Describing the answer as 3 half-lives gives a sense check."
+      },
+      {
+       "tier": "partial",
+       "text": "A(15) = 35.4 mg. (1/2)^(t/6) = 1/8. So t/6 = 8 and t = 48 hours.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(15) = 35.4 mg."
+        },
+        {
+         "point": 1,
+         "quote": "(1/2)^(t/6) = 1/8."
+        }
+       ],
+       "feedback": "Your first value and equation are right. The exponent that gives 1/8 from 1/2 is 3, since (1/2)^3 = 1/8, not 8. So t/6 = 3 and t = 18."
+      },
+      {
+       "tier": "partial",
+       "text": "t/6 = 3 because 1/8 is (1/2)^3. t = 18 hours.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "t/6 = 3 because 1/8 is (1/2)^3."
+        },
+        {
+         "point": 3,
+         "quote": "t = 18 hours."
+        }
+       ],
+       "feedback": "Your reasoning and answer are right. Show how you get to (1/2)^(t/6) = 1/8, and give the amount after 15 hours: about 35.4 mg.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A(15) = 200 x 15/6 x 1/2 = 250 mg. It goes up.",
+       "meets": [],
+       "feedback": "A decay model gets smaller. The 15/6 is an exponent: 200 times (1/2) raised to the 2.5 power, which is about 35.4 mg."
+      },
+      {
+       "tier": "weak",
+       "text": "The answer is 18 hours. Half of 200 is 100, half of that is 50 and then 25 so 3 times and 3 x 6 = 18.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The answer is 18 hours."
+        }
+       ],
+       "feedback": "Your answer is right, and halving works for this friendly number. The question also asks for the 15-hour amount and for the equation you solve, which is how you would handle a number that is not a power of 2."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Properties of logarithms, and radian measure",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the properties of logarithms to solve exponential and logarithmic equations;\n2. define radian measure and relate it to arc length on the unit circle.\n\n## Materials\n\nGraphing handhelds, string and a circle template for the radian demonstration, whiteboards, the worksheet and quiz.\n\n## Starter (8 minutes)\n\nGive each pair a paper circle and a piece of string cut to the length of the radius. Ask them to lay the string along the circle edge and mark the arc. Count how many such arcs go around (a little more than 6). The angle that the arc cuts at the center is one radian.\n\n## Main activity\n\n1. Properties: log(5) + log(20) = log(100) = 2, and solve log_3(x + 2) + log_3(x - 4) = 3. Reject extraneous solutions.\n2. Solve 3^(2x - 1) = 20 by taking the log of both sides, and write the answer in exact form and as a decimal.\n3. Convert 150 degrees to radians by multiplying by pi/180.\n4. Arc length s = r times theta, and sector area (1/2)r^2 theta: a Ferris wheel and a lawn sprinkler.\n\n## Checking for understanding\n\nWhiteboards: \"Write ln 6 - ln 2 + ln 5 as one logarithm.\"\n\n## Worksheet and quiz\n\nCollect the worksheet, and give the quiz at the end of the week.",
+   "reading": {
+    "title": "Logarithm laws and measuring angles by arcs",
+    "content": "Because a logarithm is an exponent, the rules for exponents give rules for logarithms. The product rule says log_b(MN) = log_b(M) + log_b(N). The quotient rule says log_b(M/N) = log_b(M) - log_b(N). The power rule says log_b(M^k) = k log_b(M). So log(5) + log(20) = log(100) = 2, and ln 6 - ln 2 + ln 5 = ln(6 x 5/2) = ln 15. The power rule is the tool for exponential equations: if 3^(2x - 1) = 20, take the log of both sides, (2x - 1) log 3 = log 20, so 2x - 1 = log 20 / log 3, about 2.727, giving x = about 1.86.\n\nLogarithmic equations are solved by combining the logs and rewriting in exponential form. For log_3(x + 2) + log_3(x - 4) = 3, the product rule gives log_3((x + 2)(x - 4)) = 3, so (x + 2)(x - 4) = 3^3 = 27. Expand: x^2 - 2x - 8 = 27, so x^2 - 2x - 35 = 0 and (x - 7)(x + 5) = 0. The candidates are x = 7 and x = -5. A logarithm only accepts positive inputs, and x = -5 makes both x + 2 and x - 4 negative, so it is extraneous. The solution is x = 7, and checking gives log_3 9 + log_3 3 = 2 + 1 = 3. Similarly, log_2(x) + log_2(x - 2) = 3 gives x(x - 2) = 8, so x^2 - 2x - 8 = 0 and x = 4 or x = -2, and only x = 4 is valid.\n\nDegrees are a historical choice, 360 in a circle. A more natural measure uses the circle's own radius. An angle of one radian at the center of a circle cuts off an arc whose length equals the radius. The whole circumference is 2(pi) radii, so a full turn is 2(pi) radians and 180 degrees is pi radians. To convert degrees to radians, multiply by pi/180. So 150 degrees is 150(pi/180) = 5(pi)/6 radians, and 108 degrees is 3(pi)/5. To go the other way, multiply by 180/pi.\n\nRadians make the formulas simple. The arc length on a circle of radius r with central angle theta in radians is s = r(theta), and the area of the sector is (1/2)r^2(theta). A Ferris wheel of radius 30 feet turning through 120 degrees, which is 2(pi)/3 radians, has a rider travel 30 x 2(pi)/3 = 20(pi) feet, about 62.8 feet. A sprinkler arm 25 feet long sweeping 108 degrees, 3(pi)/5 radians, waters an arc of length 25 x 3(pi)/5 = 15(pi), about 47.1 feet, and a sector of area (1/2)(625)(3(pi)/5) = 187.5(pi), about 589 square feet. The formulas are only valid when theta is in radians."
+   },
+   "cards": [
+    {
+     "front": "Product rule",
+     "back": "log_b(MN) = log_b(M) + log_b(N)."
+    },
+    {
+     "front": "Quotient rule",
+     "back": "log_b(M/N) = log_b(M) - log_b(N)."
+    },
+    {
+     "front": "Power rule",
+     "back": "log_b(M^k) = k log_b(M). It brings an exponent down."
+    },
+    {
+     "front": "Domain check for logs",
+     "back": "Inputs of a logarithm must be positive. Reject solutions that make any input zero or negative."
+    },
+    {
+     "front": "Radian",
+     "back": "The angle at the center of a circle that cuts off an arc equal in length to the radius."
+    },
+    {
+     "front": "Converting degrees to radians",
+     "back": "Multiply by pi/180. So 180 degrees = pi radians."
+    },
+    {
+     "front": "Arc length",
+     "back": "s = r(theta), with theta in radians."
+    },
+    {
+     "front": "Sector area",
+     "back": "(1/2)r^2(theta), with theta in radians."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is log 5 + log 20?",
+     "options": [
+      "2",
+      "log 25",
+      "1",
+      "25"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Solve 3^(2x - 1) = 20. Which is closest to the solution?",
+     "options": [
+      "x is about 3.73",
+      "x is about 1.86",
+      "x is about 0.86",
+      "x is about 2.73"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Solve log_2(x) + log_2(x - 2) = 3.",
+     "options": [
+      "x = -2",
+      "x = 8",
+      "x = 4",
+      "x = 4 or x = -2"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is 150 degrees in radians?",
+     "options": [
+      "2(pi)/3",
+      "5(pi)/3",
+      "3(pi)/4",
+      "5(pi)/6"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "A Ferris wheel has a radius of 30 feet. How far does a rider travel as the wheel turns through 120 degrees?",
+     "options": [
+      "20(pi) feet",
+      "60(pi) feet",
+      "10(pi) feet",
+      "40(pi) feet"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Solve log_3(x + 2) + log_3(x - 4) = 3. Show how you combine the logarithms, find the candidates, and decide which are valid. Check your final answer in the original equation.",
+     "markScheme": [
+      "Combines with the product rule to get log_3((x + 2)(x - 4)) = 3",
+      "Rewrites in exponential form, (x + 2)(x - 4) = 27, and rearranges to x^2 - 2x - 35 = 0",
+      "Factors to get the candidates x = 7 and x = -5",
+      "Rejects x = -5 because the inputs would be negative, and checks x = 7: log_3 9 + log_3 3 = 2 + 1 = 3"
+     ],
+     "modelAnswer": "By the product rule, log_3(x + 2) + log_3(x - 4) = log_3((x + 2)(x - 4)) = 3. Rewriting in exponential form gives (x + 2)(x - 4) = 3^3 = 27, so x^2 - 2x - 8 = 27 and x^2 - 2x - 35 = 0, which factors as (x - 7)(x + 5) = 0. The candidates are x = 7 and x = -5. For x = -5 the inputs x + 2 and x - 4 are -3 and -9, which are negative, so it is extraneous. For x = 7: log_3 9 + log_3 3 = 2 + 1 = 3, which works.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Use the product rule: log_3((x + 2)(x - 4)) = 3. Rewrite as an exponent: (x + 2)(x - 4) = 3^3 = 27, so x^2 - 2x - 8 = 27 and x^2 - 2x - 35 = 0. That factors to (x - 7)(x + 5) = 0, so x = 7 or x = -5. x = -5 gives log of negative numbers, so it's out. x = 7: log_3 9 + log_3 3 = 2 + 1 = 3, so it works.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Use the product rule: log_3((x + 2)(x - 4)) = 3."
+        },
+        {
+         "point": 1,
+         "quote": "Rewrite as an exponent: (x + 2)(x - 4) = 3^3 = 27, so x^2 - 2x - 8 = 27 and x^2 - 2x - 35 = 0."
+        },
+        {
+         "point": 2,
+         "quote": "That factors to (x - 7)(x + 5) = 0, so x = 7 or x = -5."
+        },
+        {
+         "point": 3,
+         "quote": "x = -5 gives log of negative numbers, so it's out. x = 7: log_3 9 + log_3 3 = 2 + 1 = 3, so it works."
+        }
+       ],
+       "feedback": "Full marks. Rejecting x = -5 by looking at the inputs is exactly the domain check this unit needs."
+      },
+      {
+       "tier": "full",
+       "text": "Add logs means multiply: log_3((x + 2)(x - 4)) = 3. Exponential form: (x + 2)(x - 4) = 27, expand to x^2 - 2x - 35 = 0. Factoring, (x - 7)(x + 5) = 0, so the candidates are 7 and -5. For -5 the inside of the logs are -3 and -9, not allowed, so reject. For 7: 9 and 3, log_3 9 = 2, log_3 3 = 1, sum is 3, correct.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "log_3((x + 2)(x - 4)) = 3"
+        },
+        {
+         "point": 1,
+         "quote": "Exponential form: (x + 2)(x - 4) = 27, expand to x^2 - 2x - 35 = 0"
+        },
+        {
+         "point": 2,
+         "quote": "Factoring, (x - 7)(x + 5) = 0, so the candidates are 7 and -5"
+        },
+        {
+         "point": 3,
+         "quote": "For -5 the inside of the logs are -3 and -9, not allowed, so reject. For 7: 9 and 3, log_3 9 = 2, log_3 3 = 1, sum is 3, correct"
+        }
+       ],
+       "feedback": "All four marks. Writing the values of the logs at the end is a clean check."
+      },
+      {
+       "tier": "partial",
+       "text": "log_3((x + 2)(x - 4)) = 3. (x + 2)(x - 4) = 27 so x^2 - 2x - 35 = 0. The answers are x = 7 and x = -5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "log_3((x + 2)(x - 4)) = 3."
+        },
+        {
+         "point": 1,
+         "quote": "(x + 2)(x - 4) = 27 so x^2 - 2x - 35 = 0."
+        }
+       ],
+       "feedback": "The steps are right. A logarithm needs positive inputs, so x = -5 (which makes x + 2 and x - 4 negative) must be rejected. The only solution is x = 7."
+      },
+      {
+       "tier": "partial",
+       "text": "(x - 7)(x + 5) = 0, so x = 7 or -5. -5 doesn't work because you can't take the log of a negative, and 7 gives 2 + 1 = 3.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "(x - 7)(x + 5) = 0, so x = 7 or -5."
+        },
+        {
+         "point": 3,
+         "quote": "-5 doesn't work because you can't take the log of a negative, and 7 gives 2 + 1 = 3."
+        }
+       ],
+       "feedback": "Your factoring and the rejection are right. Show how you got the quadratic: combine the logs with the product rule and rewrite as (x + 2)(x - 4) = 27.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "log_3(x + 2) + log_3(x - 4) = 3 so x + 2 + x - 4 = 3, 2x - 2 = 3 and x = 2.5.",
+       "meets": [],
+       "feedback": "A sum of logs is the log of a product, not the log of a sum. And the 3 is the value of the log, so you rewrite in exponential form."
+      },
+      {
+       "tier": "weak",
+       "text": "log_3((x + 2)(x - 4)) = 3. So (x + 2)(x - 4) = 3 x 3 = 9 and I got x^2 - 2x - 17 = 0.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "log_3((x + 2)(x - 4)) = 3"
+        }
+       ],
+       "feedback": "The product rule step is right. log_3(u) = 3 means u = 3^3 = 27, since the 3 is an exponent. Then x^2 - 2x - 35 = 0."
+      }
+     ]
+    },
+    {
+     "prompt": "A lawn sprinkler arm is 25 feet long and sweeps through an angle of 108 degrees. Convert the angle to radians, find the length of the arc that the end of the arm travels, and find the area of the lawn that it waters. Explain why the formulas need radians.",
+     "markScheme": [
+      "Converts 108 degrees to 108(pi/180) = 3(pi)/5 radians",
+      "Finds the arc length s = r(theta) = 25 x 3(pi)/5 = 15(pi), about 47.1 feet",
+      "Finds the sector area (1/2)r^2(theta) = (1/2)(625)(3(pi)/5) = 187.5(pi), about 589 square feet",
+      "Explains that radians are defined by arc length divided by radius, so s = r(theta) holds only when theta is in radians"
+     ],
+     "modelAnswer": "108 degrees is 108(pi/180) = 3(pi)/5 radians. The arc length is s = r(theta) = 25 x 3(pi)/5 = 15(pi), about 47.1 feet. The sector area is (1/2)r^2(theta) = (1/2)(625)(3(pi)/5) = 187.5(pi), about 589 square feet. The formulas need radians because a radian is defined as the angle whose arc equals the radius, so arc length divided by radius is the angle in radians, and s = r(theta) follows directly. In degrees the formulas would need an extra factor.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "108 x pi/180 = 3 pi/5 radians. Arc length s = r theta = 25 x 3 pi/5 = 15 pi, about 47.1 feet. Area = 1/2 x 25^2 x 3 pi/5 = 1/2 x 625 x 3 pi/5 = 187.5 pi, about 589 square feet. The formulas need radians because a radian is defined as arc divided by radius, so s = r times theta only works for radians.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "108 x pi/180 = 3 pi/5 radians."
+        },
+        {
+         "point": 1,
+         "quote": "Arc length s = r theta = 25 x 3 pi/5 = 15 pi, about 47.1 feet."
+        },
+        {
+         "point": 2,
+         "quote": "Area = 1/2 x 25^2 x 3 pi/5 = 1/2 x 625 x 3 pi/5 = 187.5 pi, about 589 square feet."
+        },
+        {
+         "point": 3,
+         "quote": "The formulas need radians because a radian is defined as arc divided by radius, so s = r times theta only works for radians."
+        }
+       ],
+       "feedback": "Full marks. Your units, feet and square feet, make each answer easy to interpret."
+      },
+      {
+       "tier": "full",
+       "text": "Angle: 108/180 = 0.6 so 0.6 pi = 3 pi/5 radians. Arc: s = 25(3 pi/5) = 15 pi = 47.1 ft. Area: (1/2)(25)^2(3 pi/5) = 187.5 pi, which is 589 ft^2. A radian is exactly the angle where arc length equals radius, so arc length = radius times angle, but only if the angle is counted in radians, not degrees.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "108/180 = 0.6 so 0.6 pi = 3 pi/5 radians"
+        },
+        {
+         "point": 1,
+         "quote": "s = 25(3 pi/5) = 15 pi = 47.1 ft"
+        },
+        {
+         "point": 2,
+         "quote": "(1/2)(25)^2(3 pi/5) = 187.5 pi, which is 589 ft^2"
+        },
+        {
+         "point": 3,
+         "quote": "so arc length = radius times angle, but only if the angle is counted in radians, not degrees"
+        }
+       ],
+       "feedback": "All four marks. Expressing the angle as 0.6 of pi is a quick, accurate conversion."
+      },
+      {
+       "tier": "partial",
+       "text": "108 degrees is 3 pi/5 radians. The arc is 15 pi, 47.1 feet. The area is 25 x 3 pi/5 = 15 pi square feet.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "108 degrees is 3 pi/5 radians."
+        },
+        {
+         "point": 1,
+         "quote": "The arc is 15 pi, 47.1 feet."
+        }
+       ],
+       "feedback": "The angle and arc length are right. The area of the sector uses (1/2)r^2 theta, not r theta, so it is 187.5 pi, about 589 square feet."
+      },
+      {
+       "tier": "partial",
+       "text": "The area is (1/2)(625)(3 pi/5) = 187.5 pi, about 589 square feet. Radians are needed because they are defined with the radius.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The area is (1/2)(625)(3 pi/5) = 187.5 pi, about 589 square feet."
+        },
+        {
+         "point": 3,
+         "quote": "Radians are needed because they are defined with the radius."
+        }
+       ],
+       "feedback": "Your area and reasoning are right. Show the conversion of 108 degrees to 3 pi/5 radians and the arc length 15 pi feet.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "108 degrees x 25 = 2,700 so the arc is 2,700 feet.",
+       "meets": [],
+       "feedback": "Multiplying degrees by the radius does not give a length. Convert to radians first, 3 pi/5, and then use s = r theta."
+      },
+      {
+       "tier": "weak",
+       "text": "108 x pi/180 = 3 pi/5. Then the arc is pi r^2 = 625 pi = 1,963 feet.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "108 x pi/180 = 3 pi/5"
+        }
+       ],
+       "feedback": "The conversion is right. pi r^2 is the area of a full circle. The arc length for the angle is r times theta, 25 x 3 pi/5 = 15 pi feet."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "The unit circle and periodic models",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. extend the trigonometric functions to all real numbers using the unit circle and reference angles;\n2. model periodic phenomena with trigonometric functions, choosing the amplitude, period and midline.\n\n## Materials\n\nA large unit circle poster, graphing handhelds, string, whiteboards, the quiz and differentiated worksheet.\n\n## Starter (8 minutes)\n\nShow a Ferris wheel at the Ohio State Fair turning at a steady speed. Ask students to sketch a graph of the height of one seat against time. Compare sketches and ask what is the same for everyone: the wave repeats, it has a highest and a lowest point, and it has a period.\n\n## Main activity\n\n1. On the unit circle, define cosine and sine of an angle as the x- and y-coordinates of the point, and tangent as sine over cosine. Fill in the special angles in the first quadrant, then use reference angles and signs for the others.\n2. Evaluate sin(5(pi)/4), cos(5(pi)/4) and tan(5(pi)/4); then the same for -2(pi)/3 after finding a coterminal angle.\n3. Modeling: h(t) = 25 - 22cos((pi)t/30) for a Ferris wheel of radius 22 feet with its center 25 feet above the ground. Find the midline, amplitude, period, the height at t = 10 and when the seat first reaches 36 feet.\n\n## Checking for understanding\n\nWhiteboards: \"What is sin(5(pi)/6)? Which quadrant, which reference angle?\" Look for the reference angle (pi)/6 and a positive sine.\n\n## Quiz\n\nCollect the quiz, and then hand out the differentiated worksheet.",
+   "reading": {
+    "title": "From triangles to waves",
+    "content": "In right-triangle trigonometry, angles are limited to between 0 and 90 degrees. The unit circle removes that limit. Put an angle theta at the origin with its initial side along the positive x-axis, and let its terminal side meet the circle of radius 1 at a point. The coordinates of that point are (cos theta, sin theta), and tan theta = sin theta / cos theta wherever cos theta is not zero. This works for any angle, positive or negative, and for any real number if the angle is measured in radians. The values repeat every 2(pi) radians, so the functions are periodic.\n\nTo evaluate at an angle, find the reference angle, the acute angle between the terminal side and the x-axis, then use the quadrant to decide the sign. Take 5(pi)/4. It is in the third quadrant, since it lies between (pi) and 3(pi)/2, and its reference angle is 5(pi)/4 - (pi) = (pi)/4. At (pi)/4, sine and cosine are both the square root of 2 over 2, and in the third quadrant both are negative. So sin(5(pi)/4) = cos(5(pi)/4) = -(the square root of 2)/2, and tan(5(pi)/4) = 1. For -2(pi)/3, add 2(pi) to find a coterminal angle: 4(pi)/3, which is in the third quadrant with reference angle (pi)/3. So sin = -(the square root of 3)/2, cos = -1/2, and tan = the square root of 3. Also, sin(5(pi)/6) = 1/2, from the second quadrant with reference angle (pi)/6, and tan(7(pi)/4) = -1.\n\nSinusoids model repeating processes. The function y = A sin(Bx) + D, or the cosine version, has amplitude |A|, period 2(pi)/|B| and midline y = D. For y = 3 sin(2x) + 1, the amplitude is 3, the period is (pi) and the midline is y = 1. A Ferris wheel of radius 22 feet with its center 25 feet above the ground and one turn every 60 seconds, starting at the bottom, is modeled by h(t) = 25 - 22 cos((pi)t/30). The midline is 25, the amplitude is 22 and the period is 2(pi)/((pi)/30) = 60 seconds. The highest point is 25 + 22 = 47 feet and the lowest is 3 feet. At t = 10, h = 25 - 22 cos((pi)/3) = 25 - 11 = 14 feet. To find when the seat first reaches 36 feet, solve 25 - 22 cos((pi)t/30) = 36, so cos((pi)t/30) = -1/2, and the first angle is 2(pi)/3, giving (pi)t/30 = 2(pi)/3 and t = 20 seconds.\n\nSolving trigonometric equations uses the same tools. To solve sin(theta) = -1/2 on one turn, the reference angle is (pi)/6 and sine is negative in the third and fourth quadrants, so theta = 7(pi)/6 and 11(pi)/6."
+   },
+   "cards": [
+    {
+     "front": "Unit circle",
+     "back": "The circle of radius 1 centered at the origin. A point on it has coordinates (cos theta, sin theta)."
+    },
+    {
+     "front": "Reference angle",
+     "back": "The acute angle between the terminal side of an angle and the x-axis."
+    },
+    {
+     "front": "Coterminal angles",
+     "back": "Angles that differ by a multiple of 2(pi) and share a terminal side."
+    },
+    {
+     "front": "Signs by quadrant",
+     "back": "In quadrant I all are positive, in II sine, in III tangent, in IV cosine."
+    },
+    {
+     "front": "Amplitude",
+     "back": "In y = A sin(Bx) + D, the amplitude is |A|, half the distance from the lowest to the highest value."
+    },
+    {
+     "front": "Period",
+     "back": "The length of one cycle. For sine and cosine with factor B it is 2(pi)/|B|."
+    },
+    {
+     "front": "Midline",
+     "back": "The horizontal line y = D halfway between the maximum and minimum."
+    },
+    {
+     "front": "Sinusoidal model",
+     "back": "A function such as h(t) = 25 - 22 cos((pi)t/30) that models a repeating process."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is sin(5(pi)/6)?",
+     "options": [
+      "1/2",
+      "-1/2",
+      "(the square root of 3)/2",
+      "-(the square root of 3)/2"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is tan(7(pi)/4)?",
+     "options": [
+      "1",
+      "-1",
+      "Undefined",
+      "0"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the period of y = 3 sin(2x) + 1?",
+     "options": [
+      "2(pi)",
+      "(pi)/2",
+      "(pi)",
+      "4(pi)"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A Ferris wheel seat has height h(t) = 25 - 22 cos((pi)t/30) feet. What is its greatest height?",
+     "options": [
+      "22 feet",
+      "25 feet",
+      "69 feet",
+      "47 feet"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Solve sin(theta) = -1/2 for theta between 0 and 2(pi).",
+     "options": [
+      "(pi)/6 and 5(pi)/6",
+      "7(pi)/6 and 11(pi)/6",
+      "5(pi)/6 and 7(pi)/6",
+      "4(pi)/3 and 5(pi)/3"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Find the exact values of sin, cos and tan of 5(pi)/4, and of -2(pi)/3. For each angle, name the reference angle and the quadrant, and explain how you chose the signs.",
+     "markScheme": [
+      "Identifies 5(pi)/4 as in quadrant III with reference angle (pi)/4",
+      "Gives sin = -(the square root of 2)/2, cos = -(the square root of 2)/2 and tan = 1 for 5(pi)/4",
+      "Finds the coterminal angle 4(pi)/3 for -2(pi)/3, in quadrant III with reference angle (pi)/3",
+      "Gives sin = -(the square root of 3)/2, cos = -1/2 and tan = the square root of 3, with the signs explained by the quadrant"
+     ],
+     "modelAnswer": "5(pi)/4 is in quadrant III, since it lies between (pi) and 3(pi)/2, and its reference angle is (pi)/4. At (pi)/4 sine and cosine are both (the square root of 2)/2, and both are negative in quadrant III, so sin = cos = -(the square root of 2)/2 and tan = 1. The angle -2(pi)/3 is coterminal with 4(pi)/3, which is in quadrant III with reference angle (pi)/3. At (pi)/3, sine is (the square root of 3)/2 and cosine is 1/2, so sin = -(the square root of 3)/2, cos = -1/2 and tan = the square root of 3, with tangent positive in quadrant III.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "5(pi)/4 is a bit past (pi), so it's in the third quadrant, and the reference angle is (pi)/4. sin and cos are both negative in quadrant III, so both are -sqrt(2)/2, and tan is positive, 1. For -2(pi)/3, add 2(pi) to get 4(pi)/3, which is in quadrant III with reference angle (pi)/3. sin = -sqrt(3)/2, cos = -1/2, tan = sqrt(3). Both negative and tan is positive, same quadrant as before.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a bit past (pi), so it's in the third quadrant, and the reference angle is (pi)/4"
+        },
+        {
+         "point": 1,
+         "quote": "sin and cos are both negative in quadrant III, so both are -sqrt(2)/2, and tan is positive, 1."
+        },
+        {
+         "point": 2,
+         "quote": "add 2(pi) to get 4(pi)/3, which is in quadrant III with reference angle (pi)/3"
+        },
+        {
+         "point": 3,
+         "quote": "sin = -sqrt(3)/2, cos = -1/2, tan = sqrt(3). Both negative and tan is positive, same quadrant as before."
+        }
+       ],
+       "feedback": "Full marks. Using the same quadrant for both angles let you reuse the sign rule."
+      },
+      {
+       "tier": "full",
+       "text": "For 5(pi)/4: 5(pi)/4 - (pi) = (pi)/4, the reference angle, quadrant III. The (pi)/4 values are sqrt(2)/2 for both. Signs in quadrant III are negative for sine and cosine. So sin = cos = -sqrt(2)/2 and tan = (-sqrt2/2)/(-sqrt2/2) = 1. For -2(pi)/3: going around the other way is the same as 2(pi) - 2(pi)/3 = 4(pi)/3, third quadrant, reference (pi)/3. From the (pi)/3 values, sin = -sqrt(3)/2, cos = -1/2 and tan = sqrt(3).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "5(pi)/4 - (pi) = (pi)/4, the reference angle, quadrant III"
+        },
+        {
+         "point": 1,
+         "quote": "The (pi)/4 values are sqrt(2)/2 for both. Signs in quadrant III are negative for sine and cosine. So sin = cos = -sqrt(2)/2 and tan = (-sqrt2/2)/(-sqrt2/2) = 1"
+        },
+        {
+         "point": 2,
+         "quote": "going around the other way is the same as 2(pi) - 2(pi)/3 = 4(pi)/3, third quadrant, reference (pi)/3"
+        },
+        {
+         "point": 3,
+         "quote": "From the (pi)/3 values, sin = -sqrt(3)/2, cos = -1/2 and tan = sqrt(3)"
+        }
+       ],
+       "feedback": "All four marks. Computing the tangent as a quotient of the two values is a good check on its sign."
+      },
+      {
+       "tier": "partial",
+       "text": "5(pi)/4 is in the third quadrant with reference angle (pi)/4. sin = -sqrt(2)/2, cos = -sqrt(2)/2, tan = 1. For -2(pi)/3 I think it's in the second quadrant.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "5(pi)/4 is in the third quadrant with reference angle (pi)/4."
+        },
+        {
+         "point": 1,
+         "quote": "sin = -sqrt(2)/2, cos = -sqrt(2)/2, tan = 1."
+        }
+       ],
+       "feedback": "Your first angle is right. The angle -2(pi)/3 turns clockwise two thirds of the way to (pi), which is the same as 4(pi)/3 and so in the third quadrant, not the second."
+      },
+      {
+       "tier": "partial",
+       "text": "-2(pi)/3 is coterminal with 4(pi)/3, in the third quadrant with reference angle (pi)/3. sin = -sqrt(3)/2, cos = -1/2, tan = sqrt(3). For 5(pi)/4, sin = -1/2.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "-2(pi)/3 is coterminal with 4(pi)/3, in the third quadrant with reference angle (pi)/3."
+        },
+        {
+         "point": 3,
+         "quote": "sin = -sqrt(3)/2, cos = -1/2, tan = sqrt(3)."
+        }
+       ],
+       "feedback": "Your second angle is right. For 5(pi)/4 the reference angle is (pi)/4, not (pi)/6, so sine is -sqrt(2)/2. The value 1/2 belongs to (pi)/6.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "5(pi)/4 is the same as 5 x 45 = 225 so sin is 225 and cos is 225.",
+       "meets": [],
+       "feedback": "225 degrees is a correct conversion, but sine and cosine are numbers between -1 and 1, not the angle. Use the reference angle, 45 degrees, to find sqrt(2)/2, and apply signs."
+      },
+      {
+       "tier": "weak",
+       "text": "5(pi)/4 is in the third quadrant. All the values are positive since it's a unit circle.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "5(pi)/4 is in the third quadrant"
+        }
+       ],
+       "feedback": "The quadrant is right. In the third quadrant, x and y are both negative, so sine and cosine are negative. Only tangent is positive there."
+      }
+     ]
+    },
+    {
+     "prompt": "A Ferris wheel at the Ohio State Fair has a radius of 22 feet and a center 25 feet above the ground. It turns once every 60 seconds, and a rider's height starts at the bottom: h(t) = 25 - 22 cos((pi)t/30). Give the midline, amplitude and period. Find the height at t = 10 seconds, and find the first time the rider reaches 36 feet.",
+     "markScheme": [
+      "Gives the midline 25, the amplitude 22 and the period 60 seconds (2(pi) divided by (pi)/30)",
+      "Finds h(10) = 25 - 22 cos((pi)/3) = 14 feet",
+      "Sets 25 - 22 cos((pi)t/30) = 36 and gets cos((pi)t/30) = -1/2",
+      "Finds the first solution (pi)t/30 = 2(pi)/3, so t = 20 seconds"
+     ],
+     "modelAnswer": "The midline is y = 25, the amplitude is 22 and the period is 2(pi)/((pi)/30) = 60 seconds. At t = 10, h = 25 - 22 cos((pi)/3) = 25 - 22(1/2) = 14 feet. For 36 feet: 25 - 22 cos((pi)t/30) = 36, so -22 cos((pi)t/30) = 11 and cos((pi)t/30) = -1/2. The smallest positive angle with cosine -1/2 is 2(pi)/3, so (pi)t/30 = 2(pi)/3 and t = 20 seconds.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Midline is 25, amplitude is 22, and period is 2 pi divided by pi/30, which is 60 seconds. h(10) = 25 - 22 cos(pi/3) = 25 - 11 = 14 feet. For 36: -22 cos(pi t/30) = 11, so cos(pi t/30) = -1/2. The first angle with cosine -1/2 is 2 pi/3, so pi t/30 = 2 pi/3 and t = 20 seconds.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Midline is 25, amplitude is 22, and period is 2 pi divided by pi/30, which is 60 seconds."
+        },
+        {
+         "point": 1,
+         "quote": "h(10) = 25 - 22 cos(pi/3) = 25 - 11 = 14 feet."
+        },
+        {
+         "point": 2,
+         "quote": "For 36: -22 cos(pi t/30) = 11, so cos(pi t/30) = -1/2."
+        },
+        {
+         "point": 3,
+         "quote": "The first angle with cosine -1/2 is 2 pi/3, so pi t/30 = 2 pi/3 and t = 20 seconds."
+        }
+       ],
+       "feedback": "Full marks. Choosing the smallest positive angle is what gives the first time."
+      },
+      {
+       "tier": "full",
+       "text": "Reading the equation: the 25 is the midline (center height), 22 is the amplitude (the radius), and the 60 s period comes from 2 pi / (pi/30). Height at 10 s: cos(pi/3) = 1/2, so 25 - 11 = 14 ft, which is a quarter-ish of the way up from the bottom (3 ft). Height 36: 25 - 22cos(x) = 36 gives cos(x) = -1/2, x = 2 pi/3 first, so t = 30 x (2/3) = 20 s.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "the 25 is the midline (center height), 22 is the amplitude (the radius), and the 60 s period comes from 2 pi / (pi/30)"
+        },
+        {
+         "point": 1,
+         "quote": "cos(pi/3) = 1/2, so 25 - 11 = 14 ft, which is a quarter-ish of the way up from the bottom (3 ft)"
+        },
+        {
+         "point": 2,
+         "quote": "25 - 22cos(x) = 36 gives cos(x) = -1/2"
+        },
+        {
+         "point": 3,
+         "quote": "x = 2 pi/3 first, so t = 30 x (2/3) = 20 s"
+        }
+       ],
+       "feedback": "All four marks. Sense-checking that 14 feet is a bit up from the bottom shows you are reading the model."
+      },
+      {
+       "tier": "partial",
+       "text": "Midline 25, amplitude 22, period 60 seconds. h(10) = 25 - 11 = 14 feet. To find 36 feet, 36 = 25 - 22 cos(...), so cos = 11/22 = 1/2 and t = 10.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Midline 25, amplitude 22, period 60 seconds."
+        },
+        {
+         "point": 1,
+         "quote": "h(10) = 25 - 11 = 14 feet."
+        }
+       ],
+       "feedback": "Your first two parts are right. When you move terms, 25 - 22cos = 36 gives cos = -1/2, with a negative sign. A cosine of +1/2 would give t = 10 and a height of 14 feet again."
+      },
+      {
+       "tier": "partial",
+       "text": "cos(pi t/30) = -1/2. The first time is t = 20 seconds. The amplitude is 47 and the period is 30.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "cos(pi t/30) = -1/2."
+        },
+        {
+         "point": 3,
+         "quote": "The first time is t = 20 seconds."
+        }
+       ],
+       "feedback": "Your solving is right. The amplitude is 22, half of the difference between the highest, 47, and the lowest, 3. And the period is 60 seconds, not 30, since 2 pi divided by pi/30 is 60.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The midline is 22 since it's the biggest number and the amplitude is 25.",
+       "meets": [],
+       "feedback": "The numbers are the other way around. The center of the wheel is 25 feet up, which is the midline, and the radius, 22 feet, is the amplitude."
+      },
+      {
+       "tier": "weak",
+       "text": "h(10) = 14 feet. To find when it's 36 feet I used 36 / 22 = 1.64 and that's the time.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "h(10) = 14 feet."
+        }
+       ],
+       "feedback": "The height at 10 seconds is right. To find when the height is 36, you solve the equation 25 - 22 cos((pi)t/30) = 36 for t. Dividing 36 by 22 does not use the model."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Calculus readiness: limits informally and rates of change",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the end behavior and asymptotes of a function using limit notation informally;\n2. find an average rate of change over an interval and interpret it as the slope of a secant line.\n\n## Materials\n\nGraphing handhelds, tables of values, whiteboards, the problem set and differentiated worksheet.\n\n## Starter (8 minutes)\n\nDisplay f(x) = (4x + 1)/(x^2 + 3). Ask students to compute f(10), f(100) and f(1000), and say what is happening. Introduce the notation \"as x goes to infinity, f(x) approaches 0\" and write it with the limit symbol. Discuss how the table shows the behavior in a way the formula hides.\n\n## Main activity\n\n1. End behavior of rational functions with limits: the limit as x goes to infinity of (3x^2 + 1)/(x^2 - 5) is 3. Compare degrees.\n2. Vertical asymptotes with one-sided limits: for f(x) = (2x^2 - 8)/(x^2 - 4x + 3), find the limits from each side at x = 3 using the signs of the factors.\n3. Average rate of change of f(x) = x^2 - 3x from x = 1 to x = 4, the equation of the secant line, and then shorter intervals starting at 1.\n\n## Checking for understanding\n\nWhiteboards: \"The average rate of change of a function on an interval is -3. What does that mean for the secant line?\"\n\n## Problem set\n\nCollect the problem set the next day, along with the differentiated worksheet.",
+   "reading": {
+    "title": "What happens at the edges, and how fast on average",
+    "content": "Calculus begins with two questions: what a function approaches, and how fast it is changing. You can ask both with only precalculus tools. A limit describes what output a function approaches as the input approaches a value. We write \"the limit as x goes to infinity of f(x) = L\" when f(x) gets close to L as x grows without bound. For a rational function, compare the degrees. The limit as x goes to infinity of (3x^2 + 1)/(x^2 - 5) is 3, the ratio of the leading coefficients. For (4x + 1)/(x^2 + 3), the denominator grows faster, so the limit is 0. The horizontal asymptote is the line y = L.\n\nVertical asymptotes show up as limits that grow without bound. We write \"the limit as x goes to 3 from the right of f(x) = infinity\" if f(x) becomes arbitrarily large and positive as x gets close to 3 from the right side. Consider f(x) = (2x^2 - 8)/(x^2 - 4x + 3), which factors as 2(x - 2)(x + 2)/((x - 1)(x - 3)). The denominator is zero at x = 1 and x = 3, and the numerator is not zero at either, so both are vertical asymptotes. Near x = 3 from the right, the numerator is about 2(9) - 8 = 10, positive. The factor x - 1 is about 2, positive, and x - 3 is a small positive number, so the denominator is a small positive number and the quotient grows to positive infinity. From the left, x - 3 is a small negative number, so the denominator is a small negative number, and the quotient tends to negative infinity. The horizontal asymptote is y = 2, since the degrees are equal and the leading coefficients are 2 and 1.\n\nTo measure how fast a function changes, use the average rate of change, (f(b) - f(a))/(b - a), which is the slope of the secant line through the points (a, f(a)) and (b, f(b)). For f(x) = x^2 - 3x, f(1) = -2 and f(4) = 4, so the average rate of change from 1 to 4 is 6/3 = 2. The secant line has slope 2 and passes through (1, -2), so y + 2 = 2(x - 1), which is y = 2x - 4. Now shrink the interval: from x = 1 to x = 1.1, f(1.1) = 1.21 - 3.3 = -2.09, so the rate is (-2.09 + 2)/0.1 = -0.9. From 1 to 1.01 it is about -0.99. The rates are approaching -1. That number is the instantaneous rate of change at x = 1, the slope of the tangent line. The idea of making the interval smaller and smaller is the beginning of the derivative. A square root, f(x) = the square root of x, has average rate (3 - 2)/(9 - 4) = 0.2 from x = 4 to x = 9."
+   },
+   "cards": [
+    {
+     "front": "Limit at infinity",
+     "back": "The value L that f(x) approaches as x grows without bound. It gives a horizontal asymptote y = L."
+    },
+    {
+     "front": "One-sided limit",
+     "back": "The behavior of f(x) as x approaches a value from the left or the right only."
+    },
+    {
+     "front": "Infinite limit",
+     "back": "When f(x) grows without bound near a value, written as a limit equal to infinity or negative infinity. It gives a vertical asymptote."
+    },
+    {
+     "front": "Average rate of change",
+     "back": "(f(b) - f(a))/(b - a). The slope of the secant line between two points."
+    },
+    {
+     "front": "Secant line",
+     "back": "A line through two points on a graph."
+    },
+    {
+     "front": "Tangent line",
+     "back": "A line that touches a curve at one point and has the same direction as the curve there."
+    },
+    {
+     "front": "Instantaneous rate of change",
+     "back": "The value the average rates approach as the interval shrinks to a single point."
+    },
+    {
+     "front": "Comparing degrees",
+     "back": "For a rational function, a bigger degree on the bottom gives a limit of 0, equal degrees give the ratio of leading coefficients."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the limit as x goes to infinity of (3x^2 + 1)/(x^2 - 5)?",
+     "options": [
+      "0",
+      "3",
+      "Infinity",
+      "-1/5"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What does (4x + 1)/(x^2 + 3) approach as x goes to infinity?",
+     "options": [
+      "4",
+      "Infinity",
+      "1/3",
+      "0"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "As x approaches 3 from the right, what does 1/(x - 3) do?",
+     "options": [
+      "It approaches negative infinity",
+      "It approaches 0",
+      "It grows without bound to positive infinity",
+      "It approaches 3"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the average rate of change of f(x) = x^2 - 3x from x = 1 to x = 4?",
+     "options": [
+      "2",
+      "6",
+      "1",
+      "3"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is the average rate of change of f(x) = the square root of x from x = 4 to x = 9?",
+     "options": [
+      "1",
+      "0.2",
+      "5",
+      "0.5"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Let f(x) = (2x^2 - 8)/(x^2 - 4x + 3). Find its vertical asymptotes and its horizontal asymptote. Using the signs of the factors, describe the behavior of f as x approaches 3 from the right and from the left, using limit notation.",
+     "markScheme": [
+      "Factors the denominator as (x - 1)(x - 3) and states the vertical asymptotes x = 1 and x = 3",
+      "States the horizontal asymptote y = 2, so the limit as x goes to infinity is 2",
+      "Says that as x approaches 3 from the right the denominator is small and positive and the numerator is positive, so f goes to positive infinity",
+      "Says that as x approaches 3 from the left the denominator is small and negative, so f goes to negative infinity"
+     ],
+     "modelAnswer": "The denominator factors as (x - 1)(x - 3), which is zero at x = 1 and x = 3, and the numerator 2(x - 2)(x + 2) is not zero at either, so there are vertical asymptotes x = 1 and x = 3. The degrees are equal, with leading coefficients 2 and 1, so the limit as x goes to infinity is 2 and the horizontal asymptote is y = 2. Near x = 3 the numerator is about 10, which is positive, and x - 1 is about 2, which is positive. From the right, x - 3 is a small positive number, so f goes to positive infinity. From the left, x - 3 is a small negative number, so f goes to negative infinity.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The bottom is (x - 1)(x - 3), so the vertical asymptotes are x = 1 and x = 3, since the top, 2(x - 2)(x + 2), isn't zero at either. Degrees are equal so the horizontal asymptote is y = 2/1 = 2, and the limit as x goes to infinity is 2. As x goes to 3 from the right, the top is near 10, x - 1 is near 2, and x - 3 is a tiny positive number, so f goes to positive infinity. From the left x - 3 is a tiny negative number, so the whole thing goes to negative infinity.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The bottom is (x - 1)(x - 3), so the vertical asymptotes are x = 1 and x = 3, since the top, 2(x - 2)(x + 2), isn't zero at either."
+        },
+        {
+         "point": 1,
+         "quote": "Degrees are equal so the horizontal asymptote is y = 2/1 = 2, and the limit as x goes to infinity is 2."
+        },
+        {
+         "point": 2,
+         "quote": "As x goes to 3 from the right, the top is near 10, x - 1 is near 2, and x - 3 is a tiny positive number, so f goes to positive infinity."
+        },
+        {
+         "point": 3,
+         "quote": "From the left x - 3 is a tiny negative number, so the whole thing goes to negative infinity."
+        }
+       ],
+       "feedback": "Full marks. Following each factor's sign near x = 3 is exactly how to read the behavior at an asymptote."
+      },
+      {
+       "tier": "full",
+       "text": "Factor everything: 2(x - 2)(x + 2) over (x - 1)(x - 3). Nothing cancels, so x = 1 and x = 3 are both vertical asymptotes. Leading terms 2x^2 over x^2 give y = 2 as a horizontal asymptote. At 3 from the right, numerator positive (about 10), (x - 1) positive, (x - 3) small positive, so the limit is positive infinity. At 3 from the left, only (x - 3) changes sign to small negative, so the limit is negative infinity.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Nothing cancels, so x = 1 and x = 3 are both vertical asymptotes"
+        },
+        {
+         "point": 1,
+         "quote": "Leading terms 2x^2 over x^2 give y = 2 as a horizontal asymptote"
+        },
+        {
+         "point": 2,
+         "quote": "numerator positive (about 10), (x - 1) positive, (x - 3) small positive, so the limit is positive infinity"
+        },
+        {
+         "point": 3,
+         "quote": "only (x - 3) changes sign to small negative, so the limit is negative infinity"
+        }
+       ],
+       "feedback": "All four marks. Noting that only one factor changes sign across the asymptote is the efficient way to see it."
+      },
+      {
+       "tier": "partial",
+       "text": "The vertical asymptotes are x = 1 and x = 3. The horizontal asymptote is y = 2. At x = 3 it goes to infinity from both sides.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The vertical asymptotes are x = 1 and x = 3."
+        },
+        {
+         "point": 1,
+         "quote": "The horizontal asymptote is y = 2."
+        }
+       ],
+       "feedback": "The asymptotes are right. The sign of x - 3 changes across 3, so the function goes to positive infinity from the right and negative infinity from the left."
+      },
+      {
+       "tier": "partial",
+       "text": "From the right it goes to positive infinity. From the left it goes to negative infinity. The asymptotes are x = 2 and x = -2.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "From the right it goes to positive infinity."
+        },
+        {
+         "point": 3,
+         "quote": "From the left it goes to negative infinity."
+        }
+       ],
+       "feedback": "The one-sided behavior is right. The values x = 2 and x = -2 are zeros of the numerator, so they are x-intercepts. The vertical asymptotes come from the denominator: x = 1 and x = 3.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The horizontal asymptote is y = 0 because the bottom has x^2 and that's a bigger power.",
+       "meets": [],
+       "feedback": "The top also has x^2, so the degrees are equal. The horizontal asymptote is the ratio of leading coefficients, 2/1 = 2."
+      },
+      {
+       "tier": "weak",
+       "text": "x = 1 and x = 3 are vertical asymptotes. The function is 0 at x = 3 because (x - 3) is zero.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x = 1 and x = 3 are vertical asymptotes."
+        }
+       ],
+       "feedback": "The asymptotes are right. A zero in the denominator makes the function blow up, not equal zero. Near x = 3 the quotient becomes very large in size."
+      }
+     ]
+    },
+    {
+     "prompt": "For f(x) = x^2 - 3x: (a) find the average rate of change from x = 1 to x = 4 and the equation of the secant line; (b) find the average rate of change from x = 1 to x = 1.1; (c) say what number the average rates seem to approach as the interval shrinks, and what it represents.",
+     "markScheme": [
+      "Finds the average rate of change from 1 to 4 is (4 - (-2))/3 = 2",
+      "Finds the secant line y = 2x - 4 through (1, -2)",
+      "Finds the average rate from 1 to 1.1 is -0.9",
+      "Says the rates approach -1, the instantaneous rate of change at x = 1, the slope of the tangent line"
+     ],
+     "modelAnswer": "(a) f(1) = -2 and f(4) = 4, so the average rate is (4 - (-2))/(4 - 1) = 6/3 = 2. The secant line passes through (1, -2) with slope 2, so y + 2 = 2(x - 1), which is y = 2x - 4. (b) f(1.1) = 1.21 - 3.3 = -2.09, so the rate is (-2.09 - (-2))/0.1 = -0.9. (c) As the interval shrinks the rates get closer to -1 (from 1 to 1.01 it is about -0.99). That number is the instantaneous rate of change of f at x = 1, which is the slope of the tangent line there.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) f(1) = -2 and f(4) = 4 so the rate is 6/3 = 2. The secant line is y + 2 = 2(x - 1), so y = 2x - 4. (b) f(1.1) = 1.21 - 3.3 = -2.09 and the rate is (-2.09 + 2)/0.1 = -0.9. (c) It looks like they're getting close to -1, which is the instantaneous rate at x = 1, the slope of the tangent line.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = -2 and f(4) = 4 so the rate is 6/3 = 2."
+        },
+        {
+         "point": 1,
+         "quote": "The secant line is y + 2 = 2(x - 1), so y = 2x - 4."
+        },
+        {
+         "point": 2,
+         "quote": "f(1.1) = 1.21 - 3.3 = -2.09 and the rate is (-2.09 + 2)/0.1 = -0.9."
+        },
+        {
+         "point": 3,
+         "quote": "It looks like they're getting close to -1, which is the instantaneous rate at x = 1, the slope of the tangent line."
+        }
+       ],
+       "feedback": "Full marks. Your answer to (c) connects the shrinking intervals to the tangent line, which is the key idea of calculus."
+      },
+      {
+       "tier": "full",
+       "text": "(a) The slope of the line through (1, -2) and (4, 4) is (4 + 2)/(4 - 1) = 2, and using point-slope y = 2(x - 1) - 2 = 2x - 4. (b) f(1.1) = -2.09, so the slope between 1 and 1.1 is -0.09/0.1 = -0.9. (c) As the second point slides toward 1 the secant slope goes 2, then -0.9, then -0.99 for 1.01, so it approaches -1, the tangent slope, the instantaneous rate at 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(4 + 2)/(4 - 1) = 2"
+        },
+        {
+         "point": 1,
+         "quote": "using point-slope y = 2(x - 1) - 2 = 2x - 4"
+        },
+        {
+         "point": 2,
+         "quote": "f(1.1) = -2.09, so the slope between 1 and 1.1 is -0.09/0.1 = -0.9"
+        },
+        {
+         "point": 3,
+         "quote": "As the second point slides toward 1 the secant slope goes 2, then -0.9, then -0.99 for 1.01, so it approaches -1, the tangent slope, the instantaneous rate at 1"
+        }
+       ],
+       "feedback": "All four marks. Adding the value for 1.01 gives a sense of the pattern."
+      },
+      {
+       "tier": "partial",
+       "text": "The average rate is 6/3 = 2. The secant line is y = 2x - 4. (b) The rate from 1 to 1.1 is 0.1. (c) The rates go to zero.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The average rate is 6/3 = 2."
+        },
+        {
+         "point": 1,
+         "quote": "The secant line is y = 2x - 4."
+        }
+       ],
+       "feedback": "Part (a) is right. In (b) subtract the outputs: f(1.1) - f(1) = -0.09, then divide by 0.1 to get -0.9. The rates approach -1, not 0."
+      },
+      {
+       "tier": "partial",
+       "text": "(b) is -0.9. (c) the rates approach -1, which is the tangent slope at x = 1. (a) The rate is 4 - (-2) = 6.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "(b) is -0.9."
+        },
+        {
+         "point": 3,
+         "quote": "(c) the rates approach -1, which is the tangent slope at x = 1."
+        }
+       ],
+       "feedback": "Parts (b) and (c) are right. In (a) divide the change in outputs by the change in inputs: 6/3 = 2, and then find the secant line y = 2x - 4.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "(a) f(4) - f(1) = 2 so the rate is 2 and the line is y = 2x. (b) 1.1 - 1 = 0.1. (c) 0.1.",
+       "meets": [],
+       "feedback": "A rate needs the change in f divided by the change in x. The secant line goes through (1, -2) with slope 2, so it is y = 2x - 4 and not y = 2x."
+      },
+      {
+       "tier": "weak",
+       "text": "The rates get close to the slope of the tangent line, the instantaneous rate. I didn't calculate them because I know the answer.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The rates get close to the slope of the tangent line, the instantaneous rate."
+        }
+       ],
+       "feedback": "Your idea for (c) is right, but the question asks you to compute the rates in (a) and (b), which is how you see the pattern: 2, -0.9, and then closer to -1."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

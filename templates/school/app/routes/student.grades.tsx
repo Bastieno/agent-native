@@ -1,4 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { termWord } from "@shared/school-words";
+import { formatGpa, type Gpa } from "@shared/gpa";
+import { useSchoolConfig } from "@/hooks/use-school-config";
 import { agentNativePath } from "@agent-native/core/client";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
@@ -45,6 +48,7 @@ type TermGrades = {
   summary: {
     percentage: number | null;
     grade: string | null;
+    gpa?: Gpa | null;
     passMark: number;
     handedIn: number;
     set: number;
@@ -74,6 +78,7 @@ type TermGrades = {
  */
 export default function StudentGrades() {
   const { sync } = useNavigationState();
+  const { config } = useSchoolConfig();
   const [open, setOpen] = useState<string | null>(null);
 
   useEffect(() => {
@@ -104,7 +109,7 @@ export default function StudentGrades() {
       <div>
         <h1 className="text-xl font-semibold">My Grades</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          How your term is going, subject by subject.
+          How your {termWord(config).term} is going, subject by subject.
         </p>
       </div>
 
@@ -150,19 +155,21 @@ function TermSummary({
   summary: NonNullable<TermGrades["summary"]>;
 }) {
   const origin = useOrigin();
+  const { config } = useSchoolConfig();
+  const { term, Term } = termWord(config);
   const { formatDate } = useSchoolDates();
   const direction =
     summary.earlier !== null && summary.later !== null
       ? summary.later > summary.earlier
-        ? `Up from ${summary.earlier}% earlier in the term`
+        ? `Up from ${summary.earlier}% earlier in the ${term}`
         : summary.later < summary.earlier
-          ? `Down from ${summary.earlier}% earlier in the term`
-          : "Steady through the term"
+          ? `Down from ${summary.earlier}% earlier in the ${term}`
+          : `Steady through the ${term}`
       : null;
   return (
     <section className="grid gap-4 sm:grid-cols-3">
       <div className="rounded-lg border bg-card p-4">
-        <p className="text-xs text-muted-foreground">Term average</p>
+        <p className="text-xs text-muted-foreground">{Term} average</p>
         <p className="mt-1 text-2xl font-semibold">
           {summary.percentage ?? "—"}%
           {summary.grade ? (
@@ -171,6 +178,11 @@ function TermSummary({
             </span>
           ) : null}
         </p>
+        {summary.gpa ? (
+          <p className="mt-1 text-xs text-muted-foreground">
+            GPA {formatGpa(summary.gpa)}
+          </p>
+        ) : null}
         {direction ? (
           <p className="mt-1 text-xs text-muted-foreground">{direction}</p>
         ) : null}

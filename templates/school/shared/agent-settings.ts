@@ -62,8 +62,12 @@ export const DEFAULT_AGENT_SETTINGS: AgentSettings = {
   dailySchoolLimit: 500,
 };
 
-/** The time a school day is counted in when the school has not said. */
-export const DEFAULT_SCHOOL_TIMEZONE = "Africa/Lagos";
+/**
+ * The time a school day is counted in when the school has not said. UTC, like
+ * the dates on screen: no country's clock is assumed, and the setup check
+ * names the gap so the school sets its own.
+ */
+export const DEFAULT_SCHOOL_TIMEZONE = "UTC";
 
 function isLimit(v: unknown): v is number | null {
   return v === null || (typeof v === "number" && Number.isFinite(v) && v >= 0);

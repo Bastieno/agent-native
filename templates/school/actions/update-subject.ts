@@ -4,6 +4,7 @@ import { writeAppState } from "@agent-native/core/application-state";
 import { getDb, schema } from "../server/db/index.js";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
+import { checkCourseLevel } from "../server/lib/course-level.js";
 import { jsonish } from "../shared/zod-json.js";
 import { assertSubjectInSchool } from "../server/lib/curriculum-access.js";
 import { resolveGradeLevelIds } from "../server/lib/subject-year-groups.js";
@@ -24,6 +25,22 @@ export default defineAction({
     color: z.string().optional().describe("Hex color for UI, e.g. '#3b82f6'"),
     departmentId: z.string().optional().describe("Department ID"),
     status: z.enum(["active", "archived"]).optional(),
+    credits: z.coerce
+      .number()
+      .min(0.25)
+      .max(4)
+      .nullable()
+      .optional()
+      .describe(
+        "Credit the course earns, which weights the GPA (1 full year, 0.5 half). null goes back to one credit.",
+      ),
+    courseLevel: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        "A level from the school's course levels ('Honors', 'AP') that weights this subject's GPA. null makes it a standard course.",
+      ),
     yearGroups: jsonish(z.array(z.string()))
       .optional()
       .describe(
@@ -46,6 +63,10 @@ export default defineAction({
     if (updates.departmentId !== undefined)
       set.departmentId = updates.departmentId;
     if (updates.status !== undefined) set.status = updates.status;
+    if (updates.credits !== undefined)
+      set.credits = updates.credits === null ? null : String(updates.credits);
+    if (updates.courseLevel !== undefined)
+      set.courseLevel = await checkCourseLevel(orgId, updates.courseLevel);
     if (updates.yearGroups !== undefined) {
       const ids = updates.yearGroups.length
         ? await resolveGradeLevelIds(updates.yearGroups, orgId)

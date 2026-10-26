@@ -855,7 +855,7 @@ pnpm action get-my-agent-access   # whether the signed-in person has you now, an
   settings are read — and from then on only the stored values are enforced.
   No limit is a stored `null`.
 - **Daily limit per role**, counted per person per school day in the
-  school's timezone (Africa/Lagos when unset). Defaults: learner 30, teacher
+  school's timezone (UTC when unset). Defaults: learner 30, teacher
   200, admin none. Past it the person gets a calm reply in the chat.
 - **A daily total for the whole school** (`dailySchoolLimit`, default 500),
   every way in counted together: chat in the app, sub-agents, jobs,
@@ -940,6 +940,12 @@ school's assistant is not involved. What it sees is set in
   limit). Past it, the app gets a calm reply and no model runs. That
   allowance covers `ask_app` only; the school's daily total (A4b) covers
   everything, `ask_app` included.
+
+### A4d. GPA and the school's own words
+
+A school that reports a GPA gives its grading scale `points` on every level (4.0 for an A) with `update-school-config --gradingScale`. Without points there is no GPA and nothing is shown in its place. Honors, AP and the like are `--courseLevels '[{"name":"Honors","bonus":0.5},{"name":"AP","bonus":1}]'`, and a subject is put at one with `update-subject --courseLevel AP` (or `create-subject`). The bonus is added only when the course earned points. A course counts by its credits (`--credits` on the subject, one when unset), so half-credit PE weighs half. The GPA, plain and weighted, is on the report card, the learner's Grades page and the staff view of a learner, all counted by `shared/gpa.ts` from the same marks as the percentages. A teacher never sees one (it spans subjects they do not teach).
+
+Fixed text (Help, `get-help`) is read back in the school's words: `customLabels` `arm`, `formTeacher`, `term`, `student`; the term word otherwise follows `termStructure` (semesters, quarters). Screens say "Quarter average" or "Semester average", not "Term average". Add new fixed text with the canonical words (arm, form teacher, term, learner) and it follows.
 
 ### A5. School Customization
 

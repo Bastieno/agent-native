@@ -88,14 +88,14 @@ export async function checklist(
     schemes += subjects.filter((s: any) => (s.units ?? 0) > 0).length;
   }
   const library = await client.as(admin, "list-framework-objectives", {
-    framework: "WAEC",
-    subject: "Physics",
+    framework: run.classes[0].library.framework,
+    subject: run.classes[0].library.subject,
   });
   row(
     "Curriculum",
     "Schemes for every subject and year group; coverage; library",
     schemes >= expected && library?.found === true,
-    `${schemes} of ${expected} subject-year schemes have units; the WAEC and NERDC libraries are read for every scheme`,
+    `${schemes} of ${expected} subject-year schemes have units; the libraries are read for every scheme`,
   );
 
   // Lesson notes
@@ -310,7 +310,7 @@ export async function checklist(
     thin.length === 0,
     thin.length
       ? `short: ${thin.slice(0, 6).join(", ")}`
-      : `every class has ${run.scenario.teachingWeeks.length} weeks of marked work (weeks 1–10, week 7 being mid-term)`,
+      : `every class has ${run.scenario.teachingWeeks.length} weeks of marked work (the taught weeks of the term)`,
   );
 
   // Announcements
@@ -341,11 +341,15 @@ export async function checklist(
     className: string;
     assessmentId: string;
   }[];
-  const learner = run.learners.find((l) => l.yearGroup === "SS2")!;
+  const learner = run.learners.find(
+    (l) => l.yearGroup === run.scenario.where.optionYear,
+  )!;
   const grades = asList(
     await client.as(learner, "get-my-grades", {}),
     "grades",
-  ).filter((g: any) => /Examination/.test(g.assessmentTitle ?? ""));
+  ).filter((g: any) =>
+    String(g.assessmentTitle ?? "").startsWith(run.scenario.exams.title),
+  );
   row(
     "Exams",
     "Sat, marked and published for week 12",
@@ -557,17 +561,19 @@ function whereToLook(run: ShowcaseRun) {
     (c) => c.arm?.name === run.scenario.behindOnNotes.arms[1],
   )!;
   const ss2 = run.learners.find(
-    (l) => l.yearGroup === "SS2" && l.option === "Further Mathematics",
+    (l) =>
+      l.yearGroup === run.scenario.where.optionYear &&
+      l.option === run.scenario.where.optionSubject,
   )!;
   const history = run.record.lessonNoteHistory as any;
   const byAbility = (arm: string) =>
     run.learners
       .filter((l) => l.arm === arm)
       .sort((a, b) => b.profile.ability - a.profile.ability);
-  const strongSs1 = byAbility("SS1A")[0];
+  const strongSs1 = byAbility(run.scenario.where.strongArm)[0];
   const jss2 = byAbility(run.scenario.leftOpen.arm);
   const middling = jss2[Math.floor(jss2.length / 2)];
-  const ss2b = byAbility("SS2B");
+  const ss2b = byAbility(run.scenario.where.strugglerArm);
   const struggler = ss2b[ss2b.length - 1];
   const openClass = run.classes.find(
     (c) =>
@@ -611,7 +617,7 @@ function whereToLook(run: ShowcaseRun) {
     [
       "The timetable, generated and accepted",
       t(run.scenario.principal),
-      "Timetable (/admin/timetable); filter by arm, teacher or room (try the Physics Lab)",
+      `Timetable (/admin/timetable); filter by arm, teacher or room (try the ${run.scenario.where.lab})`,
     ],
     [
       "A teacher's day and week",
@@ -662,12 +668,12 @@ function whereToLook(run: ShowcaseRun) {
     [
       "An examination, sat and marked",
       `${t(physics.teacher.name)}, then ${t(ss2.profile.name)}`,
-      "the class's \"First Term Examination\": marking on the teacher's side, the returned paper on the learner's",
+      `the class's "${run.scenario.exams.title}": marking on the teacher's side, the returned paper on the learner's`,
     ],
     [
       "Report cards",
       t(run.scenario.principal),
-      "a learner's record (/admin/students) → their First Term report card",
+      `a learner's record (/admin/students) → their ${run.scenario.termName} report card`,
     ],
     [
       "Work still open",
@@ -675,7 +681,9 @@ function whereToLook(run: ShowcaseRun) {
       `${openClass.name}, week ${run.scenario.leftOpen.week}: handed in, started and not started, none of it marked`,
     ],
   ];
-  const sciences = run.staff.find((s) => s.heads === "Sciences");
+  const sciences = run.staff.find(
+    (s) => s.heads === run.scenario.where.scienceDepartment,
+  );
   const people: [string, string, string][] = [
     [
       "Principal (admin)",
@@ -683,7 +691,7 @@ function whereToLook(run: ShowcaseRun) {
       "settings, staff, arms, timetable, lesson-note readiness, school analytics, report cards",
     ],
     [
-      "Sciences coordinator",
+      `${run.scenario.where.scienceDepartment} coordinator`,
       sciences?.name ?? "",
       "curriculum and coverage for the department, notes behind",
     ],
@@ -718,7 +726,7 @@ function whereToLook(run: ShowcaseRun) {
       "low marks, work missed and counted as zero",
     ],
     [
-      `Further Mathematics learner, ${ss2.arm}`,
+      `${run.scenario.where.optionSubject} learner, ${ss2.arm}`,
       ss2.profile.name,
       "the option block in their week",
     ],
@@ -813,7 +821,7 @@ export async function writeOutputs(
   );
 
   // The owner's copy, beside the spec.
-  const out = join("docs", "showcase");
+  const out = join("docs", run.scenario.outputDir);
   await mkdir(out, { recursive: true });
   for (const name of [
     "school-roster.md",

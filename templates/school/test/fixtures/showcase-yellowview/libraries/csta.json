@@ -1,0 +1,101 @@
+{
+ "framework": {
+  "name": "CSTA K-12 Computer Science Standards",
+  "version": "2017",
+  "source": "https://csteachers.org/k12standards (five concepts; wording is the school's own)"
+ },
+ "subjects": [
+  {
+   "subject": "Computer Science Principles",
+   "gradeRange": [
+    "Grade 9"
+   ],
+   "strands": [
+    {
+     "strand": "Computing Systems",
+     "subStrand": "Computing Systems",
+     "objectives": [
+      {
+       "description": "Describe the parts of a computer, including hardware, software and the operating system, and how they work together."
+      },
+      {
+       "description": "Troubleshoot a simple computing problem using a systematic approach."
+      }
+     ]
+    },
+    {
+     "strand": "Algorithms and Programming",
+     "subStrand": "Algorithms and Programming",
+     "objectives": [
+      {
+       "description": "Write a program in a block or text language that uses sequence, variables and output."
+      },
+      {
+       "description": "Use conditionals to make a program respond to different inputs."
+      },
+      {
+       "description": "Use loops to repeat actions and simplify a program."
+      },
+      {
+       "description": "Break a problem into smaller parts and write a procedure for each."
+      },
+      {
+       "description": "Design an algorithm in pseudocode or a flowchart before coding it."
+      },
+      {
+       "description": "Test and debug a program with a range of test cases."
+      },
+      {
+       "description": "Work with a partner using pair programming, with a driver and a navigator."
+      }
+     ]
+    },
+    {
+     "strand": "Data and Analysis",
+     "subStrand": "Data and Analysis",
+     "objectives": [
+      {
+       "description": "Explain how numbers, text and images are represented in binary."
+      },
+      {
+       "description": "Collect data in a spreadsheet and display it in a chart."
+      },
+      {
+       "description": "Use data to find a pattern and draw a conclusion, and note what the data cannot show."
+      }
+     ]
+    },
+    {
+     "strand": "Networks and the Internet",
+     "subStrand": "Networks and the Internet",
+     "objectives": [
+      {
+       "description": "Describe how information is sent across the internet in packets."
+      },
+      {
+       "description": "Explain the roles of IP addresses, DNS and protocols."
+      },
+      {
+       "description": "Describe basic cybersecurity practices, including strong passwords and two-factor authentication."
+      }
+     ]
+    },
+    {
+     "strand": "Impacts of Computing",
+     "subStrand": "Impacts of Computing",
+     "objectives": [
+      {
+       "description": "Describe a computing innovation and its benefits and harms for different groups."
+      },
+      {
+       "description": "Explain issues of privacy and the digital footprint."
+      },
+      {
+       "description": "Create a small project that solves a problem for a real user and present it."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,3 +1,4 @@
+import { gpaOf } from "../../shared/gpa.js";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { and, eq, inArray } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
@@ -104,6 +105,8 @@ export async function termGradesFor(
       id: schema.classes.id,
       name: schema.classes.name,
       subjectName: schema.subjects.name,
+      courseLevel: schema.subjects.courseLevel,
+      credits: schema.subjects.credits,
       teacherUserId: schema.classes.primaryTeacherUserId,
     })
     .from(schema.classes)
@@ -204,6 +207,8 @@ export async function termGradesFor(
           : null,
         percentage: summary.percentage,
         grade: gradeFor(summary.percentage),
+        courseLevel: cls.courseLevel ?? null,
+        credits: cls.credits != null ? Number(cls.credits) : null,
         belowPassMark:
           summary.percentage !== null && summary.percentage < passMark,
         marked: marked.length,
@@ -297,6 +302,7 @@ export async function termGradesFor(
     summary: {
       percentage: overall,
       grade: gradeFor(overall),
+      gpa: gpaOf(config, counted),
       passMark,
       handedIn,
       set,

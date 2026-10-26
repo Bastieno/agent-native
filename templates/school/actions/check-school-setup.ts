@@ -194,6 +194,14 @@ export default defineAction({
         fix: "update-school-config --paperSize letter",
       });
     }
+    if (!config.schoolTimezone && !config.timezone) {
+      gaps.push({
+        setting: "Timezone",
+        meanwhile:
+          "Times are shown in UTC, and the assistant's daily message limit turns over at midnight UTC rather than the school's own midnight.",
+        fix: 'update-school-config --schoolTimezone "America/New_York"',
+      });
+    }
     if (!config.locale) {
       gaps.push({
         setting: "Locale",

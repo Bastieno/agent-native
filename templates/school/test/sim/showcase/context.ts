@@ -1,9 +1,6 @@
 import type { Client, Persona } from "../client.js";
 import type { Findings } from "../findings.js";
-import type {
-  Showcase,
-  SubjectPlan,
-} from "../../scenarios/showcase-crestfield.js";
+import type { Showcase, SubjectPlan } from "../../scenarios/showcase-types.js";
 import type { ShowcaseLearner } from "./people.js";
 import type { LibraryObjective } from "./curriculum.js";
 

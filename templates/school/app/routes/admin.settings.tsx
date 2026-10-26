@@ -1,4 +1,5 @@
 import { useNavigationState } from "@/hooks/use-navigation-state";
+import { termWord } from "@shared/school-words";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -202,7 +203,7 @@ export default function AdminSettings() {
               and sit on one line. */}
           <TabsList className="h-auto flex-wrap justify-start xl:w-max xl:flex-nowrap">
             <TabsTrigger value="grading">Grading</TabsTrigger>
-            <TabsTrigger value="terms">Terms</TabsTrigger>
+            <TabsTrigger value="terms">{termWord(config).Terms}</TabsTrigger>
             <TabsTrigger value="school-week">School week</TabsTrigger>
             <TabsTrigger value="rooms">Rooms</TabsTrigger>
             <TabsTrigger value="custom-fields">Custom Fields</TabsTrigger>
@@ -250,9 +251,22 @@ export default function AdminSettings() {
                         {level.label}
                       </span>
                     )}
+                    {typeof level.points === "number" && (
+                      <span className="text-muted-foreground text-xs w-14 text-right">
+                        {level.points.toFixed(1)} pts
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>
+              {config.courseLevels?.length ? (
+                <p className="text-xs text-muted-foreground">
+                  Course levels:{" "}
+                  {config.courseLevels
+                    .map((c) => `${c.name} (+${c.bonus})`)
+                    .join(", ")}
+                </p>
+              ) : null}
               <p className="text-xs text-muted-foreground">
                 Use the agent to update your grading scale.
               </p>
@@ -265,14 +279,10 @@ export default function AdminSettings() {
 
           <TabsContent value="terms" className="mt-4">
             <div className="space-y-3 rounded-lg border bg-card p-4">
-              <h3 className="text-sm font-medium">
-                {(config.termStructure ?? "terms") === "terms"
-                  ? "Terms"
-                  : config.termStructure}
-              </h3>
+              <h3 className="text-sm font-medium">{termWord(config).Terms}</h3>
 
               {yearsLoading || termsLoading ? (
-                <ListState loading rows={2} title="Terms" />
+                <ListState loading rows={2} title={termWord(config).Terms} />
               ) : years.length === 0 ? (
                 <p className="text-xs text-muted-foreground">
                   No academic year yet. Until one exists with its terms, a term

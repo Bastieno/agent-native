@@ -47,7 +47,8 @@ assert.equal(audienceForRole("subject_coordinator"), "teacher");
 const lateUtc = new Date("2026-10-14T23:30:00Z"); // 00:30 in Lagos
 assert.equal(schoolDay("Africa/Lagos", lateUtc), "2026-10-15");
 assert.equal(schoolDay("UTC", lateUtc), "2026-10-14");
-assert.equal(schoolDay("Not/AZone", lateUtc), "2026-10-15");
+// An unusable zone falls back to UTC, the default.
+assert.equal(schoolDay("Not/AZone", lateUtc), "2026-10-14");
 
 // Enforcement reads only what is stored: nothing, or half a setting, is not
 // quietly filled from the defaults.

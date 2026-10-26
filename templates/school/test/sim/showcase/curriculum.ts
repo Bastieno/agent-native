@@ -54,9 +54,10 @@ async function libraryObjectives(
 function shareFor(
   all: LibraryObjective[],
   yearIndex: number,
+  parts: number,
   weeks: number,
 ): LibraryObjective[] {
-  const third = Math.floor(all.length / 3);
+  const third = Math.floor(all.length / parts);
   if (third >= weeks)
     return all.slice(yearIndex * third, (yearIndex + 1) * third);
   const start = yearIndex * third;
@@ -169,8 +170,8 @@ export async function buildCurricula(run: ShowcaseRun): Promise<void> {
         ),
       );
     const all = cache.get(key)!;
-    const yearIndex = Number(cls.yearGroup.replace(/\D/g, "")) - 1;
-    const share = shareFor(all, yearIndex, weeks.length);
+    const split = scenario.librarySplit(cls.yearGroup);
+    const share = shareFor(all, split.index, split.parts, weeks.length);
     run.weekPlan.set(`${cls.subject.name}|${cls.yearGroup}`, {
       byWeek: weekShare(share, weeks),
       all,
@@ -209,7 +210,7 @@ export async function buildCurricula(run: ShowcaseRun): Promise<void> {
   decisions.add(
     "Terms and weeks",
     "Schemes of work",
-    `${planned.length} (every subject in every year group that takes it), drawn from the NERDC and WAEC libraries: a third of a three-year library per year group, or nine objectives in a row where the sample library is too small for a third to fill nine weeks; units follow the library's sub-strands, with nothing new in weeks 7, 11, 12 and 13`,
+    `${planned.length} (every subject in every year group that takes it), ${scenario.decisionText.libraries}`,
   );
 
   // ── Lesson notes: which week each is, and who has got through theirs ──
@@ -305,9 +306,13 @@ export async function lessonNoteHistory(run: ShowcaseRun): Promise<void> {
 
   // A teacher disagrees with a note marked ready and puts it back to draft.
   const reopenedClass = run.classes.find(
-    (c) => c.arm?.name === "SS1A" && c.subject.name === "Chemistry",
+    (c) =>
+      c.arm?.name === run.scenario.reopenedNote.arm &&
+      c.subject.name === run.scenario.reopenedNote.subject,
   )!;
-  const reopenedId = run.notes.get(reopenedClass.id)!.get(3)!;
+  const reopenedId = run.notes
+    .get(reopenedClass.id)!
+    .get(run.scenario.reopenedNote.week)!;
   await client.as(reopenedClass.teacher, "reopen-lesson-note", {
     id: reopenedId,
   });
@@ -319,7 +324,7 @@ export async function lessonNoteHistory(run: ShowcaseRun): Promise<void> {
     },
     reopened: {
       className: reopenedClass.name,
-      week: 3,
+      week: run.scenario.reopenedNote.week,
       teacher: reopenedClass.teacher.name,
     },
   };

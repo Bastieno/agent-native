@@ -81,7 +81,7 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
   const bySubject = new Map<string, Set<string>>();
   for (const cls of run.classes) {
     const p = planFor(cls.subject, cls.yearGroup, scenario);
-    const phase = cls.yearGroup.startsWith("JSS") ? "JSS" : "SS";
+    const phase = cls.yearGroup;
     const key = cls.subject.name;
     bySubject.set(
       key,
@@ -96,7 +96,7 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
   decisions.add(
     "Lesson counts per subject",
     "Totals",
-    "JSS arms 37 periods of 38; SS1 and SS2 arms 34 (30 whole-arm plus the 4-period option block); SS3 arms 30",
+    scenario.decisionText.lessonCountTotals,
   );
 
   // ── Generate, read, accept ─────────────────────────────────────────────
@@ -118,7 +118,7 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
   findings.expect(
     "timetable",
     !!drafted?.proposalId && !!proposal,
-    "a timetable is drafted for the First Term",
+    `a timetable is drafted for the ${scenario.termName}`,
     JSON.stringify(drafted).slice(0, 300),
   );
   console.log(`  ${drafted?.message}`);
@@ -145,15 +145,33 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
   );
 
   // ── Practicals: each science's double, in its lab ──────────────────────
-  const timetable = await read(run);
+  // The labs are shared, so a double is moved only to a pair of periods where
+  // the lab is free as well as the teacher and the class's learners.
   const practicals: string[] = [];
-  for (const cls of run.classes.filter((c) => c.subject.lab)) {
-    const double = timetable.periods.filter(
-      (p) => p.classId === cls.id && p.pairId,
-    );
-    const first = double.sort(
-      (a, b) => (a.periodNumber ?? 0) - (b.periodNumber ?? 0),
-    )[0];
+  const config = await client.as(admin, "get-school-config", {});
+  const week = config?.schoolWeek ?? config?.config?.schoolWeek;
+  const pairs2: { day: number; first: number; second: number }[] = [];
+  for (const d of week?.days ?? []) {
+    const lessons = d.periods.filter((p: any) => p.kind === "lesson");
+    for (const p of lessons) {
+      const next = d.periods.find((q: any) => q.number === p.number + 1);
+      if (next?.kind === "lesson")
+        pairs2.push({ day: d.day, first: p.number, second: next.number });
+    }
+  }
+  // The most tied-down classes choose first: an option block's double cannot
+  // move without the whole block, and a class with a support teacher has two
+  // people to keep free.
+  const rank = (c: ShowcaseClass) => (c.arm ? (c.support.length ? 1 : 2) : 0);
+  const labClasses = run.classes
+    .filter((c) => c.subject.lab)
+    .sort((a, b) => rank(a) - rank(b));
+  for (const cls of labClasses) {
+    const { periods } = await read(run);
+    const double = periods
+      .filter((p) => p.classId === cls.id && p.pairId)
+      .sort((a, b) => (a.periodNumber ?? 0) - (b.periodNumber ?? 0));
+    const first = double[0];
     if (!first) {
       findings.add(
         "missing",
@@ -162,17 +180,66 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
       );
       continue;
     }
+    const lab = cls.subject.lab!;
+    const others = periods.filter((p) => p.classId !== cls.id);
+    const teachers = new Set([
+      cls.teacher.userId,
+      ...cls.support.map((x) => x.userId),
+    ]);
+    const attached = new Set(cls.arm ? [cls.arm.id] : cls.optionArmIds);
+    const busyAt = (day: number, n: number) =>
+      others.some(
+        (p) =>
+          p.day === day &&
+          p.periodNumber === n &&
+          (p.room === lab ||
+            p.teachers.some((t) => teachers.has(t.userId)) ||
+            (p.armId && attached.has(p.armId)) ||
+            p.optionArmIds.some((a) => attached.has(a))),
+      );
+    const labBusy = (day: number, n: number) =>
+      others.some(
+        (p) => p.day === day && p.periodNumber === n && p.room === lab,
+      );
+    const ok = pairs2.filter(
+      (q) => !busyAt(q.day, q.first) && !busyAt(q.day, q.second),
+    );
+    // Where the draft put the double is already free of teachers and learners;
+    // only the lab need be free there.
+    if (!ok.length && first.periodNumber != null) {
+      const here = pairs2.find(
+        (q) => q.day === first.day && q.first === first.periodNumber,
+      );
+      if (
+        here &&
+        !labBusy(here.day, here.first) &&
+        !labBusy(here.day, here.second)
+      )
+        ok.push(here);
+    }
+    // Stay where the draft put the double when the lab is free there.
+    const target =
+      ok.find((q) => q.day === first.day && q.first === first.periodNumber) ??
+      ok[0];
+    if (!target) {
+      findings.add(
+        "missing",
+        "timetable",
+        `${cls.name} has no free pair of periods in the ${lab}`,
+      );
+      continue;
+    }
     await client.as(admin, "set-timetable-period", {
       termId: run.firstTermId,
       classId: cls.id,
       scheduleId: first.scheduleId,
-      day: first.day,
-      periodNumber: first.periodNumber,
-      room: cls.subject.lab,
+      day: target.day,
+      periodNumber: target.first,
+      room: lab,
       lessonLabel: "Practical",
     });
     practicals.push(
-      `${cls.name}, ${DAYS[first.day]} ${first.start}–${double[double.length - 1].end}, ${cls.subject.lab}`,
+      `${cls.name}, ${DAYS[target.day]} periods ${target.first}–${target.second}, ${lab}`,
     );
   }
   decisions.add(
@@ -215,7 +282,8 @@ async function placeShortfall(run: ShowcaseRun): Promise<string[]> {
         (p) =>
           p.day === day &&
           p.periodNumber === n &&
-          (p.teachers.some((t) => teachers.has(t.userId)) ||
+          ((cls.room && p.room === cls.room) ||
+            p.teachers.some((t) => teachers.has(t.userId)) ||
             (p.armId && arms.has(p.armId)) ||
             p.optionArmIds.some((a) => arms.has(a))),
       );
@@ -258,7 +326,7 @@ async function checkTimetable(run: ShowcaseRun): Promise<void> {
   findings.expect(
     "timetable",
     timetable.clashes.length === 0,
-    "the First Term timetable has no clashes",
+    `the ${run.scenario.termName} timetable has no clashes`,
     timetable.clashes
       .slice(0, 5)
       .map((c) => c.message)
@@ -290,7 +358,7 @@ async function checkTimetable(run: ShowcaseRun): Promise<void> {
   const emptyLearners: string[] = [];
   await inPool(run.learners, 10, async (learner) => {
     const week = await client.as(learner, "get-my-week", {
-      date: "2026-10-12",
+      date: run.scenario.sampleDate,
     });
     const lessons = asList(week?.days ?? []).flatMap((d: any) =>
       asList(d.periods ?? []).flatMap((p: any) => asList(p.lessons ?? [])),
@@ -310,7 +378,9 @@ async function checkTimetable(run: ShowcaseRun): Promise<void> {
     ),
   );
   await inPool(teaching, 6, async (member) => {
-    const week = await client.as(member, "get-my-week", { date: "2026-10-12" });
+    const week = await client.as(member, "get-my-week", {
+      date: run.scenario.sampleDate,
+    });
     const lessons = asList(week?.days ?? []).flatMap((d: any) =>
       asList(d.periods ?? []).flatMap((p: any) => asList(p.lessons ?? [])),
     );

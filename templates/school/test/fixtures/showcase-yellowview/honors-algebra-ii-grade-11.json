@@ -1,0 +1,2462 @@
+{
+ "subject": "Honors Algebra II",
+ "yearGroup": "Grade 11",
+ "weeks": {
+  "1": {
+   "topic": "Quadratic forms, optimization and polynomial structure",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. graph and compare the parent functions, and describe the changes to each when the equation has a leading coefficient or parameters;\n2. choose and convert among the forms of a quadratic, including leading coefficients other than 1, and use the form that reveals zeros, vertex or axis of symmetry;\n3. graph polynomial functions from their factors, reasoning about multiplicity, minimum degree, end behavior and turning points.\n\n## Materials\n\nGraphing handhelds or Desmos, graph paper, whiteboards, the worksheet.\n\n## Starter (10 minutes)\n\nPose: \"A farmer at Buckeye Lake has 120 feet of fence and uses the lake shore as one side of a rectangle. What dimensions give the greatest area?\" Let students try by trial and error in a table first, then ask for the equation. Introduce A(w) = w(120 - 2w) and use the symmetry of the zeros to locate the vertex.\n\n## Main activity\n\n1. Convert 3x^2 + 12x + 5 to vertex form with a leading coefficient, and 2x^2 - 7x - 15 to factored form. Use the average of the zeros to find the axis of symmetry and check with -b/(2a).\n2. Build a quadratic from facts: zeros 2 and -4 and a y-intercept of 16.\n3. Profit model P(x) = -2x^2 + 36x - 130: read zeros, vertex and constant from the three forms.\n4. A polynomial with a zero of multiplicity 2 at x = -3 and multiplicity 3 at x = 2: find the minimum degree, the end behavior and the y-intercept of g(x) = (x + 3)^2(x - 2)^3.\n\n## Checking for understanding\n\nWhiteboards: \"A parabola has zeros at 1 and 7 and passes through (4, -18). Write its equation.\" Look for a(x - 1)(x - 7) and solving for a.\n\n## Worksheet\n\nCollect the worksheet at the end of class.",
+   "reading": {
+    "title": "Building and reading quadratics and polynomials",
+    "content": "A good problem solver does not just convert between forms of a quadratic, but chooses the form that answers the question. Standard form ax^2 + bx + c shows the y-intercept c. Factored form a(x - r)(x - s) shows the zeros. Vertex form a(x - h)^2 + k shows the vertex and, through the sign of a, whether the vertex is a minimum or a maximum. The three forms describe the same function, so they must agree, and converting between them is a check on your work.\n\nTake 2x^2 - 7x - 15. It factors as (2x + 3)(x - 5), with zeros -3/2 and 5. A parabola is symmetric about the line through the midpoint of its zeros, so the axis is x = (-3/2 + 5)/2 = 7/4, which agrees with -b/(2a) = 7/4. To rewrite 3x^2 + 12x + 5 in vertex form, factor the leading coefficient out of the x terms first: 3(x^2 + 4x) + 5. Complete the square inside the parentheses by adding and subtracting 4: 3(x + 2)^2 - 12 + 5 = 3(x + 2)^2 - 7. The factor 3 multiplies the 4 you added, which is why the constant changes by 12 and not by 4.\n\nYou can also build a quadratic from facts about its graph. A parabola with zeros at 2 and -4 has the form a(x - 2)(x + 4). The y-intercept is 16, so f(0) = a(-2)(4) = -8a = 16 and a = -2. Therefore f(x) = -2(x - 2)(x + 4) = -2x^2 - 4x + 16. Optimization is the same idea in context. A farmer fences a rectangle against a lake with 120 feet of fence, so 2w + L = 120 and the area is A(w) = w(120 - 2w). The zeros are w = 0 and w = 60, so the vertex is at w = 30, where the area is 30 x 60 = 1,800 square feet.\n\nA profit model P(x) = -2x^2 + 36x - 130, with x in hundreds of shirts and P in hundreds of dollars, factors as -2(x - 5)(x - 13). Break-even is at 500 and 1,300 shirts. The vertex is at x = 9 with P = 32, so the best profit is $3,200 for 900 shirts, and in vertex form P(x) = -2(x - 9)^2 + 32. The constant -130 in standard form is P(0): with no shirts sold, the shop loses $13,000 in fixed costs.\n\nFor polynomials of higher degree, multiplicities carry the story. If g(x) = (x + 3)^2(x - 2)^3, the degree is 2 + 3 = 5 and the leading coefficient is positive, so the graph falls on the left and rises on the right. It touches the axis and turns at -3, and crosses with a flattening at 2. Since g(0) = 9(-8) = -72, the y-intercept is -72. A degree-5 polynomial has at most 4 turning points, and this one has at least one, at x = -3."
+   },
+   "cards": [
+    {
+     "front": "Vertex form with a leading coefficient",
+     "back": "a(x - h)^2 + k. To complete the square, factor a out of the x terms first."
+    },
+    {
+     "front": "Axis of symmetry from zeros",
+     "back": "The vertical line through the midpoint of the zeros: x = (r + s)/2."
+    },
+    {
+     "front": "Building a quadratic from zeros",
+     "back": "Write a(x - r)(x - s), then use one more point to find a."
+    },
+    {
+     "front": "Optimization",
+     "back": "Finding the greatest or least value of a quantity, often at the vertex of a quadratic model."
+    },
+    {
+     "front": "Break-even point",
+     "back": "An input where profit is 0, a zero of the profit function."
+    },
+    {
+     "front": "Multiplicity",
+     "back": "The exponent on a factor. Even multiplicity touches the axis and turns, odd multiplicity crosses."
+    },
+    {
+     "front": "Minimum degree",
+     "back": "The sum of the multiplicities of the zeros you know about."
+    },
+    {
+     "front": "Maximum turning points",
+     "back": "A polynomial of degree n has at most n - 1 turning points."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the equation of the axis of symmetry of f(x) = 2x^2 - 7x - 15?",
+     "options": [
+      "x = 5/4",
+      "x = -7/4",
+      "x = 7/4",
+      "x = 7/2"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which is the vertex form of f(x) = 3x^2 + 12x + 5?",
+     "options": [
+      "3(x + 2)^2 - 7",
+      "3(x + 2)^2 + 5",
+      "3(x + 4)^2 - 43",
+      "3(x + 2)^2 - 12"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A quadratic has zeros at 2 and -4 and a y-intercept of 16. What is the function?",
+     "options": [
+      "f(x) = 2(x - 2)(x + 4)",
+      "f(x) = -2(x + 2)(x - 4)",
+      "f(x) = -(x - 2)(x + 4) + 16",
+      "f(x) = -2(x - 2)(x + 4)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "A polynomial has a zero of multiplicity 2 at x = 3 and a zero of multiplicity 3 at x = -1. What is its minimum degree?",
+     "options": [
+      "3",
+      "5",
+      "6",
+      "2"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A farmer has 120 feet of fence and uses a lake shore as one side of a rectangle. What is the greatest area of the pen?",
+     "options": [
+      "1,800 square feet",
+      "3,600 square feet",
+      "1,200 square feet",
+      "900 square feet"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A shirt printer's profit is P(x) = -2x^2 + 36x - 130, where x is the number of hundreds of shirts and P is in hundreds of dollars. (a) Factor P and find the break-even quantities. (b) Find the vertex and the maximum profit, and write P in vertex form. (c) Say what the constant -130 means.",
+     "markScheme": [
+      "Factors P as -2(x - 5)(x - 13) and finds break-even at 500 and 1,300 shirts",
+      "Finds the vertex at x = 9, the midpoint of 5 and 13, with P(9) = 32, a maximum profit of $3,200 at 900 shirts",
+      "Writes the vertex form -2(x - 9)^2 + 32",
+      "Says the constant -130 is P(0), a loss of $13,000 when no shirts are sold, the fixed costs"
+     ],
+     "modelAnswer": "Dividing out -2 gives P(x) = -2(x^2 - 18x + 65) = -2(x - 5)(x - 13), so P = 0 at x = 5 and x = 13, which means break-even at 500 and 1,300 shirts. The vertex is halfway between the zeros, at x = (5 + 13)/2 = 9, and P(9) = -2(4)(-4) = 32, so the maximum profit is 3,200 dollars at 900 shirts. The vertex form is P(x) = -2(x - 9)^2 + 32. The constant -130 is P(0), a loss of 13,000 dollars when nothing is sold: the fixed costs.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) -2(x^2 - 18x + 65) and 65 = 5 x 13 and 5 + 13 = 18, so P(x) = -2(x - 5)(x - 13), and the break-even points are x = 5 and x = 13, which is 500 and 1,300 shirts. (b) The vertex is in the middle at x = 9, and P(9) = -2(4)(-4) = 32, so the biggest profit is $3,200 for 900 shirts. Vertex form is P(x) = -2(x - 9)^2 + 32. (c) -130 is P(0), so if they sell nothing they lose $13,000, which is the fixed costs.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "P(x) = -2(x - 5)(x - 13), and the break-even points are x = 5 and x = 13, which is 500 and 1,300 shirts"
+        },
+        {
+         "point": 1,
+         "quote": "The vertex is in the middle at x = 9, and P(9) = -2(4)(-4) = 32, so the biggest profit is $3,200 for 900 shirts"
+        },
+        {
+         "point": 2,
+         "quote": "Vertex form is P(x) = -2(x - 9)^2 + 32."
+        },
+        {
+         "point": 3,
+         "quote": "-130 is P(0), so if they sell nothing they lose $13,000, which is the fixed costs"
+        }
+       ],
+       "feedback": "Full marks. Checking that 65 = 5 x 13 and 5 + 13 = 18 before writing the factors is a good habit."
+      },
+      {
+       "tier": "full",
+       "text": "(a) Factor out -2 and get x^2 - 18x + 65, which is (x - 5)(x - 13). Zeros at 5 and 13, so break-even at 500 shirts and 1300 shirts. (b) The vertex x-value is (5 + 13)/2 = 9, and P(9) = -2(81) + 324 - 130 = 32, so max profit is 32 hundred dollars at 900 shirts. Written as -2(x - 9)^2 + 32, and expanding gives -2x^2 + 36x - 162 + 32 = -2x^2 + 36x - 130, so it matches. (c) It's the value at x = 0, so a loss of 13,000 dollars before selling a shirt, the cost of the equipment and setup.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Zeros at 5 and 13, so break-even at 500 shirts and 1300 shirts."
+        },
+        {
+         "point": 1,
+         "quote": "The vertex x-value is (5 + 13)/2 = 9, and P(9) = -2(81) + 324 - 130 = 32, so max profit is 32 hundred dollars at 900 shirts."
+        },
+        {
+         "point": 2,
+         "quote": "Written as -2(x - 9)^2 + 32, and expanding gives -2x^2 + 36x - 162 + 32 = -2x^2 + 36x - 130, so it matches."
+        },
+        {
+         "point": 3,
+         "quote": "It's the value at x = 0, so a loss of 13,000 dollars before selling a shirt, the cost of the equipment and setup."
+        }
+       ],
+       "feedback": "All four marks. Expanding the vertex form to check it against the original is the kind of verification honors work expects."
+      },
+      {
+       "tier": "partial",
+       "text": "P(x) = -2(x - 5)(x - 13), so break-even at 500 and 1,300. The vertex is at x = 9 and the max profit is 9 hundred dollars. Vertex form is -2(x - 9)^2 + 9. The -130 is the cost of each shirt.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "P(x) = -2(x - 5)(x - 13), so break-even at 500 and 1,300."
+        }
+       ],
+       "feedback": "The factoring is right. Evaluate P(9) to get the maximum: 32, not 9. The -130 is not a cost per shirt, it is the value of P at zero shirts, which is the fixed cost."
+      },
+      {
+       "tier": "partial",
+       "text": "The vertex is at x = 9 and the maximum profit is 32 hundred dollars, or $3,200. -130 means they lose money before selling anything. The zeros are -5 and -13.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The vertex is at x = 9 and the maximum profit is 32 hundred dollars, or $3,200."
+        },
+        {
+         "point": 3,
+         "quote": "-130 means they lose money before selling anything."
+        }
+       ],
+       "feedback": "Your vertex and meaning of the constant are right. The zeros come from x - 5 = 0 and x - 13 = 0, so they are 5 and 13, which are positive hundreds of shirts.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I used -b/2a = -36/-4 = 9 and that's the zero. So the break-even is 900 shirts.",
+       "meets": [],
+       "feedback": "The value x = 9 is the vertex, the best output, not a zero. Break-even is where P = 0, which means solving -2(x - 5)(x - 13) = 0."
+      },
+      {
+       "tier": "weak",
+       "text": "-130 is the loss when you make no shirts. The maximum is -130 because it's the biggest number.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "-130 is the loss when you make no shirts"
+        }
+       ],
+       "feedback": "Your reading of the constant is right. But -130 is the profit at zero shirts, which is not the maximum. The maximum is at the vertex, and P(9) = 32."
+      }
+     ]
+    },
+    {
+     "prompt": "Let g(x) = (x + 3)^2 (x - 2)^3. Describe the behavior of the graph at each zero, state the end behavior and the y-intercept, and say how many turning points g has at most and at least. Explain each answer.",
+     "markScheme": [
+      "Says the graph touches the axis and turns at x = -3 (multiplicity 2) and crosses with a flattening at x = 2 (multiplicity 3)",
+      "Finds the y-intercept g(0) = 9 x (-8) = -72",
+      "Gives the end behavior: odd degree 5 with a positive leading coefficient, so it falls on the left and rises on the right",
+      "Says at most 4 turning points (degree minus one) and at least 1, the turn at x = -3"
+     ],
+     "modelAnswer": "The factor (x + 3)^2 has even multiplicity, so the graph touches the x-axis at x = -3 and turns around. The factor (x - 2)^3 has odd multiplicity, so the graph crosses the axis at x = 2, flattening as it does. The y-intercept is g(0) = (3)^2(-2)^3 = 9(-8) = -72. The degree is 5 and the leading coefficient is 1, so the left end falls and the right end rises. A degree-5 polynomial has at most 4 turning points, and this one has at least 1, at x = -3.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At -3 the factor is squared so the graph touches the axis and bounces back. At 2 it's cubed so it crosses, but it flattens out for a moment. The y-intercept is g(0) = 3^2 x (-2)^3 = 9 x -8 = -72. The degree is 2 + 3 = 5 and the leading coefficient is positive, so it goes down on the left and up on the right. A degree 5 has at most 4 turning points. It has at least one for sure, the turn at x = -3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At -3 the factor is squared so the graph touches the axis and bounces back. At 2 it's cubed so it crosses, but it flattens out for a moment."
+        },
+        {
+         "point": 1,
+         "quote": "The y-intercept is g(0) = 3^2 x (-2)^3 = 9 x -8 = -72."
+        },
+        {
+         "point": 2,
+         "quote": "The degree is 2 + 3 = 5 and the leading coefficient is positive, so it goes down on the left and up on the right."
+        },
+        {
+         "point": 3,
+         "quote": "A degree 5 has at most 4 turning points. It has at least one for sure, the turn at x = -3."
+        }
+       ],
+       "feedback": "Full marks. Naming the guaranteed turning point at the double zero goes beyond the usual maximum."
+      },
+      {
+       "tier": "full",
+       "text": "Behavior: even multiplicity at -3, so touch and turn; odd multiplicity at 2, so it crosses (a flat crossing, like x cubed). y-intercept: plug in zero, 9 times -8, -72. Ends: odd degree 5, positive coefficient, so negative infinity on the left and positive infinity on the right. Turning points: n - 1 = 4 is the most, and the bounce at -3 is one that is certain.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "even multiplicity at -3, so touch and turn; odd multiplicity at 2, so it crosses (a flat crossing, like x cubed)"
+        },
+        {
+         "point": 1,
+         "quote": "plug in zero, 9 times -8, -72"
+        },
+        {
+         "point": 2,
+         "quote": "odd degree 5, positive coefficient, so negative infinity on the left and positive infinity on the right"
+        },
+        {
+         "point": 3,
+         "quote": "n - 1 = 4 is the most, and the bounce at -3 is one that is certain"
+        }
+       ],
+       "feedback": "All four marks. Each answer comes with the rule that produced it."
+      },
+      {
+       "tier": "partial",
+       "text": "It touches at -3 and crosses at 2. g(0) = -72. It rises on both ends since it's a polynomial. It has 5 turning points.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It touches at -3 and crosses at 2."
+        },
+        {
+         "point": 1,
+         "quote": "g(0) = -72."
+        }
+       ],
+       "feedback": "The behavior at the zeros and intercept are right. A degree-5 polynomial has odd degree, so the ends go opposite ways, and the most turning points is 4, one less than the degree."
+      },
+      {
+       "tier": "partial",
+       "text": "It falls on the left and rises on the right because the degree is odd and the leading coefficient is positive. At most 4 turning points. The graph crosses at both zeros.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "It falls on the left and rises on the right because the degree is odd and the leading coefficient is positive."
+        },
+        {
+         "point": 3,
+         "quote": "At most 4 turning points."
+        }
+       ],
+       "feedback": "The end behavior and turning points are right. At x = -3 the multiplicity is 2, so the graph touches the axis and turns instead of crossing.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The zeros are 3 and -2. The y-intercept is 3 times 2 = 6.",
+       "meets": [],
+       "feedback": "The zeros come from x + 3 = 0 and x - 2 = 0, so they are -3 and 2. Find the y-intercept by putting in x = 0: 9 times -8 = -72."
+      },
+      {
+       "tier": "weak",
+       "text": "The y-intercept is -72. All zeros cross the axis, since that's what a zero is.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The y-intercept is -72"
+        }
+       ],
+       "feedback": "The intercept is right. A zero of even multiplicity, like x = -3 here, touches the axis and bounces back without crossing."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Transformations of functions and composition with domains",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how a graph changes under shifts, stretches and reflections, applying a rule to the points of a graph;\n2. combine functions by arithmetic and composition, find the domain of the result, and use composition to model a situation.\n\n## Materials\n\nGraphing handhelds, tracing paper, whiteboards, the worksheet.\n\n## Starter (8 minutes)\n\nGive students four points on an unknown function, (-2, 1), (0, 3), (2, -1) and (4, 0). Ask them to sketch the graph of g(x) = -2f(x - 1) + 3 by moving only the points. They must say in which order they applied the transformations and why. Compare answers.\n\n## Main activity\n\n1. Rules on points: (x, y) goes to (x + 1, -2y + 3). Discuss why the stretch and reflection come before the shift in a f(x - h) + k, and why inside transformations act in the opposite way.\n2. Rewrite -3|2x - 4| + 5 as a multiple of |x - 2| and read off the vertex.\n3. Domain of a quotient: f(x) = the square root of (x - 3), g(x) = 1/(x - 5).\n4. Composition modeling: an oil drop on Buckeye Lake spreads with radius r(t) = 3t feet. Compose with the area formula.\n\n## Checking for understanding\n\nWhiteboards: \"What is y = f(x/2) compared to y = f(x)?\" Look for a horizontal stretch by 2, not a compression.\n\n## Worksheet\n\nCollect the worksheet.",
+   "reading": {
+    "title": "Transforming points, and composing with care about domains",
+    "content": "A transformation of a function is a recipe for the points of its graph. Suppose the graph of f contains (x, y). For g(x) = a f(x - h) + k, the point (x, y) of f moves to the point (x + h, a y + k) of g. The input is shifted by h and the output is stretched by a and shifted by k. Because the output is first multiplied by a and then k is added, the stretch or reflection happens before the vertical shift when you move the points. With a = -2, h = 1 and k = 3, the points (-2, 1), (0, 3), (2, -1) and (4, 0) go to (-1, 1), (1, -3), (3, 5) and (5, 3). A domain of -2 to 4 becomes -1 to 5.\n\nInside changes act opposite to what you expect. In f(x/2) the graph is stretched horizontally by a factor of 2, since x has to be twice as large to produce the same output. And f(2x) compresses it by 1/2. Sometimes you must first rewrite an expression to see the stretches. For g(x) = -3|2x - 4| + 5, factor the 2 out: |2x - 4| = 2|x - 2|, so g(x) = -6|x - 2| + 5. That is the absolute value graph shifted right 2, stretched by 6, flipped over the x-axis and moved up 5, with vertex (2, 5).\n\nFunctions can be combined by arithmetic, and the domain of the result is the overlap of the domains, with extra restrictions where a divisor is 0. For f(x) = the square root of (x - 3) and g(x) = 1/(x - 5), the domain of f is x >= 3 and the domain of g excludes 5. For the quotient f/g, which is f(x)(x - 5), the domain is still x >= 3 and x not equal to 5, because g is not defined at 5 even though the simplified expression is. Always find the domain before you simplify.\n\nComposition has the same care. For f(x) = 2x + 1 and g(x) = x^2 - 3, (g of f)(x) = (2x + 1)^2 - 3 = 4x^2 + 4x - 2, but (f of g)(x) = 2(x^2 - 3) + 1 = 2x^2 - 5. When h(x) = (3x + 2)^5, you can recognize a composition: the inner function is 3x + 2 and the outer function raises to the fifth power. In a model, composition chains steps. A drop of oil spreads on Buckeye Lake in a circle whose radius grows at 3 feet per second, so r(t) = 3t. The area is A(r) = (pi)r^2, so A(r(t)) = (pi)(3t)^2 = 9(pi)t^2. At t = 5, the area is 225(pi), about 707 square feet. When does it reach 144(pi) square feet? Solve 9(pi)t^2 = 144(pi) to get t^2 = 16, so t = 4 seconds. The inner function turns time into radius, and the outer function turns radius into area."
+   },
+   "cards": [
+    {
+     "front": "Point rule for a transformation",
+     "back": "For a f(x - h) + k, the point (x, y) goes to (x + h, a y + k)."
+    },
+    {
+     "front": "Horizontal stretch",
+     "back": "f(x/b) stretches the graph horizontally by a factor of b. f(bx) compresses it by 1/b."
+    },
+    {
+     "front": "Factoring out inside a transformation",
+     "back": "Write |2x - 4| as 2|x - 2| to read the true shift and stretch."
+    },
+    {
+     "front": "Domain of a sum or product",
+     "back": "The inputs allowed by both functions."
+    },
+    {
+     "front": "Domain of a quotient",
+     "back": "The inputs allowed by both functions, with the divisor not equal to 0. Find it before simplifying."
+    },
+    {
+     "front": "Composition",
+     "back": "(g of f)(x) = g(f(x)). The domain is the inputs of f whose outputs are allowed in g."
+    },
+    {
+     "front": "Decomposing a function",
+     "back": "Writing a function as a composition, such as (3x + 2)^5 = f(g(x)) with g(x) = 3x + 2 and f(x) = x^5."
+    },
+    {
+     "front": "Inner and outer functions",
+     "back": "In f(g(x)), g is applied first and f is applied to the result."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the vertex of the graph of g(x) = -3|2x - 4| + 5?",
+     "options": [
+      "(4, 5)",
+      "(-2, 5)",
+      "(2, 5)",
+      "(2, -5)"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Let f(x) = the square root of (x - 3) and g(x) = 1/(x - 5). What is the domain of f/g?",
+     "options": [
+      "x >= 3",
+      "x >= 3 and x is not 5",
+      "x is not 5",
+      "x > 3 and x is not 5"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Let f(x) = 2x + 1 and g(x) = x^2 - 3. What is (g of f)(x)?",
+     "options": [
+      "4x^2 + 4x - 2",
+      "2x^2 - 5",
+      "4x^2 - 2",
+      "2x^2 + 2x - 5"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "h(x) = (3x + 2)^5 can be written as f(g(x)). Which pair of functions works?",
+     "options": [
+      "f(x) = 3x + 2 and g(x) = x^5",
+      "f(x) = 3x^5 and g(x) = x + 2",
+      "f(x) = x^5 + 2 and g(x) = 3x",
+      "f(x) = x^5 and g(x) = 3x + 2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "How does the graph of y = f(x/2) compare with the graph of y = f(x)?",
+     "options": [
+      "A horizontal compression by a factor of 1/2",
+      "A horizontal stretch by a factor of 2",
+      "A vertical stretch by a factor of 2",
+      "A shift 2 units to the right"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "The graph of y = f(x) contains the points (-2, 1), (0, 3), (2, -1) and (4, 0). Find the images of these four points on the graph of g(x) = -2f(x - 1) + 3. State the transformations in the order that you applied them, and say what happens to the domain if f has domain from -2 to 4.",
+     "markScheme": [
+      "States the point rule (x, y) goes to (x + 1, -2y + 3)",
+      "Finds the images (-1, 1), (1, -3), (3, 5) and (5, 3)",
+      "Describes the transformations: shift right 1, vertical stretch by 2 with a reflection, then shift up 3",
+      "Says the domain changes from -2 to 4 into -1 to 5"
+     ],
+     "modelAnswer": "For g(x) = -2f(x - 1) + 3, the point (x, y) on f goes to (x + 1, -2y + 3). So (-2, 1) goes to (-1, 1), (0, 3) goes to (1, -3), (2, -1) goes to (3, 5) and (4, 0) goes to (5, 3). The transformations are a shift of 1 to the right, a vertical stretch by a factor of 2 with a reflection across the x-axis, and a shift of 3 up. The inputs only shift by 1, so the domain from -2 to 4 becomes -1 to 5.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Each point (x, y) goes to (x + 1, -2y + 3). (-2, 1) goes to (-1, 1), (0, 3) goes to (1, -3), (2, -1) goes to (3, 5) and (4, 0) goes to (5, 3). The graph is moved right 1, stretched vertically by 2 and flipped over the x-axis, then moved up 3. The x-values only go up by 1, so the domain is -1 to 5 now.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Each point (x, y) goes to (x + 1, -2y + 3)."
+        },
+        {
+         "point": 1,
+         "quote": "(-2, 1) goes to (-1, 1), (0, 3) goes to (1, -3), (2, -1) goes to (3, 5) and (4, 0) goes to (5, 3)."
+        },
+        {
+         "point": 2,
+         "quote": "The graph is moved right 1, stretched vertically by 2 and flipped over the x-axis, then moved up 3."
+        },
+        {
+         "point": 3,
+         "quote": "The x-values only go up by 1, so the domain is -1 to 5 now."
+        }
+       ],
+       "feedback": "Full marks. You applied the stretch and flip before the vertical shift, the correct order for the outputs."
+      },
+      {
+       "tier": "full",
+       "text": "For the input, x - 1 means shift right 1, so the new x is old x + 1; for the output, multiply by -2 then add 3, so the new y is -2y + 3. The new points are (-1, 1), (1, -3), (3, 5), (5, 3). In words: right 1, reflect and stretch by 2, up 3. The inputs run from -2 + 1 = -1 to 4 + 1 = 5, so the domain is from -1 to 5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "shift right 1, so the new x is old x + 1; for the output, multiply by -2 then add 3, so the new y is -2y + 3"
+        },
+        {
+         "point": 1,
+         "quote": "The new points are (-1, 1), (1, -3), (3, 5), (5, 3)"
+        },
+        {
+         "point": 2,
+         "quote": "right 1, reflect and stretch by 2, up 3"
+        },
+        {
+         "point": 3,
+         "quote": "The inputs run from -2 + 1 = -1 to 4 + 1 = 5, so the domain is from -1 to 5"
+        }
+       ],
+       "feedback": "All four marks. Giving both the rule and the words shows you understand each part of the notation."
+      },
+      {
+       "tier": "partial",
+       "text": "(-1, 1), (1, -3), (3, 5), (5, 3). Right 1, stretch by 2 and reflect, up 3. The domain stays the same because the shifts don't change it.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "(-1, 1), (1, -3), (3, 5), (5, 3)."
+        },
+        {
+         "point": 2,
+         "quote": "Right 1, stretch by 2 and reflect, up 3."
+        }
+       ],
+       "feedback": "Your points and description are right. A horizontal shift does change the domain: every x-value moves right by 1, so -2 to 4 becomes -1 to 5."
+      },
+      {
+       "tier": "partial",
+       "text": "(x, y) goes to (x + 1, -2y + 3) and the domain is -1 to 5. The points are (-3, 1), (-1, -3), (1, 5), (3, 3).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(x, y) goes to (x + 1, -2y + 3)"
+        },
+        {
+         "point": 3,
+         "quote": "the domain is -1 to 5"
+        }
+       ],
+       "feedback": "Your rule and domain are right, but your images shift left by 1. With f(x - 1) the graph moves right, so the x-values increase by 1. Use your own rule to recompute.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "(-2, 1) becomes (-3, -2 + 3) so it's (-3, 1) and the graph is shifted left because of the minus.",
+       "meets": [],
+       "feedback": "The minus sign in x - 1 means the graph shifts right. The -2 multiplies the y-values, not the x-values, and the 3 is added afterward."
+      },
+      {
+       "tier": "weak",
+       "text": "It's shifted right 1 and up 3 and flipped. The new points are (-1, -1), (1, -3), (3, 1), (5, 3).",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "It's shifted right 1 and up 3 and flipped."
+        }
+       ],
+       "feedback": "The description is right. Then the points need the vertical stretch by 2 as well as the flip: (-2, 1) goes to y = -2(1) + 3 = 1, not -1."
+      }
+     ]
+    },
+    {
+     "prompt": "A drop of oil spreads on Buckeye Lake in a circle. The radius is r(t) = 3t feet after t seconds, and the area is A(r) = (pi)r^2. (a) Write the area as a function of time. (b) Find the area at t = 5 seconds in terms of pi. (c) When does the area reach 144(pi) square feet? (d) Explain which function is inner and what each does.",
+     "markScheme": [
+      "Writes A(r(t)) = (pi)(3t)^2 = 9(pi)t^2",
+      "Finds the area at t = 5 as 225(pi) square feet",
+      "Solves 9(pi)t^2 = 144(pi) to get t = 4 seconds",
+      "Explains that r is the inner function turning time into radius, and A is the outer function turning radius into area"
+     ],
+     "modelAnswer": "(a) A(r(t)) = (pi)(3t)^2 = 9(pi)t^2. (b) At t = 5, A = 9(pi)(25) = 225(pi) square feet, about 707 square feet. (c) 9(pi)t^2 = 144(pi) gives t^2 = 16, so t = 4 seconds (the negative root is not viable). (d) The inner function r takes the time and outputs the radius, and the outer function A takes that radius and outputs the area.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) A(r(t)) = pi (3t)^2 = 9 pi t^2. (b) 9 pi (25) = 225 pi square feet, about 707. (c) 9 pi t^2 = 144 pi, divide by 9 pi, t^2 = 16, t = 4 seconds, not -4 because time can't be negative. (d) r is the inner one: it takes time in and gives the radius. A is outer: it takes the radius and gives the area.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(r(t)) = pi (3t)^2 = 9 pi t^2."
+        },
+        {
+         "point": 1,
+         "quote": "9 pi (25) = 225 pi square feet, about 707."
+        },
+        {
+         "point": 2,
+         "quote": "9 pi t^2 = 144 pi, divide by 9 pi, t^2 = 16, t = 4 seconds, not -4 because time can't be negative."
+        },
+        {
+         "point": 3,
+         "quote": "r is the inner one: it takes time in and gives the radius. A is outer: it takes the radius and gives the area."
+        }
+       ],
+       "feedback": "Full marks. Rejecting t = -4 was a good use of the context."
+      },
+      {
+       "tier": "full",
+       "text": "The composition is A(r(t)) = pi(3t)^2 = 9 pi t^2, so at 5 seconds the area is 9 x 25 pi = 225 pi square feet. To find the time: 9 pi t^2 = 144 pi means t^2 = 16 so t = 4 s. The inside function r(t) changes seconds into feet, and then the outside function A(r) changes feet into square feet.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(r(t)) = pi(3t)^2 = 9 pi t^2"
+        },
+        {
+         "point": 1,
+         "quote": "so at 5 seconds the area is 9 x 25 pi = 225 pi square feet"
+        },
+        {
+         "point": 2,
+         "quote": "9 pi t^2 = 144 pi means t^2 = 16 so t = 4 s"
+        },
+        {
+         "point": 3,
+         "quote": "The inside function r(t) changes seconds into feet, and then the outside function A(r) changes feet into square feet"
+        }
+       ],
+       "feedback": "All four marks. Tracking the units through the composition is a great way to explain inner and outer."
+      },
+      {
+       "tier": "partial",
+       "text": "A(r(t)) = 9 pi t^2. At 5 seconds it's 9 pi x 5 = 45 pi. For 144 pi, t = 4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A(r(t)) = 9 pi t^2."
+        },
+        {
+         "point": 2,
+         "quote": "For 144 pi, t = 4."
+        }
+       ],
+       "feedback": "Your composition and time are right. At t = 5 the t is squared: 9 pi (25) = 225 pi, not 45 pi."
+      },
+      {
+       "tier": "partial",
+       "text": "The inner function is r because it comes first, and A takes its output. The area at 5 seconds is 225 pi.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The inner function is r because it comes first, and A takes its output."
+        },
+        {
+         "point": 1,
+         "quote": "The area at 5 seconds is 225 pi."
+        }
+       ],
+       "feedback": "Your explanation and (b) are right. Write the composition itself, 9 pi t^2, and solve 9 pi t^2 = 144 pi for part (c).",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A(r(t)) = pi x 3t^2 = 3 pi t^2, because you square the t.",
+       "meets": [],
+       "feedback": "The radius is 3t, and the whole radius is squared: (3t)^2 = 9t^2. The 3 is squared too."
+      },
+      {
+       "tier": "weak",
+       "text": "r is the inner function. For part (c) 144 pi / pi = 144 and 144 / 3 = 48 seconds.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "r is the inner function"
+        }
+       ],
+       "feedback": "Your inner-function answer is right. Set 9 pi t^2 equal to 144 pi. Then t^2 = 16 and t = 4, so the area is not linear in time."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Inverse functions and equations with restrictions",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. find the inverse of a function, including a rational function, verify it by composition and restrict a domain so that an inverse exists;\n2. solve absolute-value, radical and rational equations in one variable, identify extraneous solutions and explain how they arise.\n\n## Materials\n\nGraphing handhelds, whiteboards, patty paper to fold on y = x, the quiz.\n\n## Starter (8 minutes)\n\nGraph f(x) = (x - 2)^2 + 1 and ask: \"Does this function have an inverse?\" Use the horizontal line test to show that it fails, and ask what restriction of the domain would save it. Fold the paper along y = x to see the reflection.\n\n## Main activity\n\n1. Find the inverse of f(x) = (2x + 1)/(x - 3) by swapping, cross-multiplying and collecting the terms with y. State the domain and range of both functions.\n2. Absolute value with a variable on the right: solve |x - 1| = 2x + 5 and test each case against the requirement that the right side not be negative.\n3. Two radicals: solve the square root of (x + 7) plus the square root of (x - 2) = 5.\n4. Rational equation with a hidden restriction: 1/(x - 2) + 1/(x + 2) = 4/(x^2 - 4).\n\n## Checking for understanding\n\nWhiteboards: \"What does it mean for a candidate to be extraneous? What is the one thing you do to tell?\"\n\n## Quiz\n\nCollect the quiz in the last ten minutes.",
+   "reading": {
+    "title": "Inverses with restrictions, and equations that need a final check",
+    "content": "Not every function has an inverse. A function has an inverse only if it is one-to-one, meaning no two inputs share an output. The graph passes the horizontal line test. The parabola f(x) = (x - 2)^2 + 1 fails, since f(1) = f(3) = 2. But restrict the domain to x >= 2 and the parabola becomes one-to-one, and the inverse is f-inverse(x) = 2 + the square root of (x - 1). The domain of the inverse equals the range of the original, so here x >= 1. Choosing the other half, x <= 2, would give a different inverse, 2 minus the square root of (x - 1).\n\nRational functions can have inverses too. To invert f(x) = (2x + 1)/(x - 3), write x = (2y + 1)/(y - 3), cross-multiply to get xy - 3x = 2y + 1, gather the y terms, xy - 2y = 3x + 1, and factor: y(x - 2) = 3x + 1. So f-inverse(x) = (3x + 1)/(x - 2). Check one composition: f(f-inverse(x)) has numerator 2(3x + 1)/(x - 2) + 1 = 7x/(x - 2) and denominator (3x + 1)/(x - 2) - 3 = 7/(x - 2). Dividing gives x. The original excludes x = 3 and never outputs 2, while the inverse excludes x = 2, so the domain and range swap.\n\nEquations with absolute values, roots or fractions are solved by cases or by squaring, and each step may add candidates. For |x - 1| = 2x + 5, the right side must be non-negative since an absolute value cannot be negative. Case one: x - 1 = 2x + 5 gives x = -6, but then 2x + 5 = -7 is negative, so it fails. Case two: x - 1 = -(2x + 5) gives 3x = -4, x = -4/3, and 2x + 5 = 7/3, which is positive, so it works. Only x = -4/3 is a solution.\n\nFor radicals, isolate and square. Solve the square root of (2x + 3) + 1 = x. Rewrite as the square root of (2x + 3) = x - 1, and square to get 2x + 3 = x^2 - 2x + 1, so x^2 - 4x - 2 = 0 and x = 2 plus or minus the square root of 6. The right side x - 1 must be non-negative, which kills x = 2 - the square root of 6, about -0.45. Only x = 2 + the square root of 6 survives. With two radicals, such as the square root of (x + 7) plus the square root of (x - 2) = 5, isolate one radical and square, simplify to isolate the second and square again. It gives x = 114/25 = 4.56, and the check is 3.4 + 1.6 = 5.\n\nRational equations bring in excluded values. For 1/(x - 2) + 1/(x + 2) = 4/(x^2 - 4), multiplying through by x^2 - 4 gives (x + 2) + (x - 2) = 4, so x = 2. But x = 2 makes a denominator zero, so there is no solution. The habit never to skip is to test candidates in the original equation."
+   },
+   "cards": [
+    {
+     "front": "One-to-one",
+     "back": "A function in which different inputs always give different outputs. Only one-to-one functions have inverses."
+    },
+    {
+     "front": "Horizontal line test",
+     "back": "A function is one-to-one if every horizontal line meets its graph at most once."
+    },
+    {
+     "front": "Restricting a domain",
+     "back": "Limiting the inputs, such as x >= 2 for (x - 2)^2 + 1, so that the function becomes one-to-one."
+    },
+    {
+     "front": "Domain and range of an inverse",
+     "back": "The domain of the inverse is the range of the original, and the range of the inverse is the domain of the original."
+    },
+    {
+     "front": "Case analysis for absolute value",
+     "back": "Split |u| = v into u = v and u = -v, and require v >= 0."
+    },
+    {
+     "front": "Isolate then square",
+     "back": "To solve a radical equation, get the radical alone on one side before squaring both sides."
+    },
+    {
+     "front": "Extraneous solution",
+     "back": "A candidate produced by the algebra that fails in the original equation."
+    },
+    {
+     "front": "Excluded value",
+     "back": "An input that makes a denominator zero. It can never be a solution of a rational equation."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the inverse of f(x) = (2x + 1)/(x - 3)?",
+     "options": [
+      "(x - 3)/(2x + 1)",
+      "(3x + 1)/(x - 2)",
+      "(3x - 1)/(x + 2)",
+      "(x + 3)/(x - 2)"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The function f(x) = (x - 2)^2 + 1 has an inverse 2 + the square root of (x - 1). Which domain restriction on f gives this inverse?",
+     "options": [
+      "x <= 2",
+      "x >= 1",
+      "x >= 2",
+      "All real numbers"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Solve |x - 1| = 2x + 5.",
+     "options": [
+      "x = -4/3 only",
+      "x = -6 only",
+      "x = -6 and x = -4/3",
+      "No solution"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Solve the square root of (2x + 3) + 1 = x.",
+     "options": [
+      "x = 2 - the square root of 6",
+      "x = 2 plus or minus the square root of 6",
+      "x = 4",
+      "x = 2 + the square root of 6"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Solve 1/(x - 2) + 1/(x + 2) = 4/(x^2 - 4).",
+     "options": [
+      "x = 2",
+      "x = -2",
+      "No solution",
+      "x = 0"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Find the inverse of f(x) = (2x + 1)/(x - 3). Show the algebra of solving for the new output, verify that f(g(x)) = x where g is your inverse, and state the domain of f and of g.",
+     "markScheme": [
+      "Swaps the variables and cross-multiplies to get xy - 3x = 2y + 1",
+      "Collects the y terms and factors to find g(x) = (3x + 1)/(x - 2)",
+      "Verifies that f(g(x)) simplifies to x, with the algebra shown",
+      "States the domain of f as x not equal to 3 and the domain of g as x not equal to 2"
+     ],
+     "modelAnswer": "Write x = (2y + 1)/(y - 3). Cross-multiply: x(y - 3) = 2y + 1, so xy - 3x = 2y + 1. Collect y terms: xy - 2y = 3x + 1, then y(x - 2) = 3x + 1, so g(x) = (3x + 1)/(x - 2). Verify: f(g(x)) = [2(3x + 1)/(x - 2) + 1] / [(3x + 1)/(x - 2) - 3] = [(6x + 2 + x - 2)/(x - 2)] / [(3x + 1 - 3x + 6)/(x - 2)] = (7x)/(7) = x. The domain of f is all x except 3, and the domain of g is all x except 2.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Swap: x = (2y + 1)/(y - 3). Cross multiply: xy - 3x = 2y + 1. Get the y's together: xy - 2y = 3x + 1, so y(x - 2) = 3x + 1 and g(x) = (3x + 1)/(x - 2). Check: f(g(x)) top is (6x + 2)/(x - 2) + 1 = 7x/(x - 2), bottom is (3x + 1 - 3x + 6)/(x - 2) = 7/(x - 2), so dividing the two gives x. f can't have x = 3 and g can't have x = 2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Swap: x = (2y + 1)/(y - 3). Cross multiply: xy - 3x = 2y + 1."
+        },
+        {
+         "point": 1,
+         "quote": "Get the y's together: xy - 2y = 3x + 1, so y(x - 2) = 3x + 1 and g(x) = (3x + 1)/(x - 2)."
+        },
+        {
+         "point": 2,
+         "quote": "Check: f(g(x)) top is (6x + 2)/(x - 2) + 1 = 7x/(x - 2), bottom is (3x + 1 - 3x + 6)/(x - 2) = 7/(x - 2), so dividing the two gives x."
+        },
+        {
+         "point": 3,
+         "quote": "f can't have x = 3 and g can't have x = 2."
+        }
+       ],
+       "feedback": "Full marks. Your check works with a common denominator, which is the cleanest way through a complex fraction."
+      },
+      {
+       "tier": "full",
+       "text": "From x = (2y + 1)/(y - 3), multiply both sides by (y - 3): xy - 3x = 2y + 1. Subtract 2y and add 3x: xy - 2y = 3x + 1. Factor out y: y(x - 2) = 3x + 1. So g(x) = (3x + 1)/(x - 2). f(g(x)): numerator 2(3x + 1) + (x - 2) over (x - 2) is 7x over (x - 2); denominator (3x + 1) - 3(x - 2) over (x - 2) is 7 over (x - 2); the ratio is 7x/7 = x. Domain of f: all reals except 3. Domain of g: all reals except 2 (which is also the range of f, since f never equals 2).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "multiply both sides by (y - 3): xy - 3x = 2y + 1"
+        },
+        {
+         "point": 1,
+         "quote": "Subtract 2y and add 3x: xy - 2y = 3x + 1. Factor out y: y(x - 2) = 3x + 1. So g(x) = (3x + 1)/(x - 2)"
+        },
+        {
+         "point": 2,
+         "quote": "f(g(x)): numerator 2(3x + 1) + (x - 2) over (x - 2) is 7x over (x - 2); denominator (3x + 1) - 3(x - 2) over (x - 2) is 7 over (x - 2); the ratio is 7x/7 = x"
+        },
+        {
+         "point": 3,
+         "quote": "Domain of f: all reals except 3. Domain of g: all reals except 2 (which is also the range of f, since f never equals 2)"
+        }
+       ],
+       "feedback": "All four marks. Connecting the excluded value 2 of g with the range of f shows you understand how domain and range swap."
+      },
+      {
+       "tier": "partial",
+       "text": "xy - 3x = 2y + 1. xy - 2y = 3x + 1, so y = (3x + 1)/(x - 2). The domain of both is all real numbers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "xy - 3x = 2y + 1."
+        },
+        {
+         "point": 1,
+         "quote": "xy - 2y = 3x + 1, so y = (3x + 1)/(x - 2)."
+        }
+       ],
+       "feedback": "The inverse is right. Both functions have restrictions: f excludes 3 because of x - 3, and g excludes 2. Also verify the inverse by composition."
+      },
+      {
+       "tier": "partial",
+       "text": "f(g(x)) = x after simplifying, I did it and it works. The domain of f is x not equal to 3 and the domain of g is x not equal to 2.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "f(g(x)) = x after simplifying, I did it and it works."
+        },
+        {
+         "point": 3,
+         "quote": "The domain of f is x not equal to 3 and the domain of g is x not equal to 2."
+        }
+       ],
+       "feedback": "Your domains are right. Show the algebra for the inverse, swapping and collecting the y terms, and show the composition work, since the claim 'it works' is not shown.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The inverse is the reciprocal, (x - 3)/(2x + 1).",
+       "meets": [],
+       "feedback": "The reciprocal flips the fraction, but the inverse undoes the function, so f(g(x)) must be x. Test it with x = 4: f(4) = 9, and the reciprocal at 9 is not 4."
+      },
+      {
+       "tier": "weak",
+       "text": "Swap: x = (2y + 1)/(y - 3), so xy - 3x = 2y + 1. Then y = 2y + 1 + 3x over x.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Swap: x = (2y + 1)/(y - 3), so xy - 3x = 2y + 1."
+        }
+       ],
+       "feedback": "The cross-multiplication is right. Then you have y on both sides. Collect the y terms on one side, then factor y out, which gives y(x - 2) = 3x + 1."
+      }
+     ]
+    },
+    {
+     "prompt": "Solve the square root of (x + 7) plus the square root of (x - 2) = 5. Show how you handle the two radicals and check your answer in the original equation. Explain why the check is needed.",
+     "markScheme": [
+      "Isolates one radical and squares both sides, giving x + 7 = 25 - 10 times the square root of (x - 2) + x - 2",
+      "Simplifies to 10 times the square root of (x - 2) = 16, so the square root of (x - 2) = 1.6",
+      "Squares again to get x - 2 = 2.56, so x = 4.56",
+      "Checks: the square root of 11.56 = 3.4 and the square root of 2.56 = 1.6, which add to 5, and explains that squaring can introduce extraneous values"
+     ],
+     "modelAnswer": "Isolate one radical: the square root of (x + 7) = 5 - the square root of (x - 2). Square both sides: x + 7 = 25 - 10 times the square root of (x - 2) + (x - 2). Simplify: 7 = 23 - 10 times the square root of (x - 2), so 10 times the square root of (x - 2) = 16 and the square root of (x - 2) = 1.6. Square again: x - 2 = 2.56, so x = 4.56. Check: the square root of 11.56 = 3.4 and the square root of 2.56 = 1.6, and 3.4 + 1.6 = 5. A check is needed because squaring is not reversible and can introduce extraneous solutions.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Get one radical alone: sqrt(x + 7) = 5 - sqrt(x - 2). Square: x + 7 = 25 - 10 sqrt(x - 2) + x - 2. The x's cancel: 7 = 23 - 10 sqrt(x - 2), so 10 sqrt(x - 2) = 16 and sqrt(x - 2) = 1.6. Square again: x - 2 = 2.56 so x = 4.56. Check: sqrt(11.56) = 3.4 and sqrt(2.56) = 1.6 and the sum is 5. Squaring can make false solutions so you have to check.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Get one radical alone: sqrt(x + 7) = 5 - sqrt(x - 2). Square: x + 7 = 25 - 10 sqrt(x - 2) + x - 2."
+        },
+        {
+         "point": 1,
+         "quote": "The x's cancel: 7 = 23 - 10 sqrt(x - 2), so 10 sqrt(x - 2) = 16 and sqrt(x - 2) = 1.6."
+        },
+        {
+         "point": 2,
+         "quote": "Square again: x - 2 = 2.56 so x = 4.56."
+        },
+        {
+         "point": 3,
+         "quote": "Check: sqrt(11.56) = 3.4 and sqrt(2.56) = 1.6 and the sum is 5. Squaring can make false solutions so you have to check."
+        }
+       ],
+       "feedback": "Full marks. Noticing that the x terms cancel after the first squaring is what makes the second step easy."
+      },
+      {
+       "tier": "full",
+       "text": "Isolate: sqrt(x + 7) = 5 - sqrt(x - 2). Square both sides, remembering that (5 - a)^2 = 25 - 10a + a^2, x + 7 = 25 - 10 sqrt(x - 2) + (x - 2). Subtract x from both sides: 7 = 23 - 10 sqrt(x - 2), so 10 sqrt(x - 2) = 16, which is sqrt(x - 2) = 1.6. Square: x - 2 = 2.56, x = 4.56 = 114/25. Check: 3.4 + 1.6 = 5, so it's valid. Since squaring isn't reversible I always check for extraneous roots.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x + 7 = 25 - 10 sqrt(x - 2) + (x - 2)"
+        },
+        {
+         "point": 1,
+         "quote": "Subtract x from both sides: 7 = 23 - 10 sqrt(x - 2), so 10 sqrt(x - 2) = 16, which is sqrt(x - 2) = 1.6"
+        },
+        {
+         "point": 2,
+         "quote": "Square: x - 2 = 2.56, x = 4.56 = 114/25"
+        },
+        {
+         "point": 3,
+         "quote": "Check: 3.4 + 1.6 = 5, so it's valid. Since squaring isn't reversible I always check for extraneous roots"
+        }
+       ],
+       "feedback": "All four marks. Writing the square of the binomial (5 - a) explicitly prevents the usual dropped middle term."
+      },
+      {
+       "tier": "partial",
+       "text": "sqrt(x + 7) = 5 - sqrt(x - 2), so x + 7 = 25 + x - 2 after squaring. That gives 7 = 23, which is false, so there's no solution.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "sqrt(x + 7) = 5 - sqrt(x - 2), so x + 7 = 25 + x - 2 after squaring."
+        }
+       ],
+       "feedback": "Squaring 5 - sqrt(x - 2) has a middle term, -10 sqrt(x - 2), which you dropped. With it, you get 7 = 23 - 10 sqrt(x - 2), and the solution x = 4.56."
+      },
+      {
+       "tier": "partial",
+       "text": "x - 2 = 2.56 so x = 4.56. Check: 3.4 + 1.6 = 5. You need the check since the first step squares.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "x - 2 = 2.56 so x = 4.56."
+        },
+        {
+         "point": 3,
+         "quote": "Check: 3.4 + 1.6 = 5."
+        }
+       ],
+       "feedback": "The result and check are right. Show the algebra from the start: isolate a radical, square, simplify to 10 sqrt(x - 2) = 16, then square again.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Square both sides: x + 7 + x - 2 = 25, so 2x + 5 = 25 and x = 10.",
+       "meets": [],
+       "feedback": "You cannot square a sum term by term. (sqrt(a) + sqrt(b))^2 has a cross term. Isolate one radical first, then square. Also x = 10 gives 4.1 + 2.8, which is not 5."
+      },
+      {
+       "tier": "weak",
+       "text": "10 sqrt(x - 2) = 16. So x - 2 = 16 and x = 18.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "10 sqrt(x - 2) = 16"
+        }
+       ],
+       "feedback": "Your equation is right, but you have to divide by 10 first: sqrt(x - 2) = 1.6, and then square to get x - 2 = 2.56."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Quadratic equations with parameters, and where a line meets a parabola",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. solve quadratic equations by factoring, completing the square and the quadratic formula, including those with leading coefficients other than 1, and derive the formula;\n2. solve a system of a linear and a quadratic equation, and use the discriminant to decide how many solutions the system has.\n\n## Materials\n\nGraphing handhelds, algebra tiles, whiteboards, the problem set.\n\n## Starter (8 minutes)\n\nPose: \"The equation x^2 + kx + 9 = 0. For which k does it have exactly one solution?\" Let students experiment with values of k. Discuss why the discriminant is the right tool, and find k = 6 and k = -6.\n\n## Main activity\n\n1. Solve 6x^2 - x - 12 = 0 by factoring using the ac method, and 3x^2 - 12x + 5 = 0 by completing the square after dividing by 3.\n2. Derive the quadratic formula by completing the square on ax^2 + bx + c = 0.\n3. Sum and product of roots: for 2x^2 - 9x + 4 = 0, the sum is -b/a and the product is c/a. Check with the actual roots.\n4. A line y = 2x + b and the parabola y = -x^2 + 8x: find the b for which the line is tangent, crosses twice or misses.\n\n## Checking for understanding\n\nWhiteboards: \"Without solving, how many real solutions does 3x^2 - 5x + 4 = 0 have?\" Look for the discriminant.\n\n## Problem set\n\nCollect the problem set the next day.",
+   "reading": {
+    "title": "From the formula's derivation to tangent lines",
+    "content": "When the leading coefficient is not 1, factoring takes more care. For 6x^2 - x - 12 = 0, multiply a and c to get -72 and look for two numbers that multiply to -72 and add to -1: 8 and -9 work. Split the middle term, 6x^2 + 8x - 9x - 12, and factor by grouping: 2x(3x + 4) - 3(3x + 4) = (3x + 4)(2x - 3). The solutions are x = -4/3 and x = 3/2. When factoring is not obvious, complete the square. For 3x^2 - 12x + 5 = 0, divide by 3: x^2 - 4x = -5/3. Add 4: (x - 2)^2 = 7/3, so x = 2 plus or minus the square root of (7/3), which is 2 plus or minus (the square root of 21)/3.\n\nWhy does the quadratic formula work? Because completing the square works on every quadratic. Start with ax^2 + bx + c = 0 and divide by a: x^2 + (b/a)x = -c/a. Add (b/(2a))^2 to both sides: (x + b/(2a))^2 = b^2/(4a^2) - c/a = (b^2 - 4ac)/(4a^2). Take square roots: x + b/(2a) = plus or minus the square root of (b^2 - 4ac), divided by 2a. Subtract b/(2a) and you have x = (-b plus or minus the square root of (b^2 - 4ac))/(2a). The quantity b^2 - 4ac, the discriminant, decides the nature of the solutions: positive means two real, zero means one, negative means two complex.\n\nThe solutions are connected to the coefficients. If r and s are the solutions of ax^2 + bx + c = 0, then ax^2 + bx + c = a(x - r)(x - s), so r + s = -b/a and rs = c/a. For 2x^2 - 9x + 4 = 0 the sum is 9/2 and the product is 2. The solutions are 4 and 1/2, and indeed 4 + 1/2 = 9/2 and 4 x 1/2 = 2. A quadratic with given sum and product can be built backward: x^2 - (sum)x + (product) = 0.\n\nA line and a parabola can meet twice, once or never, and the discriminant of the combined equation tells which. Let the line be y = 2x + b and the parabola y = -x^2 + 8x. Setting them equal gives -x^2 + 8x = 2x + b, so x^2 - 6x + b = 0. The discriminant is 36 - 4b. When b < 9 the line meets the parabola in two points, when b = 9 the line is tangent in exactly one point, and when b > 9 the line misses the parabola. At b = 9 the equation is (x - 3)^2 = 0, so the point of tangency is at x = 3, with y = 2(3) + 9 = 15. A similar system, y = x^2 - 4x + 1 and y = 2x - 8, gives x^2 - 6x + 9 = 0, so x = 3, a single point (3, -2): the line is tangent."
+   },
+   "cards": [
+    {
+     "front": "ac method",
+     "back": "To factor ax^2 + bx + c, find two numbers that multiply to ac and add to b, split the middle term, and factor by grouping."
+    },
+    {
+     "front": "Derivation of the formula",
+     "back": "Complete the square on ax^2 + bx + c = 0 for general a, b and c."
+    },
+    {
+     "front": "Sum of roots",
+     "back": "For ax^2 + bx + c = 0 the roots add to -b/a."
+    },
+    {
+     "front": "Product of roots",
+     "back": "For ax^2 + bx + c = 0 the roots multiply to c/a."
+    },
+    {
+     "front": "Discriminant and tangency",
+     "back": "A discriminant of 0 for the combined equation means the line is tangent to the parabola."
+    },
+    {
+     "front": "Parameter",
+     "back": "A letter in an equation, such as k or b, that stands for a fixed but unspecified number."
+    },
+    {
+     "front": "Point of tangency",
+     "back": "The single point where a tangent line touches a curve."
+    },
+    {
+     "front": "Quadratic from its roots",
+     "back": "x^2 - (sum of roots)x + (product of roots) = 0."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Solve 6x^2 - x - 12 = 0.",
+     "options": [
+      "x = -4/3 or x = 3/2",
+      "x = 4/3 or x = -3/2",
+      "x = -3/4 or x = 2/3",
+      "x = 4 or x = -3"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Solve 3x^2 - 12x + 5 = 0.",
+     "options": [
+      "x = 4 plus or minus (the square root of 21)/3",
+      "x = 2 plus or minus (the square root of 21)/3",
+      "x = 2 plus or minus the square root of (5/3)",
+      "x = -2 plus or minus (the square root of 21)/3"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "For which values of k does x^2 + kx + 9 = 0 have exactly one real solution?",
+     "options": [
+      "k = 6 only",
+      "k = 3 or k = -3",
+      "k = 6 or k = -6",
+      "k = 36"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the sum of the solutions of 2x^2 - 9x + 4 = 0?",
+     "options": [
+      "9/2",
+      "-9/2",
+      "2",
+      "9"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "How many points do the graphs of y = x^2 - 4x + 1 and y = 2x - 8 have in common?",
+     "options": [
+      "Two points",
+      "No points",
+      "Exactly one point, (3, 1)",
+      "Exactly one point, (3, -2)"
+     ],
+     "answer": "D"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A line y = 2x + b meets the parabola y = -x^2 + 8x. Use the discriminant of the combined equation to find the values of b for which the line meets the parabola in two points, in exactly one point, and in no point. Find the point of tangency.",
+     "markScheme": [
+      "Sets the equations equal and rearranges to x^2 - 6x + b = 0",
+      "Finds the discriminant 36 - 4b",
+      "States two points when b < 9, one point when b = 9, and no points when b > 9",
+      "Finds the tangency at b = 9: x = 3 and y = 15, so the point (3, 15)"
+     ],
+     "modelAnswer": "Set -x^2 + 8x = 2x + b. Rearranging gives x^2 - 6x + b = 0. The discriminant is (-6)^2 - 4(1)(b) = 36 - 4b. There are two intersection points when 36 - 4b > 0, which is b < 9; exactly one when b = 9; and none when b > 9. At b = 9 the equation is x^2 - 6x + 9 = (x - 3)^2 = 0, so x = 3, and y = 2(3) + 9 = 15. The point of tangency is (3, 15), and the parabola at 3 is -9 + 24 = 15, which checks.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At an intersection -x^2 + 8x = 2x + b, so x^2 - 6x + b = 0. The discriminant is 36 - 4b. Two points when it's positive, so b < 9. One point when it's 0, so b = 9. None when it's negative, b > 9. If b = 9, (x - 3)^2 = 0 so x = 3, and y = 2(3) + 9 = 15, the point (3, 15). Parabola check: -9 + 24 = 15.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At an intersection -x^2 + 8x = 2x + b, so x^2 - 6x + b = 0."
+        },
+        {
+         "point": 1,
+         "quote": "The discriminant is 36 - 4b."
+        },
+        {
+         "point": 2,
+         "quote": "Two points when it's positive, so b < 9. One point when it's 0, so b = 9. None when it's negative, b > 9."
+        },
+        {
+         "point": 3,
+         "quote": "If b = 9, (x - 3)^2 = 0 so x = 3, and y = 2(3) + 9 = 15, the point (3, 15). Parabola check: -9 + 24 = 15."
+        }
+       ],
+       "feedback": "Full marks. Checking the tangent point in the parabola confirms that it lies on both graphs."
+      },
+      {
+       "tier": "full",
+       "text": "Equate: -x^2 + 8x - 2x - b = 0 which is x^2 - 6x + b = 0 after multiplying by -1. Discriminant D = 36 - 4b. D > 0 gives b < 9 (two points), D = 0 gives b = 9 (tangent, one point), D < 0 gives b > 9 (no intersection). At b = 9 the repeated root is x = 6/2 = 3 and y = 15, so it touches at (3, 15).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "-x^2 + 8x - 2x - b = 0 which is x^2 - 6x + b = 0 after multiplying by -1"
+        },
+        {
+         "point": 1,
+         "quote": "Discriminant D = 36 - 4b"
+        },
+        {
+         "point": 2,
+         "quote": "D > 0 gives b < 9 (two points), D = 0 gives b = 9 (tangent, one point), D < 0 gives b > 9 (no intersection)"
+        },
+        {
+         "point": 3,
+         "quote": "At b = 9 the repeated root is x = 6/2 = 3 and y = 15, so it touches at (3, 15)"
+        }
+       ],
+       "feedback": "All four marks. Linking the sign of the discriminant to each case is the core idea."
+      },
+      {
+       "tier": "partial",
+       "text": "x^2 - 6x + b = 0. The discriminant is 36 - 4b. Two points when b > 9, one when b = 9 and none when b < 9.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x^2 - 6x + b = 0."
+        },
+        {
+         "point": 1,
+         "quote": "The discriminant is 36 - 4b."
+        }
+       ],
+       "feedback": "Your equation and discriminant are right. The inequalities are reversed: the discriminant is positive when 4b < 36, so two points occur for b < 9, and none for b > 9."
+      },
+      {
+       "tier": "partial",
+       "text": "b < 9 two points, b = 9 one point, b > 9 none. The tangent point is (3, 15).",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "b < 9 two points, b = 9 one point, b > 9 none."
+        },
+        {
+         "point": 3,
+         "quote": "The tangent point is (3, 15)."
+        }
+       ],
+       "feedback": "Your conditions and point are right. Show where they come from: the combined equation x^2 - 6x + b = 0 and its discriminant, 36 - 4b.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A line always crosses a parabola twice, so b doesn't matter.",
+       "meets": [],
+       "feedback": "A line can also miss a parabola or touch it once. Which happens depends on b. Setting the equations equal and checking the discriminant tells you."
+      },
+      {
+       "tier": "weak",
+       "text": "The discriminant is 36 - 4b. So b = 36/4 = 9 is when it's two points.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The discriminant is 36 - 4b."
+        }
+       ],
+       "feedback": "The discriminant is right. Setting it to zero gives b = 9, which is the tangent case with one point. Two points need the discriminant to be positive, which means b < 9."
+      }
+     ]
+    },
+    {
+     "prompt": "Derive the quadratic formula by completing the square on ax^2 + bx + c = 0, where a is not 0. Write each step.",
+     "markScheme": [
+      "Divides by a and moves the constant: x^2 + (b/a)x = -c/a",
+      "Adds (b/(2a))^2 to both sides and writes the left side as a square, (x + b/(2a))^2 = (b^2 - 4ac)/(4a^2)",
+      "Takes the square root of both sides: x + b/(2a) = plus or minus the square root of (b^2 - 4ac), over 2a",
+      "Solves for x to get x = (-b plus or minus the square root of (b^2 - 4ac))/(2a)"
+     ],
+     "modelAnswer": "Divide by a: x^2 + (b/a)x + c/a = 0, so x^2 + (b/a)x = -c/a. Add (b/(2a))^2 to both sides: x^2 + (b/a)x + b^2/(4a^2) = b^2/(4a^2) - c/a. The left side is (x + b/(2a))^2 and the right side is (b^2 - 4ac)/(4a^2). Take square roots: x + b/(2a) = plus or minus the square root of (b^2 - 4ac), divided by 2a. Subtract b/(2a): x = (-b plus or minus the square root of (b^2 - 4ac))/(2a).",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Divide by a, then move the c/a over: x^2 + (b/a)x = -c/a. Half of b/a is b/(2a). Add its square to both sides: (x + b/2a)^2 = b^2/4a^2 - c/a = (b^2 - 4ac)/4a^2. Take square roots, x + b/2a = plus or minus sqrt(b^2 - 4ac) / 2a. Subtract b/2a from both sides, x = (-b plus or minus sqrt(b^2 - 4ac)) / 2a.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Divide by a, then move the c/a over: x^2 + (b/a)x = -c/a."
+        },
+        {
+         "point": 1,
+         "quote": "Half of b/a is b/(2a). Add its square to both sides: (x + b/2a)^2 = b^2/4a^2 - c/a = (b^2 - 4ac)/4a^2."
+        },
+        {
+         "point": 2,
+         "quote": "Take square roots, x + b/2a = plus or minus sqrt(b^2 - 4ac) / 2a."
+        },
+        {
+         "point": 3,
+         "quote": "Subtract b/2a from both sides, x = (-b plus or minus sqrt(b^2 - 4ac)) / 2a."
+        }
+       ],
+       "feedback": "Full marks. Getting a common denominator of 4a^2 on the right is the step where the discriminant appears."
+      },
+      {
+       "tier": "full",
+       "text": "Start: ax^2 + bx + c = 0. Divide through by a and subtract c/a: x^2 + (b/a) x = -c/a. Add (b/2a)^2 to each side so the left is a perfect square: (x + b/(2a))^2 = -c/a + b^2/(4a^2) = (b^2 - 4ac) / (4a^2). The square root of the right is sqrt(b^2 - 4ac) / (2a) with a plus or minus. Move b/(2a) over, giving x = (-b +/- sqrt(b^2 - 4ac)) / (2a).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Divide through by a and subtract c/a: x^2 + (b/a) x = -c/a"
+        },
+        {
+         "point": 1,
+         "quote": "Add (b/2a)^2 to each side so the left is a perfect square: (x + b/(2a))^2 = -c/a + b^2/(4a^2) = (b^2 - 4ac) / (4a^2)"
+        },
+        {
+         "point": 2,
+         "quote": "The square root of the right is sqrt(b^2 - 4ac) / (2a) with a plus or minus"
+        },
+        {
+         "point": 3,
+         "quote": "Move b/(2a) over, giving x = (-b +/- sqrt(b^2 - 4ac)) / (2a)"
+        }
+       ],
+       "feedback": "All four marks. Every step is justified and the final form is exact."
+      },
+      {
+       "tier": "partial",
+       "text": "Divide by a: x^2 + (b/a)x = -c/a. Add b^2/4a^2 to both sides to get (x + b/2a)^2 = (b^2 - 4ac)/4a^2. Then x = -b/2a plus or minus sqrt(b^2 - 4ac) and that's the formula.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Divide by a: x^2 + (b/a)x = -c/a."
+        },
+        {
+         "point": 1,
+         "quote": "Add b^2/4a^2 to both sides to get (x + b/2a)^2 = (b^2 - 4ac)/4a^2."
+        }
+       ],
+       "feedback": "The first two steps are right. When you take the square root of the right side, the 4a^2 in the denominator gives 2a, so the root is divided by 2a."
+      },
+      {
+       "tier": "partial",
+       "text": "Take the square root: x + b/2a = plus or minus sqrt(b^2 - 4ac)/2a. So x = (-b plus or minus sqrt(b^2 - 4ac))/2a.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Take the square root: x + b/2a = plus or minus sqrt(b^2 - 4ac)/2a."
+        },
+        {
+         "point": 3,
+         "quote": "So x = (-b plus or minus sqrt(b^2 - 4ac))/2a."
+        }
+       ],
+       "feedback": "The last two steps are right. Show how you get there: divide by a, move c/a, add (b/2a)^2 to both sides, and combine the right side.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "You just memorize it. The formula comes from a theorem.",
+       "meets": [],
+       "feedback": "The formula can be derived, and doing so is the task. Completing the square on the general equation produces it."
+      },
+      {
+       "tier": "weak",
+       "text": "x^2 + (b/a)x = -c/a. Then add b to both sides, (x + b)^2 = -c/a + b, and take the root.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x^2 + (b/a)x = -c/a"
+        }
+       ],
+       "feedback": "Your first step is right. To complete the square you add the square of half the coefficient of x, which is (b/(2a))^2, not b."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Absolute-value and quadratic inequalities, constraints and factoring patterns",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. write and solve inequalities and compound inequalities from a context, including absolute-value and quadratic inequalities;\n2. represent constraints with equations and inequalities and interpret a solution as viable or not;\n3. recognize the structure of an expression and rewrite it using a sum or difference of cubes and quadratic-type factoring.\n\n## Materials\n\nNumber-line handouts, whiteboards, graphing handhelds for checking, the worksheet.\n\n## Starter (8 minutes)\n\nAsk: \"A garden is x meters wide and x + 4 meters long, and the area must be between 45 and 96 square meters. What can x be?\" Students write 45 <= x(x + 4) <= 96 and decide how to handle a double inequality that is quadratic in the middle. Collect ideas and solve it as two inequalities.\n\n## Main activity\n\n1. Absolute-value inequalities: |2x - 3| < 7 as a compound, |x + 4| >= 3 as an or statement. Interpret as distance from a number.\n2. Solve each quadratic inequality, x^2 + 4x - 45 >= 0 and x^2 + 4x - 96 <= 0, with a sign chart, and combine for the garden.\n3. Rental car constraint: the cost 39 + 0.25m must be from $100 to $150. Find the viable miles.\n4. Factoring patterns: x^4 - 5x^2 + 4 as a quadratic in x^2, 27x^3 - 1 as a difference of cubes, and 8x^3 + 27 as a sum of cubes.\n\n## Checking for understanding\n\nWhiteboards: \"Is the factor x^2 + x + 1 reducible over the real numbers? How can you tell?\" Look for the discriminant.\n\n## Worksheet\n\nCollect the worksheet at the end of class.",
+   "reading": {
+    "title": "Distances, regions and patterns inside expressions",
+    "content": "An absolute-value inequality is a statement about distance. The inequality |2x - 3| < 7 says that 2x - 3 is within 7 units of zero, so -7 < 2x - 3 < 7. Add 3 to get -4 < 2x < 10 and divide by 2 to get -2 < x < 5. The inequality |x + 4| >= 3 says that x + 4 is at least 3 units from zero, which gives two separate pieces: x + 4 >= 3 or x + 4 <= -3, so x >= -1 or x <= -7. The rule of thumb is that a \"less than\" absolute-value inequality gives an and, a single interval in the middle, and a \"greater than\" gives an or, two rays going outward.\n\nQuadratic inequalities use the graph. To solve x^2 + 4x - 45 >= 0, factor into (x + 9)(x - 5) >= 0. The parabola opens upward and is zero at -9 and 5, so it is at or above the axis outside of those points: x <= -9 or x >= 5. For x^2 + 4x - 96 <= 0, factor (x + 12)(x - 8) <= 0, and the parabola is at or below the axis between its zeros: -12 <= x <= 8. When a double inequality such as 45 <= x(x + 4) <= 96 describes a garden of width x and length x + 4, both parts must hold, and since a width has to be positive, x >= 5 combined with x <= 8 gives 5 <= x <= 8 meters. The check at the endpoints gives areas of 5 x 9 = 45 and 8 x 12 = 96.\n\nConstraints with a cost are linear. A rental car costing 39 + 0.25m must come to between $100 and $150: 100 <= 39 + 0.25m <= 150. Subtract 39 to get 61 <= 0.25m <= 111, then divide by 0.25 to get 244 <= m <= 444 miles. In a real situation you must still ask whether a solution is viable: miles must be non-negative, which this already satisfies, but if a cost were quoted per whole mile, a fractional answer would have to be rounded in the safe direction.\n\nFactoring patterns save time. A quartic such as x^4 - 5x^2 + 4 is a quadratic in x^2: with u = x^2 it is u^2 - 5u + 4 = (u - 1)(u - 4), so (x^2 - 1)(x^2 - 4) = (x - 1)(x + 1)(x - 2)(x + 2). The sum and difference of cubes follow patterns: a^3 + b^3 = (a + b)(a^2 - ab + b^2) and a^3 - b^3 = (a - b)(a^2 + ab + b^2). Note the sign pattern: the first factor has the same sign as the original, the middle term of the second factor has the opposite sign, and the last term is always positive. So 27x^3 - 1 = (3x - 1)(9x^2 + 3x + 1) and 8x^3 + 27 = (2x + 3)(4x^2 - 6x + 9). The quadratic factor in a cube formula cannot be broken down further over the reals. For the second, the discriminant is 36 - 144 = -108, which is negative, so the only real solution of 8x^3 + 27 = 0 is x = -3/2."
+   },
+   "cards": [
+    {
+     "front": "Absolute-value inequality",
+     "back": "|u| < c means -c < u < c. |u| > c means u < -c or u > c."
+    },
+    {
+     "front": "Quadratic inequality",
+     "back": "Solved by finding the zeros and deciding, with the parabola's direction or test points, where the expression is positive or negative."
+    },
+    {
+     "front": "Sign chart",
+     "back": "A table of the intervals between zeros with the sign of the expression on each."
+    },
+    {
+     "front": "Double inequality with a quadratic",
+     "back": "Split it into two inequalities, solve each, and take the overlap."
+    },
+    {
+     "front": "Quadratic type",
+     "back": "An expression such as x^4 - 5x^2 + 4 that is a quadratic in x^2."
+    },
+    {
+     "front": "Sum of cubes",
+     "back": "a^3 + b^3 = (a + b)(a^2 - ab + b^2)."
+    },
+    {
+     "front": "Difference of cubes",
+     "back": "a^3 - b^3 = (a - b)(a^2 + ab + b^2)."
+    },
+    {
+     "front": "Irreducible quadratic factor",
+     "back": "A quadratic with a negative discriminant, which has no real factors."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Solve |2x - 3| < 7.",
+     "options": [
+      "-2 < x < 5",
+      "x < -2 or x > 5",
+      "-5 < x < 2",
+      "-2 < x < 10"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Solve |x + 4| >= 3.",
+     "options": [
+      "-7 <= x <= -1",
+      "x <= -7 or x >= -1",
+      "x <= -1 or x >= 7",
+      "x >= -1"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A rental car costs 39 + 0.25m dollars for m miles. For which values of m is the cost from $100 to $150, inclusive?",
+     "options": [
+      "61 <= m <= 111",
+      "100 <= m <= 150",
+      "244 <= m <= 444",
+      "244 <= m <= 600"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the complete factorization of x^4 - 5x^2 + 4 over the integers?",
+     "options": [
+      "(x^2 - 1)(x^2 - 4)",
+      "(x - 1)(x + 1)(x^2 - 4)",
+      "(x - 1)^2(x - 2)^2",
+      "(x - 1)(x + 1)(x - 2)(x + 2)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Which is the factorization of 27x^3 - 1?",
+     "options": [
+      "(3x - 1)(9x^2 + 3x + 1)",
+      "(3x - 1)^3",
+      "(3x - 1)(9x^2 - 3x + 1)",
+      "(3x + 1)(9x^2 - 3x + 1)"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A rectangular garden is x meters wide and x + 4 meters long. Its area must be at least 45 and at most 96 square meters. Write the double inequality, solve it using two quadratic inequalities, and state the possible widths. Check the endpoints.",
+     "markScheme": [
+      "Writes 45 <= x(x + 4) <= 96",
+      "Solves x^2 + 4x - 45 >= 0 as (x + 9)(x - 5) >= 0 and x^2 + 4x - 96 <= 0 as (x + 12)(x - 8) <= 0",
+      "Combines with x > 0 to get x >= 5 and x <= 8",
+      "States 5 <= x <= 8 meters and checks the areas 45 and 96 at the endpoints"
+     ],
+     "modelAnswer": "The area is x(x + 4), so 45 <= x(x + 4) <= 96. The left part is x^2 + 4x - 45 >= 0, which factors as (x + 9)(x - 5) >= 0, so x <= -9 or x >= 5. The right part is x^2 + 4x - 96 <= 0, which factors as (x + 12)(x - 8) <= 0, so -12 <= x <= 8. A width must be positive, so the overlap is 5 <= x <= 8. At x = 5 the area is 5(9) = 45, and at x = 8 it is 8(12) = 96, as required.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "45 <= x(x + 4) <= 96. Left: x^2 + 4x - 45 >= 0 is (x + 9)(x - 5) >= 0. Right: x^2 + 4x - 96 <= 0 is (x + 12)(x - 8) <= 0. The first one is x <= -9 or x >= 5, the second is -12 <= x <= 8, and x has to be positive, so x >= 5 and x <= 8. The width is between 5 and 8 meters. 5 x 9 = 45 and 8 x 12 = 96 at the ends.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "45 <= x(x + 4) <= 96"
+        },
+        {
+         "point": 1,
+         "quote": "Left: x^2 + 4x - 45 >= 0 is (x + 9)(x - 5) >= 0. Right: x^2 + 4x - 96 <= 0 is (x + 12)(x - 8) <= 0."
+        },
+        {
+         "point": 2,
+         "quote": "The first one is x <= -9 or x >= 5, the second is -12 <= x <= 8, and x has to be positive, so x >= 5 and x <= 8."
+        },
+        {
+         "point": 3,
+         "quote": "The width is between 5 and 8 meters. 5 x 9 = 45 and 8 x 12 = 96 at the ends."
+        }
+       ],
+       "feedback": "Full marks. The endpoint check confirms both bounds are included."
+      },
+      {
+       "tier": "full",
+       "text": "The area is width times length so 45 <= x^2 + 4x <= 96. Split it in two: x^2 + 4x - 45 >= 0 gives (x + 9)(x - 5) >= 0, and x^2 + 4x - 96 <= 0 gives (x + 12)(x - 8) <= 0. A parabola opening up is above zero outside its roots and below zero between them. So x >= 5 (ignoring the negative) and -12 <= x <= 8, and the overlap with x > 0 is 5 to 8. So 5 <= x <= 8 meters, with areas of exactly 45 and exactly 96 at the ends.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "45 <= x^2 + 4x <= 96"
+        },
+        {
+         "point": 1,
+         "quote": "x^2 + 4x - 45 >= 0 gives (x + 9)(x - 5) >= 0, and x^2 + 4x - 96 <= 0 gives (x + 12)(x - 8) <= 0"
+        },
+        {
+         "point": 2,
+         "quote": "So x >= 5 (ignoring the negative) and -12 <= x <= 8, and the overlap with x > 0 is 5 to 8"
+        },
+        {
+         "point": 3,
+         "quote": "So 5 <= x <= 8 meters, with areas of exactly 45 and exactly 96 at the ends"
+        }
+       ],
+       "feedback": "All four marks. Explaining which side of the zeros the parabola is on is the reasoning behind a sign chart."
+      },
+      {
+       "tier": "partial",
+       "text": "45 <= x(x + 4) <= 96. (x + 9)(x - 5) >= 0 and (x + 12)(x - 8) <= 0. So x is between -12 and 8.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "45 <= x(x + 4) <= 96."
+        },
+        {
+         "point": 1,
+         "quote": "(x + 9)(x - 5) >= 0 and (x + 12)(x - 8) <= 0."
+        }
+       ],
+       "feedback": "The setup and factoring are right. You only used the second inequality. The first one gives x >= 5 for positive widths, and you need both: 5 <= x <= 8."
+      },
+      {
+       "tier": "partial",
+       "text": "x >= 5 and x <= 8 since the width has to be positive. The width can be from 5 to 8 meters, and 5 x 9 = 45, 8 x 12 = 96.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "x >= 5 and x <= 8 since the width has to be positive."
+        },
+        {
+         "point": 3,
+         "quote": "The width can be from 5 to 8 meters, and 5 x 9 = 45, 8 x 12 = 96."
+        }
+       ],
+       "feedback": "Your answer and check are right. Show the inequality 45 <= x(x + 4) <= 96 and the two factored inequalities that lead to it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "x(x + 4) = 45 so x = 45/5 = 9, and x(x + 4) = 96 so x = 96/5 = 19.2, so x is from 9 to 19.2.",
+       "meets": [],
+       "feedback": "Dividing the area by x + 4 does not work because x is also inside x + 4. Expand to x^2 + 4x and solve the quadratics: 5 and 8 come from factoring."
+      },
+      {
+       "tier": "weak",
+       "text": "45 <= x(x + 4) <= 96 means x is between 45 and 96 meters.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "45 <= x(x + 4) <= 96"
+        }
+       ],
+       "feedback": "Your inequality is right. The 45 and 96 are limits on the area, which is the product of x and x + 4, not on the width x."
+      }
+     ]
+    },
+    {
+     "prompt": "Factor 8x^3 + 27 completely over the real numbers. Then find all real solutions of 8x^3 + 27 = 0, and explain why the quadratic factor gives no further real solutions.",
+     "markScheme": [
+      "Recognizes a sum of cubes, (2x)^3 + 3^3, and uses the pattern a^3 + b^3 = (a + b)(a^2 - ab + b^2)",
+      "Writes the factorization (2x + 3)(4x^2 - 6x + 9)",
+      "Solves 2x + 3 = 0 to get the real solution x = -3/2",
+      "Shows that the discriminant of 4x^2 - 6x + 9 is 36 - 144 = -108, which is negative, so there are no more real solutions"
+     ],
+     "modelAnswer": "8x^3 + 27 = (2x)^3 + 3^3, a sum of cubes, with a = 2x and b = 3. The pattern a^3 + b^3 = (a + b)(a^2 - ab + b^2) gives (2x + 3)(4x^2 - 6x + 9). Setting 2x + 3 = 0 gives x = -3/2. The quadratic factor 4x^2 - 6x + 9 has discriminant (-6)^2 - 4(4)(9) = 36 - 144 = -108, which is negative, so it has no real roots. The only real solution is x = -3/2.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "8x^3 is (2x)^3 and 27 is 3^3, so it's a sum of cubes with a = 2x and b = 3. (a + b)(a^2 - ab + b^2) gives (2x + 3)(4x^2 - 6x + 9). 2x + 3 = 0 gives x = -3/2. For 4x^2 - 6x + 9 the discriminant is 36 - 4(4)(9) = 36 - 144 = -108, negative, so no more real solutions.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "8x^3 is (2x)^3 and 27 is 3^3, so it's a sum of cubes with a = 2x and b = 3."
+        },
+        {
+         "point": 1,
+         "quote": "(a + b)(a^2 - ab + b^2) gives (2x + 3)(4x^2 - 6x + 9)."
+        },
+        {
+         "point": 2,
+         "quote": "2x + 3 = 0 gives x = -3/2."
+        },
+        {
+         "point": 3,
+         "quote": "For 4x^2 - 6x + 9 the discriminant is 36 - 4(4)(9) = 36 - 144 = -108, negative, so no more real solutions."
+        }
+       ],
+       "feedback": "Full marks. Computing the discriminant is the way to be certain the quadratic factor does not factor further."
+      },
+      {
+       "tier": "full",
+       "text": "Sum of cubes pattern: a = 2x, b = 3, because (2x)^3 = 8x^3 and 3^3 = 27. (2x + 3)((2x)^2 - (2x)(3) + 3^2) = (2x + 3)(4x^2 - 6x + 9). The linear factor is zero when x = -3/2. The other factor has b^2 - 4ac = 36 - 144, which is -108, so its roots are complex, not real.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a = 2x, b = 3, because (2x)^3 = 8x^3 and 3^3 = 27"
+        },
+        {
+         "point": 1,
+         "quote": "(2x + 3)((2x)^2 - (2x)(3) + 3^2) = (2x + 3)(4x^2 - 6x + 9)"
+        },
+        {
+         "point": 2,
+         "quote": "The linear factor is zero when x = -3/2"
+        },
+        {
+         "point": 3,
+         "quote": "The other factor has b^2 - 4ac = 36 - 144, which is -108, so its roots are complex, not real"
+        }
+       ],
+       "feedback": "All four marks. Writing the pattern with a and b substituted keeps the signs straight."
+      },
+      {
+       "tier": "partial",
+       "text": "It's a sum of cubes with a = 2x and b = 3. (2x + 3)(4x^2 - 6x + 9). The quadratic factor gives x = 1.5 and x = 3 so there are three real solutions.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It's a sum of cubes with a = 2x and b = 3."
+        },
+        {
+         "point": 1,
+         "quote": "(2x + 3)(4x^2 - 6x + 9)."
+        }
+       ],
+       "feedback": "Your factorization is right. Check the quadratic's discriminant: 36 - 144 is negative, so 4x^2 - 6x + 9 has no real roots, and the only real solution is -3/2."
+      },
+      {
+       "tier": "partial",
+       "text": "x = -3/2. The quadratic part has a negative discriminant, so it has no real roots.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "x = -3/2."
+        },
+        {
+         "point": 3,
+         "quote": "The quadratic part has a negative discriminant, so it has no real roots."
+        }
+       ],
+       "feedback": "The solution and the reason are right. Show the factoring: recognize the sum of cubes and write (2x + 3)(4x^2 - 6x + 9), which is where those facts come from.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "8x^3 + 27 = (2x + 3)^3, since cubes factor like that.",
+       "meets": [],
+       "feedback": "A cube of a binomial has middle terms: (2x + 3)^3 = 8x^3 + 36x^2 + 54x + 27. The sum of cubes pattern is different: (a + b)(a^2 - ab + b^2)."
+      },
+      {
+       "tier": "weak",
+       "text": "It's a sum of cubes. So (2x + 3)(4x^2 + 6x + 9), and the solution is x = 3/2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It's a sum of cubes"
+        }
+       ],
+       "feedback": "You recognized the pattern. The middle term of the quadratic factor has the opposite sign, -6x. And 2x + 3 = 0 gives x = -3/2, not 3/2."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Complex numbers: powers, quotients, conjugate roots and quartics",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. write and compute with complex numbers of the form a + bi, including powers and quotients;\n2. solve quadratic equations with real coefficients that have complex solutions, explain why the solutions are conjugates, and find all four roots of a simple quartic.\n\n## Materials\n\nGraphing handhelds, powers-of-i table, whiteboards, the worksheet.\n\n## Starter (8 minutes)\n\nAsk: \"What is (1 + i)^8?\" Let students try. Some will multiply it out slowly. Show that squaring first gives (1 + i)^2 = 2i, and then (2i)^2 = -4 and (-4)^2 = 16. Use it to discuss strategies: repeated squaring, and the pattern of powers of i.\n\n## Main activity\n\n1. Powers of i by remainders: i^101. Quotients by conjugates: (2 - 3i)/(1 + 2i).\n2. Solve 3x^2 - 2x + 5 = 0, and find the quadratic with roots 3 + 2i and 3 - 2i.\n3. Show that complex roots of real quadratics come in conjugate pairs, using the formula, and check the sum and product of roots.\n4. All four roots of x^4 - 16 = 0 by factoring as a difference of squares twice.\n\n## Checking for understanding\n\nWhiteboards: \"If 2 + 5i is a root of a quadratic with real coefficients, what is the other root? Write the quadratic with leading coefficient 1.\"\n\n## Worksheet\n\nCollect the worksheet at the end of class.",
+   "reading": {
+    "title": "Computing with complex numbers, and why roots pair up",
+    "content": "Complex numbers a + bi follow the algebra of binomials with one extra rule, i^2 = -1. Powers of i repeat with period four: i^1 = i, i^2 = -1, i^3 = -i, i^4 = 1. To compute i^101, find the remainder of 101 divided by 4, which is 1, so i^101 = i. Larger powers of complex numbers can be tamed by repeated squaring. For (1 + i)^8, note that (1 + i)^2 = 1 + 2i + i^2 = 2i, so (1 + i)^4 = (2i)^2 = -4 and (1 + i)^8 = (-4)^2 = 16.\n\nTo divide, multiply the top and bottom by the conjugate of the bottom, which turns the denominator into a real number. For (2 - 3i)/(1 + 2i), multiply by (1 - 2i)/(1 - 2i). The top is (2 - 3i)(1 - 2i) = 2 - 4i - 3i + 6i^2 = -4 - 7i, and the bottom is 1 + 4 = 5. So the quotient is (-4 - 7i)/5.\n\nComplex solutions of quadratics come in conjugate pairs when the coefficients are real. The reason is in the quadratic formula. If the discriminant is negative, the square root is a purely imaginary number, say bi, and the two solutions are (-b/(2a)) plus or minus that imaginary part: same real part, opposite imaginary parts. For 3x^2 - 2x + 5 = 0, the discriminant is 4 - 60 = -56, and the square root of -56 is 2i times the square root of 14, so x = (2 plus or minus 2i times the square root of 14)/6 = (1 plus or minus i times the square root of 14)/3. Going backward, a quadratic with roots 3 + 2i and 3 - 2i has a sum of 6 and a product of 9 + 4 = 13, so it is x^2 - 6x + 13 = 0. Check with the formula: the discriminant is 36 - 52 = -16, so x = (6 plus or minus 4i)/2 = 3 plus or minus 2i. And check one root by substitution: (3 + 2i)^2 = 5 + 12i, so (3 + 2i)^2 - 6(3 + 2i) + 13 = 5 + 12i - 18 - 12i + 13 = 0.\n\nHigher-degree equations can also have complex roots. The equation x^4 - 16 = 0 factors as (x^2 - 4)(x^2 + 4) = (x - 2)(x + 2)(x^2 + 4). The first two factors give x = 2 and x = -2, and x^2 = -4 gives x = 2i and x = -2i. There are four roots, which matches the degree. Check (2i)^4: (2i)^2 = -4 and (-4)^2 = 16, so (2i)^4 = 16 and the equation holds. This is a preview of the fundamental theorem of algebra, which says a polynomial of degree n has exactly n complex roots, counting multiplicity."
+   },
+   "cards": [
+    {
+     "front": "Period of the powers of i",
+     "back": "The powers of i repeat every four: i, -1, -i, 1."
+    },
+    {
+     "front": "Repeated squaring",
+     "back": "A way to compute a high power, such as (1 + i)^8, by squaring a few times."
+    },
+    {
+     "front": "Conjugate pair",
+     "back": "The numbers a + bi and a - bi. Complex roots of real polynomials appear in conjugate pairs."
+    },
+    {
+     "front": "Dividing by a complex number",
+     "back": "Multiply the top and the bottom by the conjugate of the bottom."
+    },
+    {
+     "front": "Quadratic from its roots",
+     "back": "x^2 - (sum)x + (product) = 0. For 3 plus or minus 2i: x^2 - 6x + 13 = 0."
+    },
+    {
+     "front": "Purely imaginary",
+     "back": "A number of the form bi with real part 0."
+    },
+    {
+     "front": "Number of roots",
+     "back": "A polynomial of degree n has n complex roots, counting multiplicity."
+    },
+    {
+     "front": "x^4 - 16",
+     "back": "(x - 2)(x + 2)(x - 2i)(x + 2i): two real roots and two imaginary roots."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is i^101?",
+     "options": [
+      "-1",
+      "-i",
+      "i",
+      "1"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Write (2 - 3i)/(1 + 2i) in the form a + bi.",
+     "options": [
+      "(-4 - 7i)/5",
+      "(8 - 7i)/5",
+      "(-4 + 7i)/5",
+      "(-4 - 7i)/3"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Solve 3x^2 - 2x + 5 = 0.",
+     "options": [
+      "x = (1 plus or minus the square root of 14)/3",
+      "x = (2 plus or minus i times the square root of 56)/3",
+      "x = (-1 plus or minus i times the square root of 14)/3",
+      "x = (1 plus or minus i times the square root of 14)/3"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "A quadratic with real coefficients has solutions 3 + 2i and 3 - 2i. What is a possible equation?",
+     "options": [
+      "x^2 + 6x + 13 = 0",
+      "x^2 - 6x + 13 = 0",
+      "x^2 - 6x + 5 = 0",
+      "x^2 - 6x - 13 = 0"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is (1 + i)^8?",
+     "options": [
+      "-16",
+      "16i",
+      "16",
+      "8"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Find all four complex solutions of x^4 - 16 = 0. Show your factoring, and verify one of the imaginary solutions in the original equation.",
+     "markScheme": [
+      "Factors x^4 - 16 as a difference of squares, (x^2 - 4)(x^2 + 4)",
+      "Solves x^2 - 4 = 0 to get x = 2 and x = -2",
+      "Solves x^2 + 4 = 0 to get x = 2i and x = -2i",
+      "Verifies an imaginary solution, such as (2i)^4 = 16, and notes that four roots match the degree"
+     ],
+     "modelAnswer": "x^4 - 16 = (x^2)^2 - 4^2 = (x^2 - 4)(x^2 + 4). From x^2 - 4 = 0, x = 2 or x = -2. From x^2 + 4 = 0, x^2 = -4, so x = 2i or x = -2i. Check x = 2i: (2i)^2 = 4i^2 = -4, and (-4)^2 = 16, so (2i)^4 - 16 = 0. There are four solutions, matching the degree 4.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "x^4 - 16 is a difference of squares, (x^2 - 4)(x^2 + 4). x^2 - 4 = 0 gives x = 2 or -2. x^2 + 4 = 0 gives x^2 = -4, so x = 2i or -2i. Check 2i: (2i)^2 = 4(-1) = -4 and (-4)^2 = 16, so it works. Four solutions for a degree 4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x^4 - 16 is a difference of squares, (x^2 - 4)(x^2 + 4)."
+        },
+        {
+         "point": 1,
+         "quote": "x^2 - 4 = 0 gives x = 2 or -2."
+        },
+        {
+         "point": 2,
+         "quote": "x^2 + 4 = 0 gives x^2 = -4, so x = 2i or -2i."
+        },
+        {
+         "point": 3,
+         "quote": "Check 2i: (2i)^2 = 4(-1) = -4 and (-4)^2 = 16, so it works. Four solutions for a degree 4."
+        }
+       ],
+       "feedback": "Full marks. The count of four solutions matches the degree, which is a useful check."
+      },
+      {
+       "tier": "full",
+       "text": "Factor: (x^2)^2 - 4^2 = (x^2 - 4)(x^2 + 4), and x^2 - 4 factors again as (x - 2)(x + 2). Real solutions 2 and -2. x^2 = -4 has solutions plus or minus 2i, since (2i)^2 = -4. Verification: (-2i)^4 = ((-2i)^2)^2 = (-4)^2 = 16, so -2i satisfies x^4 = 16 too.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(x^2)^2 - 4^2 = (x^2 - 4)(x^2 + 4), and x^2 - 4 factors again as (x - 2)(x + 2)"
+        },
+        {
+         "point": 1,
+         "quote": "Real solutions 2 and -2"
+        },
+        {
+         "point": 2,
+         "quote": "x^2 = -4 has solutions plus or minus 2i, since (2i)^2 = -4"
+        },
+        {
+         "point": 3,
+         "quote": "Verification: (-2i)^4 = ((-2i)^2)^2 = (-4)^2 = 16, so -2i satisfies x^4 = 16 too"
+        }
+       ],
+       "feedback": "All four marks. You verified the negative imaginary root, which also shows a conjugate pair works."
+      },
+      {
+       "tier": "partial",
+       "text": "(x^2 - 4)(x^2 + 4). x = 2 and x = -2. The other factor, x^2 + 4, has no solutions.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(x^2 - 4)(x^2 + 4)."
+        },
+        {
+         "point": 1,
+         "quote": "x = 2 and x = -2."
+        }
+       ],
+       "feedback": "The factoring and real solutions are right. The factor x^2 + 4 has complex solutions: x^2 = -4, so x = 2i and x = -2i."
+      },
+      {
+       "tier": "partial",
+       "text": "x = 2i and x = -2i. (2i)^4 = 16, so it works.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "x = 2i and x = -2i."
+        },
+        {
+         "point": 3,
+         "quote": "(2i)^4 = 16, so it works."
+        }
+       ],
+       "feedback": "The imaginary solutions and check are right. Show the factoring that produces them, and also give the two real solutions, 2 and -2.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "x^4 = 16 so x = 4 since 4 x 4 = 16.",
+       "meets": [],
+       "feedback": "Four equal factors multiply to 16, not two: x^4 = 16 means x = 2 (because 2^4 = 16). And a fourth-degree equation can have four solutions."
+      },
+      {
+       "tier": "weak",
+       "text": "x = 2 and x = -2. The solutions of x^2 = -4 would be 2 and -2 too, since -2 x -2 = 4.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "x = 2 and x = -2."
+        }
+       ],
+       "feedback": "The real solutions are right. Squares of real numbers are never negative, so x^2 = -4 needs the imaginary unit, giving 2i and -2i."
+      }
+     ]
+    },
+    {
+     "prompt": "Solve x^2 - 6x + 13 = 0 with the quadratic formula. Check your solutions with the sum and product of roots, and use the result to explain why complex roots of a quadratic with real coefficients come in conjugate pairs.",
+     "markScheme": [
+      "Finds the discriminant 36 - 52 = -16 and the solutions x = 3 plus or minus 2i",
+      "Checks that the sum of the roots is 6, which equals -b/a",
+      "Checks that the product (3 + 2i)(3 - 2i) = 13, which equals c/a",
+      "Explains that the formula's plus and minus on an imaginary square root give a + bi and a - bi, which are conjugates"
+     ],
+     "modelAnswer": "The discriminant is (-6)^2 - 4(1)(13) = 36 - 52 = -16, so x = (6 plus or minus 4i)/2 = 3 plus or minus 2i. The sum is (3 + 2i) + (3 - 2i) = 6, which equals -b/a = 6. The product is 9 - 4i^2 = 13, which equals c/a = 13. Complex roots come in conjugate pairs because the formula gives -b/(2a) plus or minus the square root of the discriminant over 2a, and when the discriminant is negative that square root is imaginary, so the two roots have the same real part and opposite imaginary parts.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "b^2 - 4ac = 36 - 52 = -16, so x = (6 plus or minus 4i)/2 = 3 plus or minus 2i. The sum is 3 + 2i + 3 - 2i = 6 which is -b/a = 6. The product is (3 + 2i)(3 - 2i) = 9 + 4 = 13, which matches c/a = 13. The formula has plus or minus in front of the square root of a negative number, which is imaginary, so you get the same real part with opposite imaginary parts, conjugates.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "b^2 - 4ac = 36 - 52 = -16, so x = (6 plus or minus 4i)/2 = 3 plus or minus 2i."
+        },
+        {
+         "point": 1,
+         "quote": "The sum is 3 + 2i + 3 - 2i = 6 which is -b/a = 6."
+        },
+        {
+         "point": 2,
+         "quote": "The product is (3 + 2i)(3 - 2i) = 9 + 4 = 13, which matches c/a = 13."
+        },
+        {
+         "point": 3,
+         "quote": "The formula has plus or minus in front of the square root of a negative number, which is imaginary, so you get the same real part with opposite imaginary parts, conjugates."
+        }
+       ],
+       "feedback": "Full marks. Using Vieta's sum and product as a check is a strong alternative to substituting."
+      },
+      {
+       "tier": "full",
+       "text": "Formula: x = (6 plus or minus sqrt(-16))/2 = (6 plus or minus 4i)/2, so 3 plus or minus 2i. Sum check: the imaginary parts cancel and 3 + 3 = 6 = -(-6)/1. Product check: 9 - (2i)^2 = 9 + 4 = 13 = c/a. Why conjugates: real coefficients mean the only imaginary part in the formula comes from the square root of the negative discriminant, and the plus or minus puts it in with both signs, so the roots are a + bi and a - bi.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x = (6 plus or minus sqrt(-16))/2 = (6 plus or minus 4i)/2, so 3 plus or minus 2i"
+        },
+        {
+         "point": 1,
+         "quote": "the imaginary parts cancel and 3 + 3 = 6 = -(-6)/1"
+        },
+        {
+         "point": 2,
+         "quote": "9 - (2i)^2 = 9 + 4 = 13 = c/a"
+        },
+        {
+         "point": 3,
+         "quote": "real coefficients mean the only imaginary part in the formula comes from the square root of the negative discriminant, and the plus or minus puts it in with both signs, so the roots are a + bi and a - bi"
+        }
+       ],
+       "feedback": "All four marks. Your explanation points to exactly where the imaginary part comes from."
+      },
+      {
+       "tier": "partial",
+       "text": "The discriminant is -16, so x = 3 plus or minus 2i. The sum is 6. I think the roots come in pairs because of the plus or minus.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The discriminant is -16, so x = 3 plus or minus 2i."
+        },
+        {
+         "point": 1,
+         "quote": "The sum is 6."
+        }
+       ],
+       "feedback": "The solutions and the sum are right. Add the product check, 13, and make the explanation specific: the plus or minus acts on an imaginary square root, giving opposite imaginary parts."
+      },
+      {
+       "tier": "partial",
+       "text": "The product (3 + 2i)(3 - 2i) = 9 + 4 = 13. They're conjugates because the formula has plus or minus with an imaginary number.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The product (3 + 2i)(3 - 2i) = 9 + 4 = 13."
+        },
+        {
+         "point": 3,
+         "quote": "They're conjugates because the formula has plus or minus with an imaginary number."
+        }
+       ],
+       "feedback": "The product and the reason are right. Show the discriminant, -16, and how it leads to x = 3 plus or minus 2i, and add the sum check.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The discriminant is negative, so there are no solutions, and so no pairs.",
+       "meets": [],
+       "feedback": "A negative discriminant means no real solutions. There are two complex solutions, 3 plus or minus 2i, and they are conjugates."
+      },
+      {
+       "tier": "weak",
+       "text": "36 - 52 = -16, x = 3 plus or minus 2i. The product is 9 - 4 = 5 which doesn't match 13, so the answer must be wrong.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "36 - 52 = -16, x = 3 plus or minus 2i."
+        }
+       ],
+       "feedback": "Your solutions are correct. The product (3 + 2i)(3 - 2i) = 9 - 4i^2 = 9 + 4 = 13. The i^2 is -1, so the minus becomes a plus."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Polynomial arithmetic, the remainder and factor theorems, rational roots",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. add, subtract, multiply and divide polynomials, and explain why polynomials are closed under addition, subtraction and multiplication but not division;\n2. apply the remainder theorem and the rational root theorem to test and find roots and to determine unknown coefficients.\n\n## Materials\n\nWhiteboards, synthetic division reference sheets, graphing handhelds, the worksheet.\n\n## Starter (8 minutes)\n\nPose: \"The polynomial x^3 + ax^2 + bx - 6 has x - 1 and x + 2 as factors. Can we find a and b?\" Let students discuss what a factor tells them. Reach the conclusion that f(1) = 0 and f(-2) = 0 and that these two facts give two equations.\n\n## Main activity\n\n1. Square a trinomial, (2x^2 - 3x + 1)^2, and discuss how to organize the expansion so the coefficients can be checked with f(1).\n2. Remainder theorem with a non-monic divisor: test 2x - 1 as a factor of 2x^3 + x^2 - 13x + 6 by evaluating at 1/2.\n3. Rational root theorem: list the possible rational roots p/q of 2x^3 + x^2 - 13x + 6, test, divide, and factor.\n4. Find unknown coefficients: solve the system from f(1) = 0 and f(-2) = 0.\n\n## Checking for understanding\n\nWhiteboards: \"If f(-2) = -13, what is the remainder when f is divided by x + 2? Is x + 2 a factor?\"\n\n## Worksheet\n\nCollect the worksheet at the end of class.",
+   "reading": {
+    "title": "Using the remainder and factor theorems as tools",
+    "content": "Polynomials are closed under addition, subtraction and multiplication, so the sum, difference or product of two polynomials is again a polynomial. Dividing a polynomial by another gives a polynomial only when the divisor is a factor, so division is not closed. Just as with the integers, dividing 7 by 2 leaves a remainder, and dividing a polynomial by another leaves one too.\n\nMultiplying large polynomials needs care. To expand (2x^2 - 3x + 1)^2, multiply each term of the first factor by each term of the second: 4x^4 - 6x^3 + 2x^2, then -6x^3 + 9x^2 - 3x, then 2x^2 - 3x + 1. Combine like terms: 4x^4 - 12x^3 + 13x^2 - 6x + 1. A quick check is to evaluate both sides at x = 1: the left side is (2 - 3 + 1)^2 = 0, and the right side is 4 - 12 + 13 - 6 + 1 = 0. The coefficient of x^2 is 13, because 9 from the cross-term, 2 + 2 from the two others.\n\nThe remainder theorem says that dividing f(x) by x - a leaves the remainder f(a). If the divisor is 2x - 1, evaluate at the root 1/2. For f(x) = 2x^3 + x^2 - 13x + 6, f(1/2) = 2/8 + 1/4 - 13/2 + 6 = 0, so 2x - 1 is a factor. For another polynomial, x^4 - 3x^2 + 5x - 7, the remainder on division by x + 2 is f(-2) = 16 - 12 - 10 - 7 = -13, so it is not a factor.\n\nHow can you find the roots of a polynomial with integer coefficients? The rational root theorem says that any rational root p/q, in lowest terms, has p dividing the constant term and q dividing the leading coefficient. For 2x^3 + x^2 - 13x + 6, p divides 6 and q divides 2, so the candidates are plus or minus 1, 2, 3, 6, 1/2 and 3/2. Try x = 2: 16 + 4 - 26 + 6 = 0. So x - 2 is a factor, and dividing gives 2x^2 + 5x - 3 = (2x - 1)(x + 3). The roots are 2, 1/2 and -3. Notice that 4 is not a possible rational root, because 4 does not divide 6.\n\nThe theorems also let you find unknown coefficients. If x - 1 and x + 2 are factors of f(x) = x^3 + ax^2 + bx - 6, then f(1) = 0 gives a + b = 5 and f(-2) = 0 gives 4a - 2b = 14, or 2a - b = 7. Adding the two equations, 3a = 12, so a = 4 and b = 1. Then f(x) = x^3 + 4x^2 + x - 6. The product of the roots is 6, since the constant term is -6, so with roots 1 and -2 the third root is -3. That gives f(x) = (x - 1)(x + 2)(x + 3)."
+   },
+   "cards": [
+    {
+     "front": "Remainder theorem",
+     "back": "The remainder of f(x) divided by x - a is f(a). For 2x - 1, evaluate at 1/2."
+    },
+    {
+     "front": "Factor theorem",
+     "back": "x - a is a factor of f(x) exactly when f(a) = 0."
+    },
+    {
+     "front": "Rational root theorem",
+     "back": "A rational root p/q of a polynomial with integer coefficients has p dividing the constant term and q dividing the leading coefficient."
+    },
+    {
+     "front": "Candidate list",
+     "back": "The possible rational roots found with the rational root theorem. Each must still be tested."
+    },
+    {
+     "front": "Closed under multiplication",
+     "back": "The product of two polynomials is a polynomial. Division does not have this property."
+    },
+    {
+     "front": "Checking an expansion",
+     "back": "Evaluate both sides at x = 1. The sum of the coefficients must match."
+    },
+    {
+     "front": "Product of the roots",
+     "back": "For a monic cubic x^3 + ax^2 + bx + c, the product of the roots is -c."
+    },
+    {
+     "front": "Finding unknown coefficients",
+     "back": "Use f(a) = 0 for each known root to build equations in the unknowns."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the coefficient of x^2 in the expansion of (2x^2 - 3x + 1)^2?",
+     "options": [
+      "9",
+      "13",
+      "4",
+      "1"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "For f(x) = 2x^3 + x^2 - 13x + 6, which statement is true?",
+     "options": [
+      "2x - 1 is not a factor because f(1) is not 0",
+      "2x - 1 is a factor because f(2) = 0",
+      "2x - 1 is a factor because f(1/2) = 0",
+      "2x - 1 is a factor because the leading coefficient is 2"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the remainder when x^4 - 3x^2 + 5x - 7 is divided by x + 2?",
+     "options": [
+      "-1",
+      "27",
+      "13",
+      "-13"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "For what value of k is x - 2 a factor of x^3 + kx^2 - 4x - 12?",
+     "options": [
+      "3",
+      "-3",
+      "12",
+      "6"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which of these is NOT a possible rational root of 2x^3 - 5x^2 + x + 6?",
+     "options": [
+      "3/2",
+      "4",
+      "6",
+      "1/2"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Factor f(x) = 2x^3 + x^2 - 13x + 6 completely. Use the rational root theorem to list candidates, test one, divide, and give all the zeros.",
+     "markScheme": [
+      "Lists the candidates plus or minus 1, 2, 3, 6, 1/2, 3/2 from the factors of 6 over the factors of 2",
+      "Shows f(2) = 16 + 4 - 26 + 6 = 0, so x - 2 is a factor",
+      "Divides to get the quotient 2x^2 + 5x - 3",
+      "Factors the quotient as (2x - 1)(x + 3) and lists the zeros 2, 1/2 and -3"
+     ],
+     "modelAnswer": "By the rational root theorem the candidates are p/q with p dividing 6 and q dividing 2: plus or minus 1, 2, 3, 6, 1/2 and 3/2. Test x = 2: f(2) = 2(8) + 4 - 26 + 6 = 0, so x - 2 is a factor. Dividing gives 2x^2 + 5x - 3, because (x - 2)(2x^2 + 5x - 3) = 2x^3 + 5x^2 - 3x - 4x^2 - 10x + 6 = 2x^3 + x^2 - 13x + 6. Factor: 2x^2 + 5x - 3 = (2x - 1)(x + 3). So f(x) = (x - 2)(2x - 1)(x + 3), with zeros 2, 1/2 and -3.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The factors of 6 are 1, 2, 3, 6 and the factors of 2 are 1, 2, so the candidates are plus or minus 1, 2, 3, 6, 1/2, 3/2. f(2) = 16 + 4 - 26 + 6 = 0, so x - 2 is a factor. Dividing gives 2x^2 + 5x - 3. That factors to (2x - 1)(x + 3), so f = (x - 2)(2x - 1)(x + 3) and the zeros are 2, 1/2, -3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The factors of 6 are 1, 2, 3, 6 and the factors of 2 are 1, 2, so the candidates are plus or minus 1, 2, 3, 6, 1/2, 3/2."
+        },
+        {
+         "point": 1,
+         "quote": "f(2) = 16 + 4 - 26 + 6 = 0, so x - 2 is a factor."
+        },
+        {
+         "point": 2,
+         "quote": "Dividing gives 2x^2 + 5x - 3."
+        },
+        {
+         "point": 3,
+         "quote": "That factors to (2x - 1)(x + 3), so f = (x - 2)(2x - 1)(x + 3) and the zeros are 2, 1/2, -3."
+        }
+       ],
+       "feedback": "Full marks. Listing the candidates first shows the route to the first root, not luck."
+      },
+      {
+       "tier": "full",
+       "text": "Rational root theorem: p over q, where p divides the constant 6 and q divides the leading coefficient 2, giving 1, 2, 3, 6, 1/2, 3/2 with both signs. Try 2: 2(8) + 4 - 26 + 6 = 0, so (x - 2) is a factor. Synthetic division gives coefficients 2, 5, -3, so the quotient is 2x^2 + 5x - 3. 2x^2 + 5x - 3 = (2x - 1)(x + 3). The zeros are x = 2, x = 1/2 and x = -3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "p divides the constant 6 and q divides the leading coefficient 2, giving 1, 2, 3, 6, 1/2, 3/2 with both signs"
+        },
+        {
+         "point": 1,
+         "quote": "Try 2: 2(8) + 4 - 26 + 6 = 0, so (x - 2) is a factor"
+        },
+        {
+         "point": 2,
+         "quote": "so the quotient is 2x^2 + 5x - 3"
+        },
+        {
+         "point": 3,
+         "quote": "2x^2 + 5x - 3 = (2x - 1)(x + 3). The zeros are x = 2, x = 1/2 and x = -3"
+        }
+       ],
+       "feedback": "All four marks. Synthetic division is a good tool here and you read the quotient correctly."
+      },
+      {
+       "tier": "partial",
+       "text": "f(2) = 0, so x - 2 is a factor. The quotient is 2x^2 + 5x - 3. The zeros are 2 and the roots of 2x^2 + 5x - 3, which I can't factor.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f(2) = 0, so x - 2 is a factor."
+        },
+        {
+         "point": 2,
+         "quote": "The quotient is 2x^2 + 5x - 3."
+        }
+       ],
+       "feedback": "The first two steps are right. 2x^2 + 5x - 3 factors as (2x - 1)(x + 3), since -1 times 3 gives -3 and 2x times 3 minus x gives 5x. The zeros are 1/2 and -3."
+      },
+      {
+       "tier": "partial",
+       "text": "The candidates are the factors of 6 over the factors of 2. (x - 2)(2x - 1)(x + 3), zeros 2, 1/2 and -3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The candidates are the factors of 6 over the factors of 2."
+        },
+        {
+         "point": 3,
+         "quote": "(x - 2)(2x - 1)(x + 3), zeros 2, 1/2 and -3."
+        }
+       ],
+       "feedback": "Your candidates and final factoring are right. Show the test that identifies 2 as a root, f(2) = 0, and the division that gives 2x^2 + 5x - 3.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The zeros are 2, 1 and 3, because those are the factors of 6.",
+       "meets": [],
+       "feedback": "Factors of the constant term are only candidates, not zeros. Each one has to be tested in the polynomial, and f(1) = -4 shows that 1 is not a zero."
+      },
+      {
+       "tier": "weak",
+       "text": "f(2) = 0 so x - 2 is a factor. After dividing I got x^2 + 5x - 3 so I used the quadratic formula.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f(2) = 0 so x - 2 is a factor"
+        }
+       ],
+       "feedback": "The factor is right. Check the quotient by multiplying back: the leading coefficient of f is 2, so the quotient must begin with 2x^2, not x^2."
+      }
+     ]
+    },
+    {
+     "prompt": "The polynomial f(x) = x^3 + ax^2 + bx - 6 has x - 1 and x + 2 as factors. Find a and b, find the third factor, and write f in factored form.",
+     "markScheme": [
+      "Uses f(1) = 0 to get the equation 1 + a + b - 6 = 0, so a + b = 5",
+      "Uses f(-2) = 0 to get -8 + 4a - 2b - 6 = 0, so 4a - 2b = 14",
+      "Solves the system to get a = 4 and b = 1",
+      "Finds the third factor x + 3 (by division or by the product of the roots) and writes f(x) = (x - 1)(x + 2)(x + 3)"
+     ],
+     "modelAnswer": "Since x - 1 is a factor, f(1) = 0: 1 + a + b - 6 = 0, so a + b = 5. Since x + 2 is a factor, f(-2) = 0: -8 + 4a - 2b - 6 = 0, so 4a - 2b = 14, or 2a - b = 7. Adding a + b = 5 and 2a - b = 7 gives 3a = 12, so a = 4 and b = 1. Then f(x) = x^3 + 4x^2 + x - 6. The product of the roots is 6 (the negative of the constant term), so with roots 1 and -2 the third root is -3 and the factor is x + 3. So f(x) = (x - 1)(x + 2)(x + 3).",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "x - 1 is a factor so f(1) = 0: 1 + a + b - 6 = 0 which gives a + b = 5. x + 2 is a factor so f(-2) = 0: -8 + 4a - 2b - 6 = 0 so 4a - 2b = 14. From the first b = 5 - a, so 4a - 10 + 2a = 14, 6a = 24, a = 4 and b = 1. The third root is -3 since 1 x -2 x r = 6, so f(x) = (x - 1)(x + 2)(x + 3).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x - 1 is a factor so f(1) = 0: 1 + a + b - 6 = 0 which gives a + b = 5."
+        },
+        {
+         "point": 1,
+         "quote": "x + 2 is a factor so f(-2) = 0: -8 + 4a - 2b - 6 = 0 so 4a - 2b = 14."
+        },
+        {
+         "point": 2,
+         "quote": "From the first b = 5 - a, so 4a - 10 + 2a = 14, 6a = 24, a = 4 and b = 1."
+        },
+        {
+         "point": 3,
+         "quote": "The third root is -3 since 1 x -2 x r = 6, so f(x) = (x - 1)(x + 2)(x + 3)."
+        }
+       ],
+       "feedback": "Full marks. You can check the final answer by expanding: (x - 1)(x + 2)(x + 3) = x^3 + 4x^2 + x - 6."
+      },
+      {
+       "tier": "full",
+       "text": "Factor theorem twice. f(1) = 0 gives a + b = 5. f(-2) = 0 gives 4a - 2b = 14, which I divide by 2 to get 2a - b = 7. Add the two equations, 3a = 12, a = 4 and then b = 1. So f = x^3 + 4x^2 + x - 6. Divide by (x - 1)(x + 2) = x^2 + x - 2, the quotient is x + 3, so f(x) = (x - 1)(x + 2)(x + 3).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = 0 gives a + b = 5"
+        },
+        {
+         "point": 1,
+         "quote": "f(-2) = 0 gives 4a - 2b = 14, which I divide by 2 to get 2a - b = 7"
+        },
+        {
+         "point": 2,
+         "quote": "Add the two equations, 3a = 12, a = 4 and then b = 1"
+        },
+        {
+         "point": 3,
+         "quote": "the quotient is x + 3, so f(x) = (x - 1)(x + 2)(x + 3)"
+        }
+       ],
+       "feedback": "All four marks. Dividing by the product of the two known factors is a neat way to find the third."
+      },
+      {
+       "tier": "partial",
+       "text": "f(1) = 0 so a + b = 5. f(-2) = 0 so 4a - 2b = 14. Then a = 5 - b and I get a = 4.5 and b = 0.5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = 0 so a + b = 5."
+        },
+        {
+         "point": 1,
+         "quote": "f(-2) = 0 so 4a - 2b = 14."
+        }
+       ],
+       "feedback": "Your two equations are right. When you substitute b = 5 - a into 4a - 2b = 14, you get 6a - 10 = 14, so a = 4 and b = 1."
+      },
+      {
+       "tier": "partial",
+       "text": "a = 4 and b = 1. f = (x - 1)(x + 2)(x + 3).",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "a = 4 and b = 1."
+        },
+        {
+         "point": 3,
+         "quote": "f = (x - 1)(x + 2)(x + 3)."
+        }
+       ],
+       "feedback": "The values and the factored form are right. Show where the equations come from, f(1) = 0 and f(-2) = 0, and how you solved them.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "a = 1 and b = -2 because x - 1 and x + 2 are the factors.",
+       "meets": [],
+       "feedback": "The numbers in the factors are roots, not the coefficients. Use the fact that f(1) = 0 and f(-2) = 0 to write equations in a and b."
+      },
+      {
+       "tier": "weak",
+       "text": "f(1) = 0, so 1 + a + b - 6 = 0. I can't get a second equation because I only know one factor.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = 0, so 1 + a + b - 6 = 0."
+        }
+       ],
+       "feedback": "You know two factors, x - 1 and x + 2. The second gives f(-2) = 0, which is a second equation in a and b."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Polynomial graphs from factored form, and proving identities",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. find the zeros of a polynomial from its factored form, use multiplicities, end behavior and a sign analysis to sketch its graph;\n2. prove polynomial identities, including cubic identities, and use them to describe numerical relationships.\n\n## Materials\n\nGraph paper, graphing handhelds for checking, whiteboards, the quiz.\n\n## Starter (8 minutes)\n\nPose: \"How would you compute 11 cubed using (10 + 1)^3?\" Students expand using the pattern, and then check with a calculator. Ask where the pattern a^3 + 3a^2b + 3ab^2 + b^3 comes from and whether it can be proved from (a + b)^2 times (a + b).\n\n## Main activity\n\n1. Sketch f(x) = x^2(x - 2)^3(x + 1) by zeros: multiplicity at each, end behavior, y-intercept, and signs on each interval with test points.\n2. Prove (a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 and a^3 + b^3 = (a + b)(a^2 - ab + b^2) by expanding.\n3. Use the identity for the sum of cubes to factor 125 + 8x^3, and verify at x = 1.\n4. Discuss the bound on turning points and why a degree-6 polynomial with these zeros has at most 5 of them.\n\n## Checking for understanding\n\nWhiteboards: \"g(x) = (x - 1)(x + 2)^2(x - 5): where is g negative?\" Look for a sign chart and the double zero that does not change the sign.\n\n## Quiz\n\nCollect the quiz in the last ten minutes.",
+   "reading": {
+    "title": "Sign charts for high-degree polynomials, and identities proved by expansion",
+    "content": "A polynomial's factored form tells you where it crosses and where it merely touches the x-axis. Take f(x) = x^2(x - 2)^3(x + 1). The zeros are x = 0 with multiplicity 2, x = 2 with multiplicity 3 and x = -1 with multiplicity 1. The degree is 2 + 3 + 1 = 6 and the leading coefficient is positive, so both ends rise. At 0 the graph touches the axis and turns, since the multiplicity is even. At 2 it crosses, but flattens as it passes, since a factor cubed behaves like x^3 near its zero. At -1 it crosses in an ordinary way. The y-intercept is f(0) = 0.\n\nTo find the sign on each interval, test one point in each. At x = -2: 4(-64)(-1) = 256, positive. At x = -1/2: (1/4)(-15.625)(1/2), about -1.95, negative. At x = 1: (1)(-1)(2) = -2, negative. At x = 3: 9(1)(4) = 36, positive. So f is positive for x < -1 and x > 2 and negative for -1 < x < 0 and 0 < x < 2. The sign did not change at 0 because the multiplicity is even. A graph of degree 6 can have at most 5 turning points, and this one has one at x = 0 and others between the zeros that the signs suggest. For another example, g(x) = (x - 1)(x + 2)^2(x - 5) is negative only on 1 < x < 5: at x = 0, g = (-1)(4)(-5) = 20, positive; at x = 2, g = (1)(16)(-3) = -48, negative; at x = 6, g = (5)(64)(1), positive; and at x = -3, g = (-4)(1)(-8) = 32, positive.\n\nAn identity is true for all values of the variables, and you prove it by expanding. The binomial cube: (a + b)^3 = (a + b)(a + b)^2 = (a + b)(a^2 + 2ab + b^2) = a^3 + 2a^2b + ab^2 + a^2b + 2ab^2 + b^3 = a^3 + 3a^2b + 3ab^2 + b^3. It makes mental arithmetic simple: 11^3 = (10 + 1)^3 = 1,000 + 300 + 30 + 1 = 1,331. For the sum of cubes, expand the right-hand side: (a + b)(a^2 - ab + b^2) = a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3. The middle terms cancel, leaving a^3 + b^3. Applying it with a = 5 and b = 2x gives 125 + 8x^3 = (5 + 2x)(25 - 10x + 4x^2). Check with x = 1: the left side is 133, and the right is 7 x 19 = 133. A quick numerical test is no proof, but it catches slips. Similarly, (x - 2)(x^2 + 2x + 4) = x^3 - 8, from the difference of cubes pattern."
+   },
+   "cards": [
+    {
+     "front": "Odd multiplicity",
+     "back": "The graph crosses the axis. For multiplicity 3 or more it also flattens there."
+    },
+    {
+     "front": "Even multiplicity",
+     "back": "The graph touches the axis and turns, and the sign of the function does not change."
+    },
+    {
+     "front": "Sign analysis",
+     "back": "Testing a point in each interval between zeros to find where the polynomial is positive or negative."
+    },
+    {
+     "front": "Degree from the factored form",
+     "back": "The sum of the multiplicities of all the factors."
+    },
+    {
+     "front": "Binomial cube",
+     "back": "(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3."
+    },
+    {
+     "front": "Sum of cubes identity",
+     "back": "a^3 + b^3 = (a + b)(a^2 - ab + b^2), proved by expanding the right side."
+    },
+    {
+     "front": "Difference of cubes identity",
+     "back": "a^3 - b^3 = (a - b)(a^2 + ab + b^2)."
+    },
+    {
+     "front": "Numerical check of an identity",
+     "back": "Substituting a value catches mistakes, but only an algebraic proof shows the identity for all values."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "For f(x) = (x - 1)^3 (x + 2)^2, which describes the graph at x = 1 and at x = -2?",
+     "options": [
+      "It touches at x = 1 and crosses at x = -2",
+      "It crosses at both zeros",
+      "It touches at both zeros",
+      "It crosses with a flattening at x = 1 and touches and turns at x = -2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What is the end behavior of f(x) = -2(x - 1)(x + 3)^2(x - 4)?",
+     "options": [
+      "Both ends point down",
+      "Both ends point up",
+      "Left end down and right end up",
+      "Left end up and right end down"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "For g(x) = (x - 1)(x + 2)^2(x - 5), on which interval is g(x) negative?",
+     "options": [
+      "x < -2",
+      "-2 < x < 1",
+      "1 < x < 5",
+      "x > 5"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Using (10 + 1)^3, what is 11^3?",
+     "options": [
+      "1,111",
+      "1,331",
+      "1,301",
+      "1,031"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which expression is equal to (x - 2)(x^2 + 2x + 4)?",
+     "options": [
+      "x^3 + 8",
+      "x^3 - 4",
+      "x^3 - 6x^2 + 12x - 8",
+      "x^3 - 8"
+     ],
+     "answer": "D"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the graph of f(x) = x^2 (x - 2)^3 (x + 1). Give the zeros and the behavior at each, the degree and end behavior, and the intervals on which f is positive and negative. State the greatest number of turning points.",
+     "markScheme": [
+      "Gives the zeros 0 (multiplicity 2, touches and turns), 2 (multiplicity 3, crosses with a flattening) and -1 (multiplicity 1, crosses)",
+      "States the degree 6 with a positive leading coefficient, so both ends rise",
+      "Finds f positive for x < -1 and x > 2, and negative for -1 < x < 0 and 0 < x < 2, using test points",
+      "States the greatest number of turning points is 5, and the y-intercept is 0"
+     ],
+     "modelAnswer": "The zeros are x = 0 with multiplicity 2, so the graph touches the axis and turns; x = 2 with multiplicity 3, so it crosses while flattening; and x = -1 with multiplicity 1, so it crosses normally. The degree is 2 + 3 + 1 = 6 with a positive leading coefficient, so both ends rise. Test points: f(-2) = 4(-64)(-1) = 256 > 0, f(-1/2) is negative, f(1) = -2 < 0 and f(3) = 36 > 0. So f is positive for x < -1 and x > 2 and negative for -1 < x < 0 and 0 < x < 2. The y-intercept is f(0) = 0, and a degree-6 polynomial has at most 5 turning points.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Zero at 0 with multiplicity 2, so it touches and turns. Zero at 2 with multiplicity 3, so it crosses but flattens. Zero at -1 with multiplicity 1, so a plain crossing. The degree is 6 and the leading coefficient is positive, so both ends go up. Testing points: f(-2) = 256 positive, f(-1/2) negative, f(1) = -2 negative, f(3) = 36 positive, so positive for x < -1 and x > 2 and negative for -1 < x < 2 except at 0. At most 5 turning points since the degree is 6, and the y-intercept is 0 because 0 is a zero.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Zero at 0 with multiplicity 2, so it touches and turns. Zero at 2 with multiplicity 3, so it crosses but flattens. Zero at -1 with multiplicity 1, so a plain crossing."
+        },
+        {
+         "point": 1,
+         "quote": "The degree is 6 and the leading coefficient is positive, so both ends go up."
+        },
+        {
+         "point": 2,
+         "quote": "Testing points: f(-2) = 256 positive, f(-1/2) negative, f(1) = -2 negative, f(3) = 36 positive, so positive for x < -1 and x > 2 and negative for -1 < x < 2 except at 0."
+        },
+        {
+         "point": 3,
+         "quote": "At most 5 turning points since the degree is 6, and the y-intercept is 0 because 0 is a zero."
+        }
+       ],
+       "feedback": "Full marks. Pointing out that the sign does not change at x = 0 ties the multiplicity to the sign chart."
+      },
+      {
+       "tier": "full",
+       "text": "Zeros and behavior: x = -1 crosses (odd, 1), x = 0 touches and turns (even, 2), x = 2 crosses and flattens (odd, 3). Ends: degree 2 + 3 + 1 = 6, positive leading coefficient, up on both ends. Signs: from the left it's positive, then crosses at -1 to negative, touches 0 and stays negative, crosses 2 to positive. The most turning points is 5 (degree minus 1) and f(0) = 0 is the y-intercept.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "x = -1 crosses (odd, 1), x = 0 touches and turns (even, 2), x = 2 crosses and flattens (odd, 3)"
+        },
+        {
+         "point": 1,
+         "quote": "degree 2 + 3 + 1 = 6, positive leading coefficient, up on both ends"
+        },
+        {
+         "point": 2,
+         "quote": "from the left it's positive, then crosses at -1 to negative, touches 0 and stays negative, crosses 2 to positive"
+        },
+        {
+         "point": 3,
+         "quote": "The most turning points is 5 (degree minus 1) and f(0) = 0 is the y-intercept"
+        }
+       ],
+       "feedback": "All four marks. Describing the signs by walking along the graph from the left is a good alternative to a table."
+      },
+      {
+       "tier": "partial",
+       "text": "Zeros at -1, 0 and 2, with a touch at 0 and flat crossing at 2. Both ends up. It's positive everywhere except between -1 and 2 where it's negative. It has 6 turning points.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Zeros at -1, 0 and 2, with a touch at 0 and flat crossing at 2."
+        },
+        {
+         "point": 1,
+         "quote": "Both ends up."
+        }
+       ],
+       "feedback": "The zeros and the end behavior are right. A degree-6 polynomial has at most 5 turning points, one less than the degree, so correct that count."
+      },
+      {
+       "tier": "partial",
+       "text": "f is positive for x < -1 and x > 2, and negative for -1 < x < 0 and 0 < x < 2. At most 5 turning points. The zeros are 1, -2 and 0.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "f is positive for x < -1 and x > 2, and negative for -1 < x < 0 and 0 < x < 2."
+        },
+        {
+         "point": 3,
+         "quote": "At most 5 turning points."
+        }
+       ],
+       "feedback": "Your signs and turning points are right. The zeros come from x - 2 = 0 and x + 1 = 0, so they are 2 and -1, not 1 and -2.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It crosses at all three zeros, because that's what the x-intercepts are for.",
+       "meets": [],
+       "feedback": "A zero of even multiplicity touches the axis and turns, which happens at x = 0 here. Only odd multiplicity crosses."
+      },
+      {
+       "tier": "weak",
+       "text": "The y-intercept is 0. The ends go down because of the negative numbers in the factors.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The y-intercept is 0"
+        }
+       ],
+       "feedback": "The intercept is right. The end behavior depends on the degree, 6, which is even, and the sign of the leading coefficient, positive, so both ends go up."
+      }
+     ]
+    },
+    {
+     "prompt": "Prove the identity a^3 + b^3 = (a + b)(a^2 - ab + b^2) by expanding the right side. Then use it to factor 125 + 8x^3, and check your factorization by substituting x = 1.",
+     "markScheme": [
+      "Expands (a + b)(a^2 - ab + b^2) term by term: a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3",
+      "Cancels the middle terms to get a^3 + b^3",
+      "Applies the identity with a = 5 and b = 2x to get (5 + 2x)(25 - 10x + 4x^2)",
+      "Checks with x = 1: the left side is 133 and the right is 7 x 19 = 133"
+     ],
+     "modelAnswer": "Expand: (a + b)(a^2 - ab + b^2) = a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3. The terms -a^2b and +a^2b cancel and so do +ab^2 and -ab^2, leaving a^3 + b^3. With a = 5 and b = 2x, a^3 = 125 and b^3 = 8x^3, so 125 + 8x^3 = (5 + 2x)(25 - 10x + 4x^2). Check with x = 1: the left side is 125 + 8 = 133, and the right side is (7)(25 - 10 + 4) = 7 x 19 = 133.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "a x (a^2 - ab + b^2) = a^3 - a^2b + ab^2 and b x (a^2 - ab + b^2) = a^2b - ab^2 + b^3. Add them: the -a^2b and a^2b cancel, the ab^2 and -ab^2 cancel, and a^3 + b^3 is left. Using a = 5 and b = 2x: (5 + 2x)(25 - 10x + 4x^2). Check x = 1: 125 + 8 = 133 and 7 x (25 - 10 + 4) = 7 x 19 = 133.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a x (a^2 - ab + b^2) = a^3 - a^2b + ab^2 and b x (a^2 - ab + b^2) = a^2b - ab^2 + b^3."
+        },
+        {
+         "point": 1,
+         "quote": "Add them: the -a^2b and a^2b cancel, the ab^2 and -ab^2 cancel, and a^3 + b^3 is left."
+        },
+        {
+         "point": 2,
+         "quote": "Using a = 5 and b = 2x: (5 + 2x)(25 - 10x + 4x^2)."
+        },
+        {
+         "point": 3,
+         "quote": "Check x = 1: 125 + 8 = 133 and 7 x (25 - 10 + 4) = 7 x 19 = 133."
+        }
+       ],
+       "feedback": "Full marks. Showing the two partial products before adding makes the cancellation visible."
+      },
+      {
+       "tier": "full",
+       "text": "Expand the right: (a + b)(a^2 - ab + b^2) = a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3. The two a^2b terms cancel and the two ab^2 terms cancel, so it is a^3 + b^3, and the identity is proved. For the factoring, 125 = 5^3 and 8x^3 = (2x)^3, so (5 + 2x)(25 - 10x + 4x^2). At x = 1, 133 on the left, and (5 + 2)(25 - 10 + 4) = 7 x 19 = 133 on the right.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(a + b)(a^2 - ab + b^2) = a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3"
+        },
+        {
+         "point": 1,
+         "quote": "The two a^2b terms cancel and the two ab^2 terms cancel, so it is a^3 + b^3, and the identity is proved"
+        },
+        {
+         "point": 2,
+         "quote": "125 = 5^3 and 8x^3 = (2x)^3, so (5 + 2x)(25 - 10x + 4x^2)"
+        },
+        {
+         "point": 3,
+         "quote": "At x = 1, 133 on the left, and (5 + 2)(25 - 10 + 4) = 7 x 19 = 133 on the right"
+        }
+       ],
+       "feedback": "All four marks. You identified the cubes of 5 and 2x before using the pattern."
+      },
+      {
+       "tier": "partial",
+       "text": "(a + b)(a^2 - ab + b^2) = a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3. The middle terms cancel. So 125 + 8x^3 = (5 + 2x)^3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(a + b)(a^2 - ab + b^2) = a^3 - a^2b + ab^2 + a^2b - ab^2 + b^3."
+        },
+        {
+         "point": 1,
+         "quote": "The middle terms cancel."
+        }
+       ],
+       "feedback": "The proof is right. The factorization needs the pattern, not a cube: with a = 5 and b = 2x, it is (5 + 2x)(25 - 10x + 4x^2). A cube of (5 + 2x) would have more terms."
+      },
+      {
+       "tier": "partial",
+       "text": "125 + 8x^3 = (5 + 2x)(25 - 10x + 4x^2). At x = 1, both sides are 133.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "125 + 8x^3 = (5 + 2x)(25 - 10x + 4x^2)."
+        },
+        {
+         "point": 3,
+         "quote": "At x = 1, both sides are 133."
+        }
+       ],
+       "feedback": "Your factorization and check are right. The question also asks for the proof of the identity: expand the product and show that the middle terms cancel.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Test a = 1 and b = 1: 1 + 1 = 2 and (2)(1 - 1 + 1) = 2. It works so it's proved.",
+       "meets": [],
+       "feedback": "A single test does not prove an identity, since it could be a coincidence. Expand the right side with letters, and show the terms cancel."
+      },
+      {
+       "tier": "weak",
+       "text": "The middle terms cancel and you get a^3 + b^3. Then 125 + 8x^3 = (5 + 8x)(25 - 40x + 64x^2).",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The middle terms cancel and you get a^3 + b^3."
+        }
+       ],
+       "feedback": "The cancellation is right. In the application, b is 2x, since (2x)^3 = 8x^3, and not 8x. Then b^2 = 4x^2 and ab = 10x."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,4 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { termWord } from "@shared/school-words";
+import { formatGpa, type Gpa } from "@shared/gpa";
+import { useSchoolConfig } from "@/hooks/use-school-config";
 import { agentNativePath, sendToAgentChat } from "@agent-native/core/client";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
@@ -60,6 +63,7 @@ type Profile = {
   summary: {
     percentage: number | null;
     grade: string | null;
+    gpa?: Gpa | null;
     passMark: number;
     handedIn: number;
     set: number;
@@ -166,6 +170,7 @@ export function LearnerProfile({
     );
   }
 
+  const { config } = useSchoolConfig();
   const { learner, summary, subjects, findings, position, counting } = data;
   const weak =
     summary?.percentage != null && summary.percentage < summary.passMark;
@@ -215,7 +220,9 @@ export function LearnerProfile({
       {summary ? (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           <div className="rounded-lg border bg-card p-4">
-            <p className="text-xs text-muted-foreground">Term average</p>
+            <p className="text-xs text-muted-foreground">
+              {termWord(config).Term} average
+            </p>
             <p
               className={cn(
                 "mt-1 text-2xl font-semibold",
@@ -229,6 +236,11 @@ export function LearnerProfile({
                 </span>
               ) : null}
             </p>
+            {summary.gpa ? (
+              <p className="text-xs text-muted-foreground">
+                GPA {formatGpa(summary.gpa)}
+              </p>
+            ) : null}
             <p className="text-xs text-muted-foreground">
               Pass mark {summary.passMark}%
               {counting.missedWorkCountsAsZero

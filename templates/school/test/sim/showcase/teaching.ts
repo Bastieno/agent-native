@@ -85,7 +85,7 @@ export function friday(run: ShowcaseRun, week: number): string {
  * only what a real term would have opened by the date they sign in.
  */
 export function opensOn(run: ShowcaseRun, week: number): string {
-  const d = new Date(`${friday(run, week)}T07:45:00+01:00`);
+  const d = new Date(`${friday(run, week)}T07:45:00${run.scenario.utcOffset}`);
   d.setUTCDate(d.getUTCDate() - 4);
   return d.toISOString();
 }
@@ -807,7 +807,11 @@ async function differentiatedWeek(
     served[which] = (served[which] ?? 0) + 1;
     findings.expect(
       "differentiation",
-      !/foundational|developing|advanced/i.test(JSON.stringify(paper ?? {})),
+      // The group is named in a field or a label, never in the questions'
+      // own words ("developing nations" is a topic, not a group).
+      !/"(difficulty|category|group|abilityGroup)"\s*:|"label"\s*:\s*"(foundational|developing|advanced)/i.test(
+        JSON.stringify(paper ?? {}),
+      ),
       "a learner's paper never names the ability groups",
       learner.profile.name,
     );
@@ -896,20 +900,7 @@ export async function teachSchoolWeek(
 
 async function announcements(run: ShowcaseRun, week: number) {
   const { client, admin } = run;
-  const school: Record<number, [string, string]> = {
-    1: [
-      "Welcome to the First Term",
-      "Welcome back, everyone. Lessons begin on Monday 14 September at 8:00 after assembly. Form teachers will share the timetable on the first day.",
-    ],
-    6: [
-      "Mid-term break next week",
-      "The school is closed for mid-term break in week 7, from Monday 26 October. Lessons resume on Monday 2 November.",
-    ],
-    10: [
-      "Revision and examinations",
-      "Week 11 is for revision; the First Term examinations run from Monday 30 November to Friday 4 December. The examination timetable will be published next week.",
-    ],
-  };
+  const school = run.scenario.announcements;
   if (school[week]) {
     const [title, content] = school[week];
     await client.as(admin, "create-announcement", {
@@ -926,7 +917,7 @@ async function announcements(run: ShowcaseRun, week: number) {
       ?.byWeek.get(week)?.[0]?.subStrand;
     await client.as(cls.teacher, "create-announcement", {
       title: `${cls.name}: week ${week}`,
-      content: `This week we are on ${topic ?? "the next topic"}. Read the notes before Thursday's lesson and bring your exercise books.`,
+      content: run.scenario.classAnnouncement(topic ?? "the next topic"),
       scope: "class",
       classId: cls.id,
     });

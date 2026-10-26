@@ -7,51 +7,24 @@
  * run itself (test/sim/showcase/) only drives the app's actions with it.
  */
 
-export type Stream = "Science" | "Commercial" | "Art";
+import type {
+  ArmPlan,
+  Showcase,
+  StaffPlan,
+  SubjectPlan,
+} from "./showcase-types.js";
+import { FIRST, LAST } from "./names-ng.js";
 
-export type SubjectPlan = {
-  /** The school's name for it, which is also the library's name. */
-  name: string;
-  code: string;
-  department: string;
-  /** Which library the scheme of work is drawn from, and under what name. */
-  library: { framework: "NERDC" | "WAEC"; subject: string };
-  /** Year groups that take it. */
-  yearGroups: string[];
-  /** Only these streams take it in SS; absent means every stream. */
-  streams?: Stream[];
-  /** Part of the SS option block rather than a whole-arm class. */
-  option?: boolean;
-  periodsPerWeek: number;
-  doublesPerWeek: number;
-  /** A science with practicals: its double goes in this lab, named "Practical". */
-  lab?: string;
-  /** Working is written by hand on problem sets. */
-  handwritten?: boolean;
-  /** The app's exam style for the subject, where it ships one. */
-  examStyle?: string;
-};
+export type { Showcase, StaffPlan, SubjectPlan };
 
-export type StaffPlan = {
-  key: string;
-  name: string;
-  /** "teacher", or a coordinator heading one department. */
-  role: "teacher" | "subject_coordinator";
-  heads?: string;
-  /** Classes they lead: subject and the arms (or "option:SS1") it covers. */
-  teaches: { subject: string; arms: string[] }[];
-  /** Classes they support rather than lead. */
-  supports?: { subject: string; arms: string[] }[];
-  /** The arm they are form teacher of. */
-  formOf?: string;
-};
+type Stream = "Science" | "Commercial" | "Art";
 
 const JSS = ["JSS1", "JSS2", "JSS3"];
 const SS = ["SS1", "SS2", "SS3"];
 const ALL = [...JSS, ...SS];
 
 /** Every arm, by year group: one in JSS, three streamed arms in SS. */
-export const ARMS: { yearGroup: string; name: string; stream?: Stream }[] = [
+export const ARMS: ArmPlan[] = [
   ...JSS.map((y) => ({ yearGroup: y, name: `${y}A` })),
   ...SS.flatMap((y) => [
     { yearGroup: y, name: `${y}A`, stream: "Science" as const },
@@ -106,6 +79,7 @@ export const SUBJECTS: SubjectPlan[] = [
     yearGroups: JSS,
     periodsPerWeek: 3,
     doublesPerWeek: 0,
+    room: "ICT Room",
   },
   {
     name: "Social and Citizenship Studies",
@@ -628,20 +602,27 @@ export const STAFF: StaffPlan[] = [
   },
 ];
 
-export const showcase = {
+export const showcase: Showcase = {
   key: "showcase",
+  port: 8131,
+  devCommand: "pnpm dev:showcase",
+  resetCommand: "pnpm showcase:reset",
   schoolName: "Crestfield College",
   city: "Ibadan",
-  schoolType: "secondary" as const,
+  schoolType: "secondary",
   country: "Nigeria",
   locale: "en-NG",
   timezone: "Africa/Lagos",
-  paperSize: "a4" as const,
+  utcOffset: "+01:00",
+  paperSize: "a4",
   principal: "Olusegun Adekunle",
+  emailDomain: "crestfield.test",
+  names: { first: FIRST, last: LAST },
+  seed: 20260914,
 
   yearGroups: ALL,
   gradePrefix: "Class",
-  termStructure: "terms" as const,
+  termStructure: "terms",
   customLabels: {
     student: "student",
     teacher: "teacher",
@@ -654,9 +635,9 @@ export const showcase = {
 
   passMark: 40,
   rankLearners: true,
-  missedWorkPolicy: "zero" as const,
+  missedWorkPolicy: "zero",
   gradingScale: {
-    type: "letter" as const,
+    type: "letter",
     levels: [
       { grade: "A1", min: 75, max: 100, label: "Excellent" },
       { grade: "B2", min: 70, max: 74, label: "Very Good" },
@@ -686,6 +667,7 @@ export const showcase = {
   teachingWeeks: [1, 2, 3, 4, 5, 6, 8, 9, 10],
   revisionWeek: 11,
   examWeek: 12,
+  sampleDate: "2026-10-12",
 
   /** Monday to Thursday: Assembly, eight 40-minute periods, two breaks. */
   bells: {
@@ -725,10 +707,7 @@ export const showcase = {
         label: "Clubs / Societies",
       },
     ],
-  } as Record<
-    "full" | "friday",
-    { start: string; end: string; kind: "lesson" | "break"; label?: string }[]
-  >,
+  },
 
   specialRooms: [
     "Physics Lab",
@@ -741,11 +720,32 @@ export const showcase = {
 
   arms: ARMS,
   studentsPerArm: 15,
-  /** Share of Science and Commercial learners who take Further Mathematics. */
-  furtherMathsShare: 0.4,
   subjects: SUBJECTS,
-  ssOverrides: SS_OVERRIDES,
+  overrideFor: (subject: SubjectPlan, yearGroup: string) =>
+    yearGroup.startsWith("SS") ? SS_OVERRIDES[subject.name] : undefined,
+  librarySplit: (yearGroup: string) => ({
+    index: Number(yearGroup.replace(/\D/g, "")) - 1,
+    parts: 3,
+  }),
+  seniorLabel: "SS",
+  isSenior: (yearGroup: string) => yearGroup.startsWith("SS"),
   staff: STAFF,
+  optionRoom: (subject: SubjectPlan, yearGroup: string) =>
+    subject.name === "Geography" ? "Library" : `${yearGroup}A classroom`,
+  // The stronger mathematicians of the Science and Commercial arms choose
+  // Further Mathematics, as they would; every Art learner takes Geography.
+  chooseOptions: (cohort, options) => {
+    const eligible = cohort
+      .map((l, i) => ({ l, i }))
+      .filter(({ l }) => l.stream !== "Art")
+      .sort((a, b) => b.l.ability - a.l.ability);
+    const takers = new Set(
+      eligible.slice(0, Math.round(eligible.length * 0.4)).map((e) => e.i),
+    );
+    return cohort.map((_, i) => (takers.has(i) ? options[0] : options[1]));
+  },
+  optionDecision: (yearGroups: string[]) =>
+    `Further Mathematics beside Geography in ${yearGroups.join(" and ")}; Science and Commercial learners choose one (the stronger mathematicians Further Mathematics), every Art learner takes Geography; both classes draw on all three arms so they are timetabled together`,
 
   /**
    * The marked piece each week, in rotation, so every format turns up in
@@ -781,6 +781,9 @@ export const showcase = {
    * show.
    */
   leftOpen: { arm: "JSS2A", subject: "Mathematics", week: 10 },
+  pdfHandoutWeeks: [],
+  lessonNoteHistoryWeek: 8,
+  reopenedNote: { arm: "SS1A", subject: "Chemistry", week: 3 },
   /** Exam days of week 12: Monday 30 November to Friday 4 December 2026. */
   examDays: [
     "2026-11-30",
@@ -789,7 +792,97 @@ export const showcase = {
     "2026-12-03",
     "2026-12-04",
   ],
+  exams: {
+    sessions: ["08:30", "11:00", "13:30"],
+    minutes: (yearGroup: string) => (yearGroup.startsWith("SS") ? 90 : 60),
+    theoryQuestions: (yearGroup: string) =>
+      yearGroup.startsWith("SS") ? 3 : 2,
+    sectionB: (yearGroup: string) =>
+      yearGroup.startsWith("SS")
+        ? "Answer all questions in Section B."
+        : "Answer both questions in Section B.",
+    title: "First Term Examination",
+    timetableTitle: "First Term examination timetable",
+    timetableIntro:
+      "The First Term examinations run from Monday 30 November to Friday 4 December. Be seated ten minutes before each paper.",
+  },
+  termName: "First Term",
+  announcements: {
+    1: [
+      "Welcome to the First Term",
+      "Welcome back, everyone. Lessons begin on Monday 14 September at 8:00 after assembly. Form teachers will share the timetable on the first day.",
+    ],
+    6: [
+      "Mid-term break next week",
+      "The school is closed for mid-term break in week 7, from Monday 26 October. Lessons resume on Monday 2 November.",
+    ],
+    10: [
+      "Revision and examinations",
+      "Week 11 is for revision; the First Term examinations run from Monday 30 November to Friday 4 December. The examination timetable will be published next week.",
+    ],
+  },
+  where: {
+    strongArm: "SS1A",
+    strugglerArm: "SS2B",
+    optionYear: "SS2",
+    optionSubject: "Further Mathematics",
+    lab: "Physics Lab",
+    scienceDepartment: "Sciences",
+  },
+  outputDir: "showcase",
+  classAnnouncement: (topic: string) =>
+    `This week we are on ${topic}. Read the notes before Thursday's lesson and bring your exercise books.`,
+  nextTermBegins: "Monday 11 January 2027",
+  guideNotes: [
+    "- Crestfield College is a day secondary school in Ibadan, Oyo State, running JSS1–SS3.",
+    "- JSS has one arm per year group; SS has three streamed arms: A Science, B Commercial, C Art.",
+    "- The First Term runs 14 September to 11 December 2026. Week 7 is the mid-term break, week 11 is revision, week 12 is examinations and week 13 is results and closing.",
+    "- Mid-term and end-of-term examinations in SS follow the WAEC style where a style exists for the subject.",
+    "- Work not handed in counts as zero. Report cards show positions.",
+    "- Practicals in Physics, Chemistry and Biology are taught as doubles in the labs.",
+    "- Teachers mark open answers against the mark scheme and quote the learner's words as evidence.",
+  ],
+  decisionText: {
+    grading: "WAEC-style A1–F9 for the whole school",
+    bellsLessonPeriods: "38 (eight a day Monday to Thursday, six on Friday)",
+    classrooms: 'one per arm, named "<arm> classroom" (12)',
+    termsNote: (index: number) =>
+      index === 0
+        ? " (13 weeks; the only term taught)"
+        : " (dates only; nothing taught)",
+    examWeeksNote:
+      "the last 2 weeks of each term: week 12 examinations, week 13 results and closing",
+    examsWhen:
+      "week 12, Monday 30 November to Friday 4 December 2026, three sessions a day (08:30, 11:00, 13:30)",
+    examsOrder:
+      "papers every arm sits first, then stream papers in shared sessions (Science, Commercial and Art at the same time), then the option block together",
+    examsState:
+      "sat, marked and published; the papers carry no opening time, because the term's dates put week 12 in December",
+    examStyles:
+      "every subject the app ships no style for is worded plainly; styles exist only for English Language, Mathematics, Physics, Chemistry and Biology",
+    lessonCountTotals:
+      "JSS arms 37 periods of 38; SS1 and SS2 arms 34 (30 whole-arm plus the 4-period option block); SS3 arms 30",
+    libraries:
+      "drawn from the NERDC and WAEC libraries: a third of a three-year library per year group, or nine objectives in a row where the sample library is too small for a third to fill nine weeks; units follow the library's sub-strands, with nothing new in weeks 7, 11, 12 and 13",
+    gaps: [
+      {
+        gap: "Assessment styles",
+        why: "the app ships styles for five SS subjects only (English Language, Mathematics, Physics, Chemistry, Biology); every other subject's questions are worded plainly, which check-school-setup reports",
+      },
+      {
+        gap: "A separate JSS grading scale",
+        why: "the app holds one scale per school, so JSS uses the WAEC A1–F9 scale too",
+      },
+      {
+        gap: "Second and Third Terms",
+        why: "dates only; nothing is taught in them",
+      },
+      {
+        gap: "Exam opening times",
+        why: "the papers are sat now, but the term's dates put week 12 in December, so they carry no opening time; their dates are on the examination timetable",
+      },
+    ],
+  },
 };
 
-export type Showcase = typeof showcase;
 export default showcase;

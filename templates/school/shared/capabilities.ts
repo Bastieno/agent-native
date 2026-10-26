@@ -11,6 +11,8 @@
  * Learner entries say only what a learner can see.
  */
 
+import { inSchoolWords, type SchoolWords } from "./school-words.js";
+
 export type HelpRole = "admin" | "teacher" | "student";
 
 export interface Capability {
@@ -1319,11 +1321,25 @@ export const CAPABILITIES: Capability[] = [
 /** The capabilities one kind of person sees. A coordinator also gets theirs. */
 export function capabilitiesFor(
   role: HelpRole,
-  opts: { coordinator?: boolean } = {},
+  opts: { coordinator?: boolean; words?: SchoolWords } = {},
 ): Capability[] {
-  return CAPABILITIES.filter(
+  const mine = CAPABILITIES.filter(
     (c) => c.roles.includes(role) && (!c.coordinator || opts.coordinator),
   );
+  const words = opts.words;
+  if (!words) return mine;
+  // Read in the school's own words: a homeroom school is not told about arms.
+  const say = (t: string) => inSchoolWords(t, words);
+  return mine.map((c) => ({
+    ...c,
+    title: say(c.title),
+    summary: say(c.summary),
+    steps: c.steps.map(say),
+    starters: c.starters?.map((st) => ({
+      label: say(st.label),
+      text: say(st.text),
+    })),
+  }));
 }
 
 /** Which Help role a school role uses. */

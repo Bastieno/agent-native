@@ -1,6 +1,8 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { z } from "zod";
+import { getOrgSetting } from "@agent-native/core/settings";
+import { schoolWords } from "../shared/school-words.js";
 import { actorForEmail } from "../server/lib/class-access.js";
 import { capabilitiesFor, helpRoleOf } from "../shared/capabilities.js";
 import { searchCapabilities } from "../shared/help-search.js";
@@ -27,8 +29,10 @@ export default defineAction({
     if (!actor || !role) {
       return { entries: [], message: "No help is available for this account." };
     }
+    const config = await getOrgSetting(actor.schoolId, "school-config");
     const caps = capabilitiesFor(role, {
       coordinator: actor.schoolRole === "subject_coordinator",
+      words: schoolWords(config as any),
     });
     const chosen = query?.trim()
       ? searchCapabilities(query, caps)

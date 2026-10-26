@@ -19,8 +19,6 @@ import { abilityInWeek } from "../population.js";
  * card issued.
  */
 
-const SESSIONS = ["08:30", "11:00", "13:30"];
-
 export type ExamSlot = {
   yearGroup: string;
   subject: string;
@@ -35,16 +33,16 @@ export function examTimetable(run: ShowcaseRun): ExamSlot[] {
   const slots: ExamSlot[] = [];
   const at = (i: number) => ({
     date: scenario.examDays[
-      Math.floor(i / SESSIONS.length) % scenario.examDays.length
+      Math.floor(i / scenario.exams.sessions.length) % scenario.examDays.length
     ],
-    start: SESSIONS[i % SESSIONS.length],
+    start: scenario.exams.sessions[i % scenario.exams.sessions.length],
   });
   for (const yearGroup of scenario.yearGroups) {
     const classes = run.classes.filter((c) => c.yearGroup === yearGroup);
     const armsInYear = new Set(
       classes.filter((c) => c.arm).map((c) => c.arm!.name),
     ).size;
-    const minutes = yearGroup.startsWith("SS") ? 90 : 60;
+    const minutes = scenario.exams.minutes(yearGroup);
     const subjects = [...new Set(classes.map((c) => c.subject.name))];
     // Papers every arm sits come first, at one time for the whole year group.
     const common = subjects.filter(
@@ -89,7 +87,7 @@ export async function revisionWeek(run: ShowcaseRun): Promise<void> {
     const written = contentFor(cls.subject.name, cls.yearGroup);
     const revision = written
       ? [
-          `# Revision: ${cls.subject.name}, First Term`,
+          `# Revision: ${cls.subject.name}, ${run.scenario.termName}`,
           "",
           "The examination covers every week below. For each one, read your notes and the week's reading again, then answer the week's questions without looking.",
           "",
@@ -112,7 +110,7 @@ export async function revisionWeek(run: ShowcaseRun): Promise<void> {
       content:
         revision ??
         [
-          `# Revision: ${cls.subject.name}, First Term`,
+          `# Revision: ${cls.subject.name}, ${run.scenario.termName}`,
           "",
           "The examination covers everything below. Go through your notes for each topic, then try the questions at the end of each week's worksheet again without looking.",
           "",
@@ -144,7 +142,7 @@ export async function examWeek(run: ShowcaseRun): Promise<ExamPaper[]> {
     )!;
     const plan = run.weekPlan.get(`${cls.subject.name}|${cls.yearGroup}`)!;
     const taught: LibraryObjective[] = [...plan.byWeek.values()].flat();
-    const ss = cls.yearGroup.startsWith("SS");
+    const ss = run.scenario.isSenior(cls.yearGroup);
     const written = examFromContent(run, cls.subject.name, cls.yearGroup, ss);
     const questions =
       written?.questions ??
@@ -154,14 +152,14 @@ export async function examWeek(run: ShowcaseRun): Promise<ExamPaper[]> {
         plan.all,
         424242 + run.classes.indexOf(cls),
         10,
-        ss ? 3 : 2,
+        run.scenario.exams.theoryQuestions(cls.yearGroup),
       );
     const created = await client.as(cls.teacher, "create-activity", {
       classId: cls.id,
-      title: `First Term Examination: ${cls.subject.name}`,
+      title: `${run.scenario.exams.title}: ${cls.subject.name}`,
       format: "examination",
       renderAs: "questions",
-      instructions: `Answer all questions in Section A. ${ss ? "Answer all questions in Section B." : "Answer both questions in Section B."} Time allowed: ${slot.minutes} minutes.`,
+      instructions: `Answer all questions in Section A. ${run.scenario.exams.sectionB(cls.yearGroup)} Time allowed: ${slot.minutes} minutes.`,
       blocks: questions.map(toBlock),
       content: questions
         .map(
@@ -203,7 +201,7 @@ export async function examWeek(run: ShowcaseRun): Promise<ExamPaper[]> {
   // The examination timetable goes out to the whole school.
   const days = [...new Set(timetable.map((s) => s.date))].sort();
   const lines = [
-    "The First Term examinations run from Monday 30 November to Friday 4 December. Be seated ten minutes before each paper.",
+    run.scenario.exams.timetableIntro,
     "",
     "| Day | Time | Year group | Paper | Minutes |",
     "| --- | --- | --- | --- | --- |",
@@ -217,36 +215,31 @@ export async function examWeek(run: ShowcaseRun): Promise<ExamPaper[]> {
         )
         .map(
           (s) =>
-            `| ${new Date(`${d}T12:00:00Z`).toLocaleDateString("en-NG", { weekday: "long", day: "numeric", month: "long" })} | ${s.start} | ${s.yearGroup} | ${s.subject} | ${s.minutes} |`,
+            `| ${new Date(`${d}T12:00:00Z`).toLocaleDateString(run.scenario.locale, { weekday: "long", day: "numeric", month: "long" })} | ${s.start} | ${s.yearGroup} | ${s.subject} | ${s.minutes} |`,
         ),
     ),
   ];
   await client.as(admin, "create-announcement", {
-    title: "First Term examination timetable",
+    title: run.scenario.exams.timetableTitle,
     content: lines.join("\n"),
     scope: "school",
   });
 
-  decisions.add(
-    "Exams",
-    "When",
-    "week 12, Monday 30 November to Friday 4 December 2026, three sessions a day (08:30, 11:00, 13:30)",
-  );
+  decisions.add("Exams", "When", run.scenario.decisionText.examsWhen);
   decisions.add(
     "Exams",
     "Papers",
-    `${papers.length}, one per class: 10 objective questions and ${"3 theory questions in SS, 2 in JSS"}; 90 minutes in SS, 60 in JSS; each opens at its session and closes 30 minutes after its time runs out`,
+    `${papers.length}, one per class: 10 objective questions and ${[
+      ...new Set(
+        run.scenario.yearGroups.map(
+          (y) =>
+            `${run.scenario.exams.theoryQuestions(y)} theory questions and ${run.scenario.exams.minutes(y)} minutes in ${y}`,
+        ),
+      ),
+    ].join("; ")}`,
   );
-  decisions.add(
-    "Exams",
-    "Order",
-    "papers every arm sits first, then stream papers in shared sessions (Science, Commercial and Art at the same time), then the option block together",
-  );
-  decisions.add(
-    "Exams",
-    "State",
-    "sat, marked and published; the papers carry no opening time, because the term's dates put week 12 in December",
-  );
+  decisions.add("Exams", "Order", run.scenario.decisionText.examsOrder);
+  decisions.add("Exams", "State", run.scenario.decisionText.examsState);
   decisions.add("Exams", "Timetable", "announced to the whole school");
   return papers;
 }
@@ -338,6 +331,11 @@ export async function sitExams(
  * form teacher's remark and the principal's own, both written from how the
  * learner's term actually went.
  */
+function formTeacherLabel(run: ShowcaseRun): string {
+  const word = run.scenario.customLabels.formTeacher || "form teacher";
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 export async function reportCards(run: ShowcaseRun): Promise<void> {
   const { client, admin, findings, decisions } = run;
   const termId = run.firstTermId;
@@ -352,7 +350,7 @@ export async function reportCards(run: ShowcaseRun): Promise<void> {
     const markdown = String(preview?.markdown ?? "");
     const scored = [
       ...markdown.matchAll(
-        /^\| ([^|*]+?) \| \d+ of \d+ \| (\d+)% \| \w+ \|$/gm,
+        /^\| ([^|*]+?) \| \d+ of \d+ \| (\d+)% \| [A-F][+-]?\w* \|$/gm,
       ),
     ]
       .map((m) => ({ subject: m[1].trim(), score: Number(m[2]) }))
@@ -367,14 +365,14 @@ export async function reportCards(run: ShowcaseRun): Promise<void> {
       studentId: learner.studentId,
       termId,
       comments: {
-        [`Form teacher${form ? ` (${form})` : ""}`]: formRemark(
+        [`${formTeacherLabel(run)}${form ? ` (${form})` : ""}`]: formRemark(
           learner.profile.name.split(" ")[0],
           scored,
           missed,
         ),
         Principal: principalRemark(ability),
       },
-      nextTermBegins: "Monday 11 January 2027",
+      nextTermBegins: run.scenario.nextTermBegins,
       confirm: true,
     });
     if (result?.reportCardId) issued++;
@@ -389,7 +387,7 @@ export async function reportCards(run: ShowcaseRun): Promise<void> {
   decisions.add(
     "Report cards",
     "Issued",
-    `${issued}, one per learner, by the principal after the examinations were published; positions shown; next term begins Monday 11 January 2027`,
+    `${issued}, one per learner, by the principal after the examinations were published;${run.scenario.rankLearners ? " positions shown;" : ""} next term begins ${run.scenario.nextTermBegins}`,
   );
   decisions.add(
     "Report cards",

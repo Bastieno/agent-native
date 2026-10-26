@@ -3,11 +3,9 @@ import type { Findings } from "../findings.js";
 import { asList, idOf } from "../shapes.js";
 import { inPool } from "../pool.js";
 import { seedLibraries } from "../seed-libraries.js";
-import type {
-  Showcase,
-  SubjectPlan,
-} from "../../scenarios/showcase-crestfield.js";
+import type { Showcase, SubjectPlan } from "../../scenarios/showcase-types.js";
 import { makeLearners, staffEmail } from "./people.js";
+import { importSchoolLibraries } from "./libraries.js";
 import {
   Decisions,
   type Learner,
@@ -53,15 +51,18 @@ function schoolWeek(scenario: Showcase) {
   };
 }
 
+/** The local database a school is built on: its own, so schools never pile into one. */
+export function databaseName(scenario: Showcase): string {
+  return scenario.key === "showcase" ? "showcase" : scenario.key;
+}
+
 /** The subject plan as a year group takes it (SS draws on WAEC). */
 export function planFor(
   subject: SubjectPlan,
   yearGroup: string,
   scenario: Showcase,
 ) {
-  const override = yearGroup.startsWith("SS")
-    ? scenario.ssOverrides[subject.name]
-    : undefined;
+  const override = scenario.overrideFor(subject, yearGroup);
   return {
     library: override?.library ?? subject.library,
     periodsPerWeek: override?.periodsPerWeek ?? subject.periodsPerWeek,
@@ -78,7 +79,7 @@ export async function buildSchool(
   const decisions = new Decisions();
   // The same addresses every run, so the owner can keep them; the showcase
   // database is emptied between runs instead (`pnpm showcase:reset`).
-  const domain = "crestfield.test";
+  const domain = scenario.emailDomain;
 
   // ── The school and its settings ────────────────────────────────────────
   console.log("· the school and its settings");
@@ -94,7 +95,10 @@ export async function buildSchool(
   });
   await client.as(admin, "update-person-name", { name: scenario.principal });
   // A fresh showcase database has no syllabus libraries or exam styles yet.
-  seedLibraries(process.env.SHOWCASE_DATABASE_URL ?? "file:./data/showcase.db");
+  seedLibraries(
+    process.env.SHOWCASE_DATABASE_URL ??
+      `file:./data/${databaseName(scenario)}.db`,
+  );
   decisions.add("Identity", "Name", `${scenario.schoolName}, ${scenario.city}`);
   decisions.add("Identity", "Type", scenario.schoolType);
   decisions.add(
@@ -113,6 +117,15 @@ export async function buildSchool(
     levels: scenario.yearGroups.map((name, i) => ({ name, sequence: i + 1 })),
   });
 
+  const libraryObjectives = await importSchoolLibraries(
+    client,
+    admin,
+    scenario,
+    decisions,
+  );
+  if (libraryObjectives)
+    console.log(`· ${libraryObjectives} objectives imported as the school's own libraries`);
+
   const week = schoolWeek(scenario);
   const rooms = [
     ...scenario.arms.map((a) => ({
@@ -126,6 +139,7 @@ export async function buildSchool(
   ];
   await client.as(admin, "update-school-config", {
     gradePrefix: scenario.gradePrefix,
+    ...(scenario.courseLevels ? { courseLevels: scenario.courseLevels } : {}),
     termStructure: scenario.termStructure,
     passMark: scenario.passMark,
     gradingScale: scenario.gradingScale,
@@ -147,11 +161,21 @@ export async function buildSchool(
   decisions.add(
     "Grading",
     "Scale",
-    `WAEC-style A1–F9 for the whole school: ${scenario.gradingScale.levels.map((l) => `${l.grade} ${l.min}–${l.max}`).join(", ")}`,
+    `${scenario.decisionText.grading}: ${scenario.gradingScale.levels.map((l) => `${l.grade} ${l.min}–${l.max}${l.points !== undefined ? ` (${l.points.toFixed(1)})` : ""}`).join(", ")}`,
   );
   decisions.add("Grading", "Pass mark", `${scenario.passMark}%`);
   decisions.add("Grading", "Missed work", "counts as zero");
-  decisions.add("Grading", "Positions on report cards", "shown");
+  decisions.add(
+    "Grading",
+    "Positions on report cards",
+    scenario.rankLearners ? "shown" : "not shown",
+  );
+  if (scenario.courseLevels)
+    decisions.add(
+      "Grading",
+      "Course levels (weighted GPA)",
+      scenario.courseLevels.map((c) => `${c.name} +${c.bonus}`).join(", "),
+    );
   decisions.add(
     "Terminology",
     "What the school calls things",
@@ -167,11 +191,7 @@ export async function buildSchool(
     "Year groups",
     `${scenario.yearGroups.join(", ")} (prefix "${scenario.gradePrefix}")`,
   );
-  decisions.add(
-    "Rooms",
-    "Classrooms",
-    'one per arm, named "<arm> classroom" (12)',
-  );
+  decisions.add("Rooms", "Classrooms", scenario.decisionText.classrooms);
   decisions.add("Rooms", "Special rooms", scenario.specialRooms.join(", "));
   for (const [label, bells] of [
     ["Monday to Thursday", scenario.bells.full],
@@ -191,7 +211,7 @@ export async function buildSchool(
   decisions.add(
     "The week's bells",
     "Lesson periods a week",
-    "38 (eight a day Monday to Thursday, six on Friday)",
+    scenario.decisionText.bellsLessonPeriods,
   );
 
   const levels = asList(
@@ -224,7 +244,7 @@ export async function buildSchool(
     decisions.add(
       "Terms and weeks",
       term.name,
-      `${term.start} to ${term.end}${i === 0 ? " (13 weeks; the only term taught)" : " (dates only; nothing taught)"}`,
+      `${term.start} to ${term.end}${scenario.decisionText.termsNote(i)}`,
     );
   }
   decisions.add(
@@ -240,7 +260,7 @@ export async function buildSchool(
   decisions.add(
     "Terms and weeks",
     "Exam weeks",
-    `the last ${scenario.examWeeksPerTerm} weeks of each term: week 12 examinations, week 13 results and closing`,
+    scenario.decisionText.examWeeksNote,
   );
   decisions.add(
     "Terms and weeks",
@@ -320,15 +340,17 @@ export async function buildSchool(
         color: COLOURS[i % COLOURS.length],
         departmentId: departmentIds[subject.department],
         yearGroups: subject.yearGroups,
+        ...(subject.courseLevel ? { courseLevel: subject.courseLevel } : {}),
+        ...(subject.credits ? { credits: subject.credits } : {}),
       }),
       "subject",
     )!;
     const streams = subject.option
       ? "option block"
-      : subject.yearGroups.some((y) => y.startsWith("SS"))
+      : subject.yearGroups.some((y) => scenario.isSenior(y))
         ? subject.streams?.length
-          ? `${subject.streams.join(", ")} stream${subject.streams.length > 1 ? "s" : ""} in SS`
-          : "every stream in SS"
+          ? `${subject.streams.join(", ")} stream${subject.streams.length > 1 ? "s" : ""} in ${scenario.seniorLabel}`
+          : `every stream in ${scenario.seniorLabel}`
         : "every learner";
     const libraries = [
       ...new Set(
@@ -341,7 +363,7 @@ export async function buildSchool(
     decisions.add(
       "Subjects by year group and stream",
       subject.name,
-      `${subject.yearGroups.join(", ")}; ${streams}; ${subject.department}; planned from ${libraries}`,
+      `${subject.yearGroups.join(", ")}; ${streams}; ${subject.department}; planned from ${libraries}${subject.courseLevel ? `; ${subject.courseLevel} course` : ""}${subject.credits ? `; ${subject.credits} credit` : ""}`,
     );
   }
 
@@ -415,8 +437,7 @@ export async function buildSchool(
         optionArmIds: [],
         teacher: leadOf(subject.name, arm.name),
         support: supportOf(subject.name, arm.name),
-        room:
-          subject.name === "Digital Technologies" ? "ICT Room" : arm.homeRoom,
+        room: subject.room ?? arm.homeRoom,
         ...p,
       });
     }
@@ -438,8 +459,7 @@ export async function buildSchool(
         optionArmIds: yearArms.map((a) => a.id),
         teacher: leadOf(subject.name, `option:${yearGroup}`),
         support: supportOf(subject.name, `option:${yearGroup}`),
-        room:
-          subject.name === "Geography" ? "Library" : `${yearGroup}A classroom`,
+        room: scenario.optionRoom(subject, yearGroup),
         ...p,
       });
     }
@@ -491,7 +511,13 @@ export async function buildSchool(
   }
 
   // ── Learners ───────────────────────────────────────────────────────────
-  const profiles = makeLearners(scenario.arms, scenario.studentsPerArm, domain);
+  const profiles = makeLearners(
+    scenario.arms,
+    scenario.studentsPerArm,
+    domain,
+    scenario.names,
+    scenario.seed,
+  );
   console.log(`· inviting ${profiles.length} learners`);
   const learners: Learner[] = await inPool(profiles, 8, async (profile) => {
     await client.as(admin, "invite-student", {
@@ -552,31 +578,26 @@ export async function buildSchool(
     );
   }
 
-  // The option block: a share of Science and Commercial learners take
-  // Further Mathematics, everyone else Geography.
+  // The option block: each learner of a year group takes one of its options.
   for (const yearGroup of [
     ...new Set(classes.filter((c) => !c.arm).map((c) => c.yearGroup)),
   ]) {
     const cohort = learners.filter((l) => l.yearGroup === yearGroup);
-    // The stronger mathematicians of the Science and Commercial arms choose
-    // Further Mathematics, as they would.
-    const eligible = cohort
-      .filter((l) => armByName(l.arm).stream !== "Art")
-      .sort((a, b) => b.profile.ability - a.profile.ability);
-    const takers = new Set(
-      eligible.slice(
-        0,
-        Math.round(eligible.length * scenario.furtherMathsShare),
-      ),
-    );
-    for (const learner of cohort) {
-      learner.option = takers.has(learner)
-        ? "Further Mathematics"
-        : "Geography";
-    }
-    for (const cls of classes.filter(
+    const optionClasses = classes.filter(
       (c) => !c.arm && c.yearGroup === yearGroup,
-    )) {
+    );
+    const chosen = scenario.chooseOptions(
+      cohort.map((l) => ({
+        ability: l.profile.ability,
+        stream: armByName(l.arm).stream,
+      })),
+      optionClasses.map((c) => c.subject.name),
+      yearGroup,
+    );
+    cohort.forEach((learner, i) => {
+      learner.option = chosen[i];
+    });
+    for (const cls of optionClasses) {
       const ids = cohort
         .filter((l) => l.option === cls.subject.name)
         .map((l) => l.userId!);
@@ -594,7 +615,9 @@ export async function buildSchool(
   decisions.add(
     "Option blocks",
     "The block",
-    `Further Mathematics beside Geography in ${[...new Set(classes.filter((c) => !c.arm).map((c) => c.yearGroup))].join(" and ")}; Science and Commercial learners choose one (the stronger mathematicians Further Mathematics), every Art learner takes Geography; both classes draw on all three arms so they are timetabled together`,
+    scenario.optionDecision([
+      ...new Set(classes.filter((c) => !c.arm).map((c) => c.yearGroup)),
+    ]),
   );
 
   const run: ShowcaseRun = {
@@ -702,7 +725,7 @@ async function blueprintsStylesAndGuide(run: ShowcaseRun) {
   decisions.add(
     "Exams",
     "Subjects without an exam style",
-    "every subject the app ships no style for is worded plainly; styles exist only for English Language, Mathematics, Physics, Chemistry and Biology",
+    scenario.decisionText.examStyles,
   );
 
   const draft = await client.as(admin, "draft-school-guide", {});
@@ -710,13 +733,7 @@ async function blueprintsStylesAndGuide(run: ShowcaseRun) {
     "",
     "## What the school has told us",
     "",
-    `- ${scenario.schoolName} is a day secondary school in ${scenario.city}, Oyo State, running JSS1–SS3.`,
-    "- JSS has one arm per year group; SS has three streamed arms: A Science, B Commercial, C Art.",
-    "- The First Term runs 14 September to 11 December 2026. Week 7 is the mid-term break, week 11 is revision, week 12 is examinations and week 13 is results and closing.",
-    "- Mid-term and end-of-term examinations in SS follow the WAEC style where a style exists for the subject.",
-    "- Work not handed in counts as zero. Report cards show positions.",
-    "- Practicals in Physics, Chemistry and Biology are taught as doubles in the labs.",
-    "- Teachers mark open answers against the mark scheme and quote the learner's words as evidence.",
+    ...scenario.guideNotes,
     "",
   ].join("\n");
   await client.as(admin, "update-school-resource", {

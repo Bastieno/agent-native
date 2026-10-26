@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { rng } from "../population.js";
+import { fixtureName, scenario } from "../../scenarios/index.js";
 import type { Question } from "./questions.js";
 
 /**
@@ -15,7 +16,7 @@ import type { Question } from "./questions.js";
  * written content falls back to the generator in questions.ts.
  */
 
-export const CONTENT_DIR = join("test", "fixtures", "showcase");
+export const CONTENT_DIR = join("test", "fixtures", fixtureName(scenario));
 
 export type Tier = "full" | "partial" | "weak";
 
