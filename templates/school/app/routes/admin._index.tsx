@@ -3,7 +3,7 @@ import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
-import { firstNameOrNull } from "@shared/person-name";
+import { realNameOrNull } from "@shared/person-name";
 import { useRole } from "@/hooks/use-role";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
@@ -143,8 +143,8 @@ export default function AdminOverview() {
     <div className="h-full overflow-auto p-6 space-y-6">
       <div>
         <h1 className="text-xl font-semibold">
-          {firstNameOrNull(user?.name, user?.email)
-            ? `Welcome back, ${firstNameOrNull(user?.name, user?.email)}`
+          {realNameOrNull(user?.name, user?.email)
+            ? `Welcome back, ${realNameOrNull(user?.name, user?.email)}`
             : "School Overview"}
         </h1>
         <p className="text-sm text-muted-foreground mt-1">

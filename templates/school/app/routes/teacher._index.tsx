@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { IconSchool } from "@tabler/icons-react";
-import { firstNameOrNull } from "@shared/person-name";
+import { realNameOrNull } from "@shared/person-name";
 
 export default function TeacherDashboard() {
   const { sync } = useNavigationState();
@@ -43,8 +43,8 @@ export default function TeacherDashboard() {
             the email address, and "Welcome back, teacher.maths" is worse than
             no name at all. */}
         <h1 className="text-xl font-semibold">
-          {firstNameOrNull(user?.name, user?.email)
-            ? `Welcome back, ${firstNameOrNull(user?.name, user?.email)}`
+          {realNameOrNull(user?.name, user?.email)
+            ? `Welcome back, ${realNameOrNull(user?.name, user?.email)}`
             : "Welcome back"}
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
