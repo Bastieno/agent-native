@@ -1,5 +1,5 @@
 import { Markdown } from "@/components/Markdown";
-import { bindUnits } from "@shared/bind-units";
+import { typeset } from "@shared/typeset";
 import type {
   ActivityContent as Content,
   CardBlock,
@@ -95,7 +95,7 @@ function Shape({
                 {i + 1}.
               </span>
               <span className="min-w-0">
-                {bindUnits(b.text)}
+                {typeset(b.text)}
                 {b.note ? (
                   <span className="mt-0.5 block text-[11px] italic text-neutral-600">
                     {b.note}
@@ -144,7 +144,7 @@ function Question({
       <span className="w-6 shrink-0 tabular-nums font-medium">{number}.</span>
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">
-          <p className="min-w-0 flex-1">{bindUnits(block.prompt)}</p>
+          <p className="min-w-0 flex-1">{typeset(block.prompt)}</p>
           {points !== null ? (
             <span className="shrink-0 text-[11px] text-neutral-600">
               [{points} {points === 1 ? marks.one : marks.many}]
@@ -158,7 +158,7 @@ function Question({
             {block.options.map((opt, i) => (
               <li key={i} className="flex gap-2">
                 <span className="w-5 shrink-0">{LETTERS[i] ?? i + 1}.</span>
-                <span className="min-w-0">{bindUnits(opt)}</span>
+                <span className="min-w-0">{typeset(opt)}</span>
               </li>
             ))}
           </ol>
@@ -254,7 +254,7 @@ function CardTable({ blocks }: { blocks: CardBlock[] }) {
               {i + 1}
             </td>
             <td className="border border-neutral-400 px-2 py-1">
-              {bindUnits(c.front)}
+              {typeset(c.front)}
               {c.hint ? (
                 <span className="mt-0.5 block text-[10px] italic text-neutral-600">
                   {c.hint}
@@ -262,7 +262,7 @@ function CardTable({ blocks }: { blocks: CardBlock[] }) {
               ) : null}
             </td>
             <td className="border border-neutral-400 px-2 py-1">
-              {bindUnits(c.back)}
+              {typeset(c.back)}
             </td>
           </tr>
         ))}
@@ -303,7 +303,7 @@ function DataTable({
           <tr key={i} className="break-inside-avoid align-top">
             {Array.from({ length: width }).map((_, c) => (
               <td key={c} className="border border-neutral-400 px-2 py-1">
-                {bindUnits(r.cells?.[c] ?? "")}
+                {typeset(r.cells?.[c] ?? "")}
               </td>
             ))}
           </tr>
@@ -330,7 +330,7 @@ function Criteria({ blocks }: { blocks: CriterionBlock[] }) {
         {blocks.map((c, i) => (
           <tr key={i} className="break-inside-avoid align-top">
             <td className="border border-neutral-400 px-2 py-1">
-              {bindUnits(c.description)}
+              {typeset(c.description)}
               {c.levels?.length ? (
                 <ul className="mt-1 space-y-0.5 text-[11px] text-neutral-700">
                   {c.levels.map((l, j) => (

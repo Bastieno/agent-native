@@ -18,6 +18,7 @@
     "journey:school": "tsx test/sim/run-school.ts",
     "journey:compare": "tsx test/sim/compare.ts",
     "journey:assumptions": "tsx test/sim/assumptions.ts",
+    "check:chemistry": "tsx test/chemistry.check.ts",
     "check:help": "tsx test/help.check.ts",
     "check:host": "tsx test/school-host.check.ts",
     "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
