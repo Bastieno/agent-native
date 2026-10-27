@@ -1,5 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { buildDeepLink } from "@agent-native/core/server";
 import { getDb, schema } from "../server/db/index.js";
 import { and, desc, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -24,6 +25,34 @@ export default defineAction({
       .describe("List this student's reports, newest first"),
   }),
   http: { method: "GET" },
+  /**
+   * A head working through Claude or another outside AI app gets a full
+   * address, not a relative path: `/print/report/abc` means nothing in a chat
+   * window. The MCP layer turns this into an absolute link on the school's
+   * own site, where they are already signed in.
+   */
+  link: ({ result }) => {
+    const reportId = (() => {
+      const r = result as
+        | { id?: string; reportCards?: Array<{ id?: string }> }
+        | undefined;
+      // One card: link to it. A list is newest first: link to the newest.
+      return r?.id ?? r?.reportCards?.[0]?.id;
+    })();
+    if (!reportId) return null;
+    return {
+      url: buildDeepLink({
+        app: "school",
+        view: "print-report",
+        params: { reportId },
+        // The printable is a real route; without `to` the open route
+        // redirects to /<view> and the id is lost.
+        to: `/print/report/${reportId}`,
+      }),
+      label: "Open the report card to print",
+      view: "print-report",
+    };
+  },
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");

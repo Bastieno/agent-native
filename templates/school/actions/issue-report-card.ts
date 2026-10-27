@@ -1,5 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
+import { buildDeepLink } from "@agent-native/core/server";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq, inArray } from "drizzle-orm";
@@ -60,6 +61,29 @@ export default defineAction({
       .describe("false previews; true issues and freezes it"),
   }),
   http: { method: "POST" },
+  /**
+   * A head working through Claude or another outside AI app gets a full
+   * address, not a relative path: `/print/report/abc` means nothing in a chat
+   * window. The MCP layer turns this into an absolute link on the school's
+   * own site, where they are already signed in.
+   */
+  link: ({ result }) => {
+    const reportId = (result as { reportCardId?: string } | undefined)
+      ?.reportCardId;
+    if (!reportId) return null;
+    return {
+      url: buildDeepLink({
+        app: "school",
+        view: "print-report",
+        params: { reportId },
+        // The printable is a real route; without `to` the open route
+        // redirects to /<view> and the id is lost.
+        to: `/print/report/${reportId}`,
+      }),
+      label: "Open the report card to print",
+      view: "print-report",
+    };
+  },
   run: async (args) => {
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
@@ -311,7 +335,7 @@ export default defineAction({
       term: term.name,
       overall,
       path: `/print/report/${id}`,
-      message: `Issued ${studentName}'s report for ${term.name} (${serial}). It is frozen as it stands and will reprint exactly this way. To show it inside the app, navigate with view print-report and reportId ${id} (the id, not a document id). From an outside AI app, give the person this address on the school's site: /print/report/${id}.`,
+      message: `Issued ${studentName}'s report for ${term.name} (${serial}). It is frozen as it stands and will reprint exactly this way. To show it inside the app, navigate with view print-report and reportId ${id} (the id, not a document id). From an outside AI app, give the person the full "Open the report card to print" link that comes with this result, never the bare path.`,
     };
   },
 });
