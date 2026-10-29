@@ -283,8 +283,8 @@ app uses — say so, and offer to correct whichever is wrong.
 
 **Offer the guide as a draft, never as a blank page.** Once the basics are
 recorded, run `draft-school-guide`: it fills in the school's name, year groups,
-term dates, grading scale, subjects and the syllabus libraries actually seeded
-for them, and marks everything else "→ tell me". Show it, let the admin correct
+term dates, grading scale, subjects and the syllabus libraries it has (its own
+imports, and a shipped library only where its units cite it), and marks everything else "→ tell me". Show it, let the admin correct
 it and answer what is marked, then save it with `update-school-resource`.
 Never answer those questions yourself — they are the things only the school
 knows, and a plausible guess becomes the rule the agent follows from then on.

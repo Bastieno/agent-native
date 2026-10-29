@@ -3,7 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
 import { readSchoolGuide } from "../server/lib/school-guide.js";
 import { getDb, schema } from "../server/db/index.js";
-import { and, asc, eq } from "drizzle-orm";
+import { and, asc, eq, inArray, isNull } from "drizzle-orm";
 import { z } from "zod";
 import { parseGradeLevelIds } from "../server/lib/subject-year-groups.js";
 import { workWords } from "../shared/terminology.js";
@@ -66,9 +66,49 @@ export default defineAction({
         ),
       )
       .orderBy(asc(schema.subjects.position));
-    // Only libraries this school actually has. Naming a framework it has not
-    // seeded would send the agent looking for objectives that do not exist.
-    const frameworks = await db.select().from(schema.curriculumFrameworks);
+    // Only libraries this school actually has: the syllabuses it imported, and
+    // a library that ships with the app only where its own units cite it. The
+    // shipped samples (NERDC, WAEC) are installed for every school and say
+    // nothing about how this one teaches, so listing them put Nigerian exam
+    // bodies into the guide of an American high school.
+    const own = await db
+      .select()
+      .from(schema.curriculumFrameworks)
+      .where(eq(schema.curriculumFrameworks.orgId, orgId));
+    const unitStandards = subjects.length
+      ? await db
+          .select({ standards: schema.units.standardsJson })
+          .from(schema.units)
+          .where(
+            inArray(
+              schema.units.subjectId,
+              subjects.map((x: any) => x.id),
+            ),
+          )
+      : [];
+    const cited = new Set<string>();
+    for (const u of unitStandards) {
+      try {
+        for (const st of JSON.parse(u.standards ?? "[]")) {
+          if (st?.framework)
+            cited.add(String(st.framework).trim().toLowerCase());
+        }
+      } catch {
+        /* a malformed value cites nothing */
+      }
+    }
+    const shipped = cited.size
+      ? await db
+          .select()
+          .from(schema.curriculumFrameworks)
+          .where(isNull(schema.curriculumFrameworks.orgId))
+      : [];
+    const frameworks = [
+      ...own,
+      ...shipped.filter((f: any) =>
+        cited.has(String(f.name).trim().toLowerCase()),
+      ),
+    ];
 
     const levelName = new Map<string, string>(
       levels.map((l: any) => [l.id, l.name]),
@@ -175,7 +215,7 @@ export default defineAction({
       for (const [name, ranges] of byName) {
         const range = [...new Set(ranges.filter(Boolean))].join(", ");
         lines.push(
-          `- ${name}${range ? ` (${range})` : ""} — seeded in this school's standards library.`,
+          `- ${name}${range ? ` (${range})` : ""} — in this school's curriculum.`,
         );
       }
       lines.push(
@@ -183,7 +223,7 @@ export default defineAction({
       );
     } else {
       lines.push(
-        `- ${ASK} which curriculum or syllabus each year group follows. Nothing is seeded in this school's standards library yet.`,
+        `- ${ASK} which curriculum or syllabus each year group follows. No curriculum or syllabus is recorded for this school yet.`,
       );
       missing.push("curriculum framework");
     }
