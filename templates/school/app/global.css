@@ -83,7 +83,7 @@
   --primary-foreground: 40 33% 97%;
   --ring: 305 16% 13%;
   /* Tailwind resolves its colours at :root; resolve them again here. */
-  --color-primary: hsl(var(--primary));
+  --color-primary: #271c26;
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
@@ -105,9 +105,12 @@
   --muted-foreground: 35 7% 62%;
   --border: 30 6% 19%;
   --input: 30 6% 19%;
-  --primary: 40 30% 92%;
-  --primary-foreground: 305 16% 13%;
   --ring: 40 30% 92%;
+}
+
+/* The same aubergine in the dark; a fine edge keeps it off the background. */
+.dark .landing .bg-primary {
+  box-shadow: inset 0 0 0 1px hsl(305 14% 30%);
 }
 
 @layer base {
