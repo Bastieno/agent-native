@@ -1,0 +1,951 @@
+{
+ "framework": {
+  "name": "ACTFL World-Readiness Standards for Learning Languages",
+  "version": "2015",
+  "source": "https://www.actfl.org/educator-resources/world-readiness-standards-for-learning-languages (codes are the standard numbers; objective wording is the school's own)"
+ },
+ "subjects": [
+  {
+   "subject": "Spanish I",
+   "gradeRange": [
+    "Grade 9"
+   ],
+   "strands": [
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Greet people, introduce yourself and say goodbye in Spanish, using formal and informal forms.",
+       "code": "1.1"
+      },
+      {
+       "description": "Ask and answer questions about names, age and where you are from.",
+       "code": "1.1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Recognize the sounds of the Spanish alphabet and read simple words aloud with correct pronunciation.",
+       "code": "1.2"
+      },
+      {
+       "description": "Understand numbers from 0 to 100 and use them for ages, prices and phone numbers.",
+       "code": "1.2-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Exchange information about days, dates and the weather.",
+       "code": "1.1-3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Present information about yourself and your family in a short spoken or written description.",
+       "code": "1.3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Identify the main idea of a short text about a family or a school.",
+       "code": "1.2-3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Describe people using ser and common adjectives that agree in gender and number.",
+       "code": "1.1-4"
+      },
+      {
+       "description": "Talk about classes, school supplies and what you need, using tener and hay.",
+       "code": "1.1-5"
+      },
+      {
+       "description": "Say what you like and do not like with gustar, and ask a classmate the same.",
+       "code": "1.1-6"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a short paragraph about your schedule and your favorite subjects.",
+       "code": "1.3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Tell time and say when classes begin and end.",
+       "code": "1.1-7"
+      },
+      {
+       "description": "Use regular -ar verbs in the present tense to say what people do.",
+       "code": "1.1-8"
+      }
+     ]
+    },
+    {
+     "strand": "Cultures",
+     "subStrand": "Cultures",
+     "objectives": [
+      {
+       "description": "Compare greetings and personal space in Spanish-speaking countries with those in your community.",
+       "code": "2.1"
+      },
+      {
+       "description": "Describe a product or tradition from a Spanish-speaking country, such as Day of the Dead or la quinceañera.",
+       "code": "2.2"
+      }
+     ]
+    },
+    {
+     "strand": "Connections",
+     "subStrand": "Connections",
+     "objectives": [
+      {
+       "description": "Use Spanish to learn about geography by naming the countries and capitals of Spanish-speaking nations.",
+       "code": "3.1"
+      }
+     ]
+    },
+    {
+     "strand": "Comparisons",
+     "subStrand": "Comparisons",
+     "objectives": [
+      {
+       "description": "Notice similarities between Spanish and English words, including cognates and false friends.",
+       "code": "4.1"
+      }
+     ]
+    },
+    {
+     "strand": "Communities",
+     "subStrand": "Communities",
+     "objectives": [
+      {
+       "description": "Find examples of Spanish in your community, such as signs, menus and media, and report what they say.",
+       "code": "5.1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Spanish II",
+   "gradeRange": [
+    "Grade 10"
+   ],
+   "strands": [
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Review greetings and introductions, and talk about family, school and free time in complete sentences.",
+       "code": "1.1"
+      },
+      {
+       "description": "Describe your daily routine using reflexive verbs such as despertarse and ducharse.",
+       "code": "1.1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Understand a short recording or text about a typical day.",
+       "code": "1.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use stem-changing verbs in the present tense to express wants, preferences and abilities.",
+       "code": "1.1-3"
+      },
+      {
+       "description": "Talk about household chores and your home using vocabulary for rooms and furniture.",
+       "code": "1.1-4"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a description of your home and neighborhood.",
+       "code": "1.3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use ir a plus an infinitive to talk about plans for the weekend.",
+       "code": "1.1-5"
+      },
+      {
+       "description": "Order food in a restaurant and discuss meals and food preferences.",
+       "code": "1.1-6"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Read a menu and recipe and understand the quantities and steps.",
+       "code": "1.2-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use direct object pronouns to avoid repetition when talking about food and shopping.",
+       "code": "1.1-7"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Present a short talk about a traditional dish and where it comes from.",
+       "code": "1.3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Talk about clothes and shopping, including prices, sizes and colors.",
+       "code": "1.1-8"
+      },
+      {
+       "description": "Make comparisons with más que, menos que and tan como.",
+       "code": "1.1-9"
+      }
+     ]
+    },
+    {
+     "strand": "Cultures",
+     "subStrand": "Cultures",
+     "objectives": [
+      {
+       "description": "Compare mealtimes and eating customs in Spain, Mexico and the United States.",
+       "code": "2.1"
+      },
+      {
+       "description": "Describe the foods and markets of a Spanish-speaking region.",
+       "code": "2.2"
+      }
+     ]
+    },
+    {
+     "strand": "Connections",
+     "subStrand": "Connections",
+     "objectives": [
+      {
+       "description": "Use Spanish to learn about nutrition or geography from a Spanish-language source.",
+       "code": "3.1"
+      }
+     ]
+    },
+    {
+     "strand": "Comparisons",
+     "subStrand": "Comparisons",
+     "objectives": [
+      {
+       "description": "Explain a difference in school or home life between a Spanish-speaking country and your own.",
+       "code": "4.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communities",
+     "subStrand": "Communities",
+     "objectives": [
+      {
+       "description": "Set a goal for using Spanish outside the classroom and track it for a week.",
+       "code": "5.2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Spanish III",
+   "gradeRange": [
+    "Grade 11"
+   ],
+   "strands": [
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Talk about your past experiences and what you did last weekend using the preterite.",
+       "code": "1.1"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a paragraph about a trip you took, with times and places.",
+       "code": "1.3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Understand the main ideas and details of a travel story in Spanish.",
+       "code": "1.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Contrast the preterite and the imperfect to describe what used to happen and what happened once.",
+       "code": "1.1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Narrate a childhood memory with background details and key events.",
+       "code": "1.3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use irregular preterite verbs correctly in conversation.",
+       "code": "1.1-3"
+      },
+      {
+       "description": "Make and respond to requests for help and directions in a city.",
+       "code": "1.1-4"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Read an authentic ad or a brochure and identify its purpose.",
+       "code": "1.2-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Talk about health, symptoms and visiting a doctor.",
+       "code": "1.1-5"
+      },
+      {
+       "description": "Use commands to give advice, instructions and directions.",
+       "code": "1.1-6"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Give a short presentation that offers advice on a healthy lifestyle.",
+       "code": "1.3-3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use indirect object pronouns with verbs such as dar, decir and gustar.",
+       "code": "1.1-7"
+      }
+     ]
+    },
+    {
+     "strand": "Cultures",
+     "subStrand": "Cultures",
+     "objectives": [
+      {
+       "description": "Explain how holidays and family celebrations differ in Spanish-speaking countries.",
+       "code": "2.1"
+      },
+      {
+       "description": "Describe a piece of art, music or literature from the Spanish-speaking world.",
+       "code": "2.2"
+      }
+     ]
+    },
+    {
+     "strand": "Connections",
+     "subStrand": "Connections",
+     "objectives": [
+      {
+       "description": "Use Spanish to learn about history or science from an authentic source.",
+       "code": "3.1"
+      },
+      {
+       "description": "Compare a Spanish-language news report with an English one on the same topic.",
+       "code": "3.2"
+      }
+     ]
+    },
+    {
+     "strand": "Comparisons",
+     "subStrand": "Comparisons",
+     "objectives": [
+      {
+       "description": "Explain how Spanish expresses the past differently from English.",
+       "code": "4.1"
+      }
+     ]
+    },
+    {
+     "strand": "Communities",
+     "subStrand": "Communities",
+     "objectives": [
+      {
+       "description": "Interview a Spanish speaker in your community, with preparation, and report what you learned.",
+       "code": "5.1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Spanish IV",
+   "gradeRange": [
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Discuss current events and personal opinions in Spanish using a range of tenses.",
+       "code": "1.1"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Understand the main points and supporting details of an authentic news article.",
+       "code": "1.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Express wishes, doubts and emotions with the present subjunctive.",
+       "code": "1.1-2"
+      },
+      {
+       "description": "Make recommendations and persuade others using the subjunctive after verbs of influence.",
+       "code": "1.1-3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a formal email to a company or school in Spanish.",
+       "code": "1.3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Read a short story in Spanish and identify the characters, setting and conflict.",
+       "code": "1.2-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Hold a discussion about a theme from the story, giving reasons and examples.",
+       "code": "1.1-4"
+      },
+      {
+       "description": "Talk about the future using the future tense and the conditional.",
+       "code": "1.1-5"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Present your plans for college and work after high school in Spanish.",
+       "code": "1.3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Listen to a podcast or a news broadcast and summarize it.",
+       "code": "1.2-3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use relative clauses and connectors to give longer and more detailed answers.",
+       "code": "1.1-6"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a persuasive essay about an issue that matters in your community.",
+       "code": "1.3-3"
+      }
+     ]
+    },
+    {
+     "strand": "Cultures",
+     "subStrand": "Cultures",
+     "objectives": [
+      {
+       "description": "Analyze how a social issue, such as immigration, is viewed in different Spanish-speaking communities.",
+       "code": "2.1"
+      },
+      {
+       "description": "Analyze a work of art or a film from the Spanish-speaking world for its message.",
+       "code": "2.2"
+      }
+     ]
+    },
+    {
+     "strand": "Connections",
+     "subStrand": "Connections",
+     "objectives": [
+      {
+       "description": "Use Spanish to gather information on a topic from another subject area.",
+       "code": "3.1"
+      }
+     ]
+    },
+    {
+     "strand": "Comparisons",
+     "subStrand": "Comparisons",
+     "objectives": [
+      {
+       "description": "Compare how a cultural practice or perspective differs between your community and one in a Spanish-speaking country.",
+       "code": "4.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communities",
+     "subStrand": "Communities",
+     "objectives": [
+      {
+       "description": "Use Spanish in a community setting, such as volunteering or interpreting, and reflect on it.",
+       "code": "5.1"
+      },
+      {
+       "description": "Create a portfolio of your Spanish for a college or career audience.",
+       "code": "5.2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "French I",
+   "gradeRange": [
+    "Grade 9"
+   ],
+   "strands": [
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Greet people, introduce yourself and say goodbye in French, using tu and vous.",
+       "code": "1.1"
+      },
+      {
+       "description": "Ask and answer questions about names, age and where you are from.",
+       "code": "1.1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Recognize French sounds, accents and liaison, and read simple words aloud.",
+       "code": "1.2"
+      },
+      {
+       "description": "Understand numbers from 0 to 100 and use them for ages, prices and phone numbers.",
+       "code": "1.2-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Exchange information about days, dates and the weather.",
+       "code": "1.1-3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Present information about yourself and your family in a short spoken or written description.",
+       "code": "1.3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Describe people using être and adjectives that agree in gender and number.",
+       "code": "1.1-4"
+      },
+      {
+       "description": "Talk about school, classes and supplies using avoir and il y a.",
+       "code": "1.1-5"
+      },
+      {
+       "description": "Say what you like and do not like with aimer and préférer.",
+       "code": "1.1-6"
+      },
+      {
+       "description": "Tell time and say when classes begin and end.",
+       "code": "1.1-7"
+      },
+      {
+       "description": "Use regular -er verbs in the present tense to say what people do.",
+       "code": "1.1-8"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a short paragraph about your schedule and your favorite subjects.",
+       "code": "1.3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Find the main idea in a short text about a French school.",
+       "code": "1.2-3"
+      }
+     ]
+    },
+    {
+     "strand": "Cultures",
+     "subStrand": "Cultures",
+     "objectives": [
+      {
+       "description": "Compare greetings, such as la bise and the handshake, in France and the French-speaking world.",
+       "code": "2.1"
+      },
+      {
+       "description": "Describe a product or tradition from a French-speaking country.",
+       "code": "2.2"
+      }
+     ]
+    },
+    {
+     "strand": "Connections",
+     "subStrand": "Connections",
+     "objectives": [
+      {
+       "description": "Name the French-speaking countries and their capitals on a map.",
+       "code": "3.1"
+      }
+     ]
+    },
+    {
+     "strand": "Comparisons",
+     "subStrand": "Comparisons",
+     "objectives": [
+      {
+       "description": "Notice similarities between French and English words, including cognates.",
+       "code": "4.1"
+      }
+     ]
+    },
+    {
+     "strand": "Communities",
+     "subStrand": "Communities",
+     "objectives": [
+      {
+       "description": "Find examples of French in your community, such as products and signs, and report what they say.",
+       "code": "5.1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "French II",
+   "gradeRange": [
+    "Grade 10"
+   ],
+   "strands": [
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Review greetings and introductions, and talk about family, school and free time in complete sentences.",
+       "code": "1.1"
+      },
+      {
+       "description": "Describe your daily routine using reflexive verbs such as se réveiller and se laver.",
+       "code": "1.1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Understand a short recording or text about a typical day.",
+       "code": "1.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use aller plus an infinitive to talk about plans.",
+       "code": "1.1-3"
+      },
+      {
+       "description": "Order food in a café or restaurant and discuss meals and food preferences.",
+       "code": "1.1-4"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpretive",
+     "subStrand": "Communication: Interpretive",
+     "objectives": [
+      {
+       "description": "Read a menu and recipe and understand the quantities and steps.",
+       "code": "1.2-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Use partitive articles to talk about food and drink.",
+       "code": "1.1-5"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Present a short talk about a traditional dish and where it comes from.",
+       "code": "1.3"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Talk about clothes and shopping, including prices, sizes and colors.",
+       "code": "1.1-6"
+      },
+      {
+       "description": "Use the passé composé with avoir to talk about what happened yesterday.",
+       "code": "1.1-7"
+      },
+      {
+       "description": "Use the passé composé with être for verbs of movement.",
+       "code": "1.1-8"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Presentational",
+     "subStrand": "Communication: Presentational",
+     "objectives": [
+      {
+       "description": "Write a paragraph about your last weekend.",
+       "code": "1.3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Communication: Interpersonal",
+     "subStrand": "Communication: Interpersonal",
+     "objectives": [
+      {
+       "description": "Make comparisons with plus que, moins que and aussi que.",
+       "code": "1.1-9"
+      }
+     ]
+    },
+    {
+     "strand": "Cultures",
+     "subStrand": "Cultures",
+     "objectives": [
+      {
+       "description": "Compare mealtimes and eating customs in France, Senegal and the United States.",
+       "code": "2.1"
+      },
+      {
+       "description": "Describe the food and markets of a French-speaking region.",
+       "code": "2.2"
+      }
+     ]
+    },
+    {
+     "strand": "Connections",
+     "subStrand": "Connections",
+     "objectives": [
+      {
+       "description": "Use French to learn about nutrition or geography from a French-language source.",
+       "code": "3.1"
+      }
+     ]
+    },
+    {
+     "strand": "Comparisons",
+     "subStrand": "Comparisons",
+     "objectives": [
+      {
+       "description": "Explain a difference in school or home life between a French-speaking country and your own.",
+       "code": "4.2"
+      }
+     ]
+    },
+    {
+     "strand": "Communities",
+     "subStrand": "Communities",
+     "objectives": [
+      {
+       "description": "Set a goal for using French outside the classroom and track it for a week.",
+       "code": "5.2"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

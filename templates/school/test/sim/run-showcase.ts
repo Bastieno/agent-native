@@ -1,6 +1,6 @@
 import { Client } from "./client.js";
 import { Findings } from "./findings.js";
-import scenario from "../scenarios/showcase-crestfield.js";
+import { scenario } from "../scenarios/index.js";
 import { buildSchool } from "./showcase/build.js";
 import { buildCurricula, lessonNoteHistory } from "./showcase/curriculum.js";
 import { buildTimetable } from "./showcase/timetable.js";
@@ -18,6 +18,7 @@ import {
 } from "./showcase/exams.js";
 import { checklist, writeOutputs } from "./showcase/outputs.js";
 import { exportPlan } from "./showcase/plan.js";
+import { pdfHandouts } from "./showcase/handouts.js";
 
 /**
  * The showcase school: a whole Nigerian secondary school built, staffed,
@@ -34,12 +35,14 @@ const runId = process.env.RUN_ID ?? `c${Date.now().toString(36)}`;
 const stopAfter = process.env.SHOWCASE_STOP_AFTER;
 // The showcase has its own server and database (`pnpm dev:showcase`,
 // data/showcase.db), so it never lands in the dev database beside the pilot.
-const client = new Client(process.env.SCHOOL_URL ?? "http://localhost:8131");
+const client = new Client(
+  process.env.SCHOOL_URL ?? `http://localhost:${scenario.port}`,
+);
 const findings = new Findings();
 
 if (new URL(client.baseUrl).port === "8130") {
   console.error(
-    "That is the dev server, whose database holds the pilot. Start the showcase's own with `pnpm dev:showcase` (port 8131).",
+    `That is the dev server, whose database holds the pilot. Start the showcase's own with \`${scenario.devCommand}\` (port ${scenario.port}).`,
   );
   process.exit(1);
 }
@@ -47,16 +50,20 @@ if (!(await client.healthy())) {
   console.error(
     "The showcase server is not answering on",
     client.baseUrl,
-    "— start it with `pnpm dev:showcase`.",
+    `— start it with \`${scenario.devCommand}\`.`,
   );
   process.exit(1);
 }
 // Addresses are the same every run, so a second run would build on top of
 // the first. Refuse, and say how to start clean.
 try {
-  await client.signIn("principal@crestfield.test", "principal", "admin");
+  await client.signIn(
+    `principal@${scenario.emailDomain}`,
+    "principal",
+    "admin",
+  );
   console.error(
-    "Crestfield is already built in this database. Stop the showcase server, run `pnpm showcase:reset`, start it again with `pnpm dev:showcase`, then run this.",
+    `${scenario.schoolName} is already built in this database. Stop the server, run \`${scenario.resetCommand}\`, start it again with \`${scenario.devCommand}\`, then run this.`,
   );
   process.exit(1);
 } catch {
@@ -110,8 +117,9 @@ await phase("teaching", async () => {
   for (const week of weeksToTeach) {
     const at = Date.now();
     await prepareWeek(run, week);
-    if (week === 8) await lessonNoteHistory(run);
+    if (week === scenario.lessonNoteHistoryWeek) await lessonNoteHistory(run);
     const results = await teachSchoolWeek(run, week, readings);
+    await pdfHandouts(run, week);
     pieces.push(...results);
     const handed = results.reduce((n, r) => n + r.handedIn, 0);
     const set = results.reduce((n, r) => n + r.set, 0);
@@ -146,14 +154,7 @@ await phase("report cards", () => reportCards(run));
 
 // What was deliberately left out, so nobody mistakes it for something missed.
 const unset: [string, string][] = [
-  [
-    "Assessment styles",
-    "the app ships styles for five SS subjects only (English Language, Mathematics, Physics, Chemistry, Biology); every other subject's questions are worded plainly, which check-school-setup reports",
-  ],
-  [
-    "A separate JSS grading scale",
-    "the app holds one scale per school, so JSS uses the WAEC A1–F9 scale too",
-  ],
+  ...scenario.decisionText.gaps.map((g): [string, string] => [g.gap, g.why]),
   [
     "Late hand-ins",
     "the app records only handed in or not, so lateness is not modelled; work not handed in counts as zero",
@@ -162,14 +163,9 @@ const unset: [string, string][] = [
     "Year-group struggling lists",
     'the app answers "who is struggling?" per class only; the year-group lists here are the learners flagged in at least a third of their classes',
   ],
-  ["Second and Third Terms", "dates only; nothing is taught in them"],
   [
     "Attendance",
     "the app has no attendance feature, so report cards carry none",
-  ],
-  [
-    "Exam opening times",
-    "the papers are sat now, but the term's dates put week 12 in December, so they carry no opening time; their dates are on the examination timetable",
   ],
   [
     "Lateness of lesson notes by teachers",
@@ -211,7 +207,7 @@ for (const r of rows)
 console.log(
   `findings: ${findings.count("broken")} broken, ${findings.count("wrong")} wrong, ${findings.count("missing")} missing`,
 );
-console.log(`files: ${dir} (copied to docs/showcase/)`);
+console.log(`files: ${dir} (copied to docs/${scenario.outputDir}/)`);
 if (empty.length) {
   console.error(
     `\n${empty.length} checklist feature(s) ended empty: ${empty.map((r) => r.area).join(", ")}`,

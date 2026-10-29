@@ -8,6 +8,8 @@ import {
   type Capability,
 } from "../../shared/capabilities";
 import { useRole } from "@/hooks/use-role";
+import { useSchoolConfig } from "@/hooks/use-school-config";
+import { schoolWords } from "../../shared/school-words";
 
 interface SeenData {
   seen: string[];
@@ -27,9 +29,11 @@ export function useHelp() {
   const helpRole = helpRoleOf(role);
   const coordinator = role === "subject_coordinator";
 
+  const { config } = useSchoolConfig();
+  const words = useMemo(() => schoolWords(config), [config]);
   const capabilities = useMemo(
-    () => (helpRole ? capabilitiesFor(helpRole, { coordinator }) : []),
-    [helpRole, coordinator],
+    () => (helpRole ? capabilitiesFor(helpRole, { coordinator, words }) : []),
+    [helpRole, coordinator, words],
   );
 
   const { data, isLoading } = useQuery<SeenData>({

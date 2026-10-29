@@ -1,0 +1,2676 @@
+{
+ "subject": "Honors Anatomy and Physiology",
+ "yearGroup": "Grade 12",
+ "weeks": {
+  "1": {
+   "topic": "Regional terms, imaging, set points and positive feedback",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use anatomical terms for position, planes, regions and body cavities to describe where structures lie and read a simple scan;\n2. list the levels of organization and the eleven organ systems;\n3. explain negative and positive feedback with set points, receptors, control centers and effectors.\n\n## Materials\n\nTorso model, CT and MRI slice images, sticky notes, thermometers, the quiz.\n\n## Starter (7 minutes)\n\nShow a transverse CT slice of the abdomen with no labels. Ask: \"Which way are we looking, and how can we tell left from right?\" Establish the convention that the patient's right is on the viewer's left and that the slice is viewed from the feet.\n\n## Main activity\n\n1. Directional terms and regional terms: abdominopelvic quadrants (RUQ, LUQ, RLQ, LLQ) and nine regions. Place the liver, stomach, appendix and spleen.\n2. Imaging planes: sagittal, frontal and transverse. What each scan shows best (X-ray for bone, CT for detail, MRI for soft tissue).\n3. Feedback: a negative loop has stimulus, receptor, control center, effector and response. Positive feedback amplifies: labor contractions and oxytocin, and blood clotting. Contrast the endpoints.\n4. Set points and normal ranges: body temperature 36.5 to 37.5 degrees Celsius, blood glucose 70 to 100 mg/dL fasting.\n\n## Checking for understanding\n\nAsk: \"Which quadrant is the appendix in, and why does pain there suggest appendicitis?\"\n\n## Quiz and problem set\n\nFive quiz questions and a problem set on scans and feedback.",
+   "reading": {
+    "title": "Reading the body: regions, scans and feedback loops",
+    "content": "Clinicians divide the abdomen into four quadrants by drawing a vertical and a horizontal line through the navel. The right upper quadrant (RUQ) holds most of the liver and the gallbladder. The left upper quadrant (LUQ) holds the stomach and the spleen. The right lower quadrant (RLQ) holds the appendix and part of the large intestine. The left lower quadrant (LLQ) holds the descending colon. Pain located in the RLQ prompts suspicion of appendicitis, while pain in the RUQ suggests gallbladder trouble. Anatomists use a finer map of nine regions, such as the epigastric region over the stomach and the hypogastric region over the bladder.\n\nMedical images are slices of the body along a plane. A CT scan builds transverse slices from X-rays, and is read as if looking up from the patient's feet, so the patient's right appears on the left of the image. MRI uses magnetic fields and radio waves and shows soft tissues such as brain and muscle in fine detail, with no radiation. A plain X-ray is quick and good for bone, but flattens the three dimensions into one. Choosing the right scan is a matter of what must be seen.\n\nAt the center of physiology is the idea of control systems. Each system has a **set point**, the target value, and a **normal range** around it. Core body temperature is about 37 degrees Celsius with a range of 36.5 to 37.5. Fasting blood glucose is 70 to 100 mg/dL. A control system contains a **receptor** that detects the variable, a **control center** that compares it to the set point, and an **effector** that produces a response. In **negative feedback**, the response opposes the change. If blood glucose rises after a meal, receptors in the pancreas detect it, beta cells release insulin, and the liver and muscles take up glucose, so the level falls. Almost all homeostatic loops are negative because they keep a variable within range.\n\nIn **positive feedback**, the response amplifies the change, so the variable moves further from the starting point until an endpoint is reached. During labor, stretching of the cervix triggers the release of oxytocin from the pituitary, which strengthens contractions, which stretch the cervix more. The cycle stops with the birth of the baby. In blood clotting, activated platelets release chemicals that attract more platelets, which grows the clot until the vessel is sealed. Positive feedback loops are short, have clear endpoints, and are dangerous if they run out of control, as in a fever that keeps rising or in shock.\n\nWhen a loop fails, disease follows. In type 1 diabetes, the pancreas does not produce insulin, so the negative feedback loop for glucose cannot close, and blood glucose stays high. Knowing which part of the loop has failed, receptor, control center or effector, helps explain the symptoms and suggests treatments."
+   },
+   "cards": [
+    {
+     "front": "Right upper quadrant",
+     "back": "The abdominal region that holds most of the liver and the gallbladder."
+    },
+    {
+     "front": "Right lower quadrant",
+     "back": "The abdominal region that holds the appendix."
+    },
+    {
+     "front": "CT scan",
+     "back": "An imaging method that builds transverse slices from X-rays."
+    },
+    {
+     "front": "MRI",
+     "back": "An imaging method using magnetic fields that shows soft tissue in detail."
+    },
+    {
+     "front": "Set point",
+     "back": "The target value that a control system works to maintain."
+    },
+    {
+     "front": "Effector",
+     "back": "The structure that carries out the response in a control system."
+    },
+    {
+     "front": "Positive feedback",
+     "back": "A loop in which the response amplifies the change until an endpoint."
+    },
+    {
+     "front": "Oxytocin",
+     "back": "A hormone that strengthens uterine contractions in labor."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Pain in the right lower quadrant would most suggest a problem with the:",
+     "options": [
+      "Spleen",
+      "Appendix",
+      "Stomach",
+      "Gallbladder"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In a standard CT image, the patient's right side appears:",
+     "options": [
+      "On the viewer's right",
+      "On the viewer's left",
+      "At the top",
+      "At the bottom"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which imaging method is best for soft tissue like the brain and uses no radiation?",
+     "options": [
+      "X-ray",
+      "CT",
+      "MRI",
+      "Barium swallow"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which of these is an example of positive feedback?",
+     "options": [
+      "Sweating when hot",
+      "Insulin lowering glucose",
+      "Oxytocin strengthening labor contractions",
+      "Shivering when cold"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "In a control system, the structure that compares the variable with the set point is the:",
+     "options": [
+      "Receptor",
+      "Control center",
+      "Effector",
+      "Stimulus"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare negative and positive feedback. Give one example of each from the body, and explain why most homeostatic loops are negative.",
+     "markScheme": [
+      "States that negative feedback reverses the change and gives a correct example, such as insulin lowering glucose",
+      "States that positive feedback amplifies the change and gives a correct example, such as labor contractions or clotting",
+      "States that positive feedback loops have an endpoint",
+      "Explains that negative feedback keeps a variable within a normal range, which is what homeostasis needs"
+     ],
+     "modelAnswer": "Negative feedback reverses a change, as when insulin lowers high blood glucose. Positive feedback amplifies a change, as when oxytocin strengthens labor contractions, which in turn release more oxytocin. A positive loop runs until an endpoint such as the birth of the baby. Most homeostatic loops are negative because they keep a variable within its normal range.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Negative feedback reverses the change, like insulin bringing down blood glucose after a meal. Positive feedback makes the change bigger, like oxytocin strengthening contractions in labor. The positive loop stops at an endpoint, the birth. Most homeostatic loops are negative because they keep a variable inside its normal range.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Negative feedback reverses the change, like insulin bringing down blood glucose after a meal."
+        },
+        {
+         "point": 1,
+         "quote": "Positive feedback makes the change bigger, like oxytocin strengthening contractions in labor."
+        },
+        {
+         "point": 2,
+         "quote": "The positive loop stops at an endpoint, the birth."
+        },
+        {
+         "point": 3,
+         "quote": "Most homeostatic loops are negative because they keep a variable inside its normal range."
+        }
+       ],
+       "feedback": "Full marks. The endpoint is what distinguishes safe positive feedback from runaway change."
+      },
+      {
+       "tier": "full",
+       "text": "Negative: high temperature leads to sweating, which lowers temperature. Positive: clotting, because platelets attract more platelets. It ends when the vessel is sealed. Negative loops are the norm since homeostasis means holding conditions near a set point.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Negative: high temperature leads to sweating, which lowers temperature."
+        },
+        {
+         "point": 1,
+         "quote": "Positive: clotting, because platelets attract more platelets."
+        },
+        {
+         "point": 2,
+         "quote": "It ends when the vessel is sealed."
+        },
+        {
+         "point": 3,
+         "quote": "Negative loops are the norm since homeostasis means holding conditions near a set point."
+        }
+       ],
+       "feedback": "All four marks, with accurate examples."
+      },
+      {
+       "tier": "partial",
+       "text": "Negative feedback reverses a change, like sweating. Positive feedback amplifies, like labor.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Negative feedback reverses a change, like sweating."
+        },
+        {
+         "point": 1,
+         "quote": "Positive feedback amplifies, like labor."
+        }
+       ],
+       "feedback": "Good examples. Explain the endpoint of a positive loop and why negative loops are the most common."
+      },
+      {
+       "tier": "partial",
+       "text": "Positive feedback is like clotting. Negative feedback keeps conditions stable. Positive feedback is good because it makes things positive.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Positive feedback is like clotting."
+        },
+        {
+         "point": 3,
+         "quote": "Negative feedback keeps conditions stable."
+        }
+       ],
+       "feedback": "Positive does not mean good. It means the change is amplified, which can be dangerous without an endpoint.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Negative feedback is bad and positive feedback is good. For example, a fever is negative.",
+       "meets": [],
+       "feedback": "The terms describe the direction of the response relative to the change, not good or bad. A normal fever response is a controlled loop."
+      },
+      {
+       "tier": "weak",
+       "text": "Negative feedback reverses a change. Positive feedback is used for temperature and glucose.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Negative feedback reverses a change."
+        }
+       ],
+       "feedback": "Temperature and glucose are held by negative feedback. Positive feedback is used for events like labor and clotting."
+      }
+     ]
+    },
+    {
+     "prompt": "A patient has severe pain in the right lower abdomen. Name the quadrant and the organ most likely involved, and explain which scan you would choose to look for inflammation of the organ, and why.",
+     "markScheme": [
+      "Names the right lower quadrant",
+      "Names the appendix as the organ most likely involved",
+      "Chooses CT (or ultrasound) as a scan that shows the soft tissue and inflammation",
+      "Gives a reason, such as that a plain X-ray shows bone but not soft tissue well, or that CT gives detailed transverse slices"
+     ],
+     "modelAnswer": "The pain is in the right lower quadrant, and the organ most likely involved is the appendix. A CT scan would show the inflamed appendix in transverse slices. A plain X-ray is not suitable because it shows bone well but soft tissue poorly, while CT gives detailed slices of the abdomen.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It is the right lower quadrant. The appendix is the likely organ. I would use a CT scan. It gives detailed transverse slices of soft tissue, while an X-ray mostly shows bone.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is the right lower quadrant."
+        },
+        {
+         "point": 1,
+         "quote": "The appendix is the likely organ."
+        },
+        {
+         "point": 2,
+         "quote": "I would use a CT scan."
+        },
+        {
+         "point": 3,
+         "quote": "It gives detailed transverse slices of soft tissue, while an X-ray mostly shows bone."
+        }
+       ],
+       "feedback": "Full marks. The scan is matched to the question being asked."
+      },
+      {
+       "tier": "full",
+       "text": "RLQ pain. The appendix could be inflamed. A CT scan (or an ultrasound) would show swelling. A plain X-ray flattens the abdomen and does not show soft-tissue inflammation well.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "RLQ pain."
+        },
+        {
+         "point": 1,
+         "quote": "The appendix could be inflamed."
+        },
+        {
+         "point": 2,
+         "quote": "A CT scan (or an ultrasound) would show swelling."
+        },
+        {
+         "point": 3,
+         "quote": "A plain X-ray flattens the abdomen and does not show soft-tissue inflammation well."
+        }
+       ],
+       "feedback": "All four marks, and offering ultrasound is also reasonable, since it uses no radiation."
+      },
+      {
+       "tier": "partial",
+       "text": "The right lower quadrant. The appendix. I would use an X-ray to see it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The right lower quadrant."
+        },
+        {
+         "point": 1,
+         "quote": "The appendix."
+        }
+       ],
+       "feedback": "A plain X-ray shows soft tissue poorly. CT or ultrasound would show the inflammation better."
+      },
+      {
+       "tier": "partial",
+       "text": "A CT scan shows detailed slices. The pain is in the left upper quadrant, which is the spleen.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "A CT scan"
+        },
+        {
+         "point": 3,
+         "quote": "shows detailed slices"
+        }
+       ],
+       "feedback": "Left upper quadrant is not where the appendix is. It lies in the right lower quadrant.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The pain is on the right side so it is the right ventricle of the heart, and I would take an MRI of the leg.",
+       "meets": [],
+       "feedback": "Use the abdominal quadrants and think of organs found there. The organ is the appendix."
+      },
+      {
+       "tier": "weak",
+       "text": "I would choose a CT scan. The scan will show the pain itself as a bright spot.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "I would choose a CT scan."
+        }
+       ],
+       "feedback": "Scans show structure, such as swelling, and not pain. Name the quadrant and organ you suspect."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Organ systems in coordination: cardiac output and energy for exercise",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe how tissues combine to form organs and how organ systems interact, using cardiac output as an example;\n2. link cellular respiration in muscle cells to the energy demands of exercise and recovery.\n\n## Materials\n\nStopwatches, a 30 cm step or bench, a pulse chart, calculators, the practical sheet.\n\n## Starter (6 minutes)\n\nAsk: \"At rest your heart pumps about as much blood each minute as you have in your body. How much blood is that, and how can we calculate it from your pulse?\" Introduce cardiac output = heart rate x stroke volume.\n\n## Main activity\n\n1. Calculate cardiac output: 70 beats/min x 70 mL/beat = 4900 mL/min, about 4.9 L/min. During exercise 150 x 110 = 16,500 mL/min.\n2. Fuel for muscle: ATP and creatine phosphate, glycolysis, aerobic respiration. Discuss the contribution of each over 10 s, 2 min and 30 min of exercise, and VO2 max.\n3. Practical: the step test. Measure resting pulse, step for three minutes and measure the pulse immediately and each minute for five minutes. Calculate the recovery time and a fitness index.\n\n## Checking for understanding\n\nAsk: \"How does regular training lower the resting heart rate but keep cardiac output the same?\"\n\n## Practical write-up\n\nCollect with data, graph and interpretation.",
+   "reading": {
+    "title": "Cardiac output and the cost of movement",
+    "content": "Organs are built from tissues, and organs cooperate in systems. The heart is a clear example. Cardiac muscle forms the wall, and the connective tissue of the valves and skeleton holds the structure. The lining, the endocardium, is epithelial and smooth, so blood flows without clotting, and nervous tissue in the conduction system keeps the beat. All these contribute to one function, pumping blood.\n\nThe measure of the heart's output is **cardiac output (CO)**, the volume pumped per minute. It equals the heart rate (HR) times the **stroke volume (SV)**, the volume pumped per beat. For a resting adult with a pulse of 70 beats per minute and a stroke volume of 70 mL, CO = 70 times 70, which is 4900 mL/min, about 4.9 L/min. During hard exercise, the pulse may rise to 150 and the stroke volume to 110 mL, so CO = 150 times 110, or 16,500 mL/min, more than three times the resting value. The extra blood flow delivers oxygen and glucose to the working muscles and removes carbon dioxide and heat. Blood vessels in muscles widen and those in the gut narrow, so the blood is redirected to where it is needed.\n\nTraining changes the picture. An endurance athlete's heart is larger and stronger, with a resting stroke volume of 100 mL or more, so a resting pulse of 49 gives the same output (4900 mL/min). This is why trained people have lower resting heart rates.\n\nThe muscle cell supplies its energy through several systems in sequence. In the first seconds, **stored ATP** and **creatine phosphate** provide energy, enough for about 10 seconds of maximal effort. After that, **glycolysis** breaks down glucose without oxygen to give 2 ATP and lactate. It is fast but limited, and supports effort for about a minute or two. For longer efforts, **aerobic respiration** in the mitochondria gives about 30 ATP per glucose and can also use fats. The maximal rate of oxygen use is called VO2 max, a measure of fitness.\n\nAfter exercise, the body must return to its resting state. The extra oxygen taken in after exercise, the **excess post-exercise oxygen consumption**, is used to restore ATP and creatine phosphate, clear lactate and replace the oxygen stored in myoglobin. The heart rate takes minutes to return to the resting rate, and the faster it recovers, the fitter the person."
+   },
+   "cards": [
+    {
+     "front": "Cardiac output",
+     "back": "The volume of blood pumped by the heart per minute; heart rate times stroke volume."
+    },
+    {
+     "front": "Stroke volume",
+     "back": "The volume of blood pumped by the heart in one beat."
+    },
+    {
+     "front": "Endocardium",
+     "back": "The smooth epithelial lining of the heart chambers."
+    },
+    {
+     "front": "Creatine phosphate",
+     "back": "A store that quickly regenerates ATP in the first seconds."
+    },
+    {
+     "front": "Glycolysis",
+     "back": "Breakdown of glucose without oxygen, giving 2 ATP and lactate."
+    },
+    {
+     "front": "VO2 max",
+     "back": "The maximum rate at which the body can use oxygen."
+    },
+    {
+     "front": "Myoglobin",
+     "back": "A protein in muscle that stores oxygen."
+    },
+    {
+     "front": "Recovery heart rate",
+     "back": "How fast the pulse returns to its resting rate after exercise."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A resting pulse is 70 beats/min and the stroke volume is 70 mL. What is the cardiac output?",
+     "options": [
+      "140 mL/min",
+      "490 mL/min",
+      "4900 mL/min",
+      "49,000 mL/min"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "An athlete has a resting pulse of 49 and a cardiac output of 4900 mL/min. What is the stroke volume?",
+     "options": [
+      "49 mL",
+      "70 mL",
+      "100 mL",
+      "200 mL"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which energy source supports a maximal effort for about the first 10 seconds?",
+     "options": [
+      "Aerobic respiration",
+      "Stored ATP and creatine phosphate",
+      "Fat metabolism",
+      "Protein breakdown"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "During exercise, blood is redirected to muscles because vessels in the muscles:",
+     "options": [
+      "Narrow",
+      "Widen",
+      "Close",
+      "Stiffen"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A person's pulse rises from 70 to 150 and stroke volume from 70 to 110 mL. The cardiac output rises to:",
+     "options": [
+      "10,500 mL/min",
+      "16,500 mL/min",
+      "21,000 mL/min",
+      "165,000 mL/min"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Calculate the cardiac output at rest (pulse 72, stroke volume 70 mL) and during exercise (pulse 156, stroke volume 112 mL). State the increase as a multiple and explain two ways the body uses the extra blood flow.",
+     "markScheme": [
+      "Calculates the resting cardiac output as 5040 mL/min",
+      "Calculates the exercise cardiac output as 17,472 mL/min",
+      "States the increase as a factor of about 3.5",
+      "Explains uses of the extra flow, such as delivering oxygen and glucose and removing carbon dioxide and heat"
+     ],
+     "modelAnswer": "At rest CO = 72 times 70 = 5040 mL/min. During exercise CO = 156 times 112 = 17,472 mL/min, which is about 3.5 times the resting value. The extra flow delivers oxygen and glucose to the working muscles, and removes carbon dioxide and heat.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At rest: 72 × 70 = 5040 mL/min. Exercise: 156 × 112 = 17,472 mL/min. That's about 3.5 times as much. The extra blood brings oxygen and glucose to the muscles and takes away carbon dioxide and heat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At rest: 72 × 70 = 5040 mL/min."
+        },
+        {
+         "point": 1,
+         "quote": "Exercise: 156 × 112 = 17,472 mL/min."
+        },
+        {
+         "point": 2,
+         "quote": "That's about 3.5 times as much."
+        },
+        {
+         "point": 3,
+         "quote": "The extra blood brings oxygen and glucose to the muscles and takes away carbon dioxide and heat."
+        }
+       ],
+       "feedback": "Full marks. The two uses cover both supply and removal."
+      },
+      {
+       "tier": "full",
+       "text": "CO(rest) = HR × SV = 5.04 L/min. CO(exercise) = 17.5 L/min. The ratio is about 3.5. It supplies oxygen to the muscles for aerobic respiration, and removes CO₂ and heat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "CO(rest) = HR × SV = 5.04 L/min."
+        },
+        {
+         "point": 1,
+         "quote": "CO(exercise) = 17.5 L/min."
+        },
+        {
+         "point": 2,
+         "quote": "The ratio is about 3.5."
+        },
+        {
+         "point": 3,
+         "quote": "It supplies oxygen to the muscles for aerobic respiration, and removes CO₂ and heat."
+        }
+       ],
+       "feedback": "All four marks, with a clear ratio."
+      },
+      {
+       "tier": "partial",
+       "text": "At rest CO is 5040 mL/min. With exercise it is 156 × 112 = 17,472. The increase is 17,472 − 5040 = 12,432 times.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At rest CO is 5040 mL/min."
+        },
+        {
+         "point": 1,
+         "quote": "With exercise it is 156 × 112 = 17,472."
+        }
+       ],
+       "feedback": "12,432 is the increase in mL/min, not a multiple. Divide 17,472 by 5040 to get about 3.5 times."
+      },
+      {
+       "tier": "partial",
+       "text": "The output goes up 3.5 times. The muscles need more oxygen.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The output goes up 3.5 times."
+        },
+        {
+         "point": 3,
+         "quote": "The muscles need more oxygen."
+        }
+       ],
+       "feedback": "Good. Show the two calculations and give a second use of the extra blood flow.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "72 + 70 = 142 at rest and 156 + 112 = 268 in exercise, so it goes up by 126.",
+       "meets": [],
+       "feedback": "Cardiac output is the product of heart rate and stroke volume, not the sum."
+      },
+      {
+       "tier": "weak",
+       "text": "At rest the cardiac output is 5040 mL/min. During exercise it goes down because the heart gets tired.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At rest the cardiac output is 5040 mL/min."
+        }
+       ],
+       "feedback": "The cardiac output rises during exercise to meet the muscles' demand for oxygen."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain why a 100 m sprint and a 10 km run rely on different energy systems in muscle, and what happens to lactate after the sprint. Include the approximate ATP yield of each pathway.",
+     "markScheme": [
+      "States that the sprint relies on stored ATP, creatine phosphate and glycolysis",
+      "States that glycolysis yields only 2 ATP per glucose and produces lactate",
+      "States that the long run relies on aerobic respiration yielding about 30 ATP per glucose",
+      "States that lactate is later converted back to glucose in the liver or used as fuel, and the oxygen debt is repaid after the sprint"
+     ],
+     "modelAnswer": "A sprint is too short and intense for oxygen delivery to keep up, so it relies on stored ATP, creatine phosphate and glycolysis, which gives 2 ATP per glucose and produces lactate. A 10 km run relies on aerobic respiration, giving about 30 ATP per glucose. After the sprint, lactate is converted back to glucose in the liver or used as fuel, and the oxygen debt is repaid.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A sprint uses stored ATP, creatine phosphate and then glycolysis because oxygen can't be delivered fast enough. Glycolysis gives only 2 ATP per glucose and makes lactate. The long run is aerobic, which gives about 30 ATP per glucose. After the sprint, lactate is turned back into glucose in the liver and I breathe hard to repay the oxygen debt.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A sprint uses stored ATP, creatine phosphate and then glycolysis because oxygen can't be delivered fast enough."
+        },
+        {
+         "point": 1,
+         "quote": "Glycolysis gives only 2 ATP per glucose and makes lactate."
+        },
+        {
+         "point": 2,
+         "quote": "The long run is aerobic, which gives about 30 ATP per glucose."
+        },
+        {
+         "point": 3,
+         "quote": "After the sprint, lactate is turned back into glucose in the liver and I breathe hard to repay the oxygen debt."
+        }
+       ],
+       "feedback": "Full marks. You tied each energy system to its duration and yield."
+      },
+      {
+       "tier": "full",
+       "text": "The first seconds use ATP and creatine phosphate, then anaerobic glycolysis. It is quick but only nets 2 ATP and makes lactate. A 10 km run is paced so that aerobic respiration (about 30 ATP per glucose) supplies most of the energy. Lactate is recycled by the liver and used for fuel, and the oxygen debt is repaid afterward.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The first seconds use ATP and creatine phosphate, then anaerobic glycolysis."
+        },
+        {
+         "point": 1,
+         "quote": "It is quick but only nets 2 ATP and makes lactate."
+        },
+        {
+         "point": 2,
+         "quote": "A 10 km run is paced so that aerobic respiration (about 30 ATP per glucose) supplies most of the energy."
+        },
+        {
+         "point": 3,
+         "quote": "Lactate is recycled by the liver and used for fuel, and the oxygen debt is repaid afterward."
+        }
+       ],
+       "feedback": "All four marks, with excellent detail on the recycling of lactate."
+      },
+      {
+       "tier": "partial",
+       "text": "A sprint uses ATP and creatine phosphate and glycolysis. A long run uses aerobic respiration.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A sprint uses ATP and creatine phosphate and glycolysis."
+        },
+        {
+         "point": 2,
+         "quote": "A long run uses aerobic respiration."
+        }
+       ],
+       "feedback": "Add the ATP yields (2 and about 30), and say what happens to the lactate afterward."
+      },
+      {
+       "tier": "partial",
+       "text": "Glycolysis makes 2 ATP and lactate. The liver turns the lactate back into glucose. In the long run you use anaerobic respiration only.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Glycolysis makes 2 ATP and lactate."
+        },
+        {
+         "point": 3,
+         "quote": "The liver turns the lactate back into glucose."
+        }
+       ],
+       "feedback": "Long runs depend on aerobic respiration. Anaerobic glycolysis alone cannot sustain a long effort.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The sprint uses fat for fuel because it is the fastest, and lactate is a poison that stays in the muscle forever.",
+       "meets": [],
+       "feedback": "Fat is used mostly in slow, aerobic work. Lactate is cleared within an hour or so and recycled as fuel."
+      },
+      {
+       "tier": "weak",
+       "text": "The long run uses aerobic respiration. The sprint uses it too because breathing is the same for both.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The long run uses aerobic respiration."
+        }
+       ],
+       "feedback": "In a sprint oxygen delivery cannot keep up with demand, so the cells rely on glycolysis and stored ATP."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Step test and heart rate recovery",
+    "instructions": "Measure each student's resting pulse. Then step up and down on a 30 cm step at 24 steps per minute for three minutes. Measure the pulse immediately after and then each minute for five minutes. Graph the data, find the recovery time to within 10 beats of rest, and calculate the percent increase in pulse.",
+    "steps": [
+     {
+      "text": "Sit quietly for three minutes and measure the pulse for 30 seconds, doubling it to get beats per minute."
+     },
+     {
+      "text": "Set the metronome at 96 beats per minute so that each step takes a beat, giving 24 full step cycles per minute."
+     },
+     {
+      "text": "Step up and down for three minutes.",
+      "note": "Stop at once if you feel dizzy, and let the teacher know."
+     },
+     {
+      "text": "Sit and measure the pulse immediately, and then every minute for five minutes."
+     },
+     {
+      "text": "Plot the pulse against time and find the time when the pulse is within 10 beats per minute of rest."
+     },
+     {
+      "text": "Calculate the percent increase of the highest pulse over rest and compare with a partner."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: controlled step height and rate, repeated measurements",
+      "maxPoints": 4
+     },
+     {
+      "description": "Data and graph: table, labeled axes, recovery time found",
+      "maxPoints": 4
+     },
+     {
+      "description": "Interpretation: links recovery to cardiovascular fitness and oxygen debt",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "My resting pulse was 68 beats per minute. Immediately after the three-minute step test it was 142, an increase of 109 percent. At minutes one to five it was 118, 98, 84, 76 and 72. My pulse came within 10 beats of rest at about minute four. The graph falls quickly at first and then levels off. The heart rate stays raised after exercise because the body is repaying the oxygen debt, restoring ATP and clearing lactate. A faster recovery means a stronger heart and better fitness.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: complete data, an accurate calculation of the percent increase, and a clear explanation of the recovery."
+     },
+     {
+      "tier": "full",
+      "text": "We used a 30 cm step and a metronome at 96 bpm. Resting pulse: 74. After exercise: 150 (a 103% increase). Recovery readings: 124, 104, 90, 82, 78. The pulse took about 4.5 minutes to recover to within 10 beats of rest. During exercise, cardiac output rises to deliver oxygen for aerobic respiration, and afterward the oxygen debt must be repaid. My partner, who plays soccer, recovered in 3 minutes, which suggests a stronger heart with a higher stroke volume.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. The graph with labeled axes was not described; include it with units to complete the data section."
+     },
+     {
+      "tier": "partial",
+      "text": "My resting pulse was 70. After three minutes of stepping my pulse was 140, so it went up 100 percent. It came down slowly after that. At the end of five minutes it was still 80, so I had not fully recovered. I think it takes time to recover because my muscles used a lot of energy. I did not graph the data because there was no time left in the period.",
+      "scores": [
+       3,
+       2,
+       1
+      ],
+      "feedback": "Plot the data, find the recovery time, and explain the recovery using oxygen debt and fitness."
+     },
+     {
+      "tier": "partial",
+      "text": "The pulse is a good measure of fitness. My partner recovered in three minutes and I took five. This shows that my partner is fitter than I am and that their heart is stronger. We used the step and the metronome. I did not write down the resting pulse or the pulse right after exercise, so I cannot calculate the percent increase.",
+      "scores": [
+       3,
+       1,
+       2
+      ],
+      "feedback": "Record every pulse reading, since the calculations depend on them. Your interpretation is sensible."
+     },
+     {
+      "tier": "weak",
+      "text": "We did the step test and it made us tired. My pulse went up and then it went down again. I think the heart beats faster because it is excited about exercise. Some people were faster than others at stepping which might change the results, but I think it is okay.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Record the pulse at each time and control the stepping rate. The heart rate rises to meet the muscles' demand for oxygen, not from excitement."
+     },
+     {
+      "tier": "weak",
+      "text": "My pulse was 70 at rest and 140 after the test, which is an increase of 70 percent because 140 minus 70 is 70. The heart rate goes up because the heart is a muscle and muscles get bigger when you use them. The recovery time was five minutes for everyone, which proves that everyone has the same fitness.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "A rise of 70 beats on a base of 70 is a 100 percent increase. Recovery times differ among people, and the differences are informative."
+     }
+    ]
+   }
+  },
+  "3": {
+   "topic": "Chemistry of the body, the cell and tissue histology",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the biological molecules of the body, pH and buffers, and the structure and function of the cell and its organelles, including membrane transport;\n2. identify the four tissue types and their subtypes, matching each to structure and function.\n\n## Materials\n\npH paper, baking soda and vinegar, bromothymol blue, prepared tissue slides, tissue key, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Blood pH stays between 7.35 and 7.45. A drop to 7.0 is a medical emergency. Why such a narrow window?\" Gather ideas about enzymes.\n\n## Main activity\n\n1. pH and buffers: pH 7 is neutral, each unit is a tenfold change in hydrogen ion concentration. The carbonic acid-bicarbonate buffer resists change in blood pH. Test a buffer and water with added acid.\n2. Membrane transport in the body: osmosis in red blood cells, the sodium-potassium pump (3 $\\ce{Na^+}$ out, 2 $\\ce{K^+}$ in), facilitated diffusion of glucose.\n3. Tissue subtypes: simple and stratified epithelia, loose and dense connective tissue, bone, cartilage, blood, three muscle types and neurons. Use a key to identify unknown slides.\n\n## Checking for understanding\n\nAsk: \"A solution has pH 6 and another pH 8. Which has more hydrogen ions, and by how much?\"\n\n## Worksheet\n\npH calculations, transport, and tissue identification.",
+   "reading": {
+    "title": "pH, membranes and the architecture of tissues",
+    "content": "Chemical reactions in the body depend on precise conditions. The measure of acidity is **pH**, the negative logarithm of the hydrogen ion concentration. Each unit is a tenfold change: a solution of pH 6 has ten times as many hydrogen ions as one of pH 7, and a hundred times as many as a solution of pH 8. Blood has a pH of 7.35 to 7.45, slightly basic. A fall below 7.35 is **acidosis** and a rise above 7.45 is **alkalosis**. Because the shape of enzymes depends on pH, even small deviations cause serious problems. The stomach, in contrast, has a pH around 2 because pepsin works best in acid.\n\nHow does blood keep its pH steady, even though metabolism makes acids all the time? It contains **buffers**, chemicals that take up or release hydrogen ions. The main one is the carbonic acid-bicarbonate system. If hydrogen ions increase, bicarbonate binds them and forms carbonic acid, which breaks into water and carbon dioxide that is exhaled. The lungs and kidneys also adjust the pH over minutes to days.\n\nThe cell membrane controls what moves in and out. **Osmosis** is the movement of water to the side with the higher solute concentration. A red blood cell in pure water takes up water, swells and bursts, while one in a concentrated salt solution loses water and shrinks. That is why intravenous fluids are made isotonic, at 0.9 percent salt. The **sodium-potassium pump** uses ATP to move three sodium ions out and two potassium ions in, maintaining the gradient that nerves and muscles use. Glucose enters most cells by **facilitated diffusion**, through carrier proteins, without ATP.\n\nTissue types have subtypes defined by structure. **Epithelium** is classified by cell shape and number of layers. Simple squamous epithelium, a single flat layer, lines the air sacs of the lungs and the blood capillaries where substances pass quickly. Stratified squamous epithelium, many layers, covers the skin and the lining of the mouth, which resists abrasion. Simple columnar epithelium lines the intestine and absorbs. **Connective tissue** includes loose tissue that packs around organs, dense tissue with strong collagen fibers in tendons, cartilage, bone and blood. **Muscle** is skeletal, cardiac or smooth. **Nervous tissue** consists of neurons and neuroglia.\n\nTo identify an unknown slide, ask a few questions in order. Are cells packed in a sheet? That suggests epithelium, and the shape and layers refine it. Are the cells scattered in a matrix? That suggests connective tissue. Long fibers with stripes? Muscle. Cells with long processes? Nervous tissue."
+   },
+   "cards": [
+    {
+     "front": "pH",
+     "back": "A measure of acidity; each unit is a tenfold change in hydrogen ion concentration."
+    },
+    {
+     "front": "Buffer",
+     "back": "A chemical system that resists changes in pH."
+    },
+    {
+     "front": "Acidosis",
+     "back": "Blood pH below 7.35."
+    },
+    {
+     "front": "Isotonic",
+     "back": "Having the same solute concentration as the cell; no net water movement."
+    },
+    {
+     "front": "Sodium-potassium pump",
+     "back": "A pump using ATP to move 3 $\\ce{Na^+}$ out and 2 $\\ce{K^+}$ in."
+    },
+    {
+     "front": "Facilitated diffusion",
+     "back": "Movement down a gradient through a carrier protein, with no ATP."
+    },
+    {
+     "front": "Simple squamous epithelium",
+     "back": "A single layer of flat cells, suited to rapid exchange."
+    },
+    {
+     "front": "Stratified squamous epithelium",
+     "back": "Many layers of flat cells, suited to resisting abrasion."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A solution of pH 6 has how many times more hydrogen ions than a solution of pH 8?",
+     "options": [
+      "2 times",
+      "10 times",
+      "100 times",
+      "1000 times"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which tissue lines the air sacs of the lungs for fast gas exchange?",
+     "options": [
+      "Stratified squamous epithelium",
+      "Simple squamous epithelium",
+      "Dense connective tissue",
+      "Smooth muscle"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The sodium-potassium pump moves:",
+     "options": [
+      "3 $\\ce{Na^+}$ in and 2 $\\ce{K^+}$ out",
+      "3 $\\ce{Na^+}$ out and 2 $\\ce{K^+}$ in",
+      "2 $\\ce{Na^+}$ out and 3 $\\ce{K^+}$ in",
+      "$\\ce{Na^+}$ and $\\ce{K^+}$ in the same direction"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A red blood cell is placed in pure water. What is most likely?",
+     "options": [
+      "It shrinks",
+      "It swells and may burst",
+      "It stays the same",
+      "It divides"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which system is the main blood buffer?",
+     "options": [
+      "Carbonic acid-bicarbonate",
+      "Hemoglobin-oxygen",
+      "Insulin-glucagon",
+      "Sodium-potassium"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how the carbonic acid-bicarbonate buffer keeps blood pH stable when an acid, such as lactic acid, enters the blood. Name the roles of the lungs and the kidneys.",
+     "markScheme": [
+      "States that bicarbonate binds the extra hydrogen ions",
+      "States that this forms carbonic acid, which breaks down into carbon dioxide and water",
+      "States that the lungs exhale the carbon dioxide, removing the acid load",
+      "States that the kidneys adjust hydrogen ion and bicarbonate excretion over a longer time"
+     ],
+     "modelAnswer": "Bicarbonate in the blood binds the extra hydrogen ions to form carbonic acid, which breaks down into carbon dioxide and water. The lungs exhale the carbon dioxide, removing the acid. The kidneys adjust the excretion of hydrogen ions and bicarbonate more slowly, over hours to days.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Bicarbonate picks up the extra hydrogen ions. That makes carbonic acid, which then breaks into carbon dioxide and water. The lungs breathe out the carbon dioxide so the acid is removed. The kidneys also adjust how many hydrogen ions and bicarbonate ions they excrete, but more slowly.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Bicarbonate picks up the extra hydrogen ions."
+        },
+        {
+         "point": 1,
+         "quote": "That makes carbonic acid, which then breaks into carbon dioxide and water."
+        },
+        {
+         "point": 2,
+         "quote": "The lungs breathe out the carbon dioxide so the acid is removed."
+        },
+        {
+         "point": 3,
+         "quote": "The kidneys also adjust how many hydrogen ions and bicarbonate ions they excrete, but more slowly."
+        }
+       ],
+       "feedback": "Full marks. The speed difference between the lungs and the kidneys is a nice detail."
+      },
+      {
+       "tier": "full",
+       "text": "HCO₃⁻ binds H⁺ from the lactic acid. H₂CO₃ forms and breaks down to CO₂ and H₂O. Faster breathing gets rid of the CO₂. Over days, the kidneys excrete H⁺ and conserve bicarbonate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "HCO₃⁻ binds H⁺ from the lactic acid."
+        },
+        {
+         "point": 1,
+         "quote": "H₂CO₃ forms and breaks down to CO₂ and H₂O."
+        },
+        {
+         "point": 2,
+         "quote": "Faster breathing gets rid of the CO₂."
+        },
+        {
+         "point": 3,
+         "quote": "Over days, the kidneys excrete H⁺ and conserve bicarbonate."
+        }
+       ],
+       "feedback": "All four marks, using precise chemical forms."
+      },
+      {
+       "tier": "partial",
+       "text": "Bicarbonate binds the hydrogen ions. The lungs breathe out carbon dioxide.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Bicarbonate binds the hydrogen ions."
+        },
+        {
+         "point": 2,
+         "quote": "The lungs breathe out carbon dioxide."
+        }
+       ],
+       "feedback": "Good. Include the carbonic acid step and the role of the kidneys."
+      },
+      {
+       "tier": "partial",
+       "text": "Carbonic acid forms and breaks down. The kidneys adjust the excretion. The stomach gets rid of the extra acid.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Carbonic acid forms and breaks down."
+        },
+        {
+         "point": 3,
+         "quote": "The kidneys adjust the excretion."
+        }
+       ],
+       "feedback": "The stomach is not involved in blood buffering. The lungs breathe out the carbon dioxide.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The buffer destroys the acid so that it disappears from the blood.",
+       "meets": [],
+       "feedback": "The acid is not destroyed. Hydrogen ions are bound by bicarbonate and later exhaled as carbon dioxide and water."
+      },
+      {
+       "tier": "weak",
+       "text": "The lungs get rid of $\\ce{CO2}$. A buffer is a type of protein that makes blood thicker.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The lungs get rid of $\\ce{CO2}$."
+        }
+       ],
+       "feedback": "A buffer is a chemical system that resists a change in pH. It does not make blood thicker."
+      }
+     ]
+    },
+    {
+     "prompt": "A slide shows a tissue with cells packed tightly in many layers, the top layers flat. Identify the tissue, give one body location, and explain how its structure suits the function. Contrast it with the lining of the small intestine.",
+     "markScheme": [
+      "Identifies the tissue as stratified squamous epithelium",
+      "Gives a location, such as the epidermis or the lining of the mouth or esophagus",
+      "Explains that many layers resist abrasion and protect underlying tissue",
+      "Contrasts with the intestinal lining, a single layer of columnar cells specialized for absorption and secretion"
+     ],
+     "modelAnswer": "This is stratified squamous epithelium. It is found in the epidermis of the skin and in the lining of the mouth. The many layers resist abrasion and protect the underlying tissue. The small intestine is lined by a single layer of tall columnar cells, which is suited to absorption and secretion because nutrients only have to cross one cell layer.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It is stratified squamous epithelium. It's found in the skin's epidermis and the mouth lining. Many layers means it can take a lot of rubbing without wearing through, so it protects what's below. The small intestine has a single layer of columnar cells, which is better for absorbing since nutrients cross only one layer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is stratified squamous epithelium."
+        },
+        {
+         "point": 1,
+         "quote": "It's found in the skin's epidermis and the mouth lining."
+        },
+        {
+         "point": 2,
+         "quote": "Many layers means it can take a lot of rubbing without wearing through, so it protects what's below."
+        },
+        {
+         "point": 3,
+         "quote": "The small intestine has a single layer of columnar cells, which is better for absorbing since nutrients cross only one layer."
+        }
+       ],
+       "feedback": "Full marks. The contrast shows that structure follows function."
+      },
+      {
+       "tier": "full",
+       "text": "Stratified squamous epithelium. The esophagus and skin are examples. Lots of layers make it tough, and the surface cells can be sloughed off and replaced. Intestinal epithelium is simple columnar, a single layer, since absorption needs a thin barrier.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Stratified squamous epithelium."
+        },
+        {
+         "point": 1,
+         "quote": "The esophagus and skin are examples."
+        },
+        {
+         "point": 2,
+         "quote": "Lots of layers make it tough, and the surface cells can be sloughed off and replaced."
+        },
+        {
+         "point": 3,
+         "quote": "Intestinal epithelium is simple columnar, a single layer, since absorption needs a thin barrier."
+        }
+       ],
+       "feedback": "All four marks, and the point about replaced cells is accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "Stratified squamous epithelium. It is in the skin.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Stratified squamous epithelium."
+        },
+        {
+         "point": 1,
+         "quote": "It is in the skin."
+        }
+       ],
+       "feedback": "Explain why the many layers matter, and contrast with the intestinal lining."
+      },
+      {
+       "tier": "partial",
+       "text": "Many layers protect from abrasion. The intestine has a single layer. The tissue is simple squamous.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Many layers protect from abrasion."
+        },
+        {
+         "point": 3,
+         "quote": "The intestine has a single layer."
+        }
+       ],
+       "feedback": "Many layers make it stratified, not simple. Name the tissue and its location.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is connective tissue because it holds the layers of the body together, like the skin on a cut.",
+       "meets": [],
+       "feedback": "Cells packed in a sheet with little matrix suggest epithelium. Connective tissue has scattered cells in a matrix."
+      },
+      {
+       "tier": "weak",
+       "text": "The intestine has a single layer of cells for absorbing. The tissue on the slide is muscle because it is thick.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The intestine has a single layer of cells for absorbing."
+        }
+       ],
+       "feedback": "Thickness comes from the number of layers of epithelial cells. Muscle has long fibers, often striped."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "The skin: structure, burn assessment and wound healing",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the layers of the skin in detail and its roles in protection, temperature control and sensation;\n2. explain how the skin heals after a cut or a burn, and estimate burn size by the rule of nines and the fluid needs of a burn patient.\n\n## Materials\n\nRule of nines diagrams, a layered skin model, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nPose: \"A person in a house fire has burns on both arms and the front of the chest. How would you estimate how much of their body surface is burned, and why does it matter?\"\n\n## Main activity\n\n1. Layers in detail: the strata of the epidermis (corneum, lucidum, granulosum, spinosum, basale), the papillary and reticular dermis, glands, hair follicles and receptors (Meissner, Pacinian).\n2. Burns: depth classification, and extent by the rule of nines (head 9, each arm 9, chest and abdomen 18, back 18, each leg 18, perineum 1). Fluid replacement using the Parkland formula: 4 mL x body mass in kg x percent burned, half in the first 8 hours.\n3. Healing: inflammation, proliferation, maturation, role of stem cells, scarring.\n\n## Checking for understanding\n\nAsk: \"Why do large burns cause shock?\" Look for fluid loss.\n\n## Worksheet\n\nA burn extent estimate, a fluid calculation and a healing explanation.",
+   "reading": {
+    "title": "Skin in depth, and the arithmetic of a burn",
+    "content": "The epidermis is built in five layers (strata) in thick skin. The deepest, the **stratum basale**, contains stem cells that divide constantly, and melanocytes. Cells move upward through the **stratum spinosum** and **stratum granulosum**, where they fill with keratin and die. In the thick skin of the palms and soles there is also a clear layer, the stratum lucidum. The surface layer, the **stratum corneum**, is dead, flattened and keratinized, and is shed in flakes. The whole journey takes about a month. The **dermis** has a thin papillary layer of loose connective tissue with capillaries and touch receptors (Meissner corpuscles), and a thick reticular layer of dense collagen with deep pressure receptors (Pacinian corpuscles), glands and hair follicles.\n\nBurn injuries are assessed by depth and by extent. The depth is described as first-, second- or third-degree. The extent is the percentage of total body surface area (TBSA) burned, estimated by the **rule of nines** for adults: head and neck 9 percent, each arm 9 percent, the front of the trunk 18, the back of the trunk 18, each leg 18, and the perineum 1. A person with burns on both arms (18 percent) and the front of the chest and abdomen (18 percent) has about 36 percent TBSA burned.\n\nLarge burns are life-threatening mostly because of fluid loss. Burned capillaries leak plasma, and the skin no longer prevents evaporation, so the patient can go into **hypovolemic shock**. Fluid is replaced by an intravenous drip using a formula such as the **Parkland formula**: total fluid in the first 24 hours is 4 mL times body mass in kilograms times the percent TBSA burned, with half given in the first 8 hours. For a 70 kg adult with 20 percent TBSA burned, that is 4 times 70 times 20, which is 5600 mL in 24 hours, with 2800 mL in the first 8 hours, or 350 mL per hour. Only second- and third-degree burns are included in the percentage. Infection is the other major risk, since the barrier is lost.\n\nHealing of a wound proceeds in overlapping phases. In **inflammation**, blood vessels widen and white blood cells clean the wound. In **proliferation**, fibroblasts make collagen, new capillaries form, and epidermal cells from the edges and from hair follicles migrate across the surface. In **maturation**, over months, the collagen is reorganized and the scar strengthens, to about 80 percent of the strength of normal skin. Deep wounds heal by scarring, which lacks glands and hair follicles, while superficial wounds regenerate because stem cells in the basal layer can rebuild the epidermis fully."
+   },
+   "cards": [
+    {
+     "front": "Stratum basale",
+     "back": "The deepest epidermal layer, where stem cells divide."
+    },
+    {
+     "front": "Stratum corneum",
+     "back": "The outer layer of dead keratinized cells."
+    },
+    {
+     "front": "Papillary layer",
+     "back": "The thin upper dermis with capillaries and touch receptors."
+    },
+    {
+     "front": "Rule of nines",
+     "back": "A method of estimating the percent of body surface burned in adults."
+    },
+    {
+     "front": "Parkland formula",
+     "back": "4 mL x kg x percent TBSA burned in 24 hours, half in the first 8 hours."
+    },
+    {
+     "front": "Hypovolemic shock",
+     "back": "Shock caused by loss of blood or fluid volume."
+    },
+    {
+     "front": "Fibroblast",
+     "back": "A cell that makes collagen in wound healing."
+    },
+    {
+     "front": "Maturation",
+     "back": "The final phase of healing, in which the scar is remodeled."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In the rule of nines, what percent does each adult leg represent?",
+     "options": [
+      "9%",
+      "13.5%",
+      "18%",
+      "36%"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A 70 kg adult has 20% TBSA burned. By the Parkland formula, the fluid needed in 24 hours is:",
+     "options": [
+      "1400 mL",
+      "2800 mL",
+      "5600 mL",
+      "11,200 mL"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which layer contains the stem cells that regenerate the epidermis?",
+     "options": [
+      "Stratum corneum",
+      "Stratum basale",
+      "Reticular dermis",
+      "Hypodermis"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why are large burns dangerous in the first hours?",
+     "options": [
+      "The body overheats",
+      "Fluid loss can cause hypovolemic shock",
+      "The bones soften",
+      "Red blood cells multiply"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Burns on both arms (18%) and the front of the trunk (18%) represent about what TBSA?",
+     "options": [
+      "18%",
+      "27%",
+      "36%",
+      "54%"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A 60 kg adult has second-degree burns on the front of the trunk, the whole of the left arm and the whole of the right leg. Estimate the TBSA using the rule of nines, calculate the fluid needed in the first 24 hours and in the first 8 hours by the Parkland formula.",
+     "markScheme": [
+      "Estimates the TBSA as 18 + 9 + 18 = 45 percent",
+      "Calculates the 24 hour fluid as 4 x 60 x 45 = 10,800 mL",
+      "Gives the first 8 hours as half, 5400 mL",
+      "Gives units and notes the rate of about 675 mL per hour for the first 8 hours"
+     ],
+     "modelAnswer": "The front of the trunk is 18 percent, the left arm is 9 percent and the right leg is 18 percent, giving 45 percent TBSA. The Parkland formula gives 4 times 60 times 45 = 10,800 mL in 24 hours. Half, 5400 mL, is given in the first 8 hours, which is about 675 mL per hour.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "18% + 9% + 18% = 45% TBSA. Parkland: 4 × 60 × 45 = 10,800 mL in 24 hours. Half of that, 5400 mL, goes in during the first 8 hours. That is a rate of 675 mL per hour for the first 8 hours.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "18% + 9% + 18% = 45% TBSA."
+        },
+        {
+         "point": 1,
+         "quote": "Parkland: 4 × 60 × 45 = 10,800 mL in 24 hours."
+        },
+        {
+         "point": 2,
+         "quote": "Half of that, 5400 mL, goes in during the first 8 hours."
+        },
+        {
+         "point": 3,
+         "quote": "That is a rate of 675 mL per hour for the first 8 hours."
+        }
+       ],
+       "feedback": "Full marks. You added the units and converted to an hourly rate, as a clinician would."
+      },
+      {
+       "tier": "full",
+       "text": "Trunk front 18 + arm 9 + leg 18 = 45% TBSA. 4 mL × 60 kg × 45 = 10.8 L over 24 h. 5.4 L in the first 8 h. About 675 mL/h at the start.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Trunk front 18 + arm 9 + leg 18 = 45% TBSA."
+        },
+        {
+         "point": 1,
+         "quote": "4 mL × 60 kg × 45 = 10.8 L over 24 h."
+        },
+        {
+         "point": 2,
+         "quote": "5.4 L in the first 8 h."
+        },
+        {
+         "point": 3,
+         "quote": "About 675 mL/h at the start."
+        }
+       ],
+       "feedback": "All four marks, with a clear order."
+      },
+      {
+       "tier": "partial",
+       "text": "45% TBSA. 4 × 60 × 45 = 10,800 mL. All of the fluid should be given in the first 8 hours.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "45% TBSA."
+        },
+        {
+         "point": 1,
+         "quote": "4 × 60 × 45 = 10,800 mL."
+        }
+       ],
+       "feedback": "Only half is given in the first 8 hours, which is 5400 mL. The other half is given over the next 16 hours."
+      },
+      {
+       "tier": "partial",
+       "text": "5400 mL in 8 hours. 675 mL per hour.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "5400 mL in 8 hours."
+        },
+        {
+         "point": 3,
+         "quote": "675 mL per hour."
+        }
+       ],
+       "feedback": "Good. Show how you estimated the burn size and the 24-hour total.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The arm is 18%, the leg is 9% and the trunk is 9%, so 36%, and the fluid is 36 mL.",
+       "meets": [],
+       "feedback": "In the rule of nines, an arm is 9 percent, a leg is 18 percent and the front of the trunk is 18 percent. The fluid is calculated in milliliters per kilogram per percent."
+      },
+      {
+       "tier": "weak",
+       "text": "The TBSA is 45%. The Parkland formula is 45 × 60 = 2700 mL, with no need for the factor of 4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The TBSA is 45%."
+        }
+       ],
+       "feedback": "The Parkland formula includes 4 mL per kg per percent. That gives 10,800 mL."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe the three phases of wound healing in a deep cut and explain why a deep wound forms a scar while a shallow scrape regenerates normal skin.",
+     "markScheme": [
+      "Describes inflammation, with white blood cells cleaning the wound",
+      "Describes proliferation, with fibroblasts making collagen and epidermal cells migrating",
+      "Describes maturation, with the collagen remodeled over months",
+      "Explains that a shallow scrape regenerates because stem cells in the basal layer remain, whereas a deep wound destroys the dermis and is repaired with collagen scar tissue lacking glands and hair follicles"
+     ],
+     "modelAnswer": "In inflammation, blood vessels widen and white blood cells clear bacteria and debris. In proliferation, fibroblasts make collagen, new capillaries form and epidermal cells migrate across the wound. In maturation, the collagen is remodeled over months. A shallow scrape leaves stem cells in the basal layer, so the epidermis regenerates fully. A deep wound destroys part of the dermis and is repaired with collagen scar tissue, which has no glands or hair follicles.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "First is inflammation, where blood vessels widen and white blood cells clean up the wound. Then proliferation, where fibroblasts make collagen and the skin cells from the edges grow across. Finally maturation, when the scar is remodeled over months. A shallow scrape keeps the stem cells in the basal layer so it can regrow normally, but a deep wound destroys the dermis, and it is filled with collagen scar without glands or hair follicles.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First is inflammation, where blood vessels widen and white blood cells clean up the wound."
+        },
+        {
+         "point": 1,
+         "quote": "Then proliferation, where fibroblasts make collagen and the skin cells from the edges grow across."
+        },
+        {
+         "point": 2,
+         "quote": "Finally maturation, when the scar is remodeled over months."
+        },
+        {
+         "point": 3,
+         "quote": "A shallow scrape keeps the stem cells in the basal layer so it can regrow normally, but a deep wound destroys the dermis, and it is filled with collagen scar without glands or hair follicles."
+        }
+       ],
+       "feedback": "Full marks. The role of stem cells is the key to the contrast."
+      },
+      {
+       "tier": "full",
+       "text": "Inflammation: swelling, white blood cells and cleanup. Proliferation: fibroblasts lay down collagen, new capillaries, epidermal migration. Maturation: collagen is rearranged and the scar strengthens. Superficial injuries leave basal stem cells to rebuild; deep ones lose dermis and heal with scar tissue that lacks hair and glands.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Inflammation: swelling, white blood cells and cleanup."
+        },
+        {
+         "point": 1,
+         "quote": "Proliferation: fibroblasts lay down collagen, new capillaries, epidermal migration."
+        },
+        {
+         "point": 2,
+         "quote": "Maturation: collagen is rearranged and the scar strengthens."
+        },
+        {
+         "point": 3,
+         "quote": "Superficial injuries leave basal stem cells to rebuild; deep ones lose dermis and heal with scar tissue that lacks hair and glands."
+        }
+       ],
+       "feedback": "All four marks, with a clear contrast."
+      },
+      {
+       "tier": "partial",
+       "text": "First there is inflammation. Fibroblasts make collagen. The scar is remodeled.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First there is inflammation."
+        },
+        {
+         "point": 1,
+         "quote": "Fibroblasts make collagen."
+        },
+        {
+         "point": 2,
+         "quote": "The scar is remodeled."
+        }
+       ],
+       "feedback": "Name the phases, and explain why deep wounds scar while shallow ones regenerate."
+      },
+      {
+       "tier": "partial",
+       "text": "A shallow scrape keeps the stem cells so it heals normally. Fibroblasts produce collagen. Maturation happens in a day.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "A shallow scrape keeps the stem cells so it heals normally."
+        },
+        {
+         "point": 1,
+         "quote": "Fibroblasts produce collagen."
+        }
+       ],
+       "feedback": "Maturation takes months. Describe inflammation as well.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The skin heals by the blood turning into new skin and the scab falling off after a day.",
+       "meets": [],
+       "feedback": "Healing involves cells moving and dividing, and collagen formation. It takes days to months."
+      },
+      {
+       "tier": "weak",
+       "text": "There is inflammation. Scars form because the body forgets how to make skin in deep wounds.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There is inflammation."
+        }
+       ],
+       "feedback": "Scars form because the dermis and stem cells are lost, and the gap is filled with collagen."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Bone remodeling, calcium homeostasis, joints and muscle tissue types",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. name the major bones, classify them by shape, and explain how bones grow, remodel and regulate calcium;\n2. compare the structure and range of motion of fibrous, cartilaginous and synovial joints, with clinical examples;\n3. compare skeletal, cardiac and smooth muscle by structure, control and location.\n\n## Materials\n\nSkeleton, long bone sections, bone density data, joint models, the worksheet and quiz.\n\n## Starter (6 minutes)\n\nShow a bone density chart for women aged 30, 50 and 70. Ask: \"What is happening, and what could slow it?\"\n\n## Main activity\n\n1. Anatomy of a long bone: diaphysis, epiphysis, compact and spongy bone, medullary cavity, periosteum. Bone cells and remodeling.\n2. Calcium homeostasis: low blood calcium raises parathyroid hormone (PTH), which stimulates osteoclasts and kidney reabsorption; high calcium stimulates calcitonin, which promotes deposition. Discuss osteoporosis and its prevention (calcium, vitamin D, weight-bearing exercise).\n3. Joint types with clinical links: sprain, dislocation, arthritis. Planes of motion at the hinge, ball-and-socket and pivot joints.\n4. Compare the three muscle types in a table.\n\n## Checking for understanding\n\nAsk: \"Why does an astronaut lose bone mass in space?\"\n\n## Worksheet and quiz\n\nCalcium feedback loop, joint comparison and muscle table.",
+   "reading": {
+    "title": "A living skeleton",
+    "content": "A long bone such as the femur has a shaft, the **diaphysis**, and two ends, the **epiphyses**. The outer surface is covered by the **periosteum**, a membrane that contains blood vessels and bone-forming cells. Under it lies **compact bone**, dense and strong, made of cylinders called osteons. The ends contain **spongy bone**, a lattice that is light and absorbs stress, and the central **medullary cavity** holds marrow. Red marrow makes blood cells and yellow marrow stores fat.\n\nBone is continually **remodeled**. Osteoclasts break down bone and release calcium, and osteoblasts build it. About 10 percent of the skeleton is replaced each year. Mechanical stress stimulates osteoblasts, so weight-bearing exercise strengthens bone, and astronauts lose bone mass in the weightlessness of space.\n\nBone is also a calcium store. The body keeps blood calcium within a narrow range, around 9 to 11 mg/dL, because calcium is needed for muscle contraction, nerve signaling and clotting. This is a negative feedback loop with two hormones. When blood calcium falls, the parathyroid glands release **parathyroid hormone (PTH)**. PTH stimulates osteoclasts to release calcium from bone, makes the kidneys retain calcium, and activates vitamin D, which increases the absorption of calcium from the intestine. When blood calcium rises, the thyroid releases **calcitonin**, which inhibits osteoclasts and promotes deposition in bone. In **osteoporosis**, bone loss exceeds formation, and the bones become porous and fragile. Risk factors are age, low estrogen after menopause, low calcium and vitamin D, and inactivity. Prevention includes adequate calcium and vitamin D, and weight-bearing exercise.\n\nJoints are classified by structure. **Fibrous joints**, such as skull sutures, are immovable. **Cartilaginous joints**, such as intervertebral discs and the pubic symphysis, allow slight movement. **Synovial joints** are freely movable and have a joint cavity filled with synovial fluid, articular cartilage and a capsule reinforced by ligaments. Examples include the ball-and-socket (shoulder, hip), the hinge (elbow, knee) and the pivot (the joint between the first two vertebrae that lets you shake your head no). A **sprain** is damage to a ligament. A **dislocation** is when the bone ends are forced out of position. **Arthritis** is inflammation of a joint; in osteoarthritis, the articular cartilage wears away over time.\n\nThe three muscle tissues differ in structure and control. Skeletal muscle is multinucleate, striated and voluntary, attached to bones. Cardiac muscle is branched, striated, usually has one nucleus per cell, is joined by intercalated discs and is involuntary. Smooth muscle has spindle-shaped cells, a single nucleus, no striations, and is involuntary, in the walls of hollow organs."
+   },
+   "cards": [
+    {
+     "front": "Periosteum",
+     "back": "The membrane covering the outside of bone, with blood vessels and bone-forming cells."
+    },
+    {
+     "front": "Compact bone",
+     "back": "Dense bone made of osteons, forming the outer layer."
+    },
+    {
+     "front": "Spongy bone",
+     "back": "A lattice of bone that is light and absorbs stress."
+    },
+    {
+     "front": "Parathyroid hormone",
+     "back": "A hormone that raises blood calcium."
+    },
+    {
+     "front": "Calcitonin",
+     "back": "A hormone that lowers blood calcium by promoting bone deposition."
+    },
+    {
+     "front": "Osteoporosis",
+     "back": "A disease in which bone loss exceeds formation, making bones fragile."
+    },
+    {
+     "front": "Sprain",
+     "back": "Damage to a ligament."
+    },
+    {
+     "front": "Intercalated disc",
+     "back": "A junction between cardiac muscle cells that passes the signal quickly."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which hormone is released when blood calcium falls?",
+     "options": [
+      "Calcitonin",
+      "Parathyroid hormone",
+      "Insulin",
+      "Glucagon"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Astronauts lose bone mass in space mainly because:",
+     "options": [
+      "Weightlessness reduces the mechanical stress on bone",
+      "Space has no calcium",
+      "Osteoblasts die in zero gravity",
+      "They eat less"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "The joint between the first two vertebrae that allows you to shake your head is a:",
+     "options": [
+      "Hinge joint",
+      "Pivot joint",
+      "Ball-and-socket joint",
+      "Fibrous joint"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A sprain is damage to a:",
+     "options": [
+      "Bone",
+      "Muscle",
+      "Ligament",
+      "Tendon"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which muscle type is multinucleate and voluntary?",
+     "options": [
+      "Smooth",
+      "Cardiac",
+      "Skeletal",
+      "All three"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe the negative feedback loop that regulates blood calcium when it falls below the normal range. Name the hormone, the organ that releases it and three target responses.",
+     "markScheme": [
+      "States that low calcium is detected by the parathyroid glands",
+      "States that the parathyroid glands release PTH",
+      "Gives two target responses of PTH, such as stimulating osteoclasts to release bone calcium and the kidneys to retain calcium",
+      "States that vitamin D is activated to increase intestinal absorption, calcium rises, and PTH secretion falls"
+     ],
+     "modelAnswer": "The parathyroid glands detect the fall in blood calcium and release parathyroid hormone. PTH stimulates osteoclasts to release calcium from bone, and the kidneys to retain calcium. It also activates vitamin D, which increases absorption of calcium from the intestine. Blood calcium rises back to normal and PTH secretion falls, which is negative feedback.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The parathyroid glands sense that blood calcium is low. They release parathyroid hormone, PTH. PTH makes osteoclasts release calcium from bone and makes the kidneys keep calcium. It also activates vitamin D so the intestine absorbs more, and when calcium is back to normal the PTH release stops.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The parathyroid glands sense that blood calcium is low."
+        },
+        {
+         "point": 1,
+         "quote": "They release parathyroid hormone, PTH."
+        },
+        {
+         "point": 2,
+         "quote": "PTH makes osteoclasts release calcium from bone and makes the kidneys keep calcium."
+        },
+        {
+         "point": 3,
+         "quote": "It also activates vitamin D so the intestine absorbs more, and when calcium is back to normal the PTH release stops."
+        }
+       ],
+       "feedback": "Full marks. The loop is complete, including the way it switches off."
+      },
+      {
+       "tier": "full",
+       "text": "Low blood calcium is detected by the parathyroid glands. PTH is secreted. PTH increases bone resorption by osteoclasts and increases kidney reabsorption of calcium. Activated vitamin D improves intestinal absorption. As calcium returns to normal, PTH secretion falls.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Low blood calcium is detected by the parathyroid glands."
+        },
+        {
+         "point": 1,
+         "quote": "PTH is secreted."
+        },
+        {
+         "point": 2,
+         "quote": "PTH increases bone resorption by osteoclasts and increases kidney reabsorption of calcium."
+        },
+        {
+         "point": 3,
+         "quote": "Activated vitamin D improves intestinal absorption. As calcium returns to normal, PTH secretion falls."
+        }
+       ],
+       "feedback": "All four marks, with the response to PTH well described."
+      },
+      {
+       "tier": "partial",
+       "text": "PTH is released. It makes bone release calcium.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "PTH is released."
+        },
+        {
+         "point": 2,
+         "quote": "It makes bone release calcium."
+        }
+       ],
+       "feedback": "Name the gland that senses low calcium and add the other responses, including vitamin D."
+      },
+      {
+       "tier": "partial",
+       "text": "The parathyroid detects the low calcium and releases calcitonin, which makes the bones release calcium.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The parathyroid detects the low calcium"
+        },
+        {
+         "point": 2,
+         "quote": "makes the bones release calcium"
+        }
+       ],
+       "feedback": "Calcitonin lowers blood calcium. The hormone that raises it is PTH.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The pancreas releases insulin to bring the calcium up by moving it from the blood into the bones.",
+       "meets": [],
+       "feedback": "Insulin controls glucose. Calcium is controlled by PTH and calcitonin, and low calcium triggers PTH."
+      },
+      {
+       "tier": "weak",
+       "text": "The bones release calcium. This is positive feedback since the calcium is going up.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The bones release calcium."
+        }
+       ],
+       "feedback": "The loop reverses the fall in calcium, so it is negative feedback. Name the hormone and the glands."
+      }
+     ]
+    },
+    {
+     "prompt": "A 68-year-old woman has a hip fracture from a minor fall. Explain the likely bone condition, two risk factors she may have, and two measures that could have lowered her risk.",
+     "markScheme": [
+      "Identifies osteoporosis as the likely condition",
+      "Explains that bone loss exceeded formation, making bones porous and fragile",
+      "Gives two risk factors, such as age, low estrogen after menopause, low calcium or vitamin D, or inactivity",
+      "Gives two preventive measures, such as calcium and vitamin D intake and weight-bearing exercise"
+     ],
+     "modelAnswer": "She likely has osteoporosis, in which bone loss exceeds bone formation, so the bones are porous and fragile and break from a minor fall. Risk factors include age and the fall in estrogen after menopause, and low calcium and vitamin D or inactivity. Adequate calcium and vitamin D intake and regular weight-bearing exercise could have lowered her risk.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It's probably osteoporosis. Her bones are losing more than they build, so they are porous and break easily. Risk factors are her age and low estrogen after menopause, and maybe low calcium and vitamin D. Getting enough calcium and vitamin D, and weight-bearing exercise like walking, would have helped.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It's probably osteoporosis."
+        },
+        {
+         "point": 1,
+         "quote": "Her bones are losing more than they build, so they are porous and break easily."
+        },
+        {
+         "point": 2,
+         "quote": "Risk factors are her age and low estrogen after menopause, and maybe low calcium and vitamin D."
+        },
+        {
+         "point": 3,
+         "quote": "Getting enough calcium and vitamin D, and weight-bearing exercise like walking, would have helped."
+        }
+       ],
+       "feedback": "Full marks. Your prevention measures match the mechanism of bone remodeling."
+      },
+      {
+       "tier": "full",
+       "text": "Osteoporosis. Osteoclast activity exceeds osteoblast activity, so bone density is low. Postmenopausal estrogen loss and inactivity are risk factors. Calcium, vitamin D and weight-bearing exercise throughout life protect against it.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Osteoporosis."
+        },
+        {
+         "point": 1,
+         "quote": "Osteoclast activity exceeds osteoblast activity, so bone density is low."
+        },
+        {
+         "point": 2,
+         "quote": "Postmenopausal estrogen loss and inactivity are risk factors."
+        },
+        {
+         "point": 3,
+         "quote": "Calcium, vitamin D and weight-bearing exercise throughout life protect against it."
+        }
+       ],
+       "feedback": "All four marks, with clear links between the risk factors and the mechanism."
+      },
+      {
+       "tier": "partial",
+       "text": "She has osteoporosis. Age is a risk factor.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She has osteoporosis."
+        },
+        {
+         "point": 2,
+         "quote": "Age is a risk factor."
+        }
+       ],
+       "feedback": "Explain what is happening to the bone and add a second risk factor and two preventive measures."
+      },
+      {
+       "tier": "partial",
+       "text": "Calcium and exercise help prevent it. Her bones are porous. It's caused by osteoarthritis.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Calcium and exercise help prevent it."
+        },
+        {
+         "point": 1,
+         "quote": "Her bones are porous."
+        }
+       ],
+       "feedback": "Osteoarthritis is a joint disease. Weak bones from loss of bone mass are osteoporosis.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "She has arthritis, and the fall caused her hip to break because it hurts more with age.",
+       "meets": [],
+       "feedback": "Arthritis is joint inflammation. A fracture from a minor fall suggests fragile bones, so osteoporosis."
+      },
+      {
+       "tier": "weak",
+       "text": "She should rest in bed and avoid exercise. Her bones are too thick, which makes them break.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "She should rest in bed and avoid exercise."
+        }
+       ],
+       "feedback": "Inactivity increases bone loss, and the problem is thin, porous bone. Weight-bearing exercise helps."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Sarcomere mechanics, motor units and muscle levers",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how skeletal muscle contracts using the sliding filament model, with sarcomere calculations and the role of calcium and ATP;\n2. name the major muscles of the body, describe the actions of prime movers, antagonists and synergists, and explain motor unit recruitment and levers.\n\n## Materials\n\nMuscle charts, a lever model (ruler on a fulcrum), spring scales, calculators, the quiz.\n\n## Starter (6 minutes)\n\nPose: \"A muscle fiber has 10,000 sarcomeres in a row, each 2.5 micrometers long. How long is the fiber? If every sarcomere shortens to 2.0 micrometers, how much shorter is the fiber?\" Compute: 25 mm and 20 mm, a 20 percent shortening.\n\n## Main activity\n\n1. Sliding filament model with the numbers: sarcomere length at rest 2.5 micrometers, contraction shortens to about 2.0, and the filaments do not change length. Sketch the A band, I band and H zone.\n2. Motor units: one motor neuron plus all the fibers it controls. Fine control has small units (few fibers); strong effort recruits more units. Twitch, summation and tetanus.\n3. Lever systems: first-class (head on neck), second-class (calf raise) and third-class (biceps at the elbow). Third-class levers trade force for speed and range.\n4. Revisit the main muscles and their actions.\n\n## Checking for understanding\n\nAsk: \"Why does the biceps need a stronger force than the weight it lifts?\"\n\n## Quiz and problem set\n\nFive quiz questions and a problem set with a sarcomere and a lever calculation.",
+   "reading": {
+    "title": "The mechanics of contraction",
+    "content": "Skeletal muscle contraction can be described with numbers. A resting sarcomere is about 2.5 micrometers long. A muscle fiber with 10,000 sarcomeres in series is 25,000 micrometers, or 25 mm. If each sarcomere shortens to 2.0 micrometers during a contraction, the fiber becomes 10,000 times 2.0, or 20 mm, a shortening of 5 mm or 20 percent. The thick and thin filaments do not themselves get shorter. In the sarcomere, the **A band** is the length of the thick filaments and stays constant. The **I band** (thin filaments only) and the **H zone** (thick filaments only) get narrower as the thin filaments slide inward. The cross-bridge cycle needs ATP twice: once to power the stroke and once to release the head from actin. Calcium released from the sarcoplasmic reticulum binds a regulatory protein, troponin, to move tropomyosin off the binding sites on actin.\n\nA single motor neuron and all the fibers it controls make a **motor unit**. In the muscles that control the eye, a motor unit may have fewer than ten fibers, which allows fine control. In the large muscles of the thigh, a unit may have thousands. A single impulse produces a brief **twitch**. If impulses arrive faster than the muscle can relax, the twitches add up (**summation**), and at a high frequency they fuse into a smooth sustained contraction called **tetanus**. The strength of a contraction is controlled by **recruitment**: adding more motor units. When you pick up a pen you use few units, and when you lift a heavy box you recruit many. Slow-twitch fibers, rich in mitochondria and myoglobin, resist fatigue and suit posture and endurance. Fast-twitch fibers contract rapidly and tire quickly, suited to sprinting.\n\nThe skeleton and muscles together form **levers**. A lever has a fulcrum (joint), an effort (muscle force) and a load. In a first-class lever, such as the head balanced on the neck, the fulcrum is between effort and load. In a second-class lever, such as standing on tiptoe, the load is between the fulcrum and effort. In a third-class lever, the most common in the body, the effort is between the fulcrum and the load, as the biceps pulls on the forearm about 4 cm from the elbow while a weight is held in the hand 35 cm from the elbow. The biceps force has to be much greater than the load: taking moments about the elbow, F times 4 = 50 N times 35, so F = 437 N, nearly nine times the weight lifted. What the body gains is speed and range of motion at the hand: a short contraction of the biceps moves the hand a long way."
+   },
+   "cards": [
+    {
+     "front": "A band",
+     "back": "The region of a sarcomere containing the thick filaments; constant in length."
+    },
+    {
+     "front": "I band",
+     "back": "The region containing only thin filaments; it narrows in contraction."
+    },
+    {
+     "front": "Troponin",
+     "back": "A regulatory protein that binds calcium and exposes the actin binding sites."
+    },
+    {
+     "front": "Motor unit",
+     "back": "A motor neuron and all the muscle fibers it controls."
+    },
+    {
+     "front": "Recruitment",
+     "back": "Increasing the force of contraction by activating more motor units."
+    },
+    {
+     "front": "Tetanus",
+     "back": "A smooth, sustained contraction caused by rapid stimulation."
+    },
+    {
+     "front": "Third-class lever",
+     "back": "A lever in which the effort lies between the fulcrum and the load."
+    },
+    {
+     "front": "Slow-twitch fiber",
+     "back": "A fatigue-resistant fiber rich in mitochondria and myoglobin."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A fiber has 10,000 sarcomeres of 2.5 micrometers each. How long is the fiber?",
+     "options": [
+      "2.5 mm",
+      "25 mm",
+      "250 mm",
+      "25 micrometers"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "When a sarcomere contracts, which region stays the same length?",
+     "options": [
+      "I band",
+      "H zone",
+      "A band",
+      "Whole sarcomere"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which type of motor unit would be found in muscles needing fine control, such as those of the eye?",
+     "options": [
+      "Very large, thousands of fibers",
+      "Small, with few fibers",
+      "None",
+      "A single giant fiber"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Rapid stimulation that fuses twitches into a smooth sustained contraction is called:",
+     "options": [
+      "Summation only",
+      "Tetanus",
+      "Rigor mortis",
+      "A twitch"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The biceps acting on the forearm is a:",
+     "options": [
+      "First-class lever",
+      "Second-class lever",
+      "Third-class lever",
+      "Not a lever"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A muscle fiber has 8000 sarcomeres, each 2.6 micrometers long at rest. Each shortens to 2.0 micrometers in a contraction. Calculate the length of the fiber before and after and the percent shortening, and state what happens to the lengths of the thick and thin filaments.",
+     "markScheme": [
+      "Calculates the resting length as 20.8 mm",
+      "Calculates the contracted length as 16.0 mm",
+      "Calculates the shortening as 4.8 mm, which is about 23 percent",
+      "States that the filaments do not change length; they slide past each other"
+     ],
+     "modelAnswer": "At rest, 8000 times 2.6 micrometers is 20,800 micrometers, which is 20.8 mm. After contraction, 8000 times 2.0 is 16,000 micrometers, which is 16.0 mm. The shortening is 4.8 mm, about 23 percent of the original length. The thick and thin filaments do not change length; they slide past each other.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "At rest: 8000 × 2.6 μm = 20,800 μm = 20.8 mm. Contracted: 8000 × 2.0 μm = 16.0 mm. It shortens by 4.8 mm, which is 4.8/20.8 = 23%. The filaments themselves keep the same length; they slide over each other.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At rest: 8000 × 2.6 μm = 20,800 μm = 20.8 mm."
+        },
+        {
+         "point": 1,
+         "quote": "Contracted: 8000 × 2.0 μm = 16.0 mm."
+        },
+        {
+         "point": 2,
+         "quote": "It shortens by 4.8 mm, which is 4.8/20.8 = 23%."
+        },
+        {
+         "point": 3,
+         "quote": "The filaments themselves keep the same length; they slide over each other."
+        }
+       ],
+       "feedback": "Full marks. Dividing by the starting length gives the correct percent."
+      },
+      {
+       "tier": "full",
+       "text": "Before: 20.8 mm. After: 16.0 mm. Shortening is 4.8 mm, about 23%. Sarcomeres shorten because the thin filaments slide inward, not because the filaments shrink.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Before: 20.8 mm."
+        },
+        {
+         "point": 1,
+         "quote": "After: 16.0 mm."
+        },
+        {
+         "point": 2,
+         "quote": "Shortening is 4.8 mm, about 23%."
+        },
+        {
+         "point": 3,
+         "quote": "Sarcomeres shorten because the thin filaments slide inward, not because the filaments shrink."
+        }
+       ],
+       "feedback": "All four marks, with the key idea of sliding stated clearly."
+      },
+      {
+       "tier": "partial",
+       "text": "Before 20.8 mm. After 16.0 mm. The shortening is 4.8/16.0 = 30%.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Before 20.8 mm."
+        },
+        {
+         "point": 1,
+         "quote": "After 16.0 mm."
+        }
+       ],
+       "feedback": "Percent change uses the original length: 4.8 divided by 20.8 is 23 percent."
+      },
+      {
+       "tier": "partial",
+       "text": "23% shorter and the filaments slide.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "23% shorter"
+        },
+        {
+         "point": 3,
+         "quote": "the filaments slide"
+        }
+       ],
+       "feedback": "Good. Show the length before and after, with the calculations.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "8000 + 2.6 = 8002.6 μm before and 8002.0 after, so it hardly changes. The filaments shrink.",
+       "meets": [],
+       "feedback": "The fiber's length is the number of sarcomeres times the length of each. The filaments slide; they do not shrink."
+      },
+      {
+       "tier": "weak",
+       "text": "8000 × 2.6 = 20,800 μm, or 20.8 mm. After contracting it is 2.0 mm because the sarcomeres get 10 times smaller.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "8000 × 2.6 = 20,800 μm, or 20.8 mm."
+        }
+       ],
+       "feedback": "Each sarcomere shortens from 2.6 to 2.0 micrometers, not by a factor of ten. Recalculate 8000 times 2.0."
+      }
+     ]
+    },
+    {
+     "prompt": "A person holds a 50 N weight in the hand, 35 cm from the elbow. The biceps attaches 4 cm from the elbow. Calculate the force the biceps must exert to hold the arm still, and explain what this shows about third-class levers.",
+     "markScheme": [
+      "Applies the principle of moments about the elbow",
+      "Calculates the force as 437.5 N (about 440 N)",
+      "States that the muscle force is nearly nine times the load",
+      "Explains that the third-class lever trades force for a large range and speed of movement at the hand"
+     ],
+     "modelAnswer": "Taking moments about the elbow: F times 4 cm = 50 N times 35 cm, so F = 437.5 N. The biceps force is nearly nine times the load. A third-class lever trades force for speed and range of motion: a short contraction of the muscle moves the hand through a large distance.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Taking moments about the elbow, the clockwise and anticlockwise moments are equal. F × 4 = 50 × 35 so F = 437.5 N. The muscle has to pull about nine times harder than the weight. A third-class lever gives a large range and speed at the hand for a small muscle contraction, at the cost of force.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Taking moments about the elbow, the clockwise and anticlockwise moments are equal."
+        },
+        {
+         "point": 1,
+         "quote": "F × 4 = 50 × 35 so F = 437.5 N."
+        },
+        {
+         "point": 2,
+         "quote": "The muscle has to pull about nine times harder than the weight."
+        },
+        {
+         "point": 3,
+         "quote": "A third-class lever gives a large range and speed at the hand for a small muscle contraction, at the cost of force."
+        }
+       ],
+       "feedback": "Full marks. The explanation gives the trade-off, which is the core idea of the lever."
+      },
+      {
+       "tier": "full",
+       "text": "Moments about the elbow must balance. F = (50 × 35)/4 ≈ 440 N. That's about nine times the load. The advantage is that the hand moves fast and far when the muscle shortens a little.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Moments about the elbow must balance."
+        },
+        {
+         "point": 1,
+         "quote": "F = (50 × 35)/4 ≈ 440 N."
+        },
+        {
+         "point": 2,
+         "quote": "That's about nine times the load."
+        },
+        {
+         "point": 3,
+         "quote": "The advantage is that the hand moves fast and far when the muscle shortens a little."
+        }
+       ],
+       "feedback": "All four marks. Rounding to 440 N is sensible for the data given."
+      },
+      {
+       "tier": "partial",
+       "text": "Take moments about the elbow. F = 437.5 N. The biceps force is the same as the load because it is holding it still.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Take moments about the elbow."
+        },
+        {
+         "point": 1,
+         "quote": "F = 437.5 N."
+        }
+       ],
+       "feedback": "The muscle force is much greater than the load, nearly nine times, because the muscle acts close to the elbow."
+      },
+      {
+       "tier": "partial",
+       "text": "The biceps has to pull nine times harder. The lever gives range and speed at the hand.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The biceps has to pull nine times harder."
+        },
+        {
+         "point": 3,
+         "quote": "The lever gives range and speed at the hand."
+        }
+       ],
+       "feedback": "Good. Show the moments calculation that gives 437.5 N.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "F = 50 + 35 + 4 = 89 N, because you add up the numbers in the problem.",
+       "meets": [],
+       "feedback": "A lever problem uses moments: force times distance from the pivot. The moments must balance."
+      },
+      {
+       "tier": "weak",
+       "text": "F = 50 × 35 / 4 = 437.5 N. That means the muscle is very efficient since it pulls so hard.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "F = 50 × 35 / 4 = 437.5 N."
+        }
+       ],
+       "feedback": "A large required force shows that the arrangement is not efficient for force. The gain is in speed and range."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Neurophysiology: potentials, conduction speed, synapses and reflex testing",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the structure of a neuron and how an action potential is generated and travels, including conduction time calculations;\n2. explain synaptic transmission, summation and the reflex arc, and measure reaction time.\n\n## Materials\n\nMeter sticks, calculators, neuron model, reflex hammer (demonstration only), the practical sheet.\n\n## Starter (6 minutes)\n\nPose: \"A signal must travel 1.5 m from your toe to your brain. If the nerve conducts at 1 m/s, how long would it take? At 100 m/s?\" Compute: 1.5 s and 15 ms. Ask what this says about myelin.\n\n## Main activity\n\n1. Resting potential and the Nernst idea: potassium leaks out, leaving the inside negative. Threshold is about -55 mV, the peak about +30 mV. Describe depolarization, repolarization and hyperpolarization.\n2. Conduction speed and myelination: speed = distance / time. Compare myelinated (up to 120 m/s) and unmyelinated fibers (about 1 m/s). Discuss multiple sclerosis.\n3. Synapses: excitatory and inhibitory neurotransmitters, summation of inputs, removal by enzymes and reuptake. Examples: acetylcholine and its blocking by curare, and SSRIs.\n4. Practical: measure reaction time with the ruler-drop test using d = 1/2 g t squared, and compare with a reflex.\n\n## Checking for understanding\n\nAsk: \"Why does a reflex take about 30 ms, and a reaction to a visual cue about 200 ms?\"\n\n## Practical write-up\n\nCollect with data table and interpretation.",
+   "reading": {
+    "title": "Speed, summation and reaction time",
+    "content": "A resting neuron is negative inside, at about -70 mV, because the membrane leaks more potassium out than sodium in and because the sodium-potassium pump keeps the gradients. When excitatory inputs depolarize the membrane to a **threshold** near -55 mV, voltage-gated sodium channels open, the voltage shoots up to about +30 mV, and then potassium channels open, so the voltage falls, often briefly below the resting level (**hyperpolarization**). During the **refractory period**, the neuron cannot fire again, which makes the impulse travel in one direction.\n\nHow fast does the signal travel? In an unmyelinated axon, the action potential spreads continuously and the speed is about 1 m/s. In a myelinated axon, it jumps from node to node, and speeds reach 120 m/s. The conduction time is distance divided by speed. For 1.5 m from the toe to the spinal cord and brain, an unmyelinated fiber would take 1.5 s, while a myelinated one at 100 m/s takes 0.015 s, or 15 ms. In multiple sclerosis the immune system attacks myelin in the central nervous system, so conduction slows or fails, causing weakness, vision problems and loss of coordination.\n\nAt a **synapse**, neurotransmitter release triggers a **postsynaptic potential** in the receiving neuron. Excitatory synapses (using glutamate, for example) depolarize the membrane, and inhibitory synapses (using GABA) hyperpolarize it. A neuron receives thousands of inputs. It adds them up: **temporal summation** is the adding of rapid signals from one synapse, and **spatial summation** is the adding of signals from many synapses at once. The neuron fires only if the sum reaches the threshold. Synaptic transmission is ended by enzymes, which break down the transmitter, or by reuptake into the terminal. Drugs act here. Curare blocks acetylcholine receptors at the neuromuscular junction, causing paralysis. Selective serotonin reuptake inhibitors (SSRIs) block the reuptake of serotonin, leaving more of it active in the synapse.\n\nReaction time shows the speed of a pathway. In the ruler drop test, a ruler is released and you catch it as soon as you see it fall. The distance d it fell gives the time by d = 1/2 g t squared, so t = the square root of (2d/g). If you catch it after 0.15 m, t = the square root of (0.30/9.8) = 0.175 s. Visual reactions need the eye, the visual cortex, the motor cortex and the muscles, so they take around 0.2 s. A **reflex** like the knee jerk, through the spinal cord alone, takes about 0.03 s."
+   },
+   "cards": [
+    {
+     "front": "Threshold",
+     "back": "The membrane voltage, about -55 mV, at which an action potential fires."
+    },
+    {
+     "front": "Hyperpolarization",
+     "back": "A membrane potential more negative than the resting potential."
+    },
+    {
+     "front": "Refractory period",
+     "back": "The time after firing during which a neuron cannot fire again."
+    },
+    {
+     "front": "Temporal summation",
+     "back": "Adding the effects of rapid successive signals at one synapse."
+    },
+    {
+     "front": "Spatial summation",
+     "back": "Adding the effects of signals from many synapses at once."
+    },
+    {
+     "front": "Multiple sclerosis",
+     "back": "A disease in which myelin in the CNS is damaged, slowing conduction."
+    },
+    {
+     "front": "SSRI",
+     "back": "A drug that blocks serotonin reuptake, leaving more serotonin in the synapse."
+    },
+    {
+     "front": "Reaction time",
+     "back": "The time between a stimulus and the response."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A signal travels 1.5 m along an unmyelinated axon at 1 m/s. How long does it take?",
+     "options": [
+      "0.015 s",
+      "0.15 s",
+      "1.5 s",
+      "15 s"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A ruler is caught after falling 0.15 m. The reaction time is about (g = 9.8 m/s2):",
+     "options": [
+      "0.05 s",
+      "0.175 s",
+      "0.50 s",
+      "1.5 s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "An inhibitory neurotransmitter such as GABA usually causes:",
+     "options": [
+      "Depolarization",
+      "Hyperpolarization",
+      "No change",
+      "A larger action potential"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why can an action potential only travel in one direction?",
+     "options": [
+      "The axon only conducts one way",
+      "The refractory period prevents backward firing",
+      "Neurotransmitters point forward",
+      "Myelin blocks it"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Curare causes paralysis by:",
+     "options": [
+      "Blocking acetylcholine receptors",
+      "Destroying myelin",
+      "Increasing sodium channels",
+      "Blocking calcium entry in the heart"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A signal must travel 1.2 m from the foot to the spinal cord. Calculate the time taken in an unmyelinated fiber conducting at 1.0 m/s and in a myelinated fiber at 80 m/s. Explain how myelin increases speed and what happens in multiple sclerosis.",
+     "markScheme": [
+      "Calculates the unmyelinated time as 1.2 s",
+      "Calculates the myelinated time as 0.015 s (15 ms)",
+      "Explains that the impulse jumps from node to node in myelinated fibers (saltatory conduction)",
+      "Explains that in multiple sclerosis myelin is damaged, so conduction slows or fails"
+     ],
+     "modelAnswer": "Time equals distance divided by speed. For the unmyelinated fiber, 1.2 / 1.0 = 1.2 s. For the myelinated fiber, 1.2 / 80 = 0.015 s, or 15 ms. In myelinated fibers the impulse jumps from node of Ranvier to node, which is much faster than continuous conduction. In multiple sclerosis the myelin is damaged, so conduction slows or fails.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Unmyelinated: 1.2 m ÷ 1.0 m/s = 1.2 s. Myelinated: 1.2 ÷ 80 = 0.015 s = 15 ms. Myelin insulates the axon so the impulse jumps between the nodes of Ranvier, which is faster than traveling continuously. In MS the myelin is damaged so signals are slowed or blocked.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Unmyelinated: 1.2 m ÷ 1.0 m/s = 1.2 s."
+        },
+        {
+         "point": 1,
+         "quote": "Myelinated: 1.2 ÷ 80 = 0.015 s = 15 ms."
+        },
+        {
+         "point": 2,
+         "quote": "Myelin insulates the axon so the impulse jumps between the nodes of Ranvier, which is faster than traveling continuously."
+        },
+        {
+         "point": 3,
+         "quote": "In MS the myelin is damaged so signals are slowed or blocked."
+        }
+       ],
+       "feedback": "Full marks. The speed difference is nearly 100-fold, which is why myelin matters."
+      },
+      {
+       "tier": "full",
+       "text": "t = d/v = 1.2 s for the unmyelinated fiber. For 80 m/s, t = 0.015 s. Saltatory conduction lets the action potential leap between nodes. Multiple sclerosis destroys myelin in the CNS, slowing conduction and causing symptoms.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "t = d/v = 1.2 s for the unmyelinated fiber."
+        },
+        {
+         "point": 1,
+         "quote": "For 80 m/s, t = 0.015 s."
+        },
+        {
+         "point": 2,
+         "quote": "Saltatory conduction lets the action potential leap between nodes."
+        },
+        {
+         "point": 3,
+         "quote": "Multiple sclerosis destroys myelin in the CNS, slowing conduction and causing symptoms."
+        }
+       ],
+       "feedback": "All four marks, with precise terminology."
+      },
+      {
+       "tier": "partial",
+       "text": "1.2 seconds for the unmyelinated fiber. 0.015 seconds for the myelinated fiber.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1.2 seconds for the unmyelinated fiber."
+        },
+        {
+         "point": 1,
+         "quote": "0.015 seconds for the myelinated fiber."
+        }
+       ],
+       "feedback": "Explain how myelin speeds the signal, using the nodes, and what happens in multiple sclerosis."
+      },
+      {
+       "tier": "partial",
+       "text": "The impulse jumps between nodes. MS damages myelin. The times are 1.2 and 15 seconds.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The impulse jumps between nodes."
+        },
+        {
+         "point": 3,
+         "quote": "MS damages myelin."
+        }
+       ],
+       "feedback": "Check the myelinated time: 1.2 divided by 80 is 0.015 s, not 15 s.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "1.2 × 1.0 = 1.2 s and 1.2 × 80 = 96 s. Myelin slows the signal so it can be more careful.",
+       "meets": [],
+       "feedback": "Time is distance divided by speed, and myelin increases the speed."
+      },
+      {
+       "tier": "weak",
+       "text": "It takes 1.2 s unmyelinated. In MS the nerves grow too much myelin and become too fast.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It takes 1.2 s unmyelinated."
+        }
+       ],
+       "feedback": "In multiple sclerosis the myelin is damaged, not overgrown, which slows or blocks the signals."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain how a neuron decides whether to fire when it receives excitatory and inhibitory inputs. Include threshold, summation and the effect of an inhibitory neurotransmitter such as GABA.",
+     "markScheme": [
+      "States that excitatory inputs depolarize the membrane and inhibitory inputs hyperpolarize it",
+      "States that the neuron sums the inputs (spatial and temporal summation)",
+      "States that the neuron fires only if the sum reaches threshold, about -55 mV",
+      "States that GABA hyperpolarizes the membrane, making it harder to reach threshold"
+     ],
+     "modelAnswer": "Excitatory inputs depolarize the membrane and inhibitory inputs hyperpolarize it. The neuron sums the inputs from many synapses at once (spatial) and in rapid succession (temporal). It fires only if the total reaches the threshold of about -55 mV. GABA hyperpolarizes the membrane, so it makes it harder to reach the threshold.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Excitatory synapses depolarize the membrane and inhibitory ones hyperpolarize it. The neuron adds up all the inputs, from many synapses at once and from fast repeated signals. If the total reaches about −55 mV it fires an action potential. GABA makes the membrane more negative so it is harder to reach threshold.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Excitatory synapses depolarize the membrane and inhibitory ones hyperpolarize it."
+        },
+        {
+         "point": 1,
+         "quote": "The neuron adds up all the inputs, from many synapses at once and from fast repeated signals."
+        },
+        {
+         "point": 2,
+         "quote": "If the total reaches about −55 mV it fires an action potential."
+        },
+        {
+         "point": 3,
+         "quote": "GABA makes the membrane more negative so it is harder to reach threshold."
+        }
+       ],
+       "feedback": "Full marks. Summation and threshold are both explained."
+      },
+      {
+       "tier": "full",
+       "text": "Excitatory postsynaptic potentials push the voltage up and inhibitory ones push it down. Spatial and temporal summation add them together. Only if the sum reaches threshold does the neuron fire. GABA hyperpolarizes the neuron so it is less likely to fire.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Excitatory postsynaptic potentials push the voltage up and inhibitory ones push it down."
+        },
+        {
+         "point": 1,
+         "quote": "Spatial and temporal summation add them together."
+        },
+        {
+         "point": 2,
+         "quote": "Only if the sum reaches threshold does the neuron fire."
+        },
+        {
+         "point": 3,
+         "quote": "GABA hyperpolarizes the neuron so it is less likely to fire."
+        }
+       ],
+       "feedback": "All four marks, concise and correct."
+      },
+      {
+       "tier": "partial",
+       "text": "Excitatory inputs depolarize it and inhibitory inputs hyperpolarize it. It fires when it reaches threshold.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Excitatory inputs depolarize it and inhibitory inputs hyperpolarize it."
+        },
+        {
+         "point": 2,
+         "quote": "It fires when it reaches threshold."
+        }
+       ],
+       "feedback": "Include summation and say how GABA affects the likelihood of firing."
+      },
+      {
+       "tier": "partial",
+       "text": "The neuron adds all the inputs. GABA makes it more likely to fire.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The neuron adds all the inputs."
+        },
+        {
+         "point": 3,
+         "quote": "GABA makes it more likely to fire."
+        }
+       ],
+       "feedback": "GABA is inhibitory: it hyperpolarizes the membrane, so it makes firing less likely.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A neuron fires every time it gets any signal, and GABA is a signal that makes it fire more.",
+       "meets": [],
+       "feedback": "A neuron fires only when the summed inputs reach threshold, and GABA inhibits firing."
+      },
+      {
+       "tier": "weak",
+       "text": "It fires at threshold. Summation means the neuron gets bigger when it gets more signals.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "It fires at threshold."
+        }
+       ],
+       "feedback": "Summation is the adding of the electrical effects of the inputs, not growth of the neuron."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Reaction time and reflex timing",
+    "instructions": "Use the ruler-drop test to measure the visual reaction time of each partner over ten trials. Convert the distance fallen to time using t = sqrt(2d/g). Then compare conditions: dominant and non-dominant hand, and with a distraction (counting backward by sevens). Present a table and graph, and discuss the pathway involved and how a reflex differs.",
+    "steps": [
+     {
+      "text": "Hold a meter stick at the 100 cm end so that your partner's thumb and forefinger surround the zero mark without touching."
+     },
+     {
+      "text": "Release the ruler without warning and have your partner catch it. Record the distance fallen."
+     },
+     {
+      "text": "Repeat ten trials with the dominant hand, then ten with the other hand.",
+      "note": "Do not drop the ruler when your partner is not ready, to avoid injury to fingers."
+     },
+     {
+      "text": "Repeat with a distraction, such as counting backward from 100 by sevens."
+     },
+     {
+      "text": "Calculate the mean distance and the mean reaction time for each condition."
+     },
+     {
+      "text": "Compare conditions and explain the neural pathway involved in each."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: ten trials, controlled conditions, random release",
+      "maxPoints": 4
+     },
+     {
+      "description": "Calculation and graph: correct use of t = sqrt(2d/g) and mean times",
+      "maxPoints": 4
+     },
+     {
+      "description": "Interpretation: pathway, effect of distraction and comparison with reflex",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "The mean distance fallen for the dominant hand was 17.2 cm, giving t = sqrt(2 x 0.172 / 9.8) = 0.187 s. For the non-dominant hand it was 19.5 cm, or 0.199 s, and with the distraction it was 24.1 cm, or 0.222 s. The visual signal must travel from the eye to the visual cortex, to the motor cortex, to the spinal cord and the hand muscles, which takes about 0.2 s. A reflex like the knee jerk only passes through the spinal cord and takes about 0.03 s. The distraction slows the response because the cortex is busy with the arithmetic.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: well-controlled trials, correct calculations, and an explanation based on the pathway."
+     },
+     {
+      "tier": "full",
+      "text": "I did ten trials per condition with my partner not knowing when I would drop the ruler. Means: dominant 15.8 cm (0.180 s), non-dominant 18.4 cm (0.194 s), distracted 22.0 cm (0.212 s). I used t = sqrt(2d/g). The extra delay with distraction probably comes from the brain processing the extra task. The reflex arc skips the brain, so a reflex is about six times faster. A source of error is that my partner could guess the timing after several trials, which made results look better.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. A graph with labeled axes would complete the data section."
+     },
+     {
+      "tier": "partial",
+      "text": "We dropped the ruler ten times for each hand. The dominant hand was a little faster than the other hand, and the distracted trials were slower than the normal trials. My partner caught it at about 17 cm on average for the dominant hand. I did not convert this to a time because I was not sure which formula to use for the falling ruler.",
+      "scores": [
+       3,
+       1,
+       2
+      ],
+      "feedback": "Use d = 1/2 g t squared to get t = sqrt(2d/g). For 17 cm that is about 0.19 s. Then compare the conditions in seconds."
+     },
+     {
+      "tier": "partial",
+      "text": "Dominant: 0.187 s. Non-dominant: 0.199 s. With distraction: 0.222 s. We did ten trials each and I calculated the mean times using the formula. The reaction is slower with the distraction because it is harder to concentrate on two things at once, but I am not sure which parts of the brain are involved in it.",
+      "scores": [
+       3,
+       4,
+       1
+      ],
+      "feedback": "Your calculations are right. Describe the pathway: eye, visual cortex, motor cortex, spinal cord, muscle. A reflex skips the brain."
+     },
+     {
+      "tier": "weak",
+      "text": "The ruler fell and my partner caught it. Sometimes they were fast and sometimes slow. The times were different each time. I think the reaction time depends on how awake you are, but we were all tired because it was the end of the day and there wasn't enough time.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Record the distance each time, convert to time, and compare conditions with numbers."
+     },
+     {
+      "tier": "weak",
+      "text": "The reaction time is the same as the speed of the ruler, which is 9.8 m/s because that is how fast it falls. A reflex is the same as a reaction because both are fast. The distraction did not change anything because the brain is always the same speed.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "The ruler accelerates at 9.8 m/s2, and the time depends on the distance it falls. A reflex is faster than a conscious reaction, and distraction slows the reaction."
+     }
+    ]
+   }
+  },
+  "8": {
+   "topic": "Brain regions, clinical neurology and the divisions of the nervous system",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the main regions of the brain and the roles of the central and peripheral nervous systems, and link damage to symptoms;\n2. use a model or case to report what the structures of an organ system show about their function.\n\n## Materials\n\nBrain atlas images, case study cards, sheep brain or model for reference, the worksheet and quiz.\n\n## Starter (6 minutes)\n\nGive a case: \"A man has a stroke. He understands speech but cannot form words, and his right arm is weak.\" Ask students to predict the location of damage before the lesson, then revisit.\n\n## Main activity\n\n1. Functional areas of the cortex: primary motor (precentral gyrus), primary somatosensory (postcentral gyrus), Broca's area (speech production), Wernicke's area (comprehension), visual cortex (occipital lobe). Map the symptoms in the case to the left frontal lobe near Broca's area.\n2. Deep structures and the brainstem: thalamus, hypothalamus, limbic system, cerebellum, medulla. Link damage to symptoms in short cases (cerebellar ataxia, medullary stroke).\n3. Peripheral divisions: cranial nerves, somatic and autonomic. Compare sympathetic and parasympathetic effects in a table, including the pupil, heart, gut and bladder.\n4. Brain death and why the brainstem matters.\n\n## Checking for understanding\n\nAsk: \"What would damage to Wernicke's area do to speech?\" Look for fluent but meaningless speech.\n\n## Quiz\n\nFive questions linking regions to symptoms.",
+   "reading": {
+    "title": "Where is the damage? Reading symptoms as a map",
+    "content": "Because different parts of the brain have different jobs, doctors can often work out where the damage is from the symptoms. The cerebral cortex is organized into functional areas. The **primary motor cortex** in the precentral gyrus of the frontal lobe sends signals for voluntary movement, and the **primary somatosensory cortex** in the postcentral gyrus of the parietal lobe receives touch, pain and temperature information. Each is laid out as a map of the body, the \"homunculus,\" with large areas for the hands and face. The **visual cortex** is in the occipital lobe and the **auditory cortex** in the temporal lobe. In most people, two areas in the left hemisphere handle language. **Broca's area**, in the frontal lobe, is needed to produce speech. Damage causes slow, effortful speech with understanding intact. **Wernicke's area**, in the temporal lobe, is needed to understand language. Damage causes fluent speech that has little meaning, and poor comprehension.\n\nBecause the pathways cross, a stroke in the left motor cortex causes weakness on the right side of the body. The man in the opening case, who understands but cannot form words and has a weak right arm, has probably had damage to the left frontal lobe, involving Broca's area and the adjacent motor cortex, for example through blockage of the left middle cerebral artery.\n\nDeeper structures have specific roles. The **thalamus** relays sensory information to the cortex. The **hypothalamus** controls temperature, hunger, thirst, and hormones through the pituitary. The **limbic system**, including the amygdala and hippocampus, is involved in emotion and memory; damage to the hippocampus makes it hard to form new memories. The **cerebellum** coordinates movement. Damage causes ataxia, a staggering, unsteady gait, and a tremor on intended movement. The **brainstem** controls vital functions: the medulla regulates the heart and breathing, the pons relays signals and helps regulate breathing, and the midbrain controls some eye movements and reflexes. Because the brainstem controls breathing, its destruction is the basis for the legal definition of brain death.\n\nThe peripheral nervous system has twelve pairs of cranial nerves and thirty-one pairs of spinal nerves. The autonomic division works through two branches that usually have opposite effects. The sympathetic branch dilates the pupils, speeds up the heart, widens the airways, slows digestion and relaxes the bladder. The parasympathetic branch constricts the pupils, slows the heart, stimulates digestion and contracts the bladder. In health, the balance shifts according to the situation. Interpreting symptoms as a map of damage is the central skill of clinical neurology."
+   },
+   "cards": [
+    {
+     "front": "Primary motor cortex",
+     "back": "The area in the frontal lobe that sends signals for voluntary movement."
+    },
+    {
+     "front": "Primary somatosensory cortex",
+     "back": "The area in the parietal lobe that receives touch and pain information."
+    },
+    {
+     "front": "Broca's area",
+     "back": "The frontal lobe area needed to produce speech."
+    },
+    {
+     "front": "Wernicke's area",
+     "back": "The temporal lobe area needed to understand language."
+    },
+    {
+     "front": "Hippocampus",
+     "back": "A limbic structure needed to form new memories."
+    },
+    {
+     "front": "Ataxia",
+     "back": "Unsteady, uncoordinated movement, often from cerebellar damage."
+    },
+    {
+     "front": "Brain death",
+     "back": "Permanent loss of all brain function, including the brainstem."
+    },
+    {
+     "front": "Homunculus",
+     "back": "A map of the body on the motor or sensory cortex."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A person understands speech but cannot form words. Damage is most likely in:",
+     "options": [
+      "Wernicke's area",
+      "Broca's area",
+      "The occipital lobe",
+      "The cerebellum"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A stroke in the left motor cortex causes weakness on the:",
+     "options": [
+      "Left side",
+      "Right side",
+      "Both sides",
+      "Neither side"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A patient staggers when walking and has a tremor when reaching for a cup. Which structure is most likely damaged?",
+     "options": [
+      "Hippocampus",
+      "Cerebellum",
+      "Thalamus",
+      "Occipital lobe"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Damage to the hippocampus most affects:",
+     "options": [
+      "Vision",
+      "Forming new memories",
+      "Breathing",
+      "Balance"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which action is a parasympathetic effect?",
+     "options": [
+      "Dilating the pupils",
+      "Speeding up the heart",
+      "Stimulating digestion",
+      "Widening the airways"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A woman has a stroke. Afterward she speaks fluently but her sentences make no sense, and she cannot understand what is said to her. Her movement is normal. Identify the area most likely damaged, the hemisphere and lobe, and contrast her speech problem with that caused by damage to Broca's area.",
+     "markScheme": [
+      "Identifies Wernicke's area",
+      "Locates it in the temporal lobe of the left hemisphere",
+      "Describes Wernicke's damage as fluent but meaningless speech with poor comprehension",
+      "Contrasts with Broca's damage, which causes slow, effortful speech with comprehension intact"
+     ],
+     "modelAnswer": "The damage is most likely in Wernicke's area, in the temporal lobe of the left hemisphere. This causes fluent speech that makes little sense and poor comprehension. In contrast, damage to Broca's area in the frontal lobe causes slow, effortful speech with comprehension intact.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It is Wernicke's area. It is in the temporal lobe of the left hemisphere. Damage there gives fluent speech that doesn't mean anything and she can't understand others. With Broca's area damage, speech is slow and effortful but the person understands.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is Wernicke's area."
+        },
+        {
+         "point": 1,
+         "quote": "It is in the temporal lobe of the left hemisphere."
+        },
+        {
+         "point": 2,
+         "quote": "Damage there gives fluent speech that doesn't mean anything and she can't understand others."
+        },
+        {
+         "point": 3,
+         "quote": "With Broca's area damage, speech is slow and effortful but the person understands."
+        }
+       ],
+       "feedback": "Full marks. The contrast between the two aphasias is clear."
+      },
+      {
+       "tier": "full",
+       "text": "Wernicke's area is the likely site. It's in the left temporal lobe for most people. Patients speak smoothly but with nonsense words and don't comprehend. In Broca's aphasia comprehension is intact but speech is halting.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Wernicke's area is the likely site."
+        },
+        {
+         "point": 1,
+         "quote": "It's in the left temporal lobe for most people."
+        },
+        {
+         "point": 2,
+         "quote": "Patients speak smoothly but with nonsense words and don't comprehend."
+        },
+        {
+         "point": 3,
+         "quote": "In Broca's aphasia comprehension is intact but speech is halting."
+        }
+       ],
+       "feedback": "All four marks, with the correct hemisphere and lobe."
+      },
+      {
+       "tier": "partial",
+       "text": "Wernicke's area. Speech is fluent but does not make sense.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Wernicke's area."
+        },
+        {
+         "point": 2,
+         "quote": "Speech is fluent but does not make sense."
+        }
+       ],
+       "feedback": "Say where it is, and contrast with the effects of damage to Broca's area."
+      },
+      {
+       "tier": "partial",
+       "text": "The temporal lobe. Broca's damage gives slow speech. The damage is in Broca's area.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The temporal lobe."
+        },
+        {
+         "point": 3,
+         "quote": "Broca's damage gives slow speech."
+        }
+       ],
+       "feedback": "Her comprehension is poor and her speech is fluent, which points to Wernicke's area, not Broca's.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is the cerebellum, because that controls speech and walking.",
+       "meets": [],
+       "feedback": "The cerebellum coordinates movement. Language depends on areas of the cortex: Wernicke's area and Broca's area."
+      },
+      {
+       "tier": "weak",
+       "text": "Her speech is fluent but meaningless. The occipital lobe is damaged, as it is the part that deals with words.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Her speech is fluent but meaningless."
+        }
+       ],
+       "feedback": "The occipital lobe processes vision. Comprehension of language is in Wernicke's area in the temporal lobe."
+      }
+     ]
+    },
+    {
+     "prompt": "A cyclist hits their head and is found unresponsive and not breathing on their own. A scan shows damage to the base of the brain. Which structure is most likely involved, and why does its damage matter for the legal definition of brain death?",
+     "markScheme": [
+      "Identifies the brainstem (medulla)",
+      "States that the medulla controls breathing and heart rate",
+      "States that damage can stop spontaneous breathing, so the person cannot survive without support",
+      "States that brain death includes irreversible loss of brainstem function, including the drive to breathe"
+     ],
+     "modelAnswer": "The brainstem, especially the medulla, is most likely involved. The medulla controls breathing and heart rate. Its damage stops spontaneous breathing, so the person cannot survive without a ventilator. Brain death is defined as the irreversible loss of all brain function, including the brainstem and its drive to breathe.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It's the brainstem, the medulla. The medulla controls breathing and heart rate. If it's damaged the person can't breathe on their own and needs a ventilator. Brain death means the irreversible loss of all brain function, including the brainstem and the drive to breathe.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It's the brainstem, the medulla."
+        },
+        {
+         "point": 1,
+         "quote": "The medulla controls breathing and heart rate."
+        },
+        {
+         "point": 2,
+         "quote": "If it's damaged the person can't breathe on their own and needs a ventilator."
+        },
+        {
+         "point": 3,
+         "quote": "Brain death means the irreversible loss of all brain function, including the brainstem and the drive to breathe."
+        }
+       ],
+       "feedback": "Full marks. You linked the structure to its vital role and to the definition."
+      },
+      {
+       "tier": "full",
+       "text": "Brainstem damage, especially the medulla oblongata. It runs the vital automatic functions of breathing and cardiovascular control. Without it spontaneous breathing stops. Because of this, loss of brainstem function is part of the criteria for brain death.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Brainstem damage, especially the medulla oblongata."
+        },
+        {
+         "point": 1,
+         "quote": "It runs the vital automatic functions of breathing and cardiovascular control."
+        },
+        {
+         "point": 2,
+         "quote": "Without it spontaneous breathing stops."
+        },
+        {
+         "point": 3,
+         "quote": "Because of this, loss of brainstem function is part of the criteria for brain death."
+        }
+       ],
+       "feedback": "All four marks, with careful wording."
+      },
+      {
+       "tier": "partial",
+       "text": "The brainstem. They can't breathe on their own.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The brainstem."
+        },
+        {
+         "point": 2,
+         "quote": "They can't breathe on their own."
+        }
+       ],
+       "feedback": "Name the medulla and its functions, and explain the link to brain death."
+      },
+      {
+       "tier": "partial",
+       "text": "The medulla controls breathing. Brain death is when the cerebrum stops working.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The medulla controls breathing."
+        },
+        {
+         "point": 3,
+         "quote": "Brain death is when the cerebrum stops working."
+        }
+       ],
+       "feedback": "Brain death includes loss of the brainstem too, not only the cerebrum. Name the structure and explain the breathing problem.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The cerebellum is damaged, and that is why the person cannot think or breathe.",
+       "meets": [],
+       "feedback": "The cerebellum coordinates movement. Breathing is controlled by the medulla in the brainstem."
+      },
+      {
+       "tier": "weak",
+       "text": "Brain death is when the brain stops working. The frontal lobe controls breathing and so it was damaged.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Brain death is when the brain stops working."
+        }
+       ],
+       "feedback": "The frontal lobe handles planning and voluntary movement. Breathing is controlled by the brainstem."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

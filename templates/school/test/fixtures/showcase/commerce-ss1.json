@@ -1547,16 +1547,16 @@
           "prompt": "The records of Mrs Obi's shop in Bodija market for the year show: stock N600,000, debtors N250,000, cash N150,000, creditors N400,000. She sold 5,000 items at N500 each. The cost of the goods sold was N1,800,000 and her expenses were N400,000. Calculate (a) the working capital, (b) the turnover, (c) the gross profit, (d) the net profit. (e) State one reason why working capital is important.",
           "markScheme": [
             "Working capital = (600,000 + 250,000 + 150,000) - 400,000 = N600,000",
-            "Turnover = 5,000 x 500 = N2,500,000",
+            "Turnover = 5,000 x 500 = $\\ce{N2}$,500,000",
             "Gross profit = 2,500,000 - 1,800,000 = N700,000",
             "Net profit = 700,000 - 400,000 = N300,000",
             "Working capital lets the business pay its short-term debts and keep trading"
           ],
-          "modelAnswer": "(a) Current assets = 600,000 + 250,000 + 150,000 = N1,000,000. Working capital = 1,000,000 - 400,000 = N600,000. (b) Turnover = 5,000 x N500 = N2,500,000. (c) Gross profit = 2,500,000 - 1,800,000 = N700,000. (d) Net profit = 700,000 - 400,000 = N300,000. (e) Working capital shows whether the shop can pay its short-term debts and keep buying stock.",
+          "modelAnswer": "(a) Current assets = 600,000 + 250,000 + 150,000 = N1,000,000. Working capital = 1,000,000 - 400,000 = N600,000. (b) Turnover = 5,000 x N500 = $\\ce{N2}$,500,000. (c) Gross profit = 2,500,000 - 1,800,000 = N700,000. (d) Net profit = 700,000 - 400,000 = N300,000. (e) Working capital shows whether the shop can pay its short-term debts and keep buying stock.",
           "answers": [
             {
               "tier": "full",
-              "text": "(a) Current assets = 600,000 + 250,000 + 150,000 = 1,000,000. Working capital = 1,000,000 - 400,000 = N600,000. (b) Turnover = 5,000 x 500 = N2,500,000. (c) Gross profit = 2,500,000 - 1,800,000 = N700,000. (d) Net profit = 700,000 - 400,000 = N300,000. (e) It helps the shop pay its debts that are due soon.",
+              "text": "(a) Current assets = 600,000 + 250,000 + 150,000 = 1,000,000. Working capital = 1,000,000 - 400,000 = N600,000. (b) Turnover = 5,000 x 500 = $\\ce{N2}$,500,000. (c) Gross profit = 2,500,000 - 1,800,000 = N700,000. (d) Net profit = 700,000 - 400,000 = N300,000. (e) It helps the shop pay its debts that are due soon.",
               "meets": [
                 {
                   "point": 0,
@@ -1564,7 +1564,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Turnover = 5,000 x 500 = N2,500,000"
+                  "quote": "Turnover = 5,000 x 500 = $\\ce{N2}$,500,000"
                 },
                 {
                   "point": 2,
@@ -1583,7 +1583,7 @@
             },
             {
               "tier": "full",
-              "text": "(a) WC = (600,000 + 250,000 + 150,000) - 400,000 = N600,000. (b) Turnover = 5000 x N500 = N2,500,000. (c) GP = 2,500,000 - 1,800,000 = N700,000. (d) NP = 700,000 - 400,000 = N300,000. (e) Without working capital the shop cannot pay creditors and buy new stock, so it could stop trading.",
+              "text": "(a) WC = (600,000 + 250,000 + 150,000) - 400,000 = N600,000. (b) Turnover = 5000 x N500 = $\\ce{N2}$,500,000. (c) GP = 2,500,000 - 1,800,000 = N700,000. (d) NP = 700,000 - 400,000 = N300,000. (e) Without working capital the shop cannot pay creditors and buy new stock, so it could stop trading.",
               "meets": [
                 {
                   "point": 0,
@@ -1591,7 +1591,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Turnover = 5000 x N500 = N2,500,000"
+                  "quote": "Turnover = 5000 x N500 = $\\ce{N2}$,500,000"
                 },
                 {
                   "point": 2,
@@ -1610,7 +1610,7 @@
             },
             {
               "tier": "partial",
-              "text": "(a) Working capital = 1,000,000 - 400,000 = N600,000. (b) Turnover = 5,000 x 500 = N2,500,000. (c) Gross profit = 2,500,000 - 400,000 = N2,100,000. (d) Net profit = 2,100,000 - 1,800,000 = N300,000. (e) It is a type of capital.",
+              "text": "(a) Working capital = 1,000,000 - 400,000 = N600,000. (b) Turnover = 5,000 x 500 = $\\ce{N2}$,500,000. (c) Gross profit = 2,500,000 - 400,000 = $\\ce{N2}$,100,000. (d) Net profit = 2,100,000 - 1,800,000 = N300,000. (e) It is a type of capital.",
               "meets": [
                 {
                   "point": 0,
@@ -1618,18 +1618,18 @@
                 },
                 {
                   "point": 1,
-                  "quote": "Turnover = 5,000 x 500 = N2,500,000"
+                  "quote": "Turnover = 5,000 x 500 = $\\ce{N2}$,500,000"
                 }
               ],
               "feedback": "Parts (a) and (b) are right. For gross profit, subtract the cost of goods sold (1,800,000), not the expenses. Then subtract expenses for net profit. Part (e) must say why: to pay short-term debts."
             },
             {
               "tier": "partial",
-              "text": "(a) Working capital = 600,000 + 250,000 + 150,000 + 400,000 = N1,400,000. (b) Turnover = 5,000 x 500 = N2,500,000. (c) Gross profit = 2,500,000 - 1,800,000 = N700,000. (d) Net profit = 700,000 - 400,000 = N300,000. (e) To pay short-term debts.",
+              "text": "(a) Working capital = 600,000 + 250,000 + 150,000 + 400,000 = N1,400,000. (b) Turnover = 5,000 x 500 = $\\ce{N2}$,500,000. (c) Gross profit = 2,500,000 - 1,800,000 = N700,000. (d) Net profit = 700,000 - 400,000 = N300,000. (e) To pay short-term debts.",
               "meets": [
                 {
                   "point": 1,
-                  "quote": "Turnover = 5,000 x 500 = N2,500,000"
+                  "quote": "Turnover = 5,000 x 500 = $\\ce{N2}$,500,000"
                 },
                 {
                   "point": 2,
@@ -1654,11 +1654,11 @@
             },
             {
               "tier": "weak",
-              "text": "(a) Working capital = N1,000,000. (b) Turnover = 5,000 x 500 = N2,500,000. (c) Gross profit is N2,500,000. (d) Net profit is N300,000. (e) It is important.",
+              "text": "(a) Working capital = N1,000,000. (b) Turnover = 5,000 x 500 = $\\ce{N2}$,500,000. (c) Gross profit is $\\ce{N2}$,500,000. (d) Net profit is N300,000. (e) It is important.",
               "meets": [
                 {
                   "point": 1,
-                  "quote": "Turnover = 5,000 x 500 = N2,500,000"
+                  "quote": "Turnover = 5,000 x 500 = $\\ce{N2}$,500,000"
                 }
               ],
               "feedback": "Your turnover is correct. Working capital is current assets (1,000,000) minus creditors (400,000) = N600,000. Gross profit takes away the cost of goods sold, and your last answer needs a reason."
@@ -2678,7 +2678,7 @@
           "answer": "B"
         },
         {
-          "prompt": "A buyer returns 10 damaged cartons that were billed at N2,000 each. The seller sends a document reducing the buyer's debt by N20,000. This is a",
+          "prompt": "A buyer returns 10 damaged cartons that were billed at $\\ce{N2}$,000 each. The seller sends a document reducing the buyer's debt by N20,000. This is a",
           "options": [
             "debit note",
             "proforma invoice",

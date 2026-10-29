@@ -1,3 +1,5 @@
+import { getOrgSetting } from "@agent-native/core/settings";
+import { schoolWords } from "../../shared/school-words.js";
 import { actorForEmail } from "./class-access.js";
 import { capabilitiesFor, helpRoleOf } from "../../shared/capabilities.js";
 import { confidentAnswer } from "../../shared/help-search.js";
@@ -19,8 +21,10 @@ export async function freeHelpReply(
   const role = helpRoleOf(actor?.schoolRole);
   if (!actor || !role || role === "student") return null;
 
+  const config = await getOrgSetting(actor.schoolId, "school-config");
   const caps = capabilitiesFor(role, {
     coordinator: actor.schoolRole === "subject_coordinator",
+    words: schoolWords(config as any),
   });
   const hit = confidentAnswer(message, caps);
   if (!hit) return null;

@@ -1458,11 +1458,11 @@
             },
             {
               "tier": "full",
-              "text": "Fixation: atmospheric N2 is converted to compounds by Azotobacter, by Rhizobium in legume nodules, and by lightning. Assimilation: nitrates are absorbed and built into plant protein, passed on in food chains. Ammonification: decomposers turn dead matter and urine into ammonia. Nitrification: Nitrosomonas (ammonia to nitrite), Nitrobacter (nitrite to nitrate). Denitrification: Pseudomonas releases N2 from nitrates. Legumes are planted before maize because their nodules leave the soil richer in nitrates.",
+              "text": "Fixation: atmospheric $\\ce{N2}$ is converted to compounds by Azotobacter, by Rhizobium in legume nodules, and by lightning. Assimilation: nitrates are absorbed and built into plant protein, passed on in food chains. Ammonification: decomposers turn dead matter and urine into ammonia. Nitrification: Nitrosomonas (ammonia to nitrite), Nitrobacter (nitrite to nitrate). Denitrification: Pseudomonas releases $\\ce{N2}$ from nitrates. Legumes are planted before maize because their nodules leave the soil richer in nitrates.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "atmospheric N2 is converted to compounds by Azotobacter, by Rhizobium in legume nodules, and by lightning"
+                  "quote": "atmospheric $\\ce{N2}$ is converted to compounds by Azotobacter, by Rhizobium in legume nodules, and by lightning"
                 },
                 {
                   "point": 1,
@@ -1478,7 +1478,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "Pseudomonas releases N2 from nitrates"
+                  "quote": "Pseudomonas releases $\\ce{N2}$ from nitrates"
                 },
                 {
                   "point": 5,
@@ -1581,7 +1581,7 @@
             },
             {
               "tier": "full",
-              "text": "Placenta: richly supplied with blood and has numerous villi for a large exchange surface; nutrients and oxygen diffuse to the foetus while CO2 and nitrogenous wastes go to the mother; maternal and foetal blood remain separate, so the mother's high blood pressure does not harm the foetus. Umbilical cord: carries the umbilical artery and vein. Amnion: fluid-filled sac acting as a shock absorber. Oviparity is egg-laying, as in the hen; viviparity, as in the rat, means the embryo develops in the uterus and is born alive.",
+              "text": "Placenta: richly supplied with blood and has numerous villi for a large exchange surface; nutrients and oxygen diffuse to the foetus while $\\ce{CO2}$ and nitrogenous wastes go to the mother; maternal and foetal blood remain separate, so the mother's high blood pressure does not harm the foetus. Umbilical cord: carries the umbilical artery and vein. Amnion: fluid-filled sac acting as a shock absorber. Oviparity is egg-laying, as in the hen; viviparity, as in the rat, means the embryo develops in the uterus and is born alive.",
               "meets": [
                 {
                   "point": 0,
@@ -1589,7 +1589,7 @@
                 },
                 {
                   "point": 1,
-                  "quote": "nutrients and oxygen diffuse to the foetus while CO2 and nitrogenous wastes go to the mother"
+                  "quote": "nutrients and oxygen diffuse to the foetus while $\\ce{CO2}$ and nitrogenous wastes go to the mother"
                 },
                 {
                   "point": 2,
@@ -1949,11 +1949,11 @@
           "answers": [
             {
               "tier": "full",
-              "text": "CO2 in air → photosynthesis by plants → carbohydrates in plants → eaten by animals. Plants and animals respire and give back CO2. Dead plants and animals decay by bacteria and fungi and release CO2. Burning of wood and petrol also releases CO2. Bush burning puts a lot of CO2 into the air, and cutting down forests means fewer trees to take in CO2 by photosynthesis, so the CO2 in the air increases.",
+              "text": "$\\ce{CO2}$ in air → photosynthesis by plants → carbohydrates in plants → eaten by animals. Plants and animals respire and give back $\\ce{CO2}$. Dead plants and animals decay by bacteria and fungi and release $\\ce{CO2}$. Burning of wood and petrol also releases $\\ce{CO2}$. Bush burning puts a lot of $\\ce{CO2}$ into the air, and cutting down forests means fewer trees to take in $\\ce{CO2}$ by photosynthesis, so the $\\ce{CO2}$ in the air increases.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "CO2 in air → photosynthesis by plants → carbohydrates in plants"
+                  "quote": "$\\ce{CO2}$ in air → photosynthesis by plants → carbohydrates in plants"
                 },
                 {
                   "point": 1,
@@ -1961,30 +1961,30 @@
                 },
                 {
                   "point": 2,
-                  "quote": "Plants and animals respire and give back CO2"
+                  "quote": "Plants and animals respire and give back $\\ce{CO2}$"
                 },
                 {
                   "point": 3,
-                  "quote": "Dead plants and animals decay by bacteria and fungi and release CO2"
+                  "quote": "Dead plants and animals decay by bacteria and fungi and release $\\ce{CO2}$"
                 },
                 {
                   "point": 4,
-                  "quote": "Burning of wood and petrol also releases CO2"
+                  "quote": "Burning of wood and petrol also releases $\\ce{CO2}$"
                 },
                 {
                   "point": 5,
-                  "quote": "Bush burning puts a lot of CO2 into the air, and cutting down forests means fewer trees to take in CO2 by photosynthesis, so the CO2 in the air increases"
+                  "quote": "Bush burning puts a lot of $\\ce{CO2}$ into the air, and cutting down forests means fewer trees to take in $\\ce{CO2}$ by photosynthesis, so the $\\ce{CO2}$ in the air increases"
                 }
               ],
               "feedback": "The whole cycle in a clear order, with a sound explanation of the human effects. Excellent."
             },
             {
               "tier": "full",
-              "text": "Removal: photosynthesis fixes atmospheric CO2 into sugars. Transfer: carbon moves to herbivores and carnivores through feeding. Return: respiration by all organisms; decomposition of dead matter by saprophytes; combustion of firewood and fossil fuels. Bush burning releases stored carbon quickly as CO2, while deforestation reduces photosynthesis, so less CO2 is removed and less oxygen released; the balance shifts and carbon dioxide builds up.",
+              "text": "Removal: photosynthesis fixes atmospheric $\\ce{CO2}$ into sugars. Transfer: carbon moves to herbivores and carnivores through feeding. Return: respiration by all organisms; decomposition of dead matter by saprophytes; combustion of firewood and fossil fuels. Bush burning releases stored carbon quickly as $\\ce{CO2}$, while deforestation reduces photosynthesis, so less $\\ce{CO2}$ is removed and less oxygen released; the balance shifts and carbon dioxide builds up.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "photosynthesis fixes atmospheric CO2 into sugars"
+                  "quote": "photosynthesis fixes atmospheric $\\ce{CO2}$ into sugars"
                 },
                 {
                   "point": 1,
@@ -2004,7 +2004,7 @@
                 },
                 {
                   "point": 5,
-                  "quote": "Bush burning releases stored carbon quickly as CO2, while deforestation reduces photosynthesis, so less CO2 is removed and less oxygen released"
+                  "quote": "Bush burning releases stored carbon quickly as $\\ce{CO2}$, while deforestation reduces photosynthesis, so less $\\ce{CO2}$ is removed and less oxygen released"
                 }
               ],
               "feedback": "Complete and well structured under removal, transfer and return."
@@ -2030,11 +2030,11 @@
             },
             {
               "tier": "partial",
-              "text": "Photosynthesis removes CO2. Respiration, decay and burning add CO2. Animals get carbon by eating plants. Bush burning destroys the soil.",
+              "text": "Photosynthesis removes $\\ce{CO2}$. Respiration, decay and burning add $\\ce{CO2}$. Animals get carbon by eating plants. Bush burning destroys the soil.",
               "meets": [
                 {
                   "point": 0,
-                  "quote": "Photosynthesis removes CO2"
+                  "quote": "Photosynthesis removes $\\ce{CO2}$"
                 },
                 {
                   "point": 1,
@@ -2050,7 +2050,7 @@
                 },
                 {
                   "point": 4,
-                  "quote": "burning add CO2"
+                  "quote": "burning add $\\ce{CO2}$"
                 }
               ],
               "feedback": "Your cycle is complete. The last part asks how bush burning and deforestation affect carbon dioxide: burning releases it, and losing forests means less is removed by photosynthesis.",
@@ -2074,7 +2074,7 @@
     },
     "8": {
       "topic": "Gas exchange experiments, tolerance, and the physical factors of habitats",
-      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe experiments showing that carbon dioxide is absorbed and oxygen released in photosynthesis;\n2. describe experiments showing that expired air contains water and that respiration gives off water;\n3. explain the range of tolerance and determine the limit of tolerance of an organism to salt or temperature;\n4. measure temperature, salinity, light, turbidity, current and pH in aquatic habitats;\n5. describe the distribution, dominant types and seasonal changes in terrestrial habitats (marsh, forest, grassland, arid land) and measure their physical factors;\n6. explain how predators keep prey populations in dynamic equilibrium.\n\n## Materials\n\nElodea (water weed) or Spirogyra in a beaker under a funnel and test tube, a glowing splint, sodium hydrogen carbonate solution, bicarbonate indicator, anhydrous copper sulphate (white), a cold mirror, a Secchi disc, a thermometer, pH paper, a light meter, Tilapia fingerlings in four bowls of 0%, 1%, 2% and 3% salt solution (set up the day before), woodlice and a temperature gradient box.\n\n## Starter (5 minutes)\n\nPupils breathe on a cold mirror. Ask: what is the mist, and where did it come from?\n\n## Development\n\n1. Show the Elodea set-up. Count bubbles in bright and dim light. Test the collected gas with a glowing splint.\n2. Show leaves in bicarbonate indicator in light (purple: CO2 absorbed) and dark (yellow: CO2 released).\n3. Put anhydrous copper sulphate on the misted mirror: white to blue shows water. Explain water as a product of respiration.\n4. Count the surviving fingerlings in each salt bowl. Explain minimum, optimum, maximum and range of tolerance.\n5. Demonstrate the instruments for aquatic factors: thermometer, hydrometer (salinity), Secchi disc (turbidity), floating object timed over a distance (current), pH paper.\n6. Compare the habitats: mangrove marsh, rain forest, Guinea savanna, Sahel. Discuss dominant plants and seasonal changes.\n7. Explain predator-prey cycles and dynamic equilibrium using hawks and rats.\n\n## Class activity\n\nGroups record the tolerance results in a table and identify the limit of tolerance.\n\n## Evaluation\n\n1. What does a Secchi disc measure?\n2. Why did the gas collected over the water weed relight a glowing splint?\n\n## Assignment\n\nRevise for the quiz on Monday.",
+      "lessonNote": "## Objectives\n\nBy the end of the lesson, students should be able to:\n\n1. describe experiments showing that carbon dioxide is absorbed and oxygen released in photosynthesis;\n2. describe experiments showing that expired air contains water and that respiration gives off water;\n3. explain the range of tolerance and determine the limit of tolerance of an organism to salt or temperature;\n4. measure temperature, salinity, light, turbidity, current and pH in aquatic habitats;\n5. describe the distribution, dominant types and seasonal changes in terrestrial habitats (marsh, forest, grassland, arid land) and measure their physical factors;\n6. explain how predators keep prey populations in dynamic equilibrium.\n\n## Materials\n\nElodea (water weed) or Spirogyra in a beaker under a funnel and test tube, a glowing splint, sodium hydrogen carbonate solution, bicarbonate indicator, anhydrous copper sulphate (white), a cold mirror, a Secchi disc, a thermometer, pH paper, a light meter, Tilapia fingerlings in four bowls of 0%, 1%, 2% and 3% salt solution (set up the day before), woodlice and a temperature gradient box.\n\n## Starter (5 minutes)\n\nPupils breathe on a cold mirror. Ask: what is the mist, and where did it come from?\n\n## Development\n\n1. Show the Elodea set-up. Count bubbles in bright and dim light. Test the collected gas with a glowing splint.\n2. Show leaves in bicarbonate indicator in light (purple: $\\ce{CO2}$ absorbed) and dark (yellow: $\\ce{CO2}$ released).\n3. Put anhydrous copper sulphate on the misted mirror: white to blue shows water. Explain water as a product of respiration.\n4. Count the surviving fingerlings in each salt bowl. Explain minimum, optimum, maximum and range of tolerance.\n5. Demonstrate the instruments for aquatic factors: thermometer, hydrometer (salinity), Secchi disc (turbidity), floating object timed over a distance (current), pH paper.\n6. Compare the habitats: mangrove marsh, rain forest, Guinea savanna, Sahel. Discuss dominant plants and seasonal changes.\n7. Explain predator-prey cycles and dynamic equilibrium using hawks and rats.\n\n## Class activity\n\nGroups record the tolerance results in a table and identify the limit of tolerance.\n\n## Evaluation\n\n1. What does a Secchi disc measure?\n2. Why did the gas collected over the water weed relight a glowing splint?\n\n## Assignment\n\nRevise for the quiz on Monday.",
       "reading": {
         "title": "Gases, tolerance and the conditions of habitats",
         "content": "# Photosynthesis exchanges gases\n\n**Oxygen is released.** Put Elodea in water containing a little sodium hydrogen carbonate (to supply carbon dioxide), under an inverted funnel with a test tube of water over its stem. In bright light, bubbles rise and collect. The gas **relights a glowing splint**: it is oxygen. Fewer bubbles form in dim light.\n\n**Carbon dioxide is absorbed.** Leaves in red bicarbonate indicator turn it **purple** in light (carbon dioxide removed by photosynthesis) and **yellow** in darkness (carbon dioxide added by respiration).\n\n# Respiration gives off water\n\nBreathe on a cold mirror: it mists. Add white **anhydrous copper sulphate**: it turns **blue**, showing water. Water is a product of aerobic respiration (glucose + oxygen → carbon dioxide + water + energy). Water is also vital to living things as a solvent, for transport, for cooling, and as a raw material for photosynthesis. The **water cycle** returns it to the land as rain.\n\n# Tolerance\n\nEvery organism can survive only within a range of each factor: its **range of tolerance**, between a **minimum** and a **maximum**. The best value is the **optimum**.\n\n**Worked example.** Ten Tilapia fingerlings were put in each of five bowls for 24 hours:\n\n| Salt (%) | 0 | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- | --- |\n| Survivors | 10 | 10 | 7 | 2 | 0 |\n\nThe fish tolerate up to 1% fully; 4% is beyond their maximum. Their **limit of tolerance** lies between 3% and 4% salt. Woodlice in a temperature gradient box gather where it is cool and damp and avoid the hot end.\n\n# Physical factors of aquatic habitats\n\n| Factor | How it is measured |\n| --- | --- |\n| Temperature | thermometer |\n| Salinity | hydrometer, or evaporate a known volume and weigh the salt |\n| Light intensity | light meter |\n| Turbidity (cloudiness) | Secchi disc: lowered until it just disappears; the depth is read |\n| Current | time a floating object over a measured distance |\n| pH | pH paper or meter |\n\nHabitats differ: **marine** (high salinity, waves), **estuarine** (salinity changes with tides, as in the Lagos lagoon; mangroves), and **fresh water** (low salinity; rivers and ponds).\n\n# Terrestrial habitats\n\n- **Marsh / swamp**: waterlogged; mangroves and raffia palms with breathing roots.\n- **Rain forest**: high rainfall and humidity; tall trees in layers; little light at the floor.\n- **Grassland (savanna)**: seasonal rainfall; grasses dominant with scattered trees; grass dries and burns in the dry season.\n- **Arid land (Sahel)**: low rainfall; few drought-resistant plants and animals.\n\nTemperature, relative humidity, light, wind and soil pH are measured with a thermometer, hygrometer, light meter, anemometer and pH paper. Seasonal changes, such as the harmattan, change both the factors and the populations.\n\n# Predators and prey\n\nWhen rats increase, hawks have more food and increase too. More hawks eat more rats, so the rats fall; then the hawks, short of food, fall; and the rats rise again. The two populations rise and fall around steady averages: a **dynamic equilibrium**. Carnivores thus keep prey populations from growing out of control."

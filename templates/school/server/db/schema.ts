@@ -98,6 +98,11 @@ export const subjects = table("subjects", {
   // Which assessment style this subject's questions follow. Null = none, and
   // questions are drafted without any house habits.
   assessmentStyleId: text("assessment_style_id"),
+  // A named level from the school's courseLevels (Honors, AP) that weights
+  // this subject's GPA. Null: a standard course.
+  courseLevel: text("course_level"),
+  // Credit the course earns, as a number in text ("0.5", "1"). Null: one credit.
+  credits: text("credits"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),

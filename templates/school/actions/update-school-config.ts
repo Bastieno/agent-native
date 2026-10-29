@@ -43,12 +43,34 @@ export default defineAction({
             min: z.number(),
             max: z.number(),
             label: z.string().optional(),
+            points: z.coerce
+              .number()
+              .optional()
+              .describe(
+                "Grade points for this grade on the school's own scale (4.0 for an A on a four-point scale). Give them on every level to switch GPA on; leave them off and no GPA is shown.",
+              ),
           }),
         ),
       }),
     )
       .optional()
       .describe("Grading scale definition"),
+    courseLevels: jsonish(
+      z.array(
+        z.object({
+          name: z.string().describe("e.g. 'Honors', 'AP'"),
+          bonus: z.coerce
+            .number()
+            .describe(
+              "Added to the grade points of a course at this level, when it earned any: 0.5 for Honors, 1 for AP is usual.",
+            ),
+        }),
+      ),
+    )
+      .optional()
+      .describe(
+        "Course levels that weight the GPA. Sets the whole list; give each subject its level with update-subject. Only matters when the grading scale has points.",
+      ),
     termStructure: z
       .enum(["semesters", "terms", "quarters"])
       .optional()
@@ -106,6 +128,12 @@ export default defineAction({
             .optional()
             .describe(
               "Only this term. Omit when the week falls the same way in every term.",
+            ),
+          kind: z
+            .enum(["break", "revision", "assessment", "exam"])
+            .optional()
+            .describe(
+              "What the week means for lessons: break (none, e.g. mid-term break, half-term, spring break), revision (lessons are for revising), assessment (a test week), exam (examinations). Omit and it is read from the label.",
             ),
         }),
       ),

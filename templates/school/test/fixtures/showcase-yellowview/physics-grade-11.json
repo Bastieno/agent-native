@@ -1,0 +1,2862 @@
+{
+ "subject": "Physics",
+ "yearGroup": "Grade 11",
+ "weeks": {
+  "1": {
+   "topic": "Measurement, graphs and describing motion",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. design an investigation, collect data with uncertainty and graph it with a line of best fit;\n2. communicate the results of a motion investigation in a short lab report;\n3. distinguish distance from displacement and speed from velocity, and calculate each.\n\n## Materials\n\nMeter sticks, stopwatches, masking tape, graph paper, a toy car or battery cart, the practical sheet.\n\n## Starter (7 minutes)\n\nAsk a student to walk 4 floor tiles east and then 3 tiles back west. Ask: \"How far did they walk? How far from where they started are they?\" Put the two answers on the board and name them distance and displacement.\n\n## Main activity\n\n1. Define distance (a scalar, total path length) and displacement (a vector, straight-line change in position with direction). Work the Columbus bus example: a bus goes 12 km north and then 5 km south in half an hour. The distance is 17 km, the displacement is 7 km north, the average speed is 34 km/h and the average velocity is 14 km/h north.\n2. Practical: in pairs, time a battery-powered car over 0.5, 1.0, 1.5, 2.0 and 2.5 m, three trials each, and record the spread of the times as the uncertainty.\n3. Plot position against time, draw a line of best fit and find the slope as the velocity.\n\n## Checking for understanding\n\nWhiteboards: a runner completes one 400 m lap in 80 s. State the average speed and the average velocity.\n\n## Collect\n\nThe graph and a four-sentence conclusion.",
+   "reading": {
+    "title": "Describing motion with numbers and graphs",
+    "content": "Physics begins with measurement. Any measurement has a number, a unit and an uncertainty. If three students time the same cart over a meter and get 2.1 s, 2.3 s and 2.2 s, the best estimate of the time is the mean, 2.2 s, and the spread of the readings suggests an uncertainty of about 0.1 s. A good result is written 2.2 plus or minus 0.1 s.\n\nGraphs reveal patterns that a table hides. When you plot position on the vertical axis against time on the horizontal axis, you draw a **line of best fit**, a smooth line that passes as close as possible to all the points and does not need to touch any of them. About half the points lie above it and half below. The **slope** of the line, the rise divided by the run, is the change in position per unit time, which is the velocity. A steeper line is a faster object. A horizontal line is an object at rest.\n\nBe careful with the words. **Distance** is the total length of the path traveled and has no direction, so it is a scalar. **Displacement** is the straight-line change in position from start to finish, and it has a direction, so it is a vector. Suppose a bus travels 12 km north and then 5 km south. The distance is 17 km, but the displacement is only 7 km north. Likewise, **speed** is distance divided by time, and **velocity** is displacement divided by time. If the bus takes half an hour, its average speed is 17 km divided by 0.5 h, or 34 km/h. Its average velocity is 7 km north divided by 0.5 h, which is 14 km/h north. On a 400 m track, a runner who finishes one lap has run 400 m but has zero displacement, so the average velocity for the lap is zero even though the average speed is not.\n\nWhen you report an investigation, write the lab report in order: the question, the method, the data table and graph, the analysis, and a conclusion. The conclusion should answer the question using numbers from the data, and should say how confident you are in the result given the uncertainty. A conclusion that says only \"the graph shows the car moves\" tells the reader nothing."
+   },
+   "cards": [
+    {
+     "front": "Distance",
+     "back": "The total length of the path traveled; a scalar."
+    },
+    {
+     "front": "Displacement",
+     "back": "The straight-line change in position, with direction; a vector."
+    },
+    {
+     "front": "Speed",
+     "back": "Distance divided by time."
+    },
+    {
+     "front": "Velocity",
+     "back": "Displacement divided by time, with direction."
+    },
+    {
+     "front": "Line of best fit",
+     "back": "A smooth line drawn to pass as close as possible to all the data points."
+    },
+    {
+     "front": "Slope",
+     "back": "Rise divided by run; on a position-time graph it equals the velocity."
+    },
+    {
+     "front": "Uncertainty",
+     "back": "The range of doubt in a measurement, such as plus or minus 0.1 s."
+    },
+    {
+     "front": "Scalar",
+     "back": "A quantity with size only, such as distance or speed."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A bus goes 12 km north and then 5 km south. What is its displacement?",
+     "options": [
+      "17 km north",
+      "7 km north",
+      "7 km south",
+      "60 km north"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A runner completes one 400 m lap in 80 s. What is the average velocity for the lap?",
+     "options": [
+      "5 m/s",
+      "0 m/s",
+      "400 m/s",
+      "80 m/s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "On a position-time graph, what does the slope of the line represent?",
+     "options": [
+      "Acceleration",
+      "Velocity",
+      "Distance",
+      "Mass"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Three timings of a cart are 2.1 s, 2.3 s and 2.2 s. What is the best estimate of the time?",
+     "options": [
+      "2.1 s",
+      "2.2 s",
+      "2.3 s",
+      "6.6 s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these is a vector?",
+     "options": [
+      "Distance",
+      "Speed",
+      "Displacement",
+      "Time"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A bus leaves a COTA stop, travels 12 km north, then 5 km south, and the whole trip takes 0.50 h. Calculate the distance, the displacement, the average speed and the average velocity.",
+     "markScheme": [
+      "Gives the distance as 17 km",
+      "Gives the displacement as 7 km north",
+      "Gives the average speed as 34 km/h",
+      "Gives the average velocity as 14 km/h north, with direction"
+     ],
+     "modelAnswer": "The distance is 12 + 5 = 17 km. The displacement is 12 - 5 = 7 km north. The average speed is 17 km / 0.50 h = 34 km/h. The average velocity is 7 km north / 0.50 h = 14 km/h north.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Distance is 12 + 5 = 17 km. Displacement is 12 − 5 = 7 km north. Average speed = 17/0.50 = 34 km/h. Average velocity = 7/0.50 = 14 km/h north.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Distance is 12 + 5 = 17 km."
+        },
+        {
+         "point": 1,
+         "quote": "Displacement is 12 − 5 = 7 km north."
+        },
+        {
+         "point": 2,
+         "quote": "Average speed = 17/0.50 = 34 km/h."
+        },
+        {
+         "point": 3,
+         "quote": "Average velocity = 7/0.50 = 14 km/h north."
+        }
+       ],
+       "feedback": "Full marks. You kept direction with the vector quantities and left it off the scalars."
+      },
+      {
+       "tier": "full",
+       "text": "It traveled 17 km in total. But it only ended up 7 km north of the start. Its speed is 34 km/h. Its velocity is 14 km/h in the north direction.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It traveled 17 km in total."
+        },
+        {
+         "point": 1,
+         "quote": "But it only ended up 7 km north of the start."
+        },
+        {
+         "point": 2,
+         "quote": "Its speed is 34 km/h."
+        },
+        {
+         "point": 3,
+         "quote": "Its velocity is 14 km/h in the north direction."
+        }
+       ],
+       "feedback": "All four marks, and the plain wording makes the difference between the pairs clear."
+      },
+      {
+       "tier": "partial",
+       "text": "The distance is 17 km. Average speed is 34 km/h. The displacement is 17 km and the velocity is 34 km/h.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The distance is 17 km."
+        },
+        {
+         "point": 2,
+         "quote": "Average speed is 34 km/h."
+        }
+       ],
+       "feedback": "Displacement is not total path. The bus came back 5 km, so it is 7 km north, and the velocity is 14 km/h north."
+      },
+      {
+       "tier": "partial",
+       "text": "Displacement is 7 km north and velocity is 14 km/h north.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Displacement is 7 km north"
+        },
+        {
+         "point": 3,
+         "quote": "velocity is 14 km/h north"
+        }
+       ],
+       "feedback": "Your vector answers are right. The question also asks for the distance and the average speed.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "12 − 5 = 7 km for everything, and the speed is 7 km/h.",
+       "meets": [],
+       "feedback": "Distance adds up every leg, and speed is distance divided by time. Calculate each quantity separately."
+      },
+      {
+       "tier": "weak",
+       "text": "The distance is 17 km. The displacement is 17 km north because the bus ends up north.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The distance is 17 km."
+        }
+       ],
+       "feedback": "The distance is right. Displacement subtracts the 5 km the bus came back, so it is 7 km north."
+      }
+     ]
+    },
+    {
+     "prompt": "A student's position-time graph for a toy car is a straight line through the points (0 s, 0.0 m) and (4.0 s, 1.6 m). Find the velocity, state what the graph tells you about the motion, and say what a steeper line would mean.",
+     "markScheme": [
+      "Calculates the slope as 1.6 / 4.0",
+      "Gives the velocity as 0.40 m/s with a unit",
+      "States that the straight line means a constant velocity",
+      "States that a steeper line means a greater velocity"
+     ],
+     "modelAnswer": "The slope is 1.6 m divided by 4.0 s, which is 0.40 m/s, so the velocity is 0.40 m/s. The straight line means the velocity is constant. A steeper line would mean a greater velocity.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Slope = rise over run = 1.6 m / 4.0 s. That is 0.40 m/s. A straight line means the car moves at a constant velocity. A steeper line would be a faster car.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Slope = rise over run = 1.6 m / 4.0 s."
+        },
+        {
+         "point": 1,
+         "quote": "That is 0.40 m/s."
+        },
+        {
+         "point": 2,
+         "quote": "A straight line means the car moves at a constant velocity."
+        },
+        {
+         "point": 3,
+         "quote": "A steeper line would be a faster car."
+        }
+       ],
+       "feedback": "Full marks. Reading the graph and the number together is exactly the skill."
+      },
+      {
+       "tier": "full",
+       "text": "v = Δx/Δt = (1.6 − 0)/(4.0 − 0). v = 0.40 m/s. The line is straight so the velocity doesn't change. If the line were steeper, the velocity would be larger.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "v = Δx/Δt = (1.6 − 0)/(4.0 − 0)."
+        },
+        {
+         "point": 1,
+         "quote": "v = 0.40 m/s."
+        },
+        {
+         "point": 2,
+         "quote": "The line is straight so the velocity doesn't change."
+        },
+        {
+         "point": 3,
+         "quote": "If the line were steeper, the velocity would be larger."
+        }
+       ],
+       "feedback": "All four marks, with a clear formula."
+      },
+      {
+       "tier": "partial",
+       "text": "1.6 divided by 4.0 = 0.4. The line is straight so it is a constant velocity.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1.6 divided by 4.0"
+        },
+        {
+         "point": 2,
+         "quote": "it is a constant velocity"
+        }
+       ],
+       "feedback": "You need the unit: 0.40 m/s. Also say what a steeper line would mean."
+      },
+      {
+       "tier": "partial",
+       "text": "The velocity is 0.40 m/s. Steeper means faster.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The velocity is 0.40 m/s."
+        },
+        {
+         "point": 3,
+         "quote": "Steeper means faster."
+        }
+       ],
+       "feedback": "Both are right. Show the division that gives 0.40 and say what the straight line tells you.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The velocity is 4.0 × 1.6 = 6.4 m/s because you multiply the numbers on the graph.",
+       "meets": [],
+       "feedback": "The slope is the rise divided by the run, so you divide the position change by the time."
+      },
+      {
+       "tier": "weak",
+       "text": "The car goes at a constant speed. A steeper line means the car is farther away.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The car goes at a constant speed."
+        }
+       ],
+       "feedback": "A steeper line means a greater change in position every second, which is a greater velocity."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Position-time graph of a battery car",
+    "instructions": "Mark a straight track with tape at 0.5 m intervals up to 2.5 m. Time a battery-powered car over each distance, three trials each. Record the mean time and the spread, plot position against time with a line of best fit, and find the velocity from the slope.",
+    "steps": [
+     {
+      "text": "Tape a meter-stick track and mark 0.5, 1.0, 1.5, 2.0 and 2.5 m from the start line."
+     },
+     {
+      "text": "Release the car at the start line and start the stopwatch the moment it crosses the line."
+     },
+     {
+      "text": "Stop the watch as the front of the car reaches each mark. Repeat to give three trials per distance.",
+      "note": "Keep feet and bags away from the track so the car does not hit them."
+     },
+     {
+      "text": "Calculate the mean time for each distance and note the highest and lowest times."
+     },
+     {
+      "text": "Plot position (m) against mean time (s) and draw a line of best fit."
+     },
+     {
+      "text": "Find the slope of your line and write a conclusion with the velocity and its uncertainty."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method and data: repeated trials, table with units",
+      "maxPoints": 4
+     },
+     {
+      "description": "Graph: labeled axes, scale and a sensible line of best fit",
+      "maxPoints": 4
+     },
+     {
+      "description": "Analysis: slope calculation and conclusion with uncertainty",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "We timed the car three times at each of five distances. The mean times were 1.6, 3.3, 4.8, 6.5 and 8.1 s for 0.5 to 2.5 m. The points on my graph fell close to a straight line. The slope was 2.5 m divided by 8.1 s, or 0.31 m/s. The spread in the times was about 0.2 s, which is roughly 3 percent. The car moves at a constant velocity of about 0.31 plus or minus 0.01 m/s.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report. The table, the graph and the slope agree with each other, and the uncertainty is stated."
+     },
+     {
+      "tier": "full",
+      "text": "Question: does the car move at a constant velocity? Method: three trials at each of five marks. Data: table of means with units. Graph: position against time, line of best fit that passes through the origin. Analysis: slope = 2.0 m / 6.5 s = 0.31 m/s. The line is straight, so the velocity is constant. The biggest uncertainty is our reaction time at the stopwatch, about 0.2 s.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. A graph needs both axes labeled with units and a scale, which is where the point was lost."
+     },
+     {
+      "tier": "partial",
+      "text": "We timed the car for five distances and wrote the times in a table. The times went up as the distance went up. I drew a graph and a line through the points. The car moves at about 0.3 m/s I think. I did not do three trials for each distance because we ran out of time in class.",
+      "scores": [
+       2,
+       3,
+       2
+      ],
+      "feedback": "Repeated trials give the uncertainty. Show the slope calculation with units and state the uncertainty in the conclusion."
+     },
+     {
+      "tier": "partial",
+      "text": "The car went 2.5 m in 8.1 s so the speed was 0.31 m/s. We did three trials for each distance and they were pretty close. I drew the graph with the distance on the bottom and the time up the side and joined the dots with a ruler between each pair of points.",
+      "scores": [
+       3,
+       1,
+       2
+      ],
+      "feedback": "Position goes on the vertical axis and time on the horizontal. A line of best fit is one smooth line, not a join of every dot."
+     },
+     {
+      "tier": "weak",
+      "text": "We raced the car on the tape and it went fast. The stopwatch was hard to use. The car went about 2.5 m. I think the graph is going up because the car got faster and faster as it went along the floor.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Write the times in a table and find the slope. A straight line, not a curve, shows constant velocity; check whether yours was straight."
+     },
+     {
+      "tier": "weak",
+      "text": "The slope of the graph was 8.1 and the unit is seconds because the time was on the side. The velocity of the car was 8.1 seconds. We did the experiment on the floor of the hallway and it was a lot of fun to do.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Velocity is the position change divided by the time change, in m/s. Pick two points on your line and divide."
+     }
+    ]
+   }
+  },
+  "2": {
+   "topic": "Motion graphs and the equations of constant acceleration",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe motion in one dimension using position, velocity and acceleration graphs;\n2. apply the constant acceleration equations to solve problems.\n\n## Materials\n\nDynamics carts, a ramp, a motion sensor or stopwatches, graph paper, the practical sheet.\n\n## Starter (6 minutes)\n\nShow three position-time graphs (straight, curved upward, flat) and ask students to act out each one while walking in the hallway. Name them: constant velocity, speeding up, at rest.\n\n## Main activity\n\n1. Link the three graphs: the slope of position-time is velocity, the slope of velocity-time is acceleration, and the area under velocity-time is displacement.\n2. Introduce the equations: v = v0 + at, d = v0 t + 1/2 a t squared, v squared = v0 squared + 2ad. Practice with a car that starts from rest and accelerates at 3.0 m/s2 for 8.0 s (v = 24 m/s, d = 96 m), and a car braking from 20 m/s at 5.0 m/s2 (stopping distance 40 m).\n3. Practical: release a cart on a ramp, time it over measured distances and find the acceleration from d = 1/2 a t squared.\n\n## Checking for understanding\n\nAsk: \"A car's speed shows 20 m/s on the dashboard and its acceleration is zero. What does its velocity-time graph look like?\"\n\n## Practical write-up\n\nCollect with a table and an acceleration calculation.",
+   "reading": {
+    "title": "From graphs to equations",
+    "content": "Motion in a straight line can be described three ways: with words, with graphs, and with equations. On a **velocity-time graph**, the slope is the **acceleration**, the rate of change of velocity, in meters per second squared. A horizontal line means constant velocity and zero acceleration. A straight sloping line means constant acceleration. The area between the line and the time axis is the displacement. A car that goes from rest to 24 m/s in 8 s has a graph with a slope of 3.0 m/s2, and the area of the triangle, one half times 8 s times 24 m/s, is 96 m.\n\nThose relationships can be written as three equations for constant acceleration. The first, v = v0 + at, gives the final velocity after a time t. The second, d = v0 t + 1/2 a t squared, gives the displacement. The third, v squared = v0 squared + 2ad, links the speeds and displacement without involving time, and is useful for stopping distances.\n\nTo use them, list what you know and what you want. Suppose a car starts from rest and accelerates at 3.0 m/s2 for 8.0 s. The initial velocity is 0, so v = 0 + 3.0 times 8.0, which is 24 m/s. The distance is 0 + 1/2 times 3.0 times 8.0 squared, which is 96 m. Now suppose the driver brakes at 5.0 m/s2 when moving at 20 m/s. The acceleration is negative since it points opposite to the motion, so use a = -5.0. The final speed is 0, so 0 = 20 squared + 2 times (-5.0) times d, giving d = 400 divided by 10, which is 40 m. The time to stop is 20 divided by 5.0, which is 4.0 s.\n\nNotice that if the speed doubled to 40 m/s, the stopping distance would be 1600 divided by 10, or 160 m, four times larger. That is why stopping distance increases so quickly on the highway and why speed limits matter in the rain.\n\nIn a lab you can find the acceleration of a cart starting from rest on a ramp by timing it over a measured distance. Because v0 is zero, d = 1/2 a t squared, so a = 2d divided by t squared. If a cart rolls 1.20 m in 2.0 s, a = 2 times 1.20 divided by 4.0, which is 0.60 m/s2."
+   },
+   "cards": [
+    {
+     "front": "Acceleration",
+     "back": "The rate of change of velocity, in m/s2."
+    },
+    {
+     "front": "Velocity-time graph",
+     "back": "A graph whose slope is acceleration and whose area is displacement."
+    },
+    {
+     "front": "v = v0 + at",
+     "back": "The final velocity after constant acceleration for a time t."
+    },
+    {
+     "front": "d = v0 t + 1/2 a t^2",
+     "back": "The displacement under constant acceleration."
+    },
+    {
+     "front": "v^2 = v0^2 + 2ad",
+     "back": "A relation between speeds and displacement that does not use time."
+    },
+    {
+     "front": "Deceleration",
+     "back": "Acceleration in the direction opposite to the velocity, which reduces speed."
+    },
+    {
+     "front": "Constant acceleration",
+     "back": "Acceleration that does not change during the motion."
+    },
+    {
+     "front": "Stopping distance",
+     "back": "The distance a vehicle travels while braking to a stop."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A car starts from rest and accelerates at 3.0 m/s2 for 8.0 s. What is its final speed?",
+     "options": [
+      "11 m/s",
+      "24 m/s",
+      "2.7 m/s",
+      "192 m/s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A car moving at 20 m/s brakes at 5.0 m/s2 until it stops. How far does it travel?",
+     "options": [
+      "4.0 m",
+      "20 m",
+      "40 m",
+      "80 m"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "On a velocity-time graph, what does the area under the line represent?",
+     "options": [
+      "Acceleration",
+      "Displacement",
+      "Time",
+      "Force"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "If a car's speed doubles, its braking distance at the same deceleration becomes:",
+     "options": [
+      "The same",
+      "Two times as long",
+      "Four times as long",
+      "Half as long"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A cart starts from rest and rolls 1.20 m in 2.0 s. What is its acceleration?",
+     "options": [
+      "0.30 m/s2",
+      "0.60 m/s2",
+      "1.2 m/s2",
+      "2.4 m/s2"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A car traveling at 25 m/s brakes with a constant deceleration of 5.0 m/s2. Calculate the time to stop and the stopping distance.",
+     "markScheme": [
+      "Uses a = -5.0 m/s2 with a final velocity of 0",
+      "Calculates the time as 5.0 s",
+      "Uses v squared = v0 squared + 2ad or d = v0 t + 1/2 a t squared",
+      "Calculates the distance as 62.5 m with a unit"
+     ],
+     "modelAnswer": "The acceleration is -5.0 m/s2 and the final velocity is 0. From v = v0 + at, t = 25 / 5.0 = 5.0 s. From v squared = v0 squared + 2ad, 0 = 625 - 10d, so d = 62.5 m.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Final speed is 0 and a = −5.0 m/s². 0 = 25 − 5.0t so t = 5.0 s. 0 = 25² + 2(−5.0)d so d = 625/10 = 62.5 m.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Final speed is 0 and a = −5.0 m/s²."
+        },
+        {
+         "point": 1,
+         "quote": "0 = 25 − 5.0t so t = 5.0 s."
+        },
+        {
+         "point": 2,
+         "quote": "0 = 25² + 2(−5.0)d"
+        },
+        {
+         "point": 3,
+         "quote": "so d = 625/10 = 62.5 m."
+        }
+       ],
+       "feedback": "Full marks. Using the negative acceleration for braking is the key to the signs."
+      },
+      {
+       "tier": "full",
+       "text": "The car slows down so a is −5.0 and v is 0 at the end. t = (0 − 25)/(−5.0) = 5.0 s. d = 25(5.0) + ½(−5.0)(5.0)² = 125 − 62.5 = 62.5 m.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The car slows down so a is −5.0 and v is 0 at the end."
+        },
+        {
+         "point": 1,
+         "quote": "t = (0 − 25)/(−5.0) = 5.0 s."
+        },
+        {
+         "point": 2,
+         "quote": "d = 25(5.0) + ½(−5.0)(5.0)²"
+        },
+        {
+         "point": 3,
+         "quote": "= 125 − 62.5 = 62.5 m."
+        }
+       ],
+       "feedback": "All four marks. Using a different equation for the distance checks the answer."
+      },
+      {
+       "tier": "partial",
+       "text": "t = 25/5.0 = 5.0 s. d = 25 × 5.0 = 125 m.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "t = 25/5.0 = 5.0 s."
+        }
+       ],
+       "feedback": "That distance assumes the car stays at 25 m/s for the 5.0 s. It slows down, so the distance is 62.5 m."
+      },
+      {
+       "tier": "partial",
+       "text": "a is −5.0. The distance is 62.5 m.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a is −5.0."
+        },
+        {
+         "point": 3,
+         "quote": "The distance is 62.5 m."
+        }
+       ],
+       "feedback": "Show the equation and the time to stop, since the question asks for it as well.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "5.0 × 25 = 125 m and the time is 125 s.",
+       "meets": [],
+       "feedback": "Multiplying the acceleration and the speed does not give a distance. Use v = v0 + at for the time first."
+      },
+      {
+       "tier": "weak",
+       "text": "a = −5.0 m/s² since it's slowing. The time is 25 × 5 = 125 s, and the distance is 125 m.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a = −5.0 m/s² since it's slowing."
+        }
+       ],
+       "feedback": "The sign is right. Time is the speed change divided by the acceleration: 25 / 5.0 = 5.0 s."
+      }
+     ]
+    },
+    {
+     "prompt": "A velocity-time graph for a bike is a straight line from 0 m/s at 0 s to 12 m/s at 6.0 s. Find the acceleration and the distance traveled in the 6.0 s, and say how you can find the distance from the graph.",
+     "markScheme": [
+      "Calculates the acceleration as 12 / 6.0 = 2.0 m/s2",
+      "States the acceleration is constant because the line is straight",
+      "Calculates the distance as 36 m",
+      "States that the distance is the area under the velocity-time line"
+     ],
+     "modelAnswer": "The slope is 12 m/s divided by 6.0 s, so the acceleration is 2.0 m/s2, constant because the line is straight. The distance is the area under the line, one half times 6.0 s times 12 m/s, which is 36 m.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "a = 12/6.0 = 2.0 m/s². The line is straight so the acceleration is constant. Distance = ½ × 6.0 × 12 = 36 m. It's the area under the line, a triangle.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a = 12/6.0 = 2.0 m/s²."
+        },
+        {
+         "point": 1,
+         "quote": "The line is straight so the acceleration is constant."
+        },
+        {
+         "point": 2,
+         "quote": "Distance = ½ × 6.0 × 12 = 36 m."
+        },
+        {
+         "point": 3,
+         "quote": "It's the area under the line, a triangle."
+        }
+       ],
+       "feedback": "Full marks. Both ways of finding the distance, area and equation, would agree."
+      },
+      {
+       "tier": "full",
+       "text": "The slope is rise over run, 2.0 m/s². It's a straight line, so the bike has constant acceleration. The distance is 36 m. You get that from the area under the velocity-time graph.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The slope is rise over run, 2.0 m/s²."
+        },
+        {
+         "point": 1,
+         "quote": "It's a straight line, so the bike has constant acceleration."
+        },
+        {
+         "point": 2,
+         "quote": "The distance is 36 m."
+        },
+        {
+         "point": 3,
+         "quote": "You get that from the area under the velocity-time graph."
+        }
+       ],
+       "feedback": "All four marks, in a few clear sentences."
+      },
+      {
+       "tier": "partial",
+       "text": "The acceleration is 2.0 m/s². It's constant. The distance is 12 × 6.0 = 72 m.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The acceleration is 2.0 m/s²."
+        },
+        {
+         "point": 1,
+         "quote": "It's constant."
+        }
+       ],
+       "feedback": "12 × 6.0 would be the area of a rectangle. The graph is a triangle, so the distance is half of that, 36 m."
+      },
+      {
+       "tier": "partial",
+       "text": "The distance is 36 m and it's the area under the line.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The distance is 36 m"
+        },
+        {
+         "point": 3,
+         "quote": "it's the area under the line"
+        }
+       ],
+       "feedback": "Good. Find the acceleration from the slope as well, and say what the straight line tells you.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The acceleration is 12 m/s because that is where the line ends and the distance is 6.0 m.",
+       "meets": [],
+       "feedback": "Acceleration is the slope, in m/s2, and it is the change in velocity divided by the time. The distance is the area under the line."
+      },
+      {
+       "tier": "weak",
+       "text": "It's constant acceleration because the line is straight. The acceleration is 6.0 × 12 = 72 m/s².",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It's constant acceleration because the line is straight."
+        }
+       ],
+       "feedback": "You have the right idea about the straight line. The acceleration is the slope, so divide 12 by 6.0."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Acceleration of a cart on a ramp",
+    "instructions": "Release a dynamics cart from rest at the top of a gently sloped ramp. Time its trip over 0.40, 0.80, 1.20, and 1.60 m, three trials each. Use d = 1/2 a t squared to find the acceleration for each distance and compare them to test whether the acceleration is constant.",
+    "steps": [
+     {
+      "text": "Raise one end of the ramp about 10 cm on a book stack and mark the distances along the ramp."
+     },
+     {
+      "text": "Hold the cart at the top mark and release it without pushing."
+     },
+     {
+      "text": "Start the stopwatch on release and stop it as the front wheels reach each mark. Repeat for three trials.",
+      "note": "Stop the cart at the bottom with a block so it does not fall off the table."
+     },
+     {
+      "text": "Calculate the mean time for each distance."
+     },
+     {
+      "text": "Calculate a = 2d / t squared for each distance."
+     },
+     {
+      "text": "Compare the four values of a and write a conclusion about whether the acceleration is constant."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method and data: controlled release, repeated trials, table",
+      "maxPoints": 4
+     },
+     {
+      "description": "Calculation: correct use of a = 2d / t squared",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: compares the values and discusses uncertainty",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "The mean times for 0.40, 0.80, 1.20 and 1.60 m were 1.0, 1.4, 1.7 and 2.0 s. Using a = 2d/t squared I found 0.80, 0.82, 0.83 and 0.80 m/s2. The four values agree within about 3 percent, so the acceleration is constant at about 0.81 m/s2. Reaction time at the stopwatch was the main uncertainty, about 0.1 s, which matters most for the shortest distance where the time is smallest.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report. You compared all four values, found them consistent, and explained which measurement the error affects most."
+     },
+     {
+      "tier": "full",
+      "text": "Method: the cart started from rest at the top mark each time and we did three trials for each distance. The calculated accelerations were 0.78, 0.84, 0.79 and 0.82 m/s2, mean 0.81. Because v0 = 0 I used d = ½at², so a = 2d/t². The values are close to one another so the acceleration is constant. The differences come from the timing, because starting and stopping the watch by hand is not exact.",
+      "scores": [
+       4,
+       4,
+       3
+      ],
+      "feedback": "Very good. State the size of the uncertainty (such as 0.1 s) to complete the evaluation."
+     },
+     {
+      "tier": "partial",
+      "text": "The cart took longer to go farther. I used a = 2d/t squared with d = 1.60 m and t = 2.0 s and got 0.80 m/s2. We timed the other distances too but I did not calculate them, so I cannot say yet if the acceleration stayed the same all the way down the ramp.",
+      "scores": [
+       3,
+       2,
+       1
+      ],
+      "feedback": "You need all four distances to test whether the acceleration is constant. Calculate them and compare."
+     },
+     {
+      "tier": "partial",
+      "text": "We timed the cart three times at each distance and made a table. For 0.80 m the time was 1.4 s so the acceleration is 0.8 divided by 1.4 which is 0.57 m/s2. For 1.60 m the time was 2.0 s so 1.6 divided by 2.0 is 0.80. They are different so the acceleration changes.",
+      "scores": [
+       3,
+       1,
+       2
+      ],
+      "feedback": "The formula is a = 2d divided by t squared, not d divided by t. Use it, and your values will agree."
+     },
+     {
+      "tier": "weak",
+      "text": "The cart rolled down the ramp and got faster. We used the stopwatch to time it. It was not easy to start and stop the watch exactly right. I think the acceleration was about 5 because the cart was going fast at the bottom of the ramp.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Record the times and calculate a from each. An acceleration of 5 m/s2 would be much too large for this gentle slope."
+     },
+     {
+      "tier": "weak",
+      "text": "We measured the time and the distance for the cart and the acceleration is the distance divided by the time, which gives 0.8 m per second. The speed is the same all the way because the ramp is straight and so the acceleration is also constant and there was no uncertainty.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Distance divided by time gives speed, and acceleration needs the time squared. Every hand-timed measurement has an uncertainty."
+     }
+    ]
+   }
+  },
+  "3": {
+   "topic": "Free fall and vectors",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. analyze free fall and explain why objects of different masses fall together when air resistance is small;\n2. add and resolve vectors graphically and by components.\n\n## Materials\n\nA bowling ball and a tennis ball, a feather and a coin in a tube (demo), rulers, protractors, graph paper, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"If I drop this bowling ball and this tennis ball from the same height, which hits first?\" Take votes and record them. Then drop both from the top of a stool and let students see the result.\n\n## Main activity\n\n1. Free fall: with air resistance small, every object has the same acceleration, g = 9.8 m/s2 downward. A ball dropped from 19.6 m takes 2.0 s and hits at 19.6 m/s. Show the video of a feather and a hammer on the Moon.\n2. Vectors: add 30 m east and 40 m north by drawing to scale and by the Pythagorean theorem (50 m at 53 degrees north of east).\n3. Resolve a 100 N pull at 30 degrees above the horizontal into components: 87 N horizontal and 50 N vertical.\n\n## Checking for understanding\n\nWhiteboards: a ball is thrown straight up. What is its acceleration at the very top?\n\n## Worksheet and quiz\n\nFree-fall calculations and vector components.",
+   "reading": {
+    "title": "Falling together, and vectors with direction",
+    "content": "For many years people believed that heavy objects fall faster than light ones. It seems sensible: a hammer falls faster than a feather. But the difference is caused by air resistance, which affects the feather far more than the hammer. When astronaut David Scott dropped a hammer and a feather on the Moon, where there is no air, they hit the ground at the same time.\n\nIn **free fall**, the only force acting on an object is gravity. Near the Earth's surface, every object in free fall accelerates downward at the same rate, g = 9.8 m/s2, no matter its mass. A heavier object has a greater force of gravity on it, but it also has more inertia, so the two effects cancel exactly. Each second, the downward speed increases by 9.8 m/s. A ball dropped from rest has a speed of 9.8 m/s after 1 s and 19.6 m/s after 2 s, and it has fallen 1/2 times 9.8 times 2.0 squared, which is 19.6 m. A ball thrown straight up slows by 9.8 m/s each second, stops at the top for an instant, and falls back. The acceleration is 9.8 m/s2 downward the whole time, even at the very top where the velocity is zero.\n\nMany quantities have a direction as well as a size. These **vectors** are drawn as arrows. To add vectors graphically, draw the first arrow, and then draw the second starting at the tip of the first (tip to tail). The **resultant** is the arrow from the start of the first to the tip of the last. If you walk 30 m east and then 40 m north, the resultant has a magnitude found by the Pythagorean theorem: the square root of 30 squared plus 40 squared, which is 50 m. Its direction is the angle whose tangent is 40/30, which is 53 degrees north of east.\n\nYou can also break a vector into **components**. A 100 N pull on a wagon handle at 30 degrees above the horizontal has a horizontal component of 100 cos 30, which is 87 N, and a vertical component of 100 sin 30, which is 50 N. Only the horizontal part moves the wagon along the ground, while the vertical part lifts a little on it. Components make it possible to add vectors that are not at right angles to each other: add all the x-components, add all the y-components, and combine the two sums."
+   },
+   "cards": [
+    {
+     "front": "Free fall",
+     "back": "Motion in which gravity is the only force acting on an object."
+    },
+    {
+     "front": "g",
+     "back": "The acceleration due to gravity near Earth's surface, 9.8 m/s2 downward."
+    },
+    {
+     "front": "Air resistance",
+     "back": "A force from the air that opposes motion through it."
+    },
+    {
+     "front": "Vector",
+     "back": "A quantity with both size and direction."
+    },
+    {
+     "front": "Resultant",
+     "back": "The single vector that is the sum of two or more vectors."
+    },
+    {
+     "front": "Component",
+     "back": "The part of a vector along one axis, such as horizontal or vertical."
+    },
+    {
+     "front": "Tip-to-tail method",
+     "back": "Adding vectors by drawing each starting at the tip of the previous one."
+    },
+    {
+     "front": "Magnitude",
+     "back": "The size of a vector."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A ball is dropped from rest. What is its speed after 2.0 s, ignoring air resistance?",
+     "options": [
+      "9.8 m/s",
+      "19.6 m/s",
+      "4.9 m/s",
+      "39.2 m/s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A hammer and a feather are dropped on the Moon. Which statement is correct?",
+     "options": [
+      "The hammer lands first",
+      "The feather lands first",
+      "They land at the same time",
+      "Neither falls"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A person walks 30 m east and then 40 m north. What is the magnitude of the displacement?",
+     "options": [
+      "10 m",
+      "35 m",
+      "50 m",
+      "70 m"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the acceleration of a ball at the top of its path after being thrown straight up?",
+     "options": [
+      "Zero",
+      "9.8 m/s2 upward",
+      "9.8 m/s2 downward",
+      "19.6 m/s2 downward"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A 100 N force acts at 30 degrees above horizontal. What is its horizontal component?",
+     "options": [
+      "50 N",
+      "87 N",
+      "100 N",
+      "173 N"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A stone is dropped from a bridge 19.6 m above a river. Ignoring air resistance, calculate the time it takes to reach the water and its speed on impact.",
+     "markScheme": [
+      "Identifies the initial velocity as zero and a = 9.8 m/s2",
+      "Uses d = 1/2 a t squared to find t = 2.0 s",
+      "Uses v = at to find the speed 19.6 m/s",
+      "Gives units and states that the mass of the stone does not matter"
+     ],
+     "modelAnswer": "The stone starts from rest and accelerates at 9.8 m/s2. From d = 1/2 a t squared, 19.6 = 4.9 t squared, so t = 2.0 s. The speed is v = 9.8 times 2.0 = 19.6 m/s. The mass of the stone does not affect the result in free fall.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It starts at rest and a = 9.8 m/s². 19.6 = ½(9.8)t², so t² = 4 and t = 2.0 s. v = 9.8 × 2.0 = 19.6 m/s. The mass doesn't matter because all objects fall with the same acceleration.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It starts at rest and a = 9.8 m/s²."
+        },
+        {
+         "point": 1,
+         "quote": "19.6 = ½(9.8)t², so t² = 4 and t = 2.0 s."
+        },
+        {
+         "point": 2,
+         "quote": "v = 9.8 × 2.0 = 19.6 m/s."
+        },
+        {
+         "point": 3,
+         "quote": "The mass doesn't matter because all objects fall with the same acceleration."
+        }
+       ],
+       "feedback": "Full marks. Saying that mass does not matter addresses the free-fall idea directly."
+      },
+      {
+       "tier": "full",
+       "text": "v0 = 0, a = 9.8 m/s² down. d = ½at² gives t = √(2 × 19.6 / 9.8) = 2.0 s. v = at = 19.6 m/s. A heavier stone would land at the same time, so mass isn't in the equations.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "v0 = 0, a = 9.8 m/s² down."
+        },
+        {
+         "point": 1,
+         "quote": "d = ½at² gives t = √(2 × 19.6 / 9.8) = 2.0 s."
+        },
+        {
+         "point": 2,
+         "quote": "v = at = 19.6 m/s."
+        },
+        {
+         "point": 3,
+         "quote": "A heavier stone would land at the same time, so mass isn't in the equations."
+        }
+       ],
+       "feedback": "All four marks, and a clean check that mass drops out."
+      },
+      {
+       "tier": "partial",
+       "text": "It starts from rest, a = 9.8. t = 2.0 s. The speed is 19.6 m because that is the height.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It starts from rest, a = 9.8."
+        },
+        {
+         "point": 1,
+         "quote": "t = 2.0 s."
+        }
+       ],
+       "feedback": "The speed is in m/s, not m. After 2.0 s the speed is 9.8 times 2.0 = 19.6 m/s, a number that happens to match the height here."
+      },
+      {
+       "tier": "partial",
+       "text": "The speed is 19.6 m/s and it doesn't depend on the stone's mass.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The speed is 19.6 m/s"
+        },
+        {
+         "point": 3,
+         "quote": "it doesn't depend on the stone's mass"
+        }
+       ],
+       "feedback": "Good. Show how you found the time, using d = 1/2 a t squared.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "19.6 / 9.8 = 2.0 s and a heavy stone falls faster, so it would be less.",
+       "meets": [],
+       "feedback": "Heavier objects do not fall faster when air resistance is small. Use d = 1/2 a t squared for the time."
+      },
+      {
+       "tier": "weak",
+       "text": "It starts at rest. The speed is 9.8 m/s because that is g, and the time is 9.8 s.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It starts at rest."
+        }
+       ],
+       "feedback": "g is the acceleration, not the speed. The speed grows by 9.8 m/s every second."
+      }
+     ]
+    },
+    {
+     "prompt": "A student pulls a wagon with a force of 100 N at 30 degrees above the horizontal. Find the horizontal and vertical components, and explain which one makes the wagon move along the ground.",
+     "markScheme": [
+      "Calculates the horizontal component as 100 cos 30 = 87 N",
+      "Calculates the vertical component as 100 sin 30 = 50 N",
+      "States that the horizontal component moves the wagon along the ground",
+      "States that the vertical component lifts on the wagon, reducing the force pressing it on the ground"
+     ],
+     "modelAnswer": "The horizontal component is 100 cos 30, which is 87 N. The vertical component is 100 sin 30, which is 50 N. The horizontal component moves the wagon along the ground. The vertical component pulls upward, which slightly reduces how hard the wagon presses on the ground.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Horizontal = 100 cos 30° = 87 N. Vertical = 100 sin 30° = 50 N. The horizontal part pulls the wagon forward. The vertical part lifts up on the wagon a bit, so it presses less on the ground.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Horizontal = 100 cos 30° = 87 N."
+        },
+        {
+         "point": 1,
+         "quote": "Vertical = 100 sin 30° = 50 N."
+        },
+        {
+         "point": 2,
+         "quote": "The horizontal part pulls the wagon forward."
+        },
+        {
+         "point": 3,
+         "quote": "The vertical part lifts up on the wagon a bit, so it presses less on the ground."
+        }
+       ],
+       "feedback": "Full marks. The effect of the vertical component on the contact with the ground connects to friction later."
+      },
+      {
+       "tier": "full",
+       "text": "Fx = 100 × 0.866 = 87 N. Fy = 100 × 0.5 = 50 N. Only Fx moves it along the ground. Fy partly supports the wagon's weight so the ground pushes up less.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Fx = 100 × 0.866 = 87 N."
+        },
+        {
+         "point": 1,
+         "quote": "Fy = 100 × 0.5 = 50 N."
+        },
+        {
+         "point": 2,
+         "quote": "Only Fx moves it along the ground."
+        },
+        {
+         "point": 3,
+         "quote": "Fy partly supports the wagon's weight so the ground pushes up less."
+        }
+       ],
+       "feedback": "All four marks, with correct values from the sine and cosine."
+      },
+      {
+       "tier": "partial",
+       "text": "The horizontal is 87 N. The vertical is 50 N. The vertical one makes it move.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The horizontal is 87 N."
+        },
+        {
+         "point": 1,
+         "quote": "The vertical is 50 N."
+        }
+       ],
+       "feedback": "The horizontal component moves the wagon along the ground. Say what the vertical component does."
+      },
+      {
+       "tier": "partial",
+       "text": "The horizontal component moves it. The vertical one lifts it up a little.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The horizontal component moves it."
+        },
+        {
+         "point": 3,
+         "quote": "The vertical one lifts it up a little."
+        }
+       ],
+       "feedback": "Good explanation. Calculate the two components with cosine and sine.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "100 + 30 = 130 N for the horizontal and 100 − 30 = 70 N for the vertical.",
+       "meets": [],
+       "feedback": "Components come from trigonometry, not from adding the angle to the force. Use cosine for the horizontal and sine for the vertical."
+      },
+      {
+       "tier": "weak",
+       "text": "The vertical is 50 N. The horizontal is also 50 N because the angle is in the middle.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The vertical is 50 N."
+        }
+       ],
+       "feedback": "At 30 degrees above the horizontal, the horizontal component is larger: 100 cos 30 is 87 N."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Projectile motion and Newton's second law",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. analyze projectile motion by treating the horizontal and vertical motions separately;\n2. analyze data to support the claim that the net force on an object equals its mass times its acceleration.\n\n## Materials\n\nTwo identical balls, a ramp and table edge, carbon paper, dynamics carts with hanging masses, motion sensors or stopwatches, the quiz.\n\n## Starter (6 minutes)\n\nRoll one ball off a table while dropping another from the same height at the same moment. Ask students to listen for the landing sound. Ask: \"Why did they land together?\"\n\n## Main activity\n\n1. Horizontal and vertical independence: a ball kicked horizontally at 10 m/s from a 19.6 m cliff falls for 2.0 s and lands 20 m from the base. A projectile launched at 20 m/s and 30 degrees has components 17.3 and 10 m/s, a flight time of 2.04 s and a range of 35.3 m.\n2. Newton's second law: the net force equals mass times acceleration. Look at data of acceleration against hanging mass for a cart and find the proportional relationship.\n3. Compute: a 1200 kg car with a net force of 3000 N accelerates at 2.5 m/s2.\n\n## Checking for understanding\n\nAsk: \"At the top of its path, what is the horizontal velocity of a kicked football?\" Wait for \"unchanged.\"\n\n## Quiz and problem set\n\nFive quiz questions and a short problem set.",
+   "reading": {
+    "title": "Two motions at once, and what forces do",
+    "content": "A thrown ball seems to follow a single curved path, but physicists find it easier to think of two separate motions. In the horizontal direction, no force acts on the ball (ignoring air resistance), so the horizontal velocity stays constant. In the vertical direction, gravity pulls the ball down, so it accelerates at 9.8 m/s2 downward. The two motions are **independent** of each other, and only time connects them. That is why a ball rolled off a table and a ball dropped from the same height hit the floor together.\n\nTake a ball kicked horizontally at 10 m/s from the edge of a 19.6 m cliff. Its initial vertical velocity is zero, so the time to fall comes from 19.6 = 1/2 times 9.8 times t squared, which gives t = 2.0 s. During this time it moves forward at a constant 10 m/s, so it lands 10 times 2.0, or 20 m, from the base of the cliff.\n\nWhen a projectile is launched at an angle, split the launch velocity into components. A ball launched at 20 m/s at 30 degrees above horizontal has a horizontal speed of 20 cos 30, which is 17.3 m/s, and a vertical speed of 20 sin 30, which is 10 m/s. The vertical motion goes up, stops and returns, so the time of flight on level ground is 2 times 10 divided by 9.8, about 2.04 s. The range is 17.3 times 2.04, which is 35.3 m.\n\nWhy does the ball accelerate? Newton's second law says the acceleration of an object is directly proportional to the **net force** acting on it and inversely proportional to its mass: F net = ma. The unit of force is the newton, the force that gives a 1 kg mass an acceleration of 1 m/s2. You can test this law with a cart pulled by a hanging mass: doubling the pulling force doubles the acceleration, and doubling the mass of the cart halves it. For a 1200 kg car, a net force of 3000 N gives an acceleration of 3000 divided by 1200, which is 2.5 m/s2. Notice the word net. If the engine pushes with 4000 N and friction and air resistance oppose with 1000 N, the net force is 3000 N. Only the net force determines the acceleration."
+   },
+   "cards": [
+    {
+     "front": "Projectile",
+     "back": "An object moving through the air under gravity alone."
+    },
+    {
+     "front": "Independence of motions",
+     "back": "Horizontal and vertical motions of a projectile do not affect each other."
+    },
+    {
+     "front": "Range",
+     "back": "The horizontal distance traveled by a projectile."
+    },
+    {
+     "front": "Time of flight",
+     "back": "The time a projectile spends in the air."
+    },
+    {
+     "front": "Newton's second law",
+     "back": "The net force on an object equals its mass times its acceleration."
+    },
+    {
+     "front": "Net force",
+     "back": "The vector sum of all forces acting on an object."
+    },
+    {
+     "front": "Newton (N)",
+     "back": "The force that gives a 1 kg mass an acceleration of 1 m/s2."
+    },
+    {
+     "front": "Proportional",
+     "back": "Describes two quantities that change in the same ratio."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A ball is kicked horizontally at 10 m/s from a 19.6 m cliff. How far from the base does it land?",
+     "options": [
+      "10 m",
+      "20 m",
+      "19.6 m",
+      "40 m"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "At the highest point of a projectile's path (ignoring air), the horizontal velocity is:",
+     "options": [
+      "Zero",
+      "Unchanged from the launch",
+      "Equal to g",
+      "Twice the launch value"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 1200 kg car has a net force of 3000 N. What is its acceleration?",
+     "options": [
+      "0.40 m/s2",
+      "2.5 m/s2",
+      "4.0 m/s2",
+      "3.6 x 10^6 m/s2"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A cart's acceleration doubles when the pulling force doubles and the mass stays the same. This supports:",
+     "options": [
+      "Acceleration is inversely proportional to force",
+      "Acceleration is proportional to net force",
+      "Mass is proportional to force",
+      "Force is independent of mass"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "An engine pushes a car with 4000 N and the opposing forces total 1000 N. The net force is:",
+     "options": [
+      "5000 N",
+      "4000 N",
+      "3000 N",
+      "1000 N"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A soccer ball is kicked horizontally at 12 m/s from a platform 4.9 m high. Calculate the time it is in the air and the horizontal distance it travels. Explain why you can find the time using only the vertical motion.",
+     "markScheme": [
+      "Uses d = 1/2 a t squared with d = 4.9 m to find t = 1.0 s",
+      "Calculates the horizontal distance as 12 m",
+      "Explains the initial vertical velocity is zero because the kick is horizontal",
+      "Explains the horizontal and vertical motions are independent, so the horizontal speed does not affect the fall time"
+     ],
+     "modelAnswer": "The ball has no initial vertical velocity, so 4.9 = 1/2 times 9.8 times t squared, giving t = 1.0 s. The horizontal speed is constant at 12 m/s, so the distance is 12 times 1.0 = 12 m. The time can be found from the vertical motion alone because the horizontal and vertical motions are independent.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "4.9 = ½(9.8)t² so t = 1.0 s. Horizontal distance = 12 × 1.0 = 12 m. The kick is horizontal, so the ball starts with no vertical speed. The horizontal and vertical motions are independent, so the 12 m/s doesn't change how long it falls.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "4.9 = ½(9.8)t² so t = 1.0 s."
+        },
+        {
+         "point": 1,
+         "quote": "Horizontal distance = 12 × 1.0 = 12 m."
+        },
+        {
+         "point": 2,
+         "quote": "The kick is horizontal, so the ball starts with no vertical speed."
+        },
+        {
+         "point": 3,
+         "quote": "The horizontal and vertical motions are independent, so the 12 m/s doesn't change how long it falls."
+        }
+       ],
+       "feedback": "Full marks. You explained why the fall time does not depend on the forward speed."
+      },
+      {
+       "tier": "full",
+       "text": "t = √(2 × 4.9/9.8) = 1.0 s. x = vt = 12 m/s × 1.0 s = 12 m. v0y = 0 since it's kicked horizontally. Gravity only affects the vertical motion, so the horizontal speed doesn't matter for the time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "t = √(2 × 4.9/9.8) = 1.0 s."
+        },
+        {
+         "point": 1,
+         "quote": "x = vt = 12 m/s × 1.0 s = 12 m."
+        },
+        {
+         "point": 2,
+         "quote": "v0y = 0 since it's kicked horizontally."
+        },
+        {
+         "point": 3,
+         "quote": "Gravity only affects the vertical motion, so the horizontal speed doesn't matter for the time."
+        }
+       ],
+       "feedback": "All four marks, and the independence is clearly stated."
+      },
+      {
+       "tier": "partial",
+       "text": "t = 1.0 s. The distance is 12 m. I used 12 m/s to find the time because the ball moves forward.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "t = 1.0 s."
+        },
+        {
+         "point": 1,
+         "quote": "The distance is 12 m."
+        }
+       ],
+       "feedback": "The fall time comes only from the vertical motion. The horizontal speed is used only to find the distance."
+      },
+      {
+       "tier": "partial",
+       "text": "The initial vertical speed is zero. The horizontal motion is independent.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The initial vertical speed is zero."
+        },
+        {
+         "point": 3,
+         "quote": "The horizontal motion is independent."
+        }
+       ],
+       "feedback": "Good reasoning. Now calculate the time and the distance with numbers.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "12 / 4.9 = 2.4 s and the distance is 4.9 × 2.4 = 12 m.",
+       "meets": [],
+       "feedback": "The time comes from the fall, using d = 1/2 a t squared with the 4.9 m height, not from dividing speed by height."
+      },
+      {
+       "tier": "weak",
+       "text": "The distance is 12 m. The ball goes faster because it is kicked so it falls faster than if it were dropped.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The distance is 12 m."
+        }
+       ],
+       "feedback": "The ball falls in the same time as one dropped from the same height. The horizontal speed does not change the fall time."
+      }
+     ]
+    },
+    {
+     "prompt": "A student pulls a 2.0 kg cart with a net force of 5.0 N and measures an acceleration of 2.5 m/s2. Then she pulls a 4.0 kg cart with the same net force. Predict the second acceleration and explain how the results support Newton's second law.",
+     "markScheme": [
+      "Verifies the first result as a = F / m = 5.0 / 2.0 = 2.5 m/s2",
+      "Predicts the second acceleration as 1.25 m/s2",
+      "States that doubling the mass halves the acceleration for the same net force",
+      "Concludes this fits acceleration being inversely proportional to mass (a = F/m)"
+     ],
+     "modelAnswer": "The first result is 5.0 N divided by 2.0 kg, which is 2.5 m/s2. For the 4.0 kg cart the acceleration should be 5.0 divided by 4.0, which is 1.25 m/s2. Doubling the mass with the same net force halves the acceleration, which supports a = F/m: acceleration is inversely proportional to mass.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "5.0 N / 2.0 kg = 2.5 m/s², which matches. For 4.0 kg, a = 5.0/4.0 = 1.25 m/s². Doubling the mass cut the acceleration in half. So acceleration is inversely proportional to mass, which is a = F/m.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "5.0 N / 2.0 kg = 2.5 m/s², which matches."
+        },
+        {
+         "point": 1,
+         "quote": "For 4.0 kg, a = 5.0/4.0 = 1.25 m/s²."
+        },
+        {
+         "point": 2,
+         "quote": "Doubling the mass cut the acceleration in half."
+        },
+        {
+         "point": 3,
+         "quote": "So acceleration is inversely proportional to mass, which is a = F/m."
+        }
+       ],
+       "feedback": "Full marks. You checked the measurement against the law before predicting."
+      },
+      {
+       "tier": "full",
+       "text": "The law gives a = F/m = 2.5 m/s² for the first cart, so the data agree. The second should be 1.25 m/s². Twice the mass means half the acceleration for the same force. That fits Newton's second law with acceleration inversely proportional to mass.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The law gives a = F/m = 2.5 m/s² for the first cart, so the data agree."
+        },
+        {
+         "point": 1,
+         "quote": "The second should be 1.25 m/s²."
+        },
+        {
+         "point": 2,
+         "quote": "Twice the mass means half the acceleration for the same force."
+        },
+        {
+         "point": 3,
+         "quote": "That fits Newton's second law with acceleration inversely proportional to mass."
+        }
+       ],
+       "feedback": "All four marks, with the data tied to the law."
+      },
+      {
+       "tier": "partial",
+       "text": "The second acceleration will be 1.25 m/s². It's half because the mass is double.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The second acceleration will be 1.25 m/s²."
+        },
+        {
+         "point": 2,
+         "quote": "It's half because the mass is double."
+        }
+       ],
+       "feedback": "Good prediction. Verify the first measurement with F/m and state what law the pattern supports."
+      },
+      {
+       "tier": "partial",
+       "text": "5.0/2.0 = 2.5, it matches. The second acceleration is 5.0 m/s² because the mass is bigger so it accelerates more.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "5.0/2.0 = 2.5, it matches."
+        }
+       ],
+       "feedback": "A larger mass accelerates less for the same force. Divide the force by 4.0 kg to get 1.25 m/s2.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The acceleration stays 2.5 m/s² because the force is the same and force is what causes acceleration.",
+       "meets": [],
+       "feedback": "The force matters, but so does the mass. The same force on a larger mass gives a smaller acceleration."
+      },
+      {
+       "tier": "weak",
+       "text": "It's F = ma. The second one is 2.5 × 4.0 = 10 m/s².",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "It's F = ma."
+        }
+       ],
+       "feedback": "F = ma is right, but you must solve for a. a = F / m = 5.0 / 4.0 = 1.25 m/s2."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Free-body diagrams, Newton's first and third laws, friction and inclines",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. draw free-body diagrams and find the net force on an object;\n2. state and apply Newton's first and third laws to everyday situations;\n3. calculate friction and tension and solve problems on inclined planes.\n\n## Materials\n\nSpring scales, wooden blocks, a ramp with adjustable angle, string and pulleys, the problem set.\n\n## Starter (6 minutes)\n\nPlace a book on the desk. Ask: \"How many forces act on it? Why doesn't it accelerate?\" Draw the two vertical forces as arrows on the board and introduce the free-body diagram.\n\n## Main activity\n\n1. Draw free-body diagrams for a book at rest, a box pushed across the floor with friction, and an elevator accelerating upward.\n2. Apply the first law (an object keeps its state of motion unless a net force acts) and the third law (forces come in equal and opposite pairs acting on different objects).\n3. Solve: a 10 kg box pushed with 50 N and friction coefficient 0.30 (friction 29.4 N, net force 20.6 N, a = 2.06 m/s2). A 5.0 kg block on a frictionless 30 degree incline (a = g sin 30 = 4.9 m/s2). A 500 kg elevator accelerating upward at 2.0 m/s2 (tension 5900 N).\n\n## Checking for understanding\n\nAsk: \"When you push on a wall, the wall pushes back. Why doesn't the wall accelerate?\" Watch for different objects, balanced by other forces.\n\n## Problem set and worksheet\n\nFree-body diagrams and calculation problems.",
+   "reading": {
+    "title": "Forces, diagrams and the three laws",
+    "content": "A **free-body diagram** shows a single object as a dot or box, with an arrow for each force acting on it. Draw only the forces on that object, not the forces it exerts on others. The usual forces are weight (the pull of gravity, mg, downward), the **normal force** (the push of a surface perpendicular to the surface), **friction** (parallel to the surface, opposing sliding), **tension** (a pull along a rope) and applied pushes or pulls. The net force is the vector sum of the arrows.\n\nNewton's first law says an object stays at rest or keeps moving at constant velocity unless a net force acts on it. This property is called **inertia**. A book at rest on a desk has two forces, its weight down and the normal force up. They are equal and opposite, the net force is zero, and there is no acceleration. The same is true of a car cruising at constant speed on a straight road: the engine force is balanced by friction and air resistance. Newton's third law says that when object A pushes on object B, B pushes on A with a force of equal size in the opposite direction. The two forces act on different objects, so they never cancel each other in a free-body diagram. When you push a wall, the wall pushes you back equally. The wall does not accelerate because the ground and the building balance the force on it, while you move away if you are on wheels.\n\nThe **friction** force during sliding is f = μN, where μ is the coefficient of friction and N is the normal force. A 10 kg box on a level floor has N = mg = 98 N. If μ = 0.30, the friction is 29.4 N. If you push with 50 N, the net force is 50 minus 29.4, which is 20.6 N, and a = 20.6 divided by 10, which is 2.06 m/s2.\n\nOn an incline of angle θ, it helps to rotate the axes so that one is along the slope. Weight splits into mg sin θ along the slope and mg cos θ into it. For a 5.0 kg block on a frictionless slope at 30 degrees, the force down the slope is 5.0 times 9.8 times 0.50, which is 24.5 N, so a = g sin θ = 4.9 m/s2. For **tension**, an elevator of 500 kg accelerating upward at 2.0 m/s2 needs T minus mg equal to ma, so T = 500 times (9.8 + 2.0), which is 5900 N."
+   },
+   "cards": [
+    {
+     "front": "Free-body diagram",
+     "back": "A diagram showing all forces on a single object as arrows."
+    },
+    {
+     "front": "Normal force",
+     "back": "The force of a surface pushing perpendicular to the surface."
+    },
+    {
+     "front": "Friction",
+     "back": "A force parallel to a surface that opposes sliding."
+    },
+    {
+     "front": "Tension",
+     "back": "The pulling force along a rope or string."
+    },
+    {
+     "front": "Inertia",
+     "back": "The tendency of an object to keep its state of motion."
+    },
+    {
+     "front": "Newton's third law",
+     "back": "Forces come in equal and opposite pairs acting on different objects."
+    },
+    {
+     "front": "Coefficient of friction",
+     "back": "The ratio of the friction force to the normal force."
+    },
+    {
+     "front": "Incline",
+     "back": "A sloping surface; weight is resolved along and perpendicular to it."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A book rests on a table. The net force on it is:",
+     "options": [
+      "Equal to its weight",
+      "Zero",
+      "Equal to the normal force",
+      "Upward"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 10 kg box on a level floor has μ = 0.30. What is the friction force when it slides?",
+     "options": [
+      "3.0 N",
+      "29.4 N",
+      "98 N",
+      "300 N"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 5.0 kg block slides down a frictionless 30 degree incline. What is its acceleration?",
+     "options": [
+      "2.5 m/s2",
+      "4.9 m/s2",
+      "8.5 m/s2",
+      "9.8 m/s2"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In Newton's third law pair, the two forces:",
+     "options": [
+      "Act on the same object",
+      "Are equal and opposite and act on different objects",
+      "Always cancel",
+      "Differ in size"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 500 kg elevator accelerates upward at 2.0 m/s2. The cable tension is:",
+     "options": [
+      "4900 N",
+      "5900 N",
+      "1000 N",
+      "6900 N"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A 10 kg box is pushed across a level floor with a 50 N horizontal force. The coefficient of kinetic friction is 0.30. Draw (describe) the free-body diagram and find the box's acceleration.",
+     "markScheme": [
+      "Lists the four forces: weight down, normal force up, applied force forward and friction backward",
+      "Finds the normal force as 98 N and friction as 29.4 N",
+      "Finds the net force as 20.6 N",
+      "Calculates the acceleration as 2.06 m/s2"
+     ],
+     "modelAnswer": "The forces are weight 98 N down, the normal force 98 N up, the push of 50 N forward and friction backward. Friction is 0.30 times 98, which is 29.4 N. The net horizontal force is 50 minus 29.4 = 20.6 N. The acceleration is 20.6 divided by 10, which is 2.06 m/s2.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Forces: weight down, normal up, push forward, friction backward. N = mg = 98 N so f = 0.30 × 98 = 29.4 N. Net force = 50 − 29.4 = 20.6 N. a = 20.6/10 = 2.06 m/s².",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Forces: weight down, normal up, push forward, friction backward."
+        },
+        {
+         "point": 1,
+         "quote": "N = mg = 98 N so f = 0.30 × 98 = 29.4 N."
+        },
+        {
+         "point": 2,
+         "quote": "Net force = 50 − 29.4 = 20.6 N."
+        },
+        {
+         "point": 3,
+         "quote": "a = 20.6/10 = 2.06 m/s²."
+        }
+       ],
+       "feedback": "Full marks. The friction depends on the normal force, which you found first."
+      },
+      {
+       "tier": "full",
+       "text": "Four arrows: mg down, N up, 50 N right, friction left. Friction is μN = 0.30(98) = 29.4 N. The horizontal net force is 20.6 N. Acceleration = F/m = 2.06 m/s².",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Four arrows: mg down, N up, 50 N right, friction left."
+        },
+        {
+         "point": 1,
+         "quote": "Friction is μN = 0.30(98) = 29.4 N."
+        },
+        {
+         "point": 2,
+         "quote": "The horizontal net force is 20.6 N."
+        },
+        {
+         "point": 3,
+         "quote": "Acceleration = F/m = 2.06 m/s²."
+        }
+       ],
+       "feedback": "All four marks, with a clear order."
+      },
+      {
+       "tier": "partial",
+       "text": "Weight, normal, push and friction. Friction is 0.30 × 98 = 29.4 N. The acceleration is 50/10 = 5.0 m/s².",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Weight, normal, push and friction."
+        },
+        {
+         "point": 1,
+         "quote": "Friction is 0.30 × 98 = 29.4 N."
+        }
+       ],
+       "feedback": "The acceleration comes from the net force, not the push alone. Subtract the friction: 20.6 N divided by 10 kg is 2.06 m/s2."
+      },
+      {
+       "tier": "partial",
+       "text": "The net force is 20.6 N and the acceleration is 2.06 m/s².",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The net force is 20.6 N"
+        },
+        {
+         "point": 3,
+         "quote": "the acceleration is 2.06 m/s²"
+        }
+       ],
+       "feedback": "The results are right. Show the forces and how you found the friction from the normal force.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The net force is 50 + 29.4 = 79.4 N so a = 7.94 m/s².",
+       "meets": [],
+       "feedback": "Friction opposes the motion, so it is subtracted from the applied force, not added."
+      },
+      {
+       "tier": "weak",
+       "text": "There's the weight, normal, push and friction. Friction is 0.30 × 10 = 3.0 N so the net force is 47 N.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There's the weight, normal, push and friction."
+        }
+       ],
+       "feedback": "Friction is μ times the normal force, which is 98 N, not the mass. That gives 29.4 N."
+      }
+     ]
+    },
+    {
+     "prompt": "Two ice skaters stand at rest facing each other. Skater A (60 kg) pushes on skater B (40 kg). Use Newton's third law and second law to compare the forces and the accelerations of the two skaters.",
+     "markScheme": [
+      "States that B exerts a force on A equal in size and opposite in direction to A's force on B",
+      "States that the forces act on different objects",
+      "Uses a = F/m to say that the lighter skater has the greater acceleration",
+      "Calculates or states that the ratio of accelerations is 3 to 2 (B accelerates 1.5 times as much)"
+     ],
+     "modelAnswer": "By Newton's third law, B pushes on A with a force equal in size and opposite in direction to A's push on B. The two forces act on different objects. Since a = F/m, the lighter skater B (40 kg) has a greater acceleration than A (60 kg): the ratio is 60 to 40, so B accelerates 1.5 times as much as A.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The forces are equal in size and opposite in direction. They act on different skaters so they don't cancel. a = F/m, so the lighter skater B speeds up more. The ratio of accelerations is 60:40, so B's acceleration is 1.5 times A's.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The forces are equal in size and opposite in direction."
+        },
+        {
+         "point": 1,
+         "quote": "They act on different skaters so they don't cancel."
+        },
+        {
+         "point": 2,
+         "quote": "a = F/m, so the lighter skater B speeds up more."
+        },
+        {
+         "point": 3,
+         "quote": "The ratio of accelerations is 60:40, so B's acceleration is 1.5 times A's."
+        }
+       ],
+       "feedback": "Full marks. You used both laws and gave the ratio."
+      },
+      {
+       "tier": "full",
+       "text": "A pushes B with force F, and B pushes A with F in the opposite direction. Each force acts on a different object. Same force on a smaller mass gives a bigger acceleration, so B moves away faster. a_B / a_A = 60/40 = 1.5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A pushes B with force F, and B pushes A with F in the opposite direction."
+        },
+        {
+         "point": 1,
+         "quote": "Each force acts on a different object."
+        },
+        {
+         "point": 2,
+         "quote": "Same force on a smaller mass gives a bigger acceleration, so B moves away faster."
+        },
+        {
+         "point": 3,
+         "quote": "a_B / a_A = 60/40 = 1.5."
+        }
+       ],
+       "feedback": "All four marks, and a precise ratio."
+      },
+      {
+       "tier": "partial",
+       "text": "The forces are equal and opposite. The lighter skater accelerates more.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The forces are equal and opposite."
+        },
+        {
+         "point": 2,
+         "quote": "The lighter skater accelerates more."
+        }
+       ],
+       "feedback": "Say why the forces do not cancel, and give the ratio of accelerations."
+      },
+      {
+       "tier": "partial",
+       "text": "The forces are on different skaters. The heavier skater pushes harder so she accelerates more.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The forces are on different skaters."
+        }
+       ],
+       "feedback": "The push is the same on each because of the third law. The lighter skater accelerates more.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A pushes harder on B because A is heavier, so B gets pushed away and A hardly moves.",
+       "meets": [],
+       "feedback": "Third-law forces are always equal. The accelerations differ because the masses differ."
+      },
+      {
+       "tier": "weak",
+       "text": "The two forces cancel each other so nobody moves. The third law says that.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The two forces cancel each other so nobody moves."
+        }
+       ],
+       "feedback": "The forces act on different skaters, so they cannot cancel. Each skater feels one force and accelerates."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Gravitation and circular motion",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the law of gravitation to describe forces between objects at a distance and explain weight;\n2. describe uniform circular motion and identify the centripetal force in a given situation.\n\n## Materials\n\nRubber stoppers on strings through plastic tubes, hanging masses, stopwatches, a bucket of water for the swing demo, the practical sheet.\n\n## Starter (6 minutes)\n\nSwing a bucket with a little water in it in a vertical circle. Ask: \"Why does the water stay in the bucket?\" Take ideas and record the words forces, inward and speed.\n\n## Main activity\n\n1. Present F = G m1 m2 / r squared. Discuss the inverse square law: doubling the distance cuts the force to a quarter. Compare weight (mg) on Earth (60 kg student: 588 N) and on the Moon (g = 1.6 m/s2, 96 N).\n2. Uniform circular motion: constant speed, changing direction, so there is an acceleration toward the center, a = v squared / r. A 1000 kg car at 20 m/s on a curve of radius 50 m has an acceleration of 8.0 m/s2 and a centripetal force of 8000 N.\n3. Practical: whirl a stopper of 0.020 kg on a string of 0.80 m and compare the calculated centripetal force with the weight of the hanging mass.\n\n## Checking for understanding\n\nAsk: \"When a car goes around a bend, what provides the centripetal force?\" Look for friction.\n\n## Worksheet and practical write-up\n\nGravitation calculations, circular motion and the lab report.",
+   "reading": {
+    "title": "Gravity at a distance, and why things go in circles",
+    "content": "Isaac Newton realized that the force that pulls an apple to the ground is the same one that keeps the Moon in orbit. The **law of universal gravitation** says that every pair of objects attracts each other with a force F = G m1 m2 / r squared, where m1 and m2 are the masses, r is the distance between their centers, and G is a very small constant, 6.67 times 10 to the power of -11 in SI units. The force is proportional to each mass and falls off with the square of the distance. If you double the distance, the force is one quarter as large. If you triple it, the force is one ninth.\n\nYour **weight** is the gravitational force that a planet exerts on you. Near the surface it equals mg, where g is the field strength of the planet: 9.8 N/kg on Earth, and about 1.6 N/kg on the Moon. A 60 kg student weighs 588 N on Earth and 96 N on the Moon. The mass is still 60 kg. Mass is the amount of matter and is the same everywhere. Weight is a force and changes with the planet.\n\nIn **uniform circular motion**, an object moves around a circle at constant speed. Its velocity is always changing because the direction changes, so it is accelerating, even though the speed is constant. The acceleration points toward the center and is a = v squared / r. By Newton's second law, there must be a net force toward the center, called the **centripetal force**: F = m v squared / r. The word does not name a new type of force. It describes the role played by some other force. For a car turning, it is the friction between the tires and the road. For the Moon, it is gravity. For a stone whirled on a string, it is the tension.\n\nFor a 1000 kg car going around a curve of radius 50 m at 20 m/s, the acceleration is 400 divided by 50, which is 8.0 m/s2, and the centripetal force is 8000 N. If the road is icy and friction cannot supply that much, the car goes straight, tangent to the circle, as Newton's first law predicts. No outward force pushes the car. The sensation of being thrown outward is your body's inertia, trying to continue in a straight line."
+   },
+   "cards": [
+    {
+     "front": "Law of universal gravitation",
+     "back": "Every two masses attract with a force proportional to the product of the masses and inversely to the square of their distance."
+    },
+    {
+     "front": "Inverse square law",
+     "back": "A relationship in which doubling the distance cuts the force to a quarter."
+    },
+    {
+     "front": "Weight",
+     "back": "The gravitational force on an object; W = mg."
+    },
+    {
+     "front": "Mass",
+     "back": "The amount of matter in an object, the same everywhere."
+    },
+    {
+     "front": "Centripetal force",
+     "back": "The net force toward the center that keeps an object in circular motion."
+    },
+    {
+     "front": "Centripetal acceleration",
+     "back": "The acceleration toward the center, a = v^2 / r."
+    },
+    {
+     "front": "Uniform circular motion",
+     "back": "Motion in a circle at constant speed."
+    },
+    {
+     "front": "Tangent",
+     "back": "A straight line that touches a circle at one point, the direction of motion if the force stops."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "If the distance between two masses is doubled, the gravitational force between them becomes:",
+     "options": [
+      "Half",
+      "A quarter",
+      "Double",
+      "The same"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 60 kg student travels to the Moon, where g = 1.6 N/kg. Her mass is:",
+     "options": [
+      "10 kg",
+      "60 kg",
+      "96 kg",
+      "588 kg"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 1000 kg car goes around a curve of radius 50 m at 20 m/s. What is the centripetal force?",
+     "options": [
+      "400 N",
+      "2000 N",
+      "8000 N",
+      "20,000 N"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "In uniform circular motion, the acceleration is directed:",
+     "options": [
+      "Along the velocity",
+      "Toward the center of the circle",
+      "Away from the center",
+      "Zero"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What provides the centripetal force on a car turning on a flat road?",
+     "options": [
+      "Gravity",
+      "The normal force",
+      "Friction between the tires and road",
+      "The engine"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A 60 kg student stands on the Earth, where g = 9.8 N/kg, and on the Moon, where g = 1.6 N/kg. Find the student's mass and weight in each place and explain the difference between mass and weight.",
+     "markScheme": [
+      "States the mass is 60 kg in both places",
+      "Calculates the weight on Earth as 588 N",
+      "Calculates the weight on the Moon as 96 N",
+      "Explains that mass is the amount of matter while weight is the gravitational force, which depends on the planet"
+     ],
+     "modelAnswer": "The student's mass is 60 kg on both the Earth and the Moon. The weight on Earth is 60 times 9.8 = 588 N and on the Moon is 60 times 1.6 = 96 N. Mass is the amount of matter, which does not change, while weight is the gravitational force and depends on the field strength of the planet.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mass is 60 kg everywhere. On Earth weight = 60 × 9.8 = 588 N. On the Moon weight = 60 × 1.6 = 96 N. Mass is how much matter there is and weight is the pull of gravity, which changes with the planet.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mass is 60 kg everywhere."
+        },
+        {
+         "point": 1,
+         "quote": "On Earth weight = 60 × 9.8 = 588 N."
+        },
+        {
+         "point": 2,
+         "quote": "On the Moon weight = 60 × 1.6 = 96 N."
+        },
+        {
+         "point": 3,
+         "quote": "Mass is how much matter there is and weight is the pull of gravity, which changes with the planet."
+        }
+       ],
+       "feedback": "Full marks. The difference between the two is stated clearly."
+      },
+      {
+       "tier": "full",
+       "text": "Her mass doesn't change, 60 kg on both. Earth: W = mg = 588 N. Moon: W = 96 N, which is about one sixth. Weight is a force that depends on g, while mass is a property of the student.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Her mass doesn't change, 60 kg on both."
+        },
+        {
+         "point": 1,
+         "quote": "Earth: W = mg = 588 N."
+        },
+        {
+         "point": 2,
+         "quote": "Moon: W = 96 N, which is about one sixth."
+        },
+        {
+         "point": 3,
+         "quote": "Weight is a force that depends on g, while mass is a property of the student."
+        }
+       ],
+       "feedback": "All four marks, with a good comparison."
+      },
+      {
+       "tier": "partial",
+       "text": "On Earth she weighs 588 N. On the Moon she weighs 96 N. Her mass on the Moon is 10 kg.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "On Earth she weighs 588 N."
+        },
+        {
+         "point": 2,
+         "quote": "On the Moon she weighs 96 N."
+        }
+       ],
+       "feedback": "Mass does not change with location. It is 60 kg on the Moon too, and weight is the quantity that changes."
+      },
+      {
+       "tier": "partial",
+       "text": "Mass is 60 kg in both places. Weight changes because gravity is different.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mass is 60 kg in both places."
+        },
+        {
+         "point": 3,
+         "quote": "Weight changes because gravity is different."
+        }
+       ],
+       "feedback": "Good explanation. Calculate the weights in newtons for both places.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "On the Moon she would have 96 kg and on the Earth 588 kg. Mass and weight are the same thing.",
+       "meets": [],
+       "feedback": "Mass is in kilograms and weight is a force in newtons. Mass stays 60 kg while weight changes."
+      },
+      {
+       "tier": "weak",
+       "text": "On Earth the weight is 588 N. On the Moon there's no gravity so she weighs 0 N.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "On Earth the weight is 588 N."
+        }
+       ],
+       "feedback": "The Moon has gravity, about one sixth of Earth's. The weight there is 60 × 1.6 = 96 N."
+      }
+     ]
+    },
+    {
+     "prompt": "A 1000 kg car rounds a flat curve of radius 50 m at 20 m/s. Calculate the centripetal acceleration and force, say what provides the force, and describe what happens if the road is icy.",
+     "markScheme": [
+      "Calculates the centripetal acceleration as 8.0 m/s2",
+      "Calculates the centripetal force as 8000 N",
+      "Identifies friction between tires and road as the source of the force",
+      "Explains that on ice there is not enough friction, so the car continues in a straight line (Newton's first law)"
+     ],
+     "modelAnswer": "The acceleration is v squared over r, which is 400 divided by 50, or 8.0 m/s2. The centripetal force is 1000 times 8.0 = 8000 N. It is provided by friction between the tires and the road. On ice, friction cannot supply 8000 N, so the car goes straight along the tangent, as Newton's first law predicts.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "a = v²/r = 400/50 = 8.0 m/s². F = ma = 1000 × 8.0 = 8000 N. The force comes from friction between the tires and the road. On ice there isn't enough friction, so the car goes straight, which is Newton's first law.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a = v²/r = 400/50 = 8.0 m/s²."
+        },
+        {
+         "point": 1,
+         "quote": "F = ma = 1000 × 8.0 = 8000 N."
+        },
+        {
+         "point": 2,
+         "quote": "The force comes from friction between the tires and the road."
+        },
+        {
+         "point": 3,
+         "quote": "On ice there isn't enough friction, so the car goes straight, which is Newton's first law."
+        }
+       ],
+       "feedback": "Full marks. Explaining the icy road with the first law avoids the idea of an outward force."
+      },
+      {
+       "tier": "full",
+       "text": "Centripetal acceleration is 8.0 m/s² toward the center. The net force toward the center is 8000 N. Static friction on the tires provides it. If the road is icy the friction is too low, so the car keeps going in a straight line instead of turning.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Centripetal acceleration is 8.0 m/s² toward the center."
+        },
+        {
+         "point": 1,
+         "quote": "The net force toward the center is 8000 N."
+        },
+        {
+         "point": 2,
+         "quote": "Static friction on the tires provides it."
+        },
+        {
+         "point": 3,
+         "quote": "If the road is icy the friction is too low, so the car keeps going in a straight line instead of turning."
+        }
+       ],
+       "feedback": "All four marks, in plain words."
+      },
+      {
+       "tier": "partial",
+       "text": "a = 8.0 m/s². Friction provides the force. On ice the car gets thrown outward by centrifugal force.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "a = 8.0 m/s²."
+        },
+        {
+         "point": 2,
+         "quote": "Friction provides the force."
+        }
+       ],
+       "feedback": "No outward force acts on the car. It moves in a straight line because the inward force is too small."
+      },
+      {
+       "tier": "partial",
+       "text": "The force is 8000 N and on ice the car goes straight.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The force is 8000 N"
+        },
+        {
+         "point": 3,
+         "quote": "on ice the car goes straight"
+        }
+       ],
+       "feedback": "Good. Show the acceleration calculation and say what provides the 8000 N.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The acceleration is zero because the speed is constant, so there is no force.",
+       "meets": [],
+       "feedback": "The velocity changes direction, so the car accelerates toward the center. The centripetal force is 8000 N."
+      },
+      {
+       "tier": "weak",
+       "text": "Friction is the force. The force is 20 × 50 = 1000 N and the acceleration is 1 m/s².",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Friction is the force."
+        }
+       ],
+       "feedback": "Use a = v squared divided by r. Friction is the right source, but 400 divided by 50 gives 8.0 m/s2."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Centripetal force on a whirled stopper",
+    "instructions": "Pass a string through a plastic tube and tie a rubber stopper of mass 0.020 kg to one end and a 0.100 kg hanging mass to the other. Whirl the stopper in a horizontal circle of radius 0.80 m so that the hanging mass stays still. Time 10 revolutions, calculate the speed and centripetal force, and compare it with the weight of the hanging mass.",
+    "steps": [
+     {
+      "text": "Measure the mass of the stopper and of the hanging weight."
+     },
+     {
+      "text": "Set the radius at 0.80 m by placing a marker on the string just below the tube."
+     },
+     {
+      "text": "Whirl the stopper so the marker stays at the bottom of the tube. Time 10 revolutions with a partner.",
+      "note": "Wear goggles and keep other people well away from the circle."
+     },
+     {
+      "text": "Repeat the timing three times and take the mean period."
+     },
+     {
+      "text": "Calculate v = 2πr/T and F = mv²/r."
+     },
+     {
+      "text": "Compare F with the weight of the hanging mass, mg, and explain any difference."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method and safety: controlled radius, repeated timing",
+      "maxPoints": 4
+     },
+     {
+      "description": "Calculation: period, speed and centripetal force",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: comparison with the weight and sources of error",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "Ten revolutions took 8.0 s on average, so the period was 0.80 s. The speed was 2 times pi times 0.80 divided by 0.80, which is 6.3 m/s. The centripetal force was 0.020 times 6.3 squared divided by 0.80, which is 0.99 N. The weight of the hanging mass was 0.100 times 9.8, or 0.98 N. The two agree within 1 percent, so the tension in the string supplies the centripetal force. Friction in the tube is the main error.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report: correct calculations, a close comparison, and a sensible source of error."
+     },
+     {
+      "tier": "full",
+      "text": "We kept the radius at 0.80 m and did three timings of ten revolutions: 8.1, 7.9 and 8.0 s, so the mean period was 0.80 s. v = 2πr/T = 6.28 m/s. F = mv²/r = (0.020)(6.28²)/0.80 = 0.99 N. The weight of the 0.100 kg mass is 0.98 N, so the string tension equals the centripetal force. The results differ by about 1%, probably due to friction at the tube and our timing.",
+      "scores": [
+       4,
+       4,
+       3
+      ],
+      "feedback": "Very good. Say which direction the friction error would push your result for full marks in the evaluation."
+     },
+     {
+      "tier": "partial",
+      "text": "We whirled the stopper and timed ten revolutions as 8.0 s. The speed was 6.3 m/s and the centripetal force was 0.99 N. The weight of the hanging mass was 0.98 N so they are about equal. I do not remember how I got the 6.3 so I cannot show the formula, and we only did one timing.",
+      "scores": [
+       2,
+       3,
+       2
+      ],
+      "feedback": "Show the formula for speed and repeat the timing. Your comparison is correct."
+     },
+     {
+      "tier": "partial",
+      "text": "We measured the time for ten turns and found the period was 0.80 s. Then F = mv squared over r. I used v = 0.80 and got F = 0.020 × 0.64 / 0.80 = 0.016 N, which is not close to the weight of 0.98 N. I think the string must have stretched a lot during the experiment.",
+      "scores": [
+       3,
+       1,
+       1
+      ],
+      "feedback": "The speed is the circumference divided by the period, 2πr/T = 6.3 m/s, not the period itself. Recalculate and compare."
+     },
+     {
+      "tier": "weak",
+      "text": "We spun the stopper around and it was hard to keep the marker in the same place. The hanging mass kept moving up and down. I think there was a centrifugal force pulling the stopper outward which is why the string was tight and the mass was held up.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "There is no outward force. The string tension pulls inward. Time the revolutions and calculate F = mv squared over r."
+     },
+     {
+      "tier": "weak",
+      "text": "The centripetal force is the same as the weight of the stopper, 0.020 × 9.8 = 0.20 N, because gravity is what makes things go in circles. We did not time the revolutions properly so I used the numbers from another group and I am not sure what they measured.",
+      "scores": [
+       0,
+       1,
+       1
+      ],
+      "feedback": "The stopper moves in a horizontal circle, so its weight is not the centripetal force. The string tension is. Use your own timing data."
+     }
+    ]
+   }
+  },
+  "7": {
+   "topic": "Momentum, collisions and designing for safety",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the conservation of momentum to predict the outcome of an interaction between two objects;\n2. design a device that reduces the force on an object during a collision, and test it.\n\n## Materials\n\nDynamics carts with Velcro, a track, eggs or mass models in zip bags, paper, foam, cardboard, straws, tape, a meter stick, the practical sheet.\n\n## Starter (6 minutes)\n\nAsk: \"Why does a catcher pull the glove back as the ball arrives?\" Take suggestions and keep them for later.\n\n## Main activity\n\n1. Define momentum p = mv. Show conservation with carts: a 2.0 kg cart at 3.0 m/s hits a 1.0 kg cart at rest, and they stick. Total momentum 6.0 kg m/s means a combined speed of 2.0 m/s.\n2. Elastic and inelastic collisions: compare energy before and after.\n3. Practical: design a container that protects a 60 g egg model dropped from 2.0 m. Use only the allowed materials. Test, redesign and record.\n\n## Checking for understanding\n\nAsk: \"Why does an air bag reduce injury?\" Look for longer time and smaller force.\n\n## Practical write-up\n\nCollect the design sketch, test data and evaluation.",
+   "reading": {
+    "title": "Momentum and the physics of safe landings",
+    "content": "Newton described motion with a quantity he called the \"quantity of motion,\" which we now call **momentum**. It is the product of an object's mass and velocity: p = mv, measured in kilogram meters per second. Like velocity, it is a vector. A 1000 kg car moving at 10 m/s has a momentum of 10,000 kg m/s, which is the same as a 10,000 kg truck moving at 1 m/s.\n\nThe key idea is the **conservation of momentum**. In a closed system, with no outside net force, the total momentum before an interaction equals the total momentum after it. Suppose a 2.0 kg cart moving at 3.0 m/s hits a 1.0 kg cart at rest, and they stick together. The total momentum before is 2.0 times 3.0 plus 0, which is 6.0 kg m/s. After the collision the combined mass is 3.0 kg, so 3.0 v = 6.0 and v = 2.0 m/s. A collision in which objects stick together is perfectly inelastic. Kinetic energy is not conserved. Before, it was 1/2 times 2.0 times 9.0, which is 9.0 J. After, it is 1/2 times 3.0 times 4.0, or 6.0 J. The missing 3.0 J went into deformation, sound and heat. In an **elastic** collision, such as billiard balls, both momentum and kinetic energy are conserved.\n\nNow think about safety. The force on an object during a collision is linked to how quickly its momentum changes: F = change in momentum divided by time. If the momentum has to drop to zero, the change is fixed, so the only way to reduce the force is to increase the time over which it happens. This is why a catcher pulls the glove back, why gymnastics mats are soft, why cars have crumple zones and air bags, and why you bend your knees on landing. Stopping in 0.10 s instead of 0.010 s reduces the force by a factor of ten.\n\nTo design a protective device, first define the problem: a 60 g egg model dropped from 2.0 m reaches about 6.3 m/s, so its momentum is 0.38 kg m/s. Second, choose materials that deform and so extend the stopping time, such as foam, straws or paper structures. Third, test, measure and improve. A good test records the result, such as whether the egg survived, the height used, and the change you made between trials."
+   },
+   "cards": [
+    {
+     "front": "Momentum",
+     "back": "The product of mass and velocity, p = mv."
+    },
+    {
+     "front": "Conservation of momentum",
+     "back": "In a closed system, total momentum stays constant."
+    },
+    {
+     "front": "Elastic collision",
+     "back": "A collision in which kinetic energy is conserved."
+    },
+    {
+     "front": "Inelastic collision",
+     "back": "A collision in which kinetic energy is not conserved."
+    },
+    {
+     "front": "Perfectly inelastic collision",
+     "back": "A collision in which objects stick together."
+    },
+    {
+     "front": "Crumple zone",
+     "back": "A part of a car designed to deform and lengthen the time of a collision."
+    },
+    {
+     "front": "Closed system",
+     "back": "A group of objects with no net outside force acting on it."
+    },
+    {
+     "front": "Safety design",
+     "back": "Increasing collision time to reduce the force on an object."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A 2.0 kg cart at 3.0 m/s sticks to a 1.0 kg cart at rest. What is their speed afterward?",
+     "options": [
+      "1.0 m/s",
+      "2.0 m/s",
+      "3.0 m/s",
+      "6.0 m/s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the momentum of a 1000 kg car traveling at 10 m/s?",
+     "options": [
+      "100 kg m/s",
+      "1000 kg m/s",
+      "10,000 kg m/s",
+      "100,000 kg m/s"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "An air bag reduces injury mainly because it:",
+     "options": [
+      "Reduces the momentum change",
+      "Increases the time of the stop, reducing the force",
+      "Makes the car heavier",
+      "Increases the speed of the stop"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Two carts collide and stick. Which quantity is conserved?",
+     "options": [
+      "Kinetic energy",
+      "Momentum",
+      "Speed",
+      "Both kinetic energy and momentum"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 60 g egg model is dropped from 2.0 m and reaches the floor at about 6.3 m/s. Its momentum is closest to:",
+     "options": [
+      "0.06 kg m/s",
+      "0.38 kg m/s",
+      "3.8 kg m/s",
+      "380 kg m/s"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A 1500 kg car moving at 12 m/s hits a stationary 1000 kg car, and they lock together. Find their speed just after the collision, and show that kinetic energy is not conserved.",
+     "markScheme": [
+      "Calculates the initial momentum as 18,000 kg m/s",
+      "Calculates the final speed as 7.2 m/s using the combined mass of 2500 kg",
+      "Calculates the initial kinetic energy as 108,000 J",
+      "Calculates the final kinetic energy as 64,800 J and concludes it is not conserved"
+     ],
+     "modelAnswer": "The momentum before is 1500 times 12 = 18,000 kg m/s. After the collision the combined mass is 2500 kg, so v = 18,000 divided by 2500 = 7.2 m/s. The initial kinetic energy is 1/2 times 1500 times 144 = 108,000 J and the final is 1/2 times 2500 times 51.84 = 64,800 J, so kinetic energy is lost.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "p before = 1500 × 12 = 18,000 kg·m/s. After: 2500 v = 18,000 so v = 7.2 m/s. KE before = ½(1500)(12²) = 108,000 J. KE after = ½(2500)(7.2²) = 64,800 J, which is less, so the energy was not conserved.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "p before = 1500 × 12 = 18,000 kg·m/s."
+        },
+        {
+         "point": 1,
+         "quote": "After: 2500 v = 18,000 so v = 7.2 m/s."
+        },
+        {
+         "point": 2,
+         "quote": "KE before = ½(1500)(12²) = 108,000 J."
+        },
+        {
+         "point": 3,
+         "quote": "KE after = ½(2500)(7.2²) = 64,800 J, which is less, so the energy was not conserved."
+        }
+       ],
+       "feedback": "Full marks. The energy lost went into deformation, sound and heat."
+      },
+      {
+       "tier": "full",
+       "text": "Momentum is conserved: 1500 × 12 = 18,000. The combined mass is 2500 kg so the speed is 18,000/2500 = 7.2 m/s. The initial kinetic energy is 108 kJ. The final is 64.8 kJ. Since they are different, kinetic energy was not conserved.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Momentum is conserved: 1500 × 12 = 18,000."
+        },
+        {
+         "point": 1,
+         "quote": "The combined mass is 2500 kg so the speed is 18,000/2500 = 7.2 m/s."
+        },
+        {
+         "point": 2,
+         "quote": "The initial kinetic energy is 108 kJ."
+        },
+        {
+         "point": 3,
+         "quote": "The final is 64.8 kJ. Since they are different, kinetic energy was not conserved."
+        }
+       ],
+       "feedback": "All four marks, with a good check on the energy."
+      },
+      {
+       "tier": "partial",
+       "text": "The momentum is 18,000. Dividing by 2500 gives 7.2 m/s. The kinetic energy is conserved because the mass is the same.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The momentum is 18,000."
+        },
+        {
+         "point": 1,
+         "quote": "Dividing by 2500 gives 7.2 m/s."
+        }
+       ],
+       "feedback": "Momentum is conserved, but kinetic energy is not in a collision where cars lock together. Compare 108,000 J with 64,800 J."
+      },
+      {
+       "tier": "partial",
+       "text": "The initial KE is 108,000 J and the final is 64,800 J.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The initial KE is 108,000 J"
+        },
+        {
+         "point": 3,
+         "quote": "the final is 64,800 J"
+        }
+       ],
+       "feedback": "Good. Calculate the speed using conservation of momentum first, since the final energy depends on it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The speed after is 12 m/s because the first car keeps its speed and pushes the other.",
+       "meets": [],
+       "feedback": "The two cars move together with a smaller speed. Use conservation of momentum with the total mass."
+      },
+      {
+       "tier": "weak",
+       "text": "The momentum is 18,000. After the collision it's 18,000 × 2500 = 45,000,000 so v = 45 million m/s.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The momentum is 18,000."
+        }
+       ],
+       "feedback": "To find the speed, divide the momentum by the combined mass: 18,000 divided by 2500."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain, using F = Δp/Δt, why a crumple zone and an air bag reduce the force on a driver in a crash, and compare the force when a 70 kg driver traveling at 15 m/s stops in 0.10 s and in 0.50 s.",
+     "markScheme": [
+      "Calculates the momentum change as 70 x 15 = 1050 kg m/s",
+      "Calculates the force as 10,500 N for a 0.10 s stop",
+      "Calculates the force as 2100 N for a 0.50 s stop",
+      "Explains that the momentum change is fixed, so a longer stopping time gives a smaller force"
+     ],
+     "modelAnswer": "The driver's momentum change is 70 times 15 = 1050 kg m/s whichever way they stop. If the stop takes 0.10 s the force is 1050 / 0.10 = 10,500 N. If it takes 0.50 s the force is 1050 / 0.50 = 2100 N. The change in momentum is fixed, so a crumple zone and air bag that lengthen the time reduce the force.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Δp = 70 × 15 = 1050 kg·m/s. With 0.10 s, F = 1050/0.10 = 10,500 N. With 0.50 s, F = 1050/0.50 = 2100 N. The momentum change is the same, so taking longer to stop makes the force smaller. That's what air bags and crumple zones do.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Δp = 70 × 15 = 1050 kg·m/s."
+        },
+        {
+         "point": 1,
+         "quote": "With 0.10 s, F = 1050/0.10 = 10,500 N."
+        },
+        {
+         "point": 2,
+         "quote": "With 0.50 s, F = 1050/0.50 = 2100 N."
+        },
+        {
+         "point": 3,
+         "quote": "The momentum change is the same, so taking longer to stop makes the force smaller. That's what air bags and crumple zones do."
+        }
+       ],
+       "feedback": "Full marks. The five-fold reduction in force is a strong result."
+      },
+      {
+       "tier": "full",
+       "text": "The driver's momentum goes from 1050 to 0. Hard stop: F = 10,500 N in 0.10 s. Soft stop: F = 2100 N in 0.50 s. Since F = Δp/Δt and Δp can't change, a bigger Δt gives a smaller force.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The driver's momentum goes from 1050 to 0."
+        },
+        {
+         "point": 1,
+         "quote": "Hard stop: F = 10,500 N in 0.10 s."
+        },
+        {
+         "point": 2,
+         "quote": "Soft stop: F = 2100 N in 0.50 s."
+        },
+        {
+         "point": 3,
+         "quote": "Since F = Δp/Δt and Δp can't change, a bigger Δt gives a smaller force."
+        }
+       ],
+       "feedback": "All four marks, in the right order."
+      },
+      {
+       "tier": "partial",
+       "text": "1050 kg·m/s is the momentum change. 0.10 s gives 10,500 N. The air bag makes the stop quicker.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1050 kg·m/s is the momentum change."
+        },
+        {
+         "point": 1,
+         "quote": "0.10 s gives 10,500 N."
+        }
+       ],
+       "feedback": "An air bag makes the stop slower, which is what reduces the force. Calculate the force for 0.50 s too."
+      },
+      {
+       "tier": "partial",
+       "text": "A 0.50 s stop gives 2100 N. A longer time means a smaller force.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "A 0.50 s stop gives 2100 N."
+        },
+        {
+         "point": 3,
+         "quote": "A longer time means a smaller force."
+        }
+       ],
+       "feedback": "Good. Show the momentum change and the force for the 0.10 s stop so we can see the comparison.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The force is 70 × 15 = 1050 N in both cases because the mass and speed are the same.",
+       "meets": [],
+       "feedback": "The momentum change is the same, but the force depends on how long the stop takes. Divide by the time."
+      },
+      {
+       "tier": "weak",
+       "text": "A longer stop means a smaller force. That is because the air bag is soft, so it absorbs the energy and the momentum disappears.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "A longer stop means a smaller force."
+        }
+       ],
+       "feedback": "Momentum does not disappear; it goes to zero for the driver because of the force over time. The soft bag makes the time longer."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Designing a protective egg container",
+    "instructions": "Using only paper, straws, cardboard, foam and tape, with a total mass of no more than 80 g, build a container for a 60 g egg model. Drop it from 2.0 m, record whether the egg survives, and improve the design over three trials. Explain the result using momentum, time and force.",
+    "steps": [
+     {
+      "text": "Define the problem: protect a 60 g egg model dropped from 2.0 m, with a container of 80 g or less."
+     },
+     {
+      "text": "Sketch your design and label the parts that will deform to lengthen the stopping time."
+     },
+     {
+      "text": "Build the container and measure its total mass on the balance."
+     },
+     {
+      "text": "Drop it from 2.0 m onto the floor mat and record whether the egg model survived and how much the container deformed.",
+      "note": "Stand clear of the drop zone and keep eyes away from the container."
+     },
+     {
+      "text": "Change one feature, rebuild, and test again. Repeat for three trials."
+     },
+     {
+      "text": "Write an evaluation using F = Δp/Δt to explain which feature made the biggest difference."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Design and method: sketch, mass, controlled drop height",
+      "maxPoints": 4
+     },
+     {
+      "description": "Testing: three trials with results and changes recorded",
+      "maxPoints": 4
+     },
+     {
+      "description": "Evaluation: uses momentum, time and force with evidence",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "Our first container was a paper box with straws as springs and had a mass of 72 g. The egg model cracked on trial one, survived trial two after we lengthened the straws from 3 cm to 6 cm, and survived trial three with a foam pad added. The egg reaches the floor at 6.3 m/s, so its momentum is 0.38 kg m/s. Straws that crush over 6 cm take longer to stop it, and F equals the momentum change divided by the time, so the force is smaller.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report with a clear design, three recorded trials, and an evaluation based on F = Δp/Δt."
+     },
+     {
+      "tier": "full",
+      "text": "Design: a cardboard cube holding the egg in a foam sling, with eight straws bent as crumple legs, total mass 76 g. Test 1: the legs buckled and the egg cracked. Test 2: we taped the legs in a cone and it survived. Test 3: it survived again. The impact lowers the egg's momentum from 0.38 kg m/s to zero, and the crushing legs lengthen the time, so the average force on the egg is smaller. A longer time reduces the force.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. Include the mass for each version and the height for each test to complete the record."
+     },
+     {
+      "tier": "partial",
+      "text": "We made a box out of cardboard with foam inside. The container weighed 70 g. We dropped it from 2.0 m and the egg did not break on the first try. I think the foam worked because it is soft and soft things are good for eggs. We did not do other tests because the first one worked.",
+      "scores": [
+       3,
+       1,
+       1
+      ],
+      "feedback": "Three trials with changes were required. Explain why soft helps, using the time of the stop and the force."
+     },
+     {
+      "tier": "partial",
+      "text": "Our container was made of paper and straws and weighed 85 g, a bit over the limit. It was dropped three times and the egg broke on the second one. In the evaluation I think a larger parachute would help, because the air slows it down and the egg hits the floor slower and so the momentum is lower.",
+      "scores": [
+       2,
+       3,
+       1
+      ],
+      "feedback": "Check the mass limit. The ideas of lower speed and less momentum are sensible, but a parachute was not an allowed material here."
+     },
+     {
+      "tier": "weak",
+      "text": "We built a container and dropped it. The egg broke. The container was too weak. Next time we should make a better one with more stuff on it. It was fun and our group worked well together on the project and the egg looked funny after the crash.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Describe what you built, give the mass, and explain what the crushed parts did to the time of the stop."
+     },
+     {
+      "tier": "weak",
+      "text": "The egg breaks because of the momentum. To stop the egg breaking you have to take the momentum away with the container, so a very strong hard box is best. A solid box does not bend so none of the force can get in, which is why our box worked so well.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "A hard box stops the egg quickly, so the force is large. Soft, crushable parts lengthen the time and reduce the force."
+     }
+    ]
+   }
+  },
+  "8": {
+   "topic": "Impulse and the trade of kinetic and potential energy",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. relate impulse to change in momentum and apply it to a car crash or a ball hit by a bat;\n2. use a model to calculate how kinetic and potential energy trade off in a moving system.\n\n## Materials\n\nA force sensor or a table of force-time data, a roller-coaster track model with a marble, rulers, a stopwatch, the quiz.\n\n## Starter (6 minutes)\n\nShow a slow-motion video of a bat hitting a baseball. Ask: \"How long is the ball in contact with the bat, and how big is the force?\" Estimate together: about 0.001 s, thousands of newtons.\n\n## Main activity\n\n1. Define impulse J = FΔt = Δp. Work the baseball: a 0.15 kg ball changes velocity by 60 m/s in 0.0030 s, which needs 3000 N. Compare a car crash of a 1200 kg car stopping from 15 m/s in 0.10 s (180,000 N) and in 0.50 s (36,000 N).\n2. Energy transfer: potential energy mgh and kinetic energy 1/2 mv squared. A 500 kg roller coaster at the top of a 20 m hill from rest reaches 19.8 m/s at the bottom. The total mechanical energy is 98,000 J.\n3. Marble track: release from different heights, predict and measure the speed at the bottom.\n\n## Checking for understanding\n\nAsk: \"At the bottom of the hill, where did the potential energy go?\"\n\n## Quiz\n\nFive questions on impulse and energy.",
+   "reading": {
+    "title": "Impulse, and energy changing form",
+    "content": "The force that acts on an object during a collision lasts only a short time, but it changes the object's momentum. The product of the force and the time it acts is called **impulse**: J = FΔt. The **impulse-momentum theorem** states that the impulse equals the change in momentum: FΔt = mΔv. It is Newton's second law written in a form that is useful for collisions, when the force is large and short and hard to measure directly.\n\nTake a baseball of 0.15 kg that arrives at 30 m/s and leaves the bat at 30 m/s in the opposite direction. The change in velocity is 60 m/s, so the change in momentum is 0.15 times 60, which is 9.0 kg m/s. If the contact lasts 0.0030 s, the average force is 9.0 divided by 0.0030, which is 3000 N, about the weight of a small car. The bat's follow-through increases the contact time slightly, which increases the impulse and the speed of the ball.\n\nIn a car crash, a 1200 kg car moving at 15 m/s must lose all of its 18,000 kg m/s of momentum. If the car is stopped by a wall in 0.10 s, the average force is 180,000 N. A crumple zone that extends the time to 0.50 s reduces the force to 36,000 N. The same momentum change takes place, but the force is five times smaller.\n\nEnergy gives another way to analyze motion. **Gravitational potential energy** is mgh, the energy stored by lifting a mass m a height h. **Kinetic energy** is 1/2 mv squared, the energy of motion. In a system with only gravity doing work (friction ignored) the total mechanical energy is conserved, and energy trades between the two forms. A 500 kg roller-coaster car at the top of a 20 m hill, starting from rest, has a potential energy of 500 times 9.8 times 20, or 98,000 J. At the bottom, all of it becomes kinetic energy, so 1/2 times 500 times v squared is 98,000, giving v = 19.8 m/s. Notice that the mass cancels, so a car of any mass would reach the same speed. At the halfway height, 10 m, half of the energy is potential and half is kinetic, and the speed is 14 m/s.\n\nReal systems lose some energy to friction and air resistance as heat, so a real coaster reaches a slightly lower speed. The total energy is still conserved, but not all of it remains mechanical."
+   },
+   "cards": [
+    {
+     "front": "Impulse",
+     "back": "The product of force and the time it acts, J = FΔt."
+    },
+    {
+     "front": "Impulse-momentum theorem",
+     "back": "The impulse on an object equals its change in momentum."
+    },
+    {
+     "front": "Gravitational potential energy",
+     "back": "The energy stored by an object's height, mgh."
+    },
+    {
+     "front": "Kinetic energy",
+     "back": "The energy of motion, 1/2 mv^2."
+    },
+    {
+     "front": "Mechanical energy",
+     "back": "The sum of kinetic and potential energy."
+    },
+    {
+     "front": "Conservation of energy",
+     "back": "Energy cannot be created or destroyed, only changed in form."
+    },
+    {
+     "front": "Joule (J)",
+     "back": "The unit of energy; one newton-meter."
+    },
+    {
+     "front": "Contact time",
+     "back": "The short time during which a collision force acts."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A 0.15 kg ball changes velocity by 60 m/s in 0.0030 s. What is the average force on it?",
+     "options": [
+      "300 N",
+      "3000 N",
+      "9.0 N",
+      "30,000 N"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 500 kg roller-coaster car at the top of a 20 m hill has what potential energy (g = 9.8 m/s2)?",
+     "options": [
+      "10,000 J",
+      "49,000 J",
+      "98,000 J",
+      "196,000 J"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Ignoring friction, the speed of the car at the bottom of the 20 m hill is about:",
+     "options": [
+      "10 m/s",
+      "14 m/s",
+      "19.8 m/s",
+      "39.6 m/s"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A longer stopping time for the same momentum change gives:",
+     "options": [
+      "A larger force",
+      "A smaller force",
+      "The same force",
+      "A larger impulse"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A coaster car is at half the height of the first hill with no friction. Compared with the top, its total mechanical energy is:",
+     "options": [
+      "Half",
+      "A quarter",
+      "The same",
+      "Double"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A 1200 kg car traveling at 15 m/s stops in 0.50 s because of its crumple zone. Calculate the impulse and the average force. Then say what the force would be if it stopped in 0.10 s against a rigid wall.",
+     "markScheme": [
+      "Calculates the change in momentum as 18,000 kg m/s (impulse 18,000 N s)",
+      "Calculates the force for 0.50 s as 36,000 N",
+      "Calculates the force for 0.10 s as 180,000 N",
+      "Explains that the shorter stopping time gives a larger force for the same impulse"
+     ],
+     "modelAnswer": "The change in momentum is 1200 times 15 = 18,000 kg m/s, so the impulse is 18,000 N s. The average force over 0.50 s is 18,000 divided by 0.50 = 36,000 N. Over 0.10 s it would be 180,000 N. The impulse is the same, so the shorter stopping time gives a force five times larger.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Impulse = Δp = 1200 × 15 = 18,000 N·s. F = 18,000/0.50 = 36,000 N. With a rigid wall in 0.10 s, F = 18,000/0.10 = 180,000 N. The impulse is the same, so a shorter time means a larger force, five times as much.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Impulse = Δp = 1200 × 15 = 18,000 N·s."
+        },
+        {
+         "point": 1,
+         "quote": "F = 18,000/0.50 = 36,000 N."
+        },
+        {
+         "point": 2,
+         "quote": "With a rigid wall in 0.10 s, F = 18,000/0.10 = 180,000 N."
+        },
+        {
+         "point": 3,
+         "quote": "The impulse is the same, so a shorter time means a larger force, five times as much."
+        }
+       ],
+       "feedback": "Full marks. The comparison shows the benefit of the crumple zone clearly."
+      },
+      {
+       "tier": "full",
+       "text": "The momentum change is 18,000 kg·m/s, which equals the impulse. Over 0.50 s the force is 36,000 N. Over 0.10 s it'd be 180,000 N. Same impulse but a shorter time gives a much bigger force.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The momentum change is 18,000 kg·m/s, which equals the impulse."
+        },
+        {
+         "point": 1,
+         "quote": "Over 0.50 s the force is 36,000 N."
+        },
+        {
+         "point": 2,
+         "quote": "Over 0.10 s it'd be 180,000 N."
+        },
+        {
+         "point": 3,
+         "quote": "Same impulse but a shorter time gives a much bigger force."
+        }
+       ],
+       "feedback": "All four marks, concise and correct."
+      },
+      {
+       "tier": "partial",
+       "text": "The impulse is 18,000 N·s. The force is 36,000 N. The force with the wall is the same because the momentum is the same.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The impulse is 18,000 N·s."
+        },
+        {
+         "point": 1,
+         "quote": "The force is 36,000 N."
+        }
+       ],
+       "feedback": "The impulse is the same but the force is not. A shorter time requires a bigger force, 180,000 N."
+      },
+      {
+       "tier": "partial",
+       "text": "The force with the wall is 180,000 N. It's larger because the time is shorter.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The force with the wall is 180,000 N."
+        },
+        {
+         "point": 3,
+         "quote": "It's larger because the time is shorter."
+        }
+       ],
+       "feedback": "Good. Also calculate the impulse and the force in the crumple-zone case.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "1200 × 15 = 18,000 N for both stops because the force is mass times velocity.",
+       "meets": [],
+       "feedback": "Mass times velocity is momentum, not force. Divide the impulse by the stopping time to get the force."
+      },
+      {
+       "tier": "weak",
+       "text": "The impulse is 18,000 N·s. The force is 18,000 × 0.50 = 9000 N and 18,000 × 0.10 = 1800 N so the wall gives less force.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The impulse is 18,000 N·s."
+        }
+       ],
+       "feedback": "You multiplied where you needed to divide: F = impulse / time. The shorter time gives the larger force."
+      }
+     ]
+    },
+    {
+     "prompt": "A 500 kg roller-coaster car starts from rest at the top of a 20 m hill. Ignoring friction, calculate its speed at the bottom and at the halfway height of 10 m. Explain the energy changes.",
+     "markScheme": [
+      "Calculates the potential energy at the top as 98,000 J",
+      "Sets the kinetic energy at the bottom equal to this and finds a speed of 19.8 m/s",
+      "Finds the speed at 10 m as about 14 m/s, where half the energy is kinetic",
+      "Explains that potential energy changes into kinetic energy while the total mechanical energy stays constant (no friction)"
+     ],
+     "modelAnswer": "At the top, the potential energy is 500 times 9.8 times 20, which is 98,000 J. At the bottom this is all kinetic, so 1/2 times 500 times v squared = 98,000 and v = 19.8 m/s. At 10 m, half of it, 49,000 J, is kinetic, so v = 14 m/s. Potential energy changes into kinetic energy, and with no friction the total stays constant.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "PE at the top = mgh = 500(9.8)(20) = 98,000 J. At the bottom KE = 98,000 J, so v = √(2 × 98,000/500) = 19.8 m/s. At 10 m, half the energy is kinetic (49,000 J), so v = 14 m/s. The potential energy turns into kinetic energy and the total stays the same since there is no friction.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "PE at the top = mgh = 500(9.8)(20) = 98,000 J."
+        },
+        {
+         "point": 1,
+         "quote": "At the bottom KE = 98,000 J, so v = √(2 × 98,000/500) = 19.8 m/s."
+        },
+        {
+         "point": 2,
+         "quote": "At 10 m, half the energy is kinetic (49,000 J), so v = 14 m/s."
+        },
+        {
+         "point": 3,
+         "quote": "The potential energy turns into kinetic energy and the total stays the same since there is no friction."
+        }
+       ],
+       "feedback": "Full marks. You tracked the energy at three heights."
+      },
+      {
+       "tier": "full",
+       "text": "Total energy = 98,000 J. At the bottom all of it is KE, and ½mv² = 98,000 gives 19.8 m/s. At the halfway point 49,000 J is KE, so the speed is about 14 m/s. Energy changes form from potential to kinetic but the sum of the two doesn't change, assuming no friction.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Total energy = 98,000 J."
+        },
+        {
+         "point": 1,
+         "quote": "At the bottom all of it is KE, and ½mv² = 98,000 gives 19.8 m/s."
+        },
+        {
+         "point": 2,
+         "quote": "At the halfway point 49,000 J is KE, so the speed is about 14 m/s."
+        },
+        {
+         "point": 3,
+         "quote": "Energy changes form from potential to kinetic but the sum of the two doesn't change, assuming no friction."
+        }
+       ],
+       "feedback": "All four marks, with a good explanation of conservation."
+      },
+      {
+       "tier": "partial",
+       "text": "PE = 98,000 J. The speed at the bottom is 19.8 m/s. At the halfway point the speed is half, 9.9 m/s.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "PE = 98,000 J."
+        },
+        {
+         "point": 1,
+         "quote": "The speed at the bottom is 19.8 m/s."
+        }
+       ],
+       "feedback": "Speed is not proportional to height. At half the height, half the energy is kinetic, so the speed is about 14 m/s."
+      },
+      {
+       "tier": "partial",
+       "text": "PE turns into KE. At the halfway height the speed is 14 m/s.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "PE turns into KE."
+        },
+        {
+         "point": 2,
+         "quote": "At the halfway height the speed is 14 m/s."
+        }
+       ],
+       "feedback": "Good. Calculate the total energy and the speed at the bottom.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The speed at the bottom is 20 m/s because the hill is 20 m high. At the halfway point it's 10 m/s.",
+       "meets": [],
+       "feedback": "The numbers match by coincidence at the top, but speed comes from the energy: set 1/2 m v squared equal to mgh."
+      },
+      {
+       "tier": "weak",
+       "text": "PE is mgh = 98,000 J. When the car goes down the energy is used up so there is none left at the bottom.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "PE is mgh = 98,000 J."
+        }
+       ],
+       "feedback": "Energy is not used up. The potential energy becomes kinetic energy as the car speeds up."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

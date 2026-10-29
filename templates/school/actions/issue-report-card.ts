@@ -9,6 +9,7 @@ import { nanoid } from "nanoid";
 import { z } from "zod";
 import { jsonish } from "../shared/zod-json.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
+import { formatGpa, gpaOf } from "../shared/gpa.js";
 import { missedWorkPolicy, summarise } from "../shared/missed-work.js";
 import { SHARED_STATUSES } from "../server/lib/shared-with-class.js";
 
@@ -133,6 +134,8 @@ export default defineAction({
             name: schema.classes.name,
             termId: schema.classes.termId,
             subjectName: schema.subjects.name,
+            courseLevel: schema.subjects.courseLevel,
+            credits: schema.subjects.credits,
           })
           .from(schema.classes)
           .leftJoin(
@@ -207,6 +210,8 @@ export default defineAction({
           assessmentsSet: summary.set,
           missed: Math.max(0, summary.set - summary.sat),
           percentage: summary.percentage,
+          courseLevel: cls.courseLevel ?? null,
+          credits: cls.credits != null ? Number(cls.credits) : null,
           grade:
             summary.percentage === null ? null : letterFor(summary.percentage),
         };
@@ -220,6 +225,7 @@ export default defineAction({
             counted.length,
         )
       : null;
+    const gpa = gpaOf(config, counted);
     const missedTotal = subjects.reduce((n, s) => n + (s.missed ?? 0), 0);
 
     // Position in the year group, when the school asks for one.
@@ -286,6 +292,7 @@ export default defineAction({
       missedWorkPolicy: policy,
       position,
       overallGrade: overall === null ? null : letterFor(overall),
+      gpa,
       traits: args.traits ?? {},
       attendance: args.attendance ?? null,
       comments: args.comments ?? {},
@@ -372,7 +379,7 @@ function renderReportCard(s: any): string {
         ? row.assessmentsCounted || "—"
         : `${row.assessmentsCounted} of ${row.assessmentsSet}`;
     lines.push(
-      `| ${row.subject} | ${done} | ${
+      `| ${row.subject}${row.courseLevel ? ` (${row.courseLevel})` : ""} | ${done} | ${
         row.percentage === null ? "—" : `${row.percentage}%`
       } | ${row.grade ?? "—"} |`,
     );
@@ -383,6 +390,11 @@ function renderReportCard(s: any): string {
     );
   }
   lines.push("");
+
+  if (s.gpa) {
+    lines.push(`**GPA:** ${formatGpa(s.gpa)}`);
+    lines.push("");
+  }
 
   if (s.position) {
     lines.push(

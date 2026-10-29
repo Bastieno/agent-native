@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getOrgSetting } from "@agent-native/core/settings";
-import { resourceGetByPath, SHARED_OWNER } from "@agent-native/core/resources";
+import { readSchoolGuide } from "../server/lib/school-guide.js";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -194,6 +194,14 @@ export default defineAction({
         fix: "update-school-config --paperSize letter",
       });
     }
+    if (!config.schoolTimezone && !config.timezone) {
+      gaps.push({
+        setting: "Timezone",
+        meanwhile:
+          "Times are shown in UTC, and the assistant's daily message limit turns over at midnight UTC rather than the school's own midnight.",
+        fix: 'update-school-config --schoolTimezone "America/New_York"',
+      });
+    }
     if (!config.locale) {
       gaps.push({
         setting: "Locale",
@@ -269,7 +277,7 @@ export default defineAction({
       });
     }
 
-    const guide = await resourceGetByPath(SHARED_OWNER, "SCHOOL_GUIDE.md");
+    const guide = await readSchoolGuide(orgId);
     if (!guide?.content?.trim()) {
       gaps.push({
         setting: "School guide",

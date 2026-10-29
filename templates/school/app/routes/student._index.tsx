@@ -1,3 +1,4 @@
+import { CalendarBanner } from "@/components/CalendarBanner";
 import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -85,6 +86,7 @@ export default function StudentDashboard() {
   return (
     <div className="p-6 space-y-6">
       <HelpNudge />
+      <CalendarBanner />
       <div>
         <h1 className="text-xl font-semibold">
           {firstName ? `Welcome back, ${firstName}` : "Welcome back"}

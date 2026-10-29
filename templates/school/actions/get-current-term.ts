@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { termContext } from "../server/lib/timetable.js";
+import { calendarPositionFor } from "../server/lib/calendar-position.js";
 import { z } from "zod";
 
 /**
@@ -17,7 +18,7 @@ import { z } from "zod";
  */
 export default defineAction({
   description:
-    "The academic session and term the school is in today, from the school's own term dates. Returns the next term when today falls in a break.",
+    "The academic session and term the school is in today, from the school's own term dates, and the week of the term with what it is for (ordinary teaching, a break, revision, an assessment week or examinations; `calendar`). Returns the next term when today falls in a break. Read `calendar` before saying lessons or lesson notes are missing: in a break, revision or exam week none are expected.",
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
@@ -32,6 +33,7 @@ export default defineAction({
       };
     }
     const { year, terms, current, next } = ctx;
+    const calendar = current ? await calendarPositionFor(orgId) : null;
 
     return {
       session: { id: year.id, name: year.name },
@@ -44,6 +46,7 @@ export default defineAction({
             sequence: current.sequence,
           }
         : null,
+      calendar,
       // Between terms is a real state, not a missing one.
       inBreak: !current,
       nextTerm:

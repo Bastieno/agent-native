@@ -1,7 +1,7 @@
-import { bindUnits } from "@shared/bind-units";
+import { typeset } from "@shared/typeset";
 
 /**
- * `bindUnits` over a markdown tree's prose only.
+ * `typeset` over a markdown tree's prose only.
  *
  * As a remark plugin rather than a search-and-replace on the source, because
  * by the time it sees the tree, code, inline code and `$LaTeX$` are their own
@@ -13,7 +13,7 @@ type Node = { type: string; value?: string; children?: Node[] };
 export const remarkBindUnits = () => (tree: unknown) => {
   const walk = (node: Node) => {
     if (node.type === "text" && typeof node.value === "string") {
-      node.value = bindUnits(node.value);
+      node.value = typeset(node.value);
       return;
     }
     node.children?.forEach(walk);

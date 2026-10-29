@@ -1,0 +1,2341 @@
+{
+ "subject": "Band",
+ "yearGroup": "Grade 9",
+ "weeks": {
+  "1": {
+   "topic": "Tone, pitch and rhythm: scales and sight-reading",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. play assigned parts with accurate pitch, rhythm and tone;\n2. perform the concert B-flat and E-flat major scales from memory;\n3. sight-read a short passage at a steady tempo.\n\n## Materials\n\nInstruments, stands, a tuner and metronome, a sight-reading card (four bars in 4/4), the worksheet.\n\n## Starter (8 minutes)\n\nLong tones: everyone plays a concert B-flat for eight counts, listens to the tuner, then plays it again with a better breath. Ask: \"What is the difference between a note that is in tune and a note that has a good tone?\"\n\n## Main activity\n\n1. Review the concert B-flat major scale: B-flat, C, D, E-flat, F, G, A, B-flat. Play it slowly with the metronome at 72, one note to a beat, then at 96. Check fingerings, slurs and the key signature of two flats.\n2. Add the concert E-flat major scale (three flats) and the arpeggio, the first, third, fifth and eighth notes.\n3. Sight-reading routine: before you play, check the key and time signatures, find the hardest bar, scan for repeats, and count one measure aloud. Play the card at a tempo you can keep steady, not at a speed that makes you stop.\n4. Section time: woodwinds, brass and percussion play the same card with the section leader checking pitch and rhythm.\n\n## Checking for understanding\n\nAsk three students to name the first step of sight-reading (check the key and time signature). Listen for the whole routine.\n\n## Exit ticket\n\nWrite the notes of the concert E-flat major scale and say how many flats are in its key signature.",
+   "reading": {
+    "title": "Pitch, rhythm and tone: three things a band listens for",
+    "content": "Every sound you make in band has three parts that the director and your neighbors are listening for. **Pitch** is how high or low a note is, and whether it matches the notes around you. **Rhythm** is when the note starts and how long it lasts. **Tone** is the quality of the sound: round and full, or thin and fuzzy. A player can have the right note at the right time and still sound poor if the tone is weak, which is why every rehearsal starts with long tones.\n\nA **scale** is a set of notes in order, going up or down by steps. A **major scale** follows a pattern of whole steps and half steps: whole, whole, half, whole, whole, whole, half. Most band music uses the concert scales of B-flat, E-flat and F, because they are comfortable for brass and woodwind instruments. The concert B-flat major scale has two flats, B-flat and E-flat, and its notes are B-flat, C, D, E-flat, F, G, A and B-flat. The concert E-flat major scale has three flats, B-flat, E-flat and A-flat, and its notes are E-flat, F, G, A-flat, B-flat, C, D and E-flat. An **arpeggio** plays the notes of a chord one at a time, usually the first, third, fifth and eighth notes of the scale.\n\nRemember that many band instruments are **transposing instruments**. A trumpet in B-flat plays a C and the sound that comes out is a concert B-flat. That is why your part may show a different key signature from the flute part.\n\n**Sight-reading** means playing music you have not seen before. Good sight-readers do not rely on luck. They follow a routine. First, find the **key signature** and the **time signature**. Next, look for the hardest bar and scan for repeats, accidentals and rests. Then tap or count one measure out loud to set the tempo. Finally, play at a speed you can keep steady. A slow, steady performance with correct rhythm is better than a fast one that stops and starts. If you make a mistake, keep going and look ahead. Real bands do not stop to fix one wrong note in a concert.\n\nUse a metronome when you practice scales. Start slower than you think you need, make every note even, then raise the tempo by 4 beats per minute only when the scale is clean."
+   },
+   "cards": [
+    {
+     "front": "Pitch",
+     "back": "How high or low a note is."
+    },
+    {
+     "front": "Tone",
+     "back": "The quality of a sound: full and round, or thin and fuzzy."
+    },
+    {
+     "front": "Major scale",
+     "back": "Eight notes in a pattern of whole and half steps: W W H W W W H."
+    },
+    {
+     "front": "Key signature",
+     "back": "The sharps or flats at the start of a staff that tell you the key."
+    },
+    {
+     "front": "Arpeggio",
+     "back": "The notes of a chord played one at a time."
+    },
+    {
+     "front": "Transposing instrument",
+     "back": "An instrument whose written notes sound at a different pitch."
+    },
+    {
+     "front": "Sight-reading",
+     "back": "Playing music you have not seen before."
+    },
+    {
+     "front": "Metronome",
+     "back": "A device that clicks a steady tempo in beats per minute."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How many flats are in the concert B-flat major key signature?",
+     "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the first thing to check when you begin sight-reading?",
+     "options": [
+      "The last bar of the piece",
+      "The key signature and time signature",
+      "How fast the person next to you plays",
+      "Whether the piece has lyrics"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A player's note is on pitch and on time but sounds thin and airy. Which part of the sound needs work?",
+     "options": [
+      "Tone",
+      "Rhythm",
+      "Key signature",
+      "Tempo marking"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which sequence of whole (W) and half (H) steps makes a major scale?",
+     "options": [
+      "W H W W H W W",
+      "W W H W W W H",
+      "H W W H W W W",
+      "W W W H W W H"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "While you are sight-reading in rehearsal you play one wrong note. What should you do?",
+     "options": [
+      "Stop the whole band",
+      "Keep going and look ahead",
+      "Start over from the first bar",
+      "Put down your instrument"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write the notes of the concert E-flat major scale, say how many flats are in the key signature and name them.",
+     "markScheme": [
+      "Writes the scale notes in order, E-flat F G A-flat B-flat C D E-flat",
+      "States that the key signature has three flats",
+      "Names the flats as B-flat, E-flat and A-flat"
+     ],
+     "modelAnswer": "The concert E-flat major scale is E-flat, F, G, A-flat, B-flat, C, D, E-flat. Its key signature has three flats: B-flat, E-flat and A-flat.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "E-flat, F, G, A-flat, B-flat, C, D, E-flat. It has 3 flats and they are B-flat, E-flat and A-flat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "E-flat, F, G, A-flat, B-flat, C, D, E-flat"
+        },
+        {
+         "point": 1,
+         "quote": "It has 3 flats"
+        },
+        {
+         "point": 2,
+         "quote": "they are B-flat, E-flat and A-flat"
+        }
+       ],
+       "feedback": "Full marks. The notes and the flats are correct and in order."
+      },
+      {
+       "tier": "full",
+       "text": "Eb F G Ab Bb C D Eb. The key signature has three flats which are Bb, Eb and Ab. I remember it by the order of flats, B E A.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Eb F G Ab Bb C D Eb"
+        },
+        {
+         "point": 1,
+         "quote": "three flats"
+        },
+        {
+         "point": 2,
+         "quote": "Bb, Eb and Ab"
+        }
+       ],
+       "feedback": "All three marks, and the memory trick of B, E, A is useful."
+      },
+      {
+       "tier": "partial",
+       "text": "E-flat, F, G, A-flat, B-flat, C, D, E-flat. It has two flats.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "E-flat, F, G, A-flat, B-flat, C, D, E-flat"
+        }
+       ],
+       "feedback": "The scale is right. The key signature has three flats, because A-flat is in the scale as well as B-flat and E-flat."
+      },
+      {
+       "tier": "partial",
+       "text": "E-flat, F, G, A, B-flat, C, D, E-flat. Three flats, Bb, Eb and Ab.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Three flats"
+        },
+        {
+         "point": 2,
+         "quote": "Bb, Eb and Ab"
+        }
+       ],
+       "feedback": "The flats are right, which means the fourth note in the scale should be A-flat, not A natural. Check it against the key signature."
+      },
+      {
+       "tier": "weak",
+       "text": "E-flat has no sharps so it is easy, it is E F G A B C D E.",
+       "meets": [],
+       "feedback": "In the E-flat scale you play the flats in the key signature. Writing E, F, G without any flats would be the scale of E major with sharps instead."
+      },
+      {
+       "tier": "weak",
+       "text": "It has three flats but I do not remember which.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It has three flats"
+        }
+       ],
+       "feedback": "The count is right. Learn the order of flats: B, E, A, D. For three flats, those are the first three, B-flat, E-flat and A-flat."
+      }
+     ]
+    },
+    {
+     "prompt": "A trumpet player in B-flat says, \"My music has no flats but the band is playing in B-flat.\" Explain why this can be true, and describe the sight-reading routine you would use before playing a new piece.",
+     "markScheme": [
+      "Explains that a B-flat trumpet is a transposing instrument",
+      "Explains that the written C sounds as the concert B-flat, so the written key differs",
+      "Checks the key signature and time signature first",
+      "Scans for the hardest bar and sets a steady tempo, by counting or tapping"
+     ],
+     "modelAnswer": "A B-flat trumpet is a transposing instrument, so its written C sounds as concert B-flat. The written key for the trumpet has no flats even though the band sounds in B-flat. Before sight-reading I check the key and time signatures, find the hardest bar, and count one measure to set a steady tempo.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A trumpet is a transposing instrument. What the player reads as C sounds as B-flat, so the written key is different from the concert key. Before I play I check the key and time signature first, then find the hardest bar and count a measure to pick a steady tempo.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A trumpet is a transposing instrument."
+        },
+        {
+         "point": 1,
+         "quote": "What the player reads as C sounds as B-flat, so the written key is different from the concert key."
+        },
+        {
+         "point": 2,
+         "quote": "check the key and time signature first,"
+        },
+        {
+         "point": 3,
+         "quote": "find the hardest bar and count a measure to pick a steady tempo."
+        }
+       ],
+       "feedback": "Full marks. You separated the written note from the sounding note clearly."
+      },
+      {
+       "tier": "full",
+       "text": "That is true because trumpet is a transposing instrument and a written C comes out as a concert B-flat. My routine: key signature and time signature, look for hard parts and tap the tempo before I start.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "trumpet is a transposing instrument"
+        },
+        {
+         "point": 1,
+         "quote": "a written C comes out as a concert B-flat"
+        },
+        {
+         "point": 2,
+         "quote": "key signature and time signature"
+        },
+        {
+         "point": 3,
+         "quote": "look for hard parts and tap the tempo before I start"
+        }
+       ],
+       "feedback": "All four marks. Short but complete and in a good order."
+      },
+      {
+       "tier": "partial",
+       "text": "A trumpet is a transposing instrument, so the music looks different. First I read the notes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A trumpet is a transposing instrument"
+        }
+       ],
+       "feedback": "Good start on the transposing idea. For the routine, begin with the key and time signatures, and say what the written C sounds like."
+      },
+      {
+       "tier": "partial",
+       "text": "The trumpet part is in a different key. I check the key signature and time signature and count one measure.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "I check the key signature and time signature"
+        },
+        {
+         "point": 3,
+         "quote": "count one measure"
+        }
+       ],
+       "feedback": "Your routine is good. Say why the part is in a different key: the trumpet is a transposing instrument and sounds a step lower than written."
+      },
+      {
+       "tier": "weak",
+       "text": "The part has no flats because the trumpet player does not need them.",
+       "meets": [],
+       "feedback": "Every instrument plays in the same key as the band. The part is written in a different key to make the sounding pitch match, because the trumpet is a transposing instrument."
+      },
+      {
+       "tier": "weak",
+       "text": "I just start playing and look at the notes as I go, it is faster.",
+       "meets": [],
+       "feedback": "Starting without a plan is how mistakes pile up. Check the key and time signatures first, then find the hardest bar and set the tempo."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Following the conductor: tempo, dynamics, blend and balance",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. follow a conductor's cues for tempo, dynamics and entrances;\n2. balance and blend your sound with the other players in your section.\n\n## Materials\n\nBaton or conducting practice cards, a video clip of a conductor (school-approved), a dynamics chart, the worksheet.\n\n## Starter (6 minutes)\n\nEyes on the conductor. Without sound, conduct four beats at a slow tempo, then a fast tempo, and ask students to say what they noticed about the size and speed of the pattern.\n\n## Main activity\n\n1. The conductor's right hand keeps the beat with a pattern (down, left, right, up for four beats). The left hand shows dynamics and cues entrances. The preparatory beat tells you the tempo and breath before you begin, and the cut-off tells you when to stop.\n2. Dynamics: pianissimo (very soft), piano (soft), mezzo piano, mezzo forte, forte (loud) and fortissimo (very loud). Play a concert B-flat for four counts at each level, then a crescendo and a decrescendo.\n3. Blend: in a unison line, you should not hear yourself standing out. Practice matching your section's tone, with the section leader as the model.\n4. Balance: the melody should be heard above the accompaniment. Play a short chorale with the melody at mezzo forte and the harmony at mezzo piano.\n\n## Checking for understanding\n\nAsk: \"If you can hear yourself over the clarinet next to you, what should you do?\" (Play softer or match their tone.)\n\n## Exit ticket\n\nName two things the conductor's left hand can show.",
+   "reading": {
+    "title": "Making one sound out of forty players",
+    "content": "A band has dozens of players, and the audience should hear one musical idea, not dozens of individuals. The person who makes this possible is the **conductor**. The conductor keeps everyone together by showing the **tempo** (the speed), by shaping the **dynamics** (how loud or soft), and by cueing **entrances** and **cut-offs** (the exact moment a note begins or ends).\n\nFor a piece in 4/4 time, the right hand usually draws a pattern of four beats: down, in, out and up. The size of the pattern suggests the dynamics, with a smaller pattern for soft music and a larger one for loud. The left hand often shows dynamics, balances sections and points to an instrument that is about to enter. Before the band begins, the conductor gives a **preparatory beat**, a gesture that shows the tempo and when to breathe. Watch it, not the music, for that moment.\n\nDynamics are marked with Italian words and letters. **Pianissimo (pp)** is very soft, **piano (p)** is soft, **mezzo piano (mp)** is medium soft, **mezzo forte (mf)** is medium loud, **forte (f)** is loud and **fortissimo (ff)** is very loud. A **crescendo** gets gradually louder, and a **decrescendo** or diminuendo gets gradually softer. These words are relative: your forte should be a full, strong sound, not a harsh or out-of-tune one.\n\nTwo other ideas make a band sound professional. **Blend** is matching the color and volume of the players in your section so that a line of six flutes sounds like one instrument. If you can pick your own sound out of the section, you are probably too loud or your tone does not match. **Balance** is the volume relationship between parts. The melody should be heard over the accompaniment, so players of the accompaniment play a little softer, even if the music says the same dynamic.\n\nTo improve, listen more than you play. Ask yourself three questions in rehearsal: Am I with the conductor? Am I in tune with the sections around me? Can I hear the melody?"
+   },
+   "cards": [
+    {
+     "front": "Conductor",
+     "back": "The leader who shows tempo, dynamics and cues to keep the band together."
+    },
+    {
+     "front": "Preparatory beat",
+     "back": "A gesture before the first note that shows the tempo and when to breathe."
+    },
+    {
+     "front": "Cut-off",
+     "back": "The conductor's signal for when a note ends."
+    },
+    {
+     "front": "Dynamics",
+     "back": "How loud or soft the music is."
+    },
+    {
+     "front": "Forte (f)",
+     "back": "Loud."
+    },
+    {
+     "front": "Piano (p)",
+     "back": "Soft."
+    },
+    {
+     "front": "Blend",
+     "back": "Matching tone and volume so a section sounds like one voice."
+    },
+    {
+     "front": "Balance",
+     "back": "Making sure the melody is heard over the other parts."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which dynamic marking means very soft?",
+     "options": [
+      "ff",
+      "mf",
+      "pp",
+      "mp"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does the preparatory beat tell the band?",
+     "options": [
+      "The title of the piece",
+      "The tempo and when to breathe",
+      "Which section plays first",
+      "How many bars are left"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A crescendo is a gradual change from:",
+     "options": [
+      "Loud to soft",
+      "Soft to loud",
+      "Fast to slow",
+      "Slow to fast"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In a band with a clarinet melody and a tuba accompaniment, what should the tuba players do to help the balance?",
+     "options": [
+      "Play louder than the clarinets",
+      "Play a little softer than the melody",
+      "Stop playing",
+      "Change the notes"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "You can hear your own trumpet clearly over the rest of the section in a unison passage. What is most likely true?",
+     "options": [
+      "You are blending perfectly",
+      "You are probably too loud or your tone does not match",
+      "The conductor is too slow",
+      "The section is too soft"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain the difference between blend and balance in a concert band, and give an example of each in a rehearsal.",
+     "markScheme": [
+      "Defines blend as matching tone and volume within a section",
+      "Gives an example of blend, such as a flute section sounding like one instrument",
+      "Defines balance as the volume relationship between parts so the melody is heard",
+      "Gives an example of balance, such as the accompaniment playing softer than the melody"
+     ],
+     "modelAnswer": "Blend is matching the tone and volume of the players in a section so they sound like one instrument, for example six flutes playing a unison line. Balance is the volume relationship between different parts so the melody can be heard, for example the tubas and horns playing softer than the clarinet melody.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Blend is when the players in one section match their tone and volume. Like six flutes should sound like one flute. Balance is how loud the different parts are compared to each other so you hear the melody. For example the accompaniment plays softer than the clarinet melody.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blend is when the players in one section match their tone and volume."
+        },
+        {
+         "point": 1,
+         "quote": "Like six flutes should sound like one flute."
+        },
+        {
+         "point": 2,
+         "quote": "Balance is how loud the different parts are compared to each other so you hear the melody."
+        },
+        {
+         "point": 3,
+         "quote": "For example the accompaniment plays softer than the clarinet melody."
+        }
+       ],
+       "feedback": "Full marks. You tied each idea to a clear example."
+      },
+      {
+       "tier": "full",
+       "text": "Blend is a section matching so no one sticks out. The trumpets in a unison line are an example. Balance is making sure the melody is louder than the background parts. In the chorale the low brass play mp while the melody plays mf.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blend is a section matching so no one sticks out."
+        },
+        {
+         "point": 1,
+         "quote": "The trumpets in a unison line are an example."
+        },
+        {
+         "point": 2,
+         "quote": "Balance is making sure the melody is louder than the background parts."
+        },
+        {
+         "point": 3,
+         "quote": "In the chorale the low brass play mp while the melody plays mf."
+        }
+       ],
+       "feedback": "All four marks. The chorale is a good real example from our rehearsal."
+      },
+      {
+       "tier": "partial",
+       "text": "Blend is matching your section. Balance is hearing the melody.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blend is matching your section."
+        },
+        {
+         "point": 2,
+         "quote": "Balance is hearing the melody."
+        }
+       ],
+       "feedback": "You have both definitions. Add a rehearsal example for each, such as a unison line for blend and soft accompaniment for balance."
+      },
+      {
+       "tier": "partial",
+       "text": "Blend is how loud the whole band is. Balance is making the melody louder than the other parts. The tubas play softer.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Balance is making the melody louder than the other parts."
+        },
+        {
+         "point": 3,
+         "quote": "The tubas play softer."
+        }
+       ],
+       "feedback": "Balance is right. Blend is about matching within a section, not the loudness of the whole band. A unison line shows it well."
+      },
+      {
+       "tier": "weak",
+       "text": "Blend is mixing the band together and balance is standing up straight.",
+       "meets": [],
+       "feedback": "Balance is about volume between the parts, not posture. Blend is matching tone and volume within a section so it sounds like one instrument."
+      },
+      {
+       "tier": "weak",
+       "text": "They are the same thing, both are playing at the same volume.",
+       "meets": [],
+       "feedback": "They are different. Blend is within a section, where everyone matches. Balance is between parts, where the melody should be a little louder than the accompaniment."
+      }
+     ]
+    },
+    {
+     "prompt": "The conductor gives a preparatory beat and then cues the flutes to enter at mezzo forte. Describe three things you should do as a flute player to be ready, in order.",
+     "markScheme": [
+      "Watches the conductor, not the music, at the preparatory beat",
+      "Takes a breath in the tempo shown",
+      "Starts at the dynamic mezzo forte, not louder",
+      "Listens to blend with the section and the balance with other parts"
+     ],
+     "modelAnswer": "I watch the conductor at the preparatory beat, take a breath in the tempo that the beat shows, enter together with the section at mezzo forte, and listen so my sound blends with the other flutes and does not cover the melody.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "First I look up and watch the conductor for the preparatory beat. I breathe in at the speed the beat shows. Then I start at mezzo forte, medium loud. I listen to blend with the flutes and to the balance.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First I look up and watch the conductor for the preparatory beat."
+        },
+        {
+         "point": 1,
+         "quote": "I breathe in at the speed the beat shows."
+        },
+        {
+         "point": 2,
+         "quote": "Then I start at mezzo forte, medium loud."
+        },
+        {
+         "point": 3,
+         "quote": "I listen to blend with the flutes and to the balance."
+        }
+       ],
+       "feedback": "Full marks. The order of what you do is exactly what a good player does."
+      },
+      {
+       "tier": "full",
+       "text": "I keep my eyes on the conductor during the prep beat, breathe in on the beat and be ready to go, play at mf, not louder, and listen to match the other flutes and not drown out the melody.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "keep my eyes on the conductor during the prep beat"
+        },
+        {
+         "point": 1,
+         "quote": "breathe in on the beat and be ready to go"
+        },
+        {
+         "point": 2,
+         "quote": "play at mf, not louder"
+        },
+        {
+         "point": 3,
+         "quote": "listen to match the other flutes and not drown out the melody"
+        }
+       ],
+       "feedback": "All four marks. Clear and in order, with the listening included."
+      },
+      {
+       "tier": "partial",
+       "text": "Watch the conductor. Play mezzo forte.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Watch the conductor."
+        },
+        {
+         "point": 2,
+         "quote": "Play mezzo forte."
+        }
+       ],
+       "feedback": "Both are right. Add the breath in tempo and the listening for blend and balance to complete the sequence."
+      },
+      {
+       "tier": "partial",
+       "text": "Take a breath on the prep beat. Look at my music so I do not miss the notes.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Take a breath on the prep beat."
+        }
+       ],
+       "feedback": "The breath is correct. At the preparatory beat you should be looking at the conductor, not the music, so you start together."
+      },
+      {
+       "tier": "weak",
+       "text": "Play as loud as I can so the conductor hears the flutes enter.",
+       "meets": [],
+       "feedback": "Entering louder than marked breaks the balance. Mezzo forte means medium loud, so match that level and blend with the section."
+      },
+      {
+       "tier": "weak",
+       "text": "Wait for the person next to me to start and then copy them.",
+       "meets": [],
+       "feedback": "Copying a neighbor makes you late. The conductor's preparatory beat shows exactly when to begin, so watch the conductor and enter on the beat."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Posture, breath and instrument care; preparing for a concert",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. perform with correct posture, breath support and instrument care;\n2. prepare for a concert, including a warm-up routine and a rehearsal plan.\n\n## Materials\n\nMirrors, cleaning kits (swabs, cork grease, valve oil), a concert calendar, the worksheet.\n\n## Starter (6 minutes)\n\nPosture check: students sit at the front edge of the chair, feet flat, back tall. Hold your instrument and take a deep, slow breath in for four counts, out for four. Ask: \"How does your breath feel different when you slouch?\"\n\n## Main activity\n\n1. Posture and breath: sit or stand tall, shoulders relaxed, breathe from the diaphragm so the belly expands, not the chest. A steady stream of air makes a steady tone.\n2. Instrument care by section: woodwinds swab after playing and check pads and reeds; brass oil valves and grease slides and empty the water; percussion check sticks, heads and stands. Never leave an instrument on a chair or on the floor.\n3. A warm-up routine: long tones, a slow scale, an arpeggio, and a passage from the concert piece, about ten minutes in total.\n4. Concert preparation: make a timeline. The concert is in five weeks; each week has a goal (notes, rhythm, dynamics, run-through, final polish).\n\n## Checking for understanding\n\nCold-call: \"What do you do at the end of rehearsal to take care of your instrument?\" Each answer should be specific to the instrument family.\n\n## Exit ticket\n\nWrite a three-part warm-up routine for your instrument.",
+   "reading": {
+    "title": "Getting ready to play, and getting ready for a concert",
+    "content": "Good playing starts with the body. **Posture** is how you sit or stand with your instrument. Sit on the front half of your chair with your feet flat on the floor and your back tall but not stiff. Keep your shoulders relaxed and your head level. Your instrument should come to you, rather than you bending down to it. Good posture opens your lungs and keeps your hands free to move.\n\n**Breath support** is how you use air to produce a steady tone. Breathe in deeply so your belly and ribs expand, not just your chest, and let the air out in a steady stream controlled by your stomach muscles. Wind players need to practice this every day. Percussionists need good posture and relaxed grips to avoid injury. A steady stream of air makes steady pitch, and a tight, tired body makes a pinched sound.\n\n**Instrument care** keeps your instrument playing and saves money. Woodwind players swab the inside after every session, keep reeds in a case and handle keys gently. Brass players oil valves, grease slides and empty water from the instrument, and wipe the outside with a soft cloth. Percussionists check that sticks are not cracked, that drum heads are tuned and stands are stable. Never leave an instrument on a chair, on the floor or in a hot car. Most repairs are caused by bumps and neglect.\n\nA **warm-up** prepares both your body and your sound. A ten-minute routine might include long tones to find your best tone, a slow major scale, an arpeggio, and a short, difficult passage from your concert music played slowly. Warm-ups work best when done in the same order each time.\n\n**Concert preparation** takes weeks. Work backward from the concert date. If the concert is five weeks away, week one is learning the notes and rhythms, week two is fixing difficult passages, week three adds dynamics and balance, week four is full run-throughs, and week five is a final polish and a dress rehearsal. On concert day, arrive early, bring your instrument, music and a pencil, wear the concert dress, and listen carefully to the conductor. A good concert is the result of good habits in every rehearsal."
+   },
+   "cards": [
+    {
+     "front": "Posture",
+     "back": "How you sit or stand while playing: tall, relaxed and balanced."
+    },
+    {
+     "front": "Breath support",
+     "back": "Using a deep breath and steady air to produce a steady tone."
+    },
+    {
+     "front": "Swab",
+     "back": "A cloth pulled through a woodwind to remove moisture."
+    },
+    {
+     "front": "Valve oil",
+     "back": "A lubricant used on brass valves."
+    },
+    {
+     "front": "Warm-up",
+     "back": "A short routine to prepare your body and sound before playing."
+    },
+    {
+     "front": "Run-through",
+     "back": "Playing a whole piece from beginning to end without stopping."
+    },
+    {
+     "front": "Dress rehearsal",
+     "back": "A final practice done in concert dress and setup."
+    },
+    {
+     "front": "Long tones",
+     "back": "Sustained notes used to develop tone and breath control."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which is the best way to sit when playing in band?",
+     "options": [
+      "Slouched against the back of the chair",
+      "On the front half of the chair with feet flat and back tall",
+      "With your legs crossed",
+      "Leaning forward over your music"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A clarinet player should do which of these after rehearsal?",
+     "options": [
+      "Leave the reed on the mouthpiece in the case",
+      "Swab the inside and put the reed in its holder",
+      "Wash the clarinet in the sink",
+      "Leave the clarinet on a chair"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why do wind players need good breath support?",
+     "options": [
+      "It makes the instrument heavier",
+      "It produces a steady tone and pitch",
+      "It replaces the need to practice",
+      "It makes the music quieter"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A concert is in five weeks. What is a sensible plan for the first week?",
+     "options": [
+      "Dress rehearsal",
+      "Learn the notes and rhythms",
+      "Final polish",
+      "Add dynamics only"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the best place to leave your instrument during a short break in rehearsal?",
+     "options": [
+      "On your chair",
+      "On the floor beside you",
+      "In its case or on a safe stand",
+      "In a hot car"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe a ten-minute warm-up routine for your instrument (or a trumpet, if you play percussion) and explain why each part is included.",
+     "markScheme": [
+      "Includes long tones and says they help tone and breath control",
+      "Includes a slow scale or arpeggio and says it builds accuracy and technique",
+      "Includes a passage from the concert music played slowly",
+      "Says the routine is done in the same order each time or gives its time breakdown"
+     ],
+     "modelAnswer": "I start with two minutes of long tones to find my best tone and steady my breath. Then I play a slow major scale and arpeggio for three minutes to build accuracy. Then I play the hardest passage from our concert piece slowly for five minutes. I do the routine in the same order every time so it becomes a habit.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I start with long tones, 2 minutes, to get a good tone and control my air. Then a slow B-flat scale and arpeggio for 3 minutes so my fingers and notes are accurate. Then the hard part of our concert piece at a slow tempo, 5 minutes. I do it in the same order every day so it is a habit.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I start with long tones, 2 minutes, to get a good tone and control my air."
+        },
+        {
+         "point": 1,
+         "quote": "Then a slow B-flat scale and arpeggio for 3 minutes so my fingers and notes are accurate."
+        },
+        {
+         "point": 2,
+         "quote": "Then the hard part of our concert piece at a slow tempo, 5 minutes."
+        },
+        {
+         "point": 3,
+         "quote": "I do it in the same order every day so it is a habit."
+        }
+       ],
+       "feedback": "Full marks. Every part has a reason and the minutes add up to ten."
+      },
+      {
+       "tier": "full",
+       "text": "Long tones first because they help tone and breath. Then a scale and arpeggio slowly to work on technique. Last I play one passage from the concert music slowly. The same order each time, around ten minutes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Long tones first because they help tone and breath"
+        },
+        {
+         "point": 1,
+         "quote": "Then a scale and arpeggio slowly to work on technique"
+        },
+        {
+         "point": 2,
+         "quote": "Last I play one passage from the concert music slowly"
+        },
+        {
+         "point": 3,
+         "quote": "The same order each time, around ten minutes."
+        }
+       ],
+       "feedback": "All four marks. The order moves from the basics toward the music, which is exactly right."
+      },
+      {
+       "tier": "partial",
+       "text": "Long tones for tone. A scale.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Long tones for tone."
+        },
+        {
+         "point": 1,
+         "quote": "A scale."
+        }
+       ],
+       "feedback": "You have two good parts. Add a slow passage from the concert music and say the routine is done in the same order each time."
+      },
+      {
+       "tier": "partial",
+       "text": "I play the hardest part of the concert piece. Then I play the whole piece fast to warm up.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "I play the hardest part of the concert piece."
+        }
+       ],
+       "feedback": "Playing the hard part slowly is right. Warming up with the whole piece fast skips the basics. Start with long tones and a scale, and slow the passage down."
+      },
+      {
+       "tier": "weak",
+       "text": "I just play the song once and that is my warm-up.",
+       "meets": [],
+       "feedback": "A warm-up prepares your body and sound before you play the music. Start with long tones, add a scale, then a slow passage from the piece."
+      },
+      {
+       "tier": "weak",
+       "text": "I do not need a warm-up because I practice at home.",
+       "meets": [],
+       "feedback": "Even with home practice, a short warm-up each time prepares your breath and your sound. Rehearsal starts better when everyone warms up."
+      }
+     ]
+    },
+    {
+     "prompt": "The winter concert is five weeks away. Make a week-by-week rehearsal plan and say what the goal is for each week.",
+     "markScheme": [
+      "Week 1 goal is learning notes and rhythms",
+      "Week 2 or 3 goal is fixing difficult passages and adding dynamics",
+      "Week 4 goal is full run-throughs",
+      "Week 5 goal is the final polish and a dress rehearsal"
+     ],
+     "modelAnswer": "Week 1: learn the notes and rhythms. Week 2: fix the difficult passages. Week 3: add dynamics and balance. Week 4: full run-throughs of the whole program. Week 5: final polish and a dress rehearsal in concert dress.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Week 1: learn the notes and rhythms. Week 2: fix the hard passages. Week 3: add dynamics and balance. Week 4: run through the whole program without stopping. Week 5: polish and do a dress rehearsal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Week 1: learn the notes and rhythms."
+        },
+        {
+         "point": 1,
+         "quote": "Week 2: fix the hard passages. Week 3: add dynamics and balance."
+        },
+        {
+         "point": 2,
+         "quote": "Week 4: run through the whole program without stopping."
+        },
+        {
+         "point": 3,
+         "quote": "Week 5: polish and do a dress rehearsal."
+        }
+       ],
+       "feedback": "Full marks. Each week builds on the last and the plan ends with a dress rehearsal."
+      },
+      {
+       "tier": "full",
+       "text": "1 is learning the notes and counting the rhythms, 2 is working out hard spots and 3 is adding dynamics, 4 is full run-throughs, and 5 is the final polish and dress rehearsal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1 is learning the notes and counting the rhythms"
+        },
+        {
+         "point": 1,
+         "quote": "2 is working out hard spots and 3 is adding dynamics"
+        },
+        {
+         "point": 2,
+         "quote": "4 is full run-throughs"
+        },
+        {
+         "point": 3,
+         "quote": "and 5 is the final polish and dress rehearsal."
+        }
+       ],
+       "feedback": "All four marks. A realistic and complete plan."
+      },
+      {
+       "tier": "partial",
+       "text": "Week 1 learn the notes. Weeks 2, 3 and 4 practice a lot. Week 5 dress rehearsal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Week 1 learn the notes."
+        },
+        {
+         "point": 3,
+         "quote": "Week 5 dress rehearsal."
+        }
+       ],
+       "feedback": "The first and last weeks are right. Give the middle weeks specific goals: fix hard passages, add dynamics, then do run-throughs."
+      },
+      {
+       "tier": "partial",
+       "text": "Run through the whole program every week. The last week is a dress rehearsal.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Run through the whole program every week."
+        },
+        {
+         "point": 3,
+         "quote": "The last week is a dress rehearsal."
+        }
+       ],
+       "feedback": "Run-throughs matter, but you cannot run through the program before the notes are learned. Begin with notes and rhythms, then work toward run-throughs."
+      },
+      {
+       "tier": "weak",
+       "text": "Play the songs every day for five weeks.",
+       "meets": [],
+       "feedback": "Playing every day is good, but the plan should change week by week: learn notes, fix hard parts, add dynamics, run through, then polish."
+      },
+      {
+       "tier": "weak",
+       "text": "We should start the dress rehearsal in week 1 so we are ready.",
+       "meets": [],
+       "feedback": "A dress rehearsal is for the end, when everything is learned. Week 1 is for learning the notes and rhythms."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Marching and pep band, and keeping a practice log",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. perform in marching band or pep band with correct formation and movement;\n2. keep a practice log and set goals for improvement.\n\n## Materials\n\nField or gym floor marked with yard lines, a drill chart for a short set, a practice log template, the quiz.\n\n## Starter (6 minutes)\n\nCount off by fours while marching in place with a steady step. Ask: \"Why does a marching band need everyone to take the same size step?\"\n\n## Main activity\n\n1. Marching basics: posture (chest up, shoulders back), a steady tempo with eight steps to five yards (the standard \"8 to 5\" step size), the horns-up position, and mark time (marching in place).\n2. Formation: read a simple drill chart with dots for players and yard lines. Move from a block into a line and then a wedge in sixteen counts.\n3. Pep band: playing in the stands for a basketball game. Short pieces, big dynamics, watch the leader, stay seated, and keep the instrument safe in a crowd.\n4. Practice log: record date, minutes, what you worked on, and one goal. Set a goal using the SMART format (specific, measurable, achievable, relevant, time-bound).\n\n## Checking for understanding\n\nAsk: \"What does 8 to 5 mean?\" (Eight steps cover five yards.)\n\n## Exit ticket\n\nWrite one SMART goal for your instrument for the next two weeks.",
+   "reading": {
+    "title": "Moving with the band, and tracking your progress",
+    "content": "Concert band sits still, but marching band moves. A marching band performs at football games, in parades and at contests, playing and moving at the same time. The most important skill is **uniformity**: everyone moves in the same way, at the same tempo, and in the same direction.\n\nThe foundation is posture and tempo. Stand tall with your chest up and your shoulders back. Hold your instrument at the same height as everyone else, which is called the **horns-up** position. Marching bands count their step size in a ratio of **8 to 5**, which means eight steps cover five yards, so each step is 22.5 inches. If everyone takes the same step size at the same tempo, the lines stay straight. **Mark time** means marching in place without moving forward, and is used while the band waits for the next move.\n\nA **drill chart** is a diagram that shows where each player stands in each set. Dots stand for players, and the yard lines on the field show exact places. A **set** is one formation, and a **count** is one beat of movement between sets. A move from a block into a line in sixteen counts means that each player moves a set distance at an even pace, and they all arrive on the sixteenth count. Learning your spot in the drill means you can keep the formation clean.\n\nA **pep band** is a smaller group that plays at basketball games or school events, usually from the stands. The music is short, loud and exciting. The leader signals the next song, you stay with the tempo, and you keep your instrument safe in a crowded space. Pep band is all about energy and teamwork.\n\nTo grow as a musician, keep a **practice log**. Write the date, how many minutes you practiced, what you worked on and a note about how it went. Then set a goal. A **SMART goal** is Specific, Measurable, Achievable, Relevant and Time-bound. \"Practice more\" is vague. \"Play the concert B-flat scale at 96 beats per minute with no errors by Friday, practicing 15 minutes a day\" is a SMART goal because you can tell exactly whether you reached it."
+   },
+   "cards": [
+    {
+     "front": "Marching band",
+     "back": "A band that plays and moves in formation, often at football games and parades."
+    },
+    {
+     "front": "Horns up",
+     "back": "A position in which the instrument is held at the same height as everyone else."
+    },
+    {
+     "front": "8 to 5",
+     "back": "A step size in which eight steps cover five yards."
+    },
+    {
+     "front": "Mark time",
+     "back": "Marching in place."
+    },
+    {
+     "front": "Drill chart",
+     "back": "A diagram showing where each player stands in each formation."
+    },
+    {
+     "front": "Set",
+     "back": "One formation in a marching show."
+    },
+    {
+     "front": "Pep band",
+     "back": "A smaller band that plays at games and school events, usually in the stands."
+    },
+    {
+     "front": "SMART goal",
+     "back": "A goal that is Specific, Measurable, Achievable, Relevant and Time-bound."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In an 8 to 5 step, how long is each step in inches?",
+     "options": [
+      "18",
+      "22.5",
+      "30",
+      "36"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the best description of mark time?",
+     "options": [
+      "Marching forward quickly",
+      "Marching in place",
+      "Stopping and resting",
+      "Marching backward"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A drill chart shows:",
+     "options": [
+      "The notes of each part",
+      "Where each player stands in each formation",
+      "The score of the game",
+      "The tempo of each song"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these is a SMART goal?",
+     "options": [
+      "Get better at scales",
+      "Practice more",
+      "Play the F major scale at 88 beats per minute with no errors by Friday",
+      "Be the best in the band"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "At a basketball game in the stands, what should pep band players do with their instruments?",
+     "options": [
+      "Leave them on the bleachers",
+      "Keep them safe and in hand in the crowd",
+      "Hand them to friends",
+      "Leave them under a seat"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain what \"8 to 5\" means in marching band and calculate how many steps it takes to march 20 yards.",
+     "markScheme": [
+      "States that eight steps cover five yards",
+      "Sets up the calculation: 20 yards is four times 5 yards",
+      "Calculates 4 times 8 equals 32 steps",
+      "Gives the answer as 32 steps"
+     ],
+     "modelAnswer": "8 to 5 means eight steps cover five yards. Twenty yards is four groups of five yards, so the band takes 4 times 8 = 32 steps.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "8 to 5 means eight steps go five yards. 20 yards is four sets of 5 yards. 4 times 8 is 32. So it takes 32 steps.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "8 to 5 means eight steps go five yards."
+        },
+        {
+         "point": 1,
+         "quote": "20 yards is four sets of 5 yards."
+        },
+        {
+         "point": 2,
+         "quote": "4 times 8 is 32."
+        },
+        {
+         "point": 3,
+         "quote": "So it takes 32 steps."
+        }
+       ],
+       "feedback": "Full marks. The grouping of 20 yards into fives is a clear approach."
+      },
+      {
+       "tier": "full",
+       "text": "In 8 to 5, eight steps = 5 yards. 20 / 5 = 4 groups, 4 × 8 = 32 steps.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In 8 to 5, eight steps = 5 yards."
+        },
+        {
+         "point": 1,
+         "quote": "20 / 5 = 4 groups"
+        },
+        {
+         "point": 2,
+         "quote": "4 × 8 = 32"
+        },
+        {
+         "point": 3,
+         "quote": "steps."
+        }
+       ],
+       "feedback": "All four marks. Showing the division and then the multiplication is exactly right."
+      },
+      {
+       "tier": "partial",
+       "text": "Eight steps is five yards. 20 yards takes 20 steps.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Eight steps is five yards."
+        }
+       ],
+       "feedback": "The meaning is right. A yard is not one step. Since 5 yards takes 8 steps, 20 yards takes 4 times as many, which is 32."
+      },
+      {
+       "tier": "partial",
+       "text": "20 divided by 5 is 4 and 4 plus 8 is 12 steps.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "20 divided by 5 is 4"
+        }
+       ],
+       "feedback": "The first step is right. You need to multiply, not add: four groups of 8 steps is 32 steps."
+      },
+      {
+       "tier": "weak",
+       "text": "It means 8 players and 5 drums.",
+       "meets": [],
+       "feedback": "8 to 5 is a step size, not a number of players. It means eight steps cover five yards."
+      },
+      {
+       "tier": "weak",
+       "text": "32 steps because that is how many it usually is.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "32 steps"
+        }
+       ],
+       "feedback": "The number is correct. Show how you got it: 20 yards is four groups of 5 yards, and each group takes 8 steps.",
+       "unsure": true
+      }
+     ]
+    },
+    {
+     "prompt": "Write one SMART goal for your instrument for the next two weeks, and explain which parts make it specific, measurable and time-bound.",
+     "markScheme": [
+      "States a goal about a specific skill or passage",
+      "Includes a measurable target, such as a tempo, accuracy or number of minutes",
+      "Includes a deadline within two weeks",
+      "Explains which parts make it specific, measurable and time-bound"
+     ],
+     "modelAnswer": "My goal is to play the concert B-flat scale, two octaves, at 96 beats per minute with no wrong notes by Friday of week two, practicing 15 minutes a day. It is specific because it names the scale, measurable because of the tempo and no wrong notes, and time-bound because it has a deadline.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I will play the concert B-flat scale from memory at 96 beats per minute with no wrong notes by Friday two weeks from now. It is specific because it names the scale, measurable because of the tempo and mistakes, and time-bound because of Friday.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I will play the concert B-flat scale from memory"
+        },
+        {
+         "point": 1,
+         "quote": "at 96 beats per minute with no wrong notes"
+        },
+        {
+         "point": 2,
+         "quote": "by Friday two weeks from now."
+        },
+        {
+         "point": 3,
+         "quote": "It is specific because it names the scale, measurable because of the tempo and mistakes, and time-bound because of Friday."
+        }
+       ],
+       "feedback": "Full marks. You even explained which part of the goal does which job."
+      },
+      {
+       "tier": "full",
+       "text": "My goal is to play measures 9 to 16 of our concert piece with correct rhythm in 4 out of 5 tries by the end of next week. Specific: measures 9 to 16. Measurable: 4 out of 5 tries. Time-bound: end of next week.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My goal is to play measures 9 to 16 of our concert piece"
+        },
+        {
+         "point": 1,
+         "quote": "with correct rhythm in 4 out of 5 tries"
+        },
+        {
+         "point": 2,
+         "quote": "by the end of next week."
+        },
+        {
+         "point": 3,
+         "quote": "Specific: measures 9 to 16. Measurable: 4 out of 5 tries. Time-bound: end of next week."
+        }
+       ],
+       "feedback": "All four marks. Counting tries is a smart way to measure a passage."
+      },
+      {
+       "tier": "partial",
+       "text": "I will play my scales better by next week.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I will play my scales better"
+        },
+        {
+         "point": 2,
+         "quote": "by next week"
+        }
+       ],
+       "feedback": "The goal has a deadline, but better is not measurable. Say which scale, at what tempo and with how few mistakes."
+      },
+      {
+       "tier": "partial",
+       "text": "I will learn the solo section. I will play it at the correct tempo.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I will learn the solo section."
+        },
+        {
+         "point": 1,
+         "quote": "I will play it at the correct tempo."
+        }
+       ],
+       "feedback": "Specific and measurable, which is good. Add a deadline, such as by Friday of week two, and explain which parts make the goal SMART."
+      },
+      {
+       "tier": "weak",
+       "text": "I will practice more.",
+       "meets": [],
+       "feedback": "Practice more is too vague to check. Name what you will play, how you will measure success, and by when."
+      },
+      {
+       "tier": "weak",
+       "text": "I will be the first chair by the winter concert.",
+       "meets": [],
+       "feedback": "First chair is an outcome and depends on others. A SMART goal is about what you will do, such as a passage, a tempo and a date."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Composing with a scale, arranging, and reading key and time signatures",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. compose or improvise a short melody using a given scale;\n2. arrange a simple phrase for your instrument by changing rhythm or dynamics;\n3. read and interpret key signatures, time signatures and musical terms.\n\n## Materials\n\nStaff paper, pencils, a keyboard or mallet instrument for hearing ideas, the problem set.\n\n## Starter (6 minutes)\n\nClap a four-beat rhythm and ask students to echo it. Change one beat and ask them to describe how it changed.\n\n## Main activity\n\n1. Composing with a scale: choose the concert B-flat major scale. Write a four-bar melody in 4/4. Use notes from the scale, begin and end on B-flat, and use at least two different rhythms. Play it to check it.\n2. Improvising: with a backing chord, play a short answer to a four-beat call from the teacher using only notes of the scale.\n3. Arranging: take the same four-bar phrase and change it: make the rhythm different, add dynamics, or change the articulation.\n4. Reading signatures: a key signature tells you the sharps or flats. A time signature tells you how many beats are in a measure (the top number) and which note gets a beat (the bottom number). Review terms: allegro, andante, ritardando, staccato, legato.\n\n## Checking for understanding\n\nAsk: \"In 3/4, how many beats are in a measure and which note gets one beat?\" (Three, the quarter note.)\n\n## Exit ticket\n\nWrite a four-beat rhythm in 4/4 using one half note and two quarter notes.",
+   "reading": {
+    "title": "Writing your own music",
+    "content": "Every piece of music was once a blank page. **Composing** is writing new music, and **improvising** is making it up on the spot. Both begin with a scale, because the notes of a scale fit together and make a melody sound natural.\n\nStart with a key. The concert B-flat major scale uses B-flat, C, D, E-flat, F, G and A. A simple melody uses mostly **steps**, moving to the next note, with a few **skips**, moving over a note. Begin and end on the first note of the scale, B-flat, which is called the **tonic** and gives the melody a sense of home. A four-bar melody in 4/4 has sixteen beats in total. You could use quarter notes, half notes and a few eighth notes, so the rhythm is not all the same.\n\n**Improvising** works the same way, but in real time. If the leader plays a four-beat call, you play a four-beat answer using only notes from the scale. Because you stay inside the scale, nothing you play will clash with the chord underneath. Improvisation gets better with practice and with confidence.\n\n**Arranging** means changing music to suit different players or to give it a new feel. You can take a phrase and change its rhythm, add dynamics such as a crescendo, switch from smooth **legato** to short **staccato**, or move it to a different instrument.\n\nTo read music well, you need to understand its signs. The **key signature** shows which notes are sharp or flat all the way through the piece. The **time signature** has two numbers. The top number says how many beats are in each measure, and the bottom number says which note gets one beat. In 4/4 there are four beats and the quarter note gets one. In 3/4 there are three beats, which feels like a waltz. In 6/8 there are six beats, with the eighth note getting one.\n\nFinally, learn the Italian words. **Allegro** is fast, **andante** is a walking pace, **ritardando** means gradually slowing down, **staccato** means short and detached, and **legato** means smooth and connected."
+   },
+   "cards": [
+    {
+     "front": "Compose",
+     "back": "To write new music."
+    },
+    {
+     "front": "Improvise",
+     "back": "To create music on the spot."
+    },
+    {
+     "front": "Tonic",
+     "back": "The first note of a scale, which feels like home."
+    },
+    {
+     "front": "Arrange",
+     "back": "To change music to suit different players or to give it a new style."
+    },
+    {
+     "front": "Time signature",
+     "back": "Two numbers: beats per measure over the note that gets one beat."
+    },
+    {
+     "front": "Legato",
+     "back": "Smooth and connected."
+    },
+    {
+     "front": "Staccato",
+     "back": "Short and detached."
+    },
+    {
+     "front": "Ritardando",
+     "back": "Gradually slowing down."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In 3/4 time, how many beats are in a measure and which note gets one beat?",
+     "options": [
+      "Four, the quarter note",
+      "Three, the quarter note",
+      "Three, the eighth note",
+      "Four, the half note"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which note should a melody in B-flat major usually begin and end on?",
+     "options": [
+      "F",
+      "D",
+      "B-flat",
+      "A"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does ritardando mean?",
+     "options": [
+      "Gradually get louder",
+      "Gradually slow down",
+      "Play short and detached",
+      "Play very fast"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "If you improvise using only notes from the B-flat major scale over a B-flat chord, what is most likely?",
+     "options": [
+      "Every note will clash",
+      "Your notes will fit with the chord",
+      "You must play only whole notes",
+      "You must play in 6/8"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How many beats are in a four-bar melody in 4/4?",
+     "options": [
+      "4",
+      "8",
+      "12",
+      "16"
+     ],
+     "answer": "D"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write a four-bar rhythm for 4/4 time using at least one half note, one quarter note and one pair of eighth notes in each measure. Show how many beats each measure has.",
+     "markScheme": [
+      "Writes four measures of rhythm",
+      "Each measure totals four beats",
+      "Uses at least a half note, quarter notes and eighth notes as asked",
+      "Shows the beat count for each measure"
+     ],
+     "modelAnswer": "Measure 1: half note (2) + quarter note (1) + two eighth notes (1) = 4. Measure 2: quarter (1) + two eighths (1) + half (2) = 4. Measure 3: two eighths (1) + quarter (1) + half (2) = 4. Measure 4: half (2) + two eighths (1) + quarter (1) = 4.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Measure 1: half, quarter, 2 eighths. Measure 2: quarter, 2 eighths, half. Measure 3: 2 eighths, quarter, half. Measure 4: half, 2 eighths, quarter. Each one adds up to 4 beats. Every measure has a half note, a quarter and a pair of eighths. The counts are 2 + 1 + 1 = 4 each time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Measure 1: half, quarter, 2 eighths. Measure 2: quarter, 2 eighths, half. Measure 3: 2 eighths, quarter, half. Measure 4: half, 2 eighths, quarter."
+        },
+        {
+         "point": 1,
+         "quote": "Each one adds up to 4 beats."
+        },
+        {
+         "point": 2,
+         "quote": "Every measure has a half note, a quarter and a pair of eighths."
+        },
+        {
+         "point": 3,
+         "quote": "The counts are 2 + 1 + 1 = 4 each time."
+        }
+       ],
+       "feedback": "Full marks. Every measure uses the notes you were asked for, and each adds to four."
+      },
+      {
+       "tier": "full",
+       "text": "M1: half + quarter + eighth eighth. M2: quarter + eighth eighth + half. M3: eighth eighth + half + quarter. M4: half + quarter + eighth eighth. Beats: 2+1+1 each. They all equal four. Each has the three kinds of notes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "M1: half + quarter + eighth eighth. M2: quarter + eighth eighth + half. M3: eighth eighth + half + quarter. M4: half + quarter + eighth eighth."
+        },
+        {
+         "point": 3,
+         "quote": "Beats: 2+1+1 each."
+        },
+        {
+         "point": 1,
+         "quote": "They all equal four."
+        },
+        {
+         "point": 2,
+         "quote": "Each has the three kinds of notes."
+        }
+       ],
+       "feedback": "All four marks. Showing 2 + 1 + 1 for each measure proves the beats are right."
+      },
+      {
+       "tier": "partial",
+       "text": "M1: half, quarter, two eighths. M2: half, quarter, two eighths. M3: half, quarter, two eighths. M4: half, quarter, two eighths. Each has 4 beats.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "M1: half, quarter, two eighths. M2: half, quarter, two eighths. M3: half, quarter, two eighths. M4: half, quarter, two eighths."
+        },
+        {
+         "point": 1,
+         "quote": "Each has 4 beats."
+        }
+       ],
+       "feedback": "All four measures are correct, but they are all the same. Use different orders so the rhythm is more interesting, and show the counts."
+      },
+      {
+       "tier": "partial",
+       "text": "M1: half, quarter, quarter. 4 beats. M2: half, quarter, 2 eighths, quarter. 5 beats.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "4 beats."
+        }
+       ],
+       "feedback": "The first measure adds up. The second has five beats, which is too many. A half plus two quarters or a half plus a quarter plus two eighths each gives four."
+      },
+      {
+       "tier": "weak",
+       "text": "I wrote four notes in each measure.",
+       "meets": [],
+       "feedback": "The number of notes does not decide the beats. A half note counts two, so add up the value of each note until you reach four."
+      },
+      {
+       "tier": "weak",
+       "text": "Half, quarter, eighth, eighth, and that is 5 beats.",
+       "meets": [],
+       "feedback": "Check the values: half is 2, quarter is 1, and two eighths together are 1. That adds up to 4, not 5."
+      }
+     ]
+    },
+    {
+     "prompt": "Take a four-note phrase and describe three ways to arrange it so that it sounds different, using rhythm, dynamics or articulation.",
+     "markScheme": [
+      "Describes a change to the rhythm",
+      "Describes a change to the dynamics",
+      "Describes a change to the articulation, such as legato or staccato",
+      "Says what effect each change has on the sound"
+     ],
+     "modelAnswer": "I could change the rhythm by making the second note a dotted rhythm, which gives it a bouncy feel. I could add a crescendo so the phrase builds. I could change it from legato to staccato, which makes it sound light and playful.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Change the rhythm by using eighth notes instead of quarters so it is quicker. Add a crescendo so it builds up. Play it staccato instead of legato. The faster rhythm sounds busy, the crescendo sounds exciting, and the staccato sounds light and bouncy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Change the rhythm by using eighth notes instead of quarters so it is quicker."
+        },
+        {
+         "point": 1,
+         "quote": "Add a crescendo so it builds up."
+        },
+        {
+         "point": 2,
+         "quote": "Play it staccato instead of legato."
+        },
+        {
+         "point": 3,
+         "quote": "The faster rhythm sounds busy, the crescendo sounds exciting, and the staccato sounds light and bouncy."
+        }
+       ],
+       "feedback": "Full marks. Each change has an effect that you could actually hear."
+      },
+      {
+       "tier": "full",
+       "text": "A dotted rhythm for the second note. Start it softly, piano, and get louder. Make it smooth and connected, legato. That gives a swingy feel, a growing feel and a calm, singing feel.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A dotted rhythm for the second note."
+        },
+        {
+         "point": 1,
+         "quote": "Start it softly, piano, and get louder."
+        },
+        {
+         "point": 2,
+         "quote": "Make it smooth and connected, legato."
+        },
+        {
+         "point": 3,
+         "quote": "That gives a swingy feel, a growing feel and a calm, singing feel."
+        }
+       ],
+       "feedback": "All four marks. Three clear changes with the sound each makes."
+      },
+      {
+       "tier": "partial",
+       "text": "Make the notes faster. Make it louder. Make it short.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Make the notes faster."
+        },
+        {
+         "point": 1,
+         "quote": "Make it louder."
+        },
+        {
+         "point": 2,
+         "quote": "Make it short."
+        }
+       ],
+       "feedback": "Three good changes. Use the musical words and say what each does to the sound: a crescendo builds excitement and staccato sounds light."
+      },
+      {
+       "tier": "partial",
+       "text": "Play it forte then piano. Play it staccato. The notes would be the same.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Play it forte then piano."
+        },
+        {
+         "point": 2,
+         "quote": "Play it staccato."
+        }
+       ],
+       "feedback": "Two changes are clear. Add one about rhythm, such as changing a quarter note to two eighths, and describe the effect."
+      },
+      {
+       "tier": "weak",
+       "text": "I would change the notes to different ones.",
+       "meets": [],
+       "feedback": "Arranging keeps the same notes and changes how they are played. Change the rhythm, dynamics or articulation instead of the pitches."
+      },
+      {
+       "tier": "weak",
+       "text": "Play it on a different day.",
+       "meets": [],
+       "feedback": "Arranging is about how the music is played, not when. Change the rhythm, the dynamics or the articulation."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Musical form and evaluating a recording of our band",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. identify and describe the form of a piece of band music;\n2. evaluate a recording of the band's performance using a rubric.\n\n## Materials\n\nA recording of last week's run-through, a listening map, the rubric (tone, intonation, rhythm, dynamics, balance), the worksheet.\n\n## Starter (6 minutes)\n\nPlay eight bars of a march and ask the class to raise a hand when they hear the music change. Tell students that the changes are the structure, or form, of the piece.\n\n## Main activity\n\n1. Letters show form: A is the first section, B a contrasting one. AB, ABA and rondo (ABACA) are common. A march often has several strains and a trio.\n2. Listening map: follow a printed map of a march as you listen. Mark where each section begins, and note the key and dynamics.\n3. Rubric listening: play a recording of our band for two minutes. Score tone, intonation, rhythm, dynamics and balance from 1 to 4. Write one strength and one goal for each category.\n4. Share results. Remind students that a rubric gives feedback to help us improve, not to criticize any person.\n\n## Checking for understanding\n\nAsk: \"What is the form if the piece begins with section A, then a new section B, then A again?\" (ABA.)\n\n## Exit ticket\n\nWrite one strength and one goal for the band based on the recording.",
+   "reading": {
+    "title": "How music is built, and how to listen with a purpose",
+    "content": "Most pieces of music are built with a plan. We call this plan the **form**. Form uses letters: **A** is the first main section, and **B** is a section that contrasts with it, perhaps in a different key, a different tempo or a different mood. If a piece goes A, B, A, we call it **ABA** or **ternary** form, which gives a feeling of leaving home and returning. A piece that goes A, B is **binary** form. A **rondo** keeps coming back to the A section, as in A-B-A-C-A.\n\nMarches are a special form. A traditional American march has several **strains**, each usually 16 or 32 bars long, followed by a **trio**, which is a contrasting section that is often softer and in a new key. Then the band plays a final bright section to finish. When you listen to a march, follow the sections and notice when the music changes key, loudness or instruments.\n\nA **listening map** is a visual guide to a piece. It is a chart, with boxes or lines, showing each section in order. As you listen, you follow along and mark the changes. Listening with a purpose helps you remember what happens and understand why the composer made certain choices.\n\nBands also listen to themselves. Recording a rehearsal and listening back is one of the best ways to improve, because it is hard to hear everything while you play. Evaluating with a **rubric** keeps the feedback fair and specific. A rubric is a chart of categories, such as **tone**, **intonation** (how well the notes are in tune), **rhythm**, **dynamics** and **balance**, each with levels from 1 to 4. For each category, you decide the level that matches what you hear, then write evidence. For example: \"Intonation: 2. The flutes were sharp in measures 9 to 12.\" Good feedback names something that can be fixed. After that, set a goal: \"Next week the flutes will tune to the clarinets before measure 9.\""
+   },
+   "cards": [
+    {
+     "front": "Form",
+     "back": "The plan or structure of a piece of music."
+    },
+    {
+     "front": "Ternary form (ABA)",
+     "back": "A first section, a contrasting section, then a return to the first."
+    },
+    {
+     "front": "Binary form (AB)",
+     "back": "Two different sections."
+    },
+    {
+     "front": "Rondo",
+     "back": "A form in which the main theme keeps returning, as in A-B-A-C-A."
+    },
+    {
+     "front": "Strain",
+     "back": "A section of a march, usually 16 or 32 bars long."
+    },
+    {
+     "front": "Trio",
+     "back": "A contrasting section of a march, often softer and in a new key."
+    },
+    {
+     "front": "Listening map",
+     "back": "A visual guide to the sections of a piece."
+    },
+    {
+     "front": "Intonation",
+     "back": "How accurately the notes are in tune."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A piece goes section A, section B, then section A again. Which form is this?",
+     "options": [
+      "Binary",
+      "Rondo",
+      "ABA",
+      "Theme and variations"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is a trio in a march?",
+     "options": [
+      "Three players on one part",
+      "A contrasting section, often softer and in a new key",
+      "A fast ending",
+      "A section for percussion only"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these is a category on a typical band rubric?",
+     "options": [
+      "Uniform color",
+      "Intonation",
+      "Seating chart",
+      "Number of players"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A listening map is used to:",
+     "options": [
+      "Find the way to the band room",
+      "Follow the sections of a piece as you listen",
+      "Tune the instruments",
+      "Write new music"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which feedback is the most useful?",
+     "options": [
+      "That was bad",
+      "Intonation: 2. The flutes were sharp in measures 9 to 12",
+      "Everyone should try harder",
+      "I liked the drums"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain what form is in music, and describe the form of a piece that begins with a theme (A), moves to a contrasting theme (B), and then comes back to the first theme (A). Say what feeling the form gives the listener.",
+     "markScheme": [
+      "Defines form as the plan or structure of a piece",
+      "Names the form as ABA or ternary",
+      "Describes the contrast between the sections",
+      "Says the return to A gives a feeling of coming back home or closure"
+     ],
+     "modelAnswer": "Form is the plan or structure of a piece of music. A piece that goes A, B, A is in ABA, or ternary, form. The B section contrasts with A, for example in a different key or mood. When A returns, the listener has a feeling of coming back home.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Form is how a piece is built, its structure. A, B, A is called ABA or ternary form. The B section is different, maybe a new key or softer. When A comes back it feels like going home again.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Form is how a piece is built, its structure."
+        },
+        {
+         "point": 1,
+         "quote": "A, B, A is called ABA or ternary form."
+        },
+        {
+         "point": 2,
+         "quote": "The B section is different, maybe a new key or softer."
+        },
+        {
+         "point": 3,
+         "quote": "When A comes back it feels like going home again."
+        }
+       ],
+       "feedback": "Full marks. The idea of going home explains why the form feels satisfying."
+      },
+      {
+       "tier": "full",
+       "text": "Form is the structure of the music. This one is ABA. B contrasts with A with a different mood or tempo. The return of A feels like closure, like the music finishes the story.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Form is the structure of the music."
+        },
+        {
+         "point": 1,
+         "quote": "This one is ABA."
+        },
+        {
+         "point": 2,
+         "quote": "B contrasts with A with a different mood or tempo."
+        },
+        {
+         "point": 3,
+         "quote": "The return of A feels like closure, like the music finishes the story."
+        }
+       ],
+       "feedback": "All four marks. Closure is a good word for it."
+      },
+      {
+       "tier": "partial",
+       "text": "Form is the structure. It is ABA.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Form is the structure."
+        },
+        {
+         "point": 1,
+         "quote": "It is ABA."
+        }
+       ],
+       "feedback": "You have the definition and the name. Explain how the B section contrasts and what the return to A feels like to the listener."
+      },
+      {
+       "tier": "partial",
+       "text": "This is binary form. B is different from A. It feels like going home.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "B is different from A."
+        },
+        {
+         "point": 3,
+         "quote": "It feels like going home."
+        }
+       ],
+       "feedback": "You described the sections well, but a return to A makes it three parts, ABA, not binary (AB)."
+      },
+      {
+       "tier": "weak",
+       "text": "Form means how you sit in band.",
+       "meets": [],
+       "feedback": "In music, form is the structure of a piece, using letters for the sections. The way you sit is posture."
+      },
+      {
+       "tier": "weak",
+       "text": "It is a march and the trio is the B part.",
+       "meets": [],
+       "feedback": "A trio is a section of a march, but the question asks for the form. A theme, a contrast, then the first theme again is ABA."
+      }
+     ]
+    },
+    {
+     "prompt": "Choose one category from the band rubric (tone, intonation, rhythm, dynamics or balance). Score the band's recording from 1 to 4, give evidence for your score, and write one goal.",
+     "markScheme": [
+      "Names one rubric category",
+      "Gives a score from 1 to 4",
+      "Gives specific evidence from the recording, such as a measure or section",
+      "Writes a goal that can be checked"
+     ],
+     "modelAnswer": "Category: balance. Score: 2. In measures 17 to 24 the trombones covered the melody in the clarinets. My goal is that the trombones play mezzo piano in that section so the melody can be heard in the next rehearsal.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Category: dynamics. I give it a 3. The crescendo in measures 25 to 28 was good, but the soft part in measure 9 was too loud. Goal: play measure 9 at piano and check it with the recording on Friday.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Category: dynamics."
+        },
+        {
+         "point": 1,
+         "quote": "I give it a 3."
+        },
+        {
+         "point": 2,
+         "quote": "The crescendo in measures 25 to 28 was good, but the soft part in measure 9 was too loud."
+        },
+        {
+         "point": 3,
+         "quote": "Goal: play measure 9 at piano and check it with the recording on Friday."
+        }
+       ],
+       "feedback": "Full marks. The evidence is specific and the goal can be checked."
+      },
+      {
+       "tier": "full",
+       "text": "Intonation. 2 out of 4. The flutes and trumpets were not together on the long note in measure 12, the flutes were sharp. Goal: tune to the clarinets before measure 12 and listen to the recording again next week.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Intonation."
+        },
+        {
+         "point": 1,
+         "quote": "2 out of 4."
+        },
+        {
+         "point": 2,
+         "quote": "The flutes and trumpets were not together on the long note in measure 12, the flutes were sharp."
+        },
+        {
+         "point": 3,
+         "quote": "Goal: tune to the clarinets before measure 12 and listen to the recording again next week."
+        }
+       ],
+       "feedback": "All four marks. Naming the instruments and the measure makes your feedback useful."
+      },
+      {
+       "tier": "partial",
+       "text": "Rhythm. 3. It was okay but some people were off.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Rhythm."
+        },
+        {
+         "point": 1,
+         "quote": "3."
+        }
+       ],
+       "feedback": "The category and score are good. Say who was off and where, and add a goal that you can check."
+      },
+      {
+       "tier": "partial",
+       "text": "Tone. The tone was weak so everyone should play with more air in the next rehearsal and record again.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Tone."
+        },
+        {
+         "point": 3,
+         "quote": "everyone should play with more air in the next rehearsal and record again."
+        }
+       ],
+       "feedback": "Your goal is good. Add a score and name where you heard weak tone, such as the clarinets in the opening."
+      },
+      {
+       "tier": "weak",
+       "text": "It was good. I gave it a 4 because I like our band.",
+       "meets": [],
+       "feedback": "A score needs evidence from the recording. Pick a category and describe what you heard, such as a measure, a section or an instrument."
+      },
+      {
+       "tier": "weak",
+       "text": "The recording was too quiet so I could not do the rubric.",
+       "meets": [],
+       "feedback": "A quiet recording can still be evaluated, and if it is hard to hear, that is a sign that the recording setup needs fixing. Choose one category and describe what you can hear."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Comparing with a professional band, and the story of a march",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. listen to a professional performance and compare it with ours;\n2. explain the history and style of a piece we are rehearsing.\n\n## Materials\n\nA professional recording of a march (school-approved), a printed biography card of John Philip Sousa, the comparison chart, the worksheet.\n\n## Starter (6 minutes)\n\nPlay thirty seconds of a professional military or concert band performing a march. Ask: \"What do you notice about the sound that is different from ours? What is the same?\"\n\n## Main activity\n\n1. Listening for details: play the recording twice. First time, listen for the overall sound. Second time, use a comparison chart: tempo, dynamics, articulation, balance, tone. Mark where our band is similar and where it is different.\n2. Do not copy the recording blindly. Ask what the professionals do that we can try: a lighter staccato, the bass line being clear, a more careful crescendo.\n3. History: introduce John Philip Sousa (1854 to 1932), the American composer and conductor known as the \"March King,\" who led the United States Marine Band. His march \"The Stars and Stripes Forever\" (1896) is the national march of the United States. Discuss why marches were written for parades, the military and community events.\n4. Style: American marches are usually in 2/4 or 6/8, at a steady tempo of about 120 beats per minute, with a strong bass line and a bright trio.\n\n## Checking for understanding\n\nAsk: \"Why are marches often in 2/4 or 6/8?\" (They match the steps of marching, left and right.)\n\n## Exit ticket\n\nWrite two things you will try after listening to the professional performance.",
+   "reading": {
+    "title": "Listening to the pros, and the March King",
+    "content": "One of the best ways to improve is to listen to musicians who are better than you, and then compare. Professional bands play with great control, but the things they do are things any band can learn. When you listen to a professional performance, listen several times. The first time, listen to the whole, the overall sound and the mood. The next time, focus on details: **tempo**, **dynamics**, **articulation** (how notes are started and ended), **balance** and **tone**. Writing down what you hear on a comparison chart helps you remember. Then ask how our band is similar, how it is different, and what we can try. For example, the professionals may play the staccato sections lighter and shorter, or the low brass may be clearer in the bass line, or their crescendos may be longer and more controlled.\n\nIt is important not to copy a recording note for note, but to learn from it. Ask what is musical about it, then apply the idea in your own playing.\n\nThe march is a piece of American musical history. A march is music with a strong steady beat that suits people walking in step, so it is usually in 2/4 or 6/8, which have two main beats to a measure, matching left and right feet. The tempo is typically about 120 beats per minute, similar to a brisk walk.\n\nThe most famous march composer in the United States was **John Philip Sousa** (1854 to 1932). He was a conductor and composer who led the United States Marine Band and later formed his own band, which toured around the world. Because of his many marches he was called the \"March King.\" His march **\"The Stars and Stripes Forever\"**, written in 1896, was named the national march of the United States by Congress in 1987. Marches like his were played in parades, at military events, at political rallies and in town parks across America. Many of them have a bright trio section and a loud finish.\n\nEven if you play modern music, learning marches teaches you precise rhythm, steady tempo, clear articulation and teamwork, skills that every band uses."
+   },
+   "cards": [
+    {
+     "front": "Articulation",
+     "back": "How notes are started and ended, such as legato or staccato."
+    },
+    {
+     "front": "March",
+     "back": "Music with a steady beat meant for walking in step."
+    },
+    {
+     "front": "2/4 time",
+     "back": "Two beats per measure, with the quarter note getting one beat."
+    },
+    {
+     "front": "6/8 time",
+     "back": "Six eighth notes per measure, often felt as two groups of three."
+    },
+    {
+     "front": "John Philip Sousa",
+     "back": "American composer and conductor known as the March King."
+    },
+    {
+     "front": "The Stars and Stripes Forever",
+     "back": "Sousa's 1896 march, the national march of the United States."
+    },
+    {
+     "front": "Comparison chart",
+     "back": "A table used to compare two performances on tempo, dynamics, articulation and more."
+    },
+    {
+     "front": "Marine Band",
+     "back": "The United States Marine Band, which Sousa led."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Why are marches usually written in 2/4 or 6/8?",
+     "options": [
+      "They are easier to read",
+      "They match the left and right steps of marching",
+      "They are always slow",
+      "They are required by law"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Who is called the March King?",
+     "options": [
+      "Aaron Copland",
+      "John Philip Sousa",
+      "Duke Ellington",
+      "Leonard Bernstein"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the best way to learn from a professional recording?",
+     "options": [
+      "Copy every note without thinking",
+      "Listen to details like tempo, dynamics and articulation and try one idea",
+      "Play louder than the recording",
+      "Listen only once"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A typical marching tempo is about:",
+     "options": [
+      "60 beats per minute",
+      "120 beats per minute",
+      "200 beats per minute",
+      "30 beats per minute"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A trio of a march is usually:",
+     "options": [
+      "A contrasting section, often softer and in a new key",
+      "The first section only",
+      "Three drums only",
+      "A very long solo"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "You listen to a professional band play a march and then to a recording of our band. Describe how you would use a comparison chart, and name two features you would compare and why.",
+     "markScheme": [
+      "Says to listen several times, first to the whole and then to details",
+      "Names a feature to compare, such as tempo, dynamics, articulation, balance or tone",
+      "Names a second feature to compare",
+      "Says what the band will try or change as a result"
+     ],
+     "modelAnswer": "I would listen once for the overall sound and again for details, filling in the chart for both recordings. I would compare articulation, because the professionals play the staccato notes shorter, and balance, because their bass line is clearer. Then our band would try shorter staccato and a clearer low brass line.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "First I listen to the whole thing, then I listen again for details and fill in the chart for each band. I would compare articulation, because the pros play the short notes lighter. I would compare balance because their bass line is easy to hear. Then we would try lighter staccato and make the low brass clearer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First I listen to the whole thing, then I listen again for details and fill in the chart for each band."
+        },
+        {
+         "point": 1,
+         "quote": "I would compare articulation, because the pros play the short notes lighter."
+        },
+        {
+         "point": 2,
+         "quote": "I would compare balance because their bass line is easy to hear."
+        },
+        {
+         "point": 3,
+         "quote": "Then we would try lighter staccato and make the low brass clearer."
+        }
+       ],
+       "feedback": "Full marks. The comparison ends with something the band can actually try."
+      },
+      {
+       "tier": "full",
+       "text": "Listen twice, once for the sound and once for specifics, writing in each box of the chart. Tempo, because the professionals kept a very steady beat. Dynamics, because their crescendo was longer and more controlled. We could practice the crescendo and use the metronome.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Listen twice, once for the sound and once for specifics, writing in each box of the chart."
+        },
+        {
+         "point": 1,
+         "quote": "Tempo, because the professionals kept a very steady beat."
+        },
+        {
+         "point": 2,
+         "quote": "Dynamics, because their crescendo was longer and more controlled."
+        },
+        {
+         "point": 3,
+         "quote": "We could practice the crescendo and use the metronome."
+        }
+       ],
+       "feedback": "All four marks. Steady tempo and crescendo are good choices for a young band."
+      },
+      {
+       "tier": "partial",
+       "text": "Listen to both recordings and write in the chart. Compare tempo.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Listen to both recordings and write in the chart."
+        },
+        {
+         "point": 1,
+         "quote": "Compare tempo."
+        }
+       ],
+       "feedback": "The method and one feature are right. Add a second feature and say what the band will try after the comparison."
+      },
+      {
+       "tier": "partial",
+       "text": "Compare tone and compare dynamics. The professionals are better.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Compare tone"
+        },
+        {
+         "point": 2,
+         "quote": "compare dynamics"
+        }
+       ],
+       "feedback": "Two good features. Explain what you would hear for each, and say what our band will try, instead of just saying they are better."
+      },
+      {
+       "tier": "weak",
+       "text": "I would copy the professional band exactly, note for note.",
+       "meets": [],
+       "feedback": "Copying exactly does not teach you much. Compare features like articulation and balance, then try one idea in your own playing."
+      },
+      {
+       "tier": "weak",
+       "text": "The chart is not needed, I can just tell which one is better.",
+       "meets": [],
+       "feedback": "A chart makes the comparison specific, so you know exactly which features to improve rather than only which one sounds better."
+      }
+     ]
+    },
+    {
+     "prompt": "Explain who John Philip Sousa was, name one of his most famous marches, and describe two features of an American march.",
+     "markScheme": [
+      "Says Sousa was an American composer and conductor, the March King",
+      "Names The Stars and Stripes Forever, or another well-known march",
+      "Gives one feature of a march, such as 2/4 or 6/8 time or a steady tempo",
+      "Gives a second feature, such as a strong bass line, strains or a bright trio"
+     ],
+     "modelAnswer": "John Philip Sousa (1854 to 1932) was an American composer and conductor who led the United States Marine Band and was called the March King. One of his famous marches is The Stars and Stripes Forever. An American march usually has a steady tempo in 2/4 or 6/8 time, and it has a strong bass line and a trio section.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Sousa was an American composer and conductor known as the March King, and he led the Marine Band. His most famous march is The Stars and Stripes Forever. Marches have a steady tempo in 2/4 or 6/8. They also have a trio, which is a contrasting section.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sousa was an American composer and conductor known as the March King, and he led the Marine Band."
+        },
+        {
+         "point": 1,
+         "quote": "His most famous march is The Stars and Stripes Forever."
+        },
+        {
+         "point": 2,
+         "quote": "Marches have a steady tempo in 2/4 or 6/8."
+        },
+        {
+         "point": 3,
+         "quote": "They also have a trio, which is a contrasting section."
+        }
+       ],
+       "feedback": "Full marks. Each part of the answer is accurate and clear."
+      },
+      {
+       "tier": "full",
+       "text": "John Philip Sousa was the March King, an American composer and bandleader. He wrote The Stars and Stripes Forever in 1896. A march keeps a steady beat for walking, like 2/4 time. It usually has a strong bass line and a bright finish.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "John Philip Sousa was the March King, an American composer and bandleader."
+        },
+        {
+         "point": 1,
+         "quote": "He wrote The Stars and Stripes Forever in 1896."
+        },
+        {
+         "point": 2,
+         "quote": "A march keeps a steady beat for walking, like 2/4 time."
+        },
+        {
+         "point": 3,
+         "quote": "It usually has a strong bass line and a bright finish."
+        }
+       ],
+       "feedback": "All four marks. You included the year, which is a nice detail."
+      },
+      {
+       "tier": "partial",
+       "text": "Sousa was a composer, the March King. He wrote The Stars and Stripes Forever.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sousa was a composer, the March King."
+        },
+        {
+         "point": 1,
+         "quote": "He wrote The Stars and Stripes Forever."
+        }
+       ],
+       "feedback": "Good on who he was and a march. Add two features of a march, such as time signature, steady tempo, bass line or trio."
+      },
+      {
+       "tier": "partial",
+       "text": "A march is in 2/4 or 6/8 with a steady beat. It has a trio. Sousa wrote the Star-Spangled Banner.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "A march is in 2/4 or 6/8 with a steady beat."
+        },
+        {
+         "point": 3,
+         "quote": "It has a trio."
+        }
+       ],
+       "feedback": "The features are good. Sousa wrote The Stars and Stripes Forever. The Star-Spangled Banner was written by Francis Scott Key with a different melody."
+      },
+      {
+       "tier": "weak",
+       "text": "Sousa invented the sousaphone and the march was a dance.",
+       "meets": [],
+       "feedback": "Sousa is associated with the sousaphone, which was named for him, but he was best known as a composer and conductor. A march is music for walking, not a dance."
+      },
+      {
+       "tier": "weak",
+       "text": "I do not remember anything about him.",
+       "meets": [],
+       "feedback": "Use your notes: John Philip Sousa was the American March King who led the Marine Band and wrote The Stars and Stripes Forever."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Rhythm as fractions, and music in our community",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. relate musical patterns to mathematics, such as fractions and ratios in rhythm;\n2. describe the role of music in your community and how you can take part in it.\n\n## Materials\n\nFraction strips or a rhythm tree chart, clapping sticks, a list of local music groups (invented or approved by the director), the worksheet.\n\n## Starter (6 minutes)\n\nClap one whole note, then two half notes, then four quarter notes, all in the same amount of time. Ask: \"What do you notice about how they fit together?\"\n\n## Main activity\n\n1. The rhythm tree: a whole note is 4 beats, a half note 2, a quarter note 1, an eighth note one half of a beat, and a sixteenth note one quarter of a beat. A measure of 4/4 must add up to four beats, like adding fractions.\n2. Dotted notes: a dot adds half of the note's value. A dotted half note is 2 + 1 = 3 beats. A dotted quarter is 1 + 1/2 = 1 1/2 beats.\n3. Ratios: a triplet fits three notes in the time of two. Discuss the ratio 3:2.\n4. Community: brainstorm all of the ways music appears in our community, from the high school marching band and the town summer concert series to community bands, church bands and the symphony. How can a student take part?\n\n## Checking for understanding\n\nAsk: \"How many beats are in a dotted half note?\" (Three.)\n\n## Exit ticket\n\nWrite the total beats of a half note, a dotted quarter and an eighth note added together.",
+   "reading": {
+    "title": "Counting in fractions, and music that belongs to everyone",
+    "content": "Music is full of mathematics. When you read rhythm, you are really working with **fractions**. A **whole note** lasts four beats in 4/4 time. A **half note** lasts two beats, half as long as a whole note. A **quarter note** lasts one beat, a quarter of the whole note. An **eighth note** lasts one half of a beat, and a **sixteenth note** lasts one quarter of a beat. You can build a \"rhythm tree\" to see this: each level divides the note above it in half.\n\nBecause the values are fractions, each measure must add up to the right total. A measure of 4/4 must have four beats. For example, half note + quarter note + two eighth notes = 2 + 1 + 1/2 + 1/2 = 4. If your measure adds up to 3 or 5, there is a mistake.\n\nA **dot** after a note adds half of the note's value. A dotted half note is 2 plus half of 2, which is 2 + 1 = 3 beats. A dotted quarter note is 1 + 1/2 = 1 1/2 beats. A **tie** joins two notes of the same pitch and adds their values together.\n\nRatios appear in music too. A **triplet** puts three equal notes in the time of two, a ratio of 3 to 2. Tempo is a rate: 120 beats per minute means two beats every second, so each beat lasts 0.5 seconds. If a piece is 96 measures long in 4/4 at 120 beats per minute, it lasts 96 × 4 = 384 beats, which is 384 ÷ 2 = 192 seconds, or 3 minutes 12 seconds.\n\nFinally, music is part of every community. In Ohio, you can hear school marching bands on Friday nights, community bands in summer concert series in town parks, church and civic groups, and orchestras in larger cities. Students can take part by joining the school's ensembles, auditioning for honor bands, playing in a community group, volunteering at a concert, or simply attending a performance and supporting local musicians. Making music with other people is a lifelong skill, and the habits you build in band, such as listening, teamwork and practice, will help you in many other parts of life."
+   },
+   "cards": [
+    {
+     "front": "Whole note",
+     "back": "Lasts four beats in 4/4 time."
+    },
+    {
+     "front": "Half note",
+     "back": "Lasts two beats."
+    },
+    {
+     "front": "Quarter note",
+     "back": "Lasts one beat."
+    },
+    {
+     "front": "Eighth note",
+     "back": "Lasts one half of a beat."
+    },
+    {
+     "front": "Dotted note",
+     "back": "A note with a dot adds half of its own value."
+    },
+    {
+     "front": "Tie",
+     "back": "A curved line that joins two notes of the same pitch."
+    },
+    {
+     "front": "Triplet",
+     "back": "Three notes played in the time of two."
+    },
+    {
+     "front": "Tempo",
+     "back": "The speed of the beat, measured in beats per minute."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How many beats are in a dotted half note in 4/4?",
+     "options": [
+      "Two",
+      "Three",
+      "Four",
+      "One and a half"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A measure of 4/4 has a quarter note, a half note and two eighth notes. What is its total?",
+     "options": [
+      "3 beats",
+      "4 beats",
+      "5 beats",
+      "6 beats"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A piece is at 120 beats per minute. How long does one beat last?",
+     "options": [
+      "0.25 seconds",
+      "0.5 seconds",
+      "1 second",
+      "2 seconds"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How many eighth notes equal one half note?",
+     "options": [
+      "2",
+      "4",
+      "6",
+      "8"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a good way for a student to take part in the music of their community?",
+     "options": [
+      "Wait until you are an adult",
+      "Join a community group or attend local concerts",
+      "Avoid performing",
+      "Only listen to recordings"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Find the total number of beats in this measure and say whether it fits in 4/4: a dotted half note, a quarter note and an eighth note. Show the fraction work.",
+     "markScheme": [
+      "Finds the dotted half note value of 3 beats",
+      "Adds the quarter note, 1 beat, to get 4",
+      "Adds the eighth note, 1/2 beat, to get 4 1/2",
+      "Concludes the measure has 4 1/2 beats, so it does not fit in 4/4"
+     ],
+     "modelAnswer": "A dotted half note is 2 + 1 = 3 beats. Adding a quarter note, 1 beat, gives 4 beats. Adding an eighth note, 1/2 beat, gives 4 1/2 beats. A measure of 4/4 must have exactly 4 beats, so this measure does not fit; it has half a beat too many.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Dotted half is 2 + 1 = 3 beats. 3 + 1 for the quarter is 4. 4 + 1/2 for the eighth is 4 1/2. That is more than 4, so it does not fit in 4/4, it is half a beat over.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Dotted half is 2 + 1 = 3 beats."
+        },
+        {
+         "point": 1,
+         "quote": "3 + 1 for the quarter is 4."
+        },
+        {
+         "point": 2,
+         "quote": "4 + 1/2 for the eighth is 4 1/2."
+        },
+        {
+         "point": 3,
+         "quote": "That is more than 4, so it does not fit in 4/4, it is half a beat over."
+        }
+       ],
+       "feedback": "Full marks. Adding step by step shows exactly where it goes over."
+      },
+      {
+       "tier": "full",
+       "text": "3 beats for the dotted half + 1 + 1/2 = 4.5 beats. After the quarter note I already have 4. So it is too long for 4/4 because it should be exactly 4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3 beats for the dotted half"
+        },
+        {
+         "point": 2,
+         "quote": "4.5 beats"
+        },
+        {
+         "point": 1,
+         "quote": "After the quarter note I already have 4."
+        },
+        {
+         "point": 3,
+         "quote": "So it is too long for 4/4 because it should be exactly 4."
+        }
+       ],
+       "feedback": "All four marks. Noticing that the quarter note already makes 4 beats is a sharp observation."
+      },
+      {
+       "tier": "partial",
+       "text": "A dotted half is 3 beats. Plus a quarter is 4. So it fits.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A dotted half is 3 beats."
+        },
+        {
+         "point": 1,
+         "quote": "Plus a quarter is 4."
+        }
+       ],
+       "feedback": "Good so far. You forgot the eighth note, 1/2 beat, which makes the total 4 1/2, so it does not fit."
+      },
+      {
+       "tier": "partial",
+       "text": "3 + 1 + 1 = 5 beats so it does not fit.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3"
+        }
+       ],
+       "feedback": "You counted the eighth note as a whole beat. An eighth note is half a beat, so the total is 4 1/2. Your conclusion is still right."
+      },
+      {
+       "tier": "weak",
+       "text": "A dotted half is 4 beats, so it already fits with the others.",
+       "meets": [],
+       "feedback": "A half note is 2 beats and the dot adds half of that, 1 beat, so a dotted half note is 3 beats, not 4."
+      },
+      {
+       "tier": "weak",
+       "text": "It has three notes so it is 3 beats.",
+       "meets": [],
+       "feedback": "The number of notes does not decide the beats. Add the value of each: 3 + 1 + 1/2."
+      }
+     ]
+    },
+    {
+     "prompt": "A piece is 64 measures long in 4/4 at 128 beats per minute. How long does it last in minutes and seconds? Show your work.",
+     "markScheme": [
+      "Calculates the number of beats, 64 times 4 equals 256",
+      "Divides by the tempo, 256 divided by 128 equals 2 minutes",
+      "States the answer as 2 minutes",
+      "Includes the unit and reads the answer back, 2 minutes 0 seconds"
+     ],
+     "modelAnswer": "64 measures × 4 beats = 256 beats. At 128 beats per minute, 256 ÷ 128 = 2 minutes. The piece lasts 2 minutes, or 2 minutes 0 seconds.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "64 × 4 = 256 beats. 256 ÷ 128 = 2. It lasts 2 minutes, so 2 minutes and 0 seconds.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "64 × 4 = 256 beats."
+        },
+        {
+         "point": 1,
+         "quote": "256 ÷ 128 = 2."
+        },
+        {
+         "point": 2,
+         "quote": "It lasts 2 minutes"
+        },
+        {
+         "point": 3,
+         "quote": "so 2 minutes and 0 seconds."
+        }
+       ],
+       "feedback": "Full marks. Clear steps and the units are right."
+      },
+      {
+       "tier": "full",
+       "text": "Total beats is 4 × 64 which is 256. Beats divided by beats per minute is 256/128 = 2. So the song is 2 minutes long, 2:00.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Total beats is 4 × 64 which is 256."
+        },
+        {
+         "point": 1,
+         "quote": "Beats divided by beats per minute is 256/128 = 2."
+        },
+        {
+         "point": 2,
+         "quote": "So the song is 2 minutes long"
+        },
+        {
+         "point": 3,
+         "quote": "2:00."
+        }
+       ],
+       "feedback": "All four marks. Beats divided by beats per minute is the key relationship."
+      },
+      {
+       "tier": "partial",
+       "text": "64 × 4 = 256 beats. 256 × 128 is a big number.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "64 × 4 = 256 beats."
+        }
+       ],
+       "feedback": "The first step is right. Divide the beats by the tempo, not multiply, because you want minutes: 256 ÷ 128 = 2."
+      },
+      {
+       "tier": "partial",
+       "text": "128 divided by 64 is 2 so it is 2 minutes.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "128 divided by 64 is 2"
+        }
+       ],
+       "feedback": "The answer is right but the calculation is not what the situation needs. First find the total beats, 256, then divide by the tempo, 128.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "64 + 128 = 192 so it is 192 seconds.",
+       "meets": [],
+       "feedback": "Adding the measures and the tempo has no meaning. Multiply the measures by 4 for the beats, then divide by the beats per minute."
+      },
+      {
+       "tier": "weak",
+       "text": "It is 64 measures so about 64 minutes.",
+       "meets": [],
+       "feedback": "A measure of 4/4 lasts only a few seconds at this tempo. Count the total beats and divide by the beats per minute."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

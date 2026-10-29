@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { termWord } from "@shared/school-words";
 import { Link, useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { IconCalendarTime, IconRefresh } from "@tabler/icons-react";
@@ -61,6 +62,7 @@ export default function AdminTimetable() {
   const { Arm } = useArmWord();
   const doubleWords = useDoubleWord();
   const { config } = useSchoolConfig();
+  const { Term, term } = termWord(config);
   const rooms: Room[] = config.rooms ?? [];
   const [selected, setSelected] = useState<Cell | null>(null);
   // The empty term the admin chose to start blank: no server call, the grid
@@ -267,8 +269,8 @@ export default function AdminTimetable() {
         onValueChange={(v) => set({ termId: v })}
         disabled={!terms.length}
       >
-        <SelectTrigger className="h-8 w-40 text-xs" aria-label="Term">
-          <SelectValue placeholder="Term" />
+        <SelectTrigger className="h-8 w-40 text-xs" aria-label={Term}>
+          <SelectValue placeholder={Term} />
         </SelectTrigger>
         <SelectContent>
           {terms.map((t) => (
@@ -403,8 +405,8 @@ export default function AdminTimetable() {
     body = (
       <ListState
         icon={IconCalendarTime}
-        title="No term to show"
-        description="Add this session's terms in Settings → Terms."
+        title={`No ${term} to show`}
+        description={`Add this year's ${termWord(config).terms} in Settings → ${termWord(config).Terms}.`}
       />
     );
   } else if (copyFrom) {

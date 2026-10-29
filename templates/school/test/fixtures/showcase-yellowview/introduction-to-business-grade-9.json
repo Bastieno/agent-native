@@ -1,0 +1,2390 @@
+{
+ "subject": "Introduction to Business",
+ "yearGroup": "Grade 9",
+ "weeks": {
+  "1": {
+   "topic": "Why businesses exist and how they are organized",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how businesses meet needs and wants and why they exist;\n2. compare sole proprietorships, partnerships and corporations;\n3. describe the role of business in the economy, including jobs, taxes and innovation.\n\n## Materials\n\nLocal business flyers or photos (a bakery, a hardware store, a regional chain), a comparison chart template, the problem set.\n\n## Starter (6 minutes)\n\nAsk: \"Think of a business within a mile of the school. What need or want does it meet? Who works there? Who owns it?\" List answers on the board.\n\n## Main activity\n\n1. Needs and wants: needs are things required to live (food, shelter, clothing); wants are things we would like. Businesses exist to meet them and to earn a profit for their owners.\n2. Forms of ownership: a sole proprietorship has one owner who keeps all profit and is personally responsible for debts; a partnership has two or more owners who share profit and responsibility; a corporation is a separate legal entity owned by shareholders, whose liability is limited to what they invested.\n3. Role in the economy: businesses provide jobs, pay taxes that fund schools and roads, and create innovations.\n\n## Checking for understanding\n\nAsk: \"If a lawn-care business owned by one person is sued, who pays?\"\n\n## Problem set\n\nClassify businesses and match them to ownership forms.",
+   "reading": {
+    "title": "What businesses are for, and who owns them",
+    "content": "A **business** is an organization that provides goods or services in order to earn a profit. Businesses exist because people have **needs**, things required to live such as food, shelter and clothing, and **wants**, things that people would like but could live without, such as a new video game or concert tickets. A grocery store meets a need; a theater meets a want. Many products do both: a family needs transportation, but wants a particular kind of car. Owners take a risk, put in money and time, and hope to earn **profit**, the money left after all costs are paid.\n\nOwners choose a legal **form of ownership**. In a **sole proprietorship**, one person owns and runs the business. It is easy and cheap to start, and the owner keeps all the profit and makes all the decisions. The drawback is **unlimited liability**: the owner is personally responsible for the business's debts, so if the business is sued or cannot pay a loan, the owner's savings and property could be at risk. A neighborhood lawn-care service run by one person is typically a sole proprietorship. In a **partnership**, two or more people share ownership, money, skills, work and profit. Partners can combine strengths, but they may disagree, and in a general partnership each partner can be responsible for the debts the other creates. A **corporation** is a separate legal entity that is owned by **shareholders** who buy stock. Its main advantage is **limited liability**: shareholders can lose what they invested, but not their personal property. A corporation can also raise a lot of money by selling shares and continues to exist if an owner leaves. The drawbacks are that it is more costly and complicated to set up, and a corporation's profits may be taxed, and then the shareholders are taxed again on dividends.\n\nBusinesses of all sizes matter to the wider economy. They provide **jobs**, and wages that workers spend at other businesses. They pay **taxes** that fund public services such as schools, roads and fire stations. They bring **innovation**, new products and better ways of working, as competing businesses try to serve customers better. When a new factory or store opens in a town, it can bring jobs and tax revenue, though it may also raise questions about traffic or competition for existing shops. Understanding these relationships helps us to see why communities care about the health of their local businesses."
+   },
+   "cards": [
+    {
+     "front": "Business",
+     "back": "An organization that provides goods or services to earn a profit."
+    },
+    {
+     "front": "Need",
+     "back": "Something required to live, such as food or shelter."
+    },
+    {
+     "front": "Want",
+     "back": "Something people would like but could live without."
+    },
+    {
+     "front": "Profit",
+     "back": "Money left after all costs are paid."
+    },
+    {
+     "front": "Sole proprietorship",
+     "back": "A business with one owner who keeps the profit and bears the risk."
+    },
+    {
+     "front": "Partnership",
+     "back": "A business owned by two or more people who share profit and responsibility."
+    },
+    {
+     "front": "Corporation",
+     "back": "A separate legal entity owned by shareholders."
+    },
+    {
+     "front": "Limited liability",
+     "back": "Owners can lose only what they invested, not personal property."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which is a need rather than a want?",
+     "options": [
+      "Concert tickets",
+      "Basic food",
+      "A designer jacket",
+      "A video game"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which form of ownership has unlimited personal liability for one owner?",
+     "options": [
+      "Sole proprietorship",
+      "Corporation",
+      "Shareholder group",
+      "Public company"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is the main advantage of a corporation for its owners?",
+     "options": [
+      "It is the cheapest to start",
+      "Limited liability",
+      "No taxes at all",
+      "One person decides everything"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a way that businesses help the economy?",
+     "options": [
+      "They provide jobs and pay taxes",
+      "They remove competition",
+      "They stop innovation",
+      "They lower wages"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Profit is:",
+     "options": [
+      "All the money a business receives",
+      "Money left after costs are paid",
+      "The price of the product",
+      "A loan from a bank"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Two friends in Dayton want to open a bike repair shop. Compare a partnership with a sole proprietorship for them. Give one advantage and one disadvantage of a partnership, and explain why they might later consider forming a corporation.",
+     "markScheme": [
+      "States one valid advantage of a partnership, such as shared money, skills or work",
+      "States one valid disadvantage, such as disagreements, shared profit or shared responsibility for debts",
+      "Explains that a corporation offers limited liability so personal property is protected",
+      "Links the choice to the shop's situation, such as growth or risk of being sued"
+     ],
+     "modelAnswer": "A partnership lets the friends share the money, skills and work, which a single owner would have to supply alone. The disadvantage is that they must share the profit and may disagree, and each may be responsible for debts the other creates. As the shop grows, they might form a corporation because limited liability would protect their homes and savings if the shop were sued or could not pay its debts.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A partnership lets the two of them share the cost of tools, the work and their different skills. The disadvantage is that they split the profit and might disagree, and each could be responsible for debts the other makes. If the shop grows, a corporation would give them limited liability, so their savings and homes would be protected. That matters for a repair shop, since a customer could sue over a faulty brake repair.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A partnership lets the two of them share the cost of tools, the work and their different skills."
+        },
+        {
+         "point": 1,
+         "quote": "The disadvantage is that they split the profit and might disagree, and each could be responsible for debts the other makes."
+        },
+        {
+         "point": 2,
+         "quote": "If the shop grows, a corporation would give them limited liability, so their savings and homes would be protected."
+        },
+        {
+         "point": 3,
+         "quote": "That matters for a repair shop, since a customer could sue over a faulty brake repair."
+        }
+       ],
+       "feedback": "Full marks. The brake example links liability to this business."
+      },
+      {
+       "tier": "full",
+       "text": "Advantage of a partnership: two people bring more money and skills than one, for example one fixes bikes and the other does the books. Disadvantage: profit is shared and arguments can slow decisions; partners may also be liable for each other's debts. A corporation would limit what they could lose to what they invested. They would do this when the shop gets bigger and the risk of debts or a lawsuit is larger.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Advantage of a partnership: two people bring more money and skills than one, for example one fixes bikes and the other does the books."
+        },
+        {
+         "point": 1,
+         "quote": "Disadvantage: profit is shared and arguments can slow decisions; partners may also be liable for each other's debts."
+        },
+        {
+         "point": 2,
+         "quote": "A corporation would limit what they could lose to what they invested."
+        },
+        {
+         "point": 3,
+         "quote": "They would do this when the shop gets bigger and the risk of debts or a lawsuit is larger."
+        }
+       ],
+       "feedback": "Full marks. Dividing the roles shows how skills combine."
+      },
+      {
+       "tier": "partial",
+       "text": "A partnership lets them share work and money. A corporation protects personal property. There are no disadvantages because they are friends.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A partnership lets them share work and money."
+        },
+        {
+         "point": 2,
+         "quote": "A corporation protects personal property."
+        }
+       ],
+       "feedback": "Even friends can disagree, and they split the profit. Name a real disadvantage and link it to the shop."
+      },
+      {
+       "tier": "partial",
+       "text": "They would have to share the profit. The shop could grow. A corporation is owned by one person who keeps everything.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "They would have to share the profit."
+        },
+        {
+         "point": 3,
+         "quote": "The shop could grow."
+        }
+       ],
+       "feedback": "A corporation is owned by shareholders and offers limited liability. Explain that protection.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A partnership and a sole proprietorship are the same thing, so it doesn't matter which they choose.",
+       "meets": [],
+       "feedback": "A sole proprietorship has one owner; a partnership has two or more. Compare them."
+      },
+      {
+       "tier": "weak",
+       "text": "They should form a corporation because corporations never pay taxes.",
+       "meets": [],
+       "feedback": "Corporations do pay taxes, and the main benefit is limited liability."
+      }
+     ]
+    },
+    {
+     "prompt": "A new distribution warehouse opens near Columbus and hires 200 workers. Explain three ways it affects the local economy, and one possible downside for the community.",
+     "markScheme": [
+      "Explains that it creates jobs and wages",
+      "Explains that wages are spent at other local businesses",
+      "Explains that the warehouse pays taxes that fund public services",
+      "Names a plausible downside, such as traffic, noise or pressure on other businesses"
+     ],
+     "modelAnswer": "The warehouse creates 200 jobs, which pay wages. The workers spend those wages at local shops, restaurants and landlords, which supports other businesses. The warehouse also pays property and other taxes that help to fund schools and roads. A downside could be heavier truck traffic and noise on local streets.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "It creates 200 jobs, so 200 people have wages. Those workers spend money at nearby stores, restaurants and on rent, which helps other businesses. The warehouse pays taxes that help to pay for schools, roads and the fire department. The downside is more truck traffic and noise on local roads.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It creates 200 jobs, so 200 people have wages."
+        },
+        {
+         "point": 1,
+         "quote": "Those workers spend money at nearby stores, restaurants and on rent, which helps other businesses."
+        },
+        {
+         "point": 2,
+         "quote": "The warehouse pays taxes that help to pay for schools, roads and the fire department."
+        },
+        {
+         "point": 3,
+         "quote": "The downside is more truck traffic and noise on local roads."
+        }
+       ],
+       "feedback": "Full marks. Three effects and a realistic downside."
+      },
+      {
+       "tier": "full",
+       "text": "First, the jobs give families an income. Second, the workers' spending supports restaurants, shops and landlords nearby. Third, taxes from the warehouse fund public services. On the other hand, it might crowd the roads and draw workers away from smaller local employers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First, the jobs give families an income."
+        },
+        {
+         "point": 1,
+         "quote": "Second, the workers' spending supports restaurants, shops and landlords nearby."
+        },
+        {
+         "point": 2,
+         "quote": "Third, taxes from the warehouse fund public services."
+        },
+        {
+         "point": 3,
+         "quote": "On the other hand, it might crowd the roads and draw workers away from smaller local employers."
+        }
+       ],
+       "feedback": "Full marks. Competition for workers is a thoughtful downside."
+      },
+      {
+       "tier": "partial",
+       "text": "It creates jobs. It pays taxes. Nothing else happens, and there are no downsides.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It creates jobs."
+        },
+        {
+         "point": 2,
+         "quote": "It pays taxes."
+        }
+       ],
+       "feedback": "Think about where the wages go, and what can go wrong, such as traffic."
+      },
+      {
+       "tier": "partial",
+       "text": "People spend their wages in town. There might be more traffic. The warehouse is paid by the government and creates no jobs.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "People spend their wages in town."
+        },
+        {
+         "point": 3,
+         "quote": "There might be more traffic."
+        }
+       ],
+       "feedback": "The warehouse hires 200 workers, so it does create jobs. Revise your first sentence.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A warehouse does not affect the town at all because it just stores boxes.",
+       "meets": [],
+       "feedback": "Hiring workers and paying taxes affect the whole town. Explain those effects."
+      },
+      {
+       "tier": "weak",
+       "text": "It is bad because new businesses always hurt a town.",
+       "meets": [],
+       "feedback": "Businesses bring both benefits and costs. Name specific ones."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Scarcity, supply and demand, and presenting an idea",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain scarcity, supply and demand as they apply to a small business;\n2. present a business pitch to a panel and respond to questions.\n\n## Materials\n\nA lemonade-stand price simulation with cards, a pitch template, a timer, the worksheet.\n\n## Starter (6 minutes)\n\nRun a mini auction for one cookie. Then offer a second cookie to everyone. Ask: \"Why did the price people were willing to pay change?\"\n\n## Main activity\n\n1. Scarcity: resources are limited but wants are unlimited, so businesses and buyers must choose. Opportunity cost is the next best thing given up.\n2. Demand: how much buyers want at each price; the quantity demanded rises as price falls. Supply: how much sellers offer; the quantity supplied rises as price rises. The equilibrium price is where they meet.\n3. A bakery example: if flour prices rise, the cost of bread rises and supply falls; if a festival brings visitors, demand rises.\n4. Pitch practice: a 90-second pitch with the problem, the solution, the customers and the ask, followed by two questions from a panel.\n\n## Checking for understanding\n\nAsk: \"What happens to the price of umbrellas on a rainy day, and why?\"\n\n## Worksheet\n\nPredict price changes and prepare a pitch.",
+   "reading": {
+    "title": "Choosing with limited resources, and finding the right price",
+    "content": "Every business faces **scarcity**: resources such as money, time, workers and materials are limited, while people's wants are not. Because of scarcity, we must make choices, and each choice has an **opportunity cost**, the value of the next best thing we give up. If a student spends Saturday working at a car wash, the opportunity cost is the other thing that student could have done with that day. A bakery that uses its only oven to make cookies cannot at the same time use it for bread.\n\nPrices in a market are set by **demand** and **supply**. Demand is how much of a product buyers are willing and able to buy at different prices. Usually, as the price **falls**, the quantity demanded **rises**, since more people think it is a good deal. Supply is how much sellers are willing to offer at different prices. As the price **rises**, the quantity supplied usually **rises**, because producing is more profitable. The **equilibrium price** is the price at which the quantity buyers want equals the quantity sellers offer. If a bakery prices a loaf too high, many loaves go unsold and the baker must lower the price. If the price is too low, the bread sells out fast, which signals that the baker could charge more.\n\nThings other than price shift supply and demand. Suppose a street festival comes to a small Ohio town: demand for food rises, so a food truck can sell more at each price. If the price of flour rises, bakers' costs rise and some offer fewer loaves, so supply falls and the equilibrium price goes up. If a new competitor opens down the street, the bakery's customers may split, and its demand falls. A small business that watches these forces can plan inventory and prices better.\n\nGood ideas also need to be explained to others. A **business pitch** is a short talk in which you persuade an audience, such as investors, a bank or a panel of judges. A strong pitch has four parts: the **problem** (who has it and why it matters), your **solution** (what you will sell), the **customers** (who will buy and why), and the **ask** (what you need, such as a loan of $2,000 to buy equipment). Keep it short, speak clearly, use a real example, and be ready for questions. Panelists often ask, \"How do you know people will pay?\" or \"What if a competitor copies you?\" A calm, honest answer based on evidence, such as a survey of 30 classmates, is more convincing than confidence alone."
+   },
+   "cards": [
+    {
+     "front": "Scarcity",
+     "back": "Limited resources set against unlimited wants."
+    },
+    {
+     "front": "Opportunity cost",
+     "back": "The value of the next best choice you give up."
+    },
+    {
+     "front": "Demand",
+     "back": "How much buyers want to buy at different prices."
+    },
+    {
+     "front": "Supply",
+     "back": "How much sellers offer at different prices."
+    },
+    {
+     "front": "Equilibrium price",
+     "back": "The price where the quantity demanded equals the quantity supplied."
+    },
+    {
+     "front": "Business pitch",
+     "back": "A short talk persuading an audience to support an idea."
+    },
+    {
+     "front": "The ask",
+     "back": "What you need from the audience, such as a loan."
+    },
+    {
+     "front": "Competitor",
+     "back": "Another business selling to the same customers."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What happens to the quantity demanded when the price falls, other things equal?",
+     "options": [
+      "It rises",
+      "It falls",
+      "It stays the same",
+      "It disappears"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A street festival brings many visitors to a town. What happens to demand for food trucks?",
+     "options": [
+      "It falls",
+      "It rises",
+      "It does not change",
+      "Supply rises"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is an opportunity cost?",
+     "options": [
+      "The price of a product",
+      "The next best thing given up",
+      "A kind of tax",
+      "A bank fee"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "If flour becomes more expensive, bakeries are likely to:",
+     "options": [
+      "Offer more loaves",
+      "Offer fewer loaves at the old price",
+      "Give bread away",
+      "Stop paying taxes"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which part of a pitch states what you need from the audience?",
+     "options": [
+      "The problem",
+      "The solution",
+      "The ask",
+      "The customers"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A bakery in Cincinnati sells 100 loaves a day at $4. A flood closes the main road to the bakery and the price of flour rises by 20 percent. Using the ideas of demand and supply, explain what is likely to happen to the quantity sold, to costs, and to the price, and what the owner could do.",
+     "markScheme": [
+      "Explains that the road closure reduces customers, so demand falls",
+      "Explains that higher flour prices raise costs and reduce supply or profit",
+      "Predicts a likely effect on price or quantity with a reason",
+      "Suggests a reasonable action, such as delivery, a promotion or adjusting the price"
+     ],
+     "modelAnswer": "With the road closed, fewer customers can reach the bakery, so demand falls and fewer loaves are sold. A 20 percent rise in flour costs raises the cost of each loaf, which cuts profit and may reduce how many loaves the baker offers. The owner may have to raise the price a little to cover the costs, but with less demand a big rise could lose more customers. She could offer delivery or a discount for pickups.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "With the road closed, fewer customers can get there, so demand falls and she'll sell fewer than 100 loaves. Flour is 20 percent dearer, so each loaf costs more to make and her profit shrinks. She may need to raise the price a bit, but with fewer customers a big increase could lose even more of them. She could offer delivery or a pickup discount to keep customers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "With the road closed, fewer customers can get there, so demand falls and she'll sell fewer than 100 loaves."
+        },
+        {
+         "point": 1,
+         "quote": "Flour is 20 percent dearer, so each loaf costs more to make and her profit shrinks."
+        },
+        {
+         "point": 2,
+         "quote": "She may need to raise the price a bit, but with fewer customers a big increase could lose even more of them."
+        },
+        {
+         "point": 3,
+         "quote": "She could offer delivery or a pickup discount to keep customers."
+        }
+       ],
+       "feedback": "Full marks. You balanced the cost rise against falling demand."
+      },
+      {
+       "tier": "full",
+       "text": "Demand drops because the flood blocks access to the shop. Costs go up because flour is more expensive, so supply is squeezed. Price might rise slightly, though the lower demand means the quantity sold will fall. She could sell through a delivery app or at a farmers' market while the road is closed.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Demand drops because the flood blocks access to the shop."
+        },
+        {
+         "point": 1,
+         "quote": "Costs go up because flour is more expensive, so supply is squeezed."
+        },
+        {
+         "point": 2,
+         "quote": "Price might rise slightly, though the lower demand means the quantity sold will fall."
+        },
+        {
+         "point": 3,
+         "quote": "She could sell through a delivery app or at a farmers' market while the road is closed."
+        }
+       ],
+       "feedback": "Full marks. Selling elsewhere is a creative response."
+      },
+      {
+       "tier": "partial",
+       "text": "Flour costs more. She could deliver bread. The flood increases demand because everyone is hungry.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Flour costs more."
+        },
+        {
+         "point": 3,
+         "quote": "She could deliver bread."
+        }
+       ],
+       "feedback": "A closed road reduces customers. Explain why demand falls, not rises."
+      },
+      {
+       "tier": "partial",
+       "text": "Demand falls because fewer people can come. The price should go up. Costs go down because there is less to bake.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Demand falls because fewer people can come."
+        },
+        {
+         "point": 2,
+         "quote": "The price should go up."
+        }
+       ],
+       "feedback": "The flour price rose, so costs go up. Revise the cost sentence.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Nothing will change, because bakeries always sell 100 loaves.",
+       "meets": [],
+       "feedback": "Demand and costs both change here. Explain each effect."
+      },
+      {
+       "tier": "weak",
+       "text": "She should close forever because the flood ends the business.",
+       "meets": [],
+       "feedback": "A temporary problem has temporary responses, such as delivery. Suggest one."
+      }
+     ]
+    },
+    {
+     "prompt": "Write a 90-second pitch (about 120 words) for a business that sells reusable water bottles with a school logo. Include the problem, the solution, the customers and the ask, and write down one question a panelist might ask along with your answer.",
+     "markScheme": [
+      "States a clear problem, such as waste or students lacking bottles",
+      "Describes the solution and the product",
+      "Identifies the customers and why they would buy",
+      "Includes a specific ask and a sensible question with an answer"
+     ],
+     "modelAnswer": "Every day our school throws away hundreds of plastic bottles, and many students have nothing to refill at the fountains. We will sell reusable steel bottles printed with the school logo. Our customers are the 900 students and their families, who already buy spirit wear. We are asking for a $1,500 loan to order the first 100 bottles. A panelist might ask, \"How do you know students will buy?\" We surveyed 40 students and 28 said they would pay $12.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Our school throws away hundreds of plastic bottles every week, and many students forget to bring water. We will sell reusable steel bottles printed with the school logo. Our customers are the 900 students and their families, who already buy spirit wear. We ask for a $1,500 loan for the first 100 bottles. If asked how we know they will sell, we surveyed 40 students and 28 would pay $12.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Our school throws away hundreds of plastic bottles every week, and many students forget to bring water."
+        },
+        {
+         "point": 1,
+         "quote": "We will sell reusable steel bottles printed with the school logo."
+        },
+        {
+         "point": 2,
+         "quote": "Our customers are the 900 students and their families, who already buy spirit wear."
+        },
+        {
+         "point": 3,
+         "quote": "We ask for a $1,500 loan for the first 100 bottles. If asked how we know they will sell, we surveyed 40 students and 28 would pay $12."
+        }
+       ],
+       "feedback": "Full marks. A pitch with a figure and survey evidence."
+      },
+      {
+       "tier": "full",
+       "text": "Plastic bottles pile up in our school and the fountains are barely used. Our product is a durable bottle with the school logo that students will want to carry. We will sell to students, parents and teachers, especially through sports teams. We need $1,200 to start. A panelist might ask about price; we would answer that $14 covers our cost of $9 with profit.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Plastic bottles pile up in our school and the fountains are barely used."
+        },
+        {
+         "point": 1,
+         "quote": "Our product is a durable bottle with the school logo that students will want to carry."
+        },
+        {
+         "point": 2,
+         "quote": "We will sell to students, parents and teachers, especially through sports teams."
+        },
+        {
+         "point": 3,
+         "quote": "We need $1,200 to start. A panelist might ask about price; we would answer that $14 covers our cost of $9 with profit."
+        }
+       ],
+       "feedback": "Full marks. The price answer shows you understand profit."
+      },
+      {
+       "tier": "partial",
+       "text": "We will sell reusable bottles. Students will buy them. There is no problem to solve. We do not need any money.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "We will sell reusable bottles."
+        },
+        {
+         "point": 2,
+         "quote": "Students will buy them."
+        }
+       ],
+       "feedback": "A good pitch states the problem and a specific ask. Add both."
+      },
+      {
+       "tier": "partial",
+       "text": "There is a lot of plastic waste. We need $1,500, and a panelist may ask how we know students will buy. The product is a type of shoe.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There is a lot of plastic waste."
+        },
+        {
+         "point": 3,
+         "quote": "We need $1,500, and a panelist may ask how we know students will buy."
+        }
+       ],
+       "feedback": "Describe the bottle as the solution and who will buy it.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Buy our bottles. They are the best. Everyone should buy them now.",
+       "meets": [],
+       "feedback": "A pitch needs a problem, a solution, customers and an ask, not only enthusiasm."
+      },
+      {
+       "tier": "weak",
+       "text": "I do not know what a panelist would ask, so I will not answer any questions.",
+       "meets": [],
+       "feedback": "Preparing for questions is part of a pitch. Write one and answer it."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Careers in business and the entrepreneur's toolkit",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. research a career in business and describe the education it requires;\n2. describe the traits and skills of successful entrepreneurs.\n\n## Materials\n\nCareer-profile handouts (accountant, marketing manager, small business owner, human resources specialist), a laptop for each pair, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"Name a job that exists in every business, no matter what it sells.\" Collect: someone who handles money, someone who finds customers, someone who manages people.\n\n## Main activity\n\n1. Career clusters in business: finance and accounting, marketing and sales, management, human resources, entrepreneurship, administration.\n2. Research a career: tasks, typical education (certificate, associate's degree, bachelor's degree, certification such as CPA), skills, and how the job might change with technology.\n3. Entrepreneur traits: creativity, persistence, risk tolerance (not recklessness), self-motivation, willingness to learn from failure. Skills: communication, money management, selling, planning.\n4. A short self-assessment: which traits do I have and which will I build?\n\n## Checking for understanding\n\nAsk: \"Is taking a risk the same as being careless? Give an example.\"\n\n## Worksheet\n\nA career profile and a trait self-assessment.",
+   "reading": {
+    "title": "Jobs in business, and what it takes to start one",
+    "content": "Almost every business, from a three-person bakery to a national chain, needs people to do several kinds of work. **Finance and accounting** workers keep records, pay bills, prepare taxes and help owners to understand their money. **Marketing and sales** workers find customers and persuade them to buy. **Management** workers plan the work and lead teams. **Human resources** specialists hire, train and support employees. **Administrative** workers keep an office running. **Entrepreneurs** start their own businesses, and take on all of these roles at first.\n\nEach career has different **education and training** requirements. A bookkeeper may need a high school diploma and a short certificate course, along with skill in spreadsheet software. An accountant usually needs a four-year bachelor's degree, and may earn a **certification** such as Certified Public Accountant (CPA), which requires passing a national exam. A marketing manager often has a bachelor's degree and experience. A human resources specialist may have a bachelor's degree in business or psychology. Some paths begin with a two-year associate's degree at a community college, such as those in Ohio, and continue with a bachelor's degree later. To research a career, look for the tasks people do each day, the education required, the skills that matter, the typical pay range, and how the job may change as technology, such as automation and artificial intelligence, grows. Sources include the U.S. Bureau of Labor Statistics' Occupational Outlook Handbook, an interview with a worker, or a visit to a company.\n\nWhat makes a good **entrepreneur**? Research and experience suggest several traits. **Creativity** helps to see problems that others miss. **Persistence** keeps an owner going after a setback; many successful businesses failed once before. **Self-motivation** matters because no boss is there to assign work. Entrepreneurs also need **calculated risk-taking**: willingness to take a chance only after weighing the odds and planning for a loss, which is different from being careless. **Adaptability** lets owners change course when customers' needs change. In addition to traits, entrepreneurs need skills they can learn: **communication**, **selling**, **managing money** and **planning**. Nobody has every trait at the start. A useful exercise is to rate yourself honestly and choose two to build, for example, by joining a club, practicing a presentation, or keeping a budget for a month."
+   },
+   "cards": [
+    {
+     "front": "Entrepreneur",
+     "back": "A person who starts and runs a business and takes the risk."
+    },
+    {
+     "front": "Certification",
+     "back": "A credential earned by passing an exam, such as CPA."
+    },
+    {
+     "front": "Associate's degree",
+     "back": "A two-year college degree."
+    },
+    {
+     "front": "Persistence",
+     "back": "Continuing to work after setbacks."
+    },
+    {
+     "front": "Calculated risk",
+     "back": "A chance taken after weighing the odds and planning."
+    },
+    {
+     "front": "Human resources",
+     "back": "The part of a business that hires, trains and supports staff."
+    },
+    {
+     "front": "Adaptability",
+     "back": "Willingness to change plans when circumstances change."
+    },
+    {
+     "front": "Occupational Outlook Handbook",
+     "back": "A federal guide to careers, pay and training."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which worker keeps records and prepares tax information for a business?",
+     "options": [
+      "Accountant",
+      "Human resources specialist",
+      "Delivery driver",
+      "Receptionist"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What does a CPA certification require?",
+     "options": [
+      "Passing a national exam",
+      "Owning a business",
+      "A high school diploma only",
+      "Ten years of retail work"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A calculated risk is:",
+     "options": [
+      "Doing something without thinking",
+      "A chance taken after weighing the odds and planning for a loss",
+      "Avoiding every chance",
+      "Copying someone else"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which source gives federal information about careers, pay and training?",
+     "options": [
+      "A rumor",
+      "The Occupational Outlook Handbook",
+      "A social media post",
+      "A product label"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which trait helps an entrepreneur continue after a business fails once?",
+     "options": [
+      "Persistence",
+      "Carelessness",
+      "Impatience",
+      "Secrecy"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Choose one business career (such as accountant, marketing manager, human resources specialist or bookkeeper). Describe what a person in that job does, the education or training usually needed, two skills that matter, and one way technology may change the job.",
+     "markScheme": [
+      "Describes accurately what a person in the chosen job does",
+      "States a realistic education or training path",
+      "Names two relevant skills",
+      "Gives a reasonable way technology may change the job"
+     ],
+     "modelAnswer": "An accountant keeps financial records, prepares reports and taxes, and advises owners about their money. Most accountants earn a four-year bachelor's degree, and many take the CPA exam. Important skills are attention to detail and strong spreadsheet and math skills. Software is automating routine bookkeeping, so accountants may spend more time on advice and analysis.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "An accountant keeps a business's financial records, prepares tax forms and reports, and advises the owner about money. Most have a four-year bachelor's degree in accounting and many pass the CPA exam. They need attention to detail and good spreadsheet and math skills. Software now handles routine bookkeeping, so accountants will spend more time on analysis and advice.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "An accountant keeps a business's financial records, prepares tax forms and reports, and advises the owner about money."
+        },
+        {
+         "point": 1,
+         "quote": "Most have a four-year bachelor's degree in accounting and many pass the CPA exam."
+        },
+        {
+         "point": 2,
+         "quote": "They need attention to detail and good spreadsheet and math skills."
+        },
+        {
+         "point": 3,
+         "quote": "Software now handles routine bookkeeping, so accountants will spend more time on analysis and advice."
+        }
+       ],
+       "feedback": "Full marks. The profile is accurate and complete."
+      },
+      {
+       "tier": "full",
+       "text": "A human resources specialist recruits, interviews and trains employees and handles questions about pay and benefits. They usually have a bachelor's degree in business or psychology, and some earn an HR certification. Communication and fairness matter, since they deal with people's problems. Online hiring tools and software that screens resumes are changing how they find candidates.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A human resources specialist recruits, interviews and trains employees and handles questions about pay and benefits."
+        },
+        {
+         "point": 1,
+         "quote": "They usually have a bachelor's degree in business or psychology, and some earn an HR certification."
+        },
+        {
+         "point": 2,
+         "quote": "Communication and fairness matter, since they deal with people's problems."
+        },
+        {
+         "point": 3,
+         "quote": "Online hiring tools and software that screens resumes are changing how they find candidates."
+        }
+       ],
+       "feedback": "Full marks. Mentioning resume screening shows research."
+      },
+      {
+       "tier": "partial",
+       "text": "A marketing manager works on advertising. Creativity and communication matter. No education is required, and technology will never change the job.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A marketing manager works on advertising."
+        },
+        {
+         "point": 2,
+         "quote": "Creativity and communication matter."
+        }
+       ],
+       "feedback": "Most marketing managers have a degree, and technology changes advertising a lot. Revise those two points."
+      },
+      {
+       "tier": "partial",
+       "text": "An accountant usually has a bachelor's degree. Software is automating bookkeeping. Accountants spend all day playing games.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "An accountant usually has a bachelor's degree."
+        },
+        {
+         "point": 3,
+         "quote": "Software is automating bookkeeping."
+        }
+       ],
+       "feedback": "Describe the real tasks an accountant does: records, reports and taxes.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Business jobs are all the same, so I do not need to choose one.",
+       "meets": [],
+       "feedback": "Business jobs differ a lot in tasks and training. Choose one and describe it."
+      },
+      {
+       "tier": "weak",
+       "text": "A bookkeeper needs a doctorate and writes computer games.",
+       "meets": [],
+       "feedback": "Bookkeepers often need a diploma or certificate and keep financial records."
+      }
+     ]
+    },
+    {
+     "prompt": "Choose two traits of successful entrepreneurs and explain why each matters. Then rate yourself honestly on both, and describe one concrete step you could take this semester to build the one you rated lower.",
+     "markScheme": [
+      "Names a first trait and explains why it matters",
+      "Names a second trait and explains why it matters",
+      "Gives an honest self-rating with a reason or example",
+      "Describes a specific, realistic step to build the weaker trait"
+     ],
+     "modelAnswer": "Persistence matters because most new businesses face setbacks, and an owner who quits too soon never finds out if the idea works. Calculated risk-taking matters because owners must invest without a guarantee, but they should plan for a loss. I am persistent, as I kept practicing trumpet through a year of mistakes, but I rate myself lower on risk-taking, since I avoid new things. This semester I will run for a student council position to practice taking a planned chance.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Persistence matters because new businesses face setbacks, and an owner who quits too soon never learns if the idea works. Calculated risk-taking matters because owners invest with no guarantee, so they need to weigh the odds and plan for a loss. I'm persistent; I practiced trumpet for a year through many mistakes, but I rate myself lower on risk-taking because I avoid new things. This semester I'll run for student council to practice taking a planned chance.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Persistence matters because new businesses face setbacks, and an owner who quits too soon never learns if the idea works."
+        },
+        {
+         "point": 1,
+         "quote": "Calculated risk-taking matters because owners invest with no guarantee, so they need to weigh the odds and plan for a loss."
+        },
+        {
+         "point": 2,
+         "quote": "I'm persistent; I practiced trumpet for a year through many mistakes, but I rate myself lower on risk-taking because I avoid new things."
+        },
+        {
+         "point": 3,
+         "quote": "This semester I'll run for student council to practice taking a planned chance."
+        }
+       ],
+       "feedback": "Full marks. An honest rating and a concrete step."
+      },
+      {
+       "tier": "full",
+       "text": "Creativity matters because entrepreneurs have to find problems other people miss. Self-motivation matters because nobody tells an owner what to do each day. I'm creative, but I only give myself a 2 out of 5 on self-motivation because I often wait for deadlines. My step is to set a weekly schedule for my homework and ask a friend to check it every Friday.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Creativity matters because entrepreneurs have to find problems other people miss."
+        },
+        {
+         "point": 1,
+         "quote": "Self-motivation matters because nobody tells an owner what to do each day."
+        },
+        {
+         "point": 2,
+         "quote": "I'm creative, but I only give myself a 2 out of 5 on self-motivation because I often wait for deadlines."
+        },
+        {
+         "point": 3,
+         "quote": "My step is to set a weekly schedule for my homework and ask a friend to check it every Friday."
+        }
+       ],
+       "feedback": "Full marks. A weekly check with a friend is specific and realistic."
+      },
+      {
+       "tier": "partial",
+       "text": "Persistence is important. Creativity is important. I am perfect at both. I do not need to improve.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Persistence is important."
+        },
+        {
+         "point": 1,
+         "quote": "Creativity is important."
+        }
+       ],
+       "feedback": "Rate yourself honestly and choose a step to build the weaker trait."
+      },
+      {
+       "tier": "partial",
+       "text": "I am low on self-motivation. I will do better. Traits do not matter if you have money.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "I am low on self-motivation."
+        },
+        {
+         "point": 3,
+         "quote": "I will do better."
+        }
+       ],
+       "feedback": "Traits matter for every owner. Explain why and make the step specific.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Entrepreneurs are born, not made, so nobody can build these traits.",
+       "meets": [],
+       "feedback": "Many traits and skills can be practiced and developed. Choose a step."
+      },
+      {
+       "tier": "weak",
+       "text": "Risk means doing anything without thinking, and every entrepreneur should be reckless.",
+       "meets": [],
+       "feedback": "Entrepreneurs take calculated risks after weighing the odds."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "From a customer's problem to a one-page business plan",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. identify a problem a customer has and propose a business idea to solve it;\n2. write a one-page business plan that includes a mission, customers and a budget.\n\n## Materials\n\nA one-page plan template, sample plans (a dog-walking service, a tutoring business), calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"What is something that annoys you or your family that someone could be paid to fix?\" Collect problems: late buses, messy garages, forgotten homework, too-small clothing sizes.\n\n## Main activity\n\n1. Start with the customer: who has the problem, how often, what do they do now, and would they pay to solve it?\n2. Idea check: is it something people want, can I make it, can I make money?\n3. The one-page plan: mission statement (one sentence on what the business does and for whom); the customers; the product and price; start-up costs and a budget; a simple goal for the first month.\n4. Budget: start-up costs against available money. Example: a dog-walking business needs leashes and bags ($25), flyers ($15), and a phone plan share ($0 because it is already owned), a total of $40.\n\n## Checking for understanding\n\nAsk: \"Why is 'everyone' a weak answer to 'who are your customers?'\"\n\n## Worksheet\n\nWrite a one-page plan.",
+   "reading": {
+    "title": "Starting with someone who has a problem",
+    "content": "The best businesses start with a person who has a problem. Before choosing a product, think about **who** the customer is, **what** frustrates them, **how often** it happens, and **what they do now** to deal with it. An elderly neighbor may not be able to shovel snow, and she pays a neighbor teenager $20 each time. A busy family wants help walking their dog on weekdays. A younger student needs help with reading. Each of these is a problem that people might pay to solve. A good idea passes three tests: people **want** it, you **can** deliver it, and you can **make money** from it.\n\nOnce you have an idea, write a **business plan**. A professional plan can run to dozens of pages, but a **one-page plan** is a useful start. It has four main parts.\n\nThe **mission statement** is one sentence that says what the business does, and for whom. Example: \"We walk dogs for busy families in Westerville so that pets get exercise while owners are at work.\"\n\nThe **customers** section describes a specific group. \"Everyone\" is a weak answer, because no business can serve everyone and your marketing will have no focus. \"Families in our neighborhood with dogs and adults who work away from home\" is specific, and you can figure out where to find them. You could ask how many such families live within a mile.\n\nThe **product and price** section says exactly what you sell and what it costs. Check whether the price covers your costs and leaves a profit. A 30-minute walk for $10 might seem fair; if you do four a day, five days a week, that is $200 a week.\n\nThe **budget** lists the **start-up costs**, the money you need before you earn your first dollar, and the sources of that money. A dog-walker may need leashes and waste bags ($25) and flyers ($15), for $40 in total. If you have $50 in savings, you can fund the start-up yourself. If the costs were $400, you would need a loan or an investor. A short goal (\"get five regular customers in the first month\") lets you check whether the plan is working.\n\nA plan is not a promise. It is a tool to think clearly, and it should be updated as you learn what customers really want."
+   },
+   "cards": [
+    {
+     "front": "Mission statement",
+     "back": "One sentence saying what a business does and for whom."
+    },
+    {
+     "front": "Target customer",
+     "back": "The specific group a business aims to serve."
+    },
+    {
+     "front": "Start-up costs",
+     "back": "Money needed before the business earns its first dollar."
+    },
+    {
+     "front": "Budget",
+     "back": "A plan for how money will be received and spent."
+    },
+    {
+     "front": "Business plan",
+     "back": "A document describing a business idea and how it will work."
+    },
+    {
+     "front": "Goal",
+     "back": "A measurable result to reach, such as five customers in a month."
+    },
+    {
+     "front": "Price",
+     "back": "The amount a customer pays for a product or service."
+    },
+    {
+     "front": "Investor",
+     "back": "A person who supplies money for a share of the business."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which is the best description of a target customer?",
+     "options": [
+      "Everyone",
+      "Families near us with dogs and adults who work away from home",
+      "Anyone with money",
+      "People who like us"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A dog walker spends $25 on leashes and bags and $15 on flyers. What are the start-up costs?",
+     "options": [
+      "$25",
+      "$15",
+      "$40",
+      "$50"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What does a mission statement do?",
+     "options": [
+      "Lists all the costs",
+      "Says what the business does and for whom",
+      "Sets the price of one item",
+      "Names the investors"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which test shows that an idea may make money?",
+     "options": [
+      "People want it, you can deliver it, and it earns a profit",
+      "It is popular on social media",
+      "It is easy to explain",
+      "It has a catchy name"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A dog walker charges $10 for a 30-minute walk and does 4 walks a day, 5 days a week. What is the weekly revenue?",
+     "options": [
+      "$40",
+      "$100",
+      "$200",
+      "$400"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write a one-page plan summary for a tutoring business run by a ninth grader for fifth graders. Include a mission statement, a specific description of the customers, the price, and a start-up budget with at least three items and a total. Then state one goal for the first month.",
+     "markScheme": [
+      "Writes a one-sentence mission that says what and for whom",
+      "Describes specific customers rather than everyone",
+      "States a price and lists at least three start-up items with a correct total",
+      "States a measurable first-month goal"
+     ],
+     "modelAnswer": "Mission: We help fifth graders in our neighborhood to improve their reading and math so that they feel confident in school. Customers: parents of fifth graders at the elementary school nearby who want help after school. Price: $12 for a 45-minute session. Start-up budget: flashcards and workbooks $18, flyers $12, a folder system $5, for a total of $35. Goal: sign up four regular students in the first month.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Mission: We help fifth graders in our neighborhood to improve their reading and math so that they feel confident in school. Customers: parents of fifth graders at Maple Elementary who want help after school. Price is $12 for a 45-minute session. Start-up: workbooks $18, flyers $12, folders $5, for a total of $35. Goal: four regular students in the first month.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mission: We help fifth graders in our neighborhood to improve their reading and math so that they feel confident in school."
+        },
+        {
+         "point": 1,
+         "quote": "Customers: parents of fifth graders at Maple Elementary who want help after school."
+        },
+        {
+         "point": 2,
+         "quote": "Price is $12 for a 45-minute session. Start-up: workbooks $18, flyers $12, folders $5, for a total of $35."
+        },
+        {
+         "point": 3,
+         "quote": "Goal: four regular students in the first month."
+        }
+       ],
+       "feedback": "Full marks. The total is correct and the goal is measurable."
+      },
+      {
+       "tier": "full",
+       "text": "Our mission is to give fifth graders in our apartment complex friendly math help so that they catch up. The customers are parents in the complex who work late and can't help with homework. We charge $10 per session. Costs: printing $10, a whiteboard $15, pencils $5, which makes $30. Our goal is six sessions in the first month.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Our mission is to give fifth graders in our apartment complex friendly math help so that they catch up."
+        },
+        {
+         "point": 1,
+         "quote": "The customers are parents in the complex who work late and can't help with homework."
+        },
+        {
+         "point": 2,
+         "quote": "We charge $10 per session. Costs: printing $10, a whiteboard $15, pencils $5, which makes $30."
+        },
+        {
+         "point": 3,
+         "quote": "Our goal is six sessions in the first month."
+        }
+       ],
+       "feedback": "Full marks. Reaching parents in one complex is specific."
+      },
+      {
+       "tier": "partial",
+       "text": "We help students. Price $12, costs $20 for workbooks and $10 for flyers, for a total of $30. My customers are everybody.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "We help students."
+        },
+        {
+         "point": 2,
+         "quote": "Price $12, costs $20 for workbooks and $10 for flyers, for a total of $30."
+        }
+       ],
+       "feedback": "Describe specific customers and say what you do and for whom in the mission."
+      },
+      {
+       "tier": "partial",
+       "text": "Customers are parents of fifth graders nearby. My goal is to get a lot of money. The price is free and the start-up costs are zero.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Customers are parents of fifth graders nearby."
+        },
+        {
+         "point": 3,
+         "quote": "My goal is to get a lot of money."
+        }
+       ],
+       "feedback": "A goal should be measurable, and a price should cover costs. Revise both.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I will just tutor whoever shows up. I don't need a plan.",
+       "meets": [],
+       "feedback": "A plan helps you decide on customers, price and costs before you start."
+      },
+      {
+       "tier": "weak",
+       "text": "Mission: Make a million dollars. Customers: the whole world.",
+       "meets": [],
+       "feedback": "A mission says what you do and for whom, and customers should be specific."
+      }
+     ]
+    },
+    {
+     "prompt": "Evaluate this idea: a student plans to sell homemade candles at $8 each. Materials cost $3 per candle, and start-up equipment costs $60. Calculate the profit per candle, and how many candles must be sold to pay back the equipment. Then say whether you think the idea is worth trying and why.",
+     "markScheme": [
+      "Calculates the profit per candle as $5",
+      "Calculates 12 candles to pay back $60",
+      "Gives a reasoned judgment on whether the idea is worth trying",
+      "Names a consideration such as demand, time or competition"
+     ],
+     "modelAnswer": "The profit on each candle is $8 minus $3, which is $5. To pay back $60 of equipment, the student must sell $60 divided by $5, which is 12 candles. The idea seems worth trying if the student can find 12 buyers, since that is a modest number, but the student should check demand and the time needed to make each candle.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Profit per candle is $8 - $3 = $5. To pay back $60, the student must sell 60 ÷ 5 = 12 candles. I think it's worth trying, because 12 candles is a modest number to sell. But the student should check demand first, for example by asking friends and family, and think about how long each candle takes to make.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Profit per candle is $8 - $3 = $5."
+        },
+        {
+         "point": 1,
+         "quote": "To pay back $60, the student must sell 60 ÷ 5 = 12 candles."
+        },
+        {
+         "point": 2,
+         "quote": "I think it's worth trying, because 12 candles is a modest number to sell."
+        },
+        {
+         "point": 3,
+         "quote": "But the student should check demand first, for example by asking friends and family, and think about how long each candle takes to make."
+        }
+       ],
+       "feedback": "Full marks. Both calculations are right and the caution is sensible."
+      },
+      {
+       "tier": "full",
+       "text": "Each candle makes $5 profit after the $3 materials. It takes 12 candles to cover the $60 equipment, because 12 × 5 = 60. It's worth a try because after the 12th candle all the money is profit. The risk is that there are already many candle sellers, so the student should find out how they would stand out.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Each candle makes $5 profit after the $3 materials."
+        },
+        {
+         "point": 1,
+         "quote": "It takes 12 candles to cover the $60 equipment, because 12 × 5 = 60."
+        },
+        {
+         "point": 2,
+         "quote": "It's worth a try because after the 12th candle all the money is profit."
+        },
+        {
+         "point": 3,
+         "quote": "The risk is that there are already many candle sellers, so the student should find out how they would stand out."
+        }
+       ],
+       "feedback": "Full marks. Considering competition is a good business instinct."
+      },
+      {
+       "tier": "partial",
+       "text": "Profit is $5 per candle. It is worth trying. It would take 60 candles to cover the equipment, since the price is $8.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Profit is $5 per candle."
+        },
+        {
+         "point": 2,
+         "quote": "It is worth trying."
+        }
+       ],
+       "feedback": "Divide the $60 equipment cost by the $5 profit per candle, which gives 12 candles, not 60."
+      },
+      {
+       "tier": "partial",
+       "text": "It takes 12 candles. Check demand first. The profit per candle is $11 because $8 plus $3.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It takes 12 candles."
+        },
+        {
+         "point": 3,
+         "quote": "Check demand first."
+        }
+       ],
+       "feedback": "Profit is the price minus the cost: $8 minus $3 is $5.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Profit is $8 per candle because that is the price, and the equipment is free.",
+       "meets": [],
+       "feedback": "Subtract the $3 materials to find profit, and count the $60 equipment."
+      },
+      {
+       "tier": "weak",
+       "text": "It cannot work because candles are cheap. Nobody ever makes money selling anything.",
+       "meets": [],
+       "feedback": "Work out the numbers first. Profit of $5 each can pay back the equipment."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "The four Ps, surveys and advertising",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain the four Ps of marketing: product, price, place and promotion;\n2. conduct a short survey of potential customers and summarize the results;\n3. design an advertisement and explain how it appeals to a target audience.\n\n## Materials\n\nReal product packaging (a school cafeteria snack, a local brand), a survey template, tally sheets, poster paper, the quiz.\n\n## Starter (6 minutes)\n\nHold up a snack. Ask: \"What decisions did the company make before this reached your hand?\" List: what it is, how much it costs, where it is sold, how you heard about it.\n\n## Main activity\n\n1. The four Ps: product (what is sold and its features), price (what the customer pays), place (where and how it is sold), promotion (how customers learn about it).\n2. Market research: a survey with clear questions (not leading), a sample, tally and percentages. Example: 40 classmates asked about a new smoothie: 28 would buy at $4. 28 out of 40 is 70 percent.\n3. Target audience and advertising: the message, the image and the medium (social media, posters, local radio). Appeals: price, quality, convenience, belonging. Truth in advertising.\n4. Design a poster for a smoothie stand.\n\n## Quiz\n\nThe four Ps and survey results.",
+   "reading": {
+    "title": "Getting the right product to the right people",
+    "content": "**Marketing** is everything a business does to understand its customers and to bring them a product they want. Marketers often use the **four Ps**, a framework for decisions.\n\n**Product** is what you sell: its features, quality, design and packaging. A smoothie stand might sell three fruit blends in recyclable cups. **Price** is what customers pay. It must cover costs and give a profit, but also feel fair compared with competitors. If a smoothie costs $2 to make and sells for $4, the profit is $2. **Place** is where and how customers can buy: a stand at the school, a store, a website, or a delivery service. It should be convenient for the target customers. **Promotion** is how you tell them about the product: posters, social media, flyers, free samples, word of mouth. The four Ps work together; a great product in an inconvenient place, or a fair price with no promotion, will struggle.\n\nTo decide on the four Ps, businesses do **market research**. A short **survey** asks potential customers what they think. Good survey questions are clear and **not leading**. \"Would you buy a smoothie at school for $4?\" is fair, while \"Wouldn't you agree that our amazing smoothies are a great deal?\" pushes people toward a yes. A good survey also asks a **sample** that resembles the target customers; asking only your best friends gives a biased result. After the survey, **tally** the answers and turn them into percentages. If 40 classmates answer and 28 say they would buy at $4, then 28 out of 40 is 70 percent. You can also ask what flavors they prefer and how much they would pay. The results guide decisions, but a survey only shows what people say they would do, which may differ from what they actually do.\n\nAn **advertisement** tries to persuade the **target audience**. Think about who they are and where they spend time: a teen audience may see social media, while parents may see flyers at the school. A good ad has a clear **message** (the one thing to remember), an attention-grabbing **image** and a **call to action** (\"Try one at lunch Friday\"). Ads use **appeals** such as low price, quality, convenience, health or belonging to a group. Advertising must be **truthful**: claims that cannot be proven, such as \"the healthiest drink in Ohio,\" can mislead customers and may break the law. Honest ads build trust, and trust brings repeat customers."
+   },
+   "cards": [
+    {
+     "front": "Marketing",
+     "back": "Understanding customers and bringing them a product they want."
+    },
+    {
+     "front": "Four Ps",
+     "back": "Product, price, place and promotion."
+    },
+    {
+     "front": "Market research",
+     "back": "Gathering information about customers and competitors."
+    },
+    {
+     "front": "Leading question",
+     "back": "A survey question that pushes toward a particular answer."
+    },
+    {
+     "front": "Sample",
+     "back": "The group of people actually surveyed."
+    },
+    {
+     "front": "Target audience",
+     "back": "The group an advertisement is aimed at."
+    },
+    {
+     "front": "Call to action",
+     "back": "A request telling the audience what to do next."
+    },
+    {
+     "front": "Truth in advertising",
+     "back": "The rule that ad claims must not mislead."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which of the four Ps is about where a product is sold?",
+     "options": [
+      "Product",
+      "Price",
+      "Place",
+      "Promotion"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which survey question is leading?",
+     "options": [
+      "Would you buy a smoothie for $4?",
+      "Wouldn't you agree our amazing smoothies are a great deal?",
+      "Which flavor do you prefer?",
+      "How often do you buy a drink at lunch?"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In a survey of 40 students, 28 would buy. What percentage is that?",
+     "options": [
+      "28 percent",
+      "60 percent",
+      "70 percent",
+      "80 percent"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A smoothie costs $2 to make and sells for $4. What is the profit per smoothie?",
+     "options": [
+      "$1",
+      "$2",
+      "$4",
+      "$6"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is a call to action?",
+     "options": [
+      "Our smoothies are great",
+      "Try one at lunch Friday",
+      "Made with fruit",
+      "Since 2026"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student surveys 50 classmates about a new smoothie stand. 35 say they would buy a smoothie at $4, 10 say they would buy at $3 but not $4, and 5 would not buy at any price. Calculate what percentage would buy at $4 and what percentage would buy at $3 or higher. Then say what price you would choose and give one reason to be cautious about the results.",
+     "markScheme": [
+      "Calculates 70 percent for those who would buy at $4",
+      "Calculates 90 percent who would buy at $3 or more",
+      "Chooses a price with a justification linked to the figures",
+      "Gives a valid caution, such as people saying they would buy but not actually buying, or the sample being only classmates"
+     ],
+     "modelAnswer": "35 out of 50 is 70 percent who would buy at $4. 35 plus 10 is 45 out of 50, which is 90 percent who would buy at $3 or higher. I would choose $4 if the profit at $3 is too small, since 70 percent is a large group, but I would choose $3 if volume matters more. A caution is that people may say they would buy but then not do so, and classmates may not represent all customers.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "35 ÷ 50 = 70 percent would buy at $4. 35 + 10 = 45, and 45 ÷ 50 = 90 percent would buy at $3 or more. I'd choose $4, since 70 percent is a lot of buyers and the extra dollar adds to profit on each smoothie. But I'd be cautious because what people say in a survey isn't always what they do, and classmates may not represent all customers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "35 ÷ 50 = 70 percent would buy at $4."
+        },
+        {
+         "point": 1,
+         "quote": "35 + 10 = 45, and 45 ÷ 50 = 90 percent would buy at $3 or more."
+        },
+        {
+         "point": 2,
+         "quote": "I'd choose $4, since 70 percent is a lot of buyers and the extra dollar adds to profit on each smoothie."
+        },
+        {
+         "point": 3,
+         "quote": "But I'd be cautious because what people say in a survey isn't always what they do, and classmates may not represent all customers."
+        }
+       ],
+       "feedback": "Full marks. Both percentages are right and the caution is valid."
+      },
+      {
+       "tier": "full",
+       "text": "70 percent said yes at $4. 90 percent would pay $3 or more, since 45 of 50 said so. I would pick $3 at first to get more customers, then try raising it later. The survey is only classmates, and people often say they will buy things they never do.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "70 percent said yes at $4."
+        },
+        {
+         "point": 1,
+         "quote": "90 percent would pay $3 or more, since 45 of 50 said so."
+        },
+        {
+         "point": 2,
+         "quote": "I would pick $3 at first to get more customers, then try raising it later."
+        },
+        {
+         "point": 3,
+         "quote": "The survey is only classmates, and people often say they will buy things they never do."
+        }
+       ],
+       "feedback": "Full marks. Starting lower and testing a rise is a reasonable plan."
+      },
+      {
+       "tier": "partial",
+       "text": "35 out of 50 is 70 percent. I would choose $4. At $3 or higher it is 10 percent, since only 10 said $3. The survey is perfect.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "35 out of 50 is 70 percent."
+        },
+        {
+         "point": 2,
+         "quote": "I would choose $4."
+        }
+       ],
+       "feedback": "At $3 or higher includes the 35 who would pay $4, so it is 45 out of 50, which is 90 percent."
+      },
+      {
+       "tier": "partial",
+       "text": "45 out of 50 is 90 percent. People may not buy. At $4, 35 percent would buy because 35 is the number.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "45 out of 50 is 90 percent."
+        },
+        {
+         "point": 3,
+         "quote": "People may not buy."
+        }
+       ],
+       "feedback": "Divide by the total of 50: 35 out of 50 is 70 percent, not 35 percent.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The percentages are 35 and 10. I would choose $10 because that is a nice number.",
+       "meets": [],
+       "feedback": "Percentages are out of 100. Divide each count by 50 and multiply by 100."
+      },
+      {
+       "tier": "weak",
+       "text": "A survey is always right, so there is nothing to be careful about.",
+       "meets": [],
+       "feedback": "Surveys show what people say, and the sample may be biased. Give a caution."
+      }
+     ]
+    },
+    {
+     "prompt": "Design a poster advertisement (describe it in words) for a smoothie stand at a high school. Identify the target audience, the message, the image, the call to action and one appeal it uses. Explain one way that you would keep the ad truthful.",
+     "markScheme": [
+      "Identifies the target audience and a medium that suits it",
+      "States a clear message and describes the image",
+      "Includes a call to action and names an appeal such as price, health or convenience",
+      "Explains how the ad stays truthful, such as only claiming what can be shown"
+     ],
+     "modelAnswer": "The target audience is students at lunch, so a poster by the cafeteria suits it. The message is fresh fruit smoothies for $4 between classes, and the image is a bright photo of a strawberry-banana smoothie with a student drinking it. The call to action is \"Try one at lunch Friday.\" The appeal is convenience and taste. To keep it truthful, I would say only that they are made with real fruit, which I can show, and not claim they are the healthiest drink in Ohio.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The audience is students at lunch, so I'd put the poster by the cafeteria doors. The message is: fresh fruit smoothies for $4. The image is a bright photo of a strawberry-banana smoothie. It says 'Try one at lunch Friday' as the call to action, and it appeals to convenience and taste. To keep it truthful I'd only say 'made with real fruit,' which I can show, and not 'healthiest in Ohio.'",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The audience is students at lunch, so I'd put the poster by the cafeteria doors."
+        },
+        {
+         "point": 1,
+         "quote": "The message is: fresh fruit smoothies for $4. The image is a bright photo of a strawberry-banana smoothie."
+        },
+        {
+         "point": 2,
+         "quote": "It says 'Try one at lunch Friday' as the call to action, and it appeals to convenience and taste."
+        },
+        {
+         "point": 3,
+         "quote": "To keep it truthful I'd only say 'made with real fruit,' which I can show, and not 'healthiest in Ohio.'"
+        }
+       ],
+       "feedback": "Full marks. The poster is specific and its claims can be backed up."
+      },
+      {
+       "tier": "full",
+       "text": "My target audience is athletes who want a quick snack, so I'd also post it on the team's group chat. The message is 'Fuel up in five minutes' with a picture of a runner holding a smoothie. The call to action is 'Stop by after practice,' using the appeals of convenience and health. I'd list the real ingredients, so that nothing misleads anyone.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My target audience is athletes who want a quick snack, so I'd also post it on the team's group chat."
+        },
+        {
+         "point": 1,
+         "quote": "The message is 'Fuel up in five minutes' with a picture of a runner holding a smoothie."
+        },
+        {
+         "point": 2,
+         "quote": "The call to action is 'Stop by after practice,' using the appeals of convenience and health."
+        },
+        {
+         "point": 3,
+         "quote": "I'd list the real ingredients, so that nothing misleads anyone."
+        }
+       ],
+       "feedback": "Full marks. Choosing a medium that suits the audience is smart."
+      },
+      {
+       "tier": "partial",
+       "text": "The image is a smoothie and the message is that they are good. Try one today. The audience is everybody and the ad can say whatever sells.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The image is a smoothie and the message is that they are good."
+        },
+        {
+         "point": 2,
+         "quote": "Try one today."
+        }
+       ],
+       "feedback": "Name a specific audience and keep the ad truthful. Claims you cannot prove can mislead."
+      },
+      {
+       "tier": "partial",
+       "text": "The audience is students. Only claim what is true. There is no message or call to action.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The audience is students."
+        },
+        {
+         "point": 3,
+         "quote": "Only claim what is true."
+        }
+       ],
+       "feedback": "State the one message to remember and what you want people to do.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "I'd write the ad in tiny letters so that it is not annoying.",
+       "meets": [],
+       "feedback": "An ad should catch attention and be easy to read."
+      },
+      {
+       "tier": "weak",
+       "text": "Best smoothie in the world! Cures everything! Everyone must buy!",
+       "meets": [],
+       "feedback": "These claims can't be proven. A truthful ad builds trust."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "How managers lead, and how businesses behave ethically",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the functions of management: planning, organizing, leading and controlling;\n2. explain business ethics and give examples of ethical and unethical choices.\n\n## Materials\n\nA scenario set (a restaurant manager, a bakery owner), ethics case cards, the problem set.\n\n## Starter (6 minutes)\n\nAsk: \"If a restaurant manager got sick for a week, what jobs would not get done?\" List: schedules, orders, training, checking quality.\n\n## Main activity\n\n1. Four functions of management: planning (setting goals and deciding how to reach them), organizing (arranging people and resources), leading (guiding and motivating employees), controlling (checking results against goals and correcting).\n2. Example: a pizza restaurant. Plan: sell 200 pizzas on Friday. Organize: schedule five cooks and two drivers. Lead: brief the team and encourage them. Control: compare sales and wait times with the goal; adjust.\n3. Ethics: principles of right and wrong. Honesty with customers, fair treatment of workers, safe products, honest records, environmental care. Unethical choices: hiding a product flaw, false advertising, discrimination, falsifying records.\n4. Ethics test: Is it legal? Is it fair? Would I be comfortable if everyone knew?\n\n## Checking for understanding\n\nAsk: \"Can a choice be legal but unethical? Give an example.\"\n\n## Problem set\n\nSort tasks by management function and judge cases.",
+   "reading": {
+    "title": "Running a team, and doing the right thing",
+    "content": "Every business, from a pizza shop to a hospital, needs **managers**: people who direct the work of others so that goals are met. Management is often described as four connected functions.\n\n**Planning** means setting goals and deciding how to reach them. A pizza restaurant's manager might set a goal to sell 200 pizzas on Friday, the busiest night, and decide how much dough and cheese to order. **Organizing** means arranging people, tools and money to carry out the plan: scheduling five cooks and two delivery drivers, and assigning each a job. **Leading** means guiding and motivating employees: explaining the goal, giving clear instructions, encouraging the team, and settling disagreements. **Controlling** means checking results against the goal and correcting problems. If the manager notices that delivery times average 50 minutes instead of the 30-minute target, she might add a driver or change the route. The functions form a cycle: the results of controlling inform the next plan.\n\nManagers also face questions of **ethics**, the principles of right and wrong that guide behavior. Many ethical choices in business concern honesty and fairness. **Ethical** choices include telling customers the truth about a product, paying workers fairly, keeping safe working conditions, keeping honest financial records and protecting the environment. **Unethical** choices include hiding a known safety problem, advertising false claims, treating employees unfairly because of who they are, or falsifying records to hide losses. Some unethical acts are also illegal, but not all: a company could legally dump a product that it knows is poor quality on customers who cannot easily compare, and it would still be unfair.\n\nHow can you decide? A simple test asks three questions. Is it **legal**? Is it **fair** to everyone affected? Would I be comfortable if everyone **knew** what I did? If the answer to any is no, think again. Ethics matter for practical reasons too: customers return to businesses they trust, good employees stay with fair employers, and scandals can destroy a business quickly. A bakery that is found to be selling old bread as fresh may lose its customers for good. Ethical businesses do not just avoid punishment; they build a reputation that lasts."
+   },
+   "cards": [
+    {
+     "front": "Planning",
+     "back": "Setting goals and deciding how to reach them."
+    },
+    {
+     "front": "Organizing",
+     "back": "Arranging people and resources to carry out a plan."
+    },
+    {
+     "front": "Leading",
+     "back": "Guiding and motivating employees."
+    },
+    {
+     "front": "Controlling",
+     "back": "Checking results against goals and correcting problems."
+    },
+    {
+     "front": "Ethics",
+     "back": "Principles of right and wrong that guide behavior."
+    },
+    {
+     "front": "Falsify",
+     "back": "To change records to hide the truth."
+    },
+    {
+     "front": "Reputation",
+     "back": "What customers and the public think of a business."
+    },
+    {
+     "front": "Fairness",
+     "back": "Treating all those affected honestly and equally."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A manager schedules five cooks and two drivers for Friday night. Which function is this?",
+     "options": [
+      "Planning",
+      "Organizing",
+      "Leading",
+      "Controlling"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A manager compares delivery times with the 30-minute target and adds a driver. Which function is this?",
+     "options": [
+      "Planning",
+      "Organizing",
+      "Leading",
+      "Controlling"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Which action is unethical?",
+     "options": [
+      "Telling customers the truth about a product",
+      "Hiding a known safety problem",
+      "Paying workers fairly",
+      "Keeping honest records"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which question is part of a simple ethics test?",
+     "options": [
+      "Is it cheap?",
+      "Would I be comfortable if everyone knew?",
+      "Is it popular?",
+      "Is it fast?"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Can a choice be legal but unethical?",
+     "options": [
+      "No, never",
+      "Yes, some legal choices are still unfair",
+      "Only if it is cheap",
+      "Only for big companies"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A manager at a pizza restaurant sets a goal of 200 pizzas on Friday. Give one example of each of the four management functions that she might do that day, using the pizza restaurant context.",
+     "markScheme": [
+      "Gives a specific planning example, such as setting the goal or ordering dough",
+      "Gives an organizing example, such as scheduling staff or assigning tasks",
+      "Gives a leading example, such as briefing and encouraging the team",
+      "Gives a controlling example, such as checking times against the target and adjusting"
+     ],
+     "modelAnswer": "Planning: she sets the goal of 200 pizzas and orders enough dough and cheese. Organizing: she schedules five cooks and two drivers and assigns each a station. Leading: she briefs the team before the rush and encourages them when it gets busy. Controlling: she checks that delivery times are within 30 minutes, and adds a driver if they are slow.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Planning: she sets the goal of 200 pizzas and orders enough dough and cheese for it. Organizing: she schedules five cooks and two drivers and gives each a station. Leading: she briefs the team before the rush and keeps their spirits up when it's busy. Controlling: she checks delivery times against the 30-minute target and adds a driver if they're slow.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Planning: she sets the goal of 200 pizzas and orders enough dough and cheese for it."
+        },
+        {
+         "point": 1,
+         "quote": "Organizing: she schedules five cooks and two drivers and gives each a station."
+        },
+        {
+         "point": 2,
+         "quote": "Leading: she briefs the team before the rush and keeps their spirits up when it's busy."
+        },
+        {
+         "point": 3,
+         "quote": "Controlling: she checks delivery times against the 30-minute target and adds a driver if they're slow."
+        }
+       ],
+       "feedback": "Full marks. All four functions are separate and specific."
+      },
+      {
+       "tier": "full",
+       "text": "She plans by forecasting the Friday rush from last month's sales and ordering supplies. She organizes by making a schedule and putting the fastest cook on the oven. She leads by explaining the goal, thanking people and settling a disagreement between two drivers. She controls by watching sales and wait times and fixing problems as they appear.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She plans by forecasting the Friday rush from last month's sales and ordering supplies."
+        },
+        {
+         "point": 1,
+         "quote": "She organizes by making a schedule and putting the fastest cook on the oven."
+        },
+        {
+         "point": 2,
+         "quote": "She leads by explaining the goal, thanking people and settling a disagreement between two drivers."
+        },
+        {
+         "point": 3,
+         "quote": "She controls by watching sales and wait times and fixing problems as they appear."
+        }
+       ],
+       "feedback": "Full marks. Using last month's sales for planning is realistic."
+      },
+      {
+       "tier": "partial",
+       "text": "She sets the goal of 200 pizzas. She checks the delivery times. She also organizes by leading and leads by organizing. These are the same thing.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She sets the goal of 200 pizzas."
+        },
+        {
+         "point": 3,
+         "quote": "She checks the delivery times."
+        }
+       ],
+       "feedback": "The functions are different. Organizing arranges resources, and leading guides and motivates people."
+      },
+      {
+       "tier": "partial",
+       "text": "She schedules five cooks. She encourages her team. Controlling is when the manager tells everyone what to do all day.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "She schedules five cooks."
+        },
+        {
+         "point": 2,
+         "quote": "She encourages her team."
+        }
+       ],
+       "feedback": "Controlling means checking results against goals and correcting problems.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The manager just makes pizzas, so she does none of the four functions.",
+       "meets": [],
+       "feedback": "A manager directs the work of others using the four functions."
+      },
+      {
+       "tier": "weak",
+       "text": "Planning, organizing, leading and controlling are all the same job, so I only need one example.",
+       "meets": [],
+       "feedback": "Each function is different. Give a separate example for each."
+      }
+     ]
+    },
+    {
+     "prompt": "A bakery owner discovers that a batch of bread contains a nut ingredient that is not listed on the label. Selling it all would bring in $300. Apply the three-question ethics test, say what she should do, and explain how this choice protects the business over time.",
+     "markScheme": [
+      "Applies the test: addresses whether it is legal, fair and comfortable if known",
+      "Identifies the safety risk to customers with allergies",
+      "Says she should not sell it or should relabel it and tell customers",
+      "Explains that honesty protects reputation and customer trust over time"
+     ],
+     "modelAnswer": "Selling it unlabeled would probably break food labeling law, would be unfair to customers with nut allergies, and she would not be comfortable if customers knew. The unlisted nut is a serious safety risk because an allergic reaction could be life-threatening. She should pull the batch, or relabel it correctly and tell customers. Giving up $300 now protects her reputation and keeps customers' trust, which is worth much more than one batch.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Applying the test: selling it unlabeled is probably illegal, unfair to customers, and she wouldn't be comfortable if they all knew. The unlisted nut could cause a dangerous allergic reaction. She should pull the batch, or relabel it properly and tell customers. Losing $300 now protects her reputation, and trust is worth far more than one batch.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Applying the test: selling it unlabeled is probably illegal, unfair to customers, and she wouldn't be comfortable if they all knew."
+        },
+        {
+         "point": 1,
+         "quote": "The unlisted nut could cause a dangerous allergic reaction."
+        },
+        {
+         "point": 2,
+         "quote": "She should pull the batch, or relabel it properly and tell customers."
+        },
+        {
+         "point": 3,
+         "quote": "Losing $300 now protects her reputation, and trust is worth far more than one batch."
+        }
+       ],
+       "feedback": "Full marks. The safety point is the heart of the case."
+      },
+      {
+       "tier": "full",
+       "text": "It fails every question: it's likely illegal, it's unfair to buyers, and she'd hate for it to be public. People with nut allergies could be seriously hurt. The right choice is to throw the batch away or label it correctly and warn customers. A bakery depends on trust, so one honest decision protects years of sales.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It fails every question: it's likely illegal, it's unfair to buyers, and she'd hate for it to be public."
+        },
+        {
+         "point": 1,
+         "quote": "People with nut allergies could be seriously hurt."
+        },
+        {
+         "point": 2,
+         "quote": "The right choice is to throw the batch away or label it correctly and warn customers."
+        },
+        {
+         "point": 3,
+         "quote": "A bakery depends on trust, so one honest decision protects years of sales."
+        }
+       ],
+       "feedback": "Full marks. 'Depends on trust' captures the long-term logic."
+      },
+      {
+       "tier": "partial",
+       "text": "It is not fair. She should not sell it. Allergies are not a real problem and trust doesn't matter if the bread tastes good.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is not fair."
+        },
+        {
+         "point": 2,
+         "quote": "She should not sell it."
+        }
+       ],
+       "feedback": "Allergic reactions can be life-threatening, and trust affects future sales. Revise those points."
+      },
+      {
+       "tier": "partial",
+       "text": "Nuts can be dangerous. Trust protects the business. She should sell it and hope that nobody notices.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Nuts can be dangerous."
+        },
+        {
+         "point": 3,
+         "quote": "Trust protects the business."
+        }
+       ],
+       "feedback": "Hoping nobody notices fails the 'comfortable if everyone knew' question. Decide what she should do.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "She should sell it all because $300 is a lot of money for a small bakery.",
+       "meets": [],
+       "feedback": "An unlisted allergen is a safety risk. Money doesn't justify it."
+      },
+      {
+       "tier": "weak",
+       "text": "It is the customers' job to ask about ingredients, so it is not the owner's problem.",
+       "meets": [],
+       "feedback": "The business is responsible for accurate labels and safe products."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Employees and employers, and counting revenue, costs and profit",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the rights and responsibilities of employees and employers;\n2. calculate revenue, costs and profit for a simple business.\n\n## Materials\n\nA summary of basic workplace rules (minimum wage, safety, anti-discrimination), a sample pay stub, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nShow a sample pay stub for a teen with gross pay and deductions. Ask: \"Why is the amount paid lower than hours times the hourly rate?\"\n\n## Main activity\n\n1. Employer responsibilities: pay at least the minimum wage, provide a safe workplace, avoid discrimination, keep records, follow work-hour rules for minors. Employee responsibilities: arrive on time, do the job honestly, follow safety rules, treat others respectfully.\n2. Employee rights: fair pay, a safe place, freedom from discrimination, and the right to report problems without punishment.\n3. Pay: gross pay is hours times rate; deductions such as payroll taxes lower it to net pay. Example: 12 hours at $12 = $144 gross.\n4. Business arithmetic: revenue = price times quantity; costs = fixed + variable; profit = revenue - costs. Example: a lawn business sells 20 cuts at $30 = $600 revenue; costs = $90 gas and equipment + $180 helper pay = $270; profit = $330.\n\n## Worksheet\n\nCalculate pay and profit.",
+   "reading": {
+    "title": "A fair workplace, and the arithmetic of a business",
+    "content": "A business works when employers and employees each do their part. **Employers** have responsibilities. They must pay at least the legal **minimum wage**, provide a **safe workplace**, avoid **discrimination** in hiring, pay, promotion and firing, keep accurate records and follow the laws on working hours and conditions, which are stricter for workers under 18. **Employees** also have responsibilities: arriving on time, doing the job honestly and carefully, following safety rules, treating coworkers and customers respectfully and protecting the employer's property and private information. Employees have **rights** too: fair pay for the hours worked, a safe place, freedom from discrimination and harassment, and the right to report problems without being punished.\n\nPay is calculated in two steps. **Gross pay** is the total earned before anything is taken out: hours worked times the hourly rate. A student who works 12 hours at $12 an hour earns a gross pay of 12 x 12 = $144. **Deductions**, such as payroll taxes, are subtracted, leaving **net pay**, which is the amount you take home. If $14 is deducted, net pay is $130. Knowing the difference prevents surprises when the first paycheck arrives.\n\nOwners must also understand the numbers of their own business. **Revenue** is the money that comes in from sales: price times the quantity sold. **Costs** are the money that goes out. **Fixed costs**, such as rent, stay the same however much you sell. **Variable costs**, such as ingredients or fuel, rise with the quantity. **Profit** is revenue minus total costs. If the profit is negative, it is a **loss**. Consider a student lawn business. In a month the student mows 20 lawns at $30 each, so revenue is 20 x 30 = $600. Costs are $90 for gas and equipment upkeep and $180 to pay a helper, a total of $270. Profit is 600 - 270 = $330. The **break-even point** is the quantity at which revenue equals total costs. If a lawn is sold for $30 and each one costs $13.50 in gas and helper pay, each lawn leaves $16.50 to cover any fixed costs, such as a $99 mower payment, and the student breaks even after 6 lawns. Revenue is not profit, and a business that looks busy can still lose money if costs are higher than sales."
+   },
+   "cards": [
+    {
+     "front": "Minimum wage",
+     "back": "The lowest hourly pay an employer may legally pay."
+    },
+    {
+     "front": "Discrimination",
+     "back": "Unfair treatment because of who a person is."
+    },
+    {
+     "front": "Gross pay",
+     "back": "Total earnings before deductions."
+    },
+    {
+     "front": "Net pay",
+     "back": "Take-home pay after deductions."
+    },
+    {
+     "front": "Revenue",
+     "back": "Money received from sales: price times quantity."
+    },
+    {
+     "front": "Fixed cost",
+     "back": "A cost that stays the same however much is sold."
+    },
+    {
+     "front": "Variable cost",
+     "back": "A cost that changes with the quantity sold."
+    },
+    {
+     "front": "Profit",
+     "back": "Revenue minus total costs."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A student works 12 hours at $12 an hour. What is the gross pay?",
+     "options": [
+      "$24",
+      "$120",
+      "$144",
+      "$156"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Gross pay is $144 and deductions are $14. What is the net pay?",
+     "options": [
+      "$130",
+      "$158",
+      "$144",
+      "$14"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A lawn business mows 20 lawns at $30. What is the revenue?",
+     "options": [
+      "$50",
+      "$300",
+      "$600",
+      "$6,000"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Revenue is $600 and total costs are $270. What is the profit?",
+     "options": [
+      "$330",
+      "$870",
+      "$270",
+      "$600"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which cost stays the same however much is sold?",
+     "options": [
+      "Ingredients",
+      "Rent",
+      "Fuel per lawn",
+      "Packaging"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A 16-year-old works 15 hours in a week at a bakery for $13 an hour. $18 is deducted for payroll taxes. Calculate the gross pay and net pay. Then name two responsibilities the bakery has as an employer and one responsibility the student has.",
+     "markScheme": [
+      "Calculates gross pay as $195",
+      "Calculates net pay as $177",
+      "Names two valid employer responsibilities",
+      "Names one valid employee responsibility"
+     ],
+     "modelAnswer": "Gross pay is 15 times $13, which is $195. Net pay is $195 minus $18, which is $177. The bakery must pay at least the minimum wage and provide a safe workplace; it must also follow the rules on hours for workers under 18. The student must arrive on time and do the work honestly and carefully.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Gross pay is 15 × $13 = $195. Net pay is $195 - $18 = $177. The bakery must pay at least the minimum wage and keep a safe workplace, and follow the hours rules for under-18 workers. The student must arrive on time and do the work honestly.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Gross pay is 15 × $13 = $195."
+        },
+        {
+         "point": 1,
+         "quote": "Net pay is $195 - $18 = $177."
+        },
+        {
+         "point": 2,
+         "quote": "The bakery must pay at least the minimum wage and keep a safe workplace, and follow the hours rules for under-18 workers."
+        },
+        {
+         "point": 3,
+         "quote": "The student must arrive on time and do the work honestly."
+        }
+       ],
+       "feedback": "Full marks. Both pay figures are correct."
+      },
+      {
+       "tier": "full",
+       "text": "Gross: 15 hours times $13 an hour comes to $195. Net: after the $18 deduction, she takes home $177. The employer must avoid discrimination and keep the kitchen safe, for example with proper oven training. The employee should follow food safety rules like washing hands.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Gross: 15 hours times $13 an hour comes to $195."
+        },
+        {
+         "point": 1,
+         "quote": "Net: after the $18 deduction, she takes home $177."
+        },
+        {
+         "point": 2,
+         "quote": "The employer must avoid discrimination and keep the kitchen safe, for example with proper oven training."
+        },
+        {
+         "point": 3,
+         "quote": "The employee should follow food safety rules like washing hands."
+        }
+       ],
+       "feedback": "Full marks. Food safety is a relevant responsibility in a bakery."
+      },
+      {
+       "tier": "partial",
+       "text": "Gross pay is $195. The student should arrive on time. Net pay is $213 because the deductions are added. The employer has no responsibilities.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Gross pay is $195."
+        },
+        {
+         "point": 3,
+         "quote": "The student should arrive on time."
+        }
+       ],
+       "feedback": "Deductions are subtracted from gross pay. And employers have several legal responsibilities."
+      },
+      {
+       "tier": "partial",
+       "text": "Net pay would be $177. The employer must provide a safe workplace and pay the minimum wage. Gross pay is 15 + 13 = $28.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Net pay would be $177."
+        },
+        {
+         "point": 2,
+         "quote": "The employer must provide a safe workplace and pay the minimum wage."
+        }
+       ],
+       "feedback": "Gross pay is hours times the rate: 15 times $13.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Gross pay is $13 because that is the rate. Net pay is $18.",
+       "meets": [],
+       "feedback": "Multiply hours by rate, then subtract the deductions."
+      },
+      {
+       "tier": "weak",
+       "text": "Employers can do anything, and employees have no rights because they are young.",
+       "meets": [],
+       "feedback": "Workers of all ages have rights, and employers have legal duties."
+      }
+     ]
+    },
+    {
+     "prompt": "A student sells 40 handmade bracelets at $6 each. Materials cost $2 per bracelet, and a booth fee at the craft fair is $50. Calculate the revenue, the total costs, and the profit. Identify which cost is fixed and which is variable, and say how many bracelets she needs to sell to break even.",
+     "markScheme": [
+      "Calculates revenue as $240",
+      "Calculates total costs as $130 and profit as $110",
+      "Identifies the booth fee as fixed and materials as variable",
+      "Calculates the break-even point as 13 bracelets (50 divided by 4, rounded up)"
+     ],
+     "modelAnswer": "Revenue is 40 times $6, which is $240. Materials cost 40 times $2, which is $80, plus the $50 booth fee, so total costs are $130 and profit is $110. The booth fee is fixed and the materials are variable. Each bracelet leaves $4 after materials, so to cover the $50 fee she needs 50 divided by 4 which is 12.5, so 13 bracelets.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Revenue is 40 × $6 = $240. Materials are 40 × $2 = $80; adding the $50 fee makes costs $130, so profit is $240 - $130 = $110. The booth fee is fixed and the materials are variable. Each bracelet leaves $4 after materials, so $50 ÷ $4 = 12.5, which means she must sell 13 to break even.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Revenue is 40 × $6 = $240."
+        },
+        {
+         "point": 1,
+         "quote": "Materials are 40 × $2 = $80; adding the $50 fee makes costs $130, so profit is $240 - $130 = $110."
+        },
+        {
+         "point": 2,
+         "quote": "The booth fee is fixed and the materials are variable."
+        },
+        {
+         "point": 3,
+         "quote": "Each bracelet leaves $4 after materials, so $50 ÷ $4 = 12.5, which means she must sell 13 to break even."
+        }
+       ],
+       "feedback": "Full marks. Rounding up to 13 is the correct final step."
+      },
+      {
+       "tier": "full",
+       "text": "She earns $240 in revenue. Costs are $80 for materials plus $50 for the booth, which is $130, so she profits $110. The fee is a fixed cost because it doesn't change, and materials are variable because they go up with each bracelet. She makes $4 on each bracelet toward the fee, so she needs 13 to break even, since 12 would give only $48.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "She earns $240 in revenue."
+        },
+        {
+         "point": 1,
+         "quote": "Costs are $80 for materials plus $50 for the booth, which is $130, so she profits $110."
+        },
+        {
+         "point": 2,
+         "quote": "The fee is a fixed cost because it doesn't change, and materials are variable because they go up with each bracelet."
+        },
+        {
+         "point": 3,
+         "quote": "She makes $4 on each bracelet toward the fee, so she needs 13 to break even, since 12 would give only $48."
+        }
+       ],
+       "feedback": "Full marks. Checking that 12 is not enough is a careful touch."
+      },
+      {
+       "tier": "partial",
+       "text": "Revenue is $240. The fee is fixed and the materials are variable. Total costs are $80, so profit is $160. Break even is 50 bracelets.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Revenue is $240."
+        },
+        {
+         "point": 2,
+         "quote": "The fee is fixed and the materials are variable."
+        }
+       ],
+       "feedback": "Total costs include the $50 booth fee as well as materials: $130 in all."
+      },
+      {
+       "tier": "partial",
+       "text": "Profit is $110. She needs 13 to break even. Revenue is 6 + 40 = $46.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Profit is $110."
+        },
+        {
+         "point": 3,
+         "quote": "She needs 13 to break even."
+        }
+       ],
+       "feedback": "Revenue is the price times the number sold: 40 times $6 is $240.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Revenue and profit are the same, $240, because all the money is mine.",
+       "meets": [],
+       "feedback": "Profit is revenue minus costs, so the costs must come out."
+      },
+      {
+       "tier": "weak",
+       "text": "Fixed costs go up with every bracelet and variable costs never change.",
+       "meets": [],
+       "feedback": "It is the other way around: fixed costs stay constant and variable costs rise with quantity."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "The income statement, and how a business is funded",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. prepare a simple income statement;\n2. explain how businesses obtain funding, including loans and investors.\n\n## Materials\n\nAn income statement template, sample sales and expense lists, a loan-payment illustration, calculators, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"A food truck made $9,000 last month. Is the owner rich?\" Discuss what has to be subtracted before knowing how the business really did.\n\n## Main activity\n\n1. Income statement: shows revenue, costs and profit for a period. Format: Revenue; minus cost of goods sold = gross profit; minus operating expenses (rent, wages, utilities, advertising) = net income before tax.\n2. Example: a food truck in one month. Sales $9,000. Cost of goods sold (ingredients) $3,200. Gross profit $5,800. Expenses: wages $2,400, truck loan payment $900, fuel $600, permits $250. Total expenses $4,150. Net income $1,650.\n3. Funding: owner's savings, family and friends, bank loans (borrowed money repaid with interest), investors (give money for a share of ownership), crowdfunding, grants. Compare debt (must repay, owner keeps control) and equity (no repayment but shared ownership).\n4. Simple interest: a $5,000 loan at 8 percent a year for 1 year costs $400 in interest.\n\n## Worksheet\n\nPrepare an income statement and recommend a funding source.",
+   "reading": {
+    "title": "Reading the scorecard, and finding the money",
+    "content": "At the end of each month or year, an owner needs to know: did the business make money? The **income statement** answers that question. It shows the business's revenue, costs and profit over a period of time. It starts with **revenue**, the total sales. Next it subtracts the **cost of goods sold (COGS)**, the direct cost of the products sold, such as ingredients. The result is **gross profit**. Then it subtracts **operating expenses**, the other costs of running the business, such as wages, rent, fuel, permits, utilities and advertising. The final line is **net income**, also called net profit, the money left after everything.\n\nHere is a food truck's income statement for one month. Sales were $9,000. Ingredients cost $3,200, so the gross profit is 9,000 - 3,200 = $5,800. Operating expenses were wages $2,400, the truck loan payment $900, fuel $600 and permits $250, a total of $4,150. Net income is 5,800 - 4,150 = $1,650. Though the truck took in $9,000, the owner kept $1,650 after all costs, which is a very different picture from the sales figure alone. If the net income had been negative, it would have been a loss.\n\nTo start or grow, a business needs money, and there are several sources. **Owner's savings** carry no repayment, but they are limited and risky. **Family and friends** may lend or give money, though it can strain relationships if the business struggles. A **bank loan** provides borrowed money that must be repaid with **interest**, the fee for using money. With simple interest, a $5,000 loan at 8 percent a year costs 5,000 x 0.08 = $400 in interest for one year, so the borrower repays $5,400. Lenders may ask for proof that the business can repay, such as a business plan. **Investors** give money in exchange for a share of ownership, often called equity. The owner does not have to repay them on a schedule, but gives up part of the profit and some control. **Crowdfunding** collects small amounts from many supporters, and **grants** are gifts, often from governments or foundations, for particular purposes.\n\nIn choosing, owners compare **debt** (borrowing: repay with interest but keep full ownership) with **equity** (selling a share: no required repayment but shared ownership and profit). The right choice depends on how much money is needed, how fast the business can repay, and how much control the owner wants to keep."
+   },
+   "cards": [
+    {
+     "front": "Income statement",
+     "back": "A report of revenue, costs and profit over a period."
+    },
+    {
+     "front": "Cost of goods sold",
+     "back": "The direct cost of the products that were sold."
+    },
+    {
+     "front": "Gross profit",
+     "back": "Revenue minus cost of goods sold."
+    },
+    {
+     "front": "Operating expenses",
+     "back": "Costs of running the business, such as wages and rent."
+    },
+    {
+     "front": "Net income",
+     "back": "What is left after all costs and expenses."
+    },
+    {
+     "front": "Interest",
+     "back": "The fee paid for borrowing money."
+    },
+    {
+     "front": "Investor",
+     "back": "A person who provides money in exchange for part ownership."
+    },
+    {
+     "front": "Equity",
+     "back": "A share of ownership in a business."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Sales are $9,000 and cost of goods sold is $3,200. What is the gross profit?",
+     "options": [
+      "$5,800",
+      "$12,200",
+      "$3,200",
+      "$6,800"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Gross profit is $5,800 and operating expenses are $4,150. What is the net income?",
+     "options": [
+      "$9,950",
+      "$1,650",
+      "$4,150",
+      "$5,800"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the simple interest for one year on a $5,000 loan at 8 percent?",
+     "options": [
+      "$40",
+      "$400",
+      "$800",
+      "$4,000"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which funding source gives money in exchange for part ownership?",
+     "options": [
+      "A bank loan",
+      "An investor",
+      "A grant",
+      "Owner's savings"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these is an operating expense?",
+     "options": [
+      "Ingredients sold",
+      "Rent",
+      "Revenue",
+      "Gross profit"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A smoothie stand had sales of $5,000 in a month. The cost of goods sold was $1,800. Operating expenses were wages $1,200, rent $500 and advertising $150. Prepare an income statement showing revenue, gross profit, total operating expenses and net income, and comment on how the business performed.",
+     "markScheme": [
+      "States revenue as $5,000 and gross profit as $3,200",
+      "Calculates total operating expenses as $1,850",
+      "Calculates net income as $1,350",
+      "Comments sensibly on performance, such as it was profitable and what the biggest cost was"
+     ],
+     "modelAnswer": "Revenue was $5,000. Subtracting the cost of goods sold of $1,800 gives a gross profit of $3,200. Operating expenses were 1,200 plus 500 plus 150, a total of $1,850. Net income was 3,200 minus 1,850, which is $1,350. The business made a profit, about 27 percent of sales, and wages were the biggest expense.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Revenue $5,000; cost of goods sold $1,800; gross profit $3,200. Operating expenses: wages $1,200 + rent $500 + advertising $150 = $1,850. Net income = $3,200 - $1,850 = $1,350. The business was profitable, keeping about 27 percent of sales, and wages were the biggest expense.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Revenue $5,000; cost of goods sold $1,800; gross profit $3,200."
+        },
+        {
+         "point": 1,
+         "quote": "Operating expenses: wages $1,200 + rent $500 + advertising $150 = $1,850."
+        },
+        {
+         "point": 2,
+         "quote": "Net income = $3,200 - $1,850 = $1,350."
+        },
+        {
+         "point": 3,
+         "quote": "The business was profitable, keeping about 27 percent of sales, and wages were the biggest expense."
+        }
+       ],
+       "feedback": "Full marks. The statement is laid out correctly."
+      },
+      {
+       "tier": "full",
+       "text": "Sales of $5,000 less ingredients of $1,800 leaves a gross profit of $3,200. Expenses add up to $1,850. That leaves net income of $1,350 for the month. It made a profit, so the stand is working, though the owner could look at wages and whether more advertising might raise sales.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sales of $5,000 less ingredients of $1,800 leaves a gross profit of $3,200."
+        },
+        {
+         "point": 1,
+         "quote": "Expenses add up to $1,850."
+        },
+        {
+         "point": 2,
+         "quote": "That leaves net income of $1,350 for the month."
+        },
+        {
+         "point": 3,
+         "quote": "It made a profit, so the stand is working, though the owner could look at wages and whether more advertising might raise sales."
+        }
+       ],
+       "feedback": "Full marks. Suggesting what to examine next adds value."
+      },
+      {
+       "tier": "partial",
+       "text": "Gross profit is $3,200. The stand made a profit. Net income is $3,200 because expenses don't need to be subtracted.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Gross profit is $3,200."
+        },
+        {
+         "point": 3,
+         "quote": "The stand made a profit."
+        }
+       ],
+       "feedback": "Net income comes after operating expenses are subtracted from gross profit."
+      },
+      {
+       "tier": "partial",
+       "text": "Expenses are $1,850. Net income is $1,350. Gross profit is $6,800, since I added the cost of goods sold to the sales.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Expenses are $1,850."
+        },
+        {
+         "point": 2,
+         "quote": "Net income is $1,350."
+        }
+       ],
+       "feedback": "Gross profit is revenue minus cost of goods sold, so $5,000 minus $1,800.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The stand made $5,000 profit because that is the sales figure.",
+       "meets": [],
+       "feedback": "Sales are revenue, not profit. Costs and expenses must be subtracted."
+      },
+      {
+       "tier": "weak",
+       "text": "An income statement lists what the business owns. It has nothing to do with revenue.",
+       "meets": [],
+       "feedback": "An income statement reports revenue, costs and profit for a period."
+      }
+     ]
+    },
+    {
+     "prompt": "A student with a thriving lawn business needs $5,000 for a trailer and a second mower. Compare two funding options: a bank loan at 8 percent simple interest for one year, and an investor who would give $5,000 for 20 percent of the business. Calculate the cost of the loan, explain the trade-off, and recommend one option with a reason.",
+     "markScheme": [
+      "Calculates the loan interest as $400 and total repayment as $5,400",
+      "Explains that the investor requires no repayment but takes 20 percent of ownership and profit",
+      "Explains the trade-off between debt (repay, keep control) and equity (share ownership)",
+      "Recommends one option with a sensible reason"
+     ],
+     "modelAnswer": "The loan costs 5,000 times 0.08, which is $400 interest, so she repays $5,400 in a year. The investor needs no repayment, but takes 20 percent of the business and its future profit. The trade-off is that debt must be repaid but she keeps full ownership, while equity has no repayment but means sharing ownership. If the business is profitable enough to repay $5,400, I would recommend the loan, since giving up 20 percent could cost far more as the business grows.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The loan interest is $5,000 × 0.08 = $400, so she repays $5,400. The investor needs no repayment, but takes 20 percent of the business and its profit. The trade-off is that debt has to be repaid but she keeps full ownership, while equity has no repayment but shared ownership. I'd recommend the loan, because the business is thriving and 20 percent of its future profit could be worth far more than $400.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The loan interest is $5,000 × 0.08 = $400, so she repays $5,400."
+        },
+        {
+         "point": 1,
+         "quote": "The investor needs no repayment, but takes 20 percent of the business and its profit."
+        },
+        {
+         "point": 2,
+         "quote": "The trade-off is that debt has to be repaid but she keeps full ownership, while equity has no repayment but shared ownership."
+        },
+        {
+         "point": 3,
+         "quote": "I'd recommend the loan, because the business is thriving and 20 percent of its future profit could be worth far more than $400."
+        }
+       ],
+       "feedback": "Full marks. The recommendation is tied to the business's strength."
+      },
+      {
+       "tier": "full",
+       "text": "The loan costs $400 in interest, for $5,400 in total. The investor takes a fifth of the business with no payments to make. With debt the risk is the repayment; with equity the cost is a permanent share of the profit. If sales were uncertain, I'd choose the investor to avoid payments, but for a thriving business I'd borrow.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The loan costs $400 in interest, for $5,400 in total."
+        },
+        {
+         "point": 1,
+         "quote": "The investor takes a fifth of the business with no payments to make."
+        },
+        {
+         "point": 2,
+         "quote": "With debt the risk is the repayment; with equity the cost is a permanent share of the profit."
+        },
+        {
+         "point": 3,
+         "quote": "If sales were uncertain, I'd choose the investor to avoid payments, but for a thriving business I'd borrow."
+        }
+       ],
+       "feedback": "Full marks. Explaining when the other option wins shows judgment."
+      },
+      {
+       "tier": "partial",
+       "text": "Interest is $400. I recommend the loan. The investor takes over the whole business and the owner loses everything.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Interest is $400."
+        },
+        {
+         "point": 3,
+         "quote": "I recommend the loan."
+        }
+       ],
+       "feedback": "The investor takes 20 percent, not the whole business. Explain the real trade-off."
+      },
+      {
+       "tier": "partial",
+       "text": "The investor takes 20 percent. Debt must be repaid. The interest is $40 because 8 percent of $5,000 is $40.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The investor takes 20 percent."
+        },
+        {
+         "point": 2,
+         "quote": "Debt must be repaid."
+        }
+       ],
+       "feedback": "8 percent of $5,000 is $400. Recalculate the interest and the repayment.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both options are free money, so it doesn't matter which she picks.",
+       "meets": [],
+       "feedback": "A loan costs interest and an investor takes a share of ownership."
+      },
+      {
+       "tier": "weak",
+       "text": "She should steal the money because it is faster than a loan.",
+       "meets": [],
+       "feedback": "Stealing is illegal and unethical. Choose between the two funding options."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,2390 @@
+{
+ "subject": "Digital Photography",
+ "yearGroup": "Grade 12",
+ "weeks": {
+  "1": {
+   "topic": "Exposure, composition and light",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. operate a digital camera using aperture, shutter speed and ISO and explain how they work together;\n2. use composition techniques such as the rule of thirds, leading lines and framing;\n3. control light by shooting in different conditions and using natural and artificial sources.\n\n## Materials\n\nCameras (manual-capable, including phones with manual apps), tripods, reflectors (white card, foil), a small LED lamp, a stop-table handout, the worksheet.\n\n## Starter (6 minutes)\n\nHold up two photos of a running dog: one frozen sharp, one blurred. Ask: \"What did the photographer change?\" Introduce exposure.\n\n## Main activity\n\n1. Exposure triangle. Aperture: the opening in the lens, measured in f-numbers. A smaller f-number means a larger opening: f/1.4, f/2, f/2.8, f/4, f/5.6, f/8, f/11, f/16. Each step is one stop and halves the light. A large opening gives shallow depth of field (blurred background); a small opening gives deep depth of field. Shutter speed: how long the sensor is exposed (1/1000 s, 1/500, 1/250, 1/125, 1/60 ...); each step doubles or halves the light; fast speeds freeze motion, slow speeds blur it; a handheld rule is to use at least 1 / focal length (a 50 mm lens: 1/50 s or faster). ISO: the sensor's sensitivity (100, 200, 400, 800, 1600 ...); each doubling is one stop more sensitive, but adds noise (grain).\n2. Equivalent exposures: f/8 at 1/125 s and ISO 100 gives the same exposure as f/5.6 at 1/250 s (one stop wider, one stop faster). To freeze a runner at 1/500 s from f/8 at 1/125 s, you need 2 more stops of light: open to f/4 (f/8 to f/5.6 to f/4) or raise ISO from 100 to 400 (100 to 200 to 400).\n3. Composition: rule of thirds (place the subject on a line or an intersection), leading lines (roads, fences, rivers that guide the eye), framing (a doorway, branches or a window around the subject), fill the frame, negative space, symmetry, and changing the angle.\n4. Light. Quality: hard (small, direct source, sharp shadows, such as midday sun) versus soft (large source relative to the subject, gradual shadows, such as an overcast sky or a window). Direction: front, side, back. Color: golden hour (the hour after sunrise and before sunset) gives low, warm, soft light; daylight is about 5500 K, while indoor tungsten bulbs are warmer, about 3200 K. Tools: a reflector bounces light into shadows; a diffuser softens; open shade avoids harsh sun.\n\n## Worksheet\n\nEquivalent exposure puzzles and a light log.",
+   "reading": {
+    "title": "How a camera makes a picture, and how to arrange it",
+    "content": "A photograph is made of light, and your camera has three controls that decide how much of it reaches the sensor. Together they are called the **exposure triangle**.\n\n**Aperture** is the opening in the lens, measured in **f-numbers**. The numbers seem backward: a **smaller** f-number means a **larger** opening. A typical series is f/1.4, f/2, f/2.8, f/4, f/5.6, f/8, f/11, f/16, and each step is one **stop**, which halves (going up) or doubles (going down) the light. Aperture also controls **depth of field**, the zone of the picture that looks sharp. A large opening such as f/2 gives a shallow depth of field and a softly blurred background, which is good for portraits. A small opening such as f/11 gives a deep depth of field, with foreground and background sharp, which suits landscapes.\n\n**Shutter speed** is how long the sensor is exposed to light, written as fractions of a second: 1/1000, 1/500, 1/250, 1/125, 1/60 and so on. Each step doubles or halves the light. Fast speeds **freeze motion**; slow speeds **blur** it. When you hold the camera by hand, a safe rule is to use a speed of at least 1 divided by the focal length: with a 50 mm lens, 1/50 second or faster. **ISO** is the sensor's sensitivity. Each doubling (100, 200, 400, 800, 1600) is one stop more sensitive, which lets you shoot in dim light, but the picture gets more **noise**, a grainy look.\n\nThe three controls trade off against each other. For example, f/8 at 1/125 s and ISO 100 gives the same exposure as f/5.6 at 1/250 s: the aperture opens one stop (twice the light) and the shutter becomes one stop faster (half the time). Suppose you want to freeze a runner at 1/500 s. From 1/125 s, that is two stops faster (1/125 to 1/250 to 1/500), so you need two stops of light from somewhere else: open the aperture from f/8 to f/5.6 to f/4, or raise the ISO from 100 to 200 to 400, or a combination.\n\nHow you arrange the picture matters as much. The **rule of thirds** puts the subject on a line or intersection of an imaginary grid of nine parts. **Leading lines** such as roads, fences and rivers guide the eye. **Framing** uses a doorway, branches or a window around the subject. You can also **fill the frame**, use **negative space**, find symmetry, or simply change your **angle** by crouching or climbing.\n\nFinally, learn to read **light**. **Hard light** from a small source, like the midday sun, makes sharp-edged shadows. **Soft light** from a large source, such as an overcast sky or a window, makes shadows gradual and flattering. Light at **golden hour** (the hour after sunrise and before sunset) is low, warm and soft. Daylight is about 5500 K in color temperature, while indoor tungsten bulbs, about 3200 K, are much warmer. A **reflector** bounces light into shadows, a diffuser softens it, and open shade avoids harsh sun. Good photographers wait for, and shape, the light."
+   },
+   "cards": [
+    {
+     "front": "Aperture",
+     "back": "The lens opening, measured in f-numbers."
+    },
+    {
+     "front": "Stop",
+     "back": "A doubling or halving of the light."
+    },
+    {
+     "front": "Depth of field",
+     "back": "The zone of the picture that looks sharp."
+    },
+    {
+     "front": "Shutter speed",
+     "back": "How long the sensor is exposed to light."
+    },
+    {
+     "front": "ISO",
+     "back": "The sensor's sensitivity to light."
+    },
+    {
+     "front": "Leading line",
+     "back": "A line that guides the eye through a photo."
+    },
+    {
+     "front": "Soft light",
+     "back": "Light from a large source with gradual shadows."
+    },
+    {
+     "front": "Golden hour",
+     "back": "The hour after sunrise and before sunset, with warm light."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which aperture is the largest opening?",
+     "options": [
+      "f/16",
+      "f/8",
+      "f/4",
+      "f/1.4"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Which is the same exposure as f/8 at 1/125 s and ISO 100?",
+     "options": [
+      "f/5.6 at 1/250 s and ISO 100",
+      "f/16 at 1/250 s and ISO 100",
+      "f/8 at 1/500 s and ISO 100",
+      "f/2 at 1/125 s and ISO 100"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "For a handheld shot with a 50 mm lens, a safe minimum shutter speed is about:",
+     "options": [
+      "1/8 s",
+      "1/15 s",
+      "1/50 s",
+      "1 s"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the drawback of raising ISO?",
+     "options": [
+      "More noise",
+      "Less sharpness from the lens",
+      "A smaller aperture",
+      "Darker photos"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which light is softer?",
+     "options": [
+      "Overcast sky",
+      "Midday sun with no clouds",
+      "A bare flashlight",
+      "A single spotlight"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "You are photographing a cyclist and the camera's meter says the correct exposure is f/8 at 1/125 s, ISO 100. You want to freeze the motion at 1/500 s. Explain how many stops faster that is, then give two different combinations of settings that keep the same exposure (one changing aperture, one changing ISO), and say what you gain or lose in each.",
+     "markScheme": [
+      "States that 1/500 s is two stops faster than 1/125 s",
+      "Gives f/4 at 1/500 s, ISO 100 as an equivalent exposure and says depth of field becomes shallower",
+      "Gives f/8 at 1/500 s, ISO 400 as an equivalent exposure and says noise increases",
+      "Explains the trade-off between sharpness of motion, depth of field and noise"
+     ],
+     "modelAnswer": "1/125 to 1/250 to 1/500 is two stops faster, so I need to add two stops of light. Option one: open the aperture two stops from f/8 to f/5.6 to f/4, giving f/4 at 1/500 s and ISO 100; the depth of field becomes shallower. Option two: raise ISO from 100 to 200 to 400, giving f/8 at 1/500 s and ISO 400; the depth of field stays the same but there is more noise. In each case I gain a frozen cyclist and pay with either depth of field or noise.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "1/125 to 1/250 to 1/500 is two stops faster, so I need two stops more light. Option one: f/4 at 1/500 s and ISO 100, which gives a shallower depth of field. Option two: f/8 at 1/500 s and ISO 400, which keeps the depth of field but adds more noise. Either way I freeze the cyclist, and I pay for it with a shallower depth of field or with more noise.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1/125 to 1/250 to 1/500 is two stops faster, so I need two stops more light."
+        },
+        {
+         "point": 1,
+         "quote": "Option one: f/4 at 1/500 s and ISO 100, which gives a shallower depth of field."
+        },
+        {
+         "point": 2,
+         "quote": "Option two: f/8 at 1/500 s and ISO 400, which keeps the depth of field but adds more noise."
+        },
+        {
+         "point": 3,
+         "quote": "Either way I freeze the cyclist, and I pay for it with a shallower depth of field or with more noise."
+        }
+       ],
+       "feedback": "Full marks. Two valid equivalents and an honest trade-off."
+      },
+      {
+       "tier": "full",
+       "text": "It's two stops faster, since each step halves the time. I could open from f/8 to f/5.6 to f/4 at 1/500 s, but the background becomes blurrier and focusing gets trickier. Or I could keep f/8 and raise the ISO from 100 to 400, which keeps the depth of field but adds grain. The choice depends on whether I want a sharp background or the cleanest image.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It's two stops faster, since each step halves the time."
+        },
+        {
+         "point": 1,
+         "quote": "I could open from f/8 to f/5.6 to f/4 at 1/500 s, but the background becomes blurrier and focusing gets trickier."
+        },
+        {
+         "point": 2,
+         "quote": "Or I could keep f/8 and raise the ISO from 100 to 400, which keeps the depth of field but adds grain."
+        },
+        {
+         "point": 3,
+         "quote": "The choice depends on whether I want a sharp background or the cleanest image."
+        }
+       ],
+       "feedback": "Full marks. Naming the focusing difficulty is a real consideration."
+      },
+      {
+       "tier": "partial",
+       "text": "It is two stops faster. There is a trade-off. f/16 at 1/500 s and ISO 100 is equivalent, since the numbers are bigger.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is two stops faster."
+        },
+        {
+         "point": 3,
+         "quote": "There is a trade-off."
+        }
+       ],
+       "feedback": "f/16 lets in less light. To keep the exposure, open the aperture to f/4 or raise the ISO."
+      },
+      {
+       "tier": "partial",
+       "text": "f/4 at 1/500 s, ISO 100. f/8 at 1/500 s, ISO 400. It is one stop faster, so I only need one stop more light.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f/4 at 1/500 s, ISO 100."
+        },
+        {
+         "point": 2,
+         "quote": "f/8 at 1/500 s, ISO 400."
+        }
+       ],
+       "feedback": "From 1/125 to 1/500 is two stops: 1/250, then 1/500.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Just set the shutter to 1/500 and nothing else changes. The photo will be fine.",
+       "meets": [],
+       "feedback": "A faster shutter gives less light, so the photo would be darker unless you compensate."
+      },
+      {
+       "tier": "weak",
+       "text": "A stop means to stop taking photos.",
+       "meets": [],
+       "feedback": "A stop is a doubling or halving of the light."
+      }
+     ]
+    },
+    {
+     "prompt": "You are photographing a portrait of a classmate outdoors. Describe how you would use light: choose a time or place, explain whether the light is hard or soft and why, where the subject should face, and how you would use a reflector. Then describe two composition techniques you would use and how each helps.",
+     "markScheme": [
+      "Chooses a time or place and explains the quality of light (hard or soft) with a reason",
+      "Explains direction of the subject relative to the light",
+      "Explains the use of a reflector to fill shadows",
+      "Describes two composition techniques and how each helps"
+     ],
+     "modelAnswer": "I would shoot in open shade near a building during golden hour, because the large sky acts as a big source and gives soft light with gradual shadows. I would turn the subject so the light falls on the face from the side and slightly front. A white card reflector held below the chin would bounce light into the shadows. For composition, I would place the eyes on the upper third line to follow the rule of thirds, and frame the subject with branches or a doorway so that the eye is drawn to the face.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I'd shoot in open shade near a building at golden hour, because the large sky is a big source, giving soft light with gradual shadows. I'd turn her so the light falls on the face from the side and slightly front. A white card held below the chin would bounce light into the shadows. For composition, I'd put her eyes on the upper third line, and frame her with branches so the eye is drawn to her face.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd shoot in open shade near a building at golden hour, because the large sky is a big source, giving soft light with gradual shadows."
+        },
+        {
+         "point": 1,
+         "quote": "I'd turn her so the light falls on the face from the side and slightly front."
+        },
+        {
+         "point": 2,
+         "quote": "A white card held below the chin would bounce light into the shadows."
+        },
+        {
+         "point": 3,
+         "quote": "For composition, I'd put her eyes on the upper third line, and frame her with branches so the eye is drawn to her face."
+        }
+       ],
+       "feedback": "Full marks. Light, direction, reflector and composition all work together."
+      },
+      {
+       "tier": "full",
+       "text": "I'd use a big window or an overcast day, as both give soft light because the source is large compared with the face. I'd have him face the window at a slight angle, so one side is brighter and the other has a gentle shadow. A reflector or a piece of foil on the shadow side would lift the shadow and add a catchlight in his eyes. I'd use a leading line like the window frame to point to him, and fill the frame to focus on the face.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd use a big window or an overcast day, as both give soft light because the source is large compared with the face."
+        },
+        {
+         "point": 1,
+         "quote": "I'd have him face the window at a slight angle, so one side is brighter and the other has a gentle shadow."
+        },
+        {
+         "point": 2,
+         "quote": "A reflector or a piece of foil on the shadow side would lift the shadow and add a catchlight in his eyes."
+        },
+        {
+         "point": 3,
+         "quote": "I'd use a leading line like the window frame to point to him, and fill the frame to focus on the face."
+        }
+       ],
+       "feedback": "Full marks. Mentioning the catchlight shows attention to portrait detail."
+      },
+      {
+       "tier": "partial",
+       "text": "I'd shoot at noon in the sun. Use the rule of thirds. The light is soft at noon, and I don't need a reflector.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd shoot at noon in the sun."
+        },
+        {
+         "point": 3,
+         "quote": "Use the rule of thirds."
+        }
+       ],
+       "feedback": "Midday sun is hard light with sharp shadows. Choose open shade, overcast or golden hour."
+      },
+      {
+       "tier": "partial",
+       "text": "Face her toward the light. Use a reflector. Soft light comes from a tiny source.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Face her toward the light."
+        },
+        {
+         "point": 2,
+         "quote": "Use a reflector."
+        }
+       ],
+       "feedback": "Soft light comes from a large source relative to the subject.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Light does not matter. I would just use the flash in every photo.",
+       "meets": [],
+       "feedback": "Light shapes a photo. Choose its quality and direction on purpose."
+      },
+      {
+       "tier": "weak",
+       "text": "Composition is only for painters. Photographers just press the button.",
+       "meets": [],
+       "feedback": "Composition guides the viewer's eye in photographs, too."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Many angles, choosing the best frame, and editing",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. photograph a subject from several angles and select the strongest image;\n2. use editing software to crop, adjust exposure and correct color.\n\n## Materials\n\nCameras, a subject to photograph (a bicycle, a plant, a building), computers with editing software (any), sample RAW and JPEG files, a culling worksheet, the quiz.\n\n## Starter (6 minutes)\n\nGive pairs one object and two minutes to take 20 photographs from as many angles as possible. Ask: \"Which one do you like best and why? Did you find it in the first five?\"\n\n## Main activity\n\n1. Shooting a subject from many angles: eye level, low, high, close up, wide, from behind, through something; move your feet before using the zoom; check the background; shoot vertical and horizontal; take a lot, then edit hard. The first idea is rarely the best.\n2. Selecting (culling): review on a contact sheet or grid; give stars or flags; pick the strongest by asking: Is it sharp where it matters? Is the exposure right? Does the composition guide the eye? Does it have emotion or a story? Is it different from the others? Remove near-duplicates. Ask someone for a second opinion.\n3. Editing basics: work non-destructively (keep the original; edits are instructions). Crop (straighten the horizon, remove distractions, change the aspect ratio, keep enough pixels). Exposure (the histogram shows tones: dark on the left, bright on the right; avoid clipping, where shadows or highlights lose all detail). White balance and color (correct a color cast; adjust saturation and contrast gently). Sharpen last; remove dust spots. RAW files keep more data than JPEG, so there is more room to adjust.\n4. Example: a JPEG with a histogram bunched at the left is underexposed; raising exposure by 1 stop doubles the brightness values in linear terms.\n\n## Quiz\n\nAngles, culling and editing terms.",
+   "reading": {
+    "title": "Finding the picture, then finishing it",
+    "content": "The first photograph you take of a subject is rarely your best. Experienced photographers explore a subject from many **angles** before they decide. Try **eye level**, then go **low** and look up, climb **high** and look down, move **close** for detail and step back for a wide view. Photograph from **behind** or **through** something, such as a window or fence. Move your feet before you use the zoom, since changing your position changes the relationship between objects, while zooming only changes the crop. Check the **background** for distractions such as poles sprouting from heads. Shoot in both **vertical** and **horizontal** orientations. Take plenty of frames, and then be strict about what you keep.\n\nThe process of choosing is called **culling**. View your images on a **contact sheet** or a grid, and use stars or flags to rank them. Ask of each one: *Is it sharp where it matters? Is the exposure right? Does the composition guide my eye? Does it have emotion, or a story? Is it different from the others?* Remove near-duplicates. It also helps to show your top picks to someone else, since a second opinion can reveal what you cannot see. The strongest image is often not the technically perfect one but the one that has something to say.\n\nThen comes **editing**. Use **non-destructive** editing, which keeps your original file and stores your changes as instructions, so that you can always go back. **Cropping** can straighten a tilted horizon, remove distractions and improve the composition, but keep enough pixels for your intended use. For **exposure**, look at the **histogram**, a graph of the tones in your picture: dark tones are on the left and bright tones on the right. If the graph is bunched against the left side, the image is underexposed; if it is piled against the right, it is overexposed. Avoid **clipping**, where shadows or highlights are pure black or white and have lost all detail. Next, correct **white balance** to remove a color cast, such as an orange tint from indoor lights, and adjust contrast and saturation gently. **Sharpen** last, and clean dust spots. If you shoot in **RAW** format, the file keeps much more information than a **JPEG**, which gives you greater room to adjust exposure and color without damage.\n\nEditing should serve the photograph, not replace it. Aim for an image that looks like what you saw and felt, and learn to stop before it looks overdone."
+   },
+   "cards": [
+    {
+     "front": "Culling",
+     "back": "Choosing the best images from many."
+    },
+    {
+     "front": "Contact sheet",
+     "back": "A grid of small images used to review a shoot."
+    },
+    {
+     "front": "Crop",
+     "back": "Trimming an image to improve composition."
+    },
+    {
+     "front": "Histogram",
+     "back": "A graph showing the distribution of tones in a photo."
+    },
+    {
+     "front": "Clipping",
+     "back": "Loss of detail in pure black or pure white areas."
+    },
+    {
+     "front": "White balance",
+     "back": "Adjusting color so that whites look neutral."
+    },
+    {
+     "front": "Non-destructive editing",
+     "back": "Editing that preserves the original file."
+    },
+    {
+     "front": "RAW",
+     "back": "A file format that keeps most of the sensor's data."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A histogram bunched against the left side suggests the photo is:",
+     "options": [
+      "Underexposed",
+      "Overexposed",
+      "In focus",
+      "Black and white"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What does clipping mean?",
+     "options": [
+      "Loss of all detail in pure black or white areas",
+      "Cutting the photo with scissors",
+      "Adding a border",
+      "Sharpening"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which file keeps more information for editing?",
+     "options": [
+      "RAW",
+      "JPEG",
+      "A screenshot",
+      "A GIF"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Why move your feet instead of only zooming?",
+     "options": [
+      "It changes the relationship between objects",
+      "Zooming is illegal",
+      "It saves battery",
+      "It makes the file smaller"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is culling?",
+     "options": [
+      "Choosing the best images from many",
+      "Taking more photos",
+      "Printing",
+      "Cleaning a lens"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "You have photographed an old bicycle against a brick wall from 30 positions. Describe at least four different angles or approaches you would try, then explain the questions you would ask to choose the best image, and how you would get a second opinion.",
+     "markScheme": [
+      "Describes at least four different angles or approaches",
+      "Lists at least three selection questions (sharpness, exposure, composition, story, difference)",
+      "Describes removing near-duplicates or ranking with stars",
+      "Describes getting a second opinion and why it helps"
+     ],
+     "modelAnswer": "I would try eye level, a low angle looking up at the frame, a high angle from above, a close-up of the chain and a view through the spokes. To choose, I would ask whether it is sharp where it matters, whether the exposure is right, whether the composition guides the eye, and whether it tells a story or is different from the others. I would rank them with stars and delete near-duplicates. Then I would show my top three to a classmate, because a second opinion can reveal what I can't see.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I'd try eye level, a low angle looking up at the frame, a high angle from above, a close-up of the chain, and a view through the spokes. I'd ask: is it sharp where it matters, is the exposure right, does the composition guide the eye, and does it tell a story or differ from the others? I'd rank with stars and delete near-duplicates. Then I'd show my top three to a classmate, because a second opinion can reveal what I can't see.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd try eye level, a low angle looking up at the frame, a high angle from above, a close-up of the chain, and a view through the spokes."
+        },
+        {
+         "point": 1,
+         "quote": "I'd ask: is it sharp where it matters, is the exposure right, does the composition guide the eye, and does it tell a story or differ from the others?"
+        },
+        {
+         "point": 2,
+         "quote": "I'd rank with stars and delete near-duplicates."
+        },
+        {
+         "point": 3,
+         "quote": "Then I'd show my top three to a classmate, because a second opinion can reveal what I can't see."
+        }
+       ],
+       "feedback": "Full marks. A clear method for finding the strongest frame."
+      },
+      {
+       "tier": "full",
+       "text": "Angles: crouching low with the wall behind, shooting from above at the handlebars, a tight shot of the rusty bell, a wide shot with the street, and a shot from behind the saddle. I'd judge each for sharpness, exposure, composition and emotion, and whether it shows something new. On the contact sheet I'd flag the best, and cull the ones that are almost the same. A friend could tell me which one they notice first, which shows what the image says to a viewer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Angles: crouching low with the wall behind, shooting from above at the handlebars, a tight shot of the rusty bell, a wide shot with the street, and a shot from behind the saddle."
+        },
+        {
+         "point": 1,
+         "quote": "I'd judge each for sharpness, exposure, composition and emotion, and whether it shows something new."
+        },
+        {
+         "point": 2,
+         "quote": "On the contact sheet I'd flag the best, and cull the ones that are almost the same."
+        },
+        {
+         "point": 3,
+         "quote": "A friend could tell me which one they notice first, which shows what the image says to a viewer."
+        }
+       ],
+       "feedback": "Full marks. Asking which image a viewer notices first is useful."
+      },
+      {
+       "tier": "partial",
+       "text": "Eye level and low. Ask a friend. I would pick the first photo I took and not look at the others.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Eye level and low."
+        },
+        {
+         "point": 3,
+         "quote": "Ask a friend."
+        }
+       ],
+       "feedback": "The first image is rarely the best. Review all of them with clear questions."
+      },
+      {
+       "tier": "partial",
+       "text": "I'd check sharpness and exposure. I'd rank with stars. I would keep every photo, including duplicates, to be safe.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "I'd check sharpness and exposure."
+        },
+        {
+         "point": 2,
+         "quote": "I'd rank with stars."
+        }
+       ],
+       "feedback": "Cull near-duplicates so the best images stand out.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "One angle is enough because the subject doesn't change.",
+       "meets": [],
+       "feedback": "Different angles change the composition and meaning."
+      },
+      {
+       "tier": "weak",
+       "text": "I would pick the one with the most filters.",
+       "meets": [],
+       "feedback": "Choose by sharpness, composition and story, not by effects."
+      }
+     ]
+    },
+    {
+     "prompt": "A photo of a lakeside at sunset has a tilted horizon, a histogram bunched at the left side, and an orange color cast from the lights of a nearby building. Describe the editing steps you would take, in a sensible order, explaining why you would keep the original, what you would do about the exposure and clipping, and why you would sharpen last.",
+     "markScheme": [
+      "Explains keeping the original file with non-destructive editing",
+      "Describes cropping and straightening the horizon",
+      "Describes raising exposure using the histogram while avoiding clipping, and correcting the white balance",
+      "Explains sharpening last"
+     ],
+     "modelAnswer": "I would work non-destructively so that the original stays safe. First I would crop and straighten the horizon. The histogram bunched at the left means the photo is underexposed, so I would raise the exposure until the graph spreads out, without piling up against the right edge, which would clip the highlights. Then I would correct the white balance to remove the orange cast. I would sharpen last, because the earlier steps change the pixels, and sharpening before them would add artifacts.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I'd edit non-destructively so the original stays safe. First I'd crop and straighten the horizon. The histogram bunched at the left means it's underexposed, so I'd raise the exposure until it spreads out without piling at the right edge, which would clip the highlights, and I'd correct the white balance to remove the orange cast. I'd sharpen last, because earlier changes alter the pixels and sharpening before them could add artifacts.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd edit non-destructively so the original stays safe."
+        },
+        {
+         "point": 1,
+         "quote": "First I'd crop and straighten the horizon."
+        },
+        {
+         "point": 2,
+         "quote": "The histogram bunched at the left means it's underexposed, so I'd raise the exposure until it spreads out without piling at the right edge, which would clip the highlights, and I'd correct the white balance to remove the orange cast."
+        },
+        {
+         "point": 3,
+         "quote": "I'd sharpen last, because earlier changes alter the pixels and sharpening before them could add artifacts."
+        }
+       ],
+       "feedback": "Full marks. The order of steps is sensible and each is explained."
+      },
+      {
+       "tier": "full",
+       "text": "I'd keep the original file and work on a copy or with edits that can be undone. The horizon needs to be rotated level and the crop tightened to remove the distracting building. I'd brighten the exposure while watching the histogram so neither end clips, then correct the white balance to cool down the orange. The final step is sharpening, since it works best on a finished image.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd keep the original file and work on a copy or with edits that can be undone."
+        },
+        {
+         "point": 1,
+         "quote": "The horizon needs to be rotated level and the crop tightened to remove the distracting building."
+        },
+        {
+         "point": 2,
+         "quote": "I'd brighten the exposure while watching the histogram so neither end clips, then correct the white balance to cool down the orange."
+        },
+        {
+         "point": 3,
+         "quote": "The final step is sharpening, since it works best on a finished image."
+        }
+       ],
+       "feedback": "Full marks. Removing the distracting building by cropping is smart."
+      },
+      {
+       "tier": "partial",
+       "text": "Straighten the horizon. Sharpen last. Overwrite the original so I save space, and push the exposure until everything is white.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Straighten the horizon."
+        },
+        {
+         "point": 3,
+         "quote": "Sharpen last."
+        }
+       ],
+       "feedback": "Keep the original and avoid clipping highlights to pure white."
+      },
+      {
+       "tier": "partial",
+       "text": "Raise the exposure and fix the white balance. Keep the original. Sharpen first so that the rest looks better.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Raise the exposure and fix the white balance."
+        },
+        {
+         "point": 0,
+         "quote": "Keep the original."
+        }
+       ],
+       "feedback": "Sharpen last, once the other edits are done.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Editing is cheating. I would leave the photo as it is.",
+       "meets": [],
+       "feedback": "Basic edits such as cropping and exposure are normal parts of photography."
+      },
+      {
+       "tier": "weak",
+       "text": "Add as many filters as possible until it looks different.",
+       "meets": [],
+       "feedback": "Edit to serve the photo, not to hide it."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Telling a story in pictures, and making portraits with care",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. create a photo essay that tells a story in a series of images;\n2. shoot portraits and consider lighting, posing and the subject's comfort.\n\n## Materials\n\nCameras, tripods, reflectors, a story planning sheet, a shot list template, photo essay examples, model releases, the problem set.\n\n## Starter (6 minutes)\n\nShow six photos in two different orders. Ask: \"Does the story change with the order? What do you feel in each?\" Introduce sequencing.\n\n## Main activity\n\n1. Photo essay: a series of 8 to 12 photographs that tells a story or explores a topic. Plan: choose a story you can access (a family business, a team, a neighborhood), ask permission, make a shot list. Types of shots: establishing (the place), medium (people in context), detail (hands, objects), portrait (a person), action, and a closing image. Vary angles and distances. Sequence for flow and rhythm; write short captions that add information without repeating what the photo shows. Great essays show change, not just one moment.\n2. Portraits: lighting (window light at about 45 degrees to the face for soft, shaped light; reflect light into shadows; avoid harsh overhead sun that makes dark eye sockets; catchlight in the eyes). Camera: longer focal length (about 85 mm on a full-frame camera) is flattering; f/2.8 to f/5.6 keeps the eyes sharp and blurs the background; focus on the nearest eye. Posing: relaxed shoulders; angle the body slightly; chin slightly forward and down; give the hands something to do; show the person, not a stiff pose; talk and wait for natural expression.\n3. Subject's comfort: ask for consent; explain what you are doing and how the photos will be used; show the back of the camera; take breaks; be respectful of culture and personal boundaries; never force a pose; get a parent or guardian's permission for minors; delete on request when appropriate.\n\n## Problem set\n\nPlan an essay and a portrait session.",
+   "reading": {
+    "title": "Stories in a series, and people at ease",
+    "content": "One photograph can be powerful, but a series can tell a **story**. A **photo essay** is a group of eight to twelve images that explores a topic or follows a story. Start by choosing a subject that you can reach and care about: a family business, a team, a street, a person's day. Ask for **permission**, and spend time before you shoot so that you understand your subject. Make a **shot list** so that you cover different kinds of pictures. An **establishing shot** shows the place. **Medium shots** show people in context. **Detail shots** capture hands, tools and objects. A **portrait** introduces a person. An **action** shot shows something happening, and a **closing image** gives a sense of ending. Vary your **angles** and **distances**, since a series of identical frames becomes dull.\n\nThe **sequence** of the images matters. Arranging them changes how the story feels, in the way that the order of sentences changes a paragraph. Look for flow, rhythm and contrast: alternate wide and close images, and begin and end with strong frames. Write short **captions** that add information, such as names, places and facts, without just describing what we can already see. The best essays show **change** or tension, not just a single moment.\n\n**Portraits** require special attention. For **lighting**, soft light from a large window, with the subject turned about 45 degrees to it, shapes the face gently. A reflector or white card can fill the shadows. Avoid harsh overhead sun that casts dark shadows over the eyes. A small bright reflection in the eyes, a **catchlight**, makes a portrait look alive. For camera settings, a slightly longer lens, such as 85 mm on a full-frame camera, is flattering to faces, and an aperture from f/2.8 to f/5.6 keeps the eyes sharp while softening the background. **Focus on the nearest eye.** For **posing**, ask the subject to relax the shoulders, angle the body slightly toward the camera, bring the chin slightly forward and down, and give the hands something to do. Talk with the person and wait for a natural expression, since the best portrait shows who they are.\n\nAbove all, respect the **comfort of your subject**. Ask for **consent** and explain how the pictures will be used. Show them images on the back of the camera. Offer breaks, never force a pose, and be sensitive to culture and personal boundaries. For anyone under 18, get permission from a parent or guardian. A comfortable subject gives you a better photograph, and a trusting relationship."
+   },
+   "cards": [
+    {
+     "front": "Photo essay",
+     "back": "A series of photographs that tells a story."
+    },
+    {
+     "front": "Shot list",
+     "back": "A plan of the pictures you need."
+    },
+    {
+     "front": "Establishing shot",
+     "back": "A wide image that shows the place."
+    },
+    {
+     "front": "Detail shot",
+     "back": "A close image of hands, tools or objects."
+    },
+    {
+     "front": "Sequence",
+     "back": "The order of images in a series."
+    },
+    {
+     "front": "Catchlight",
+     "back": "A small bright reflection in the eyes."
+    },
+    {
+     "front": "Consent",
+     "back": "Permission given freely by the subject."
+    },
+    {
+     "front": "Caption",
+     "back": "Short text that adds information to a photo."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which shot shows the place where a story happens?",
+     "options": [
+      "Establishing shot",
+      "Detail shot",
+      "Closing image",
+      "Selfie"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "About how many images does a typical photo essay have?",
+     "options": [
+      "1",
+      "3",
+      "8 to 12",
+      "200"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "On which part of a portrait subject should you focus?",
+     "options": [
+      "The nearest eye",
+      "The ear",
+      "The background",
+      "The shoes"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What should you do before photographing a minor?",
+     "options": [
+      "Get permission from a parent or guardian",
+      "Nothing",
+      "Hide the camera",
+      "Delete the photos"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A good caption should:",
+     "options": [
+      "Add information without repeating the picture",
+      "Repeat exactly what we see",
+      "Be as long as possible",
+      "Be blank"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Plan a photo essay of ten images about a local business (such as a family bakery). List the kinds of shots and give at least one specific image for each of five different types, explain how you would sequence the essay to start and end, and write one caption that adds information without repeating the picture. State how you would get permission.",
+     "markScheme": [
+      "Lists five different types of shots with a specific image for each",
+      "Describes a sequence with a strong opening and a closing image",
+      "Writes a caption that adds information beyond what is visible",
+      "Describes asking permission and how the photos will be used"
+     ],
+     "modelAnswer": "Establishing: the bakery's storefront at dawn. Medium: the baker shaping loaves at the counter. Detail: flour-dusted hands. Portrait: the owner by the oven. Action: a customer receiving a warm loaf. I would open with the dark storefront and a glowing window, alternate wide and close images through the day, and end with the empty shop at night. Caption: \"Maria Lopez opens the shop at 4 a.m. every day to bake 120 loaves.\" I would ask the owner in person, explain the project and how the photos will be shared, and get her permission in writing.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Establishing: the storefront at dawn. Medium: the baker shaping loaves. Detail: flour-dusted hands. Portrait: the owner by the oven. Action: a customer receiving a warm loaf. I'd open with the dark storefront and glowing window, alternate wide and close images through the day, and end with the empty shop at night. Caption: 'Maria Lopez opens the shop at 4 a.m. every day to bake 120 loaves.' I'd ask the owner in person, explain how the photos will be shared and get her permission in writing.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Establishing: the storefront at dawn. Medium: the baker shaping loaves. Detail: flour-dusted hands. Portrait: the owner by the oven. Action: a customer receiving a warm loaf."
+        },
+        {
+         "point": 1,
+         "quote": "I'd open with the dark storefront and glowing window, alternate wide and close images through the day, and end with the empty shop at night."
+        },
+        {
+         "point": 2,
+         "quote": "Caption: 'Maria Lopez opens the shop at 4 a.m. every day to bake 120 loaves.'"
+        },
+        {
+         "point": 3,
+         "quote": "I'd ask the owner in person, explain how the photos will be shared and get her permission in writing."
+        }
+       ],
+       "feedback": "Full marks. The caption adds facts the picture cannot show."
+      },
+      {
+       "tier": "full",
+       "text": "Establishing: the sign over the door. Medium: two workers frosting cakes. Detail: a hand piping icing. Portrait: the owner's grandson at the register. Action: a cake box being tied. The essay starts with the first light turning on and ends on the final customer of the day, with wide and close pictures alternating. Caption: 'The recipe for these cookies has been in the family since 1962.' I'd visit first, explain the project, and ask the owner for permission and a release before shooting.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Establishing: the sign over the door. Medium: two workers frosting cakes. Detail: a hand piping icing. Portrait: the owner's grandson at the register. Action: a cake box being tied."
+        },
+        {
+         "point": 1,
+         "quote": "The essay starts with the first light turning on and ends on the final customer of the day, with wide and close pictures alternating."
+        },
+        {
+         "point": 2,
+         "quote": "Caption: 'The recipe for these cookies has been in the family since 1962.'"
+        },
+        {
+         "point": 3,
+         "quote": "I'd visit first, explain the project, and ask the owner for permission and a release before shooting."
+        }
+       ],
+       "feedback": "Full marks. A caption with a date adds real information."
+      },
+      {
+       "tier": "partial",
+       "text": "Six photos of the bread. I'd ask permission. The caption says 'bread,' and the order doesn't matter.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Six photos of the bread."
+        },
+        {
+         "point": 3,
+         "quote": "I'd ask permission."
+        }
+       ],
+       "feedback": "Vary the types of shots, plan the sequence, and make captions that add information."
+      },
+      {
+       "tier": "partial",
+       "text": "Open with the storefront and end at night. Caption with the name and time. I'd take the photos without asking since it's a public business.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Open with the storefront and end at night."
+        },
+        {
+         "point": 2,
+         "quote": "Caption with the name and time."
+        }
+       ],
+       "feedback": "Ask for permission and explain how the photos will be used.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A photo essay is one photo with a lot of text.",
+       "meets": [],
+       "feedback": "A photo essay is a series of images that tells a story."
+      },
+      {
+       "tier": "weak",
+       "text": "I'd take identical wide shots ten times to be safe.",
+       "meets": [],
+       "feedback": "Vary angles and distances so the essay stays interesting."
+      }
+     ]
+    },
+    {
+     "prompt": "You are photographing a portrait of a nervous classmate in a window-lit room. Describe your lighting setup (window direction, reflector, avoiding harsh light), your camera choices (lens length, aperture, focus point), your posing suggestions, and at least three things you would do to make the classmate comfortable and respect their consent.",
+     "markScheme": [
+      "Describes the lighting setup with a window at about 45 degrees and a reflector",
+      "Describes camera choices: lens around 85 mm, f/2.8 to f/5.6, focus on the nearest eye",
+      "Describes posing suggestions",
+      "Describes at least three comfort and consent actions"
+     ],
+     "modelAnswer": "I would seat my classmate with the window at about 45 degrees to the face and use a white card to bounce light into the shadow side, avoiding overhead lights. I would use a lens around 85 mm at f/4 and focus on the nearest eye. I would suggest relaxed shoulders, a slight body angle and the chin a little forward and down. To keep my classmate comfortable, I would explain how the photo will be used and get consent, show the back of the camera, chat and take breaks, and never force a pose.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I'd seat my classmate with the window at about 45 degrees to the face and bounce light into the shadow side with a white card, avoiding overhead lights. I'd use a lens around 85 mm at f/4 and focus on the nearest eye. I'd suggest relaxed shoulders, a slight body angle and the chin a little forward and down. I'd explain how the photo will be used and get consent, show the back of the camera, chat and take breaks, and never force a pose.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd seat my classmate with the window at about 45 degrees to the face and bounce light into the shadow side with a white card, avoiding overhead lights."
+        },
+        {
+         "point": 1,
+         "quote": "I'd use a lens around 85 mm at f/4 and focus on the nearest eye."
+        },
+        {
+         "point": 2,
+         "quote": "I'd suggest relaxed shoulders, a slight body angle and the chin a little forward and down."
+        },
+        {
+         "point": 3,
+         "quote": "I'd explain how the photo will be used and get consent, show the back of the camera, chat and take breaks, and never force a pose."
+        }
+       ],
+       "feedback": "Full marks. The setup, settings, posing and respect are all covered."
+      },
+      {
+       "tier": "full",
+       "text": "The window is to one side, soft light shapes the face, and a foil reflector on the other side lifts the shadow and gives a catchlight. I'd shoot at about 85 mm, f/2.8 so the background blurs, and focus on the eye nearest the camera. I'd ask her to relax her shoulders, turn slightly, and give her hands something to hold. I'd ask what she's comfortable with, tell her how I'll share the images, let her review the shots, take breaks, and talk about something she enjoys.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The window is to one side, soft light shapes the face, and a foil reflector on the other side lifts the shadow and gives a catchlight."
+        },
+        {
+         "point": 1,
+         "quote": "I'd shoot at about 85 mm, f/2.8 so the background blurs, and focus on the eye nearest the camera."
+        },
+        {
+         "point": 2,
+         "quote": "I'd ask her to relax her shoulders, turn slightly, and give her hands something to hold."
+        },
+        {
+         "point": 3,
+         "quote": "I'd ask what she's comfortable with, tell her how I'll share the images, let her review the shots, take breaks, and talk about something she enjoys."
+        }
+       ],
+       "feedback": "Full marks. Letting the subject review the shots builds trust."
+      },
+      {
+       "tier": "partial",
+       "text": "Use the window. 85 mm at f/4. I'd tell the classmate to stand stiff and not smile, and I wouldn't explain anything.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Use the window."
+        },
+        {
+         "point": 1,
+         "quote": "85 mm at f/4."
+        }
+       ],
+       "feedback": "Relaxed posing and clear communication help a nervous subject."
+      },
+      {
+       "tier": "partial",
+       "text": "Relaxed shoulders and chin slightly down. Ask for consent. I'd use the harshest overhead light I can find.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Relaxed shoulders and chin slightly down."
+        },
+        {
+         "point": 3,
+         "quote": "Ask for consent."
+        }
+       ],
+       "feedback": "Harsh overhead light makes dark shadows over the eyes. Use soft window light.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A portrait is a quick snapshot. Preparing is a waste of time.",
+       "meets": [],
+       "feedback": "A thoughtful setup and a relaxed subject make a better portrait."
+      },
+      {
+       "tier": "weak",
+       "text": "Consent is not needed because we are friends.",
+       "meets": [],
+       "feedback": "Always ask for consent and explain how the photo will be used."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Building a series, and trying long exposure, black and white and macro",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. create a series on a theme such as place, identity or light;\n2. experiment with a technique such as long exposure, black and white, or macro.\n\n## Materials\n\nCameras, tripods, remote shutter or timer, ND filters (if available) or a dark filter card, a macro lens or close-up filters (if available), a small reflector, the theme planning sheet, the worksheet.\n\n## Starter (6 minutes)\n\nShow a series of five photos of the same window at different times of the day. Ask: \"What stays the same? What changes? What does the series say that one photo can't?\"\n\n## Main activity\n\n1. Series on a theme: a series has a clear idea and a visual thread. Themes: place (a neighborhood, a route), identity (hands, objects, rooms, portraits that reveal who someone is), light (the same location at different times, window light, shadows). To build a series: choose a theme and write a sentence about it; decide on the visual thread (a consistent angle, a color, a viewpoint, a format); shoot many; select five to ten that work as a set; check variety within unity.\n2. Long exposure: a slow shutter speed (1 second to 30 seconds) blurs moving water, clouds and car lights while the still parts stay sharp. Needs: a tripod, remote or timer, low ISO, small aperture; in daylight use an ND (neutral density) filter that blocks light. Calculation: a 10-stop ND filter multiplies the exposure time by 2 to the 10th power, 1024. A scene that needed 1/125 s needs about 1024/125 = 8.2 s with the filter. A 3-stop filter multiplies by 8: 1/60 s becomes 8/60, about 1/8 s.\n3. Black and white: removes color so that tone, contrast, texture, shape and light matter; shoot RAW and convert; look for strong contrast and texture; use color filters (red darkens skies) or edit mixers; no 'gray, flat' images: aim for deep blacks and bright whites.\n4. Macro: close-up photography (true macro is 1:1 magnification); very shallow depth of field, so use a smaller aperture (f/8 to f/16) and a tripod, focus carefully (move the camera, not the focus ring), diffuse light; subjects: leaves, insects, water drops, textures.\n\n## Worksheet\n\nPlan a series and test one technique.",
+   "reading": {
+    "title": "More than one picture, and new ways to see",
+    "content": "A good **series** is more than a pile of pictures. It has a clear **idea** and a visual **thread** that ties the images together. Common themes are **place** (a neighborhood, a route you walk each day), **identity** (hands, rooms, objects or portraits that reveal who someone is) and **light** (one location at different times of day, window light, shadows). To build a series, first write one sentence about your theme. Then decide on the thread: a consistent angle, a color, a viewpoint or a format, such as always shooting from the doorway. Shoot many images, select five to ten that work as a set, and check for **variety within unity**: the pictures should feel related but not identical. Ask what the series says that a single picture cannot.\n\nTrying a new **technique** is a good way to see differently. In **long exposure**, you use a slow shutter speed, from about one second to thirty seconds, so that moving subjects, such as water, clouds and car lights, blur into soft streaks while the still parts stay sharp. You need a **tripod**, a remote or the timer to avoid shaking, a low ISO and a small aperture. In bright daylight, the shutter would let in too much light, so photographers use a **neutral density (ND) filter**, a dark glass that reduces light without changing color. A 10-stop ND filter multiplies the exposure time by 2 to the power of 10, which is 1,024. A scene that needed 1/125 s now needs about 1,024 / 125, around 8.2 seconds, which will turn a waterfall into silk. A 3-stop filter multiplies the time by 8, so 1/60 s becomes 8/60 s, about 1/8 s.\n\nIn **black and white**, with the color removed, the viewer's eye turns to **tone, contrast, texture, shape and light**. Shoot in RAW and convert, since this gives you more control. Look for strong contrast and interesting textures. A red filter, or the matching color slider in your software, darkens a blue sky and makes clouds stand out. Avoid flat gray images: aim for deep blacks and bright whites, with a range of tones in between.\n\nIn **macro** photography, you get very close to small subjects, such as leaves, insects, water drops and textures. True macro means the subject appears on the sensor at life size, or **1:1**. At such close range, the **depth of field** is extremely shallow, only a sliver of the subject is sharp. Use a smaller aperture (f/8 to f/16), a tripod, soft light, and focus carefully, often by moving the camera slightly back and forth instead of turning the focus ring. Each technique teaches you something that you can bring back to your everyday work."
+   },
+   "cards": [
+    {
+     "front": "Series",
+     "back": "A group of related photos with a shared idea."
+    },
+    {
+     "front": "Visual thread",
+     "back": "A repeated feature that ties a series together."
+    },
+    {
+     "front": "Long exposure",
+     "back": "A slow shutter speed that blurs motion."
+    },
+    {
+     "front": "ND filter",
+     "back": "A filter that reduces light without changing color."
+    },
+    {
+     "front": "Macro",
+     "back": "Close-up photography of small subjects."
+    },
+    {
+     "front": "1:1 magnification",
+     "back": "The subject is life-size on the sensor."
+    },
+    {
+     "front": "Tonal range",
+     "back": "The span from dark to light tones."
+    },
+    {
+     "front": "Variety within unity",
+     "back": "Related images that are not identical."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A 10-stop ND filter multiplies exposure time by about:",
+     "options": [
+      "10",
+      "100",
+      "1,024",
+      "10,000"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A 3-stop ND filter multiplies exposure time by:",
+     "options": [
+      "3",
+      "6",
+      "8",
+      "30"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Why use a tripod for a long exposure?",
+     "options": [
+      "To avoid camera shake during the long shutter time",
+      "To make the picture darker",
+      "To change colors",
+      "To add noise"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "In macro photography, depth of field is:",
+     "options": [
+      "Very shallow",
+      "Very deep",
+      "The same as a landscape",
+      "Unlimited"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which is a good theme for a series?",
+     "options": [
+      "Light at different times of day",
+      "Nothing in particular",
+      "Random photos",
+      "A single frame"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A scene at a small waterfall meters at f/11, 1/60 s, ISO 100. You want a silky effect of about 1/4 second or longer. Calculate how many stops of ND filter would give about 1/4 s (starting from 1/60 s), and the exposure time with a 6-stop filter. Then list the equipment and settings you would use to avoid shake and keep the image sharp.",
+     "markScheme": [
+      "Calculates that 1/60 to 1/4 is about 15 times longer, so about 4 stops of ND (16 times)",
+      "Calculates a 6-stop filter multiplies by 64, so 1/60 becomes about 1.07 s",
+      "Lists a tripod and a remote or timer",
+      "Lists low ISO and a small aperture, and explains why"
+     ],
+     "modelAnswer": "From 1/60 s to 1/4 s is 15 times longer, which is about 4 stops (a factor of 16). With a 6-stop filter the time is multiplied by 64, so 1/60 s becomes about 64/60, or 1.07 seconds. I would use a tripod and a remote or the 2-second timer to avoid shake, keep the ISO at 100 and the aperture small to keep exposure long and the image sharp.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "1/60 s to 1/4 s is about 15 times longer, which is about 4 stops (16 times). A 6-stop filter multiplies by 64, so 1/60 s becomes about 64/60, which is roughly 1.07 seconds. I'd mount the camera on a tripod and use a remote or the 2-second timer. I'd keep ISO 100 and a small aperture, which keep the exposure long and the image sharp.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1/60 s to 1/4 s is about 15 times longer, which is about 4 stops (16 times)."
+        },
+        {
+         "point": 1,
+         "quote": "A 6-stop filter multiplies by 64, so 1/60 s becomes about 64/60, which is roughly 1.07 seconds."
+        },
+        {
+         "point": 2,
+         "quote": "I'd mount the camera on a tripod and use a remote or the 2-second timer."
+        },
+        {
+         "point": 3,
+         "quote": "I'd keep ISO 100 and a small aperture, which keep the exposure long and the image sharp."
+        }
+       ],
+       "feedback": "Full marks. The stop arithmetic and the equipment are right."
+      },
+      {
+       "tier": "full",
+       "text": "Each stop doubles the time, so 4 stops is 16 times: 1/60 × 16 is about 1/4 s. With 6 stops it is 64 times, so about 1 second. A sturdy tripod and a remote release keep the camera still. Low ISO gives clean images, and f/11 or smaller maintains depth of field and allows the slow shutter.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Each stop doubles the time, so 4 stops is 16 times: 1/60 × 16 is about 1/4 s."
+        },
+        {
+         "point": 1,
+         "quote": "With 6 stops it is 64 times, so about 1 second."
+        },
+        {
+         "point": 2,
+         "quote": "A sturdy tripod and a remote release keep the camera still."
+        },
+        {
+         "point": 3,
+         "quote": "Low ISO gives clean images, and f/11 or smaller maintains depth of field and allows the slow shutter."
+        }
+       ],
+       "feedback": "Full marks. Doubling for each stop is the heart of the method."
+      },
+      {
+       "tier": "partial",
+       "text": "About 4 stops. Use a tripod. A 6-stop filter multiplies by 6, so 6/60 s, which is 0.1 s. Use a high ISO.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "About 4 stops."
+        },
+        {
+         "point": 2,
+         "quote": "Use a tripod."
+        }
+       ],
+       "feedback": "Each stop doubles the time: 6 stops is 2 to the 6th power, which is 64. And use a low ISO."
+      },
+      {
+       "tier": "partial",
+       "text": "About 1 second with 6 stops. Low ISO and a small aperture. 1/60 to 1/4 is about 2 times longer.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "About 1 second with 6 stops."
+        },
+        {
+         "point": 3,
+         "quote": "Low ISO and a small aperture."
+        }
+       ],
+       "feedback": "1/4 is 15 times longer than 1/60, so about 4 stops.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Hold the camera by hand and shake it for the blur.",
+       "meets": [],
+       "feedback": "A long exposure needs a steady camera so only the water blurs."
+      },
+      {
+       "tier": "weak",
+       "text": "ND filters make the picture black and white.",
+       "meets": [],
+       "feedback": "ND filters reduce light without changing color."
+      }
+     ]
+    },
+    {
+     "prompt": "Propose a series of six photographs on the theme of light in one location (such as your kitchen window). State your theme sentence, the visual thread, six planned images, and choose one technique (long exposure, black and white or macro) for at least one image, explaining what it adds. Say how you would check variety within unity.",
+     "markScheme": [
+      "States a clear theme sentence and a visual thread",
+      "Lists six planned images with variety",
+      "Chooses a technique for at least one image and explains what it adds",
+      "Explains how to check variety within unity"
+     ],
+     "modelAnswer": "Theme: how morning light changes the kitchen. Thread: every photo is shot from the doorway at the same height. Images: dawn blue, first sun on the table, steam rising in a beam, midday flat light, golden evening, and a night shot with the lamp. I would shoot the steam in black and white to emphasize the beam's contrast against the dark. I would check variety within unity by laying all six side by side, making sure that they share the viewpoint but differ in time, color and mood.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Theme: how morning light changes the kitchen. Thread: every photo is shot from the doorway at the same height. Images: dawn blue, first sun on the table, steam in a beam of light, flat midday, golden evening, and a night shot with the lamp. I'd shoot the steam in black and white to emphasize the beam's contrast against the dark. I'd lay all six side by side to make sure they share a viewpoint but differ in time, color and mood.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Theme: how morning light changes the kitchen. Thread: every photo is shot from the doorway at the same height."
+        },
+        {
+         "point": 1,
+         "quote": "Images: dawn blue, first sun on the table, steam in a beam of light, flat midday, golden evening, and a night shot with the lamp."
+        },
+        {
+         "point": 2,
+         "quote": "I'd shoot the steam in black and white to emphasize the beam's contrast against the dark."
+        },
+        {
+         "point": 3,
+         "quote": "I'd lay all six side by side to make sure they share a viewpoint but differ in time, color and mood."
+        }
+       ],
+       "feedback": "Full marks. A clear thread with variety in time and mood."
+      },
+      {
+       "tier": "full",
+       "text": "My theme is shadows through my window, and the thread is a square crop with the same corner of the room. Six photos: the 8 a.m. stripes, noon blur, a long afternoon shadow, a curtain moving, a plant's shadow, and dusk. For the curtain, a long exposure on a tripod would turn the movement into soft blur. I'd print all six small and check they feel like a family but don't repeat.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My theme is shadows through my window, and the thread is a square crop with the same corner of the room."
+        },
+        {
+         "point": 1,
+         "quote": "Six photos: the 8 a.m. stripes, noon blur, a long afternoon shadow, a curtain moving, a plant's shadow, and dusk."
+        },
+        {
+         "point": 2,
+         "quote": "For the curtain, a long exposure on a tripod would turn the movement into soft blur."
+        },
+        {
+         "point": 3,
+         "quote": "I'd print all six small and check they feel like a family but don't repeat."
+        }
+       ],
+       "feedback": "Full marks. Choosing long exposure for the moving curtain fits the idea."
+      },
+      {
+       "tier": "partial",
+       "text": "My theme is light. Six photos of light. I won't need a technique or any check, since they are all photos.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My theme is light."
+        },
+        {
+         "point": 1,
+         "quote": "Six photos of light."
+        }
+       ],
+       "feedback": "Plan different images, choose a technique and check variety within unity."
+      },
+      {
+       "tier": "partial",
+       "text": "Black and white for the steam. Check that they are related but different. The thread is that every photo is taken somewhere random.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "Black and white for the steam."
+        },
+        {
+         "point": 3,
+         "quote": "Check that they are related but different."
+        }
+       ],
+       "feedback": "A visual thread ties the series together, such as a consistent viewpoint.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A series is six copies of the same picture.",
+       "meets": [],
+       "feedback": "A series has related images with variety."
+      },
+      {
+       "tier": "weak",
+       "text": "Techniques are for professionals only and I will never try one.",
+       "meets": [],
+       "feedback": "Trying a technique helps you see differently."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Preparing images for print and web, presenting a portfolio, and critique",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. prepare images for print and for the web at the right size and resolution;\n2. present a portfolio with titles and captions;\n3. take part in a critique and give feedback using a shared vocabulary.\n\n## Materials\n\nImage files, editing software, a sample print on matte and glossy paper, ruler, calculators, portfolio layout templates, critique cards, the worksheet.\n\n## Starter (6 minutes)\n\nShow a photo that looks crisp on a phone and blurry on a large print. Ask: \"Why does the same file look different?\" Introduce pixels and resolution.\n\n## Main activity\n\n1. Print: resolution is measured in pixels per inch (ppi). A good print uses about 300 ppi. Pixels needed = print size in inches x ppi. An 8 by 10 inch print at 300 ppi needs 2,400 x 3,000 pixels, which is 7.2 megapixels. An 11 by 14 inch print needs 3,300 x 4,200 pixels (13.86 megapixels). A 24 megapixel camera makes a 6,000 x 4,000 pixel image, so at 300 ppi it prints 20 by 13.3 inches. Choose paper (matte reduces glare; glossy gives deeper blacks), soft-proof colors, and print a test.\n2. Web: what matters is pixel dimensions, not ppi. Typical: 2,000 pixels on the long edge for full-screen viewing, 1,200 pixels for a web gallery; sRGB color space; JPEG quality 80 to 90 percent; keep file size under about 1 megabyte for fast loading; add alt text (a short description) for accessibility.\n3. Portfolio: select 10 to 15 of your best images; sequence them with variety and flow; give each a title and a caption (what, where, why); include a short artist statement; present consistently in print or online; put the strongest first and last.\n4. Critique with a shared vocabulary: composition, exposure, depth of field, tonal range, light quality, moment, narrative, intent. Use the pattern: describe, analyze, interpret, evaluate. Be specific and kind.\n\n## Worksheet\n\nCalculate sizes and plan a portfolio.",
+   "reading": {
+    "title": "The right size for the right use, and showing your best work",
+    "content": "A digital photograph is made of **pixels**, tiny squares of color. How large you can print it, and how sharp it looks, depends on how many pixels you have. **Resolution** is measured in pixels per inch (**ppi**). For a good quality print, a common target is **300 ppi**. To find the pixels that you need, multiply the print size in inches by 300. An 8 by 10 inch print needs 2,400 by 3,000 pixels (8 x 300 and 10 x 300), which is 7.2 million pixels, or 7.2 **megapixels**. An 11 by 14 inch print needs 3,300 by 4,200 pixels, almost 13.9 megapixels. A 24-megapixel camera typically makes images 6,000 by 4,000 pixels, so at 300 ppi it can print 6,000 / 300 = 20 inches by 4,000 / 300 = 13.3 inches. Choose your **paper** too: matte paper reduces glare, while glossy gives deeper blacks and brighter color. Check your colors with a **soft proof**, a preview of how they will print, and make a small test print before a large one.\n\nFor the **web**, the rules are different. What matters is the **pixel dimensions**, since screens display pixels directly. A common size for full-screen viewing is about **2,000 pixels** on the long edge, and **1,200 pixels** for a web gallery. Use the **sRGB** color space, which most screens understand, and save as **JPEG** at 80 to 90 percent quality to keep the file under about **1 megabyte**, so that pages load quickly. Add **alt text**, a short description of the image, so that people who use screen readers can understand it.\n\nA **portfolio** is a curated collection of your best work. Choose **10 to 15** images, sequence them with variety and flow, and put the strongest first and last. Give each a **title** and a **caption** (what, where and why, in a sentence or two). Add a brief **artist statement**. Present everything consistently, whether in a printed book or online.\n\nFinally, learn to give and receive **critique** with a **shared vocabulary**: composition, exposure, depth of field, tonal range, quality of light, moment, narrative and intent. A reliable pattern is **describe, analyze, interpret, evaluate**. Be specific and kind (\"The side light on the hands gives the picture texture. I wonder if cropping the left side would strengthen the focus\"), and listen without defending when it is your work. A good critique helps you to see your picture the way others see it."
+   },
+   "cards": [
+    {
+     "front": "Pixel",
+     "back": "A tiny square of color in a digital image."
+    },
+    {
+     "front": "ppi",
+     "back": "Pixels per inch; a measure of print resolution."
+    },
+    {
+     "front": "Megapixel",
+     "back": "One million pixels."
+    },
+    {
+     "front": "sRGB",
+     "back": "A standard color space for screens."
+    },
+    {
+     "front": "Soft proof",
+     "back": "A screen preview of how a print will look."
+    },
+    {
+     "front": "Alt text",
+     "back": "A short description of an image for accessibility."
+    },
+    {
+     "front": "Portfolio",
+     "back": "A curated collection of your best work."
+    },
+    {
+     "front": "Caption",
+     "back": "Short text explaining what, where and why."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How many pixels wide is an 8-inch print at 300 ppi?",
+     "options": [
+      "800",
+      "1,800",
+      "2,400",
+      "3,000"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A 6,000 by 4,000 pixel image at 300 ppi prints how wide on the long side?",
+     "options": [
+      "10 inches",
+      "13.3 inches",
+      "20 inches",
+      "30 inches"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "For the web, which matters most?",
+     "options": [
+      "Pixel dimensions",
+      "Print size in inches",
+      "Paper type",
+      "Frame style"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is alt text for?",
+     "options": [
+      "Describing an image for people using screen readers",
+      "Changing the color",
+      "Making it print larger",
+      "Hiding the image"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Where should the strongest portfolio images go?",
+     "options": [
+      "First and last",
+      "Hidden in the middle",
+      "Nowhere",
+      "Only in the middle"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "You want to print a photo at 11 by 14 inches at 300 ppi. Calculate the pixel dimensions and megapixels needed (to two decimal places). Your camera makes 6,000 by 4,000 pixel images, so state whether the file has enough pixels for the long side, and what the largest print size at 300 ppi would be. Then say what size you would save the same photo for a web gallery and why.",
+     "markScheme": [
+      "Calculates the print as 3,300 by 4,200 pixels",
+      "Calculates 13.86 megapixels",
+      "Compares to the camera: 6,000 by 4,000 gives 20 by 13.3 inches, so the long side has enough pixels (but the 14 inch side of 4,200 exceeds 4,000 on the short side, so crop or print slightly smaller)",
+      "Gives a web size such as 1,200 to 2,000 pixels on the long edge, sRGB, and explains why"
+     ],
+     "modelAnswer": "11 by 14 inches at 300 ppi is 3,300 by 4,200 pixels, which is 13.86 megapixels. The camera's 6,000 by 4,000 pixels is 24 megapixels, which prints 20 by 13.3 inches at 300 ppi. The 6,000 pixel side covers the 4,200 needed, but the 4,000 pixel side is slightly short of 4,200, so the photo needs a small crop to an 11 by 14 shape or a print at 11 by 13.3 inches. For the web gallery, I would resize to about 1,200 pixels on the long edge in sRGB, because screens show pixels directly and a smaller file loads faster.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "11 × 300 = 3,300 and 14 × 300 = 4,200, so 3,300 by 4,200 pixels. 3,300 × 4,200 is 13.86 million, or 13.86 megapixels. The camera's 6,000 by 4,000 pixels prints 20 by 13.3 inches at 300 ppi, so it's enough, though a 4:3 shape means the 14-inch side needs a crop or a print of about 11 by 13.3 inches. For the web I'd resize to about 1,200 pixels on the long edge in sRGB, since screens show pixels directly and a smaller file loads faster.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "11 × 300 = 3,300 and 14 × 300 = 4,200, so 3,300 by 4,200 pixels."
+        },
+        {
+         "point": 1,
+         "quote": "3,300 × 4,200 is 13.86 million, or 13.86 megapixels."
+        },
+        {
+         "point": 2,
+         "quote": "The camera's 6,000 by 4,000 pixels prints 20 by 13.3 inches at 300 ppi, so it's enough, though a 4:3 shape means the 14-inch side needs a crop or a print of about 11 by 13.3 inches."
+        },
+        {
+         "point": 3,
+         "quote": "For the web I'd resize to about 1,200 pixels on the long edge in sRGB, since screens show pixels directly and a smaller file loads faster."
+        }
+       ],
+       "feedback": "Full marks. Noticing the aspect ratio issue is an expert detail."
+      },
+      {
+       "tier": "full",
+       "text": "At 300 ppi I need 3,300 × 4,200 pixels. That is 13.86 megapixels, a bit more than half of my camera's 24. The camera has plenty of pixels in total, giving up to 20 by 13.3 inches, though the 4,000-pixel side is a little short of 4,200, so I'd crop slightly. For the web I'd save at 2,000 pixels on the long side as a JPEG in sRGB under 1 MB.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At 300 ppi I need 3,300 × 4,200 pixels."
+        },
+        {
+         "point": 1,
+         "quote": "That is 13.86 megapixels, a bit more than half of my camera's 24."
+        },
+        {
+         "point": 2,
+         "quote": "The camera has plenty of pixels in total, giving up to 20 by 13.3 inches, though the 4,000-pixel side is a little short of 4,200, so I'd crop slightly."
+        },
+        {
+         "point": 3,
+         "quote": "For the web I'd save at 2,000 pixels on the long side as a JPEG in sRGB under 1 MB."
+        }
+       ],
+       "feedback": "Full marks. Recognizing that a crop solves the shape mismatch is exactly right."
+      },
+      {
+       "tier": "partial",
+       "text": "3,300 by 4,200 pixels. The web needs smaller files. 11 × 14 is 154 megapixels. The camera doesn't need to be checked.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3,300 by 4,200 pixels."
+        },
+        {
+         "point": 3,
+         "quote": "The web needs smaller files."
+        }
+       ],
+       "feedback": "Multiply the pixel dimensions: 3,300 times 4,200 is 13.86 million, 13.86 megapixels."
+      },
+      {
+       "tier": "partial",
+       "text": "13.86 megapixels. The camera can print 20 by 13.3 inches. The web size should be 6,000 pixels so it is huge.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "13.86 megapixels."
+        },
+        {
+         "point": 2,
+         "quote": "The camera can print 20 by 13.3 inches."
+        }
+       ],
+       "feedback": "Web images are usually about 1,200 to 2,000 pixels so they load quickly.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Any photo can be printed at any size with no loss of quality.",
+       "meets": [],
+       "feedback": "A print needs enough pixels. Too few produces a soft, blocky image."
+      },
+      {
+       "tier": "weak",
+       "text": "ppi is the number of photos in a portfolio.",
+       "meets": [],
+       "feedback": "ppi stands for pixels per inch, a measure of resolution."
+      }
+     ]
+    },
+    {
+     "prompt": "Plan a 12-image portfolio from your term's work. Describe how you would choose and sequence the images, write a title and a caption for one image (with what, where and why), and use the describe, analyze, interpret, evaluate pattern to write critique feedback for a classmate's portrait with side lighting and a blurred background.",
+     "markScheme": [
+      "Describes choosing and sequencing 12 images with variety and strong first and last",
+      "Writes a title and a caption with what, where and why",
+      "Writes critique that describes and analyzes with photographic vocabulary",
+      "Interprets and evaluates, with a kind and specific suggestion"
+     ],
+     "modelAnswer": "I would select twelve images from different projects, alternate close and wide images, and place my strongest portrait first and my best landscape last. Title: \"Four A.M.\" Caption: \"Maria Lopez shapes loaves at her family's bakery in Dayton before dawn, to show the work behind the morning.\" Critique: \"I see a portrait lit from the side, with a blurred background. The shallow depth of field and side light give the face shape and isolate her. It feels calm and serious. It works well, and I wonder whether cropping a little of the empty left side would strengthen the focus.\"",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I'd select twelve images from different projects, alternate close and wide, and place my strongest portrait first and my best landscape last. Title: 'Four A.M.' Caption: 'Maria Lopez shapes loaves at her family's bakery in Dayton before dawn, to show the work behind the morning.' Critique: I see a portrait lit from the side with a blurred background; the shallow depth of field and side light give the face shape and isolate her. It feels calm and serious, and it works well; I wonder whether cropping a little of the empty left side would strengthen the focus.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd select twelve images from different projects, alternate close and wide, and place my strongest portrait first and my best landscape last."
+        },
+        {
+         "point": 1,
+         "quote": "Title: 'Four A.M.' Caption: 'Maria Lopez shapes loaves at her family's bakery in Dayton before dawn, to show the work behind the morning.'"
+        },
+        {
+         "point": 2,
+         "quote": "Critique: I see a portrait lit from the side with a blurred background; the shallow depth of field and side light give the face shape and isolate her."
+        },
+        {
+         "point": 3,
+         "quote": "It feels calm and serious, and it works well; I wonder whether cropping a little of the empty left side would strengthen the focus."
+        }
+       ],
+       "feedback": "Full marks. The critique moves through all four steps with kindness."
+      },
+      {
+       "tier": "full",
+       "text": "I'd pick the twelve strongest, remove near-duplicates, mix subjects and put the most powerful one first and a quiet closing image last. Title: 'Waiting for the Bus.' Caption: 'A student waits at the corner of Third Street at dawn; the long exposure blurs the passing cars to show how time moves around her.' Critique: the light comes from the left and the background is soft, so the eye goes straight to her face. It feels patient and lonely, and I think it succeeds; a slightly lower angle might give the figure more presence.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd pick the twelve strongest, remove near-duplicates, mix subjects and put the most powerful one first and a quiet closing image last."
+        },
+        {
+         "point": 1,
+         "quote": "Title: 'Waiting for the Bus.' Caption: 'A student waits at the corner of Third Street at dawn; the long exposure blurs the passing cars to show how time moves around her.'"
+        },
+        {
+         "point": 2,
+         "quote": "Critique: the light comes from the left and the background is soft, so the eye goes straight to her face."
+        },
+        {
+         "point": 3,
+         "quote": "It feels patient and lonely, and I think it succeeds; a slightly lower angle might give the figure more presence."
+        }
+       ],
+       "feedback": "Full marks. A specific suggestion that does not reduce praise."
+      },
+      {
+       "tier": "partial",
+       "text": "I'd put twelve photos in any order. Title: 'Photo.' Caption: 'A photo.' Critique: it's good. I don't need to describe or suggest anything.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I'd put twelve photos in any order."
+        },
+        {
+         "point": 1,
+         "quote": "Title: 'Photo.' Caption: 'A photo.'"
+        }
+       ],
+       "feedback": "Use a title and caption that add information, and a specific critique."
+      },
+      {
+       "tier": "partial",
+       "text": "I see side lighting and a blurred background. It feels calm. I'd say the portrait is terrible and the photographer should quit.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "I see side lighting and a blurred background."
+        },
+        {
+         "point": 3,
+         "quote": "It feels calm."
+        }
+       ],
+       "feedback": "Critique should be kind and specific, with a helpful suggestion.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "A portfolio is the camera bag. It contains cameras, not photos.",
+       "meets": [],
+       "feedback": "A portfolio is a collection of your best work."
+      },
+      {
+       "tier": "weak",
+       "text": "Critique is just for saying whether you like a picture or not.",
+       "meets": [],
+       "feedback": "A critique describes, analyzes, interprets and evaluates."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Showing your work, and studying Dorothea Lange and Ansel Adams",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. exhibit your work in a print or online show;\n2. analyze the work of a documentary or fine art photographer and explain the choices.\n\n## Materials\n\nPrints and mats, an online gallery tool, a floor plan of the display area, labels, images of Dorothea Lange's Migrant Mother (1936) and Ansel Adams's Moonrise, Hernandez, New Mexico (1941), an analysis chart, the worksheet.\n\n## Starter (6 minutes)\n\nShow two photographs of a person and a mountain, one documentary and one landscape. Ask: \"What is each photographer trying to do?\"\n\n## Main activity\n\n1. Exhibiting: select images that work together; order them for flow; print consistently (same paper and size) and mat or mount; label (name, title, year, medium); hang at about eye level with even spacing and without glare; or build an online show with a clear layout, consistent image sizes, titles, captions, alt text and an artist statement. Invite an audience, welcome visitors, and collect feedback.\n2. Documentary photographers record real people and events, often to raise awareness. Dorothea Lange (1895 to 1965) worked for the Farm Security Administration during the Great Depression. Her Migrant Mother (1936), made at a pea pickers' camp in Nipomo, California, shows a worried mother with her children turned away. Choices: close framing, direct emotion, natural light, her hands near her face, the children's turned heads that keep the face of the mother as focus; the photograph drew attention to the plight of farm workers.\n3. Fine art photographers aim at beauty and expression. Ansel Adams (1902 to 1984) photographed the American West, including Yosemite. He co-founded Group f/64 in 1932 (with Edward Weston and Imogen Cunningham), which valued sharp focus and deep depth of field using small apertures such as f/64. Moonrise, Hernandez, New Mexico (1941) is a black-and-white photograph of a moonrise above a village and crosses. Choices: a wide tonal range from deep black sky to bright clouds, careful darkroom work, patience for the exact light, and a large-format camera.\n4. Analysis: ask what the photographer chose (subject, framing, moment, light, focus, tonal range, cropping) and why; what the photograph is for; how it makes you feel; how the context shapes it.\n\n## Worksheet\n\nExhibition plan and photographer analysis.",
+   "reading": {
+    "title": "Showing your work, and learning from two masters",
+    "content": "Making photographs is only half the work; the other half is **sharing** them. An **exhibition**, whether in prints or online, gives your images an audience. Start by selecting the pictures that work together and arranging them so that they have flow. For a **print show**, print on the same paper at consistent sizes, **mat** or mount them, and make labels with your name, the title, the year and the medium. Hang the pictures at about **eye level**, space them evenly and check for glare from windows or lights. For an **online show**, choose a clear layout, keep image sizes consistent, add titles and captions, write **alt text** for each image, and include an artist statement. In both cases, invite an audience, welcome visitors and ask for feedback.\n\nLooking at the work of masters shows how choices shape meaning. **Documentary photographers** record real people and events, often to inform or to move audiences to act. **Dorothea Lange** (1895 to 1965) worked for the Farm Security Administration during the Great Depression. Her photograph *Migrant Mother* (1936), made at a camp for pea pickers in Nipomo, California, shows a worried woman with her children, who have turned their faces away. Several choices make it powerful: Lange moved **close**, so the frame is filled by the family; she used natural light; the mother's hand rests near her face in a gesture of worry; and the children's turned heads keep our eyes on the mother's expression. The image drew national attention to the hardship of migrant farm workers.\n\n**Fine art photographers** aim at beauty, expression and personal vision. **Ansel Adams** (1902 to 1984) photographed the American West, particularly Yosemite. In 1932 he co-founded **Group f/64** with Edward Weston and Imogen Cunningham, a group that valued sharp focus and deep **depth of field**, made with very small apertures such as f/64. His photograph *Moonrise, Hernandez, New Mexico* (1941), in black and white, shows a moon over a small village with crosses in the foreground. His choices include a **wide tonal range**, from the deep black sky to the bright clouds and moon; patience in waiting for the exact light; careful work in the **darkroom**; and a large-format camera that captured fine detail.\n\nTo **analyze** a photograph, ask: *What did the photographer choose (subject, framing, moment, light, focus, tonal range, crop), and why? What is it for? How does it make me feel? How does its context shape it?* Comparing a documentary photograph with a fine art photograph shows that both involve deliberate choices, but toward different purposes."
+   },
+   "cards": [
+    {
+     "front": "Exhibition",
+     "back": "A public display of photographs."
+    },
+    {
+     "front": "Documentary photography",
+     "back": "Photography that records real people and events."
+    },
+    {
+     "front": "Fine art photography",
+     "back": "Photography made for personal expression and beauty."
+    },
+    {
+     "front": "Dorothea Lange",
+     "back": "Photographer of Migrant Mother (1936)."
+    },
+    {
+     "front": "Ansel Adams",
+     "back": "Photographer of the American West and Moonrise, Hernandez (1941)."
+    },
+    {
+     "front": "Group f/64",
+     "back": "A 1932 group valuing sharp focus and deep depth of field."
+    },
+    {
+     "front": "Tonal range",
+     "back": "The span from deep black to bright white."
+    },
+    {
+     "front": "Farm Security Administration",
+     "back": "A U.S. agency that documented rural life in the 1930s."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Who made Migrant Mother in 1936?",
+     "options": [
+      "Dorothea Lange",
+      "Ansel Adams",
+      "Edward Weston",
+      "Annie Leibovitz"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Group f/64 valued:",
+     "options": [
+      "Sharp focus and deep depth of field",
+      "Blurry effects",
+      "Only color",
+      "Selfies"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Moonrise, Hernandez, New Mexico was made in:",
+     "options": [
+      "1841",
+      "1941",
+      "2001",
+      "1741"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "At about what height should works be hung?",
+     "options": [
+      "Eye level",
+      "On the floor",
+      "Above the door",
+      "At the ceiling"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which describes documentary photography?",
+     "options": [
+      "Recording real people and events",
+      "Making fantasy scenes",
+      "Only portraits of celebrities",
+      "Only landscapes"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Analyze Dorothea Lange's Migrant Mother (1936). Describe the photograph, identify at least three choices she made (such as framing, light, gesture, the children's turned heads), explain what each does for the viewer, and say what the photograph was for.",
+     "markScheme": [
+      "Describes the photograph accurately",
+      "Identifies at least three choices",
+      "Explains the effect of each choice on the viewer",
+      "States the purpose (drawing attention to the hardship of migrant farm workers)"
+     ],
+     "modelAnswer": "The photograph shows a worried mother at a pea pickers' camp in Nipomo, California, with her children turned away from the camera. Lange moved close, so the family fills the frame and we feel nearer to them. She used natural light, which makes the scene feel real. The mother's hand near her face shows worry, and the children's turned heads keep our eyes on the mother's expression. The photograph was made for the Farm Security Administration, and it drew national attention to the hardship of migrant farm workers.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The photograph shows a worried mother at a pea pickers' camp in Nipomo, California, with her children turned away from the camera. Lange moved close so the family fills the frame, used natural light, placed the mother's hand near her face, and the children's turned heads keep us on the mother. Being close makes us feel nearer to them, the natural light makes it feel real, and the hand and turned heads focus our attention on her worry. It was made for the Farm Security Administration and drew national attention to the hardship of migrant farm workers.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The photograph shows a worried mother at a pea pickers' camp in Nipomo, California, with her children turned away from the camera."
+        },
+        {
+         "point": 1,
+         "quote": "Lange moved close so the family fills the frame, used natural light, placed the mother's hand near her face, and the children's turned heads keep us on the mother."
+        },
+        {
+         "point": 2,
+         "quote": "Being close makes us feel nearer to them, the natural light makes it feel real, and the hand and turned heads focus our attention on her worry."
+        },
+        {
+         "point": 3,
+         "quote": "It was made for the Farm Security Administration and drew national attention to the hardship of migrant farm workers."
+        }
+       ],
+       "feedback": "Full marks. Each choice is linked to its effect."
+      },
+      {
+       "tier": "full",
+       "text": "Migrant Mother shows a woman in a tent camp with two children leaning on her shoulders, all in worn clothing. Choices: a tight crop, soft natural light, the mother's hand at her mouth, and the children facing away. The tight crop creates intimacy, the hand shows anxiety, and the turned heads let the viewer imagine the children's feelings while staying on her face. Its purpose was to document and publicize the plight of farm workers during the Depression.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Migrant Mother shows a woman in a tent camp with two children leaning on her shoulders, all in worn clothing."
+        },
+        {
+         "point": 1,
+         "quote": "Choices: a tight crop, soft natural light, the mother's hand at her mouth, and the children facing away."
+        },
+        {
+         "point": 2,
+         "quote": "The tight crop creates intimacy, the hand shows anxiety, and the turned heads let the viewer imagine the children's feelings while staying on her face."
+        },
+        {
+         "point": 3,
+         "quote": "Its purpose was to document and publicize the plight of farm workers during the Depression."
+        }
+       ],
+       "feedback": "Full marks. 'Imagine the children's feelings' is a thoughtful reading."
+      },
+      {
+       "tier": "partial",
+       "text": "It's a picture of a woman and children. It was to show hardship. The photographer made no choices, she just clicked the button.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It's a picture of a woman and children."
+        },
+        {
+         "point": 3,
+         "quote": "It was to show hardship."
+        }
+       ],
+       "feedback": "Every photograph involves choices such as framing, light and moment."
+      },
+      {
+       "tier": "partial",
+       "text": "Close framing and natural light. Close framing feels intimate. It was taken by Ansel Adams in Yosemite for fun.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Close framing and natural light."
+        },
+        {
+         "point": 2,
+         "quote": "Close framing feels intimate."
+        }
+       ],
+       "feedback": "Migrant Mother was made by Dorothea Lange for the Farm Security Administration.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Documentary photos have no purpose, they are just pretty.",
+       "meets": [],
+       "feedback": "Documentary photographs often aim to inform or move audiences to act."
+      },
+      {
+       "tier": "weak",
+       "text": "It was made recently with a phone.",
+       "meets": [],
+       "feedback": "Migrant Mother was made in 1936."
+      }
+     ]
+    },
+    {
+     "prompt": "Compare Lange's documentary approach with Ansel Adams's fine art approach in Moonrise, Hernandez, New Mexico (1941). Explain the purpose of each, two technical or aesthetic choices Adams made (such as tonal range, patience for light, darkroom, large format, or f/64 principles), and how you would apply what you learned from one of them in your own photography.",
+     "markScheme": [
+      "States the documentary purpose of Lange and the fine art purpose of Adams",
+      "Explains one choice by Adams accurately (tonal range, patience, darkroom or large format)",
+      "Explains a second choice or the Group f/64 principles",
+      "Describes how the student would apply a lesson to their own photography"
+     ],
+     "modelAnswer": "Lange's purpose was to document real people and raise awareness of hardship, while Adams's purpose was to express the beauty and grandeur of landscape. In Moonrise, Adams used a wide tonal range, from a deep black sky to bright clouds and moon, and waited for the exact light. As a member of Group f/64 he valued sharp focus and deep depth of field with small apertures and a large-format camera. In my own work, I will practice waiting for the right light and checking my histogram to keep a full tonal range.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Lange's purpose was to document real people and raise awareness of hardship; Adams's was to express the beauty and grandeur of the landscape. In Moonrise, Adams used a wide tonal range from a deep black sky to bright clouds and moon, and waited for the exact light. As part of Group f/64 he valued sharp focus and deep depth of field, using small apertures and a large-format camera. In my own work I'll practice waiting for the right light and check my histogram to keep a full tonal range.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Lange's purpose was to document real people and raise awareness of hardship; Adams's was to express the beauty and grandeur of the landscape."
+        },
+        {
+         "point": 1,
+         "quote": "In Moonrise, Adams used a wide tonal range from a deep black sky to bright clouds and moon, and waited for the exact light."
+        },
+        {
+         "point": 2,
+         "quote": "As part of Group f/64 he valued sharp focus and deep depth of field, using small apertures and a large-format camera."
+        },
+        {
+         "point": 3,
+         "quote": "In my own work I'll practice waiting for the right light and check my histogram to keep a full tonal range."
+        }
+       ],
+       "feedback": "Full marks. The two approaches are contrasted and a lesson is applied."
+      },
+      {
+       "tier": "full",
+       "text": "Lange documented a social problem for a government agency, while Adams made personal, artistic images of nature. Adams worked carefully in the darkroom to control tones from deep black to bright white. With Group f/64 he used small apertures so everything from foreground to the horizon was sharp. I'll apply his patience by returning to the same place at different times to wait for the best light, and use a small aperture for landscapes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Lange documented a social problem for a government agency, while Adams made personal, artistic images of nature."
+        },
+        {
+         "point": 1,
+         "quote": "Adams worked carefully in the darkroom to control tones from deep black to bright white."
+        },
+        {
+         "point": 2,
+         "quote": "With Group f/64 he used small apertures so everything from foreground to the horizon was sharp."
+        },
+        {
+         "point": 3,
+         "quote": "I'll apply his patience by returning to the same place at different times to wait for the best light, and use a small aperture for landscapes."
+        }
+       ],
+       "feedback": "Full marks. Returning to the same place for better light is practical."
+      },
+      {
+       "tier": "partial",
+       "text": "Adams took pictures of mountains and Lange took pictures of people. I'll use what I learned. Adams used a blurry, soft focus to make it dreamy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Adams took pictures of mountains and Lange took pictures of people."
+        },
+        {
+         "point": 3,
+         "quote": "I'll use what I learned."
+        }
+       ],
+       "feedback": "Adams and Group f/64 valued sharp focus and deep depth of field."
+      },
+      {
+       "tier": "partial",
+       "text": "Adams used a wide tonal range. Group f/64 was about sharp focus. Moonrise was made in 1841 and Lange's purpose was to make landscapes.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Adams used a wide tonal range."
+        },
+        {
+         "point": 2,
+         "quote": "Group f/64 was about sharp focus."
+        }
+       ],
+       "feedback": "Moonrise was made in 1941, and Lange documented people to raise awareness.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both are the same kind of photography with the same purpose.",
+       "meets": [],
+       "feedback": "Documentary and fine art photography often have different purposes."
+      },
+      {
+       "tier": "weak",
+       "text": "I can't learn from other photographers because my camera is different.",
+       "meets": [],
+       "feedback": "The ideas of light, patience and tone apply to any camera."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Editing ethics, and how photography changed the world",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how an image can be altered and the ethical limits of editing;\n2. describe how photography has changed society, from photojournalism to social media.\n\n## Materials\n\nCase studies (the 1982 National Geographic pyramids cover; the 2003 Los Angeles Times Iraq composite by Brian Walski), the National Press Photographers Association code of ethics (summary), before-and-after examples, a society-and-photography timeline, the quiz.\n\n## Starter (6 minutes)\n\nShow two versions of a landscape photo, one natural and one with an added dramatic sky. Ask: \"Is the second one a lie? What if it appeared in a newspaper? In a gallery? In an ad?\" Discuss context.\n\n## Main activity\n\n1. Ways images are altered: cropping, color and tone adjustments, dodging and burning (lightening and darkening), retouching (removing blemishes or objects), compositing (combining images), staging, and now AI-generated or AI-edited images. Some changes are routine and expected; others change what the picture claims about reality.\n2. Ethical limits depend on context and honesty. Photojournalism and documentary work follow strict codes: the National Press Photographers Association code says to avoid altering the editorial content of photographs in ways that mislead. Cases: in 1982, National Geographic moved two Egyptian pyramids closer together by computer to fit a vertical cover; the editor later called it a mistake and the magazine changed its policy. In 2003, the photographer Brian Walski combined two frames of a British soldier in Iraq into one image for the Los Angeles Times; it was discovered and he was dismissed. Art and advertising allow more manipulation, but disclosure helps: label composites and AI-generated images; consider harm (misleading the public, body image).\n3. Photography changed society: photojournalism brought distant events to viewers (the Civil War photographs of Mathew Brady's studio, 1860s); Lewis Hine's photographs of child laborers (about 1908 to 1918) for the National Child Labor Committee helped build support for child labor laws; war and protest images shaped public opinion (for example, Nick Ut's 1972 photograph from the Vietnam War); family snapshots democratized memory; smartphones and social media let anyone publish instantly, which spreads news and creativity quickly but also misinformation and privacy risks.\n\n## Quiz\n\nAlterations, cases and impact.",
+   "reading": {
+    "title": "What you may change in a photograph, and what photographs have changed",
+    "content": "Every photograph is made by choices, but some **alterations** go further than others. Photographers **crop** to improve the frame and **adjust** brightness, contrast and color. In the darkroom, they used **dodging** (lightening) and **burning** (darkening) to guide the eye, and these remain common in editing software. **Retouching** removes blemishes, dust or objects. **Compositing** combines parts of several images into one. Staging arranges a scene before shooting, and today **AI tools** can generate or extensively alter images. Some changes are routine, and viewers expect them. Others change what the picture claims about reality.\n\nWhere is the **ethical limit**? It depends on the **context** and on **honesty**. In **photojournalism** and **documentary** work, readers trust that the image is a record, so the rules are strict. The code of ethics of the National Press Photographers Association says not to alter the editorial content of photographs in a way that misleads. Two famous cases show what is at stake. In **1982**, *National Geographic* used a computer to move two Egyptian pyramids closer together so that the picture would fit a vertical cover. The editor later admitted that it was a mistake, and the magazine changed its policy. In **2003**, the photographer **Brian Walski** combined two frames from Iraq, one of a British soldier and the other of civilians, into a single dramatic image for the *Los Angeles Times*. A reader noticed the duplicated figures, and Walski was dismissed. In **art** and **advertising**, viewers expect more manipulation, but honesty still matters: label composites and AI-generated images, and consider possible harm, such as misleading the public or creating unrealistic body images. A good test is: *Would the viewer feel deceived if they knew what I did?*\n\nPhotography has changed society in many ways. **Photojournalism** brought events from far away into people's homes, from the Civil War photographs published by **Mathew Brady's** studio in the 1860s to modern conflicts. **Lewis Hine's** photographs of child laborers, taken for the National Child Labor Committee from about 1908 to 1918, helped to build support for laws against child labor. Powerful images of war and protest, such as **Nick Ut's** 1972 photograph from the Vietnam War, shaped public opinion. **Snapshots** made it possible for ordinary families to keep their own memories. Now **smartphones and social media** allow anyone to publish instantly, which spreads news, creativity and connection very quickly, but also **misinformation** and risks to **privacy**. Every photographer today has a responsibility to think about what they share and how."
+   },
+   "cards": [
+    {
+     "front": "Dodging and burning",
+     "back": "Lightening and darkening parts of an image."
+    },
+    {
+     "front": "Retouching",
+     "back": "Removing blemishes or objects from an image."
+    },
+    {
+     "front": "Compositing",
+     "back": "Combining parts of several images into one."
+    },
+    {
+     "front": "Photojournalism",
+     "back": "Photography that reports news."
+    },
+    {
+     "front": "NPPA code of ethics",
+     "back": "Rules for press photographers about honesty."
+    },
+    {
+     "front": "Lewis Hine",
+     "back": "Photographer whose child labor images helped bring reform."
+    },
+    {
+     "front": "Misinformation",
+     "back": "False or misleading information."
+    },
+    {
+     "front": "Disclosure",
+     "back": "Telling viewers how an image was made or altered."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What did National Geographic do to its 1982 cover?",
+     "options": [
+      "Moved two pyramids closer together",
+      "Added color to a black-and-white photo",
+      "Removed a person",
+      "Added a moon"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Lewis Hine's photographs of child laborers helped build support for:",
+     "options": [
+      "Child labor laws",
+      "Space flight",
+      "Color film",
+      "Postage stamps"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which is a good test for editing ethics?",
+     "options": [
+      "Would the viewer feel deceived if they knew?",
+      "Is it popular?",
+      "Is it large?",
+      "Is it colorful?"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "In photojournalism, altering a photo to mislead is:",
+     "options": [
+      "Against ethics codes",
+      "Encouraged",
+      "Required",
+      "Irrelevant"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A downside of social media sharing is:",
+     "options": [
+      "Misinformation and privacy risks",
+      "No audience",
+      "Slower news",
+      "No images"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain the difference between acceptable edits and unethical alteration in photojournalism, using the 1982 National Geographic pyramids and the 2003 Brian Walski case as examples. Give two acceptable edits, say what made each case a violation, and explain how the rules differ for art or advertising.",
+     "markScheme": [
+      "Names two acceptable edits (such as cropping, exposure and color adjustments)",
+      "Explains the National Geographic pyramids case as a violation",
+      "Explains the Walski case as a violation of honesty",
+      "Explains that art and advertising allow more manipulation but disclosure and harm still matter"
+     ],
+     "modelAnswer": "Acceptable edits in photojournalism include cropping and adjusting exposure or color, because they do not change what happened. National Geographic moved two pyramids closer together in 1982, which changed what the picture claimed about the real scene, and the magazine called it a mistake. In 2003, Brian Walski combined two frames into a single image for the Los Angeles Times, which misled readers about a moment that never happened, and he was dismissed. Art and advertising allow more manipulation because viewers expect it, but labeling composites and avoiding harm still matter.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Acceptable edits in photojournalism include cropping and adjusting exposure or color, because they don't change what happened. National Geographic moving two pyramids closer in 1982 changed what the picture claimed about the real scene, and the magazine called it a mistake. In 2003 Brian Walski combined two frames into one image for the Los Angeles Times, which showed a moment that never happened, and he was dismissed. Art and advertising allow more manipulation because viewers expect it, but labeling composites and avoiding harm still matter.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Acceptable edits in photojournalism include cropping and adjusting exposure or color, because they don't change what happened."
+        },
+        {
+         "point": 1,
+         "quote": "National Geographic moving two pyramids closer in 1982 changed what the picture claimed about the real scene, and the magazine called it a mistake."
+        },
+        {
+         "point": 2,
+         "quote": "In 2003 Brian Walski combined two frames into one image for the Los Angeles Times, which showed a moment that never happened, and he was dismissed."
+        },
+        {
+         "point": 3,
+         "quote": "Art and advertising allow more manipulation because viewers expect it, but labeling composites and avoiding harm still matter."
+        }
+       ],
+       "feedback": "Full marks. The cases are described accurately and linked to honesty."
+      },
+      {
+       "tier": "full",
+       "text": "Minor tone and color corrections and a straight crop are fine for news. Moving the pyramids was a violation, since the cover implied that this is how the scene looks. Walski's composite invented a moment by merging two photographs, so readers were deceived and the newspaper fired him. For art or advertising, viewers know the picture may be changed, but it's still best to disclose composites or AI and avoid harm like unrealistic body images.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Minor tone and color corrections and a straight crop are fine for news."
+        },
+        {
+         "point": 1,
+         "quote": "Moving the pyramids was a violation, since the cover implied that this is how the scene looks."
+        },
+        {
+         "point": 2,
+         "quote": "Walski's composite invented a moment by merging two photographs, so readers were deceived and the newspaper fired him."
+        },
+        {
+         "point": 3,
+         "quote": "For art or advertising, viewers know the picture may be changed, but it's still best to disclose composites or AI and avoid harm like unrealistic body images."
+        }
+       ],
+       "feedback": "Full marks. Naming the harm in advertising is a thoughtful addition."
+      },
+      {
+       "tier": "partial",
+       "text": "Cropping is okay. Art can be edited more. The pyramids case was fine because it looked better, and Walski did nothing wrong.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Cropping is okay."
+        },
+        {
+         "point": 3,
+         "quote": "Art can be edited more."
+        }
+       ],
+       "feedback": "Both cases involved changes that misled readers about reality."
+      },
+      {
+       "tier": "partial",
+       "text": "National Geographic moved the pyramids in 1982. Walski combined two frames. Photojournalists may add anything to improve a photo.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "National Geographic moved the pyramids in 1982."
+        },
+        {
+         "point": 2,
+         "quote": "Walski combined two frames."
+        }
+       ],
+       "feedback": "Photojournalism codes forbid altering the content in ways that mislead.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "All editing is lying, so photographers should never edit at all.",
+       "meets": [],
+       "feedback": "Routine edits like cropping and exposure are accepted. Misleading alterations are the problem."
+      },
+      {
+       "tier": "weak",
+       "text": "There are no rules in photography, so anything goes.",
+       "meets": [],
+       "feedback": "Photojournalism has strict ethical codes about altering images."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe three ways that photography has changed society, using at least two specific examples from this week (such as Mathew Brady, Lewis Hine, Nick Ut or social media). Explain one benefit and one risk of today's instant sharing, and one habit you will use as a responsible photographer.",
+     "markScheme": [
+      "Describes three ways photography changed society",
+      "Uses at least two accurate specific examples",
+      "Explains one benefit and one risk of instant sharing",
+      "States a responsible habit"
+     ],
+     "modelAnswer": "Photography brought distant events to viewers, as with Mathew Brady's Civil War photographs in the 1860s. It helped win reforms, as Lewis Hine's photographs of child laborers did for child labor laws. It also democratized memory, since snapshots let ordinary families record their lives. Instant sharing on social media spreads news and creativity quickly, but also spreads misinformation and risks to privacy. As a responsible photographer, I will ask permission and think about how a photo might be used before I post.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Photography brought distant events to viewers, helped win reforms, and made family memory available to ordinary people through snapshots. Examples: Mathew Brady's Civil War photographs in the 1860s and Lewis Hine's photographs of child laborers, which helped build support for child labor laws. Instant sharing spreads news and creativity quickly, but also spreads misinformation and risks to privacy. As a responsible photographer I'll ask permission and think about how a photo might be used before I post.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Photography brought distant events to viewers, helped win reforms, and made family memory available to ordinary people through snapshots."
+        },
+        {
+         "point": 1,
+         "quote": "Examples: Mathew Brady's Civil War photographs in the 1860s and Lewis Hine's photographs of child laborers, which helped build support for child labor laws."
+        },
+        {
+         "point": 2,
+         "quote": "Instant sharing spreads news and creativity quickly, but also spreads misinformation and risks to privacy."
+        },
+        {
+         "point": 3,
+         "quote": "As a responsible photographer I'll ask permission and think about how a photo might be used before I post."
+        }
+       ],
+       "feedback": "Full marks. Three effects, accurate examples and a responsible habit."
+      },
+      {
+       "tier": "full",
+       "text": "It showed the public things they could not see, it influenced opinion about wars and injustice, and it made cameras available to everyone. Nick Ut's 1972 photo from the Vietnam War and Hine's child labor images are examples of images that shaped public opinion. Social media lets people share events right away, which is powerful, but false or edited images can spread just as fast. I'll check a photo's source before I share it and not post pictures of people without their consent.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It showed the public things they could not see, it influenced opinion about wars and injustice, and it made cameras available to everyone."
+        },
+        {
+         "point": 1,
+         "quote": "Nick Ut's 1972 photo from the Vietnam War and Hine's child labor images are examples of images that shaped public opinion."
+        },
+        {
+         "point": 2,
+         "quote": "Social media lets people share events right away, which is powerful, but false or edited images can spread just as fast."
+        },
+        {
+         "point": 3,
+         "quote": "I'll check a photo's source before I share it and not post pictures of people without their consent."
+        }
+       ],
+       "feedback": "Full marks. Checking the source is a vital habit."
+      },
+      {
+       "tier": "partial",
+       "text": "Photography made pictures. I'll be careful. Social media has only benefits, no risks, and nothing changed in society.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Photography made pictures."
+        },
+        {
+         "point": 3,
+         "quote": "I'll be careful."
+        }
+       ],
+       "feedback": "Photography has changed society in many ways, and sharing has risks such as misinformation."
+      },
+      {
+       "tier": "partial",
+       "text": "Lewis Hine photographed child laborers. Sharing spreads misinformation. Mathew Brady photographed the Vietnam War.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Lewis Hine photographed child laborers."
+        },
+        {
+         "point": 2,
+         "quote": "Sharing spreads misinformation."
+        }
+       ],
+       "feedback": "Mathew Brady's studio photographed the Civil War in the 1860s.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Photography changed nothing. People always knew everything.",
+       "meets": [],
+       "feedback": "Photographs brought distant events to people and shaped opinion."
+      },
+      {
+       "tier": "weak",
+       "text": "I should post any photo I take immediately without thinking.",
+       "meets": [],
+       "feedback": "Think about consent, privacy and accuracy before posting."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Copyright, permission and people's rights, and careers",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain copyright and permissions for images and the rights of the people photographed;\n2. explore careers in photography and visual communication.\n\n## Materials\n\nCase scenarios, a simplified model release form, examples of Creative Commons licenses, a careers chart, calculators, the problem set.\n\n## Starter (6 minutes)\n\nAsk: \"A classmate posts your photograph on a business page without asking. Is that okay? What would you want?\" Collect reactions.\n\n## Main activity\n\n1. Copyright: in the United States, copyright protection begins automatically when you create an original photograph and fix it in a file; the photographer is the owner unless the work is made for an employer (work for hire) or the right is transferred in writing. The owner controls copying, sharing, selling and making derivative works. To use someone else's photo: get permission or a license, use images in the public domain, or use Creative Commons-licensed images following the terms (for example, giving credit). \"Found on the internet\" does not mean free to use. Fair use is limited and judged case by case. Registration with the Copyright Office is generally required before a US work owner can file a lawsuit. Put your name in metadata and add a credit.\n2. Rights of people photographed: in public places in the US, people generally have no expectation of privacy, so you may usually photograph what is in public view, but using a person's image commercially (advertising, products) requires a signed model release. A property release applies to private property. Minors need a parent or guardian's consent. Ethics go beyond law: dignity, consent, sensitivity in difficult situations; ask yourself if the subject would object. Follow school and venue rules.\n3. Careers: photojournalist, portrait and wedding photographer, commercial and product photographer, photo editor, social media content creator, drone and aerial photographer, museum photographer, forensic photographer, visual designer. Skills: technical, creative, communication, business (pricing, contracts), time management. Pricing example: a $1,200 job requiring 8 hours of shooting and 6 hours of editing is 14 hours of work, $85.71 an hour before expenses.\n\n## Problem set\n\nCases about copyright and releases; compute a rate.",
+   "reading": {
+    "title": "Whose picture is it, and where can this lead?",
+    "content": "Who owns a photograph? In the United States, **copyright** protection begins **automatically** the moment you create an original photograph and save it. The **photographer** is the owner, unless the work was made for an employer (called **work for hire**) or the rights were transferred in writing. The owner decides who may copy, share, sell or adapt the image. That means that if you want to use someone else's photo, you need **permission** or a **license**, or the image must be in the **public domain**. Some photographers share their work under **Creative Commons** licenses, which allow certain uses if you follow the terms, such as giving credit. The fact that you **found an image online** does not make it free to use. **Fair use** is a narrow exception that is judged case by case, so do not assume it applies. In the United States, the owner of a US work generally needs to **register** with the Copyright Office before filing a lawsuit. To protect your own work, add your name to the file's **metadata**, include a credit when you post, and keep your originals.\n\nThe **people in your photographs** have rights and deserve respect, too. In public places in the United States, people generally have no expectation of privacy, so you can usually photograph what is in public view. But if you want to use a person's image for **commercial** purposes, such as advertising or selling a product, you need a signed **model release**. For private property, a **property release** may be needed. Photographing **minors** requires the consent of a parent or guardian. Ethics goes beyond the law: think about **dignity**, **consent** and sensitivity, especially when people are grieving, hurt or vulnerable. Ask yourself: *Would the subject object to this picture, or how I will use it?* Follow the rules of your school and of any venue.\n\nIf you love photography, there are many **careers**. A **photojournalist** reports news in images. **Portrait** and **wedding** photographers serve individuals and families. **Commercial** and **product** photographers make images for advertising and online stores. A **photo editor** selects and prepares images for publications. **Content creators** produce visuals for brands and social media. Others work as **drone** photographers, **museum** photographers or **forensic** photographers who document evidence. Visual communication also includes graphic design and video. Whatever the path, you need technical and creative skill, strong communication, time management, and, for freelancers, **business skills**. For instance, if a client pays $1,200 for a job that takes 8 hours of shooting and 6 hours of editing, that is 14 hours, and $1,200 / 14 is about $85.71 an hour, before subtracting expenses such as equipment, insurance and travel. Knowing your costs and rights helps you to price your work fairly and protect it."
+   },
+   "cards": [
+    {
+     "front": "Copyright",
+     "back": "Legal ownership of an original work, beginning on creation."
+    },
+    {
+     "front": "Work for hire",
+     "back": "Work made for an employer, owned by the employer."
+    },
+    {
+     "front": "Public domain",
+     "back": "Works that anyone may use freely."
+    },
+    {
+     "front": "Creative Commons",
+     "back": "Licenses that allow certain uses of a work."
+    },
+    {
+     "front": "Model release",
+     "back": "A signed permission to use a person's image commercially."
+    },
+    {
+     "front": "Metadata",
+     "back": "Information stored in a file, such as the creator's name."
+    },
+    {
+     "front": "Photojournalist",
+     "back": "A photographer who reports news."
+    },
+    {
+     "front": "Freelancer",
+     "back": "A self-employed worker paid per project."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "When does copyright protection of a photograph begin?",
+     "options": [
+      "When it is created and saved",
+      "When it is registered",
+      "When it is sold",
+      "After 20 years"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What do you need to use a person's image in an advertisement?",
+     "options": [
+      "A signed model release",
+      "Nothing",
+      "A frame",
+      "A hat"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "A job pays $1,200 for 14 total hours. What is the hourly rate?",
+     "options": [
+      "$60.00",
+      "$85.71",
+      "$100.00",
+      "$120.00"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Does finding an image online make it free to use?",
+     "options": [
+      "No",
+      "Yes, always",
+      "Only on weekends",
+      "Only for students"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "For photographing a minor, you should get:",
+     "options": [
+      "Consent from a parent or guardian",
+      "A tripod",
+      "A bigger lens",
+      "Nothing"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A business owner wants to use your portrait of a classmate in an advertisement for a gym. Explain who owns the copyright, what permissions are needed from the classmate and from you, what you would do if the classmate is 16, and how you would set the price if the job requires 3 hours of shooting and 5 hours of editing and you want to earn $40 an hour plus $60 for expenses.",
+     "markScheme": [
+      "Explains that the photographer owns the copyright and can license it",
+      "Explains that a signed model release is needed from the classmate for commercial use",
+      "Explains that a parent or guardian must consent for a 16-year-old",
+      "Calculates the price as 8 hours x $40 = $320 plus $60 = $380"
+     ],
+     "modelAnswer": "As the photographer, I own the copyright, so I decide whether and how to license the image. The classmate must give a signed model release because it will be used in an advertisement. Since the classmate is 16, a parent or guardian must also sign. For the price, 3 plus 5 is 8 hours at $40 an hour, which is $320, plus $60 for expenses, so I would charge $380.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "As the photographer, I own the copyright, so I decide whether and how to license the image. The classmate must give a signed model release because it's an advertisement. Since the classmate is 16, a parent or guardian must sign as well. The work is 3 + 5 = 8 hours at $40, which is $320, plus $60 for expenses, so $380.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "As the photographer, I own the copyright, so I decide whether and how to license the image."
+        },
+        {
+         "point": 1,
+         "quote": "The classmate must give a signed model release because it's an advertisement."
+        },
+        {
+         "point": 2,
+         "quote": "Since the classmate is 16, a parent or guardian must sign as well."
+        },
+        {
+         "point": 3,
+         "quote": "The work is 3 + 5 = 8 hours at $40, which is $320, plus $60 for expenses, so $380."
+        }
+       ],
+       "feedback": "Full marks. Rights, releases, the minor rule and the price are all correct."
+      },
+      {
+       "tier": "full",
+       "text": "I hold the copyright as the creator, and the business needs a license from me. Because the photo will advertise a business, I need a signed release from my classmate. At 16, the classmate is a minor, so a parent or guardian has to consent too. 8 hours × $40 = $320, plus $60 of expenses makes $380.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I hold the copyright as the creator, and the business needs a license from me."
+        },
+        {
+         "point": 1,
+         "quote": "Because the photo will advertise a business, I need a signed release from my classmate."
+        },
+        {
+         "point": 2,
+         "quote": "At 16, the classmate is a minor, so a parent or guardian has to consent too."
+        },
+        {
+         "point": 3,
+         "quote": "8 hours × $40 = $320, plus $60 of expenses makes $380."
+        }
+       ],
+       "feedback": "Full marks. The license is the right way for the business to use it."
+      },
+      {
+       "tier": "partial",
+       "text": "I own the copyright. The price is 8 × 40 = $320 plus $60, so $380. No release is needed because we're friends, and age doesn't matter.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I own the copyright."
+        },
+        {
+         "point": 3,
+         "quote": "The price is 8 × 40 = $320 plus $60, so $380."
+        }
+       ],
+       "feedback": "A commercial use needs a signed release, and a minor needs a parent or guardian's consent."
+      },
+      {
+       "tier": "partial",
+       "text": "A model release is needed. A guardian must sign. The gym owns the copyright because it paid, and the price is $40.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A model release is needed."
+        },
+        {
+         "point": 2,
+         "quote": "A guardian must sign."
+        }
+       ],
+       "feedback": "The photographer owns the copyright unless it is transferred in writing.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The photo is online, so the gym can use it for free.",
+       "meets": [],
+       "feedback": "A photo online is still protected by copyright."
+      },
+      {
+       "tier": "weak",
+       "text": "A model release is a type of fashion show.",
+       "meets": [],
+       "feedback": "A model release is signed permission to use a person's image commercially."
+      }
+     ]
+    },
+    {
+     "prompt": "Choose two photography or visual communication careers (for example photojournalist, wedding photographer, product photographer, photo editor or content creator). For each, describe what the person does and two skills needed, and explain a rights or ethics issue that each must handle. Then say which interests you more and one step you can take this year.",
+     "markScheme": [
+      "Describes the first career and two skills accurately",
+      "Describes the second career and two skills accurately",
+      "Explains a rights or ethics issue for each career (copyright, release, honesty, consent)",
+      "Says which interests the student and gives one concrete step"
+     ],
+     "modelAnswer": "A photojournalist reports news in images, needing quick thinking and honesty with the camera; the key ethics issue is not altering photos to mislead. A wedding photographer records one day for a family, needing people skills and reliable equipment; the key issue is the contract and who owns and may use the photos. I am more interested in photojournalism, and this year I can shoot for the school newspaper and build a portfolio.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A photojournalist reports news in images, needing quick thinking and technical skill; the ethics issue is never altering photos to mislead. A wedding photographer records a family's day, needing people skills and reliable equipment. For the wedding photographer, the key issue is the contract and who owns and may use the photos, including releases for guests. I'm more interested in photojournalism, and this year I can shoot for the school newspaper and build a portfolio.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A photojournalist reports news in images, needing quick thinking and technical skill; the ethics issue is never altering photos to mislead."
+        },
+        {
+         "point": 1,
+         "quote": "A wedding photographer records a family's day, needing people skills and reliable equipment."
+        },
+        {
+         "point": 2,
+         "quote": "For the wedding photographer, the key issue is the contract and who owns and may use the photos, including releases for guests."
+        },
+        {
+         "point": 3,
+         "quote": "I'm more interested in photojournalism, and this year I can shoot for the school newspaper and build a portfolio."
+        }
+       ],
+       "feedback": "Full marks. Both careers have skills and a relevant rights or ethics issue."
+      },
+      {
+       "tier": "full",
+       "text": "A product photographer makes images for online stores, needing lighting skills and attention to detail. A photo editor chooses and prepares images for publications, needing a good eye and good communication. The product photographer must agree who owns the images in a contract, and the editor must check permissions and credit and avoid misleading edits. The editor job interests me more, so I'll volunteer to edit the yearbook photos.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A product photographer makes images for online stores, needing lighting skills and attention to detail."
+        },
+        {
+         "point": 1,
+         "quote": "A photo editor chooses and prepares images for publications, needing a good eye and good communication."
+        },
+        {
+         "point": 2,
+         "quote": "The product photographer must agree who owns the images in a contract, and the editor must check permissions and credit and avoid misleading edits."
+        },
+        {
+         "point": 3,
+         "quote": "The editor job interests me more, so I'll volunteer to edit the yearbook photos."
+        }
+       ],
+       "feedback": "Full marks. Volunteering for the yearbook is a concrete step."
+      },
+      {
+       "tier": "partial",
+       "text": "A photojournalist takes news photos. I'll practice. Photographers have no skills or rules to follow.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A photojournalist takes news photos."
+        },
+        {
+         "point": 3,
+         "quote": "I'll practice."
+        }
+       ],
+       "feedback": "Name two skills for each career and an ethics or rights issue."
+      },
+      {
+       "tier": "partial",
+       "text": "A wedding photographer works with families and needs people skills. Ethics: don't alter photos to mislead. Photojournalists only work in studios.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A wedding photographer works with families and needs people skills."
+        },
+        {
+         "point": 2,
+         "quote": "Ethics: don't alter photos to mislead."
+        }
+       ],
+       "feedback": "Photojournalists report news, often in the field.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "There are no careers in photography. Everyone just uses their phone.",
+       "meets": [],
+       "feedback": "Photography and visual communication offer many careers."
+      },
+      {
+       "tier": "weak",
+       "text": "Freelancers have no costs, so all the pay is profit.",
+       "meets": [],
+       "feedback": "Freelancers have expenses such as equipment, insurance and travel."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

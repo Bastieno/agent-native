@@ -1,0 +1,2362 @@
+{
+ "subject": "Choir",
+ "yearGroup": "Grade 10",
+ "weeks": {
+  "1": {
+   "topic": "Voice parts, ranges and warm-ups for three-part singing",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. sing with correct posture, breath support and a healthy tone;\n2. warm up the voice with exercises for range, resonance and diction;\n3. sing your part in unison and in two-part or three-part harmony with accurate pitch.\n\n## Materials\n\nKeyboard, a range chart, copies of a three-part arrangement (SSA or SAB), the worksheet.\n\n## Starter (6 minutes)\n\nSiren from your lowest comfortable note to your highest and back. Ask: \"Where does your voice feel the most comfortable?\"\n\n## Main activity\n\n1. Voice parts: soprano and alto (higher voices), tenor and bass (lower voices). A voice part is chosen by the range where the voice is comfortable and the color of the tone. Teens may be changing, so some singers are baritones or midvoices.\n2. Warm-up routine: breath (hiss on eight counts), range (sirens and five-note scales), resonance (humming into \"ng\" and \"ah\"), diction (tongue twisters).\n3. Three-part singing: learn one line of a three-part arrangement. Sing alone on your part, then in pairs, then in the full group, listening to the chord.\n4. Voice care: during a voice change, sing in a comfortable range, do not push high or low, and ask for help.\n\n## Checking for understanding\n\nAsk: \"How do you find your best voice part?\" (By the range where the voice is comfortable and the tone is free.)\n\n## Exit ticket\n\nWrite the four voice parts from highest to lowest.",
+   "reading": {
+    "title": "Finding your voice part, and singing three parts",
+    "content": "A mixed choir is divided into **voice parts**. The higher parts are **soprano** and **alto**, and the lower parts are **tenor** and **bass**. A voice part is assigned according to the **range** where your voice is most comfortable, and the **color** or quality of your tone, not just how high or low you can force your voice to go. Some choirs also use three-part arrangements, such as **SSA** (two soprano lines and an alto), **SAB** (soprano, alto and bass) or **TTB** (two tenor lines and a bass).\n\nDuring your teen years your voice may change. This is natural, and it varies from person to person. If your voice is changing, sing in the range that feels comfortable, do not push for high or low notes, and talk to your director. Many singers find that the range moves several times, and some will be **baritones** or **midvoices** who sing in the middle between the higher and lower parts.\n\nA good **warm-up** gets your breath, range, resonance and diction ready. Begin with **breath**: a slow hiss for eight counts, then ten. Next, **range**: a siren, and a five-note scale that moves up and down by half steps. Then **resonance**: hum on \"ng,\" then open to \"ah,\" feeling the vibration in the front of your face. Last, **diction**: tongue twisters and crisp consonants. Sing quietly at first and increase the volume only when the voice is warm.\n\nWhen you sing in **three parts**, the biggest skill is listening. Learn your line alone first, on a neutral syllable, with the keyboard for support. Then sing it with a partner who has a different part, and hold your own line even when it differs from theirs. When the full group sings, listen for the **chord**, the sound made by all three parts together. A chord sounds best when all three notes are in tune and balanced. If the sound is harsh, check your pitch.\n\nLearning a part well means you can sing it with confidence in front of an audience, and that you can help others who sit near you."
+   },
+   "cards": [
+    {
+     "front": "Soprano",
+     "back": "The highest voice part."
+    },
+    {
+     "front": "Alto",
+     "back": "A lower female or boys' voice part, below the soprano."
+    },
+    {
+     "front": "Tenor",
+     "back": "A higher male voice part."
+    },
+    {
+     "front": "Bass",
+     "back": "The lowest voice part."
+    },
+    {
+     "front": "Baritone",
+     "back": "A middle male voice, between tenor and bass."
+    },
+    {
+     "front": "SAB",
+     "back": "A three-part arrangement for soprano, alto and bass."
+    },
+    {
+     "front": "Chord",
+     "back": "Three or more notes sounded together."
+    },
+    {
+     "front": "Voice change",
+     "back": "The natural change in the range and tone of a teenager's voice."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which list shows the voice parts from highest to lowest?",
+     "options": [
+      "Bass, tenor, alto, soprano",
+      "Soprano, alto, tenor, bass",
+      "Alto, soprano, bass, tenor",
+      "Tenor, soprano, bass, alto"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How should you choose your voice part?",
+     "options": [
+      "By the highest note you can reach",
+      "By the range where your voice is comfortable and the color of your tone",
+      "By your friends' choice",
+      "By your height"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What should you do if your voice is changing?",
+     "options": [
+      "Push hard to reach the high notes",
+      "Sing in a comfortable range and talk to your director",
+      "Stop singing forever",
+      "Only whisper"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A baritone sings:",
+     "options": [
+      "The highest part",
+      "In the middle between higher and lower male parts",
+      "Only solos",
+      "Only the melody"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In three-part singing, the most important skill is:",
+     "options": [
+      "Singing the loudest",
+      "Listening to the chord",
+      "Skipping rehearsals",
+      "Singing alone"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how a singer finds the right voice part and what to do if the voice is changing.",
+     "markScheme": [
+      "Says the part is chosen by comfortable range",
+      "Says the part is also chosen by the color of the tone",
+      "Says that during a voice change the singer should sing in a comfortable range and not push",
+      "Says to talk to the director or ask for help"
+     ],
+     "modelAnswer": "A voice part is chosen by the range where the voice is most comfortable and by the color of the tone. If the voice is changing, the singer should stay in a comfortable range and not push for high or low notes, and should talk to the director.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "You find the range where your voice feels comfortable. You also listen to the color of your tone, whether it is lighter or darker. If my voice is changing I sing where it is easy and do not push. I would tell my director.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "You find the range where your voice feels comfortable."
+        },
+        {
+         "point": 1,
+         "quote": "You also listen to the color of your tone, whether it is lighter or darker."
+        },
+        {
+         "point": 2,
+         "quote": "If my voice is changing I sing where it is easy and do not push."
+        },
+        {
+         "point": 3,
+         "quote": "I would tell my director."
+        }
+       ],
+       "feedback": "Full marks. All four points are accurate."
+      },
+      {
+       "tier": "full",
+       "text": "The part depends on where your voice is comfortable and free. Also the quality of the sound matters, not only how high you can go. With a changing voice you stay in a comfortable range and never strain. You ask the director for help.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The part depends on where your voice is comfortable and free."
+        },
+        {
+         "point": 1,
+         "quote": "Also the quality of the sound matters, not only how high you can go."
+        },
+        {
+         "point": 2,
+         "quote": "With a changing voice you stay in a comfortable range and never strain."
+        },
+        {
+         "point": 3,
+         "quote": "You ask the director for help."
+        }
+       ],
+       "feedback": "All four marks. Not straining during a voice change is the most important advice."
+      },
+      {
+       "tier": "partial",
+       "text": "By the notes you can sing comfortably. Ask the director.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "By the notes you can sing comfortably."
+        },
+        {
+         "point": 3,
+         "quote": "Ask the director."
+        }
+       ],
+       "feedback": "Add the color of the tone and what to do while the voice is changing."
+      },
+      {
+       "tier": "partial",
+       "text": "Where it is comfortable. If my voice is changing I should reach for higher notes to keep my range.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Where it is comfortable."
+        }
+       ],
+       "feedback": "Do not push for higher notes during a change, because that can strain the voice. Sing in a comfortable range."
+      },
+      {
+       "tier": "weak",
+       "text": "The director picks the part and it does not matter how it feels.",
+       "meets": [],
+       "feedback": "The director listens to find where the voice is comfortable. If a part is uncomfortable, you should say so."
+      },
+      {
+       "tier": "weak",
+       "text": "Everyone sings the highest part so it sounds good.",
+       "meets": [],
+       "feedback": "A choir needs all parts. Each singer is placed where their voice is comfortable."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe a routine for learning a new line in a three-part arrangement, from learning alone to singing with the whole group.",
+     "markScheme": [
+      "Learns the line alone first, on a neutral syllable",
+      "Sings it with a partner with a different part",
+      "Holds the line while listening to the other parts",
+      "Sings with the full group and listens for the chord"
+     ],
+     "modelAnswer": "First I learn my line alone on a neutral syllable with the keyboard. Then I sing it with a partner who has a different part. I hold my line while I listen to theirs. Then I sing with the full group and listen for the chord, checking that my pitch is in tune.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "I learn my line by myself on a vowel with the keyboard. Then I sing it with a partner on a different part. I keep my line even when it is different from theirs and listen. Then I sing with the whole group and listen for the chord.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "I learn my line by myself on a vowel with the keyboard."
+        },
+        {
+         "point": 1,
+         "quote": "Then I sing it with a partner on a different part."
+        },
+        {
+         "point": 2,
+         "quote": "I keep my line even when it is different from theirs and listen."
+        },
+        {
+         "point": 3,
+         "quote": "Then I sing with the whole group and listen for the chord."
+        }
+       ],
+       "feedback": "Full marks. Each step builds toward the full ensemble."
+      },
+      {
+       "tier": "full",
+       "text": "Learn it alone on a neutral syllable first. Pair up with someone on another part. Hold my part and listen to theirs. Join the group and tune the chord.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Learn it alone on a neutral syllable first."
+        },
+        {
+         "point": 1,
+         "quote": "Pair up with someone on another part."
+        },
+        {
+         "point": 2,
+         "quote": "Hold my part and listen to theirs."
+        },
+        {
+         "point": 3,
+         "quote": "Join the group and tune the chord."
+        }
+       ],
+       "feedback": "All four marks. A good order from solo to group."
+      },
+      {
+       "tier": "partial",
+       "text": "Learn it alone. Sing with the group.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Learn it alone."
+        },
+        {
+         "point": 3,
+         "quote": "Sing with the group."
+        }
+       ],
+       "feedback": "Add the step with a partner and the listening for the chord."
+      },
+      {
+       "tier": "partial",
+       "text": "Sing with a partner. Follow the other person's part.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Sing with a partner."
+        },
+        {
+         "point": 2,
+         "quote": "Follow the other person's part."
+        }
+       ],
+       "feedback": "Follow your own line, not theirs. Learn it alone first and hold it even when it differs."
+      },
+      {
+       "tier": "weak",
+       "text": "Wait for the others to sing and then copy them.",
+       "meets": [],
+       "feedback": "Copying means you do not learn your own line. Learn it first, then add the other parts."
+      },
+      {
+       "tier": "weak",
+       "text": "Sing as loudly as you can so you hear your part.",
+       "meets": [],
+       "feedback": "Loud singing makes it harder to hear the other parts. Sing at a moderate volume and listen to the chord."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Intervals, tuning chords and following a conductor in minor keys",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. match pitch and blend with the section in major and minor;\n2. follow a conductor's gestures for tempo, dynamics and cut-offs.\n\n## Materials\n\nKeyboard, an interval chart, a short minor-key piece, the worksheet.\n\n## Starter (6 minutes)\n\nSing a major triad (do, mi, sol) slowly and then change the middle note down a half step. Ask: \"What changed in the mood?\"\n\n## Main activity\n\n1. Intervals: the distance between two notes. A unison is the same note, a third has three letter names, a fifth five. Sing do-mi-sol and name the thirds and fifths.\n2. Minor chords: lower the third of a major triad by a half step to make a minor triad. Sing do-me-sol and notice the sadder sound. Tune the chords by listening for beats.\n3. Conductor gestures: fermata (hold), ritardando (slow), cut-off, and a hand that shows a crescendo or a decrescendo.\n4. Practice a short minor-key piece with ritardando and fermata, following the conductor.\n\n## Checking for understanding\n\nAsk: \"What does a fermata tell you?\" (Hold the note longer than written.)\n\n## Exit ticket\n\nName the notes of the A minor triad.",
+   "reading": {
+    "title": "Intervals, minor chords and watching more closely",
+    "content": "An **interval** is the distance between two notes. When two singers sing the same note, the interval is a **unison**. When they sing notes that are three letter names apart, such as C and E, the interval is a **third**. When they are five letter names apart, such as C and G, it is a **fifth**. Intervals can sound bright or dark depending on their type.\n\nA **triad** is a chord of three notes built from a root, a third and a fifth. In a **major triad**, such as C-E-G, the third is a major third above the root, and the sound is bright. A **minor triad** lowers the third by a half step, so C-E-flat-G. In solfege, do-mi-sol is major, and do-me-sol is minor. A minor chord sounds more serious or sad. Minor keys have their own key signatures: A minor has no sharps or flats, and D minor has one flat. Many beautiful choral songs are in minor keys.\n\nTo **tune a chord**, listen for **beats**, the wobble that happens when two pitches are slightly different. A good chord has very slow or no beats. In a major chord the third is often sung a little lower than the keyboard plays it, and the fifth a little higher. Your ear will learn this with practice. Always tune from the bottom up: the bass singers set the root, the middle voices fit to it, and the top voice matches.\n\nThe conductor has more than the beat to show. A **fermata** (a curved sign over a note) tells you to hold the note longer than its written length, until the conductor gives a cut-off. A **ritardando** is a gradual slowing down. A **crescendo** or **decrescendo** can be shown with the left hand rising or falling. A **cut-off** ends a note. Keep your eyes on the conductor, because many of these gestures are not written in the music.\n\nBy listening carefully and watching closely, you will make the choir's sound unified and expressive."
+   },
+   "cards": [
+    {
+     "front": "Interval",
+     "back": "The distance between two notes."
+    },
+    {
+     "front": "Third",
+     "back": "An interval spanning three letter names, such as C to E."
+    },
+    {
+     "front": "Fifth",
+     "back": "An interval spanning five letter names, such as C to G."
+    },
+    {
+     "front": "Major triad",
+     "back": "A chord with a root, a major third and a fifth."
+    },
+    {
+     "front": "Minor triad",
+     "back": "A chord with a root, a minor third and a fifth."
+    },
+    {
+     "front": "Fermata",
+     "back": "A sign telling you to hold a note longer."
+    },
+    {
+     "front": "Ritardando",
+     "back": "Gradually slowing down."
+    },
+    {
+     "front": "Cut-off",
+     "back": "A signal to stop a note together."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which chord is built do-me-sol in solfege?",
+     "options": [
+      "Major triad",
+      "Minor triad",
+      "A fermata",
+      "A cut-off"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What does a fermata tell you to do?",
+     "options": [
+      "Sing faster",
+      "Hold the note longer than written",
+      "Skip the note",
+      "Sing softly"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How many sharps or flats are in the key signature of A minor?",
+     "options": [
+      "None",
+      "One",
+      "Two",
+      "Three"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which interval is C to G?",
+     "options": [
+      "A third",
+      "A fourth",
+      "A fifth",
+      "A sixth"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "When tuning a chord, which voices do you tune first?",
+     "options": [
+      "The highest",
+      "The bass",
+      "The soloist",
+      "None"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain the difference between a major triad and a minor triad, and give the notes of the C major triad and the C minor triad.",
+     "markScheme": [
+      "Says that a minor triad has a lowered third",
+      "Says the major triad sounds bright and the minor sounds more serious or sad",
+      "Gives the C major triad: C E G",
+      "Gives the C minor triad: C E-flat G"
+     ],
+     "modelAnswer": "A minor triad lowers the third of the major triad by a half step. A major triad sounds bright and a minor triad sounds more serious or sad. The C major triad is C, E, G. The C minor triad is C, E-flat, G.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The minor triad has the third lowered by a half step. Major sounds bright and minor sounds sadder. C major is C, E, G. C minor is C, E-flat, G.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The minor triad has the third lowered by a half step."
+        },
+        {
+         "point": 1,
+         "quote": "Major sounds bright and minor sounds sadder."
+        },
+        {
+         "point": 2,
+         "quote": "C major is C, E, G."
+        },
+        {
+         "point": 3,
+         "quote": "C minor is C, E-flat, G."
+        }
+       ],
+       "feedback": "Full marks. The difference and both chords are correct."
+      },
+      {
+       "tier": "full",
+       "text": "To make it minor you lower the middle note a half step. Major is happy and bright and minor is darker. C E G. C E-flat G.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "To make it minor you lower the middle note a half step."
+        },
+        {
+         "point": 1,
+         "quote": "Major is happy and bright and minor is darker."
+        },
+        {
+         "point": 2,
+         "quote": "C E G."
+        },
+        {
+         "point": 3,
+         "quote": "C E-flat G."
+        }
+       ],
+       "feedback": "All four marks. Calling the third the middle note is a clear way to say it."
+      },
+      {
+       "tier": "partial",
+       "text": "C major is C E G. C minor is C E-flat G.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "C major is C E G."
+        },
+        {
+         "point": 3,
+         "quote": "C minor is C E-flat G."
+        }
+       ],
+       "feedback": "Both chords are right. Explain what changes between them and how they sound."
+      },
+      {
+       "tier": "partial",
+       "text": "Major is bright and minor is sad. C, E, G. The minor is C, D, G.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Major is bright and minor is sad."
+        },
+        {
+         "point": 2,
+         "quote": "C, E, G."
+        }
+       ],
+       "feedback": "Your major chord is right. For minor, lower the E to E-flat, not change it to D."
+      },
+      {
+       "tier": "weak",
+       "text": "A minor triad is smaller and quieter.",
+       "meets": [],
+       "feedback": "A minor triad is not smaller or quieter. The third is lowered a half step, which makes the sound darker."
+      },
+      {
+       "tier": "weak",
+       "text": "Major and minor are the same chord with different words.",
+       "meets": [],
+       "feedback": "They are different chords. The minor third gives the chord a different quality."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe what a conductor shows with a fermata, a ritardando and a cut-off, and what singers should do for each.",
+     "markScheme": [
+      "Says a fermata means hold the note and watch for the cut-off",
+      "Says a ritardando means gradually slow down together",
+      "Says a cut-off means stop the note at the same moment",
+      "Says singers should keep their eyes on the conductor"
+     ],
+     "modelAnswer": "At a fermata the conductor holds the note, and singers hold it until the cut-off. At a ritardando the conductor slows the beat, and singers slow down together. A cut-off tells the singers to stop at exactly the same moment. Throughout, the singers keep their eyes on the conductor.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A fermata means hold the note longer and wait for the cut-off. A ritardando means we slow down gradually together. A cut-off means we all stop at the same time. We keep our eyes on the conductor the whole time.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A fermata means hold the note longer and wait for the cut-off."
+        },
+        {
+         "point": 1,
+         "quote": "A ritardando means we slow down gradually together."
+        },
+        {
+         "point": 2,
+         "quote": "A cut-off means we all stop at the same time."
+        },
+        {
+         "point": 3,
+         "quote": "We keep our eyes on the conductor the whole time."
+        }
+       ],
+       "feedback": "Full marks. Each gesture is described with the singers' action."
+      },
+      {
+       "tier": "full",
+       "text": "Hold the note until the conductor ends it. Slow down with the conductor's beat. Stop exactly when the hand closes. That means watching the conductor, not the music.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Hold the note until the conductor ends it."
+        },
+        {
+         "point": 1,
+         "quote": "Slow down with the conductor's beat."
+        },
+        {
+         "point": 2,
+         "quote": "Stop exactly when the hand closes."
+        },
+        {
+         "point": 3,
+         "quote": "That means watching the conductor, not the music."
+        }
+       ],
+       "feedback": "All four marks. Watching, not the music, is the most important habit."
+      },
+      {
+       "tier": "partial",
+       "text": "Fermata is hold. Cut-off is stop.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Fermata is hold."
+        },
+        {
+         "point": 2,
+         "quote": "Cut-off is stop."
+        }
+       ],
+       "feedback": "Add the ritardando and say that singers keep their eyes on the conductor."
+      },
+      {
+       "tier": "partial",
+       "text": "A ritardando means slow down. Watch the conductor.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A ritardando means slow down."
+        },
+        {
+         "point": 3,
+         "quote": "Watch the conductor."
+        }
+       ],
+       "feedback": "Add the fermata and the cut-off and what the singers do for each."
+      },
+      {
+       "tier": "weak",
+       "text": "A fermata means to sing it very loudly.",
+       "meets": [],
+       "feedback": "A fermata means to hold the note longer than written. It does not tell you the volume."
+      },
+      {
+       "tier": "weak",
+       "text": "The conductor does not matter if I know the music.",
+       "meets": [],
+       "feedback": "Many gestures are not written, so you need to watch the conductor to stay together."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Small-ensemble singing, and songs in German and Hebrew",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. sing a short solo or small-group part with confidence;\n2. perform songs in different languages with correct pronunciation.\n\n## Materials\n\nA short German or Hebrew choral piece with a pronunciation guide, a recording by native speakers, a trio or quartet score, the quiz.\n\n## Starter (6 minutes)\n\nSay aloud a phrase in German such as \"Ich liebe dich\" (I love you) and a phrase in Hebrew such as \"Shalom\" (peace). Ask: \"What sounds are new in your mouth?\"\n\n## Main activity\n\n1. Quartets and trios: form groups of three or four and learn a short passage. Sing it with no director, listening to each other, and giving a start signal with a breath.\n2. German pronunciation: the \"ch\" sound in \"ich\" is made with the tongue near the roof of the mouth; the umlaut \"ü\" is made by saying \"ee\" with rounded lips. The vowel \"ei\" sounds like \"eye.\"\n3. Hebrew pronunciation: vowels are pure, the \"ch\" is a throat sound as in \"challah,\" and \"shalom\" has the stress on the last syllable.\n4. Perform for another group and give feedback with one thing that worked and one goal.\n\n## Checking for understanding\n\nAsk: \"What does 'shalom' mean?\" (Peace.)\n\n## Exit ticket\n\nWrite the meaning of a line in the song we are learning and one pronunciation tip.",
+   "reading": {
+    "title": "Singing without a director, and in new languages",
+    "content": "In a small group such as a trio or quartet, there is often **no conductor**. The singers must listen and lead each other. Before singing, face each other so that you can see each person. One singer gives a **start signal**: a quiet breath in the tempo, with a small nod. Everyone breathes together and enters on the beat. During the music, keep your eyes up, listen to each part and match the dynamics. If the group gets out of tune, adjust your pitch to the bass.\n\nChoral music is sung in many languages, and each one adds new sounds. German is common in classical choral music, because composers such as Bach, Brahms and Mendelssohn wrote in it. Here are three guides. The letters **ch** after a front vowel, as in **ich** (\"I\"), is made with the tongue close to the roof of the mouth, a soft hissing sound. The **ü** (u with an umlaut) is made by saying \"ee\" with your lips rounded as if to say \"oo.\" The **ei** combination sounds like the English word \"eye,\" as in \"mein\" (\"my\"). For example, \"Ich liebe dich\" means \"I love you.\"\n\nHebrew is used in many songs from Jewish tradition. Hebrew vowels are **pure** and consistent, like Latin and Spanish. The **ch** sound (written \"ch\" or \"kh\") is made in the throat, as in the word \"challah\" or the name \"Bach.\" A well-known word is **shalom**, which means \"peace\" and is also a greeting. In \"shalom,\" the stress is on the last syllable: sha-LOM.\n\nAs with every language, **learn the meaning** of the words. Ask a speaker or a teacher, listen to a recording, and write the translation under the text. Mark the places where the stress falls, and say the words in rhythm before you add the notes.\n\nSinging in another language is also a way to build respect for other cultures. When you pronounce a language carefully, you show that you care about the people who speak it."
+   },
+   "cards": [
+    {
+     "front": "Start signal",
+     "back": "A breath and nod that shows a small group when to begin."
+    },
+    {
+     "front": "Trio",
+     "back": "A group of three singers."
+    },
+    {
+     "front": "Quartet",
+     "back": "A group of four singers."
+    },
+    {
+     "front": "ich",
+     "back": "German for 'I', with a soft 'ch' sound."
+    },
+    {
+     "front": "ü",
+     "back": "A German vowel made with 'ee' and rounded lips."
+    },
+    {
+     "front": "shalom",
+     "back": "Hebrew for 'peace', stressed on the last syllable."
+    },
+    {
+     "front": "ch (Hebrew)",
+     "back": "A sound made in the throat, as in 'challah'."
+    },
+    {
+     "front": "Translation",
+     "back": "The meaning of the words in your own language."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What does 'shalom' mean?",
+     "options": [
+      "Hello only",
+      "Peace",
+      "Song",
+      "Music"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How does a small group begin without a conductor?",
+     "options": [
+      "Everyone starts at a different time",
+      "One singer gives a start signal with a breath",
+      "They shout",
+      "They wait a minute"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The German 'ei' as in 'mein' sounds like:",
+     "options": [
+      "Ee",
+      "Eye",
+      "Ay",
+      "Oh"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which composer wrote choral music in German?",
+     "options": [
+      "Bach",
+      "Sousa",
+      "Gershwin",
+      "Copland"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Why should you learn the meaning of foreign words in a song?",
+     "options": [
+      "To sing with understanding and feeling",
+      "To make the song longer",
+      "It is not necessary",
+      "To sing faster"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain how a trio can start and sing together without a conductor.",
+     "markScheme": [
+      "Says singers face each other so they can see one another",
+      "Says one singer gives a start signal with a breath and nod",
+      "Says everyone breathes and enters together on the beat",
+      "Says they keep listening and tune to the bass during the music"
+     ],
+     "modelAnswer": "The singers face each other so they can see each person. One singer gives a start signal with a breath and a nod, and everyone breathes together and enters on the beat. During the music they listen to each other and tune to the bass.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "We stand facing each other so we can see everybody. One person gives a start signal, a breath and a small nod. We all breathe together and start on the beat. We keep listening and tune to the bass.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "We stand facing each other so we can see everybody."
+        },
+        {
+         "point": 1,
+         "quote": "One person gives a start signal, a breath and a small nod."
+        },
+        {
+         "point": 2,
+         "quote": "We all breathe together and start on the beat."
+        },
+        {
+         "point": 3,
+         "quote": "We keep listening and tune to the bass."
+        }
+       ],
+       "feedback": "Full marks. All four parts of the routine are clear."
+      },
+      {
+       "tier": "full",
+       "text": "Make a small circle so we see each other. The leader breathes in the tempo with a nod. We start together with that breath. While singing we listen to the bass voice to stay in tune.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Make a small circle so we see each other."
+        },
+        {
+         "point": 1,
+         "quote": "The leader breathes in the tempo with a nod."
+        },
+        {
+         "point": 2,
+         "quote": "We start together with that breath."
+        },
+        {
+         "point": 3,
+         "quote": "While singing we listen to the bass voice to stay in tune."
+        }
+       ],
+       "feedback": "All four marks. Choosing a leader for the start is key."
+      },
+      {
+       "tier": "partial",
+       "text": "One person gives a signal. We all start.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "One person gives a signal."
+        },
+        {
+         "point": 2,
+         "quote": "We all start."
+        }
+       ],
+       "feedback": "Add how the group is arranged and how it stays together during the song."
+      },
+      {
+       "tier": "partial",
+       "text": "Face each other. Listen to the bass.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Face each other."
+        },
+        {
+         "point": 3,
+         "quote": "Listen to the bass."
+        }
+       ],
+       "feedback": "Add the start signal and breathing together on the beat."
+      },
+      {
+       "tier": "weak",
+       "text": "Everyone starts when they feel ready.",
+       "meets": [],
+       "feedback": "Without a signal the group will not start together. One singer gives a breath and a nod."
+      },
+      {
+       "tier": "weak",
+       "text": "A small group cannot sing without a conductor.",
+       "meets": [],
+       "feedback": "Small groups sing without a conductor by watching and listening to each other, with a start signal."
+      }
+     ]
+    },
+    {
+     "prompt": "Give two pronunciation tips for a language you are singing in, and explain how learning the meaning of the words changes how you sing.",
+     "markScheme": [
+      "Gives a first correct pronunciation tip",
+      "Gives a second correct pronunciation tip",
+      "Says that learning the meaning helps you sing with understanding",
+      "Says that your voice and expression match the words' feeling"
+     ],
+     "modelAnswer": "In German, ei sounds like eye and ich has a soft ch with the tongue near the roof of the mouth. When I know the meaning of the words, I sing with understanding, and my voice and expression match the feeling of the words.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "In German, ei sounds like eye. The ch in ich is a soft sound made with the tongue near the roof of the mouth. When I know what the words mean, I understand what I am singing. My expression matches the feeling of the words.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In German, ei sounds like eye."
+        },
+        {
+         "point": 1,
+         "quote": "The ch in ich is a soft sound made with the tongue near the roof of the mouth."
+        },
+        {
+         "point": 2,
+         "quote": "When I know what the words mean, I understand what I am singing."
+        },
+        {
+         "point": 3,
+         "quote": "My expression matches the feeling of the words."
+        }
+       ],
+       "feedback": "Full marks. Both tips are accurate and your explanation is clear."
+      },
+      {
+       "tier": "full",
+       "text": "In Hebrew the vowels are pure like in Latin. The ch is made in the throat. Knowing that shalom means peace changes how I sing it. I sing it gently and with feeling.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "In Hebrew the vowels are pure like in Latin."
+        },
+        {
+         "point": 1,
+         "quote": "The ch is made in the throat."
+        },
+        {
+         "point": 2,
+         "quote": "Knowing that shalom means peace changes how I sing it."
+        },
+        {
+         "point": 3,
+         "quote": "I sing it gently and with feeling."
+        }
+       ],
+       "feedback": "All four marks. Linking the meaning to a gentle sound is exactly right."
+      },
+      {
+       "tier": "partial",
+       "text": "Ei sounds like eye. Knowing the meaning helps.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Ei sounds like eye."
+        },
+        {
+         "point": 2,
+         "quote": "Knowing the meaning helps."
+        }
+       ],
+       "feedback": "Add a second pronunciation tip and say how the meaning changes your expression."
+      },
+      {
+       "tier": "partial",
+       "text": "The ch is in the throat. My expression matches.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The ch is in the throat."
+        },
+        {
+         "point": 3,
+         "quote": "My expression matches."
+        }
+       ],
+       "feedback": "Add a first tip and explain that understanding the words helps you sing with meaning."
+      },
+      {
+       "tier": "weak",
+       "text": "Pronunciation does not matter if the notes are right.",
+       "meets": [],
+       "feedback": "Pronunciation is an important part of singing in another language, and shows respect."
+      },
+      {
+       "tier": "weak",
+       "text": "I just say the words as they look in English.",
+       "meets": [],
+       "feedback": "Languages have their own sounds. Use the guide and a recording to pronounce them correctly."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "A concert plan with a featured ensemble, and a vocal practice log",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. prepare for a concert, including stage behavior and a performance plan;\n2. keep a practice log and set goals for your voice.\n\n## Materials\n\nA concert calendar, an order-of-program template, practice logs, the problem set.\n\n## Starter (6 minutes)\n\nLook at a sample concert program with a featured small ensemble. Ask: \"Why might the director place the small group in the middle?\"\n\n## Main activity\n\n1. Program order: open with a strong, lively piece; place slower, quieter pieces and the featured ensemble in the middle; end with an exciting piece. Calculate the total running time, including about 30 seconds between songs.\n2. Stage plan: place voice parts so the sound blends and the singers can see the conductor. Practice moving to risers in order and silently.\n3. Concert health: warm up, hydrate, avoid dairy and caffeine just before singing if they trouble you, and rest the voice the day before.\n4. Practice log: weekly goals and daily entries, and a Friday review.\n\n## Checking for understanding\n\nAsk: \"Why do we stand in a specific order on the risers?\" (So the voice parts blend and everyone can see the conductor.)\n\n## Exit ticket\n\nWrite the order of a four-song program and the total time.",
+   "reading": {
+    "title": "Building a concert, and looking after the voice that performs it",
+    "content": "A concert program is like a story with a beginning, a middle and an end. A good order begins with a **strong, lively piece** to get the audience's attention. The middle includes **contrast**: a slower, quieter piece, a piece in a different language, or a **featured ensemble**, a small group such as a quartet or the chamber choir. The program ends with an **exciting finale**. Each piece should be different in tempo and mood from the one before.\n\nTo plan the time, add the length of each piece and the time between them. If a program has four pieces of 3, 4, 3 and 5 minutes, that is 15 minutes of music. With about 30 seconds between songs for the singers and conductor to settle, there are three pauses of 30 seconds, or 1.5 minutes, so the total is 16.5 minutes.\n\nThe **stage plan** places the voice parts. Many choirs put sopranos and altos on one side and tenors and basses on the other, or mix the parts so that each singer is next to someone on a different part, which helps singers to keep their own line. Everyone should see the conductor. **Risers** are steps that let the back rows be seen and heard. Practice walking on and off in order and without talking.\n\nOn concert days, protect your voice. **Warm up** carefully, and drink water through the day. Some singers find that milk products or caffeine just before singing make their throat feel unsettled, so they avoid them. Avoid yelling or whispering, which strain the voice, and get enough sleep. If you are sick, tell your director.\n\nA **practice log** keeps you on track. At the start of each week, write one goal, such as \"learn the German text of verse 2 with no mistakes.\" Each day, write the date, minutes and what you did. On Friday, review: did you meet your goal? What will you change next week?\n\nWhen every singer prepares carefully, the concert becomes a team achievement."
+   },
+   "cards": [
+    {
+     "front": "Program",
+     "back": "The list and order of pieces in a concert."
+    },
+    {
+     "front": "Contrast",
+     "back": "Differences in tempo, mood or style between pieces."
+    },
+    {
+     "front": "Featured ensemble",
+     "back": "A small group highlighted in a concert."
+    },
+    {
+     "front": "Finale",
+     "back": "The last piece of a concert."
+    },
+    {
+     "front": "Risers",
+     "back": "Steps on which a choir stands so that all can see and be seen."
+    },
+    {
+     "front": "Hydrate",
+     "back": "Drink enough water."
+    },
+    {
+     "front": "Weekly goal",
+     "back": "A goal for one week, leading to a larger goal."
+    },
+    {
+     "front": "Review",
+     "back": "Looking back at a log to see progress."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A good program usually ends with:",
+     "options": [
+      "A quiet piece with no energy",
+      "An exciting finale",
+      "A speech",
+      "Silence"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Four pieces of 3, 4, 3 and 5 minutes with 30 seconds between songs last how long?",
+     "options": [
+      "15 minutes",
+      "16 minutes",
+      "16.5 minutes",
+      "18 minutes"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Why mix voice parts on the risers?",
+     "options": [
+      "It helps singers keep their own line by standing next to different parts",
+      "It is required by law",
+      "It makes the choir louder",
+      "It saves space"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which habit protects your voice on concert day?",
+     "options": [
+      "Yelling at lunch",
+      "Warming up carefully and drinking water",
+      "Not sleeping",
+      "Singing loudly all day"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A weekly goal in a practice log should be:",
+     "options": [
+      "Specific and measurable",
+      "Vague",
+      "Impossible",
+      "Written by someone else"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Plan a four-piece concert program. Give each piece a length and a mood, explain the order, and find the total time including 30 seconds between songs.",
+     "markScheme": [
+      "Lists four pieces with lengths and moods",
+      "Opens with a strong, lively piece",
+      "Includes contrast or a featured ensemble in the middle and an exciting finale",
+      "Calculates the total time correctly including the pauses"
+     ],
+     "modelAnswer": "1. A lively folk song, 3 minutes. 2. A slow Latin piece, 4 minutes. 3. A featured quartet, 3 minutes. 4. An exciting spiritual arrangement, 5 minutes. The program starts and ends strong, with contrast in the middle. The music is 15 minutes and there are three pauses of 30 seconds, so the total is 16.5 minutes.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "1. Lively folk song, 3 min. 2. Slow Latin piece, 4 min. 3. A quartet, 3 min. 4. An exciting spiritual, 5 min. We open with a lively song. The slow piece and the quartet give contrast and the spiritual is the finale. 3 + 4 + 3 + 5 = 15, plus 1.5 minutes of pauses is 16.5 minutes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "1. Lively folk song, 3 min. 2. Slow Latin piece, 4 min. 3. A quartet, 3 min. 4. An exciting spiritual, 5 min."
+        },
+        {
+         "point": 1,
+         "quote": "We open with a lively song."
+        },
+        {
+         "point": 2,
+         "quote": "The slow piece and the quartet give contrast and the spiritual is the finale."
+        },
+        {
+         "point": 3,
+         "quote": "3 + 4 + 3 + 5 = 15, plus 1.5 minutes of pauses is 16.5 minutes."
+        }
+       ],
+       "feedback": "Full marks. A well-shaped program with correct arithmetic."
+      },
+      {
+       "tier": "full",
+       "text": "A fast song (4 min), a gentle song (3 min), a featured trio (3 min) and a fast closer (5 min). The fast opener gets attention. A gentle song and a trio add contrast, and the closer ends strong. 15 minutes + 3 pauses of 30 seconds = 16.5 minutes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A fast song (4 min), a gentle song (3 min), a featured trio (3 min) and a fast closer (5 min)."
+        },
+        {
+         "point": 1,
+         "quote": "The fast opener gets attention."
+        },
+        {
+         "point": 2,
+         "quote": "A gentle song and a trio add contrast, and the closer ends strong."
+        },
+        {
+         "point": 3,
+         "quote": "15 minutes + 3 pauses of 30 seconds = 16.5 minutes."
+        }
+       ],
+       "feedback": "All four marks. The pauses are counted properly."
+      },
+      {
+       "tier": "partial",
+       "text": "3 min lively, 4 min slow, 3 min quartet, 5 min fast. 15 minutes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3 min lively, 4 min slow, 3 min quartet, 5 min fast."
+        },
+        {
+         "point": 3,
+         "quote": "15 minutes."
+        }
+       ],
+       "feedback": "The pieces and the music time are right. Add the order explanation and the pauses, for 16.5 minutes."
+      },
+      {
+       "tier": "partial",
+       "text": "Four slow songs of 4 minutes each. 16 plus 1.5 is 17.5 minutes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Four slow songs of 4 minutes each."
+        },
+        {
+         "point": 3,
+         "quote": "16 plus 1.5 is 17.5 minutes."
+        }
+       ],
+       "feedback": "The arithmetic is right, but four slow songs have no contrast. Add a lively opener and finale."
+      },
+      {
+       "tier": "weak",
+       "text": "I will put the songs in any order.",
+       "meets": [],
+       "feedback": "The order shapes the concert. Start strong, add contrast in the middle and end with a finale."
+      },
+      {
+       "tier": "weak",
+       "text": "The concert is four songs, so four minutes.",
+       "meets": [],
+       "feedback": "Add the length of each song and the time between them to find the total."
+      }
+     ]
+    },
+    {
+     "prompt": "Write a weekly goal and three daily log entries for a week of vocal practice, and explain how you will review them on Friday.",
+     "markScheme": [
+      "States a specific weekly goal",
+      "Gives three daily entries with date, minutes and task",
+      "Shows progress toward the goal across the entries",
+      "Explains how to review on Friday and adjust"
+     ],
+     "modelAnswer": "Weekly goal: sing measures 9 to 24 with the correct notes and German words, three times in a row without mistakes. Monday, 15 minutes, notes with the keyboard. Wednesday, 15 minutes, the German words alone. Thursday, 15 minutes, notes and words together. On Friday I will check whether I met the goal and adjust my plan if not.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Goal: sing measures 9 to 24 with the right notes and words three times in a row. Monday 15 min notes with the keyboard. Wednesday 15 min German words. Thursday 15 min both. Each day builds toward the goal. On Friday I will sing it three times and see if I met the goal, then change my plan if not.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Goal: sing measures 9 to 24 with the right notes and words three times in a row."
+        },
+        {
+         "point": 1,
+         "quote": "Monday 15 min notes with the keyboard. Wednesday 15 min German words. Thursday 15 min both."
+        },
+        {
+         "point": 2,
+         "quote": "Each day builds toward the goal."
+        },
+        {
+         "point": 3,
+         "quote": "On Friday I will sing it three times and see if I met the goal, then change my plan if not."
+        }
+       ],
+       "feedback": "Full marks. The entries lead step by step to the goal."
+      },
+      {
+       "tier": "full",
+       "text": "Goal: memorize verse 2. Mon 10 min first half, Tue 10 min second half, Thu 12 min all of it. Each entry adds more. Friday I will test myself and decide what to practice next week.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Goal: memorize verse 2."
+        },
+        {
+         "point": 1,
+         "quote": "Mon 10 min first half, Tue 10 min second half, Thu 12 min all of it."
+        },
+        {
+         "point": 2,
+         "quote": "Each entry adds more."
+        },
+        {
+         "point": 3,
+         "quote": "Friday I will test myself and decide what to practice next week."
+        }
+       ],
+       "feedback": "All four marks. Breaking the verse into halves is a smart plan."
+      },
+      {
+       "tier": "partial",
+       "text": "My goal is to know the song. Monday 10 minutes.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "My goal is to know the song."
+        },
+        {
+         "point": 1,
+         "quote": "Monday 10 minutes."
+        }
+       ],
+       "feedback": "Make the goal more specific, add two more entries and explain the Friday review."
+      },
+      {
+       "tier": "partial",
+       "text": "On Friday I will look at my log. I will practice on three days.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "On Friday I will look at my log."
+        },
+        {
+         "point": 1,
+         "quote": "I will practice on three days."
+        }
+       ],
+       "feedback": "Add a specific goal and details for each entry."
+      },
+      {
+       "tier": "weak",
+       "text": "I do not need a log, I just sing.",
+       "meets": [],
+       "feedback": "A log shows progress and helps you plan. Write a goal and some entries."
+      },
+      {
+       "tier": "weak",
+       "text": "My goal is to practice a lot.",
+       "meets": [],
+       "feedback": "A lot is not measurable. Name the passage and how you will know you have learned it."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Reading in minor keys, sight-singing with intervals, and a Renaissance madrigal",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. read notation in major and minor keys, including key and time signatures, rhythm and solfege;\n2. sight-sing a short melodic pattern with intervals;\n3. describe the text, mood and style of a piece we are learning.\n\n## Materials\n\nStaff paper, hand signs, a sight-singing example in A minor, a score of a simple madrigal, the worksheet.\n\n## Starter (6 minutes)\n\nClap and say a rhythm in 6/8 (\"ta-ti-ti ta-ti-ti\"). Ask: \"How is this different from 4/4?\"\n\n## Main activity\n\n1. Minor solfege: in a minor key with la as the tonic, the scale is la, ti, do, re, mi, fa, sol, la. Sing it with hand signs. Compare A minor to C major, its relative major.\n2. Intervals in sight-singing: sing do-mi (a third), do-sol (a fifth) and do-do (an octave). Use these as anchors to find other notes.\n3. Sight-singing routine for minor: find la, check the key signature (A minor has none), tap the rhythm, sing the solfege and then the text.\n4. The madrigal: a secular piece from the Renaissance for several voices, about love, nature and humor. Listen to \"Now is the Month of Maying\" by Thomas Morley (1595) and describe the text and mood.\n\n## Checking for understanding\n\nAsk: \"What is la in A minor?\" (The tonic, the note A.)\n\n## Exit ticket\n\nWrite the solfege for the A natural minor scale.",
+   "reading": {
+    "title": "Singing in minor, reading intervals and a song from the Renaissance",
+    "content": "So far you have sung mostly in **major keys**, where **do** is the tonic. In a **minor key**, the tonic is **la**. The A natural minor scale in solfege is **la, ti, do, re, mi, fa, sol, la**. It has the same notes as C major, which is its **relative major**, but starts and ends on A. A minor has no sharps or flats in the key signature. Singing with **hand signs** helps you to see and feel each pitch.\n\n**Intervals** give you anchors for reading melodies. Learn the sound of a few: a **third** (do to mi) is bright and small, a **fifth** (do to sol) is open and strong, and an **octave** (do to high do) is the same note an octave higher. When you see a leap in a melody, ask yourself which interval it is, and think of the sound you know.\n\nFor **sight-singing** in a minor key, use the routine you know, with a small change. Find **la** by looking at the key signature and the first and last notes. Check the **time signature**, tap the rhythm, and sing the **solfege**. Sometimes a melody has a raised seventh, called **si** or sometimes written as a sharp, as in the harmonic minor. Check for accidentals before you start.\n\nA **madrigal** is a secular (non-religious) song for several voices, written in the **Renaissance**, from about 1400 to 1600. Madrigals were sung for pleasure by small groups of friends, with each singer on a part. The texts were about love, nature, humor and the seasons. Composers often used **word painting**: setting a word so that the music suggests its meaning, such as a rising line for \"ascend\" or a quick, light run for \"dancing.\" The English composer **Thomas Morley** published \"Now is the Month of Maying\" in 1595. It is a lively, dance-like piece with a **fa-la-la** refrain in several voices. Notice the cheerful mood and the way the voices answer each other.\n\nWhen you describe a piece, name the **text**, the **mood** and the **style**. A madrigal is a Renaissance secular style with word painting and independent voice parts."
+   },
+   "cards": [
+    {
+     "front": "Minor tonic",
+     "back": "In solfege, la is the tonic of a minor key."
+    },
+    {
+     "front": "Relative major",
+     "back": "The major key that shares a key signature with a minor key."
+    },
+    {
+     "front": "Third",
+     "back": "An interval of three letter names, such as do to mi."
+    },
+    {
+     "front": "Fifth",
+     "back": "An interval of five letter names, such as do to sol."
+    },
+    {
+     "front": "Madrigal",
+     "back": "A Renaissance secular song for several voices."
+    },
+    {
+     "front": "Renaissance",
+     "back": "The period of European history from about 1400 to 1600."
+    },
+    {
+     "front": "Word painting",
+     "back": "Setting music so that it suggests the meaning of a word."
+    },
+    {
+     "front": "Secular",
+     "back": "Not religious."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In a minor key, which solfege syllable is the tonic?",
+     "options": [
+      "Do",
+      "Re",
+      "La",
+      "Sol"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the relative major of A minor?",
+     "options": [
+      "G major",
+      "C major",
+      "E major",
+      "F major"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A madrigal is:",
+     "options": [
+      "A Renaissance secular song for several voices",
+      "A hymn only for church",
+      "A solo instrumental piece",
+      "A march"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Word painting is:",
+     "options": [
+      "Writing words with paint",
+      "Setting music so it suggests the meaning of a word",
+      "Painting the stage",
+      "Singing very softly"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which interval is do to sol?",
+     "options": [
+      "Third",
+      "Fourth",
+      "Fifth",
+      "Octave"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write the A natural minor scale in solfege and in letter names, and explain how it is related to C major.",
+     "markScheme": [
+      "Writes solfege la ti do re mi fa sol la",
+      "Writes letter names A B C D E F G A",
+      "Says A minor and C major share the same notes and key signature",
+      "Says A minor starts and ends on A, so the tonic is different"
+     ],
+     "modelAnswer": "In solfege: la, ti, do, re, mi, fa, sol, la. In letters: A, B, C, D, E, F, G, A. A minor is the relative minor of C major: they share the same notes and key signature, but A minor starts and ends on A, so its tonic is different.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "la ti do re mi fa sol la. A B C D E F G A. They have the same notes and no sharps or flats like C major. But A minor starts and ends on A, so A is the tonic instead of C.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la ti do re mi fa sol la."
+        },
+        {
+         "point": 1,
+         "quote": "A B C D E F G A."
+        },
+        {
+         "point": 2,
+         "quote": "They have the same notes and no sharps or flats like C major."
+        },
+        {
+         "point": 3,
+         "quote": "But A minor starts and ends on A, so A is the tonic instead of C."
+        }
+       ],
+       "feedback": "Full marks. You showed both the similarity and the difference."
+      },
+      {
+       "tier": "full",
+       "text": "La ti do re mi fa sol la. A B C D E F G A. C major is its relative major with the same key signature. The home note is A instead of C, which is why it sounds different.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La ti do re mi fa sol la."
+        },
+        {
+         "point": 1,
+         "quote": "A B C D E F G A."
+        },
+        {
+         "point": 2,
+         "quote": "C major is its relative major with the same key signature."
+        },
+        {
+         "point": 3,
+         "quote": "The home note is A instead of C, which is why it sounds different."
+        }
+       ],
+       "feedback": "All four marks. The home note is the key to the difference."
+      },
+      {
+       "tier": "partial",
+       "text": "la ti do re mi fa sol la. A B C D E F G A.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la ti do re mi fa sol la."
+        },
+        {
+         "point": 1,
+         "quote": "A B C D E F G A."
+        }
+       ],
+       "feedback": "Both scales are right. Explain how A minor is related to C major."
+      },
+      {
+       "tier": "partial",
+       "text": "A B C D E F G A. It has the same notes as C major. I wrote do re mi fa sol la ti do for the solfege.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "A B C D E F G A."
+        },
+        {
+         "point": 2,
+         "quote": "It has the same notes as C major."
+        }
+       ],
+       "feedback": "For A minor the solfege starts on la: la ti do re mi fa sol la."
+      },
+      {
+       "tier": "weak",
+       "text": "A minor is the same as A major but sadder.",
+       "meets": [],
+       "feedback": "A minor and A major are different keys. A minor shares its notes with C major, not A major."
+      },
+      {
+       "tier": "weak",
+       "text": "I do not know solfege for minor.",
+       "meets": [],
+       "feedback": "In minor, la is the tonic. Start on la and go up: la ti do re mi fa sol la."
+      }
+     ]
+    },
+    {
+     "prompt": "Describe the text, mood and style of a Renaissance madrigal such as 'Now is the Month of Maying', and give one example of word painting.",
+     "markScheme": [
+      "Describes the text, such as spring and dancing",
+      "Describes the mood as cheerful or lively",
+      "Names the style as a Renaissance madrigal for several voices",
+      "Gives an example of word painting or the fa-la-la refrain"
+     ],
+     "modelAnswer": "The text of 'Now is the Month of Maying' is about the joy of spring and dancing. The mood is cheerful and lively. It is a Renaissance madrigal for several voices. An example of word painting is a quick, light run on words about dancing.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "The words are about spring in May and people dancing. The mood is cheerful and lively. It is a Renaissance madrigal sung by several voices. The fa-la-la refrain sounds like dancing, and quick light notes show the word dancing.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The words are about spring in May and people dancing."
+        },
+        {
+         "point": 1,
+         "quote": "The mood is cheerful and lively."
+        },
+        {
+         "point": 2,
+         "quote": "It is a Renaissance madrigal sung by several voices."
+        },
+        {
+         "point": 3,
+         "quote": "The fa-la-la refrain sounds like dancing, and quick light notes show the word dancing."
+        }
+       ],
+       "feedback": "Full marks. All four parts are accurate."
+      },
+      {
+       "tier": "full",
+       "text": "It celebrates springtime and merry-making. Happy and playful. A secular song from the Renaissance for small groups of singers. Word painting is when the music dances along with the word dance.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It celebrates springtime and merry-making."
+        },
+        {
+         "point": 1,
+         "quote": "Happy and playful."
+        },
+        {
+         "point": 2,
+         "quote": "A secular song from the Renaissance for small groups of singers."
+        },
+        {
+         "point": 3,
+         "quote": "Word painting is when the music dances along with the word dance."
+        }
+       ],
+       "feedback": "All four marks. Your explanation of word painting is clear."
+      },
+      {
+       "tier": "partial",
+       "text": "It is about spring. Happy.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is about spring."
+        },
+        {
+         "point": 1,
+         "quote": "Happy."
+        }
+       ],
+       "feedback": "Add the style and an example of word painting."
+      },
+      {
+       "tier": "partial",
+       "text": "A madrigal. The fa-la-la part.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "A madrigal."
+        },
+        {
+         "point": 3,
+         "quote": "The fa-la-la part."
+        }
+       ],
+       "feedback": "Describe the text and the mood, too."
+      },
+      {
+       "tier": "weak",
+       "text": "It is a very old church hymn.",
+       "meets": [],
+       "feedback": "A madrigal is a secular song, not a church hymn."
+      },
+      {
+       "tier": "weak",
+       "text": "It is about war and is serious.",
+       "meets": [],
+       "feedback": "This piece is about spring and dancing, with a lively mood."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Evaluating the choir, and creating a harmony part",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. evaluate a recording of the choir using a rubric and suggest improvements;\n2. create a short vocal improvisation or a new harmony part for a melody.\n\n## Materials\n\nA recording of the choir, a rubric, a keyboard, the worksheet.\n\n## Starter (6 minutes)\n\nPlay a short recording of the choir. Ask: \"What do you hear that you could not hear while you were singing?\"\n\n## Main activity\n\n1. Evaluate a recording: score tone, pitch, rhythm, diction, dynamics, blend and expression from 1 to 4. Give evidence and write one goal.\n2. Making a harmony: sing a simple melody (such as a round or a folk song). Find a harmony a third below by singing the same rhythm and moving down two scale steps.\n3. Test the harmony: sing the melody and the harmony together. If it sounds good, write it in solfege. If a note clashes, move it a step.\n4. Improvise: over a drone on do, sing a short pentatonic idea and then answer a partner's idea.\n\n## Checking for understanding\n\nAsk: \"How do you find a harmony a third below?\" (Move down two scale steps with the same rhythm.)\n\n## Exit ticket\n\nWrite the solfege of a harmony a third below do-re-mi-re-do.",
+   "reading": {
+    "title": "Self-evaluation and your first harmony",
+    "content": "Choirs improve when singers listen to themselves honestly. A **recording** gives you the audience's view. Use a **rubric** to listen with a purpose. The categories might be **tone** (a full, relaxed sound), **pitch** (accurate and in tune), **rhythm** (steady and accurate), **diction** (clear words), **dynamics** (the loud and soft markings), **blend** (one voice from many) and **expression** (the feeling in the music). Score each from 1 to 4. Without **evidence**, a score is only an opinion, so add a specific detail, such as the bar or the word. Then choose the lowest score and decide what to do. \"The altos were flat in measure 12 on 'peace.' We will tune the chord from the bass, and sing the line again, using the keyboard to check.\"\n\nYou can also **create** music. One of the simplest ways to harmonize is to sing a **third below** the melody. A third is the distance of two steps in the scale. If the melody is **do-re-mi-re-do**, then the harmony a third below is **la-ti-do-ti-la**, moving down two steps from each note. Because the two lines move in the same direction and at the same speed, they sound smooth together. Try it with a partner. One sings the melody and the other the harmony, and then swap. Listen to the chord they make. If a note sounds wrong, try moving it up or down a step.\n\n**Improvising** with a partner is another way to create. Use the **pentatonic scale** (do, re, mi, sol, la) over a drone, a long steady note. One person sings a short idea, and the other answers with a similar one. Imitation and answer help you to develop confidence.\n\nThrough evaluating and creating, you will begin to listen as a musician, not only a singer."
+   },
+   "cards": [
+    {
+     "front": "Harmony",
+     "back": "Different notes sung or played at the same time."
+    },
+    {
+     "front": "Third below",
+     "back": "A harmony two scale steps below the melody."
+    },
+    {
+     "front": "Rubric",
+     "back": "A chart of categories and levels used to judge a performance."
+    },
+    {
+     "front": "Evidence",
+     "back": "A specific detail that supports a score."
+    },
+    {
+     "front": "Expression",
+     "back": "The feeling put into the music."
+    },
+    {
+     "front": "Improvise",
+     "back": "To make up music in the moment."
+    },
+    {
+     "front": "Drone",
+     "back": "A long, steady note under a melody."
+    },
+    {
+     "front": "Answer phrase",
+     "back": "A musical reply to a first phrase."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "A harmony a third below do-re-mi is:",
+     "options": [
+      "la-ti-do",
+      "re-mi-fa",
+      "sol-la-ti",
+      "do-do-do"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which is the strongest evidence?",
+     "options": [
+      "It was bad",
+      "The altos were flat in measure 12 on the word 'peace'",
+      "I like the choir",
+      "We tried hard"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why do two lines moving in the same direction a third apart sound smooth?",
+     "options": [
+      "They move together at the same speed",
+      "They are very loud",
+      "They never change",
+      "They use no notes"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is a drone?",
+     "options": [
+      "A fast melody",
+      "A long, steady note under a melody",
+      "A type of rhythm",
+      "A rest"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "After choosing the lowest-scoring category, what should the choir do?",
+     "options": [
+      "Ignore it",
+      "Write a plan to improve it and check again",
+      "Stop rehearsing",
+      "Change the audience"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Choose a category from the rubric where the choir scored lowest, give a score and evidence, and write a plan that you can check in the next rehearsal.",
+     "markScheme": [
+      "Names a category and a score",
+      "Gives specific evidence from the recording",
+      "Writes a plan with a specific action",
+      "States how it will be checked, such as a recording or a keyboard check"
+     ],
+     "modelAnswer": "Pitch, 2. The altos were flat in measure 12 on the word peace. Plan: tune the chord from the bass and repeat measures 11 to 13 slowly. We will record it again in the next rehearsal and check the pitch with the keyboard.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Pitch, 2. The altos were flat in measure 12 on 'peace.' We tune the chord from the bass and sing measures 11 to 13 slowly. We record it again and check it with the keyboard.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Pitch, 2."
+        },
+        {
+         "point": 1,
+         "quote": "The altos were flat in measure 12 on 'peace.'"
+        },
+        {
+         "point": 2,
+         "quote": "We tune the chord from the bass and sing measures 11 to 13 slowly."
+        },
+        {
+         "point": 3,
+         "quote": "We record it again and check it with the keyboard."
+        }
+       ],
+       "feedback": "Full marks. The plan is concrete and can be checked."
+      },
+      {
+       "tier": "full",
+       "text": "Diction, 2. The last consonants in the second verse were missing. We say the words rhythmically and exaggerate the endings. We listen to the recording to see if the ends are clearer.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Diction, 2."
+        },
+        {
+         "point": 1,
+         "quote": "The last consonants in the second verse were missing."
+        },
+        {
+         "point": 2,
+         "quote": "We say the words rhythmically and exaggerate the endings."
+        },
+        {
+         "point": 3,
+         "quote": "We listen to the recording to see if the ends are clearer."
+        }
+       ],
+       "feedback": "All four marks. Saying the words in rhythm is a good diction exercise."
+      },
+      {
+       "tier": "partial",
+       "text": "Blend, 2. Some singers were loud.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Blend, 2."
+        },
+        {
+         "point": 1,
+         "quote": "Some singers were loud."
+        }
+       ],
+       "feedback": "Add a plan and a way to check it."
+      },
+      {
+       "tier": "partial",
+       "text": "We should practice more. We will record again.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "We should practice more."
+        },
+        {
+         "point": 3,
+         "quote": "We will record again."
+        }
+       ],
+       "feedback": "Name the category and score, and say what you heard."
+      },
+      {
+       "tier": "weak",
+       "text": "The choir was not good.",
+       "meets": [],
+       "feedback": "Choose one category, give a score and say what you heard."
+      },
+      {
+       "tier": "weak",
+       "text": "I do not want to criticize.",
+       "meets": [],
+       "feedback": "The rubric helps the choir improve. Choose a specific category and describe what you heard."
+      }
+     ]
+    },
+    {
+     "prompt": "Create a harmony a third below the melody do-re-mi-re-do. Write it in solfege and explain how you found it and how you would test it.",
+     "markScheme": [
+      "Writes the harmony la-ti-do-ti-la",
+      "Explains that each note moves down two scale steps",
+      "Says the rhythm is the same as the melody",
+      "Explains testing it by singing both parts and moving a note if it clashes"
+     ],
+     "modelAnswer": "The harmony is la, ti, do, ti, la. I found it by moving each melody note down two scale steps, using the same rhythm. To test it, I would sing both parts with a partner and move any clashing note a step.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "la ti do ti la. I moved each note down two steps in the scale. It has the same rhythm as the melody. I would sing both parts with a partner and change any note that sounds wrong.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la ti do ti la."
+        },
+        {
+         "point": 1,
+         "quote": "I moved each note down two steps in the scale."
+        },
+        {
+         "point": 2,
+         "quote": "It has the same rhythm as the melody."
+        },
+        {
+         "point": 3,
+         "quote": "I would sing both parts with a partner and change any note that sounds wrong."
+        }
+       ],
+       "feedback": "Full marks. The method and the test are both clear."
+      },
+      {
+       "tier": "full",
+       "text": "La, ti, do, ti, la. Count down two scale notes from each melody note. Keep the same rhythm so they move together. Test it by singing it and fix clashes by moving a note a step.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "La, ti, do, ti, la."
+        },
+        {
+         "point": 1,
+         "quote": "Count down two scale notes from each melody note."
+        },
+        {
+         "point": 2,
+         "quote": "Keep the same rhythm so they move together."
+        },
+        {
+         "point": 3,
+         "quote": "Test it by singing it and fix clashes by moving a note a step."
+        }
+       ],
+       "feedback": "All four marks. Keeping the same rhythm helps the lines blend."
+      },
+      {
+       "tier": "partial",
+       "text": "la ti do ti la. Two steps down.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la ti do ti la."
+        },
+        {
+         "point": 1,
+         "quote": "Two steps down."
+        }
+       ],
+       "feedback": "The harmony and the method are right. Add the rhythm and how you would test it."
+      },
+      {
+       "tier": "partial",
+       "text": "re mi fa mi re. I went up two steps.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "re mi fa mi re."
+        }
+       ],
+       "feedback": "You went up, which gives a third above the melody. For a third below, go down two scale steps."
+      },
+      {
+       "tier": "weak",
+       "text": "do re mi re do again.",
+       "meets": [],
+       "feedback": "That is the same melody. A harmony uses different notes at the same time, a third below."
+      },
+      {
+       "tier": "weak",
+       "text": "I would write any notes that I like.",
+       "meets": [],
+       "feedback": "A harmony follows a plan, such as a third below, so it fits with the melody."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Composing a vocal phrase in minor, and the history of choral music",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. compose a four-bar melody for voice using a given scale;\n2. describe the history and cultural context of a piece in our repertoire.\n\n## Materials\n\nStaff paper, a keyboard, a timeline of choral music, a recording of a Renaissance madrigal and a modern choral piece, the worksheet.\n\n## Starter (6 minutes)\n\nSing the first line of a piece from our repertoire. Ask: \"When do you think this piece was written, and why?\"\n\n## Main activity\n\n1. Composing in A minor: write a four-bar melody in 4/4 using notes of the A natural minor scale. Start and end on A (la). Use stepwise motion with one skip. Add dynamics.\n2. Check and sing: sing the melody on solfege, then on a vowel. Make one change and compare.\n3. Timeline of choral music: plainsong and chant (before 1000), Renaissance madrigals (1400 to 1600), Baroque choral works such as Bach's chorales (1700s), Romantic part-songs, spirituals (1700s to 1800s), and contemporary choral music.\n4. Context: pick a piece in our repertoire, place it on the timeline, and write two sentences on when and why it was written.\n\n## Checking for understanding\n\nAsk: \"Where does a Renaissance madrigal fit on the timeline?\" (Between 1400 and 1600.)\n\n## Exit ticket\n\nWrite the solfege of your four-bar melody and name the period of one repertoire piece.",
+   "reading": {
+    "title": "Composing in minor, and a thousand years of choral music",
+    "content": "Writing a melody in a **minor key** is similar to writing in major. In **A natural minor**, use the notes A, B, C, D, E, F, G, A, which in solfege are **la, ti, do, re, mi, fa, sol, la**. Begin and end on **A (la)**, the tonic. A melody that moves mostly by step is easy to sing, and one or two skips add interest. Use different note lengths to give the rhythm a shape. Mark the dynamics, such as **piano** at the start, a **crescendo** in the middle and **piano** again at the end. Sing your melody on solfege, then on a vowel, and ask a partner to sing it too. Change one note and notice how the character changes.\n\nChoral music has a long history, and every piece in our repertoire has a place in it. Here is a short timeline. Before about 1000, the main choral music of Europe was **plainsong**, or chant, sung in unison in churches. From about **1400 to 1600**, in the **Renaissance**, composers wrote music for several independent voices, including **sacred** motets and **secular** madrigals. In the **Baroque** period (about 1600 to 1750), **Johann Sebastian Bach** wrote chorales and large choral works with instruments. In the **Romantic** period (about 1820 to 1900), composers such as Brahms wrote expressive part-songs and large choral works. In the United States, **spirituals** were created by enslaved African Americans in the 1700s and 1800s, and later arranged for choirs. Today's composers write **contemporary** choral music in many styles.\n\nWhen you study a piece, find out **when** it was written, **who** wrote it, and **why**. A hymn is written for worship, a madrigal for friends to sing at home, and a spiritual for a community to express faith and hope. Knowing this helps you perform with understanding: a madrigal is light and quick, a chant is calm and flowing, and a spiritual is sung with sincerity.\n\nWhen you place a piece in history, you also join a tradition of singers who have performed it for hundreds of years."
+   },
+   "cards": [
+    {
+     "front": "Plainsong",
+     "back": "Unaccompanied unison sacred chant of medieval Europe."
+    },
+    {
+     "front": "Renaissance",
+     "back": "The period from about 1400 to 1600."
+    },
+    {
+     "front": "Baroque",
+     "back": "The period from about 1600 to 1750."
+    },
+    {
+     "front": "Romantic",
+     "back": "The period from about 1820 to 1900."
+    },
+    {
+     "front": "Motet",
+     "back": "A sacred choral piece for several voices."
+    },
+    {
+     "front": "Part-song",
+     "back": "A piece for several voices, usually without accompaniment."
+    },
+    {
+     "front": "Contemporary",
+     "back": "Music of the present day."
+    },
+    {
+     "front": "Timeline",
+     "back": "A chart that shows events in order."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which period includes Bach's chorales?",
+     "options": [
+      "Renaissance",
+      "Baroque",
+      "Romantic",
+      "Contemporary"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is plainsong?",
+     "options": [
+      "Chant sung in unison, usually in church",
+      "A song with no words",
+      "A song for solo piano",
+      "A march"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "In A natural minor, which note do you begin and end on?",
+     "options": [
+      "C",
+      "A",
+      "E",
+      "G"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why is it helpful to know when and why a piece was written?",
+     "options": [
+      "It helps you perform with understanding",
+      "It makes the piece shorter",
+      "It is never useful",
+      "It changes the notes"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which period was before the Baroque?",
+     "options": [
+      "Romantic",
+      "Renaissance",
+      "Contemporary",
+      "Modern"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Write a four-bar melody in A minor in solfege, and explain two choices you made about the notes and rhythm.",
+     "markScheme": [
+      "Writes a melody beginning and ending on la",
+      "Uses notes from the A natural minor scale",
+      "Explains a choice such as using steps with one skip",
+      "Explains a choice about note lengths or dynamics"
+     ],
+     "modelAnswer": "Melody: la ti do re, mi re do ti, do re mi fa, mi re do la. I began and ended on la. I used mostly steps with one skip, which makes it easy to sing, and used different note lengths so the rhythm has shape.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "la ti do re, mi re do ti, do re mi fa, mi re do la. It uses the notes of A minor and begins and ends on la. I used mostly steps and one skip so it is easy to sing. I made the last note a half note so it feels finished.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la ti do re, mi re do ti, do re mi fa, mi re do la."
+        },
+        {
+         "point": 1,
+         "quote": "It uses the notes of A minor and begins and ends on la."
+        },
+        {
+         "point": 2,
+         "quote": "I used mostly steps and one skip so it is easy to sing."
+        },
+        {
+         "point": 3,
+         "quote": "I made the last note a half note so it feels finished."
+        }
+       ],
+       "feedback": "Full marks. The long final note is a good choice for an ending."
+      },
+      {
+       "tier": "full",
+       "text": "la do re mi, fa mi re do, re mi fa sol, mi re do la. It stays in A minor and starts and ends on la. A skip from la to do at the start adds interest. I added a crescendo in bar 3 for the highest part.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la do re mi, fa mi re do, re mi fa sol, mi re do la."
+        },
+        {
+         "point": 1,
+         "quote": "It stays in A minor and starts and ends on la."
+        },
+        {
+         "point": 2,
+         "quote": "A skip from la to do at the start adds interest."
+        },
+        {
+         "point": 3,
+         "quote": "I added a crescendo in bar 3 for the highest part."
+        }
+       ],
+       "feedback": "All four marks. The crescendo toward the highest note shapes the phrase."
+      },
+      {
+       "tier": "partial",
+       "text": "la ti do re mi re do la. It moves by step.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "la ti do re mi re do la."
+        },
+        {
+         "point": 2,
+         "quote": "It moves by step."
+        }
+       ],
+       "feedback": "Write four bars of notes, which is a longer melody, and explain a choice about the rhythm or dynamics."
+      },
+      {
+       "tier": "partial",
+       "text": "It is in A minor. I made some notes long.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It is in A minor."
+        },
+        {
+         "point": 3,
+         "quote": "I made some notes long."
+        }
+       ],
+       "feedback": "Write out the melody in solfege and explain your choices about the steps and skips."
+      },
+      {
+       "tier": "weak",
+       "text": "do re mi fa sol la ti do.",
+       "meets": [],
+       "feedback": "That is a major scale, not a minor melody. Start and end on la and use notes from A minor."
+      },
+      {
+       "tier": "weak",
+       "text": "I wrote random notes that sounded good.",
+       "meets": [],
+       "feedback": "A melody in minor uses the notes of the scale and begins and ends on la."
+      }
+     ]
+    },
+    {
+     "prompt": "Choose a piece from our repertoire. Say when and why it was written, which period it belongs to, and how that affects how we should sing it.",
+     "markScheme": [
+      "Names the piece",
+      "Says when it was written and its period",
+      "Says why it was written",
+      "Explains how this affects the way we sing it"
+     ],
+     "modelAnswer": "The madrigal 'Now is the Month of Maying' by Thomas Morley was published in 1595, in the Renaissance. It was written for friends to sing for pleasure. So we should sing it in a light, lively and dance-like way with clear diction.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Now is the Month of Maying. It was published in 1595, in the Renaissance. It was for friends to sing at home for fun. So we sing it lightly and with a dancing feeling and clear words.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Now is the Month of Maying."
+        },
+        {
+         "point": 1,
+         "quote": "It was published in 1595, in the Renaissance."
+        },
+        {
+         "point": 2,
+         "quote": "It was for friends to sing at home for fun."
+        },
+        {
+         "point": 3,
+         "quote": "So we sing it lightly and with a dancing feeling and clear words."
+        }
+       ],
+       "feedback": "Full marks. The history shapes the style in your answer."
+      },
+      {
+       "tier": "full",
+       "text": "Wade in the Water, a spiritual. It was created in the 1700s or 1800s by enslaved African Americans. It expressed faith and hope and sometimes hidden messages about freedom. So we sing it sincerely and with respect.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Wade in the Water, a spiritual."
+        },
+        {
+         "point": 1,
+         "quote": "It was created in the 1700s or 1800s by enslaved African Americans."
+        },
+        {
+         "point": 2,
+         "quote": "It expressed faith and hope and sometimes hidden messages about freedom."
+        },
+        {
+         "point": 3,
+         "quote": "So we sing it sincerely and with respect."
+        }
+       ],
+       "feedback": "All four marks. Singing with sincerity is the right response to the history."
+      },
+      {
+       "tier": "partial",
+       "text": "Now is the Month of Maying. 1595.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Now is the Month of Maying."
+        },
+        {
+         "point": 1,
+         "quote": "1595."
+        }
+       ],
+       "feedback": "Add why it was written and how that affects the singing."
+      },
+      {
+       "tier": "partial",
+       "text": "It was written for fun. So we sing it lightly.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "It was written for fun."
+        },
+        {
+         "point": 3,
+         "quote": "So we sing it lightly."
+        }
+       ],
+       "feedback": "Name the piece, the date and the period."
+      },
+      {
+       "tier": "weak",
+       "text": "It is an old song.",
+       "meets": [],
+       "feedback": "Be specific: name the piece, the date, the period and the reason it was written."
+      },
+      {
+       "tier": "weak",
+       "text": "It does not matter when it was written.",
+       "meets": [],
+       "feedback": "Knowing the history helps you choose a style and sing with understanding."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Frequency ratios, healthy breathing and finding a choir",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain how singing connects with language, mathematics and wellness;\n2. identify community choirs and opportunities for continued singing.\n\n## Materials\n\nA tuner, a frequency chart, a breathing guide, a list of choirs and events, the quiz.\n\n## Starter (6 minutes)\n\nPlay A at 440 hertz and then the A an octave lower. Ask: \"What is the frequency of the lower A?\" (220.)\n\n## Main activity\n\n1. Frequency: an octave is a ratio of 2 to 1. A perfect fifth is 3 to 2. Calculate a fifth above A 440 (660 hertz) and an octave below (220 hertz).\n2. Language and rhythm: syllables and beats. Count the syllables in a line of text and match them to beats. A line with eight syllables in 4/4 can use eight eighth notes (four beats).\n3. Wellness: three-part breathing in four counts, hold for four, out for six; posture and stress; sleep and hydration for the voice.\n4. Opportunities: school honor choirs, community choruses, church choirs, a cappella groups, musical theater, and college choirs. Choose two and plan first steps.\n\n## Checking for understanding\n\nAsk: \"How many beats are in a line of eight eighth notes?\" (Four.)\n\n## Exit ticket\n\nCalculate the frequency of the note a fifth above A 440.",
+   "reading": {
+    "title": "Numbers in music, a calm breath and where to sing next",
+    "content": "Music and mathematics are close. The pitch of a note depends on its **frequency**, the number of vibrations per second, measured in **hertz**. The A above middle C is 440 hertz. An **octave** is a frequency ratio of **2 to 1**: A one octave above is 880 hertz, and A one octave below is 220 hertz. A **perfect fifth** is a ratio of **3 to 2**, so the note a fifth above A 440 has the frequency 440 × 3/2 = 660 hertz. Notes whose frequencies have simple ratios sound smooth together, which is why octaves and fifths sound so stable in a choir.\n\nRhythm links language and mathematics. When you set words to music, each **syllable** gets a note. A line with eight syllables fits eight eighth notes, which add up to four beats in 4/4. If a word has three syllables, such as \"beautiful,\" the stress usually falls on the first syllable, and you place that syllable on the stronger beat. Counting syllables and beats helps you write words for a melody and learn text quickly.\n\nSinging and **wellness** go together. A calm breathing routine can help before a performance. Breathe in for four counts, hold for four, and breathe out slowly for six. Good posture and relaxed shoulders lower tension. Sleep and water help the voice to stay healthy. Many singers say that singing in a group lifts their mood and gives them a sense of belonging.\n\nYou do not have to stop singing when this class ends. **School honor choirs** invite students from several schools. **Community choruses** and **church choirs** welcome singers of different ages, often without an audition. **A cappella** groups sing without instruments, and **musical theater** needs singers for shows. In college, many choirs are open to non-music majors. To find a group, ask your director, search for local choruses and attend a rehearsal or a concert. A useful first step is to send an email to the director of a group you like.\n\nWherever you sing, you will be using habits you have learned here: careful listening, steady practice and working with others."
+   },
+   "cards": [
+    {
+     "front": "Frequency",
+     "back": "The number of vibrations per second, measured in hertz."
+    },
+    {
+     "front": "Octave ratio",
+     "back": "A frequency ratio of 2 to 1."
+    },
+    {
+     "front": "Perfect fifth ratio",
+     "back": "A frequency ratio of 3 to 2."
+    },
+    {
+     "front": "Syllable",
+     "back": "A unit of sound in a word."
+    },
+    {
+     "front": "Stress",
+     "back": "The syllable of a word that is stronger."
+    },
+    {
+     "front": "Calm breathing",
+     "back": "In for four, hold for four, out for six."
+    },
+    {
+     "front": "Honor choir",
+     "back": "A choir of selected singers from several schools."
+    },
+    {
+     "front": "A cappella",
+     "back": "Singing without instruments."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the frequency of the A one octave above A 440?",
+     "options": [
+      "220 hertz",
+      "660 hertz",
+      "880 hertz",
+      "1,320 hertz"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A perfect fifth above A 440 has a frequency of about:",
+     "options": [
+      "550 hertz",
+      "660 hertz",
+      "770 hertz",
+      "880 hertz"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A line with eight syllables set to eighth notes in 4/4 lasts:",
+     "options": [
+      "Two beats",
+      "Four beats",
+      "Six beats",
+      "Eight beats"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A calm breathing pattern before a concert is:",
+     "options": [
+      "In for one, out for one",
+      "In for four, hold for four, out for six",
+      "Hold your breath for a minute",
+      "Breathe as fast as possible"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these could you join after high school?",
+     "options": [
+      "A community chorus",
+      "Nothing",
+      "Only professional choirs",
+      "Only a choir in another country"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Calculate the frequency of the note a perfect fifth above A 440 and the A one octave below, and name the ratio for each interval.",
+     "markScheme": [
+      "Uses the ratio 3 to 2 for the fifth",
+      "Calculates 440 times 3/2 = 660 hertz",
+      "Calculates the octave below as 440 divided by 2 = 220 hertz",
+      "Names the octave ratio as 2 to 1"
+     ],
+     "modelAnswer": "A perfect fifth is a ratio of 3 to 2, so the note a fifth above A 440 is 440 × 3/2 = 660 hertz. The A an octave below is half of 440, which is 220 hertz. The octave ratio is 2 to 1.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A fifth is 3 to 2. 440 × 3/2 = 660 hertz. An octave below is half, 440 / 2 = 220 hertz. An octave is a ratio of 2 to 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A fifth is 3 to 2."
+        },
+        {
+         "point": 1,
+         "quote": "440 × 3/2 = 660 hertz."
+        },
+        {
+         "point": 2,
+         "quote": "An octave below is half, 440 / 2 = 220 hertz."
+        },
+        {
+         "point": 3,
+         "quote": "An octave is a ratio of 2 to 1."
+        }
+       ],
+       "feedback": "Full marks. Both frequencies and the ratios are right."
+      },
+      {
+       "tier": "full",
+       "text": "For the fifth I multiply by 3/2. 440 × 1.5 = 660 Hz. For the octave below I divide by 2, which gives 220 Hz. The octave ratio is 2:1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "For the fifth I multiply by 3/2."
+        },
+        {
+         "point": 1,
+         "quote": "440 × 1.5 = 660 Hz."
+        },
+        {
+         "point": 2,
+         "quote": "For the octave below I divide by 2, which gives 220 Hz."
+        },
+        {
+         "point": 3,
+         "quote": "The octave ratio is 2:1."
+        }
+       ],
+       "feedback": "All four marks. Using 1.5 for 3/2 is a handy shortcut."
+      },
+      {
+       "tier": "partial",
+       "text": "660 hertz. 220 hertz.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "660 hertz."
+        },
+        {
+         "point": 2,
+         "quote": "220 hertz."
+        }
+       ],
+       "feedback": "The answers are right. Name the ratios, 3 to 2 and 2 to 1, and show the calculation."
+      },
+      {
+       "tier": "partial",
+       "text": "A fifth is 3 to 2. 440 + 3 = 443 hertz.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A fifth is 3 to 2."
+        }
+       ],
+       "feedback": "The ratio is right, but you multiply by it: 440 × 3/2 = 660."
+      },
+      {
+       "tier": "weak",
+       "text": "A fifth is five notes above so it is 445.",
+       "meets": [],
+       "feedback": "A fifth is a ratio of 3 to 2, so you multiply the frequency by 1.5."
+      },
+      {
+       "tier": "weak",
+       "text": "An octave below is 880.",
+       "meets": [],
+       "feedback": "An octave below is half the frequency, 220 hertz. 880 is an octave above."
+      }
+     ]
+    },
+    {
+     "prompt": "Choose two places where you could keep singing after this class, say what each offers, and give a first step for each.",
+     "markScheme": [
+      "Names a first place and what it offers",
+      "Names a second place and what it offers",
+      "Gives a first step for the first place",
+      "Gives a first step for the second place"
+     ],
+     "modelAnswer": "A community chorus welcomes singers of all ages and often needs no audition, and a school honor choir brings together selected singers from several schools. For the community chorus I would attend a concert. For the honor choir I would ask my director about the audition.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "A community chorus welcomes all ages and often has no audition. The honor choir brings together singers from many schools. I will go to a concert of the community chorus. I will ask my director about the honor choir audition.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A community chorus welcomes all ages and often has no audition."
+        },
+        {
+         "point": 1,
+         "quote": "The honor choir brings together singers from many schools."
+        },
+        {
+         "point": 2,
+         "quote": "I will go to a concert of the community chorus."
+        },
+        {
+         "point": 3,
+         "quote": "I will ask my director about the honor choir audition."
+        }
+       ],
+       "feedback": "Full marks. Two places with practical first steps."
+      },
+      {
+       "tier": "full",
+       "text": "A church choir sings every week and welcomes new members. An a cappella group sings without instruments and often performs at school events. I will visit a rehearsal at church. I will talk to the a cappella group about their auditions.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A church choir sings every week and welcomes new members."
+        },
+        {
+         "point": 1,
+         "quote": "An a cappella group sings without instruments and often performs at school events."
+        },
+        {
+         "point": 2,
+         "quote": "I will visit a rehearsal at church."
+        },
+        {
+         "point": 3,
+         "quote": "I will talk to the a cappella group about their auditions."
+        }
+       ],
+       "feedback": "All four marks. Visiting a rehearsal is the best first step."
+      },
+      {
+       "tier": "partial",
+       "text": "A community chorus. Go to a concert.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "A community chorus."
+        },
+        {
+         "point": 2,
+         "quote": "Go to a concert."
+        }
+       ],
+       "feedback": "Add a second place and a first step for it."
+      },
+      {
+       "tier": "partial",
+       "text": "An honor choir. Ask my director.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "An honor choir."
+        },
+        {
+         "point": 3,
+         "quote": "Ask my director."
+        }
+       ],
+       "feedback": "Add a first place and what each group offers."
+      },
+      {
+       "tier": "weak",
+       "text": "I will not sing again.",
+       "meets": [],
+       "feedback": "You could continue in many ways. Choose two groups and a first step for each."
+      },
+      {
+       "tier": "weak",
+       "text": "I will sing on my own in the shower.",
+       "meets": [],
+       "feedback": "Singing alone is fine, but name two groups you could join and a first step for each."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

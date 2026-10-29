@@ -8,6 +8,8 @@ export interface GradingLevel {
   min: number;
   max: number;
   label?: string; // e.g. "Excellent"
+  /** Grade points (4.0 for an A); present only for schools that report a GPA. */
+  points?: number;
 }
 
 export interface SchoolConfig {
@@ -15,6 +17,8 @@ export interface SchoolConfig {
     type: "letter" | "percentage" | "points" | "proficiency";
     levels: GradingLevel[];
   };
+  /** Honors/AP-style levels that add to the GPA of a subject set to them. */
+  courseLevels?: Array<{ name: string; bonus: number }>;
   termStructure: "semesters" | "terms" | "quarters";
   gradePrefix: "Grade" | "Form" | "Year" | "Class" | string;
   passMark: number;

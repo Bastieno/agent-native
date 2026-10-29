@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import { jsonish } from "../shared/zod-json.js";
 import { resolveGradeLevelIds } from "../server/lib/subject-year-groups.js";
 import { z } from "zod";
+import { checkCourseLevel } from "../server/lib/course-level.js";
 
 export default defineAction({
   description:
@@ -21,6 +22,20 @@ export default defineAction({
       .describe(
         "Year groups that take this subject, by name ('JSS1') or id. Omit if not known yet.",
       ),
+    credits: z.coerce
+      .number()
+      .min(0.25)
+      .max(4)
+      .optional()
+      .describe(
+        "Credit the course earns, which weights the GPA: 1 for a full-year course, 0.5 for a half. Omit for one credit.",
+      ),
+    courseLevel: z
+      .string()
+      .optional()
+      .describe(
+        "A level from the school's course levels ('Honors', 'AP') that weights this subject's GPA. Omit for a standard course.",
+      ),
   }),
   http: { method: "POST" },
   run: async (args) => {
@@ -29,6 +44,7 @@ export default defineAction({
     const gradeLevelIds = args.yearGroups?.length
       ? await resolveGradeLevelIds(args.yearGroups, orgId)
       : null;
+    const courseLevel = await checkCourseLevel(orgId, args.courseLevel);
     const db = getDb();
     const id = nanoid();
     await db.insert(schema.subjects).values({
@@ -41,6 +57,8 @@ export default defineAction({
       iconName: args.iconName ?? null,
       position: args.position ?? 0,
       gradeLevelsJson: gradeLevelIds ? JSON.stringify(gradeLevelIds) : null,
+      courseLevel,
+      credits: args.credits != null ? String(args.credits) : null,
       status: "active",
       ownerEmail: userEmail ?? "",
       orgId,

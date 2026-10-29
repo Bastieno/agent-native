@@ -1,3 +1,4 @@
+import { CalendarBanner } from "@/components/CalendarBanner";
 import { TeacherAttention } from "@/components/help/TeacherAttention";
 import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
@@ -52,6 +53,7 @@ export default function TeacherDashboard() {
         </p>
       </div>
       <HelpNudge />
+      <CalendarBanner />
       <TeacherAttention />
       <Today />
       <div>

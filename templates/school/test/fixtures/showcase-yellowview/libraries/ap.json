@@ -1,0 +1,931 @@
+{
+ "framework": {
+  "name": "College Board AP Course Frameworks",
+  "version": "2024",
+  "source": "https://apcentral.collegeboard.org (AP Course and Exam Descriptions; unit names follow the frameworks, objective wording is the school's own)"
+ },
+ "subjects": [
+  {
+   "subject": "AP English Language",
+   "gradeRange": [
+    "Grade 11"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Rhetorical Situation",
+     "subStrand": "Unit 1: Rhetorical Situation",
+     "objectives": [
+      {
+       "description": "Identify the exigence, audience, purpose and speaker in a text, and explain how they shape it."
+      },
+      {
+       "description": "Explain how a writer's claim and line of reasoning respond to a rhetorical situation."
+      },
+      {
+       "description": "Describe how the parts of a text, such as introduction, evidence and conclusion, serve the writer's purpose."
+      },
+      {
+       "description": "Write a thesis that takes a defensible position on a rhetorical analysis prompt."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Claims and Evidence",
+     "subStrand": "Unit 2: Claims and Evidence",
+     "objectives": [
+      {
+       "description": "Distinguish a claim from the evidence offered for it, and judge whether the evidence is relevant and sufficient."
+      },
+      {
+       "description": "Analyze how a writer uses ethos, pathos and logos in a speech or essay."
+      },
+      {
+       "description": "Write a body paragraph that links a piece of evidence to the claim with commentary."
+      },
+      {
+       "description": "Explain how a writer uses anecdote, statistics and authority to support a claim."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Reasoning and Organization",
+     "subStrand": "Unit 3: Reasoning and Organization",
+     "objectives": [
+      {
+       "description": "Analyze how a writer's organization, such as chronological, spatial or comparative, supports the argument."
+      },
+      {
+       "description": "Explain how transitions and the order of ideas guide the reader through a line of reasoning."
+      },
+      {
+       "description": "Write a rhetorical analysis essay with a thesis, evidence and commentary that explains the writer's choices."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Synthesis",
+     "subStrand": "Unit 4: Synthesis",
+     "objectives": [
+      {
+       "description": "Read several sources on one issue and identify points of agreement and disagreement."
+      },
+      {
+       "description": "Integrate evidence from sources into your own argument using paraphrase, summary and quotation."
+      },
+      {
+       "description": "Cite sources accurately in a standard format and avoid plagiarism."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 5: Style",
+     "subStrand": "Unit 5: Style",
+     "objectives": [
+      {
+       "description": "Analyze how diction, syntax and figurative language contribute to a writer's tone."
+      },
+      {
+       "description": "Revise sentences for variety, concision and emphasis, and explain the effect of each change."
+      }
+     ]
+    },
+    {
+     "strand": "Writing Practice",
+     "subStrand": "Writing Practice",
+     "objectives": [
+      {
+       "description": "Write a timed argument essay that defends a position using evidence from your reading and experience."
+      },
+      {
+       "description": "Reflect on feedback from a scoring rubric and set a goal for the next essay."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP English Literature",
+   "gradeRange": [
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Short Fiction",
+     "subStrand": "Unit 1: Short Fiction",
+     "objectives": [
+      {
+       "description": "Describe a character's traits, motives and changes as a short story develops."
+      },
+      {
+       "description": "Explain how setting shapes mood, character and conflict in a story."
+      },
+      {
+       "description": "Analyze how a narrator's point of view affects what the reader learns and how they judge it."
+      },
+      {
+       "description": "Write a thesis about how an author's choices create meaning in a short story."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Poetry",
+     "subStrand": "Unit 2: Poetry",
+     "objectives": [
+      {
+       "description": "Analyze how imagery and figurative language build meaning in a poem."
+      },
+      {
+       "description": "Explain how form, structure and line breaks contribute to the poem's effect."
+      },
+      {
+       "description": "Describe how a speaker's tone shifts across a poem and what the shift reveals."
+      },
+      {
+       "description": "Compare how two poems treat a similar subject."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Longer Fiction and Drama",
+     "subStrand": "Unit 3: Longer Fiction and Drama",
+     "objectives": [
+      {
+       "description": "Trace how a theme develops across a novel or a play from beginning to end."
+      },
+      {
+       "description": "Analyze how the structure of a longer work, such as its sequence and its subplots, shapes its meaning."
+      },
+      {
+       "description": "Explain how a symbol or motif recurs and deepens across a long work."
+      },
+      {
+       "description": "Analyze the relationship between two characters and what it shows about the work's central conflict."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Writing About Literature",
+     "subStrand": "Unit 4: Writing About Literature",
+     "objectives": [
+      {
+       "description": "Write a literary argument that defends an interpretation with evidence and commentary."
+      },
+      {
+       "description": "Use quotations and paraphrase accurately and explain how each supports the claim."
+      },
+      {
+       "description": "Revise a thesis so it is specific, defensible and about the work's meaning."
+      },
+      {
+       "description": "Write a timed essay on a poem and a timed essay on a prose passage."
+      }
+     ]
+    },
+    {
+     "strand": "Discussion and Reflection",
+     "subStrand": "Discussion and Reflection",
+     "objectives": [
+      {
+       "description": "Lead a discussion of a text by asking questions that invite interpretation."
+      },
+      {
+       "description": "Reflect on your growth as a reader and writer using feedback from a scoring rubric."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP US Government",
+   "gradeRange": [
+    "Grade 11"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Foundations of American Democracy",
+     "subStrand": "Unit 1: Foundations of American Democracy",
+     "objectives": [
+      {
+       "description": "Explain the ideas of natural rights, popular sovereignty and social contract in the Declaration of Independence."
+      },
+      {
+       "description": "Compare the Federalist No. 10 and Brutus No. 1 arguments about the size of a republic."
+      },
+      {
+       "description": "Describe how the Constitution's design provides separation of powers and checks and balances."
+      },
+      {
+       "description": "Explain how the debate over federalism has shaped the relationship of the states and the national government."
+      },
+      {
+       "description": "Compare the Articles of Confederation with the Constitution and explain why the framers replaced them."
+      },
+      {
+       "description": "Explain how the Constitution's ratification and its amendments reflect compromise."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Interactions Among Branches",
+     "subStrand": "Unit 2: Interactions Among Branches",
+     "objectives": [
+      {
+       "description": "Describe the structure, powers and leadership of Congress, including the House and the Senate."
+      },
+      {
+       "description": "Explain how Congress uses its powers of oversight, the budget and committees."
+      },
+      {
+       "description": "Describe the formal and informal powers of the president and the role of the bureaucracy."
+      },
+      {
+       "description": "Explain how the Supreme Court uses judicial review and how its decisions are limited."
+      },
+      {
+       "description": "Analyze how the branches interact in making and carrying out policy."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Civil Liberties and Civil Rights",
+     "subStrand": "Unit 3: Civil Liberties and Civil Rights",
+     "objectives": [
+      {
+       "description": "Explain how the Bill of Rights has been incorporated against the states."
+      },
+      {
+       "description": "Apply the First Amendment cases required for the course to a new scenario."
+      },
+      {
+       "description": "Describe how civil rights movements used the courts, protest and legislation to expand equality."
+      }
+     ]
+    },
+    {
+     "strand": "Skills",
+     "subStrand": "Skills",
+     "objectives": [
+      {
+       "description": "Read and interpret a required foundational document, such as Federalist No. 10, and explain its argument."
+      },
+      {
+       "description": "Analyze quantitative data in a chart or a table about political behavior."
+      },
+      {
+       "description": "Write a short argument essay that makes a claim and supports it with evidence from a foundational document."
+      },
+      {
+       "description": "Apply a landmark Supreme Court case to a new situation and explain the reasoning."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Macroeconomics",
+   "gradeRange": [
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Basic Economic Concepts",
+     "subStrand": "Unit 1: Basic Economic Concepts",
+     "objectives": [
+      {
+       "description": "Explain scarcity, opportunity cost and comparative advantage using a production possibilities curve."
+      },
+      {
+       "description": "Calculate absolute and comparative advantage and the terms of trade."
+      },
+      {
+       "description": "Explain how supply and demand determine market equilibrium and what shifts them."
+      },
+      {
+       "description": "Analyze the effect of a price ceiling or floor on a market, with a graph."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Economic Indicators and the Business Cycle",
+     "subStrand": "Unit 2: Economic Indicators and the Business Cycle",
+     "objectives": [
+      {
+       "description": "Calculate and interpret GDP by the expenditure approach and distinguish nominal from real GDP."
+      },
+      {
+       "description": "Calculate the unemployment rate and describe types of unemployment."
+      },
+      {
+       "description": "Measure inflation with the consumer price index and explain how it affects people differently."
+      },
+      {
+       "description": "Describe the phases of the business cycle and their effects on output and employment."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: National Income and Price Determination",
+     "subStrand": "Unit 3: National Income and Price Determination",
+     "objectives": [
+      {
+       "description": "Explain aggregate demand and aggregate supply and what shifts them."
+      },
+      {
+       "description": "Use the AD-AS model to show the short-run effects of a shock."
+      },
+      {
+       "description": "Explain the multiplier and calculate its effect on spending."
+      },
+      {
+       "description": "Describe how the economy returns to long-run equilibrium."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Financial Sector",
+     "subStrand": "Unit 4: Financial Sector",
+     "objectives": [
+      {
+       "description": "Explain the functions of money and measures of the money supply."
+      },
+      {
+       "description": "Describe how banks create money and how the money multiplier works."
+      },
+      {
+       "description": "Analyze the money market and the loanable funds market with graphs."
+      }
+     ]
+    },
+    {
+     "strand": "Skills",
+     "subStrand": "Skills",
+     "objectives": [
+      {
+       "description": "Draw and label a graph that illustrates an economic change and explain the result in words."
+      },
+      {
+       "description": "Interpret recent government data from FRED and explain what it shows about the economy."
+      },
+      {
+       "description": "Write a free-response answer that defines, graphs and explains the effect of a policy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Psychology",
+   "gradeRange": [
+    "Grade 11",
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Scientific Foundations of Psychology",
+     "subStrand": "Unit 1: Scientific Foundations of Psychology",
+     "objectives": [
+      {
+       "description": "Describe the major perspectives in psychology and the questions each asks."
+      },
+      {
+       "description": "Compare descriptive, correlational and experimental methods and say what each can show."
+      },
+      {
+       "description": "Design a simple experiment and identify the independent variable, dependent variable and controls."
+      },
+      {
+       "description": "Explain why research must follow ethical guidelines and name the safeguards that exist."
+      },
+      {
+       "description": "Read a graph or a correlation and avoid concluding causation without an experiment."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Biological Bases of Behavior",
+     "subStrand": "Unit 2: Biological Bases of Behavior",
+     "objectives": [
+      {
+       "description": "Describe the structure of a neuron and how neurons communicate."
+      },
+      {
+       "description": "Explain the roles of neurotransmitters in mood, movement and memory."
+      },
+      {
+       "description": "Name the major structures of the brain and the functions of each lobe."
+      },
+      {
+       "description": "Describe how the endocrine system and the nervous system work together."
+      },
+      {
+       "description": "Explain how nature and nurture interact, using twin and adoption studies."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Sensation and Perception",
+     "subStrand": "Unit 3: Sensation and Perception",
+     "objectives": [
+      {
+       "description": "Describe how sensory receptors turn physical energy into neural signals."
+      },
+      {
+       "description": "Compare bottom-up and top-down processing in perception."
+      },
+      {
+       "description": "Explain depth perception and perceptual constancies."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Learning",
+     "subStrand": "Unit 4: Learning",
+     "objectives": [
+      {
+       "description": "Compare classical and operant conditioning and give an example of each."
+      },
+      {
+       "description": "Apply schedules of reinforcement and explain how they shape behavior."
+      },
+      {
+       "description": "Describe observational learning and Bandura's Bobo doll study."
+      }
+     ]
+    },
+    {
+     "strand": "Skills",
+     "subStrand": "Skills",
+     "objectives": [
+      {
+       "description": "Write a response that defines a term and applies it to a scenario."
+      },
+      {
+       "description": "Interpret a data table from a study and state a conclusion."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Biology",
+   "gradeRange": [
+    "Grade 11",
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Chemistry of Life",
+     "subStrand": "Unit 1: Chemistry of Life",
+     "objectives": [
+      {
+       "description": "Explain how the structure and properties of water support life."
+      },
+      {
+       "description": "Describe the structure and function of carbohydrates, lipids, proteins and nucleic acids."
+      },
+      {
+       "description": "Explain how a protein's levels of structure determine its function."
+      },
+      {
+       "description": "Describe the structure of DNA and RNA and how they differ."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Cell Structure and Function",
+     "subStrand": "Unit 2: Cell Structure and Function",
+     "objectives": [
+      {
+       "description": "Compare prokaryotic and eukaryotic cells and describe the functions of the organelles."
+      },
+      {
+       "description": "Explain how surface area to volume ratio limits cell size."
+      },
+      {
+       "description": "Describe the fluid mosaic model and the movement of substances across a membrane."
+      },
+      {
+       "description": "Predict the movement of water using water potential."
+      },
+      {
+       "description": "Explain how compartmentalization increases the efficiency of a cell."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Cellular Energetics",
+     "subStrand": "Unit 3: Cellular Energetics",
+     "objectives": [
+      {
+       "description": "Explain how enzymes lower activation energy, and how inhibitors and conditions change their rate."
+      },
+      {
+       "description": "Describe the light-dependent and light-independent reactions of photosynthesis."
+      },
+      {
+       "description": "Describe the stages of cellular respiration and where ATP is made."
+      },
+      {
+       "description": "Compare aerobic respiration and fermentation."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Cell Communication and Cell Cycle",
+     "subStrand": "Unit 4: Cell Communication and Cell Cycle",
+     "objectives": [
+      {
+       "description": "Describe the stages of cell signaling and give an example of a pathway."
+      },
+      {
+       "description": "Explain how feedback regulates a biological process."
+      },
+      {
+       "description": "Describe the cell cycle and how checkpoints control it."
+      }
+     ]
+    },
+    {
+     "strand": "Science Practices",
+     "subStrand": "Science Practices",
+     "objectives": [
+      {
+       "description": "Analyze data from an experiment with a control and justify a claim from the results."
+      },
+      {
+       "description": "Perform a statistical test, such as chi-square, and say what the result means."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Environmental Science",
+   "gradeRange": [
+    "Grade 11"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: The Living World: Ecosystems",
+     "subStrand": "Unit 1: The Living World: Ecosystems",
+     "objectives": [
+      {
+       "description": "Describe the flow of energy through food chains and food webs and the loss at each level."
+      },
+      {
+       "description": "Explain the carbon, nitrogen, phosphorus and water cycles and how humans change them."
+      },
+      {
+       "description": "Describe how terrestrial and aquatic biomes differ and what limits productivity in each."
+      },
+      {
+       "description": "Explain the role of primary production and its measure in an ecosystem."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: The Living World: Biodiversity",
+     "subStrand": "Unit 2: The Living World: Biodiversity",
+     "objectives": [
+      {
+       "description": "Describe the three levels of biodiversity and why each matters."
+      },
+      {
+       "description": "Explain how ecosystem services benefit people."
+      },
+      {
+       "description": "Describe the causes of habitat loss and the effects of invasive species."
+      },
+      {
+       "description": "Explain ecological succession and how a disturbance changes a community."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Populations",
+     "subStrand": "Unit 3: Populations",
+     "objectives": [
+      {
+       "description": "Calculate population growth rate and doubling time."
+      },
+      {
+       "description": "Compare exponential and logistic growth and explain carrying capacity."
+      },
+      {
+       "description": "Distinguish r-selected and K-selected species and age structure diagrams."
+      },
+      {
+       "description": "Explain how human population growth is affected by fertility, mortality and development."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Earth Systems and Resources",
+     "subStrand": "Unit 4: Earth Systems and Resources",
+     "objectives": [
+      {
+       "description": "Describe the layers of the Earth and plate tectonics."
+      },
+      {
+       "description": "Explain how soils form and how soil properties affect agriculture."
+      },
+      {
+       "description": "Describe atmospheric layers and the causes of global wind patterns."
+      },
+      {
+       "description": "Explain how weather, climate and El Nino affect ecosystems."
+      }
+     ]
+    },
+    {
+     "strand": "Science Practices",
+     "subStrand": "Science Practices",
+     "objectives": [
+      {
+       "description": "Design an investigation of a local environmental question and analyze the data."
+      },
+      {
+       "description": "Evaluate the costs and benefits of a solution to an environmental problem."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Calculus AB",
+   "gradeRange": [
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Limits and Continuity",
+     "subStrand": "Unit 1: Limits and Continuity",
+     "objectives": [
+      {
+       "description": "Estimate a limit from a graph and a table and describe what it means."
+      },
+      {
+       "description": "Evaluate limits algebraically using factoring, rationalizing and the properties of limits."
+      },
+      {
+       "description": "Determine whether a function is continuous at a point and classify discontinuities."
+      },
+      {
+       "description": "Use limits to describe infinite limits and end behavior."
+      },
+      {
+       "description": "State and apply the Intermediate Value Theorem."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Differentiation: Definition and Fundamental Properties",
+     "subStrand": "Unit 2: Differentiation: Definition and Fundamental Properties",
+     "objectives": [
+      {
+       "description": "Define the derivative as a limit of the difference quotient and interpret it as an instantaneous rate."
+      },
+      {
+       "description": "Find the equation of a tangent line to a curve at a point."
+      },
+      {
+       "description": "Use the power, product and quotient rules to find derivatives."
+      },
+      {
+       "description": "Differentiate sine, cosine, exponential and logarithmic functions."
+      },
+      {
+       "description": "Describe the relationship between differentiability and continuity."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Differentiation: Composite, Implicit and Inverse Functions",
+     "subStrand": "Unit 3: Differentiation: Composite, Implicit and Inverse Functions",
+     "objectives": [
+      {
+       "description": "Differentiate composite functions using the chain rule."
+      },
+      {
+       "description": "Differentiate implicitly and find a tangent line to an implicit curve."
+      },
+      {
+       "description": "Find the derivative of an inverse function."
+      },
+      {
+       "description": "Differentiate inverse trigonometric functions."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Contextual Applications of Differentiation",
+     "subStrand": "Unit 4: Contextual Applications of Differentiation",
+     "objectives": [
+      {
+       "description": "Interpret the derivative as a rate of change in a real context, with units."
+      },
+      {
+       "description": "Solve a related-rates problem."
+      }
+     ]
+    },
+    {
+     "strand": "Mathematical Practices",
+     "subStrand": "Mathematical Practices",
+     "objectives": [
+      {
+       "description": "Justify a conclusion with a theorem, naming its conditions."
+      },
+      {
+       "description": "Communicate a solution with correct notation and units."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Statistics",
+   "gradeRange": [
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Exploring One-Variable Data",
+     "subStrand": "Unit 1: Exploring One-Variable Data",
+     "objectives": [
+      {
+       "description": "Distinguish categorical from quantitative variables and display each appropriately."
+      },
+      {
+       "description": "Describe a distribution by its shape, center, spread and outliers."
+      },
+      {
+       "description": "Compute and interpret the mean, median, standard deviation and interquartile range."
+      },
+      {
+       "description": "Use the empirical rule and z-scores to compare values from different distributions."
+      },
+      {
+       "description": "Compare two or more distributions using side-by-side graphs and summary statistics."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Exploring Two-Variable Data",
+     "subStrand": "Unit 2: Exploring Two-Variable Data",
+     "objectives": [
+      {
+       "description": "Describe an association in a scatterplot by form, direction and strength."
+      },
+      {
+       "description": "Calculate and interpret the correlation coefficient and its limits."
+      },
+      {
+       "description": "Fit a least-squares regression line and interpret the slope and intercept in context."
+      },
+      {
+       "description": "Use residual plots to judge whether a linear model is appropriate."
+      },
+      {
+       "description": "Explain why association does not imply causation, and recognize lurking variables."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Collecting Data",
+     "subStrand": "Unit 3: Collecting Data",
+     "objectives": [
+      {
+       "description": "Distinguish an observational study from an experiment."
+      },
+      {
+       "description": "Describe a simple random sample, a stratified sample and a cluster sample."
+      },
+      {
+       "description": "Identify sources of bias in a survey."
+      },
+      {
+       "description": "Design an experiment with random assignment, a control and blinding."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Probability, Random Variables, and Probability Distributions",
+     "subStrand": "Unit 4: Probability, Random Variables, and Probability Distributions",
+     "objectives": [
+      {
+       "description": "Use the rules of probability, including the addition and multiplication rules."
+      },
+      {
+       "description": "Calculate conditional probability and decide whether two events are independent."
+      }
+     ]
+    },
+    {
+     "strand": "Statistical Practices",
+     "subStrand": "Statistical Practices",
+     "objectives": [
+      {
+       "description": "Write a conclusion that interprets a result in context and states the reasoning."
+      },
+      {
+       "description": "Use technology to compute statistics and explain the output."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "AP Computer Science A",
+   "gradeRange": [
+    "Grade 11"
+   ],
+   "strands": [
+    {
+     "strand": "Unit 1: Using Objects and Methods",
+     "subStrand": "Unit 1: Using Objects and Methods",
+     "objectives": [
+      {
+       "description": "Declare and initialize variables of primitive and reference types."
+      },
+      {
+       "description": "Evaluate expressions with arithmetic operators, integer division and casting."
+      },
+      {
+       "description": "Call methods on objects, including String methods, and use the Math class."
+      },
+      {
+       "description": "Create objects with constructors and describe the parts of a class."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 2: Selection and Iteration",
+     "subStrand": "Unit 2: Selection and Iteration",
+     "objectives": [
+      {
+       "description": "Write conditional statements using boolean expressions and relational operators."
+      },
+      {
+       "description": "Combine conditions with and, or and not, and apply De Morgan's laws."
+      },
+      {
+       "description": "Write while and for loops and trace their output."
+      },
+      {
+       "description": "Use nested loops to produce patterns and process data."
+      },
+      {
+       "description": "Develop and trace algorithms that use loops and conditions."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 3: Class Creation",
+     "subStrand": "Unit 3: Class Creation",
+     "objectives": [
+      {
+       "description": "Write a class with private instance variables, constructors and accessor and mutator methods."
+      },
+      {
+       "description": "Explain the scope of variables and the meaning of the this keyword."
+      },
+      {
+       "description": "Write static methods and variables and say when to use them."
+      },
+      {
+       "description": "Document a class with comments and preconditions and postconditions."
+      }
+     ]
+    },
+    {
+     "strand": "Unit 4: Data Collections",
+     "subStrand": "Unit 4: Data Collections",
+     "objectives": [
+      {
+       "description": "Create and traverse a one-dimensional array."
+      },
+      {
+       "description": "Use an ArrayList to add, remove and search for elements."
+      },
+      {
+       "description": "Write algorithms for searching and sorting."
+      }
+     ]
+    },
+    {
+     "strand": "Programming Practices",
+     "subStrand": "Programming Practices",
+     "objectives": [
+      {
+       "description": "Debug a program by reading error messages and tracing values."
+      },
+      {
+       "description": "Discuss the ethical and social impacts of a computing innovation."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

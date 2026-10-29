@@ -1,4 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { termWord } from "@shared/school-words";
+import { useSchoolConfig } from "@/hooks/use-school-config";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
@@ -72,6 +74,7 @@ const ALL = "__all__";
 export default function AdminCalendar() {
   const { sync } = useNavigationState();
   const { formatDate } = useSchoolDates();
+  const { config } = useSchoolConfig();
   const [termId, setTermId] = useState("");
   const [gradeLevelId, setGradeLevelId] = useState("");
   const [subjectId, setSubjectId] = useState(ALL);
@@ -207,7 +210,7 @@ export default function AdminCalendar() {
           </Select>
           <Select value={termId} onValueChange={setTermId}>
             <SelectTrigger className="w-36">
-              <SelectValue placeholder="Term" />
+              <SelectValue placeholder={termWord(config).Term} />
             </SelectTrigger>
             <SelectContent>
               {terms.map((t: any) => (

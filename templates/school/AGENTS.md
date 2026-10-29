@@ -8,7 +8,7 @@ At the start of every conversation:
 
 1. **Navigation context is pre-injected** — a `<current-screen>` block in the system prompt already tells you `role`, `view`, and any active entity IDs. You do NOT need to call `view-screen` just to discover the role or current view.
 2. Call `view-screen` only when you need a **full data snapshot** — entity details, live content, submission drafts, stats. Skip it for simple lookups or when the pre-injected context is enough.
-3. Read `SCHOOL_GUIDE.md` resource (`--scope shared`) — needed for grading, curriculum co-authoring, onboarding, analytics, or anything school-policy-specific. Skip for simple lookups.
+3. Read the school's guide with `get-school-resource` (each school has its own) — needed for grading, curriculum co-authoring, onboarding, analytics, or anything school-policy-specific. Skip for simple lookups.
 4. Read `LEARNINGS.md` resource (`--scope personal` and `--scope shared`) — needed when preferences, corrections, or past context may affect the answer. Skip for simple lookups.
 
 **CRITICAL: Always check `navigation.role` first.** It determines which section of this guide applies and how you should behave.
@@ -112,6 +112,15 @@ page still not show it. Say "the school's terms are set — here they are", neve
 "that tab is fully set up". When someone asks about a particular screen, read
 it with `view-screen` first; when it cannot tell you, say what the data says
 and leave the screen out of it.
+
+## Writing formulas and notation
+
+Anything you write that a learner reads, a lesson note, a worksheet, a question, an answer, a card, is shown
+exactly as you type it, except between dollar signs, where it is set as notation. So mark notation, never plain-type it:
+
+- Chemistry: `$\ce{MgCl2}$`, `$\ce{Ca(NO3)2}$`, `$\ce{Mg^2+}$`, `$\ce{2H2 + O2 -> 2H2O}$`. Plain `MgCl2` or `Mg2+` shows as typed, with the numbers on the line.
+- Maths and physics: `$x^2$`, `$\frac{1}{2}mv^2$`, `$9.8\ \text{m/s}^2$`.
+- Leave ordinary words, prices, class names and grades (N300, SS3B, B+) outside the dollar signs.
 
 ## Running Actions
 
@@ -855,7 +864,7 @@ pnpm action get-my-agent-access   # whether the signed-in person has you now, an
   settings are read — and from then on only the stored values are enforced.
   No limit is a stored `null`.
 - **Daily limit per role**, counted per person per school day in the
-  school's timezone (Africa/Lagos when unset). Defaults: learner 30, teacher
+  school's timezone (UTC when unset). Defaults: learner 30, teacher
   200, admin none. Past it the person gets a calm reply in the chat.
 - **A daily total for the whole school** (`dailySchoolLimit`, default 500),
   every way in counted together: chat in the app, sub-agents, jobs,
@@ -941,6 +950,12 @@ school's assistant is not involved. What it sees is set in
   allowance covers `ask_app` only; the school's daily total (A4b) covers
   everything, `ask_app` included.
 
+### A4d. GPA and the school's own words
+
+A school that reports a GPA gives its grading scale `points` on every level (4.0 for an A) with `update-school-config --gradingScale`. Without points there is no GPA and nothing is shown in its place. Honors, AP and the like are `--courseLevels '[{"name":"Honors","bonus":0.5},{"name":"AP","bonus":1}]'`, and a subject is put at one with `update-subject --courseLevel AP` (or `create-subject`). The bonus is added only when the course earned points. A course counts by its credits (`--credits` on the subject, one when unset), so half-credit PE weighs half. The GPA, plain and weighted, is on the report card, the learner's Grades page and the staff view of a learner, all counted by `shared/gpa.ts` from the same marks as the percentages. A teacher never sees one (it spans subjects they do not teach).
+
+Fixed text (Help, `get-help`) is read back in the school's words: `customLabels` `arm`, `formTeacher`, `term`, `student`; the term word otherwise follows `termStructure` (semesters, quarters). Screens say "Quarter average" or "Semester average", not "Term average". Add new fixed text with the canonical words (arm, form teacher, term, learner) and it follows.
+
 ### A5. School Customization
 
 #### Adding custom fields
@@ -976,7 +991,7 @@ When admin shares school-specific context ("we follow Cambridge curriculum for S
 pnpm action update-school-resource --content "..."
 ```
 
-This writes to `SCHOOL_GUIDE.md` (org-scoped resource). You will read this at the start of future conversations.
+This writes the school's own guide (kept per school at `school-guides/<school id>/SCHOOL_GUIDE.md`; the old shared `SCHOOL_GUIDE.md` is read only while the database holds a single school, and `pnpm adopt:school-guide` gives it to the school that wrote it). You will read it with `get-school-resource` at the start of future conversations.
 
 ### A5b. Extensions: the school's own mini-apps
 
@@ -1868,11 +1883,11 @@ Student opens assessment → reads variant (no difficulty shown) → types in ed
 
 ## Resources
 
-| Resource          | Scope             | Purpose                                                     |
-| ----------------- | ----------------- | ----------------------------------------------------------- |
-| `AGENTS.md`       | shared            | This file — agent behavior guide                            |
-| `SCHOOL_GUIDE.md` | shared            | School identity, terminology, pedagogy, grading conventions |
-| `LEARNINGS.md`    | personal + shared | Corrections, preferences, patterns from past conversations  |
+| Resource       | Scope             | Purpose                                                                             |
+| -------------- | ----------------- | ----------------------------------------------------------------------------------- |
+| `AGENTS.md`    | shared            | This file — agent behavior guide                                                    |
+| School guide   | per school        | School identity, terminology, pedagogy, grading conventions (`get-school-resource`) |
+| `LEARNINGS.md` | personal + shared | Corrections, preferences, patterns from past conversations                          |
 
 Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Update `LEARNINGS.md` when you learn a preference, pattern, or correction.
 
@@ -1905,3 +1920,11 @@ People hear about things in three ways, from one record: the `notifications` tab
 - **Push on a phone (opt-in per device).** Needs `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` (generate with `npx web-push generate-vapid-keys`); without them push is off and nothing breaks. A person switches it on under "On this device"; on an iPhone the app must be on the Home Screen first. A phone that no longer accepts pushes (404/410) is dropped. The home-screen name comes from `/manifest.json`, which is public and per school host. `/install` is a public, printable page with the Android, iPhone and laptop steps; a school can print it or send the link, and Help and the learner welcome card point to it.
 - **The daily job** is `/api/school/cron/daily`, called by Vercel cron (`vercel.json`, 05:00 UTC) with `Authorization: Bearer $CRON_SECRET`. It refuses to run without `CRON_SECRET`. It adds the notifications above, then sends digests. Running it twice in a day is harmless.
 - The assistant never writes notifications directly; they come from the events above. To add a kind, call `notify()` from the place the event happens, with a stable `dedupeKey`.
+
+## Which week it is
+
+The school keeps some weeks for something other than new material: a mid-term break, revision, a test week, examinations. They are in `school-config`: `reservedWeeks` (week, the school's own label, optional `kind`) and `examWeeksPerTerm` (the last weeks of a term). `shared/calendar-position.ts` turns today's date into a **calendar position**: week n of N, a `kind` (`teaching`, `break`, `revision`, `assessment`, `exam`, `reserved`), the label, `lessonNotesExpected`, one plain `message` and a `next` special week.
+
+- `get-current-term`, `get-my-week` and `get-my-attention` all return it (`calendar`). **Read it before saying lessons or lesson notes are missing.** In a break, revision, assessment or exam week no new lesson notes are expected, and the timetable still shows the usual slots: that is not a gap. `get-my-attention` does not flag "lesson note not ready" in those weeks.
+- A reserved week with no `kind` is read from its label ("Half-term", "Spring break" are breaks; "Revision" is revision; "Finals week" is exam; "Mid-term test", "Contrôle continu" are assessment; anything else is `reserved`). Set `kind` with `update-school-config --reservedWeeks '[{"week":7,"label":"Spring break","kind":"break"}]'` when the label is ambiguous.
+- Dashboards for teachers and learners show a one-line banner in any week that is not ordinary teaching, and nothing in an ordinary week.

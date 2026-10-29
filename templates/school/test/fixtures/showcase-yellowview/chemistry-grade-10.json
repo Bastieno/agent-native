@@ -1,0 +1,2652 @@
+{
+ "subject": "Chemistry",
+ "yearGroup": "Grade 10",
+ "weeks": {
+  "1": {
+   "topic": "Measurement, significant figures and sorting matter",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. measure, convert units and report results with the right significant figures;\n2. analyze lab data, name sources of error and write a conclusion the data supports;\n3. classify matter as an element, compound, or a homogeneous or heterogeneous mixture, and choose a way to separate a mixture.\n\n## Materials\n\nBalances, graduated cylinders, metal samples, coffee filters, a mixture of sand, salt and iron filings, the worksheet.\n\n## Starter (7 minutes)\n\nDisplay two receipts from a Kroger: 3 lb of apples for $4.47 and a 2.5 liter bottle of soda. Ask: \"How many milliliters of soda is that? How should I write the price per pound?\" Use the answers to introduce conversion factors and rounding.\n\n## Main activity\n\n1. Teach the rules for significant figures: nonzero digits count, zeros between digits count, leading zeros do not, and trailing zeros count only after a decimal point. Practice with whiteboards.\n2. Measure the density of an aluminum cylinder by mass and by water displacement and compute percent error against 2.70 g/mL.\n3. Sort a set of materials (salt water, sand, copper, carbon dioxide, soil) into elements, compounds and mixtures, and choose a separation method for the sand, salt and iron filings mixture.\n\n## Checking for understanding\n\nShow a calculation and ask students to hold up the number of significant figures the answer should have.\n\n## Exit ticket\n\nConvert 2.5 L to mL and state how many significant figures the answer has.",
+   "reading": {
+    "title": "Measuring carefully, and sorting what you measure",
+    "content": "Chemistry is a measuring science. Every measurement has two parts: a number and a unit. A mass of 12.4 grams tells you much more than 12.4 alone. In the United States people use inches, pounds and Fahrenheit in daily life, but scientists use the metric system. To change units, multiply by a **conversion factor**, a fraction equal to one. Since 1 L equals 1000 mL, a 2.5 L bottle is 2.5 L times 1000 mL/L, which is 2500 mL.\n\nThe digits in a measurement show how well the instrument could read it. These are the **significant figures**. A balance that reads 12.40 g gives four significant figures. The rules are simple. All nonzero digits count. Zeros between nonzero digits count. Leading zeros, as in 0.0045, do not count, so 0.0045 has two significant figures. Trailing zeros count if the number has a decimal point, so 12.40 has four. When you multiply or divide, the answer has as many significant figures as the measurement with the fewest. When you add or subtract, the answer has as many decimal places as the measurement with the fewest. For example, 12.50 g plus 3.2 g is 15.7 g, not 15.70 g, because 3.2 is known only to the tenths place.\n\nWhen you compare your result with an accepted value, you can calculate the **percent error**: the absolute difference divided by the accepted value, times 100. If you find the density of aluminum to be 2.65 g/mL and the accepted value is 2.70 g/mL, the percent error is 0.05 divided by 2.70, times 100, about 1.9 percent. Sources of error include reading the meniscus from the wrong angle, an uncalibrated balance, or water left on the sample. A good conclusion states the result, compares it with the accepted value, and names the most likely sources of error.\n\nChemists also sort matter. A **pure substance** has a fixed composition. An **element**, such as copper, cannot be broken into simpler substances by ordinary means. A **compound**, such as water, is two or more elements chemically combined in a fixed ratio. A **mixture** is two or more substances that are physically mixed. In a **homogeneous** mixture, such as salt water, the composition is uniform. In a **heterogeneous** mixture, such as soil, you can see the parts. Mixtures are separated by physical properties: a magnet pulls out iron filings, filtering removes sand, and evaporating the water leaves the salt."
+   },
+   "cards": [
+    {
+     "front": "Conversion factor",
+     "back": "A fraction equal to one that changes a quantity from one unit to another."
+    },
+    {
+     "front": "Significant figures",
+     "back": "The digits in a measurement that were actually read, plus one estimated digit."
+    },
+    {
+     "front": "Percent error",
+     "back": "The absolute difference from the accepted value divided by the accepted value, times 100."
+    },
+    {
+     "front": "Element",
+     "back": "A pure substance that cannot be broken down into simpler substances by ordinary chemical means."
+    },
+    {
+     "front": "Compound",
+     "back": "A pure substance made of two or more elements chemically combined in a fixed ratio."
+    },
+    {
+     "front": "Homogeneous mixture",
+     "back": "A mixture with the same composition throughout, such as salt water."
+    },
+    {
+     "front": "Heterogeneous mixture",
+     "back": "A mixture whose parts can be seen, such as soil."
+    },
+    {
+     "front": "Density",
+     "back": "Mass divided by volume."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How many significant figures are in 0.00450 g?",
+     "options": [
+      "2",
+      "3",
+      "5",
+      "6"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A bottle holds 2.5 L of soda. How many milliliters is that?",
+     "options": [
+      "0.25 mL",
+      "25 mL",
+      "250 mL",
+      "2500 mL"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "A student adds 12.50 g and 3.2 g on two balances. How should the sum be reported?",
+     "options": [
+      "15.70 g",
+      "15.7 g",
+      "16 g",
+      "15.700 g"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A block of aluminum has a mass of 27.0 g and a volume of 10.0 mL. What is its density?",
+     "options": [
+      "0.370 g/mL",
+      "2.70 g/mL",
+      "270 g/mL",
+      "17.0 g/mL"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which of these is a heterogeneous mixture?",
+     "options": [
+      "Salt dissolved in water",
+      "Pure copper wire",
+      "Vegetable soup with chunks",
+      "Carbon dioxide gas"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student finds the density of a piece of aluminum to be 2.58 g/mL. The accepted value is 2.70 g/mL. Calculate the percent error and name two possible sources of error.",
+     "markScheme": [
+      "Finds the difference between the values as 0.12 g/mL",
+      "Divides by the accepted value and multiplies by 100 to get about 4.4 percent",
+      "Names one reasonable source of error, such as reading the meniscus wrongly",
+      "Names a second reasonable source of error, such as an air bubble or water on the sample"
+     ],
+     "modelAnswer": "The difference is 2.70 minus 2.58, which is 0.12 g/mL. Percent error is 0.12 divided by 2.70, times 100, which is 4.4 percent. Possible sources of error are reading the water level in the cylinder from the wrong angle and an air bubble clinging to the metal that made the volume look too large.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "2.70 - 2.58 = 0.12 g/mL. 0.12 / 2.70 × 100 = 4.4%. One error could be that I read the meniscus from above and not at eye level. Another could be a bubble stuck to the metal that made the volume bigger.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "2.70 - 2.58 = 0.12 g/mL."
+        },
+        {
+         "point": 1,
+         "quote": "0.12 / 2.70 × 100 = 4.4%."
+        },
+        {
+         "point": 2,
+         "quote": "One error could be that I read the meniscus from above and not at eye level."
+        },
+        {
+         "point": 3,
+         "quote": "Another could be a bubble stuck to the metal that made the volume bigger."
+        }
+       ],
+       "feedback": "Full marks. A bubble would make the volume too large and the density too low, which matches the result."
+      },
+      {
+       "tier": "full",
+       "text": "The difference is 0.12. Percent error is 0.12 divided by the accepted value 2.70, times 100, about 4.4%. The balance might not have been zeroed. Water left on the metal would add mass or change the volume reading.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The difference is 0.12."
+        },
+        {
+         "point": 1,
+         "quote": "Percent error is 0.12 divided by the accepted value 2.70, times 100, about 4.4%."
+        },
+        {
+         "point": 2,
+         "quote": "The balance might not have been zeroed."
+        },
+        {
+         "point": 3,
+         "quote": "Water left on the metal would add mass or change the volume reading."
+        }
+       ],
+       "feedback": "All four marks. Note that you divide by the accepted value, which you did."
+      },
+      {
+       "tier": "partial",
+       "text": "2.70 - 2.58 = 0.12. 0.12 / 2.58 × 100 = 4.7%. Maybe I read the cylinder wrong.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "2.70 - 2.58 = 0.12."
+        },
+        {
+         "point": 2,
+         "quote": "Maybe I read the cylinder wrong."
+        }
+       ],
+       "feedback": "You divided by your own value. Percent error uses the accepted value, 2.70, which gives 4.4 percent. Name a second source of error."
+      },
+      {
+       "tier": "partial",
+       "text": "The percent error is about 4.4%. There might have been a bubble on the metal.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The percent error is about 4.4%."
+        },
+        {
+         "point": 3,
+         "quote": "There might have been a bubble on the metal."
+        }
+       ],
+       "feedback": "The answer and one source are fine. Show your working and name a second, different source of error.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "2.58 + 2.70 = 5.28 so the percent error is 5.28%.",
+       "meets": [],
+       "feedback": "Percent error is based on the difference between the two values, not their sum. Subtract first, then divide by the accepted value."
+      },
+      {
+       "tier": "weak",
+       "text": "The values are different by 0.12. The error is that the teacher gave us a bad piece of metal.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The values are different by 0.12."
+        }
+       ],
+       "feedback": "You found the difference. Sources of error should be things you can check, such as how the volume was read or whether a bubble was on the sample."
+      }
+     ]
+    },
+    {
+     "prompt": "A mixture contains sand, table salt and iron filings. Describe a sequence of steps to separate all three, and say which property each step uses.",
+     "markScheme": [
+      "Uses a magnet to remove the iron filings, using magnetism",
+      "Adds water to dissolve the salt, using solubility",
+      "Filters to remove the sand, using particle size",
+      "Evaporates the water from the filtrate to recover the salt"
+     ],
+     "modelAnswer": "First pass a magnet over the dry mixture to pull out the iron filings, because iron is magnetic. Then add water and stir so the salt dissolves, because salt is soluble and sand is not. Filter the mixture to leave the sand on the filter paper, because the sand particles are too large to pass through. Finally evaporate the water from the filtrate to recover the salt.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Use a magnet to take out the iron because it is magnetic. Add water so the salt dissolves, since salt is soluble but sand is not. Filter it and the sand stays in the paper because the grains are big. Then boil off the water from what went through the filter and the salt is left.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Use a magnet to take out the iron because it is magnetic."
+        },
+        {
+         "point": 1,
+         "quote": "Add water so the salt dissolves, since salt is soluble but sand is not."
+        },
+        {
+         "point": 2,
+         "quote": "Filter it and the sand stays in the paper because the grains are big."
+        },
+        {
+         "point": 3,
+         "quote": "Then boil off the water from what went through the filter and the salt is left."
+        }
+       ],
+       "feedback": "Full marks. The order matters, and you gave a property for each step."
+      },
+      {
+       "tier": "full",
+       "text": "First a magnet, since only iron is attracted to it. Next dissolve the salt in water, because it is soluble. Pour through a filter paper to catch the sand, which has large particles. Heat the filtrate to evaporate the water and the salt crystals stay behind.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "First a magnet, since only iron is attracted to it."
+        },
+        {
+         "point": 1,
+         "quote": "Next dissolve the salt in water, because it is soluble."
+        },
+        {
+         "point": 2,
+         "quote": "Pour through a filter paper to catch the sand, which has large particles."
+        },
+        {
+         "point": 3,
+         "quote": "Heat the filtrate to evaporate the water and the salt crystals stay behind."
+        }
+       ],
+       "feedback": "All four marks, in the best order."
+      },
+      {
+       "tier": "partial",
+       "text": "Use a magnet for the iron. Then filter out the sand. Then the salt is left.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Use a magnet for the iron."
+        },
+        {
+         "point": 2,
+         "quote": "Then filter out the sand."
+        }
+       ],
+       "feedback": "Salt will pass through the filter only if it is dissolved. Add water first, and evaporate it at the end to get the salt back."
+      },
+      {
+       "tier": "partial",
+       "text": "Add water to dissolve the salt. Evaporate the water to get the salt. Use a filter for everything else.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Add water to dissolve the salt."
+        },
+        {
+         "point": 3,
+         "quote": "Evaporate the water to get the salt."
+        }
+       ],
+       "feedback": "A filter will keep both the sand and the iron. Use the magnet to separate the iron first.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Put it all in a blender and the heavy parts will go to the bottom.",
+       "meets": [],
+       "feedback": "A blender does not separate substances. Think about a property that is different for each one: magnetism, solubility and particle size."
+      },
+      {
+       "tier": "weak",
+       "text": "Use a magnet. Then burn the rest and the salt and sand will separate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Use a magnet."
+        }
+       ],
+       "feedback": "The magnet step is right. Burning would not separate sand and salt. Dissolve the salt in water and filter instead."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Changes in matter and the structure of the atom",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. distinguish physical and chemical changes and give evidence that a reaction occurred;\n2. use the number of protons, neutrons and electrons to describe isotopes and ions.\n\n## Materials\n\nBaking soda, vinegar, ice, steel wool, a Bunsen burner demo, atom model cards, the quiz.\n\n## Starter (6 minutes)\n\nShow four photos: a melting ice cube, a rusting bike chain, a bubbling can of soda being opened, a cake baking. Ask: \"Which of these makes something new?\" Sort into physical and chemical on the board.\n\n## Main activity\n\n1. Station rotation: baking soda and vinegar (gas), steel wool in vinegar (temperature, rust), ice melting, and dissolving sugar. At each, students record the evidence for or against a chemical change.\n2. Atom model: build atoms from cards of protons, neutrons and electrons. Atomic number is the number of protons, mass number is protons plus neutrons.\n3. Practice with isotopes (carbon-12 and carbon-14) and ions ($\\ce{Mg^2+}$ and $\\ce{S^2-}$).\n\n## Checking for understanding\n\nAsk students to give the number of protons, neutrons and electrons for chlorine-37 on a whiteboard.\n\n## Quiz and problem set\n\nFive quiz questions, then a short problem set on atomic structure.",
+   "reading": {
+    "title": "What changed, and what is it made of?",
+    "content": "Matter changes all the time, but not every change makes something new. In a **physical change**, the substance stays the same and only its form or appearance changes. Ice melting is still water. Crushing a can, dissolving sugar, and boiling water are physical changes. In a **chemical change**, atoms are rearranged to form new substances with different properties. Rust forms when iron reacts with oxygen. A cake rising in the oven involves new substances, including carbon dioxide gas.\n\nHow can you tell? The evidence for a chemical reaction includes a gas given off as bubbles that are not from boiling, a new color that was not there before, a precipitate (a solid that forms when two liquids are mixed), and a change in temperature or the release of light. None of these on its own is proof, because a physical change can also give off bubbles or change temperature. But several together are strong evidence.\n\nAll of this happens at the level of atoms. An atom has a small, dense nucleus containing **protons**, which have a positive charge, and **neutrons**, which have no charge. **Electrons**, with a negative charge, move around the nucleus. The **atomic number** is the number of protons and defines the element: every carbon atom has 6 protons. The **mass number** is the number of protons plus neutrons. In a neutral atom, the number of electrons equals the number of protons.\n\nAtoms of the same element can have different numbers of neutrons. These are **isotopes**. Carbon-12 has 6 protons and 6 neutrons. Carbon-14 has 6 protons and 8 neutrons. They react in the same way chemically, but carbon-14 is radioactive and is used to date ancient objects. When an atom gains or loses electrons it becomes an **ion**. If it loses electrons, it has more protons than electrons and a positive charge. A magnesium atom with 12 protons that loses two electrons becomes $\\ce{Mg^2+}$ with 10 electrons. A sulfur atom with 16 protons that gains two electrons becomes $\\ce{S^2-}$ with 18 electrons. The number of protons never changes in an ion, or the element would change."
+   },
+   "cards": [
+    {
+     "front": "Physical change",
+     "back": "A change in form or appearance in which the substance stays the same."
+    },
+    {
+     "front": "Chemical change",
+     "back": "A change in which atoms are rearranged to form new substances."
+    },
+    {
+     "front": "Precipitate",
+     "back": "A solid that forms when two solutions are mixed."
+    },
+    {
+     "front": "Atomic number",
+     "back": "The number of protons in the nucleus of an atom."
+    },
+    {
+     "front": "Mass number",
+     "back": "The number of protons plus the number of neutrons."
+    },
+    {
+     "front": "Isotope",
+     "back": "An atom of the same element with a different number of neutrons."
+    },
+    {
+     "front": "Ion",
+     "back": "An atom or group of atoms with a net electric charge."
+    },
+    {
+     "front": "Cation",
+     "back": "A positively charged ion, formed by losing electrons."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which of these is a chemical change?",
+     "options": [
+      "Ice melting",
+      "Sugar dissolving in water",
+      "Iron rusting",
+      "Water boiling"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "How many neutrons are in an atom of carbon-14 (atomic number 6)?",
+     "options": [
+      "6",
+      "8",
+      "14",
+      "20"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A magnesium atom (atomic number 12) loses two electrons. How many protons and electrons does the ion have?",
+     "options": [
+      "12 protons and 10 electrons",
+      "10 protons and 12 electrons",
+      "14 protons and 12 electrons",
+      "12 protons and 14 electrons"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which observation is the best evidence of a chemical reaction?",
+     "options": [
+      "A solid breaks into smaller pieces",
+      "A colorless solution turns blue and a solid forms",
+      "A liquid changes shape when poured into a different cup",
+      "A solid is crushed into powder"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Chlorine-37 and chlorine-35 are:",
+     "options": [
+      "Different elements",
+      "Isotopes of chlorine",
+      "Ions of chlorine",
+      "Compounds"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A student adds vinegar to baking soda in a cup. Bubbles form, the cup feels cold and the solid disappears. Decide whether this is a physical or chemical change and use the evidence to support your decision.",
+     "markScheme": [
+      "States that it is a chemical change",
+      "Gives the gas (bubbles) as evidence",
+      "Gives the temperature change as evidence",
+      "Explains that new substances have formed, so the bubbles are not just boiling or a change of state"
+     ],
+     "modelAnswer": "This is a chemical change. Bubbles of gas formed even though nothing was heated, and the cup got cold, which is a temperature change. These together show that the vinegar and baking soda reacted to form new substances, one of which is carbon dioxide gas.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "This is a chemical change. Gas bubbles formed even though I never heated it. The cup got colder, so there was a temperature change. Both of those together show that a new substance, like a gas, was made and it isn't just dissolving.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "This is a chemical change."
+        },
+        {
+         "point": 1,
+         "quote": "Gas bubbles formed even though I never heated it."
+        },
+        {
+         "point": 2,
+         "quote": "The cup got colder, so there was a temperature change."
+        },
+        {
+         "point": 3,
+         "quote": "Both of those together show that a new substance, like a gas, was made and it isn't just dissolving."
+        }
+       ],
+       "feedback": "Full marks. You noted that the bubbles were not caused by heating, which is what makes them evidence."
+      },
+      {
+       "tier": "full",
+       "text": "Chemical change. The bubbles are carbon dioxide gas given off. The temperature dropped, which is a sign of reaction. The solid disappeared because it reacted into new products, not because it just dissolved.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Chemical change."
+        },
+        {
+         "point": 1,
+         "quote": "The bubbles are carbon dioxide gas given off."
+        },
+        {
+         "point": 2,
+         "quote": "The temperature dropped, which is a sign of reaction."
+        },
+        {
+         "point": 3,
+         "quote": "The solid disappeared because it reacted into new products, not because it just dissolved."
+        }
+       ],
+       "feedback": "All four marks. Identifying the gas as carbon dioxide is correct."
+      },
+      {
+       "tier": "partial",
+       "text": "It is a chemical change because there are bubbles.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is a chemical change"
+        },
+        {
+         "point": 1,
+         "quote": "because there are bubbles"
+        }
+       ],
+       "feedback": "Good start. A single sign is not always proof. Add the temperature change and say what new substance forms."
+      },
+      {
+       "tier": "partial",
+       "text": "The temperature changed and the solid dissolved, so I think it is a physical change like dissolving sugar.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The temperature changed"
+        }
+       ],
+       "feedback": "Sugar dissolving gives no gas, but this reaction does. The bubbles and temperature change point to a chemical change.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is a physical change because the baking soda just breaks apart into smaller pieces.",
+       "meets": [],
+       "feedback": "Breaking into smaller pieces is physical, but here a gas formed and the temperature changed. Those are signs of new substances."
+      },
+      {
+       "tier": "weak",
+       "text": "It is a chemical change because things are mixed together.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is a chemical change"
+        }
+       ],
+       "feedback": "Mixing alone does not make a chemical change. Salt mixed with water is physical. Give evidence such as gas or a temperature change."
+      }
+     ]
+    },
+    {
+     "prompt": "An atom has 17 protons, 18 neutrons and 18 electrons. Identify the element, give its mass number, state its charge and write what kind of particle it is.",
+     "markScheme": [
+      "Identifies the element as chlorine because it has 17 protons",
+      "Gives the mass number as 35",
+      "States the charge as 1 minus, since there is one more electron than proton",
+      "Describes it as an ion (an anion), an isotope of chlorine, chlorine-35"
+     ],
+     "modelAnswer": "The atom has 17 protons, so it is chlorine. The mass number is 17 plus 18, which is 35. There is one more electron than proton, so the charge is 1 minus. It is a chloride ion, an anion, of the isotope chlorine-35.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "17 protons means it is chlorine. The mass number is 17 + 18 = 35. There are 18 electrons and 17 protons, so the charge is -1. It is an anion, chloride, of chlorine-35.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "17 protons means it is chlorine."
+        },
+        {
+         "point": 1,
+         "quote": "The mass number is 17 + 18 = 35."
+        },
+        {
+         "point": 2,
+         "quote": "There are 18 electrons and 17 protons, so the charge is -1."
+        },
+        {
+         "point": 3,
+         "quote": "It is an anion, chloride, of chlorine-35."
+        }
+       ],
+       "feedback": "Full marks. Each fact follows from the particle counts."
+      },
+      {
+       "tier": "full",
+       "text": "The protons tell me the element, and 17 is chlorine. Mass number is protons plus neutrons, 35. It has one extra electron so it is 1-. So it is a chloride ion, an isotope called chlorine-35.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The protons tell me the element, and 17 is chlorine."
+        },
+        {
+         "point": 1,
+         "quote": "Mass number is protons plus neutrons, 35."
+        },
+        {
+         "point": 2,
+         "quote": "It has one extra electron so it is 1-."
+        },
+        {
+         "point": 3,
+         "quote": "So it is a chloride ion, an isotope called chlorine-35."
+        }
+       ],
+       "feedback": "All four marks. You explained how the protons identify the element."
+      },
+      {
+       "tier": "partial",
+       "text": "It is chlorine because of the 17 protons. The mass number is 35. The charge is 1+ because it has extra electrons.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "It is chlorine because of the 17 protons."
+        },
+        {
+         "point": 1,
+         "quote": "The mass number is 35."
+        }
+       ],
+       "feedback": "Extra electrons make the charge negative, because electrons are negative. The charge is 1-."
+      },
+      {
+       "tier": "partial",
+       "text": "The charge is -1. It is an ion. The mass number is 18 because of the neutrons.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The charge is -1."
+        },
+        {
+         "point": 3,
+         "quote": "It is an ion."
+        }
+       ],
+       "feedback": "The mass number counts protons and neutrons together: 17 + 18 = 35. Name the element too.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It is argon because it has 18 electrons.",
+       "meets": [],
+       "feedback": "The element is set by the protons, not electrons. With 17 protons the atom is chlorine."
+      },
+      {
+       "tier": "weak",
+       "text": "The mass number is 35. It is a neutral atom because it has lots of particles.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The mass number is 35."
+        }
+       ],
+       "feedback": "Neutral means the same number of protons and electrons. This atom has one more electron than protons, so it is an ion with a negative charge."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "The periodic table and its trends",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the periodic table to predict the arrangement of electrons and the properties of elements;\n2. explain periodic trends in atomic radius, ionization energy and electronegativity.\n\n## Materials\n\nBlank periodic tables, colored pencils, data tables of atomic radius and ionization energy for periods 2 and 3, graph paper, the worksheet.\n\n## Starter (6 minutes)\n\nAsk: \"If I give you an element you have never met, what could you predict from where it sits on the table?\" Take answers and write them on the board.\n\n## Main activity\n\n1. Color a blank table for metals, nonmetals and metalloids and label groups (alkali metals, halogens, noble gases). Link the group number to the number of valence electrons.\n2. Graph the first ionization energy of the elements in period 2 and the atomic radius of the elements in group 1 and look for patterns.\n3. Explain the trends with nuclear charge, shielding and distance. Predict which of sodium and potassium is more reactive.\n\n## Checking for understanding\n\nWhiteboards: \"Which has the larger radius, Na or Cl? Why?\" Check for the reason, not just the choice.\n\n## Problem set and worksheet\n\nStudents predict properties and rank elements by trend.",
+   "reading": {
+    "title": "A map of the elements",
+    "content": "The periodic table is organized by atomic number, but its shape is built from patterns in the electrons. A horizontal row is a **period**, and a vertical column is a **group**. Elements in the same group have the same number of **valence electrons**, the electrons in the outermost energy level, and so behave in similar ways. Group 1, the alkali metals, has one valence electron and reacts strongly with water. Group 17, the halogens, has seven valence electrons. Group 18, the noble gases, has a full outer level and rarely reacts.\n\nThree trends help you predict how atoms behave. **Atomic radius** is the size of an atom. Moving down a group, atoms get larger because each period adds an energy level farther from the nucleus. Moving across a period from left to right, atoms get smaller, because the number of protons increases while the electrons are added to the same level, and the stronger pull draws them in. So sodium is larger than chlorine, even though chlorine has more protons.\n\n**Ionization energy** is the energy needed to remove an electron from an atom. It increases across a period, since the nuclear charge is greater and the electrons are held more tightly, and decreases down a group, since the outer electrons are farther away and shielded by the inner levels. This explains why potassium is more reactive than sodium: it loses its single outer electron more easily.\n\n**Electronegativity** is the tendency of an atom to attract the electrons in a bond. It follows the same pattern as ionization energy, increasing across a period and decreasing down a group. Fluorine is the most electronegative element. Noble gases are usually left out since they hardly form bonds.\n\nMetals are on the left and in the middle of the table. They are shiny, conduct electricity, and tend to lose electrons. Nonmetals are on the right. They are poor conductors, and tend to gain electrons. When you know where an element sits, you can estimate its size, its reactivity, and the kind of ion it will form: sodium forms $\\ce{Na^+}$, chlorine forms $\\ce{Cl^-}$."
+   },
+   "cards": [
+    {
+     "front": "Period",
+     "back": "A horizontal row of the periodic table."
+    },
+    {
+     "front": "Group",
+     "back": "A vertical column of elements with similar properties."
+    },
+    {
+     "front": "Valence electrons",
+     "back": "The electrons in the outermost energy level of an atom."
+    },
+    {
+     "front": "Atomic radius",
+     "back": "A measure of the size of an atom."
+    },
+    {
+     "front": "Ionization energy",
+     "back": "The energy needed to remove one electron from an atom."
+    },
+    {
+     "front": "Electronegativity",
+     "back": "The tendency of an atom to attract electrons in a bond."
+    },
+    {
+     "front": "Alkali metal",
+     "back": "A group 1 element with one valence electron, very reactive."
+    },
+    {
+     "front": "Halogen",
+     "back": "A group 17 element with seven valence electrons."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "How many valence electrons does an atom of a group 17 element have?",
+     "options": [
+      "1",
+      "5",
+      "7",
+      "17"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which has the larger atomic radius, sodium or chlorine?",
+     "options": [
+      "Sodium",
+      "Chlorine",
+      "They are the same size",
+      "It cannot be predicted"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "Which element has the highest first ionization energy?",
+     "options": [
+      "Lithium",
+      "Carbon",
+      "Neon",
+      "Beryllium"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Why is potassium more reactive than sodium?",
+     "options": [
+      "It has more protons in its outer level",
+      "Its outer electron is farther from the nucleus, so it is lost more easily",
+      "It has a smaller radius",
+      "It has more valence electrons"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which element is the most electronegative?",
+     "options": [
+      "Oxygen",
+      "Chlorine",
+      "Fluorine",
+      "Nitrogen"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Explain why the atomic radius decreases from sodium to chlorine across period 3, even though the atoms have more electrons.",
+     "markScheme": [
+      "States that the number of protons (nuclear charge) increases across the period",
+      "States that the added electrons go into the same energy level",
+      "States that the stronger pull on the electrons draws the outer level closer to the nucleus",
+      "Concludes that the radius decreases from left to right"
+     ],
+     "modelAnswer": "Across period 3, each atom has one more proton than the one before, so the nuclear charge increases. The extra electrons are added to the same energy level, so there is no extra shielding. The stronger positive pull draws the electrons closer, so the atomic radius decreases from sodium to chlorine.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Each element has one more proton, so the nucleus has a stronger positive charge. The new electrons go in the same energy level so they don't add much shielding. The nucleus pulls the outer electrons in more tightly. So the atoms get smaller going from sodium to chlorine.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Each element has one more proton, so the nucleus has a stronger positive charge."
+        },
+        {
+         "point": 1,
+         "quote": "The new electrons go in the same energy level so they don't add much shielding."
+        },
+        {
+         "point": 2,
+         "quote": "The nucleus pulls the outer electrons in more tightly."
+        },
+        {
+         "point": 3,
+         "quote": "So the atoms get smaller going from sodium to chlorine."
+        }
+       ],
+       "feedback": "Full marks. You explained why more electrons do not make the atom larger here."
+      },
+      {
+       "tier": "full",
+       "text": "The nuclear charge goes up by one each step. The electrons being added are in the same shell. That means the outer electrons are pulled closer. The radius therefore decreases across the period.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The nuclear charge goes up by one each step."
+        },
+        {
+         "point": 1,
+         "quote": "The electrons being added are in the same shell."
+        },
+        {
+         "point": 2,
+         "quote": "That means the outer electrons are pulled closer."
+        },
+        {
+         "point": 3,
+         "quote": "The radius therefore decreases across the period."
+        }
+       ],
+       "feedback": "All four marks, concise and accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "There are more protons as you go across. The atoms get smaller.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "There are more protons as you go across."
+        },
+        {
+         "point": 3,
+         "quote": "The atoms get smaller."
+        }
+       ],
+       "feedback": "Say what the protons do to the electrons, and that the electrons are being added to the same level."
+      },
+      {
+       "tier": "partial",
+       "text": "The electrons are added to the same energy level. They get pulled closer. The atoms get bigger because there are more electrons.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The electrons are added to the same energy level."
+        },
+        {
+         "point": 2,
+         "quote": "They get pulled closer."
+        }
+       ],
+       "feedback": "The conclusion is the wrong way round. The stronger pull makes the atoms smaller. Add the increasing protons.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It gets smaller because the atoms lose electrons across the period.",
+       "meets": [],
+       "feedback": "Atoms do not lose electrons as you move across. They gain protons and electrons. Look at what the extra protons do."
+      },
+      {
+       "tier": "weak",
+       "text": "The radius gets smaller. It is because the periods get shorter.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The radius gets smaller."
+        }
+       ],
+       "feedback": "You have the trend. The cause is the stronger nuclear charge pulling electrons in, not the length of the period."
+      }
+     ]
+    },
+    {
+     "prompt": "Rank lithium, sodium and potassium from the lowest to the highest first ionization energy, and explain the trend. Say which you expect to react most vigorously with water.",
+     "markScheme": [
+      "Ranks the order as potassium, sodium, lithium",
+      "Explains that the outer electron is farther from the nucleus down the group",
+      "Mentions shielding by the inner electron levels",
+      "Predicts that potassium reacts most vigorously because it loses its electron most easily"
+     ],
+     "modelAnswer": "From lowest to highest first ionization energy: potassium, sodium, lithium. Going down the group the outer electron is in a higher energy level, farther from the nucleus and shielded by more inner electrons, so it is easier to remove. Potassium loses its electron most easily, so it should react most vigorously with water.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Potassium, then sodium, then lithium. The outer electron is in a higher level and farther from the nucleus down the group. There are more inner levels shielding it from the nucleus. Potassium gives up its electron most easily, so it reacts the most with water.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Potassium, then sodium, then lithium."
+        },
+        {
+         "point": 1,
+         "quote": "The outer electron is in a higher level and farther from the nucleus down the group."
+        },
+        {
+         "point": 2,
+         "quote": "There are more inner levels shielding it from the nucleus."
+        },
+        {
+         "point": 3,
+         "quote": "Potassium gives up its electron most easily, so it reacts the most with water."
+        }
+       ],
+       "feedback": "Full marks. The shielding point is the one most students leave out."
+      },
+      {
+       "tier": "full",
+       "text": "K < Na < Li. Going down, the valence electron is farther away. It is also shielded by more electron shells. Potassium loses it most readily and therefore is the most reactive.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "K < Na < Li."
+        },
+        {
+         "point": 1,
+         "quote": "Going down, the valence electron is farther away."
+        },
+        {
+         "point": 2,
+         "quote": "It is also shielded by more electron shells."
+        },
+        {
+         "point": 3,
+         "quote": "Potassium loses it most readily and therefore is the most reactive."
+        }
+       ],
+       "feedback": "All four marks, in a tidy answer."
+      },
+      {
+       "tier": "partial",
+       "text": "Potassium, sodium, lithium. Potassium is the most reactive.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Potassium, sodium, lithium."
+        },
+        {
+         "point": 3,
+         "quote": "Potassium is the most reactive."
+        }
+       ],
+       "feedback": "The ranking and prediction are right. Explain the trend: where the outer electron is and what shields it."
+      },
+      {
+       "tier": "partial",
+       "text": "The outer electron is farther away in potassium. The order is lithium, sodium, potassium and lithium reacts the most.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The outer electron is farther away in potassium."
+        }
+       ],
+       "feedback": "Your reasoning points to potassium losing its electron most easily, so it has the lowest ionization energy and reacts most. Check your order.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Lithium is the lowest because it is the smallest and has the least protons so it loses electrons easiest.",
+       "meets": [],
+       "feedback": "Having fewer protons does not make it easier. Lithium's outer electron is closest to the nucleus, so it is held the most tightly."
+      },
+      {
+       "tier": "weak",
+       "text": "Potassium reacts the most. They all have the same ionization energy because they are in the same group.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "Potassium reacts the most."
+        }
+       ],
+       "feedback": "Same group means similar behavior, not equal values. The values decrease down the group, which is why potassium is the most reactive."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Ionic, covalent and metallic bonding, and naming compounds",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. explain why a reaction goes the way it does from the outermost electrons of the atoms;\n2. distinguish ionic, covalent and metallic bonds and write formulas and names for common compounds.\n\n## Materials\n\nSamples of table salt, sugar and copper wire, conductivity testers, hot plates and aluminum foil boats, the practical sheet.\n\n## Starter (6 minutes)\n\nPose: \"Why does sodium explode in water and chlorine poison people, but sodium chloride is the salt we put on french fries?\" Take theories and refer back to valence electrons.\n\n## Main activity\n\n1. Use dot diagrams to show the transfer of an electron from sodium to chlorine and the sharing of electrons between two hydrogens. Define ionic, covalent and metallic bonding.\n2. Write formulas by balancing charges ($\\ce{Mg^2+}$ and $\\ce{Cl^-}$ gives $\\ce{MgCl2}$, $\\ce{Al^3+}$ and $\\ce{O^2-}$ gives $\\ce{Al2O3}$) and name them. Practice naming covalent compounds with prefixes.\n3. Practical: test three solids for melting behavior, solubility in water and conductivity, and use the results to decide the type of bonding.\n\n## Checking for understanding\n\nWhiteboards: \"Write the formula for calcium nitrate.\" Look for the parentheses in $\\ce{Ca(NO3)2}$.\n\n## Worksheet and practical write-up\n\nFormulas and names, then the lab report.",
+   "reading": {
+    "title": "How atoms hold together",
+    "content": "Atoms bond because the arrangement of electrons in a compound is more stable than in separate atoms. Most atoms are most stable with eight valence electrons, a full outer level like a noble gas. This is the **octet rule**, and it has exceptions, but it helps predict a lot.\n\nIn **ionic bonding**, one atom transfers electrons to another. A sodium atom has one valence electron, and a chlorine atom has seven. Sodium gives up its electron to become $\\ce{Na^+}$, and chlorine gains it to become $\\ce{Cl^-}$. The opposite charges attract strongly. Ionic compounds form between metals and nonmetals, and they form crystals of alternating ions called a lattice. They have high melting points, are hard but brittle, and conduct electricity only when melted or dissolved, because then the ions can move.\n\nIn **covalent bonding**, atoms share electrons. Two hydrogen atoms each contribute an electron to a shared pair. Covalent compounds form between nonmetals. They are made of separate molecules, so they usually have lower melting points, and do not conduct electricity in any state, because there are no free charges.\n\nIn **metallic bonding**, the valence electrons of metal atoms are free to move through a \"sea\" of electrons surrounding positive metal ions. This explains why metals conduct electricity, can be hammered into shape without breaking, and are shiny.\n\nTo write the formula of an ionic compound, make the charges add up to zero. Magnesium forms $\\ce{Mg^2+}$ and chlorine forms $\\ce{Cl^-}$, so you need two chloride ions for each magnesium, giving $\\ce{MgCl2}$. Aluminum forms $\\ce{Al^3+}$ and oxygen forms $\\ce{O^2-}$, so the lowest common multiple of the charges is six: two $\\ce{Al^3+}$ and three $\\ce{O^2-}$, giving $\\ce{Al2O3}$. Name ionic compounds with the metal first and the nonmetal ending in \"-ide\": sodium chloride, magnesium chloride. When an ion has more than one atom, such as nitrate ($\\ce{NO3^-}$), put it in parentheses if you need more than one: $\\ce{Ca(NO3)2}$ is calcium nitrate. For covalent compounds, prefixes show the number of atoms: $\\ce{CO2}$ is carbon dioxide and $\\ce{N2O}$ is dinitrogen monoxide."
+   },
+   "cards": [
+    {
+     "front": "Octet rule",
+     "back": "Atoms tend to bond to have eight valence electrons."
+    },
+    {
+     "front": "Ionic bond",
+     "back": "An attraction between positive and negative ions formed by transferring electrons."
+    },
+    {
+     "front": "Covalent bond",
+     "back": "A bond in which two atoms share electrons."
+    },
+    {
+     "front": "Metallic bond",
+     "back": "The attraction between metal ions and a sea of free electrons."
+    },
+    {
+     "front": "Lattice",
+     "back": "A repeating three-dimensional pattern of ions in an ionic solid."
+    },
+    {
+     "front": "Formula unit",
+     "back": "The simplest ratio of ions in an ionic compound."
+    },
+    {
+     "front": "Polyatomic ion",
+     "back": "A charged group of atoms that behaves as one ion, such as nitrate."
+    },
+    {
+     "front": "Molecule",
+     "back": "A group of atoms joined by covalent bonds."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the formula for the compound formed from $\\ce{Mg^2+}$ and $\\ce{Cl^-}$ ions?",
+     "options": [
+      "MgCl",
+      "$\\ce{Mg2Cl}$",
+      "$\\ce{MgCl2}$",
+      "$\\ce{Mg2Cl2}$"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "A solid has a high melting point, is brittle, and conducts electricity only when dissolved in water. It is most likely:",
+     "options": [
+      "Metallic",
+      "Ionic",
+      "Covalent molecular",
+      "A noble gas"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the name of $\\ce{CO2}$?",
+     "options": [
+      "Carbon oxide",
+      "Carbon dioxide",
+      "Monocarbon oxide",
+      "Carbonate"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why can metals be hammered into shape without breaking?",
+     "options": [
+      "Their ions are held in fixed positions by strong covalent bonds",
+      "Layers of ions can slide while the sea of electrons holds them together",
+      "They are held in a rigid lattice of alternating charges",
+      "They are made of molecules"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the formula for calcium nitrate, if calcium forms $\\ce{Ca^2+}$ and nitrate is $\\ce{NO3^-}$?",
+     "options": [
+      "$\\ce{CaNO3}$",
+      "$\\ce{Ca(NO3)2}$",
+      "$\\ce{Ca2NO3}$",
+      "$\\ce{CaNO6}$"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Describe what happens to the valence electrons when sodium reacts with chlorine, and explain why the product, sodium chloride, conducts electricity when dissolved but not as a solid.",
+     "markScheme": [
+      "States that sodium transfers its valence electron to chlorine",
+      "States that this forms $\\ce{Na^+}$ and $\\ce{Cl^-}$ ions, an ionic bond",
+      "States that in the solid, the ions are fixed in a lattice and cannot move",
+      "States that when dissolved the ions are free to move and carry charge"
+     ],
+     "modelAnswer": "Sodium transfers its one valence electron to chlorine, forming $\\ce{Na^+}$ and $\\ce{Cl^-}$ ions held together by an ionic bond. In solid sodium chloride the ions are fixed in a lattice and cannot move, so there is no current. When it dissolves the ions are free to move and carry charge, so the solution conducts.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Sodium gives its one outer electron to chlorine. That makes $\\ce{Na^+}$ and $\\ce{Cl^-}$, which attract each other in an ionic bond. As a solid the ions are locked in place in a lattice so they can't carry current. In water the ions can move around so the solution conducts.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sodium gives its one outer electron to chlorine."
+        },
+        {
+         "point": 1,
+         "quote": "That makes $\\ce{Na^+}$ and $\\ce{Cl^-}$, which attract each other in an ionic bond."
+        },
+        {
+         "point": 2,
+         "quote": "As a solid the ions are locked in place in a lattice so they can't carry current."
+        },
+        {
+         "point": 3,
+         "quote": "In water the ions can move around so the solution conducts."
+        }
+       ],
+       "feedback": "Full marks. You explained conduction in terms of moving charged particles."
+      },
+      {
+       "tier": "full",
+       "text": "Sodium transfers an electron to chlorine. The two ions are oppositely charged and form an ionic bond. In the crystal the ions can't move. When dissolved they are free, so charges can flow.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sodium transfers an electron to chlorine."
+        },
+        {
+         "point": 1,
+         "quote": "The two ions are oppositely charged and form an ionic bond."
+        },
+        {
+         "point": 2,
+         "quote": "In the crystal the ions can't move."
+        },
+        {
+         "point": 3,
+         "quote": "When dissolved they are free, so charges can flow."
+        }
+       ],
+       "feedback": "All four marks, neat and accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "Sodium gives an electron to chlorine and they share it in a covalent bond. The solid does not conduct.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sodium gives an electron to chlorine"
+        }
+       ],
+       "feedback": "In sodium chloride the electron is transferred, not shared. That makes an ionic bond. Add why it conducts when dissolved."
+      },
+      {
+       "tier": "partial",
+       "text": "The ions are stuck in a lattice as a solid. In water the ions are free to move.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The ions are stuck in a lattice as a solid."
+        },
+        {
+         "point": 3,
+         "quote": "In water the ions are free to move."
+        }
+       ],
+       "feedback": "Good explanation of conduction. Say what happens to the electron when sodium meets chlorine.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Electrons are what carry the electricity in salt water so the electrons are free in the water.",
+       "meets": [],
+       "feedback": "In salt water it is the ions that carry the charge, not free electrons. Start with how $\\ce{Na^+}$ and $\\ce{Cl^-}$ form."
+      },
+      {
+       "tier": "weak",
+       "text": "Sodium gives chlorine its electron. The solid conducts because metals conduct.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Sodium gives chlorine its electron."
+        }
+       ],
+       "feedback": "Sodium chloride is not a metal. Its ions are fixed in the solid, so it does not conduct until they are free to move."
+      }
+     ]
+    },
+    {
+     "prompt": "Write the formulas and names for the compounds formed between (a) aluminum and oxygen and (b) magnesium and the nitrate ion. Show how you balanced the charges.",
+     "markScheme": [
+      "Gives the formula $\\ce{Al2O3}$ for aluminum oxide",
+      "Shows charges balancing as two 3+ and three 2- giving a total of 6",
+      "Gives the formula $\\ce{Mg(NO3)2}$ with parentheses",
+      "Names it magnesium nitrate and explains that two nitrate ions balance one $\\ce{Mg^2+}$"
+     ],
+     "modelAnswer": "Aluminum forms $\\ce{Al^3+}$ and oxygen forms $\\ce{O^2-}$. Two $\\ce{Al^3+}$ give +6 and three $\\ce{O^2-}$ give -6, so the formula is $\\ce{Al2O3}$, aluminum oxide. Magnesium forms $\\ce{Mg^2+}$ and nitrate is $\\ce{NO3^-}$, so two nitrate ions are needed for each magnesium, giving $\\ce{Mg(NO3)2}$, magnesium nitrate.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) $\\ce{Al2O3}$, aluminum oxide. Two $\\ce{Al^3+}$ is +6 and three $\\ce{O^2-}$ is -6, so it balances. (b) $\\ce{Mg(NO3)2}$. It is magnesium nitrate because one $\\ce{Mg^2+}$ needs two $\\ce{NO3^-}$ ions to cancel out.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(a) $\\ce{Al2O3}$, aluminum oxide."
+        },
+        {
+         "point": 1,
+         "quote": "Two $\\ce{Al^3+}$ is +6 and three $\\ce{O^2-}$ is -6, so it balances."
+        },
+        {
+         "point": 2,
+         "quote": "(b) $\\ce{Mg(NO3)2}$."
+        },
+        {
+         "point": 3,
+         "quote": "It is magnesium nitrate because one $\\ce{Mg^2+}$ needs two $\\ce{NO3^-}$ ions to cancel out."
+        }
+       ],
+       "feedback": "Full marks. The parentheses around $\\ce{NO3}$ are required and you included them."
+      },
+      {
+       "tier": "full",
+       "text": "Aluminum oxide is $\\ce{Al2O3}$ because 2 × 3+ = 6+ and 3 × 2- = 6-. Magnesium nitrate is $\\ce{Mg(NO3)2}$ since the 2+ needs two 1- nitrates, and I use brackets so the 2 applies to the whole nitrate ion.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Aluminum oxide is $\\ce{Al2O3}$"
+        },
+        {
+         "point": 1,
+         "quote": "because 2 × 3+ = 6+ and 3 × 2- = 6-."
+        },
+        {
+         "point": 2,
+         "quote": "Magnesium nitrate is $\\ce{Mg(NO3)2}$"
+        },
+        {
+         "point": 3,
+         "quote": "since the 2+ needs two 1- nitrates, and I use brackets so the 2 applies to the whole nitrate ion."
+        }
+       ],
+       "feedback": "All four marks. Your explanation for the brackets is clear."
+      },
+      {
+       "tier": "partial",
+       "text": "(a) $\\ce{Al2O3}$ aluminum oxide. The charges are 6 and 6. (b) $\\ce{MgNO3}$ magnesium nitrate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(a) $\\ce{Al2O3}$ aluminum oxide."
+        },
+        {
+         "point": 1,
+         "quote": "The charges are 6 and 6."
+        }
+       ],
+       "feedback": "Part (a) is right. In part (b), one nitrate has a charge of 1-, so you need two to balance $\\ce{Mg^2+}$. The formula is $\\ce{Mg(NO3)2}$."
+      },
+      {
+       "tier": "partial",
+       "text": "(b) $\\ce{Mg(NO3)2}$ is magnesium nitrate. (a) AlO is aluminum oxide.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "(b) $\\ce{Mg(NO3)2}$ is magnesium nitrate."
+        }
+       ],
+       "feedback": "Part (b) is right. For (a), the charges 3+ and 2- do not balance in AlO. Use two aluminum and three oxygen.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "(a) AlO and (b) $\\ce{MgNO3}$. I just wrote the symbols next to each other.",
+       "meets": [],
+       "feedback": "You need to balance the charges so the compound is neutral overall. Write the ions with their charges first."
+      },
+      {
+       "tier": "weak",
+       "text": "(a) $\\ce{Al2O3}$. (b) $\\ce{Mg2NO3}$ because the magnesium is 2+.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(a) $\\ce{Al2O3}$."
+        }
+       ],
+       "feedback": "Part (a) is right. In part (b) the 2+ belongs to the charge, not the subscript. You need two nitrate ions, $\\ce{Mg(NO3)2}$."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "What kind of bond? Testing three solids",
+    "instructions": "You are given three white or metallic solids labeled X, Y and Z (table salt, table sugar and a copper strip). Test each for how easily it melts, whether it dissolves in water, and whether it conducts electricity as a solid and when dissolved. Use the evidence to decide whether each is ionic, covalent or metallic.",
+    "steps": [
+     {
+      "text": "Put on goggles. Place a small amount of each sample on a labeled foil boat."
+     },
+     {
+      "text": "Test the conductivity of each solid with the tester and record yes or no."
+     },
+     {
+      "text": "Heat each sample gently on the hot plate for one minute and record whether it melts or changes.",
+      "note": "Never leave the hot plate unattended, and do not touch the foil."
+     },
+     {
+      "text": "Stir a spatula of each sample in 20 mL of water and record whether it dissolves."
+     },
+     {
+      "text": "Test the conductivity of each solution and record yes or no."
+     },
+     {
+      "text": "Fill in a table of properties and decide on the type of bonding for each sample."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method and safety: complete tests on all samples, safe handling",
+      "maxPoints": 4
+     },
+     {
+      "description": "Results: accurate table of observations for each test",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: bonding assigned using the evidence with reasons",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "X did not conduct as a solid, did not melt on the hot plate, dissolved in water and the solution conducted, so it is ionic. Y did not conduct in either state, melted and browned easily and dissolved, so it is covalent molecular. Z conducted as a solid, did not dissolve and did not melt, so it is metallic. Ionic compounds conduct when their ions are free to move, covalent molecules have no charged particles, and metals have a sea of mobile electrons.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report. Each decision is tied to evidence and a reason about particles."
+     },
+     {
+      "tier": "full",
+      "text": "Method: I tested conductivity, melting and solubility for three samples while wearing goggles. Results: X was a non-conductor as a solid, high melting point, soluble, and the solution conducted. Y was a non-conductor in every state, melted at a low temperature and was soluble. Z conducted as a solid and was insoluble. Conclusion: X is ionic, Y is covalent and Z is metallic. For X, the ions are free only in solution.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. Your table should give actual observations for each test, such as the melting temperature range."
+     },
+     {
+      "tier": "partial",
+      "text": "X was a salt, so it is ionic. Y was sugar so it is covalent. Z was a metal so it is metallic. They had different properties when we tested them with the conductivity tester and the hot plate and the water.",
+      "scores": [
+       2,
+       1,
+       2
+      ],
+      "feedback": "You identified the substances rather than using the evidence. Record what each test showed and use it to decide on the bonding."
+     },
+     {
+      "tier": "partial",
+      "text": "We tested the conductivity of every solid and every solution and put the results in a table. X conducted when dissolved, Y never conducted and Z conducted as a solid. I did not do the melting test because the hot plate was not working that day.",
+      "scores": [
+       2,
+       3,
+       2
+      ],
+      "feedback": "Your conductivity results are well recorded. Ask for another hot plate or borrow data from another group so that you can use the melting evidence too."
+     },
+     {
+      "tier": "weak",
+      "text": "We put the samples on the hot plate and in water. Some of them dissolved and some didn't. I think they are all different types. Z looked like a metal and the other two looked like white powder. I did not write down what happened in each test.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Record which sample did what in each test, then match each pattern of results to a type of bonding."
+     },
+     {
+      "tier": "weak",
+      "text": "All three solids had bonds because everything has bonds. The salt is covalent because it has a strong bond and it did not melt on the hot plate, so it must be strongly covalent. The metal is ionic. I did not use the conductivity tester.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Salt is ionic, and the metal has metallic bonding. A high melting point alone does not decide the type. Use conductivity and solubility as well."
+     }
+    ]
+   }
+  },
+  "5": {
+   "topic": "Molecular shape, polarity and forces between particles",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. plan an investigation of how forces between particles explain the properties of substances;\n2. draw Lewis structures and predict the shape and polarity of simple molecules;\n3. use the conservation of mass to count atoms in a balanced reaction.\n\n## Materials\n\nMolecular model kits, thermometers wrapped in paper towel, droppers, water, ethanol and acetone (teacher dispensed), balloons, the practical sheet.\n\n## Starter (6 minutes)\n\nAsk: \"Why does the hand sanitizer feel cold on your skin, but water doesn't feel cold in the same way?\" Take hypotheses.\n\n## Main activity\n\n1. Draw Lewis structures for $\\ce{H2O}$, $\\ce{CO2}$, $\\ce{NH3}$ and $\\ce{CH4}$ and use the model kits to build their shapes: bent, linear, trigonal pyramidal and tetrahedral.\n2. Decide polarity from shape and electronegativity differences. Introduce dispersion forces, dipole-dipole forces and hydrogen bonds and rank them by strength.\n3. Practical: measure the temperature drop as water, ethanol and acetone evaporate from a wrapped thermometer, and relate to the strength of the forces between molecules.\n\n## Checking for understanding\n\nAsk: \"Why is $\\ce{CO2}$ nonpolar even though each C=O bond is polar?\" Look for symmetry.\n\n## Worksheet and practical write-up\n\nLewis structures, shape and polarity, then the practical report.",
+   "reading": {
+    "title": "Shapes, polarity and the forces between molecules",
+    "content": "A **Lewis structure** shows how the valence electrons in a molecule are shared. To draw one, count all the valence electrons, join the atoms with single bonds, add lone pairs to give each atom an octet (hydrogen needs only two), and use double or triple bonds if needed. Water has 8 valence electrons: 6 from oxygen and 1 from each hydrogen. Oxygen sits in the center with two bonds and two lone pairs. Carbon dioxide has 16 valence electrons, with two double bonds around the carbon.\n\nThe shape of a molecule follows from the idea that electron pairs repel each other and spread out as far as possible. This is VSEPR theory. Methane, $\\ce{CH4}$, has four bonding pairs and is **tetrahedral**. Ammonia, $\\ce{NH3}$, has three bonding pairs and one lone pair, so it is **trigonal pyramidal**. Water has two bonding pairs and two lone pairs, so it is **bent**. Carbon dioxide has two double bonds and no lone pairs on carbon, so it is **linear**.\n\nA bond is **polar** if the atoms differ in electronegativity, so the shared electrons are pulled toward one atom. Whether a molecule is polar depends on both the bonds and the shape. In $\\ce{CO2}$ each C=O bond is polar, but the molecule is linear and the two pulls cancel, so it is nonpolar. In water the bent shape means the pulls do not cancel, so it is polar. Methane's bonds are almost nonpolar and symmetric, so it is nonpolar.\n\nThe attraction between molecules is called an **intermolecular force**, and it is much weaker than a bond within the molecule. **Dispersion forces** act between all molecules and get stronger as molecules get larger. **Dipole-dipole forces** act between polar molecules. **Hydrogen bonds**, a strong type of dipole-dipole attraction, form when hydrogen is bonded to nitrogen, oxygen or fluorine. The stronger these forces are, the higher the boiling point and the slower the evaporation. Water has strong hydrogen bonds, so it has a high boiling point for such a small molecule. Acetone has weaker forces, so it evaporates quickly, and as the fastest-moving molecules leave, the liquid left behind cools."
+   },
+   "cards": [
+    {
+     "front": "Lewis structure",
+     "back": "A diagram showing the valence electrons and bonds in a molecule."
+    },
+    {
+     "front": "VSEPR theory",
+     "back": "Electron pairs repel, so they spread out to give a molecule its shape."
+    },
+    {
+     "front": "Polar molecule",
+     "back": "A molecule with an uneven distribution of charge."
+    },
+    {
+     "front": "Dispersion force",
+     "back": "A weak attraction between all molecules, stronger in larger ones."
+    },
+    {
+     "front": "Dipole-dipole force",
+     "back": "An attraction between the positive end of one polar molecule and the negative end of another."
+    },
+    {
+     "front": "Hydrogen bond",
+     "back": "A strong attraction between H bonded to N, O or F and a lone pair on another molecule."
+    },
+    {
+     "front": "Tetrahedral",
+     "back": "A shape with four bonded atoms at the corners of a tetrahedron, as in methane."
+    },
+    {
+     "front": "Intermolecular force",
+     "back": "An attraction between molecules."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the shape of a water molecule?",
+     "options": [
+      "Linear",
+      "Bent",
+      "Tetrahedral",
+      "Trigonal pyramidal"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Why is $\\ce{CO2}$ nonpolar even though each C=O bond is polar?",
+     "options": [
+      "The molecule is linear and the two bond polarities cancel",
+      "Carbon is more electronegative than oxygen",
+      "Oxygen is nonpolar",
+      "It has lone pairs on carbon"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "How many valence electrons does $\\ce{NH3}$ have in total?",
+     "options": [
+      "5",
+      "6",
+      "8",
+      "14"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "Which liquid should have the strongest intermolecular forces, if it has the highest boiling point?",
+     "options": [
+      "Acetone, 56 degrees Celsius",
+      "Ethanol, 78 degrees Celsius",
+      "Water, 100 degrees Celsius",
+      "They are all the same"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "In the balanced equation $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, how many hydrogen atoms are on each side?",
+     "options": [
+      "2",
+      "4",
+      "6",
+      "8"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Compare water ($\\ce{H2O}$) and carbon dioxide ($\\ce{CO2}$). For each, give the shape, say whether it is polar, and explain the difference using the shape.",
+     "markScheme": [
+      "Gives water's shape as bent",
+      "States that water is polar because the bond pulls do not cancel",
+      "Gives carbon dioxide's shape as linear",
+      "States that $\\ce{CO2}$ is nonpolar because the two bond pulls point in opposite directions and cancel"
+     ],
+     "modelAnswer": "Water is bent and is polar because the bond polarities do not cancel. Carbon dioxide is linear and nonpolar because its two polar C=O bonds point in opposite directions and cancel. Both have polar bonds, so it is the shape that decides whether the molecule is polar.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Water is bent. Because of the bend the polar bonds don't cancel, so water is polar. Carbon dioxide is linear. Its two C=O bonds pull in opposite directions equally and cancel, so it is nonpolar.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Water is bent."
+        },
+        {
+         "point": 1,
+         "quote": "Because of the bend the polar bonds don't cancel, so water is polar."
+        },
+        {
+         "point": 2,
+         "quote": "Carbon dioxide is linear."
+        },
+        {
+         "point": 3,
+         "quote": "Its two C=O bonds pull in opposite directions equally and cancel, so it is nonpolar."
+        }
+       ],
+       "feedback": "Full marks. The shape, not the bond type, decided the answer."
+      },
+      {
+       "tier": "full",
+       "text": "$\\ce{H2O}$ has a bent shape because of the two lone pairs on oxygen. The pulls add up to one side, making it polar. $\\ce{CO2}$ is a straight line. The two polar bonds are opposite and cancel out, so overall it is nonpolar.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "$\\ce{H2O}$ has a bent shape because of the two lone pairs on oxygen."
+        },
+        {
+         "point": 1,
+         "quote": "The pulls add up to one side, making it polar."
+        },
+        {
+         "point": 2,
+         "quote": "$\\ce{CO2}$ is a straight line."
+        },
+        {
+         "point": 3,
+         "quote": "The two polar bonds are opposite and cancel out, so overall it is nonpolar."
+        }
+       ],
+       "feedback": "All four marks. Including the lone pairs explains the bend."
+      },
+      {
+       "tier": "partial",
+       "text": "Water is bent. It is polar. $\\ce{CO2}$ is bent too but it is nonpolar because carbon is not very electronegative.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Water is bent."
+        },
+        {
+         "point": 1,
+         "quote": "It is polar."
+        }
+       ],
+       "feedback": "Carbon dioxide is linear. It is nonpolar because the bond polarities cancel, not because of carbon's electronegativity."
+      },
+      {
+       "tier": "partial",
+       "text": "$\\ce{CO2}$ is linear and the polar bonds cancel. Water is linear too but polar.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "$\\ce{CO2}$ is linear"
+        },
+        {
+         "point": 3,
+         "quote": "the polar bonds cancel"
+        }
+       ],
+       "feedback": "Your $\\ce{CO2}$ answer is right. Water is bent, and that bend is exactly why it is polar. Correct the shape.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both have polar bonds so both are polar molecules.",
+       "meets": [],
+       "feedback": "Polar bonds do not always make a polar molecule. Look at the shape, and whether the pulls cancel."
+      },
+      {
+       "tier": "weak",
+       "text": "Water is bent. $\\ce{CO2}$ is bent as well, and both of them are nonpolar because they are gases.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Water is bent."
+        }
+       ],
+       "feedback": "Water is a liquid at room temperature and is polar. Shape and polarity, not the state of matter, decide this."
+      }
+     ]
+    },
+    {
+     "prompt": "Acetone evaporates faster than water and makes your skin feel cooler. Explain both observations in terms of intermolecular forces and the energy of the molecules that escape.",
+     "markScheme": [
+      "States that acetone has weaker intermolecular forces than water",
+      "States that weaker forces mean molecules escape into the gas phase more easily, so evaporation is faster",
+      "States that the fastest, highest-energy molecules are the ones that escape",
+      "States that the average energy of the remaining liquid falls, so the temperature drops and it feels cool"
+     ],
+     "modelAnswer": "Acetone has weaker intermolecular forces than water, which has strong hydrogen bonds, so its molecules escape into the gas more easily and it evaporates faster. The molecules that escape are the ones with the most energy, so the average energy of the liquid left on the skin falls and the temperature drops, which feels cool.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Acetone doesn't have hydrogen bonds like water so its forces between molecules are weaker. Fewer attractions to overcome means the molecules escape faster, so evaporation is quicker. The molecules that leave are the most energetic ones. The liquid that's left has lower average energy, so it gets colder and feels cool.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Acetone doesn't have hydrogen bonds like water so its forces between molecules are weaker."
+        },
+        {
+         "point": 1,
+         "quote": "Fewer attractions to overcome means the molecules escape faster, so evaporation is quicker."
+        },
+        {
+         "point": 2,
+         "quote": "The molecules that leave are the most energetic ones."
+        },
+        {
+         "point": 3,
+         "quote": "The liquid that's left has lower average energy, so it gets colder and feels cool."
+        }
+       ],
+       "feedback": "Full marks. The point about the most energetic molecules leaving is the heart of evaporative cooling."
+      },
+      {
+       "tier": "full",
+       "text": "The intermolecular forces in acetone are weaker than the hydrogen bonds in water. So it evaporates faster as the molecules break free more easily. The fastest molecules are the ones that escape. That lowers the average kinetic energy of what is left and so the temperature, which my skin senses as cold.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The intermolecular forces in acetone are weaker than the hydrogen bonds in water."
+        },
+        {
+         "point": 1,
+         "quote": "So it evaporates faster as the molecules break free more easily."
+        },
+        {
+         "point": 2,
+         "quote": "The fastest molecules are the ones that escape."
+        },
+        {
+         "point": 3,
+         "quote": "That lowers the average kinetic energy of what is left and so the temperature, which my skin senses as cold."
+        }
+       ],
+       "feedback": "All four marks, and the connection to kinetic energy is accurate."
+      },
+      {
+       "tier": "partial",
+       "text": "Acetone has weaker forces so it evaporates faster. It feels cold because it is a cold liquid.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Acetone has weaker forces"
+        },
+        {
+         "point": 1,
+         "quote": "it evaporates faster"
+        }
+       ],
+       "feedback": "It is not colder to start with. The cooling comes from the energy lost as the fastest molecules escape."
+      },
+      {
+       "tier": "partial",
+       "text": "The fastest molecules leave and that cools the liquid. Water is faster because it is smaller.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The fastest molecules leave"
+        },
+        {
+         "point": 3,
+         "quote": "that cools the liquid"
+        }
+       ],
+       "feedback": "Your cooling explanation is good. Water is slower because of hydrogen bonds, not because of its size.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The acetone takes heat from your hand to burn and that makes it feel cold.",
+       "meets": [],
+       "feedback": "Acetone is not burning. Evaporation takes energy from the liquid as its fastest molecules escape. Use intermolecular forces to explain the speed."
+      },
+      {
+       "tier": "weak",
+       "text": "Acetone evaporates faster. This is because acetone has stronger bonds than water.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Acetone evaporates faster."
+        }
+       ],
+       "feedback": "Stronger forces would make it evaporate more slowly. Acetone has weaker intermolecular forces than water."
+      }
+     ]
+    }
+   ],
+   "practical": {
+    "title": "Evaporative cooling of three liquids",
+    "instructions": "Wrap the bulb of a thermometer in a small square of paper towel, secured with a rubber band. Dip it in water, ethanol and acetone in turn, hold it in the air, and record the lowest temperature reached in two minutes. Rank the liquids by the temperature drop and explain the ranking in terms of intermolecular forces.",
+    "steps": [
+     {
+      "text": "Record the room temperature and put on goggles. Keep acetone and ethanol away from flames."
+     },
+     {
+      "text": "Wrap a small square of paper towel around the thermometer bulb and secure it with a band."
+     },
+     {
+      "text": "Dip the bulb in the water for five seconds, remove it, and read the temperature every 15 seconds for two minutes.",
+      "note": "Work in a ventilated area and keep the bottle capped between uses."
+     },
+     {
+      "text": "Repeat with a fresh paper towel for ethanol and then acetone, waiting for the thermometer to return to room temperature."
+     },
+     {
+      "text": "Calculate the greatest temperature drop for each liquid."
+     },
+     {
+      "text": "Rank the liquids and explain the ranking in terms of intermolecular forces."
+     }
+    ],
+    "rubric": [
+     {
+      "description": "Method: fair test with a fresh towel, same dip time and a room temperature baseline",
+      "maxPoints": 4
+     },
+     {
+      "description": "Results: complete table and correct temperature drops",
+      "maxPoints": 4
+     },
+     {
+      "description": "Conclusion: links the ranking to the strength of intermolecular forces",
+      "maxPoints": 4
+     }
+    ],
+    "writeUps": [
+     {
+      "tier": "full",
+      "text": "Room temperature was 22 degrees Celsius. Water dropped to 20, a drop of 2 degrees. Ethanol dropped to 15, a drop of 7 degrees, and acetone dropped to 10, a drop of 12 degrees. The ranking from biggest to smallest drop is acetone, ethanol, water. Acetone molecules have the weakest attractions to each other, so they evaporate fastest and take the most energy with them, while water has strong hydrogen bonds and evaporates slowly.",
+      "scores": [
+       4,
+       4,
+       4
+      ],
+      "feedback": "An excellent report with a clear table, correct drops, and a conclusion in terms of forces."
+     },
+     {
+      "tier": "full",
+      "text": "We used a fresh paper towel each time, dipped for five seconds, and measured every 15 seconds. The drops were 2 for water, 6 for ethanol and 11 for acetone. Acetone cooled the most. This is because its intermolecular forces are the weakest, so the fastest molecules escape easily. Ethanol has hydrogen bonds but fewer than water, so it was in the middle. A source of error is that the room had a draft that may have changed evaporation.",
+      "scores": [
+       4,
+       3,
+       4
+      ],
+      "feedback": "Very good. Include the full set of temperature readings in your table rather than only the drops."
+     },
+     {
+      "tier": "partial",
+      "text": "The acetone made the thermometer go down the most and the water went down the least. Ethanol was in the middle. I think this is because acetone evaporates fast. We wrapped the thermometer in paper towel and dipped it in the liquids in turn.",
+      "scores": [
+       2,
+       2,
+       2
+      ],
+      "feedback": "Give the actual temperatures and drops. Then explain why acetone evaporates faster, using the strength of the forces between its molecules."
+     },
+     {
+      "tier": "partial",
+      "text": "Room temperature was 22. Water 20, ethanol 15, acetone 10. Acetone dropped the most. I do not know why it dropped more than the others. Maybe it was a colder liquid than the water when we started so that is why it dropped to a lower temperature.",
+      "scores": [
+       2,
+       3,
+       1
+      ],
+      "feedback": "Your numbers are good. Liquids were all at room temperature to start. The difference comes from how fast each evaporates, which depends on forces between molecules."
+     },
+     {
+      "tier": "weak",
+      "text": "We put the thermometer in the liquids and the temperature changed. Acetone changed the most because it is the strongest chemical. It was a lot of fun to do the experiment and I learned about the liquids. I forgot to write down the starting temperature.",
+      "scores": [
+       1,
+       1,
+       0
+      ],
+      "feedback": "Record the temperatures and the drops. Acetone is not the strongest, it has the weakest attractions between its molecules, which is why it evaporates fast."
+     },
+     {
+      "tier": "weak",
+      "text": "Water went down the most because water has the strongest bonds, so it takes the most energy to evaporate and that made the thermometer the coldest. Acetone hardly changed at all in our test because it is such a light liquid.",
+      "scores": [
+       1,
+       0,
+       0
+      ],
+      "feedback": "Check your data. The strongest forces make water evaporate slowly, so it gives the smallest drop. Compare the ranking with the boiling points."
+     }
+    ]
+   }
+  },
+  "6": {
+   "topic": "Balancing equations and the mole",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. balance chemical equations and classify reactions as synthesis, decomposition, replacement or combustion;\n2. convert between moles, mass and number of particles using molar mass and Avogadro's number.\n\n## Materials\n\nAtom counting cards, a periodic table with molar masses, balances, samples of water, salt and sugar, a calculator, the worksheet.\n\n## Starter (6 minutes)\n\nPose: \"A recipe makes 12 cookies from 2 cups of flour. How much flour for 36? Chemists use the same kind of reasoning with counting units called moles.\" Take answers and link to ratios.\n\n## Main activity\n\n1. Balance equations with atom inventory tables: 4Fe + $\\ce{3O2}$ gives $\\ce{2Fe2O3}$, and $\\ce{CH4}$ + $\\ce{2O2}$ gives $\\ce{CO2}$ + $\\ce{2H2O}$. Classify each by type.\n2. Introduce the mole as 6.02 x 10^23 particles and molar mass as the mass of one mole (in grams). Work through water (18.02 g/mol) and sodium chloride (58.44 g/mol).\n3. Stations: weigh out one mole of table salt, half a mole of water and 0.25 mole of sugar. Convert between grams, moles and particles.\n\n## Checking for understanding\n\nMini whiteboards: \"How many moles are in 36.0 g of water?\" Check the setup and the units.\n\n## Worksheet and quiz\n\nBalancing, classification and mole conversions.",
+   "reading": {
+    "title": "Counting by weighing",
+    "content": "A chemical equation is a recipe. The formulas on the left are the **reactants**, and the formulas on the right are the **products**. Because atoms are not created or destroyed in a reaction, the number of atoms of each element must be the same on both sides. This is the **conservation of mass**. To balance an equation, you change the **coefficients**, the numbers in front of formulas, and never the subscripts inside them, because changing a subscript changes the substance.\n\nTake rust. Iron plus oxygen gives iron(III) oxide: Fe + $\\ce{O2}$ gives $\\ce{Fe2O3}$. The right side has 2 iron and 3 oxygen atoms. To balance, the oxygen needs a common multiple of 2 and 3, which is 6. Put 3 in front of $\\ce{O2}$ (6 oxygen atoms) and 2 in front of $\\ce{Fe2O3}$ (6 oxygen atoms and 4 iron atoms), then put 4 in front of Fe. The balanced equation is 4Fe + $\\ce{3O2}$ gives $\\ce{2Fe2O3}$.\n\nReactions fall into common types. In a **synthesis** reaction, two or more substances combine to make one. In a **decomposition**, one substance breaks into two or more. In a **single replacement**, one element takes the place of another in a compound. In a **combustion**, a substance reacts with oxygen and releases energy, as when methane burns: $\\ce{CH4}$ + $\\ce{2O2}$ gives $\\ce{CO2}$ + $\\ce{2H2O}$.\n\nAtoms are far too small to count one by one, so chemists count in moles. One **mole** is 6.02 times 10 to the power of 23 particles, which is **Avogadro's number**. The mass in grams of one mole of a substance is its **molar mass**, which you find by adding the atomic masses from the periodic table. Water, $\\ce{H2O}$, has a molar mass of 2(1.01) + 16.00, which is 18.02 g/mol. To find how many moles are in a sample, divide the mass by the molar mass. A sample of 36.0 g of water is 36.0 divided by 18.02, which is about 2.00 mol. To find the number of molecules, multiply the moles by Avogadro's number: 0.50 mol is 3.01 times 10 to the power of 23 molecules. The mole links the invisible world of atoms to the grams you can weigh on a balance."
+   },
+   "cards": [
+    {
+     "front": "Reactant",
+     "back": "A substance that is present at the start of a reaction."
+    },
+    {
+     "front": "Product",
+     "back": "A substance that is formed in a reaction."
+    },
+    {
+     "front": "Coefficient",
+     "back": "The number in front of a formula that shows how many units take part."
+    },
+    {
+     "front": "Synthesis reaction",
+     "back": "A reaction in which two or more substances combine to form one."
+    },
+    {
+     "front": "Decomposition reaction",
+     "back": "A reaction in which one substance breaks into two or more."
+    },
+    {
+     "front": "Combustion",
+     "back": "A reaction of a substance with oxygen that releases energy."
+    },
+    {
+     "front": "Mole",
+     "back": "6.02 x 10^23 particles of a substance."
+    },
+    {
+     "front": "Molar mass",
+     "back": "The mass in grams of one mole of a substance."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What are the coefficients that balance Fe + $\\ce{O2}$ gives $\\ce{Fe2O3}$?",
+     "options": [
+      "1, 1, 1",
+      "2, 3, 2",
+      "4, 3, 2",
+      "3, 2, 4"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "The reaction $\\ce{2H2O}$ gives $\\ce{2H2}$ + $\\ce{O2}$ is a:",
+     "options": [
+      "Synthesis",
+      "Decomposition",
+      "Combustion",
+      "Single replacement"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is the molar mass of NaCl (Na = 22.99, Cl = 35.45)?",
+     "options": [
+      "13.46 g/mol",
+      "58.44 g/mol",
+      "28.22 g/mol",
+      "1.54 g/mol"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How many moles are in 117 g of NaCl (molar mass 58.44 g/mol)?",
+     "options": [
+      "0.50 mol",
+      "2.00 mol",
+      "6.80 mol",
+      "117 mol"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How many molecules are in 0.50 mol of water?",
+     "options": [
+      "6.02 x 10^23",
+      "3.01 x 10^23",
+      "1.20 x 10^24",
+      "9.0 x 10^23"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Balance the equation $\\ce{C3H8}$ + $\\ce{O2}$ gives $\\ce{CO2}$ + $\\ce{H2O}$, show your atom counts, and classify the reaction.",
+     "markScheme": [
+      "Balances carbon with 3 $\\ce{CO2}$",
+      "Balances hydrogen with 4 $\\ce{H2O}$",
+      "Balances oxygen with 5 $\\ce{O2}$ and gives the complete equation $\\ce{C3H8}$ + $\\ce{5O2}$ gives $\\ce{3CO2}$ + $\\ce{4H2O}$",
+      "Classifies the reaction as combustion"
+     ],
+     "modelAnswer": "Balance the carbon with 3 $\\ce{CO2}$ and the hydrogen with 4 $\\ce{H2O}$. That gives 6 + 4 = 10 oxygen atoms on the right, so 5 $\\ce{O2}$ are needed on the left. The balanced equation is $\\ce{C3H8}$ + $\\ce{5O2}$ gives $\\ce{3CO2}$ + $\\ce{4H2O}$. This is a combustion reaction.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "3 carbons means 3 $\\ce{CO2}$. 8 hydrogens means 4 $\\ce{H2O}$. Now the oxygen on the right is 6 + 4 = 10, so 5 $\\ce{O2}$ on the left. $\\ce{C3H8}$ + $\\ce{5O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$. It is a combustion reaction because a fuel burns in oxygen.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3 carbons means 3 $\\ce{CO2}$."
+        },
+        {
+         "point": 1,
+         "quote": "8 hydrogens means 4 $\\ce{H2O}$."
+        },
+        {
+         "point": 2,
+         "quote": "Now the oxygen on the right is 6 + 4 = 10, so 5 $\\ce{O2}$ on the left. $\\ce{C3H8}$ + $\\ce{5O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$."
+        },
+        {
+         "point": 3,
+         "quote": "It is a combustion reaction because a fuel burns in oxygen."
+        }
+       ],
+       "feedback": "Full marks. Leaving oxygen for last is a good strategy because it appears in two products."
+      },
+      {
+       "tier": "full",
+       "text": "C: 3 on the left so put 3 in front of $\\ce{CO2}$. H: 8 on the left so put 4 in front of $\\ce{H2O}$. O: 3×2 + 4×1 = 10, so the $\\ce{O2}$ needs a 5. Balanced: $\\ce{C3H8}$ + $\\ce{5O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$. Combustion, since it's a hydrocarbon reacting with oxygen.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "C: 3 on the left so put 3 in front of $\\ce{CO2}$."
+        },
+        {
+         "point": 1,
+         "quote": "H: 8 on the left so put 4 in front of $\\ce{H2O}$."
+        },
+        {
+         "point": 2,
+         "quote": "O: 3×2 + 4×1 = 10, so the $\\ce{O2}$ needs a 5. Balanced: $\\ce{C3H8}$ + $\\ce{5O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$."
+        },
+        {
+         "point": 3,
+         "quote": "Combustion, since it's a hydrocarbon reacting with oxygen."
+        }
+       ],
+       "feedback": "All four marks, with a neat atom inventory."
+      },
+      {
+       "tier": "partial",
+       "text": "3 $\\ce{CO2}$. 4 $\\ce{H2O}$. $\\ce{C3H8}$ + $\\ce{3O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$. It's combustion.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3 $\\ce{CO2}$."
+        },
+        {
+         "point": 1,
+         "quote": "4 $\\ce{H2O}$."
+        }
+       ],
+       "feedback": "The oxygen is not balanced: the right side has 10 oxygen atoms but 3 $\\ce{O2}$ only gives 6. You need 5 $\\ce{O2}$."
+      },
+      {
+       "tier": "partial",
+       "text": "$\\ce{C3H8}$ + $\\ce{5O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$. It's combustion.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "$\\ce{C3H8}$ + $\\ce{5O2}$ → $\\ce{3CO2}$ + $\\ce{4H2O}$."
+        },
+        {
+         "point": 3,
+         "quote": "It's combustion."
+        }
+       ],
+       "feedback": "The answer is right, but you were asked to show your atom counts. Write out the carbons, hydrogens and oxygens on each side.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "$\\ce{C3H8}$ + $\\ce{O2}$ → $\\ce{CO2}$ + $\\ce{H2O}$ is already balanced because the same letters are on each side. It's a synthesis reaction.",
+       "meets": [],
+       "feedback": "Count the atoms: there are 3 carbons on the left and 1 on the right. And a fuel burning in oxygen is combustion."
+      },
+      {
+       "tier": "weak",
+       "text": "This is combustion. To balance it I changed the formula to $\\ce{CO3}$ so the carbons match.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "This is combustion."
+        }
+       ],
+       "feedback": "Never change the subscripts, because that changes the substance. Balance with coefficients only."
+      }
+     ]
+    },
+    {
+     "prompt": "A sample of water has a mass of 54.0 g. Calculate the number of moles and the number of molecules. The molar mass of water is 18.0 g/mol.",
+     "markScheme": [
+      "Writes moles = mass / molar mass",
+      "Calculates 3.00 mol",
+      "Multiplies the moles by 6.02 x 10^23",
+      "Gives the number of molecules as 1.81 x 10^24"
+     ],
+     "modelAnswer": "Moles equals mass divided by molar mass, so 54.0 g divided by 18.0 g/mol is 3.00 mol. The number of molecules is 3.00 mol times 6.02 x 10^23 molecules per mole, which is 1.81 x 10^24 molecules.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Moles is mass divided by molar mass. 54.0 / 18.0 = 3.00 mol. Then 3.00 × 6.02 × 10^23 = 1.81 × 10^24 molecules.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Moles is mass divided by molar mass."
+        },
+        {
+         "point": 1,
+         "quote": "54.0 / 18.0 = 3.00 mol."
+        },
+        {
+         "point": 2,
+         "quote": "Then 3.00 × 6.02 × 10^23"
+        },
+        {
+         "point": 3,
+         "quote": "= 1.81 × 10^24 molecules."
+        }
+       ],
+       "feedback": "Full marks. The units and significant figures are right."
+      },
+      {
+       "tier": "full",
+       "text": "n = m / M, so n = 54.0 g ÷ 18.0 g/mol = 3.00 mol. Then multiply by Avogadro's number, 6.02 × 10^23 to get 1.81 × 10^24 molecules.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "n = m / M"
+        },
+        {
+         "point": 1,
+         "quote": "n = 54.0 g ÷ 18.0 g/mol = 3.00 mol"
+        },
+        {
+         "point": 2,
+         "quote": "multiply by Avogadro's number, 6.02 × 10^23"
+        },
+        {
+         "point": 3,
+         "quote": "1.81 × 10^24 molecules"
+        }
+       ],
+       "feedback": "All four marks, with a clear formula."
+      },
+      {
+       "tier": "partial",
+       "text": "Mass divided by molar mass gives 3.00 mol. Then 3.00 + 6.02 × 10^23 molecules.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Mass divided by molar mass"
+        },
+        {
+         "point": 1,
+         "quote": "gives 3.00 mol."
+        }
+       ],
+       "feedback": "The moles are right. To find the number of particles you multiply by Avogadro's number, not add."
+      },
+      {
+       "tier": "partial",
+       "text": "3 mol × 6.02 × 10^23 = 1.81 × 10^24.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "3 mol × 6.02 × 10^23"
+        },
+        {
+         "point": 3,
+         "quote": "= 1.81 × 10^24."
+        }
+       ],
+       "feedback": "These steps are right. Show how you found the 3 mol from the mass, since the method is part of the answer.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "54.0 × 18.0 = 972 mol and 972 × 6.02 × 10^23 = 5.85 × 10^26 molecules.",
+       "meets": [],
+       "feedback": "To get moles you divide the mass by the molar mass. Multiplying them gives a number that does not make sense for 54 g of water."
+      },
+      {
+       "tier": "weak",
+       "text": "Moles is mass over molar mass. 18.0 / 54.0 = 0.333 mol, which is 2.0 × 10^23 molecules.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Moles is mass over molar mass."
+        }
+       ],
+       "feedback": "You wrote the right rule but flipped the numbers. The mass goes on top: 54.0 divided by 18.0."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Stoichiometry, limiting reactants and percent yield",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. calculate the mass of a product from the mass of a reactant, and find the limiting reactant;\n2. calculate percent yield and explain why an actual yield is less than the theoretical yield.\n\n## Materials\n\nMole-map posters, calculators, s'mores ingredients (graham crackers, marshmallows, chocolate) for a limiting-reactant demo, the quiz and problem set.\n\n## Starter (7 minutes)\n\nUse a s'mores analogy: a s'more is 2 crackers, 1 marshmallow and 1 piece of chocolate. With 10 crackers, 8 marshmallows and 4 chocolates, how many s'mores can we make? Which ingredient runs out first?\n\n## Main activity\n\n1. Present the mole map: grams of A to moles of A to moles of B (using the coefficients) to grams of B. Practice on $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$.\n2. Limiting reactant: for $\\ce{N2}$ + $\\ce{3H2}$ gives $\\ce{2NH3}$, compare the available moles with the ratio and decide which runs out.\n3. Define theoretical, actual and percent yield, and discuss why real reactions do not give the theoretical amount.\n\n## Checking for understanding\n\nWhiteboards: \"Which reactant limits if you have 1.00 mol $\\ce{N2}$ and 2.00 mol $\\ce{H2}$?\" Check for the ratio.\n\n## Quiz and problem set\n\nFive questions and a problem set with a limiting-reactant problem.",
+   "reading": {
+    "title": "How much can we make?",
+    "content": "The coefficients in a balanced equation tell you the **mole ratio** of reactants and products. In $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, two moles of hydrogen react with one mole of oxygen to make two moles of water. You cannot weigh moles directly, so you convert from grams to moles, use the mole ratio, and convert back to grams. This is **stoichiometry**.\n\nHere is an example. How many grams of water form from 4.04 g of hydrogen? The molar mass of $\\ce{H2}$ is 2.02 g/mol, so 4.04 g is 2.00 mol. The ratio of $\\ce{H2}$ to $\\ce{H2O}$ is 2 to 2, so 2.00 mol of hydrogen makes 2.00 mol of water. The molar mass of water is 18.02 g/mol, so the mass is 2.00 times 18.02, which is 36.0 g. The pattern is always grams to moles, moles to moles with the ratio, and moles to grams.\n\nIn real reactions one reactant often runs out first. This is the **limiting reactant**, and it decides how much product can form. The other is the **excess reactant**. To find the limiting reactant, divide each amount of moles by its coefficient and compare. For $\\ce{N2}$ + $\\ce{3H2}$ gives $\\ce{2NH3}$, suppose you start with 1.00 mol of $\\ce{N2}$ and 2.00 mol of $\\ce{H2}$. Nitrogen could support 1.00 divided by 1, which is 1.00 reaction, but hydrogen supports 2.00 divided by 3, which is 0.67. Hydrogen runs out first, so it is limiting. The ammonia is found from the limiting reactant: 2.00 mol $\\ce{H2}$ times 2 mol $\\ce{NH3}$ per 3 mol $\\ce{H2}$ is 1.33 mol of $\\ce{NH3}$.\n\nThe **theoretical yield** is the maximum mass of product calculated from the limiting reactant. The **actual yield** is what you really collect, and it is almost always less. Some product sticks to glassware, some reactant forms other products, the reaction may not go to completion, and some is lost in the purification. The **percent yield** is the actual yield divided by the theoretical yield, times 100. If the theoretical yield is 20.0 g and you collect 15.0 g, the percent yield is 75.0 percent. A percent yield greater than 100 percent signals an error, such as a wet product."
+   },
+   "cards": [
+    {
+     "front": "Stoichiometry",
+     "back": "Calculating amounts of reactants and products from a balanced equation."
+    },
+    {
+     "front": "Mole ratio",
+     "back": "The ratio of coefficients in a balanced equation."
+    },
+    {
+     "front": "Limiting reactant",
+     "back": "The reactant that is used up first and limits the amount of product."
+    },
+    {
+     "front": "Excess reactant",
+     "back": "The reactant that is left over when the reaction stops."
+    },
+    {
+     "front": "Theoretical yield",
+     "back": "The maximum amount of product that can form, calculated from the equation."
+    },
+    {
+     "front": "Actual yield",
+     "back": "The amount of product really collected in an experiment."
+    },
+    {
+     "front": "Percent yield",
+     "back": "Actual yield divided by theoretical yield, times 100."
+    },
+    {
+     "front": "Molar mass",
+     "back": "The mass in grams of one mole of a substance."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "In $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, how many moles of water form from 3.0 mol of hydrogen with plenty of oxygen?",
+     "options": [
+      "1.5 mol",
+      "3.0 mol",
+      "6.0 mol",
+      "9.0 mol"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "In $\\ce{N2}$ + $\\ce{3H2}$ gives $\\ce{2NH3}$, you have 1.00 mol $\\ce{N2}$ and 2.00 mol $\\ce{H2}$. Which is the limiting reactant?",
+     "options": [
+      "$\\ce{N2}$",
+      "$\\ce{H2}$",
+      "$\\ce{NH3}$",
+      "Neither"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A reaction should give 20.0 g of product, but only 15.0 g is collected. What is the percent yield?",
+     "options": [
+      "33%",
+      "75%",
+      "133%",
+      "5%"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Which is the most likely reason for an actual yield being lower than the theoretical yield?",
+     "options": [
+      "Atoms are destroyed in the reaction",
+      "Some product is lost during transfer, or some reactant forms other products",
+      "The mole ratio changes during the reaction",
+      "The coefficients are wrong"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How many grams are in 2.00 mol of water (molar mass 18.0 g/mol)?",
+     "options": [
+      "9.00 g",
+      "18.0 g",
+      "36.0 g",
+      "72.0 g"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "For the reaction $\\ce{2H2}$ + $\\ce{O2}$ gives $\\ce{2H2O}$, calculate the mass of water that forms from 4.04 g of hydrogen with an excess of oxygen. The molar masses are 2.02 g/mol for $\\ce{H2}$ and 18.02 g/mol for $\\ce{H2O}$.",
+     "markScheme": [
+      "Converts 4.04 g of hydrogen to 2.00 mol",
+      "Uses the 2 to 2 mole ratio to get 2.00 mol of water",
+      "Multiplies by the molar mass of water, 18.02 g/mol",
+      "Gives the mass as 36.0 g with a unit"
+     ],
+     "modelAnswer": "4.04 g of $\\ce{H2}$ divided by 2.02 g/mol is 2.00 mol. The mole ratio of $\\ce{H2}$ to $\\ce{H2O}$ is 2 to 2, so 2.00 mol of $\\ce{H2}$ makes 2.00 mol of $\\ce{H2O}$. The mass of water is 2.00 mol times 18.02 g/mol, which is 36.0 g.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "4.04 g ÷ 2.02 g/mol = 2.00 mol of $\\ce{H2}$. The ratio $\\ce{H2}$ to $\\ce{H2O}$ is 2:2 so there is 2.00 mol of $\\ce{H2O}$. 2.00 mol × 18.02 g/mol = 36.0 g of water.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "4.04 g ÷ 2.02 g/mol = 2.00 mol of $\\ce{H2}$."
+        },
+        {
+         "point": 1,
+         "quote": "The ratio $\\ce{H2}$ to $\\ce{H2O}$ is 2:2 so there is 2.00 mol of $\\ce{H2O}$."
+        },
+        {
+         "point": 2,
+         "quote": "2.00 mol × 18.02 g/mol"
+        },
+        {
+         "point": 3,
+         "quote": "= 36.0 g of water."
+        }
+       ],
+       "feedback": "Full marks. Each step is labeled and the units carry through."
+      },
+      {
+       "tier": "full",
+       "text": "Moles of $\\ce{H2}$ = 4.04 / 2.02 = 2.00. 2 mol $\\ce{H2}$ gives 2 mol $\\ce{H2O}$. Mass = 2.00 × 18.02 = 36.0 g $\\ce{H2O}$.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Moles of $\\ce{H2}$ = 4.04 / 2.02 = 2.00."
+        },
+        {
+         "point": 1,
+         "quote": "2 mol $\\ce{H2}$ gives 2 mol $\\ce{H2O}$."
+        },
+        {
+         "point": 2,
+         "quote": "Mass = 2.00 × 18.02"
+        },
+        {
+         "point": 3,
+         "quote": "= 36.0 g $\\ce{H2O}$."
+        }
+       ],
+       "feedback": "All four marks, concise and correct."
+      },
+      {
+       "tier": "partial",
+       "text": "4.04/2.02 = 2.00 mol. The ratio is 2:2 so 2.00 mol water. The mass is 2.00 grams of water.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "4.04/2.02 = 2.00 mol."
+        },
+        {
+         "point": 1,
+         "quote": "The ratio is 2:2 so 2.00 mol water."
+        }
+       ],
+       "feedback": "You found the moles of water but then forgot to convert back to grams. Multiply by 18.02 g/mol to get 36.0 g."
+      },
+      {
+       "tier": "partial",
+       "text": "2.00 mol × 18.02 g/mol = 36.0 g.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "2.00 mol × 18.02 g/mol"
+        },
+        {
+         "point": 3,
+         "quote": "= 36.0 g."
+        }
+       ],
+       "feedback": "Your last two steps are right. Show how you found 2.00 mol of water from the 4.04 g of hydrogen.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "4.04 × 18.02 = 72.8 g because you multiply the masses together.",
+       "meets": [],
+       "feedback": "You cannot multiply masses of different substances. Convert to moles first, use the ratio, and convert back to grams."
+      },
+      {
+       "tier": "weak",
+       "text": "4.04 divided by 2.02 is 2.00 mol. The ratio is 2 $\\ce{H2}$ to 1 $\\ce{O2}$ so the answer is 1.00 mol of water, or 18.0 g.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "4.04 divided by 2.02 is 2.00 mol."
+        }
+       ],
+       "feedback": "You used the hydrogen to oxygen ratio, but the question asks about water. The ratio of $\\ce{H2}$ to $\\ce{H2O}$ is 2 to 2."
+      }
+     ]
+    },
+    {
+     "prompt": "A student expects 20.0 g of product but collects 14.6 g. Calculate the percent yield and give two reasons why the actual yield was less than the theoretical yield.",
+     "markScheme": [
+      "Writes percent yield as actual divided by theoretical, times 100",
+      "Calculates 73.0 percent",
+      "Gives one valid reason, such as product lost in transfer or on the filter paper",
+      "Gives a second valid reason, such as an incomplete reaction or a competing side reaction"
+     ],
+     "modelAnswer": "Percent yield equals actual yield divided by theoretical yield, times 100. 14.6 divided by 20.0, times 100, is 73.0 percent. The yield was less because some product was lost when it was transferred and filtered, and because the reaction may not have gone to completion or some reactants formed other products.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Percent yield = actual / theoretical × 100. 14.6 / 20.0 × 100 = 73.0%. Some of the product might have stuck to the filter paper. The reaction might not have finished or some of the reactants made a different product.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Percent yield = actual / theoretical × 100."
+        },
+        {
+         "point": 1,
+         "quote": "14.6 / 20.0 × 100 = 73.0%."
+        },
+        {
+         "point": 2,
+         "quote": "Some of the product might have stuck to the filter paper."
+        },
+        {
+         "point": 3,
+         "quote": "The reaction might not have finished or some of the reactants made a different product."
+        }
+       ],
+       "feedback": "Full marks. Both reasons are real and specific."
+      },
+      {
+       "tier": "full",
+       "text": "Take actual yield over theoretical yield and multiply by 100. (14.6/20.0) × 100 = 73.0 percent. Product can be lost when transferring between containers. A side reaction can use up some reactant.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Take actual yield over theoretical yield and multiply by 100."
+        },
+        {
+         "point": 1,
+         "quote": "(14.6/20.0) × 100 = 73.0 percent."
+        },
+        {
+         "point": 2,
+         "quote": "Product can be lost when transferring between containers."
+        },
+        {
+         "point": 3,
+         "quote": "A side reaction can use up some reactant."
+        }
+       ],
+       "feedback": "All four marks. Explaining the formula in words is also helpful."
+      },
+      {
+       "tier": "partial",
+       "text": "Actual over theoretical times 100. 20.0/14.6 × 100 = 137%. Product was lost on the paper.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Actual over theoretical times 100."
+        },
+        {
+         "point": 2,
+         "quote": "Product was lost on the paper."
+        }
+       ],
+       "feedback": "You flipped the fraction. The actual yield goes on top, which gives 73.0 percent. A yield over 100 percent would be a warning sign."
+      },
+      {
+       "tier": "partial",
+       "text": "The percent yield is 73.0%. The reaction may not have gone to completion.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The percent yield is 73.0%."
+        },
+        {
+         "point": 3,
+         "quote": "The reaction may not have gone to completion."
+        }
+       ],
+       "feedback": "Show the formula and your working, and give a second reason such as product lost in handling.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "20.0 - 14.6 = 5.4 so the percent yield is 5.4%. The mass disappeared, which breaks the law of conservation of mass.",
+       "meets": [],
+       "feedback": "Percent yield compares the two masses as a ratio. Mass is not destroyed: some product was lost in handling or formed other products."
+      },
+      {
+       "tier": "weak",
+       "text": "The answer is 73%. It was less because the scale was wrong and the teacher made a mistake.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The answer is 73%."
+        }
+       ],
+       "feedback": "The percent is right. Give reasons about the chemistry or handling, such as product left on glassware or a side reaction."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Precipitation reactions and the movement of thermal energy",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. predict whether a double replacement reaction forms a precipitate using solubility rules;\n2. investigate how thermal energy moves between two systems until they reach the same temperature.\n\n## Materials\n\nSolutions of sodium chloride, silver nitrate (teacher demo), potassium iodide, lead nitrate (teacher demo), sodium sulfate and barium chloride, test tubes, coffee cup calorimeters, thermometers, hot and cool water, the problem set.\n\n## Starter (6 minutes)\n\nHold up two clear solutions and mix them in front of the class to make a bright yellow solid. Ask: \"What did we just make, and how could we have predicted it?\"\n\n## Main activity\n\n1. Solubility rules: nearly all nitrates and sodium and potassium salts are soluble; most chlorides are soluble except those of silver and lead; most sulfates are soluble except barium sulfate. Practice predicting products from pairs.\n2. Write net ionic equations: $\\ce{Pb^2+}$ + 2I- gives $\\ce{PbI2}$(s).\n3. Mix 100 g of 80 degree water with 100 g of 20 degree water in a calorimeter and measure the final temperature. Discuss why it ends near 50 degrees and use q = mc delta T.\n\n## Checking for understanding\n\nAsk: \"Will a precipitate form when potassium nitrate and sodium chloride solutions are mixed?\" Wait for the reason (all possible products are soluble).\n\n## Problem set and worksheet\n\nFive precipitation predictions and two energy calculations.",
+   "reading": {
+    "title": "Solids from solutions, and energy on the move",
+    "content": "When two ionic solutions are mixed, the ions can swap partners in a **double replacement** reaction. Silver nitrate plus sodium chloride gives silver chloride and sodium nitrate. Whether anything visible happens depends on whether one of the new compounds is insoluble. A solid that forms from a solution is a **precipitate**, and the solid is marked (s) while dissolved substances are marked (aq).\n\nYou can predict a precipitate with **solubility rules**. Nearly all compounds of sodium, potassium and ammonium are soluble. Nearly all nitrates are soluble. Most chlorides, bromides and iodides are soluble, except those of silver, lead and mercury(I). Most sulfates are soluble except barium sulfate and lead sulfate. Most carbonates and hydroxides are insoluble except those of group 1. In the silver nitrate and sodium chloride example, silver chloride is on the insoluble list, so AgCl(s) forms as a white solid. When potassium nitrate and sodium chloride are mixed, the possible new compounds are potassium chloride and sodium nitrate, which are both soluble, so no reaction is seen.\n\nSome ions do not change, and are called **spectator ions**. In the lead nitrate and potassium iodide reaction, $\\ce{Pb(NO3)2}$(aq) + 2KI(aq) gives $\\ce{PbI2}$(s) + $\\ce{2KNO3}$(aq), the potassium and nitrate ions stay dissolved. The **net ionic equation** shows only the ions that react: $\\ce{Pb^2+}$(aq) + 2I-(aq) gives $\\ce{PbI2}$(s), the bright yellow solid.\n\nEnergy moves too. Thermal energy flows from a hotter object to a cooler one until they reach the same temperature, which is **thermal equilibrium**. The amount of heat is q = mcΔT, where m is the mass, c is the specific heat (4.18 J/g per degree Celsius for water) and ΔT is the change in temperature. If you mix 100 g of water at 80 degrees Celsius with 100 g of water at 20 degrees, the final temperature is the average, 50 degrees, because the masses are equal. The hot water loses 100 times 4.18 times 30 which is 12,540 J, and the cool water gains the same amount. Energy is conserved: it moves, but the total stays the same."
+   },
+   "cards": [
+    {
+     "front": "Double replacement",
+     "back": "A reaction in which the ions of two compounds swap partners."
+    },
+    {
+     "front": "Precipitate",
+     "back": "An insoluble solid that forms when solutions are mixed."
+    },
+    {
+     "front": "Solubility rules",
+     "back": "Guidelines that tell which ionic compounds dissolve in water."
+    },
+    {
+     "front": "Spectator ion",
+     "back": "An ion that is present but does not take part in the reaction."
+    },
+    {
+     "front": "Net ionic equation",
+     "back": "An equation showing only the ions that react."
+    },
+    {
+     "front": "Thermal equilibrium",
+     "back": "The state in which two objects in contact are at the same temperature."
+    },
+    {
+     "front": "Specific heat",
+     "back": "The energy needed to raise the temperature of 1 g of a substance by 1 degree Celsius."
+    },
+    {
+     "front": "q = mcΔT",
+     "back": "The equation for the heat gained or lost by a substance as its temperature changes."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Silver nitrate solution is mixed with sodium chloride solution. What precipitate forms?",
+     "options": [
+      "Sodium nitrate",
+      "Silver chloride",
+      "Silver sodium",
+      "No precipitate forms"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Potassium nitrate and sodium chloride solutions are mixed. What is observed?",
+     "options": [
+      "A white precipitate",
+      "A yellow precipitate",
+      "No reaction",
+      "A gas"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "In $\\ce{Pb(NO3)2}$ + 2KI gives $\\ce{PbI2}$ + $\\ce{2KNO3}$, which ions are spectators?",
+     "options": [
+      "$\\ce{Pb^2+}$ and I-",
+      "$\\ce{K^+}$ and $\\ce{NO3^-}$",
+      "$\\ce{Pb^2+}$ and $\\ce{K^+}$",
+      "I- and $\\ce{NO3^-}$"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "How much heat is needed to raise 50.0 g of water by 10.0 degrees Celsius (c = 4.18 J/g per degree)?",
+     "options": [
+      "209 J",
+      "2090 J",
+      "418 J",
+      "20,900 J"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "When hot water is poured into a cup of cool water, what happens to thermal energy?",
+     "options": [
+      "Energy is destroyed",
+      "Energy flows from the hot water to the cool water until they are at the same temperature",
+      "Energy flows from the cool water to the hot water",
+      "Energy stays in the hot water"
+     ],
+     "answer": "B"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Barium chloride solution is mixed with sodium sulfate solution. Write the balanced equation with states, name the precipitate, and write the net ionic equation.",
+     "markScheme": [
+      "Writes $\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) gives $\\ce{BaSO4}$(s) + 2NaCl(aq)",
+      "Names the precipitate as barium sulfate, using the rule that most sulfates are soluble but barium sulfate is not",
+      "Identifies the sodium and chloride ions as spectators",
+      "Writes the net ionic equation $\\ce{Ba^2+}$(aq) + $\\ce{SO4^2-}$(aq) gives $\\ce{BaSO4}$(s)"
+     ],
+     "modelAnswer": "$\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) gives $\\ce{BaSO4}$(s) + 2NaCl(aq). The precipitate is barium sulfate, because barium sulfate is an exception to the rule that sulfates are soluble. Sodium and chloride ions are spectators. The net ionic equation is $\\ce{Ba^2+}$(aq) + $\\ce{SO4^2-}$(aq) gives $\\ce{BaSO4}$(s).",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "$\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) → $\\ce{BaSO4}$(s) + 2NaCl(aq). The precipitate is barium sulfate, because barium sulfate is one of the insoluble sulfates. $\\ce{Na^+}$ and $\\ce{Cl^-}$ are spectator ions since NaCl stays dissolved. Net ionic: $\\ce{Ba^2+}$(aq) + $\\ce{SO4^2-}$(aq) → $\\ce{BaSO4}$(s).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "$\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) → $\\ce{BaSO4}$(s) + 2NaCl(aq)."
+        },
+        {
+         "point": 1,
+         "quote": "The precipitate is barium sulfate, because barium sulfate is one of the insoluble sulfates."
+        },
+        {
+         "point": 2,
+         "quote": "$\\ce{Na^+}$ and $\\ce{Cl^-}$ are spectator ions since NaCl stays dissolved."
+        },
+        {
+         "point": 3,
+         "quote": "Net ionic: $\\ce{Ba^2+}$(aq) + $\\ce{SO4^2-}$(aq) → $\\ce{BaSO4}$(s)."
+        }
+       ],
+       "feedback": "Full marks. Each part of the answer is consistent with the others."
+      },
+      {
+       "tier": "full",
+       "text": "Balanced equation: $\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) → $\\ce{BaSO4}$(s) + 2NaCl(aq). $\\ce{BaSO4}$ is the white precipitate, an exception to the sulfate solubility rule. Sodium and chloride ions are spectators. Net ionic equation: $\\ce{Ba^2+}$ + $\\ce{SO4^2-}$ → $\\ce{BaSO4}$(s).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Balanced equation: $\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) → $\\ce{BaSO4}$(s) + 2NaCl(aq)."
+        },
+        {
+         "point": 1,
+         "quote": "$\\ce{BaSO4}$ is the white precipitate, an exception to the sulfate solubility rule."
+        },
+        {
+         "point": 2,
+         "quote": "Sodium and chloride ions are spectators."
+        },
+        {
+         "point": 3,
+         "quote": "Net ionic equation: $\\ce{Ba^2+}$ + $\\ce{SO4^2-}$ → $\\ce{BaSO4}$(s)."
+        }
+       ],
+       "feedback": "All four marks, with the correct states."
+      },
+      {
+       "tier": "partial",
+       "text": "$\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) → $\\ce{BaSO4}$(s) + 2NaCl(aq). Barium sulfate is the precipitate. The spectator ions are Ba and sulfate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "$\\ce{BaCl2}$(aq) + $\\ce{Na2SO4}$(aq) → $\\ce{BaSO4}$(s) + 2NaCl(aq)."
+        },
+        {
+         "point": 1,
+         "quote": "Barium sulfate is the precipitate."
+        }
+       ],
+       "feedback": "Spectators are the ions that stay dissolved and do not change: sodium and chloride. Barium and sulfate are the reacting ions. Write the net ionic equation too."
+      },
+      {
+       "tier": "partial",
+       "text": "$\\ce{Ba^2+}$ + $\\ce{SO4^2-}$ → $\\ce{BaSO4}$(s) and sodium and chloride are spectators.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "$\\ce{Ba^2+}$ + $\\ce{SO4^2-}$ → $\\ce{BaSO4}$(s)"
+        },
+        {
+         "point": 2,
+         "quote": "sodium and chloride are spectators"
+        }
+       ],
+       "feedback": "The net ionic equation and spectators are right. Write the full balanced equation with states and name the precipitate.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "BaCl + $\\ce{NaSO4}$ → $\\ce{BaSO4}$ + NaCl. No precipitate forms, because sodium salts are always soluble.",
+       "meets": [],
+       "feedback": "Sodium salts are soluble, which is why NaCl stays dissolved, but barium sulfate is not. Check the formulas and the charges."
+      },
+      {
+       "tier": "weak",
+       "text": "Barium sulfate is the precipitate. The net ionic equation is the same as the full equation.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "Barium sulfate is the precipitate."
+        }
+       ],
+       "feedback": "The net ionic equation leaves out the spectator ions and shows only $\\ce{Ba^2+}$ and $\\ce{SO4^2-}$ forming the solid."
+      }
+     ]
+    },
+    {
+     "prompt": "A student mixes 150 g of water at 70.0 degrees Celsius with 50.0 g of water at 10.0 degrees Celsius in an insulated cup. Calculate the final temperature, and explain why the final temperature is closer to 70 degrees than to 10 degrees.",
+     "markScheme": [
+      "States that the heat lost by the hot water equals the heat gained by the cool water",
+      "Sets up 150(70 - T) = 50(T - 10)",
+      "Solves to get a final temperature of 55.0 degrees Celsius",
+      "Explains that there is more hot water, so it holds more thermal energy and changes the final temperature more"
+     ],
+     "modelAnswer": "Heat lost by the hot water equals heat gained by the cool water, so 150(70 - T) = 50(T - 10). That gives 10,500 - 150T = 50T - 500, so 200T = 11,000 and T = 55.0 degrees Celsius. The final temperature is closer to 70 because there is three times as much hot water, so it holds more energy and shifts the temperature the most.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Heat lost by the hot water = heat gained by the cool water. 150(70 - T) = 50(T - 10). 10500 - 150T = 50T - 500 so 200T = 11000 and T = 55.0°C. There's three times as much hot water so it has more energy and pulls the temperature toward itself.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Heat lost by the hot water = heat gained by the cool water."
+        },
+        {
+         "point": 1,
+         "quote": "150(70 - T) = 50(T - 10)."
+        },
+        {
+         "point": 2,
+         "quote": "10500 - 150T = 50T - 500 so 200T = 11000 and T = 55.0°C."
+        },
+        {
+         "point": 3,
+         "quote": "There's three times as much hot water so it has more energy and pulls the temperature toward itself."
+        }
+       ],
+       "feedback": "Full marks. The specific heat cancels because both samples are water, which you used well."
+      },
+      {
+       "tier": "full",
+       "text": "Energy is conserved so what the hot water loses the cold water gains. m1ΔT1 = m2ΔT2 gives 150(70 − T) = 50(T − 10). Solving, T = 55 degrees Celsius. The hot water is 150 g against 50 g so it dominates and the final temperature is nearer 70.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Energy is conserved so what the hot water loses the cold water gains."
+        },
+        {
+         "point": 1,
+         "quote": "m1ΔT1 = m2ΔT2 gives 150(70 − T) = 50(T − 10)."
+        },
+        {
+         "point": 2,
+         "quote": "Solving, T = 55 degrees Celsius."
+        },
+        {
+         "point": 3,
+         "quote": "The hot water is 150 g against 50 g so it dominates and the final temperature is nearer 70."
+        }
+       ],
+       "feedback": "All four marks. You recognized that the specific heat cancels."
+      },
+      {
+       "tier": "partial",
+       "text": "The hot water loses what the cool water gains. The average of 70 and 10 is 40 degrees Celsius.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The hot water loses what the cool water gains."
+        }
+       ],
+       "feedback": "A plain average only works when the masses are equal. Here there are 150 g and 50 g, so weight each by its mass."
+      },
+      {
+       "tier": "partial",
+       "text": "150(70 - T) = 50(T - 10) and T = 55°C.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "150(70 - T) = 50(T - 10)"
+        },
+        {
+         "point": 2,
+         "quote": "T = 55°C"
+        }
+       ],
+       "feedback": "Your setup and answer are right. Add the reasoning for the first step and explain why the answer is nearer to 70.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "70.0 + 10.0 = 80.0 and then 80.0 divided by 2 is 40, so the final temperature is 40 degrees. The masses do not matter.",
+       "meets": [],
+       "feedback": "The masses do matter. The larger mass of hot water pulls the final temperature toward 70."
+      },
+      {
+       "tier": "weak",
+       "text": "The heat the hot water loses is gained by the cool water. The final temperature is 80 degrees because the heat adds together.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The heat the hot water loses is gained by the cool water."
+        }
+       ],
+       "feedback": "The heat is transferred, not added to the temperature. The final temperature must be between 10 and 70 degrees."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

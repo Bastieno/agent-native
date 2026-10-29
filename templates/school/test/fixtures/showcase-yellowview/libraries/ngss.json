@@ -1,0 +1,438 @@
+{
+ "framework": {
+  "name": "Next Generation Science Standards",
+  "version": "2013",
+  "source": "https://www.nextgenscience.org (HS performance expectations; objective wording is the school's own)"
+ },
+ "subjects": [
+  {
+   "subject": "Biology",
+   "gradeRange": [
+    "Grade 9"
+   ],
+   "strands": [
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Plan a safe investigation, control variables, and record data with units and uncertainty."
+      }
+     ]
+    },
+    {
+     "strand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "subStrand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "objectives": [
+      {
+       "description": "Develop a model of how the parts of a multicellular organism, from cells to organ systems, work together.",
+       "code": "HS-LS1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Chemistry of Life",
+     "subStrand": "Chemistry of Life",
+     "objectives": [
+      {
+       "description": "Describe the four classes of biological molecules and match each to its building blocks and role."
+      },
+      {
+       "description": "Explain how enzymes speed up reactions and how temperature and pH change their activity."
+      }
+     ]
+    },
+    {
+     "strand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "subStrand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "objectives": [
+      {
+       "description": "Explain how the structure of DNA determines the structure of the proteins that carry out a cell's functions.",
+       "code": "HS-LS1-1"
+      }
+     ]
+    },
+    {
+     "strand": "Cell Structure and Transport",
+     "subStrand": "Cell Structure and Transport",
+     "objectives": [
+      {
+       "description": "Compare prokaryotic and eukaryotic cells and name the job of each organelle."
+      },
+      {
+       "description": "Explain how the membrane controls what enters and leaves a cell through diffusion, osmosis and active transport."
+      }
+     ]
+    },
+    {
+     "strand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "subStrand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "objectives": [
+      {
+       "description": "Use evidence to show how carbon, hydrogen and oxygen from sugars build amino acids and other large molecules.",
+       "code": "HS-LS1-6"
+      },
+      {
+       "description": "Model how photosynthesis transforms light energy into stored chemical energy.",
+       "code": "HS-LS1-5"
+      },
+      {
+       "description": "Model cellular respiration as a process that breaks bonds in food molecules and releases energy for the cell.",
+       "code": "HS-LS1-7"
+      },
+      {
+       "description": "Compare photosynthesis and cellular respiration as a cycle of matter and a flow of energy.",
+       "code": "HS-LS1-5-2"
+      },
+      {
+       "description": "Model the role of mitosis in growth and in the replacement of cells in an organism.",
+       "code": "HS-LS1-4"
+      },
+      {
+       "description": "Describe the stages of the cell cycle and explain how checkpoints help control it.",
+       "code": "HS-LS1-4-2"
+      },
+      {
+       "description": "Plan an investigation of how feedback mechanisms keep an organism's internal conditions stable.",
+       "code": "HS-LS1-3"
+      },
+      {
+       "description": "Describe how a tissue is made of specialized cells and how tissues form organs.",
+       "code": "HS-LS1-2-2"
+      },
+      {
+       "description": "Explain how the body keeps blood sugar and body temperature within a narrow range.",
+       "code": "HS-LS1-3-2"
+      }
+     ]
+    },
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Use a microscope to view cells, draw what is seen to scale, and calculate magnification."
+      },
+      {
+       "description": "Construct a scientific explanation from evidence, using a claim, evidence and reasoning."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Chemistry",
+   "gradeRange": [
+    "Grade 10"
+   ],
+   "strands": [
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Use measurement, significant figures and unit conversion in a laboratory report."
+      }
+     ]
+    },
+    {
+     "strand": "HS-PS1 Matter and Its Interactions",
+     "subStrand": "HS-PS1 Matter and Its Interactions",
+     "objectives": [
+      {
+       "description": "Classify matter as pure substances or mixtures, and separate a mixture using its properties."
+      },
+      {
+       "description": "Describe physical and chemical changes and give evidence that a chemical reaction has occurred."
+      },
+      {
+       "description": "Use the structure of the atom, including protons, neutrons and electrons, to describe isotopes and ions."
+      },
+      {
+       "description": "Use the periodic table to predict the patterns of electrons and the properties of elements.",
+       "code": "HS-PS1-1"
+      },
+      {
+       "description": "Explain periodic trends in atomic radius, ionization energy and electronegativity."
+      },
+      {
+       "description": "Explain why a chemical reaction goes the way it does from the outermost electrons of the atoms.",
+       "code": "HS-PS1-2"
+      },
+      {
+       "description": "Distinguish ionic, covalent and metallic bonds and write formulas and names for common compounds."
+      },
+      {
+       "description": "Plan an investigation of how forces between particles explain the properties of substances.",
+       "code": "HS-PS1-3"
+      },
+      {
+       "description": "Draw Lewis structures and predict the shape and polarity of simple molecules."
+      },
+      {
+       "description": "Use the conservation of mass to count atoms and quantities in a balanced reaction.",
+       "code": "HS-PS1-7"
+      },
+      {
+       "description": "Balance chemical equations and classify reactions as synthesis, decomposition, replacement or combustion."
+      },
+      {
+       "description": "Convert between moles, mass and number of particles using molar mass and Avogadro's number."
+      },
+      {
+       "description": "Calculate the mass of product from the mass of reactant, and find the limiting reactant.",
+       "code": "HS-PS1-7-2"
+      },
+      {
+       "description": "Calculate percent yield and explain why an actual yield is less than the theoretical yield."
+      },
+      {
+       "description": "Predict whether a double replacement reaction forms a precipitate using solubility rules."
+      }
+     ]
+    },
+    {
+     "strand": "HS-PS3 Energy",
+     "subStrand": "HS-PS3 Energy",
+     "objectives": [
+      {
+       "description": "Investigate how thermal energy moves between two systems until they reach the same temperature.",
+       "code": "HS-PS3-4"
+      }
+     ]
+    },
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Analyze lab data, identify sources of error, and report a conclusion supported by the data."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Physics",
+   "gradeRange": [
+    "Grade 11"
+   ],
+   "strands": [
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Design an investigation, collect data with uncertainty, and present it in a graph with a line of best fit."
+      }
+     ]
+    },
+    {
+     "strand": "HS-PS2 Motion and Stability: Forces and Interactions",
+     "subStrand": "HS-PS2 Motion and Stability: Forces and Interactions",
+     "objectives": [
+      {
+       "description": "Distinguish distance from displacement and speed from velocity, and calculate each."
+      },
+      {
+       "description": "Describe motion in one dimension using position, velocity and acceleration graphs."
+      },
+      {
+       "description": "Apply the equations of motion for constant acceleration to solve problems."
+      },
+      {
+       "description": "Analyze free fall and explain why objects with different masses fall together when air resistance is small."
+      },
+      {
+       "description": "Add and resolve vectors graphically and by components."
+      },
+      {
+       "description": "Analyze projectile motion by treating the horizontal and vertical motions separately."
+      },
+      {
+       "description": "Analyze data to support the claim that the net force on an object equals its mass times its acceleration.",
+       "code": "HS-PS2-1"
+      },
+      {
+       "description": "Draw free-body diagrams and find the net force on an object."
+      },
+      {
+       "description": "State and apply Newton's first and third laws to everyday situations."
+      },
+      {
+       "description": "Calculate the force of friction and of tension, and solve problems on inclined planes."
+      },
+      {
+       "description": "Use laws of gravitation to describe forces between objects at a distance and explain weight.",
+       "code": "HS-PS2-4"
+      },
+      {
+       "description": "Describe uniform circular motion and identify the centripetal force in a given situation."
+      },
+      {
+       "description": "Use the conservation of momentum to predict the outcome of an interaction between two objects.",
+       "code": "HS-PS2-2"
+      },
+      {
+       "description": "Design a device that reduces the force on an object during a collision, and test it.",
+       "code": "HS-PS2-3"
+      },
+      {
+       "description": "Relate impulse to change in momentum and apply it to a car crash or a ball hit by a bat."
+      }
+     ]
+    },
+    {
+     "strand": "HS-PS3 Energy",
+     "subStrand": "HS-PS3 Energy",
+     "objectives": [
+      {
+       "description": "Use a model to calculate how kinetic and potential energy trade off in a moving system.",
+       "code": "HS-PS3-1"
+      }
+     ]
+    },
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Communicate the results of an investigation of motion in a short lab report."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "subject": "Anatomy and Physiology",
+   "gradeRange": [
+    "Grade 12"
+   ],
+   "strands": [
+    {
+     "strand": "Orientation to the Body",
+     "subStrand": "Orientation to the Body",
+     "objectives": [
+      {
+       "description": "Use anatomical terms for position, planes and body cavities to describe where structures lie."
+      },
+      {
+       "description": "List the levels of organization of the human body from chemicals to the whole organism."
+      }
+     ]
+    },
+    {
+     "strand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "subStrand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "objectives": [
+      {
+       "description": "Explain how negative feedback keeps body temperature, blood glucose and fluid balance stable.",
+       "code": "HS-LS1-3"
+      }
+     ]
+    },
+    {
+     "strand": "Chemistry and Cells",
+     "subStrand": "Chemistry and Cells",
+     "objectives": [
+      {
+       "description": "Describe the biological molecules of the body and the structure and function of the cell and its organelles."
+      }
+     ]
+    },
+    {
+     "strand": "Tissues",
+     "subStrand": "Tissues",
+     "objectives": [
+      {
+       "description": "Identify the four tissue types and match each to its structure and function."
+      }
+     ]
+    },
+    {
+     "strand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "subStrand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "objectives": [
+      {
+       "description": "Describe how tissues combine to form organs and how organ systems interact.",
+       "code": "HS-LS1-2"
+      }
+     ]
+    },
+    {
+     "strand": "Integumentary System",
+     "subStrand": "Integumentary System",
+     "objectives": [
+      {
+       "description": "Describe the layers of the skin and its roles in protection, temperature control and sensation."
+      },
+      {
+       "description": "Explain how the skin heals after a cut or a burn and how burns are classified."
+      }
+     ]
+    },
+    {
+     "strand": "Skeletal System",
+     "subStrand": "Skeletal System",
+     "objectives": [
+      {
+       "description": "Name the major bones and classify them by shape, and explain how bones grow, repair and support the body."
+      },
+      {
+       "description": "Compare the structure and range of motion of fibrous, cartilaginous and synovial joints."
+      }
+     ]
+    },
+    {
+     "strand": "Muscular System",
+     "subStrand": "Muscular System",
+     "objectives": [
+      {
+       "description": "Compare skeletal, cardiac and smooth muscle by structure, control and location."
+      },
+      {
+       "description": "Explain how skeletal muscle contracts, using the sliding filament model."
+      },
+      {
+       "description": "Name the major muscles of the body and describe the actions of prime movers, antagonists and synergists."
+      }
+     ]
+    },
+    {
+     "strand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "subStrand": "HS-LS1 From Molecules to Organisms: Structures and Processes",
+     "objectives": [
+      {
+       "description": "Link cellular respiration in muscle cells to the energy demands of exercise.",
+       "code": "HS-LS1-7"
+      }
+     ]
+    },
+    {
+     "strand": "Nervous System",
+     "subStrand": "Nervous System",
+     "objectives": [
+      {
+       "description": "Describe the structure of a neuron and how an action potential travels along it."
+      },
+      {
+       "description": "Explain how a signal crosses a synapse and how a reflex arc works."
+      },
+      {
+       "description": "Describe the main regions of the brain and the roles of the central and peripheral nervous systems."
+      }
+     ]
+    },
+    {
+     "strand": "Scientific Practices",
+     "subStrand": "Scientific Practices",
+     "objectives": [
+      {
+       "description": "Dissect or model an organ system and report what the structures show about their function."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

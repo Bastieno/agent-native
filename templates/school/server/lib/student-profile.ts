@@ -88,6 +88,8 @@ export async function studentProfileFor(
     : isTeacher
       ? {
           ...term.summary,
+          // A GPA spans every subject, which a teacher does not see.
+          gpa: null,
           percentage: counted.length
             ? Math.round(
                 counted.reduce((n, s) => n + (s.percentage ?? 0), 0) /

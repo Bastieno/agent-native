@@ -1016,6 +1016,16 @@ const migrations = runMigrations(
       version: 107,
       sql: `CREATE INDEX IF NOT EXISTS password_resets_school_idx ON password_resets (school_id, created_at)`,
     },
+    // A subject's course level (Honors, AP), which weights a GPA.
+    {
+      version: 108,
+      sql: `ALTER TABLE subjects ADD COLUMN course_level TEXT`,
+    },
+    // Credit a course earns, which weights a GPA. Null: one credit.
+    {
+      version: 109,
+      sql: `ALTER TABLE subjects ADD COLUMN credits TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

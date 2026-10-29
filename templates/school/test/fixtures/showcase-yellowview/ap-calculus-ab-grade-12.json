@@ -1,0 +1,2462 @@
+{
+ "subject": "AP Calculus AB",
+ "yearGroup": "Grade 12",
+ "weeks": {
+  "1": {
+   "topic": "Unit 1: Limits and continuity from tables, graphs and algebra",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. estimate a limit from a graph or a table and say what the limit means;\n2. evaluate limits algebraically using factoring, rationalizing and the properties of limits;\n3. determine whether a function is continuous at a point and classify discontinuities.\n\n## Materials\n\nGraphing handhelds, a printed table of values for the starter, whiteboards, the worksheet. No released exam questions are used; all items are written for this class.\n\n## Starter (8 minutes)\n\nGive students the table of values of f near x = 2: 5.51, 5.9501, 5.995001 from the left and 6.005001, 6.0501, 6.51 from the right, with f(2) = 7. Ask: \"What does f approach as x approaches 2? What is f at 2? Are these the same question?\" Establish the language: the limit depends on nearby values, not on the value at the point.\n\n## Main activity\n\n1. Limits from a table and a graph: left and right behavior, limit equals a number only when both one-sided limits agree.\n2. Direct substitution, factoring and rationalizing: lim (x^2 - 9)/(x - 3), lim (the square root of x, minus 2)/(x - 4) and lim (the square root of (x + 5), minus 3)/(x - 4).\n3. Special limit: the limit of sin(5x)/x as x approaches 0, using the limit of sin(u)/u equal to 1.\n4. Continuity: the three conditions. Piecewise function with a parameter, then classification as removable, jump or infinite.\n\n## Checking for understanding\n\nFree-response style: \"Is f continuous at x = 2? Justify using the definition of continuity.\" Look for all three conditions.\n\n## Worksheet\n\nCollect the worksheet at the end of the period.",
+   "reading": {
+    "title": "Limits describe approach, not arrival",
+    "content": "Calculus is the study of change, and its first tool is the limit. The limit of f(x) as x approaches c, written lim f(x) as x approaches c, is the number that f(x) gets close to when x gets close to c, from either side, but not necessarily equal to c. A limit says nothing about what happens at c itself. Look at a table for f(x) = x^2 + x with a special value f(2) = 7 defined separately. For x = 1.9, 1.99 and 1.999, f(x) is 5.51, 5.9501 and 5.995001. For x = 2.1, 2.01 and 2.001 it is 6.51, 6.0501 and 6.005001. The values approach 6 from both sides, so the limit is 6, even though f(2) = 7. If the left and right limits disagree, the limit does not exist.\n\nTo evaluate limits algebraically, first try direct substitution. For polynomials and many other functions it gives the limit. If substitution gives 0/0, the expression is an indeterminate form and more work is needed. For (x^2 - 9)/(x - 3) at x = 3, factor the top as (x - 3)(x + 3), cancel the common factor and substitute: the limit is 6. For radicals, multiply by the conjugate. To find the limit as x approaches 4 of (the square root of (x + 5) - 3)/(x - 4), multiply the top and bottom by (the square root of (x + 5) + 3). The numerator becomes (x + 5) - 9 = x - 4, which cancels with the denominator and leaves 1/(the square root of (x + 5) + 3), whose value at x = 4 is 1/6. A very useful special limit is that sin(u)/u approaches 1 as u approaches 0, so the limit of sin(5x)/x is 5: write sin(5x)/x = 5 times sin(5x)/(5x).\n\nA function f is continuous at x = c if three conditions hold: f(c) is defined, the limit of f(x) as x approaches c exists, and the limit equals f(c). When a function is defined in pieces, the pieces have to meet. Let f(x) = x^2 + 1 for x < 2 and f(x) = ax + 1 for x >= 2. The left limit at 2 is 5 and f(2) = 2a + 1, so continuity requires 2a + 1 = 5, and a = 2. When a condition fails, the discontinuity is classified. A removable discontinuity is a hole: the limit exists but the function value is missing or different, as for f(x) = (x^2 - x - 6)/(x - 3) at x = 3, where the limit is 5. A jump discontinuity occurs when the left and right limits both exist but differ. An infinite discontinuity occurs when the function grows without bound, as at a vertical asymptote.\n\nOn the AP Exam you are expected to justify in words. A good answer to \"Is f continuous at 2?\" for the table above says: \"The limit as x approaches 2 is 6, but f(2) = 7, which is not equal to the limit, so f is not continuous at 2. This is a removable discontinuity.\""
+   },
+   "cards": [
+    {
+     "front": "Limit",
+     "back": "The value f(x) approaches as x approaches c, from both sides. It does not depend on f(c)."
+    },
+    {
+     "front": "One-sided limit",
+     "back": "The value f(x) approaches as x approaches c from the left or from the right only."
+    },
+    {
+     "front": "When a limit exists",
+     "back": "The left and right limits both exist and are equal."
+    },
+    {
+     "front": "Indeterminate form 0/0",
+     "back": "What direct substitution gives when a limit needs algebra: factor, rationalize or simplify."
+    },
+    {
+     "front": "Conjugate method",
+     "back": "To handle a radical difference, multiply the top and bottom by the conjugate to cancel the troublesome factor."
+    },
+    {
+     "front": "Continuity at c",
+     "back": "f(c) is defined, the limit exists, and the limit equals f(c)."
+    },
+    {
+     "front": "Removable discontinuity",
+     "back": "A hole: the limit exists but f(c) is missing or different."
+    },
+    {
+     "front": "Jump discontinuity",
+     "back": "The one-sided limits exist but are not equal."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the limit as x approaches 3 of (x^2 - 9)/(x - 3)?",
+     "options": [
+      "0",
+      "3",
+      "6",
+      "The limit does not exist"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is the limit as x approaches 0 of sin(5x)/x?",
+     "options": [
+      "5",
+      "1",
+      "0",
+      "1/5"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is the limit as x approaches 4 of ((the square root of x) - 2)/(x - 4)?",
+     "options": [
+      "0",
+      "1/4",
+      "1/2",
+      "The limit does not exist"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Let f(x) = x^2 + 1 for x < 2 and f(x) = ax + 1 for x >= 2. For what value of a is f continuous at x = 2?",
+     "options": [
+      "1",
+      "3",
+      "4",
+      "2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What type of discontinuity does f(x) = (x^2 - x - 6)/(x - 3) have at x = 3?",
+     "options": [
+      "A removable discontinuity",
+      "A jump discontinuity",
+      "An infinite discontinuity",
+      "It is continuous at x = 3"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "The table gives selected values of a function f near x = 2: f(1.9) = 5.51, f(1.99) = 5.9501, f(1.999) = 5.995001, f(2.001) = 6.005001, f(2.01) = 6.0501 and f(2.1) = 6.51. Also f(2) = 7. (a) Estimate the limit of f(x) as x approaches 2. (b) Is f continuous at x = 2? Justify your answer using the definition of continuity. (c) Classify the discontinuity, if any.",
+     "markScheme": [
+      "Estimates the limit as 6, because the values approach 6 from both the left and the right",
+      "States that f(2) = 7",
+      "Concludes f is not continuous at 2, because the limit (6) does not equal f(2) (7), naming the condition that fails",
+      "Classifies it as a removable discontinuity, which would be repaired by defining f(2) = 6"
+     ],
+     "modelAnswer": "(a) As x approaches 2 from the left, f(x) is 5.51, 5.9501, 5.995001, and from the right it is 6.51, 6.0501, 6.005001. Both sides approach 6, so the limit is 6. (b) f(2) = 7. For f to be continuous at 2, the limit must equal f(2), but 6 is not equal to 7, so f is not continuous at x = 2. (c) The limit exists but differs from f(2), so this is a removable discontinuity. Redefining f(2) = 6 would make f continuous.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) From the left the values are going 5.51, 5.9501, 5.995001 and from the right 6.51, 6.0501, 6.005001. They both get closer to 6, so the limit is 6. (b) f(2) = 7. Continuity needs the limit to equal f(2). The limit is 6 and f(2) is 7, so f is not continuous at x = 2. (c) It's a removable discontinuity, since the limit exists but isn't equal to the value. If f(2) were 6 it would be continuous.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "From the left the values are going 5.51, 5.9501, 5.995001 and from the right 6.51, 6.0501, 6.005001. They both get closer to 6, so the limit is 6."
+        },
+        {
+         "point": 1,
+         "quote": "f(2) = 7."
+        },
+        {
+         "point": 2,
+         "quote": "Continuity needs the limit to equal f(2). The limit is 6 and f(2) is 7, so f is not continuous at x = 2."
+        },
+        {
+         "point": 3,
+         "quote": "It's a removable discontinuity, since the limit exists but isn't equal to the value. If f(2) were 6 it would be continuous."
+        }
+       ],
+       "feedback": "Full marks. You named the condition for continuity that fails, which is what the justification needs."
+      },
+      {
+       "tier": "full",
+       "text": "(a) Both one-sided limits seem to be 6, so lim as x approaches 2 of f(x) = 6, because the left side values approach 6 from below and the right side from above. (b) The three conditions: f(2) = 7 is defined, the limit exists and is 6, but the limit does not equal f(2), so f is not continuous at x = 2. (c) Removable discontinuity (a hole at (2, 6) with the point displaced to (2, 7)).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "so lim as x approaches 2 of f(x) = 6, because the left side values approach 6 from below and the right side from above"
+        },
+        {
+         "point": 1,
+         "quote": "f(2) = 7 is defined, the limit exists and is 6"
+        },
+        {
+         "point": 2,
+         "quote": "the limit does not equal f(2), so f is not continuous at x = 2"
+        },
+        {
+         "point": 3,
+         "quote": "Removable discontinuity (a hole at (2, 6) with the point displaced to (2, 7))"
+        }
+       ],
+       "feedback": "All four marks. Walking through the three conditions in turn is a model structure for a continuity justification."
+      },
+      {
+       "tier": "partial",
+       "text": "(a) The limit is 6 because the values get close to 6. (b) f(2) = 7 so the limit is 7 and it's continuous.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The limit is 6 because the values get close to 6."
+        }
+       ],
+       "feedback": "Part (a) is right. The limit as x approaches 2 does not depend on f(2). Because 6 is not equal to 7, f is not continuous at 2, and the discontinuity is removable."
+      },
+      {
+       "tier": "partial",
+       "text": "f isn't continuous at 2 because the limit, 6, doesn't equal f(2) = 7. It's a removable discontinuity.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "f isn't continuous at 2 because the limit, 6, doesn't equal f(2) = 7."
+        },
+        {
+         "point": 3,
+         "quote": "It's a removable discontinuity."
+        }
+       ],
+       "feedback": "Your conclusion and classification are right. Include (a) explicitly: say that the values approach 6 from both the left and the right, and state f(2) = 7 as a separate fact.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The limit is 7 because f(2) = 7, and the function is continuous.",
+       "meets": [],
+       "feedback": "The limit looks at values near 2, not at 2. Those approach 6. Since f(2) = 7 is a different number, there is a discontinuity at x = 2."
+      },
+      {
+       "tier": "weak",
+       "text": "The limit is 6. It's a jump discontinuity because the function jumps from 6 to 7.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The limit is 6."
+        }
+       ],
+       "feedback": "The limit of 6 is right. A jump discontinuity has different left and right limits. Here both sides approach 6, so the discontinuity is removable, a single point out of place."
+      }
+     ]
+    },
+    {
+     "prompt": "Evaluate the limit as x approaches 4 of (the square root of (x + 5) minus 3)/(x - 4). Show the algebra, and explain why you cannot just substitute x = 4 and be done.",
+     "markScheme": [
+      "Says that substituting x = 4 gives 0/0, an indeterminate form, so algebra is needed",
+      "Multiplies the top and bottom by the conjugate, the square root of (x + 5) plus 3",
+      "Simplifies the numerator to x - 4 and cancels it with the denominator to get 1/(the square root of (x + 5) + 3)",
+      "Evaluates by substitution to get the limit 1/6"
+     ],
+     "modelAnswer": "Substituting x = 4 gives (3 - 3)/0 = 0/0, an indeterminate form, so the limit cannot be read off directly. Multiply by the conjugate: [(the square root of (x + 5) - 3)(the square root of (x + 5) + 3)] / [(x - 4)(the square root of (x + 5) + 3)] = ((x + 5) - 9)/[(x - 4)(the square root of (x + 5) + 3)] = (x - 4)/[(x - 4)(the square root of (x + 5) + 3)]. For x not equal to 4 this is 1/(the square root of (x + 5) + 3). Its value at x = 4 is 1/(3 + 3) = 1/6, so the limit is 1/6.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "If I plug in 4 I get (3 - 3)/(4 - 4) = 0/0 which doesn't tell me anything, it's indeterminate, so I need algebra. Multiply the top and the bottom by the conjugate, sqrt(x + 5) + 3. The top becomes (x + 5) - 9 = x - 4, which cancels the x - 4 on the bottom, leaving 1/(sqrt(x + 5) + 3). Now substitute: 1/(3 + 3) = 1/6. So the limit is 1/6.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "If I plug in 4 I get (3 - 3)/(4 - 4) = 0/0 which doesn't tell me anything, it's indeterminate, so I need algebra."
+        },
+        {
+         "point": 1,
+         "quote": "Multiply the top and the bottom by the conjugate, sqrt(x + 5) + 3."
+        },
+        {
+         "point": 2,
+         "quote": "The top becomes (x + 5) - 9 = x - 4, which cancels the x - 4 on the bottom, leaving 1/(sqrt(x + 5) + 3)."
+        },
+        {
+         "point": 3,
+         "quote": "Now substitute: 1/(3 + 3) = 1/6. So the limit is 1/6."
+        }
+       ],
+       "feedback": "Full marks. Saying that the indeterminate form 0/0 tells you nothing about the limit is the justification the AP Exam looks for."
+      },
+      {
+       "tier": "full",
+       "text": "Direct substitution fails: the numerator is sqrt(9) - 3 = 0 and the denominator is 0, so it's 0/0. The trick is the conjugate: multiply the numerator and denominator by sqrt(x + 5) + 3, which is allowed since it equals 1. The numerator is a difference of squares, (x + 5) - 3^2 = x - 4, and that cancels (x - 4) in the denominator for x not equal to 4. The limit is 1/(sqrt(9) + 3) = 1/6.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "the numerator is sqrt(9) - 3 = 0 and the denominator is 0, so it's 0/0"
+        },
+        {
+         "point": 1,
+         "quote": "multiply the numerator and denominator by sqrt(x + 5) + 3, which is allowed since it equals 1"
+        },
+        {
+         "point": 2,
+         "quote": "The numerator is a difference of squares, (x + 5) - 3^2 = x - 4, and that cancels (x - 4) in the denominator for x not equal to 4"
+        },
+        {
+         "point": 3,
+         "quote": "The limit is 1/(sqrt(9) + 3) = 1/6"
+        }
+       ],
+       "feedback": "All four marks. Noting that the cancellation is valid for x not equal to 4 shows why the limit can ignore the point x = 4."
+      },
+      {
+       "tier": "partial",
+       "text": "Plugging in 4 gives 0/0, so I need to do more. Multiply by the conjugate. Then I get (x + 5 - 9)/((x - 4)(sqrt(x + 5) + 3)) and the limit is 0 because the top is 0.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Plugging in 4 gives 0/0, so I need to do more."
+        },
+        {
+         "point": 1,
+         "quote": "Multiply by the conjugate."
+        }
+       ],
+       "feedback": "Your first two steps are right. After simplifying, x + 5 - 9 = x - 4 cancels with the denominator, leaving 1/(sqrt(x + 5) + 3). The top being 0 at 4 is not enough to say the limit is 0 when the bottom is also 0."
+      },
+      {
+       "tier": "partial",
+       "text": "The (x - 4) cancels and I'm left with 1/(sqrt(x + 5) + 3). At x = 4 that's 1/6.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The (x - 4) cancels and I'm left with 1/(sqrt(x + 5) + 3)."
+        },
+        {
+         "point": 3,
+         "quote": "At x = 4 that's 1/6."
+        }
+       ],
+       "feedback": "Your simplification and value are right. Show the start: substituting gives 0/0, and the reason for multiplying by the conjugate sqrt(x + 5) + 3.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Just plug in 4: sqrt(9) - 3 = 0 over 0, so the answer is 0.",
+       "meets": [],
+       "feedback": "Substitution gives 0/0, which is indeterminate, not 0. The limit has to be found with algebra: multiply by the conjugate and simplify."
+      },
+      {
+       "tier": "weak",
+       "text": "Substituting gives 0/0. That means the limit does not exist.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Substituting gives 0/0."
+        }
+       ],
+       "feedback": "0/0 means the limit could be anything, so more work is needed. It does not mean the limit does not exist. Here, rationalizing shows it is 1/6."
+      }
+     ]
+    }
+   ]
+  },
+  "2": {
+   "topic": "Unit 1: Infinite limits, end behavior and the Intermediate Value Theorem",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use limits to describe infinite limits, vertical asymptotes and end behavior;\n2. state and apply the Intermediate Value Theorem, naming its conditions.\n\n## Materials\n\nGraphing handhelds, a data table for the IVT activity, whiteboards, the worksheet. All items are written for this class.\n\n## Starter (8 minutes)\n\nAsk: \"At noon the temperature at Port Columbus was 38 degrees and at 6 pm it was 52 degrees. Must the temperature have been exactly 45 degrees at some time between? What if the temperature were allowed to jump?\" Use the discussion to introduce the idea that continuity is what makes the theorem true.\n\n## Main activity\n\n1. Infinite limits: use the signs of factors to decide whether a function goes to positive or negative infinity at an asymptote. Do (2x^2 - 8)/(x^2 - 3x + 2) at x = 1 and x = 2.\n2. Limits at infinity: compare leading terms; horizontal asymptotes can differ at positive and negative infinity for functions with radicals, such as (5x + 1)/(the square root of (x^2 + 4)).\n3. The Intermediate Value Theorem: statement with its two conditions, continuity on the closed interval and a value between the endpoint values. Practice with a table of values and a function that is not continuous.\n\n## Checking for understanding\n\nFree-response style: \"Why can't the IVT be applied to f(x) = 1/x on [-1, 1]?\"\n\n## Worksheet\n\nCollect the worksheet at the end of the period.",
+   "reading": {
+    "title": "Limits that grow without bound, and a theorem that needs continuity",
+    "content": "Sometimes the values of a function do not settle near any number. They grow without bound. We write \"the limit as x approaches c of f(x) = infinity\" when f(x) becomes arbitrarily large and positive as x approaches c, and the line x = c is then a vertical asymptote. Infinity is not a number here; the notation describes how the function behaves. For f(x) = (x + 1)/(x - 2) as x approaches 2 from the right, the numerator is about 3 and the denominator is a small positive number, so the quotient is large and positive. From the left it is large and negative. The two-sided limit does not exist, but the one-sided limits are infinity and negative infinity. And for 1/x^2 at 0 both sides give the same result, so the limit is infinity.\n\nLimits at infinity describe end behavior. For rational functions compare the leading terms: the limit as x approaches infinity of (4x^2 - 3)/(2x^2 + x) is 2, which gives the horizontal asymptote y = 2. A function with a radical can behave differently at each end. For f(x) = (5x + 1)/(the square root of (x^2 + 4)), the denominator behaves like the square root of x^2, which is |x|. As x approaches positive infinity, |x| = x, so f approaches 5, but as x approaches negative infinity, |x| = -x, so f approaches -5. The graph has two horizontal asymptotes, y = 5 and y = -5. The same function shows why the sign of x matters when you take square roots of squares.\n\nThe Intermediate Value Theorem (IVT) says: if f is continuous on the closed interval from a to b and N is any number between f(a) and f(b), then there is at least one number c in the open interval (a, b) with f(c) = N. Both conditions matter. The theorem gives existence but not the value of c or how many there are. Consider f(x) = 1/x on [-1, 1]. Then f(-1) = -1 and f(1) = 1, so 0 lies between them, but there is no x with 1/x = 0. The IVT does not apply, because f is not continuous on [-1, 1]: it is not even defined at 0.\n\nA strong justification names the theorem, checks the conditions and states the conclusion. Suppose g is continuous on [0, 4] with g(0) = -2, g(1) = -1, g(2) = 3, g(3) = 1 and g(4) = 5. Since g is continuous on [0, 4], and g(1) = -1 < 2 < 3 = g(2), the IVT guarantees a value c in (1, 2) with g(c) = 2. In the same way, 2 is between g(2) = 3 and g(3) = 1, so there is a c in (2, 3), and 2 is between g(3) = 1 and g(4) = 5, so there is a c in (3, 4). The three subintervals do not overlap, so g(x) = 2 has at least three solutions on [0, 4]."
+   },
+   "cards": [
+    {
+     "front": "Infinite limit",
+     "back": "f(x) grows without bound as x approaches c. The line x = c is a vertical asymptote."
+    },
+    {
+     "front": "Limit at infinity",
+     "back": "The value f(x) approaches as x grows without bound. If it is L, then y = L is a horizontal asymptote."
+    },
+    {
+     "front": "Two different horizontal asymptotes",
+     "back": "A function with a radical can approach different values as x goes to positive and to negative infinity."
+    },
+    {
+     "front": "Intermediate Value Theorem",
+     "back": "If f is continuous on [a, b] and N is between f(a) and f(b), then f(c) = N for some c in (a, b)."
+    },
+    {
+     "front": "Conditions of the IVT",
+     "back": "Continuity on the closed interval, and N strictly between the endpoint values (or equal to one of them)."
+    },
+    {
+     "front": "What the IVT does not give",
+     "back": "The value of c or how many solutions there are, only that at least one exists."
+    },
+    {
+     "front": "Square root of x squared",
+     "back": "The square root of x^2 is |x|, which equals -x for negative x."
+    },
+    {
+     "front": "Justification",
+     "back": "Name the theorem, check its conditions, and state the conclusion in context."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is the limit as x approaches infinity of (4x^2 - 3)/(2x^2 + x)?",
+     "options": [
+      "0",
+      "4",
+      "Infinity",
+      "2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What is the limit as x approaches 2 from the right of (x + 1)/(x - 2)?",
+     "options": [
+      "Negative infinity",
+      "Infinity",
+      "0",
+      "3"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What are the horizontal asymptotes of f(x) = (5x + 1)/(the square root of (x^2 + 4))?",
+     "options": [
+      "y = 5 only",
+      "y = 0",
+      "y = 5 and y = -5",
+      "There are none"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "The function f is continuous on [1, 4], with f(1) = -3 and f(4) = 6. Which statement is guaranteed by the Intermediate Value Theorem?",
+     "options": [
+      "f(c) = 0 for at least one c in (1, 4)",
+      "f(c) = 10 for some c in (1, 4)",
+      "f has a maximum value of 6",
+      "f is increasing on (1, 4)"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "For f(x) = 1/x, f(-1) = -1 and f(1) = 1, but there is no x with f(x) = 0. Why does this not contradict the Intermediate Value Theorem?",
+     "options": [
+      "f(-1) and f(1) have the same sign",
+      "f is not defined at x = 2",
+      "The interval is too short",
+      "f is not continuous on [-1, 1]"
+     ],
+     "answer": "D"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "The function g is continuous on the closed interval [0, 4]. Selected values are g(0) = -2, g(1) = -1, g(2) = 3, g(3) = 1 and g(4) = 5. How many solutions of g(x) = 2 on [0, 4] are guaranteed by the Intermediate Value Theorem? Justify your answer.",
+     "markScheme": [
+      "States that g is continuous on [0, 4] (given), which is the condition needed to apply the Intermediate Value Theorem on each subinterval",
+      "Identifies the interval (1, 2), since g(1) = -1 < 2 < 3 = g(2)",
+      "Identifies the intervals (2, 3) and (3, 4), since 2 is between g(2) = 3 and g(3) = 1 and between g(3) = 1 and g(4) = 5",
+      "Concludes at least three solutions, because the subintervals do not overlap, so the solutions are different"
+     ],
+     "modelAnswer": "Since g is continuous on [0, 4], it is continuous on each closed subinterval, so the Intermediate Value Theorem applies on each. On [1, 2], g(1) = -1 and g(2) = 3, and 2 is between them, so g(c) = 2 for some c in (1, 2). On [2, 3], g(2) = 3 and g(3) = 1, and 2 is between them, so g(c) = 2 for some c in (2, 3). On [3, 4], g(3) = 1 and g(4) = 5, and 2 is between them, so g(c) = 2 for some c in (3, 4). These open intervals do not overlap, so the three solutions are different. So g(x) = 2 has at least 3 solutions on [0, 4].",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "g is continuous on [0, 4], so it's continuous on each smaller closed interval, and the IVT can be used on each one. On [1, 2]: g(1) = -1 and g(2) = 3 and 2 is between them, so there is a c in (1, 2) with g(c) = 2. On [2, 3]: g goes from 3 to 1 and 2 is between, so another c in (2, 3). On [3, 4]: g goes from 1 to 5 and 2 is between, so another c in (3, 4). Those three intervals don't overlap, so these are three different solutions. At least 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g is continuous on [0, 4], so it's continuous on each smaller closed interval, and the IVT can be used on each one."
+        },
+        {
+         "point": 1,
+         "quote": "On [1, 2]: g(1) = -1 and g(2) = 3 and 2 is between them, so there is a c in (1, 2) with g(c) = 2."
+        },
+        {
+         "point": 2,
+         "quote": "On [2, 3]: g goes from 3 to 1 and 2 is between, so another c in (2, 3). On [3, 4]: g goes from 1 to 5 and 2 is between, so another c in (3, 4)."
+        },
+        {
+         "point": 3,
+         "quote": "Those three intervals don't overlap, so these are three different solutions. At least 3."
+        }
+       ],
+       "feedback": "Full marks. The point that the intervals do not overlap is what turns three existence statements into three different solutions."
+      },
+      {
+       "tier": "full",
+       "text": "Since g is continuous on [0, 4] (given), the IVT applies to any closed subinterval. Check which consecutive values bracket 2: -1 to 3 on [1, 2] brackets 2, 3 to 1 on [2, 3] brackets 2, and 1 to 5 on [3, 4] brackets 2. Each open interval (1, 2), (2, 3), (3, 4) contains a solution and they share no points, so there are at least three solutions. The IVT doesn't tell us if there are more.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "the IVT applies to any closed subinterval"
+        },
+        {
+         "point": 1,
+         "quote": "-1 to 3 on [1, 2] brackets 2"
+        },
+        {
+         "point": 2,
+         "quote": "3 to 1 on [2, 3] brackets 2, and 1 to 5 on [3, 4] brackets 2"
+        },
+        {
+         "point": 3,
+         "quote": "Each open interval (1, 2), (2, 3), (3, 4) contains a solution and they share no points, so there are at least three solutions"
+        }
+       ],
+       "feedback": "All four marks. Saying that the theorem does not rule out more solutions is a careful and correct remark."
+      },
+      {
+       "tier": "partial",
+       "text": "g is continuous so the IVT applies. 2 is between -1 and 3 so there is a solution in (1, 2). So there is exactly one solution.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g is continuous so the IVT applies."
+        },
+        {
+         "point": 1,
+         "quote": "2 is between -1 and 3 so there is a solution in (1, 2)."
+        }
+       ],
+       "feedback": "Your first two steps are right. Check the other intervals: 2 is also between 3 and 1 and between 1 and 5, so there are at least three solutions. The IVT gives at least, not exactly."
+      },
+      {
+       "tier": "partial",
+       "text": "There are solutions in (2, 3) and (3, 4) because 2 is between the values. They're on different intervals so they are different solutions.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "There are solutions in (2, 3) and (3, 4) because 2 is between the values."
+        },
+        {
+         "point": 3,
+         "quote": "They're on different intervals so they are different solutions."
+        }
+       ],
+       "feedback": "Your two intervals are right. You also need (1, 2), where g goes from -1 to 3, and a statement that g is continuous on [0, 4] so the theorem can be used.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "g(x) = 2 at x = 2 because g(2) = 3 is close to 2, and there's just one solution.",
+       "meets": [],
+       "feedback": "g(2) is 3, not 2, so x = 2 is not a solution. The IVT finds values of x between the sample points where g is exactly 2."
+      },
+      {
+       "tier": "weak",
+       "text": "g is continuous on [0, 4]. The IVT says the solutions are at x = 1.5, 2.5 and 3.5.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g is continuous on [0, 4]."
+        }
+       ],
+       "feedback": "Continuity is the right condition. The IVT only says that a solution exists in each interval. It does not tell us where, so you cannot claim exact values like 1.5."
+      }
+     ]
+    },
+    {
+     "prompt": "Let f(x) = (2x^2 - 8)/(x^2 - 3x + 2). Find the limits as x approaches 2, as x approaches 1 from the right and from the left, and as x approaches infinity. Describe each discontinuity of f and the horizontal asymptote.",
+     "markScheme": [
+      "Factors as 2(x - 2)(x + 2) over (x - 1)(x - 2) and finds the limit as x approaches 2 equals 8, a removable discontinuity (hole)",
+      "Finds the limit as x approaches 1 from the right is positive infinity, using the signs of the factors",
+      "Finds the limit as x approaches 1 from the left is negative infinity, so x = 1 is a vertical asymptote (infinite discontinuity)",
+      "Finds the limit as x approaches infinity is 2, giving the horizontal asymptote y = 2"
+     ],
+     "modelAnswer": "Factoring, f(x) = 2(x - 2)(x + 2)/((x - 1)(x - 2)) = 2(x + 2)/(x - 1) for x not equal to 2. As x approaches 2 the limit is 2(4)/1 = 8, so there is a removable discontinuity at x = 2. As x approaches 1 from the right, the numerator 2(x + 2) is about 6 (positive) and x - 1 is a small positive number, so f goes to positive infinity. From the left, x - 1 is a small negative number, so f goes to negative infinity. So there is an infinite discontinuity at x = 1 with vertical asymptote x = 1. As x approaches infinity, f(x) = 2(x + 2)/(x - 1) approaches 2, so y = 2 is the horizontal asymptote.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Factor and cancel: f(x) = 2(x + 2)/(x - 1) for x not 2. At x = 2 the limit is 2(4)/(1) = 8, but f(2) is undefined, so it's a removable discontinuity, a hole at (2, 8). At x = 1 from the right, the top is near 6 and x - 1 is a tiny positive, so the limit is positive infinity. From the left x - 1 is a tiny negative so the limit is negative infinity. That makes x = 1 a vertical asymptote and an infinite discontinuity. As x goes to infinity, 2(x + 2)/(x - 1) is about 2x/x = 2, so y = 2 is the horizontal asymptote.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Factor and cancel: f(x) = 2(x + 2)/(x - 1) for x not 2. At x = 2 the limit is 2(4)/(1) = 8, but f(2) is undefined, so it's a removable discontinuity, a hole at (2, 8)."
+        },
+        {
+         "point": 1,
+         "quote": "At x = 1 from the right, the top is near 6 and x - 1 is a tiny positive, so the limit is positive infinity."
+        },
+        {
+         "point": 2,
+         "quote": "From the left x - 1 is a tiny negative so the limit is negative infinity. That makes x = 1 a vertical asymptote and an infinite discontinuity."
+        },
+        {
+         "point": 3,
+         "quote": "As x goes to infinity, 2(x + 2)/(x - 1) is about 2x/x = 2, so y = 2 is the horizontal asymptote."
+        }
+       ],
+       "feedback": "Full marks. Each limit is paired with the type of discontinuity it produces."
+      },
+      {
+       "tier": "full",
+       "text": "(x - 2) cancels, so lim as x approaches 2 of f = 8, a removable discontinuity. Near x = 1: top positive (about 6). From the right (x - 1) is a small positive number, so +infinity. From the left (x - 1) is a small negative number, so -infinity, so there's an infinite discontinuity and vertical asymptote x = 1. At infinity compare 2x^2 to x^2: the limit is 2, so the horizontal asymptote is y = 2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "lim as x approaches 2 of f = 8, a removable discontinuity"
+        },
+        {
+         "point": 1,
+         "quote": "From the right (x - 1) is a small positive number, so +infinity"
+        },
+        {
+         "point": 2,
+         "quote": "From the left (x - 1) is a small negative number, so -infinity, so there's an infinite discontinuity and vertical asymptote x = 1"
+        },
+        {
+         "point": 3,
+         "quote": "At infinity compare 2x^2 to x^2: the limit is 2, so the horizontal asymptote is y = 2"
+        }
+       ],
+       "feedback": "All four marks. Comparing leading terms for the limit at infinity is the quick method."
+      },
+      {
+       "tier": "partial",
+       "text": "The limit as x approaches 2 is 8, which is a hole. The limit at infinity is 2. At x = 1 the limit is infinity from both sides.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The limit as x approaches 2 is 8, which is a hole."
+        },
+        {
+         "point": 3,
+         "quote": "The limit at infinity is 2."
+        }
+       ],
+       "feedback": "The hole and the horizontal asymptote are right. Near x = 1 the denominator x - 1 changes sign, so the function goes to positive infinity from the right and negative infinity from the left."
+      },
+      {
+       "tier": "partial",
+       "text": "From the right at x = 1 the limit is positive infinity. From the left it is negative infinity, so there's a vertical asymptote at x = 1. The limit at 2 does not exist because the bottom is zero.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "From the right at x = 1 the limit is positive infinity."
+        },
+        {
+         "point": 2,
+         "quote": "From the left it is negative infinity, so there's a vertical asymptote at x = 1."
+        }
+       ],
+       "feedback": "Your behavior at x = 1 is right. At x = 2 the factor x - 2 cancels, so the limit exists and equals 8. A zero in the denominator does not always mean no limit.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "Both x = 1 and x = 2 are vertical asymptotes, because the bottom is zero at both.",
+       "meets": [],
+       "feedback": "A zero of the denominator gives a vertical asymptote only if the factor does not cancel. x - 2 cancels with the numerator, so x = 2 is a hole."
+      },
+      {
+       "tier": "weak",
+       "text": "The limit at infinity is 2. I think the limit at 1 is 0 because plugging in 1 gives 2(3) over 0.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The limit at infinity is 2."
+        }
+       ],
+       "feedback": "The limit at infinity is right. A nonzero number over zero is not 0: it means the function grows without bound, so the one-sided limits at 1 are infinite."
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "topic": "Unit 2: The derivative as a limit, instantaneous rate and tangent lines",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. define the derivative as the limit of the difference quotient and interpret it as an instantaneous rate of change, with units;\n2. find the equation of a tangent line to a curve at a point and use it to estimate a value.\n\n## Materials\n\nGraphing handhelds, a table of values for estimating a derivative, whiteboards, the quiz. All items are written for this class.\n\n## Starter (8 minutes)\n\nDisplay the time and temperature of a cup of coffee in the Ohio Union: at 10 minutes it is 140 degrees F and cooling. Ask: \"How fast is it cooling right now? What can you compute with just two readings, and what would you need for an exact answer?\" Link to secant slopes approaching a tangent slope.\n\n## Main activity\n\n1. The definition: f'(a) is the limit as h approaches 0 of (f(a + h) - f(a))/h, also written as the limit as x approaches a of (f(x) - f(a))/(x - a). Evaluate for f(x) = x^2 - 5x at a = 3, and for f(x) = 1/x at any x.\n2. Interpretation with units: if s'(5) = -8 feet per second, what does it say?\n3. Tangent line at x = a: y - f(a) = f'(a)(x - a). Find the tangent to y = x^2 - 4x at x = 3.\n4. Estimating a derivative from a table with a symmetric difference quotient, and a linear approximation.\n\n## Checking for understanding\n\nFree-response style: \"Interpret T'(10) = -2.5 in context, with units, in a sentence.\"\n\n## Quiz\n\nGive the quiz in the last ten minutes.",
+   "reading": {
+    "title": "The derivative as a limit of secant slopes",
+    "content": "The average rate of change of f from a to a + h is the slope of a secant line: (f(a + h) - f(a))/h. As h shrinks, the secant line pivots toward the tangent line at x = a, and its slope approaches a number. That number is the derivative of f at a, written f'(a). In symbols, f'(a) is the limit as h approaches 0 of (f(a + h) - f(a))/h. An equivalent form uses x in place of a + h: the limit as x approaches a of (f(x) - f(a))/(x - a). Either way, the derivative is a limit of difference quotients, and it is the instantaneous rate of change of f at a.\n\nLet us compute from the definition. For f(x) = x^2 - 5x at a = 3, f(3) = -6 and f(3 + h) = (3 + h)^2 - 5(3 + h) = 9 + 6h + h^2 - 15 - 5h = h^2 + h - 6. So the quotient is (h^2 + h)/h = h + 1, and as h approaches 0, f'(3) = 1. The same process gives a formula for f(x) = 1/x. The quotient is (1/(x + h) - 1/x)/h. Put the top over a common denominator: (x - (x + h))/(x(x + h)) = -h/(x(x + h)). Dividing by h cancels it, leaving -1/(x(x + h)), and as h approaches 0 this is -1/x^2. So the derivative of 1/x is -1/x^2.\n\nThe derivative has units: the units of f divided by the units of x. If s(t) is a position in feet at time t in seconds, then s'(5) = -8 means that at t = 5 seconds, the position is changing at 8 feet per second in the negative direction. If T(t) is a coffee temperature in degrees Fahrenheit at t minutes, T'(10) = -2.5 means that at 10 minutes the temperature is falling at a rate of 2.5 degrees Fahrenheit per minute. On the AP Exam, an interpretation should include the quantity, the time, the units and whether it is increasing or decreasing.\n\nThe tangent line to y = f(x) at x = a is the line through (a, f(a)) with slope f'(a): y - f(a) = f'(a)(x - a). For y = x^2 - 4x at x = 3, f(3) = -3 and f'(3) = 2, so y + 3 = 2(x - 3), or y = 2x - 9. Near x = a, the tangent line is a good approximation of the function. With the coffee, if T(10) = 140 and T'(10) = -2.5, the tangent line estimate of T(12) is 140 - 2.5(2) = 135. Since a cooling curve is concave up, the tangent line lies below the curve, so 135 is an underestimate. When only a table is given, estimate the derivative with a symmetric difference quotient: if f(3.9) = 5.82 and f(4.1) = 6.22, then f'(4) is about (6.22 - 5.82)/0.2 = 2.0."
+   },
+   "cards": [
+    {
+     "front": "Derivative at a point",
+     "back": "f'(a) = the limit as h approaches 0 of (f(a + h) - f(a))/h."
+    },
+    {
+     "front": "Alternate definition",
+     "back": "f'(a) = the limit as x approaches a of (f(x) - f(a))/(x - a)."
+    },
+    {
+     "front": "Instantaneous rate of change",
+     "back": "The derivative at a point. It has units of f per unit of x."
+    },
+    {
+     "front": "Tangent line",
+     "back": "y - f(a) = f'(a)(x - a)."
+    },
+    {
+     "front": "Secant slope",
+     "back": "The average rate of change between two points. Its limit as the points merge is the derivative."
+    },
+    {
+     "front": "Interpreting a derivative",
+     "back": "Say the quantity, the input value, the rate with units, and the direction (increasing or decreasing)."
+    },
+    {
+     "front": "Symmetric difference quotient",
+     "back": "(f(a + h) - f(a - h))/(2h), a table-based estimate of f'(a)."
+    },
+    {
+     "front": "Derivative of 1/x",
+     "back": "-1/x^2, found from the definition."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which limit represents f'(2) for f(x) = the square root of x?",
+     "options": [
+      "The limit as h approaches 0 of (the square root of (2 + h) + the square root of 2)/h",
+      "The limit as h approaches 0 of (the square root of (2 + h) - the square root of 2)/h",
+      "The limit as x approaches 0 of (the square root of x - the square root of 2)/x",
+      "The limit as h approaches 2 of (the square root of h)/h"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "Using the limit definition, what is f'(3) for f(x) = x^2 - 5x?",
+     "options": [
+      "1",
+      "-6",
+      "0",
+      "6"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is an equation of the tangent line to y = x^2 - 4x at x = 3?",
+     "options": [
+      "y = 2x - 3",
+      "y = -3x + 6",
+      "y = 2x - 9",
+      "y = 2x + 3"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "The position of a cart is s(t) feet at time t seconds, and s'(5) = -8. Which statement is correct?",
+     "options": [
+      "At t = 5 seconds the cart is 8 feet from the start",
+      "At t = 5 seconds the cart has moved 8 feet",
+      "At t = 5 seconds the cart's acceleration is -8 feet per second per second",
+      "At t = 5 seconds the cart is moving in the negative direction at 8 feet per second"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "A table gives f(3.9) = 5.82, f(4.0) = 6.00 and f(4.1) = 6.22. Which is the best estimate of f'(4)?",
+     "options": [
+      "2.0",
+      "1.8",
+      "2.2",
+      "0.4"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Use the limit definition of the derivative to find f'(x) for f(x) = 1/x. Show each step of the algebra, and then find the slope of the tangent line at x = 2.",
+     "markScheme": [
+      "Writes the difference quotient (1/(x + h) - 1/x)/h",
+      "Combines the fractions over a common denominator to get -h/(x(x + h)) in the numerator",
+      "Cancels h to get -1/(x(x + h))",
+      "Takes the limit as h approaches 0 to get f'(x) = -1/x^2, and finds the slope at x = 2 is -1/4"
+     ],
+     "modelAnswer": "f'(x) is the limit as h approaches 0 of (1/(x + h) - 1/x)/h. Combine the fractions in the numerator: 1/(x + h) - 1/x = (x - (x + h))/(x(x + h)) = -h/(x(x + h)). Divide by h: -1/(x(x + h)). As h approaches 0 this approaches -1/x^2, so f'(x) = -1/x^2. At x = 2 the slope of the tangent line is f'(2) = -1/4.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "f'(x) = lim as h goes to 0 of (1/(x + h) - 1/x)/h. Common denominator: 1/(x + h) - 1/x = (x - (x + h)) / (x(x + h)) = -h / (x(x + h)). Dividing by h, the h cancels (since h isn't 0 in the limit), leaving -1/(x(x + h)). As h goes to 0 that's -1/x^2. At x = 2, f'(2) = -1/4, so the tangent line slopes down gently.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f'(x) = lim as h goes to 0 of (1/(x + h) - 1/x)/h."
+        },
+        {
+         "point": 1,
+         "quote": "Common denominator: 1/(x + h) - 1/x = (x - (x + h)) / (x(x + h)) = -h / (x(x + h))."
+        },
+        {
+         "point": 2,
+         "quote": "Dividing by h, the h cancels (since h isn't 0 in the limit), leaving -1/(x(x + h))."
+        },
+        {
+         "point": 3,
+         "quote": "As h goes to 0 that's -1/x^2. At x = 2, f'(2) = -1/4, so the tangent line slopes down gently."
+        }
+       ],
+       "feedback": "Full marks. Mentioning that the h can cancel because h is not 0 in the limit is exactly the AP-level justification."
+      },
+      {
+       "tier": "full",
+       "text": "Set up the difference quotient: (f(x + h) - f(x))/h = (1/(x + h) - 1/x)/h. Subtract the fractions with the common denominator x(x + h): the numerator is x - (x + h) = -h. So the quotient is -h / (h x (x + h)) = -1/(x(x + h)). Let h go to 0 and substitute: -1/x^2. Then f'(2) = -1/4.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(f(x + h) - f(x))/h = (1/(x + h) - 1/x)/h"
+        },
+        {
+         "point": 1,
+         "quote": "Subtract the fractions with the common denominator x(x + h): the numerator is x - (x + h) = -h"
+        },
+        {
+         "point": 2,
+         "quote": "So the quotient is -h / (h x (x + h)) = -1/(x(x + h))"
+        },
+        {
+         "point": 3,
+         "quote": "Let h go to 0 and substitute: -1/x^2. Then f'(2) = -1/4"
+        }
+       ],
+       "feedback": "All four marks. Keeping the common denominator x(x + h) written out makes the cancellation transparent."
+      },
+      {
+       "tier": "partial",
+       "text": "(1/(x + h) - 1/x)/h. The top is -h/(x(x + h)). Then I let h be 0 and get 0/0, so the derivative doesn't exist.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(1/(x + h) - 1/x)/h."
+        },
+        {
+         "point": 1,
+         "quote": "The top is -h/(x(x + h))."
+        }
+       ],
+       "feedback": "Your setup and combined fraction are right. Cancel the h first: -h/(h x (x + h)) is -1/(x(x + h)), and then the limit is -1/x^2. The 0/0 form signals more algebra, not a missing limit."
+      },
+      {
+       "tier": "partial",
+       "text": "f'(x) = -1/x^2 and f'(2) = -1/4. The h cancels.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "f'(x) = -1/x^2 and f'(2) = -1/4."
+        },
+        {
+         "point": 2,
+         "quote": "The h cancels."
+        }
+       ],
+       "feedback": "Your answer is right. The question asks for the work: write the difference quotient and combine the fractions into -h/(x(x + h)) before the h can cancel.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The derivative of 1/x is 1 over the derivative of x, so 1/1 = 1.",
+       "meets": [],
+       "feedback": "The derivative is not found by taking the reciprocal of the derivative. Use the limit definition: the difference quotient simplifies to -1/(x(x + h))."
+      },
+      {
+       "tier": "weak",
+       "text": "(f(x + h) - f(x))/h = (1/(x + h) - 1/x)/h. That equals (1/h - 1/x)/h, which is 1/h^2 - 1/(xh), and the limit blows up.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(f(x + h) - f(x))/h = (1/(x + h) - 1/x)/h."
+        }
+       ],
+       "feedback": "The first step is right. You cannot split 1/(x + h) into 1/x + 1/h. Combine the two fractions over the common denominator x(x + h)."
+      }
+     ]
+    },
+    {
+     "prompt": "A cup of coffee cools after it is poured. Its temperature T(t) is in degrees Fahrenheit at t minutes. T(10) = 140 and T'(10) = -2.5. (a) Interpret T'(10) in context, with units. (b) Write an equation for the tangent line to T at t = 10 and use it to approximate T(12). (c) The graph of T is concave up on the interval from 10 to 12. Is your approximation an overestimate or an underestimate? Explain.",
+     "markScheme": [
+      "Interprets T'(10) = -2.5: at 10 minutes the coffee's temperature is decreasing at 2.5 degrees Fahrenheit per minute",
+      "Writes the tangent line T(t) is approximately 140 - 2.5(t - 10)",
+      "Approximates T(12) as 135 degrees Fahrenheit",
+      "Says the approximation is an underestimate, because on a concave-up graph the tangent line lies below the curve"
+     ],
+     "modelAnswer": "(a) At 10 minutes the temperature of the coffee is decreasing at a rate of 2.5 degrees Fahrenheit per minute. (b) The tangent line at t = 10 is y = 140 - 2.5(t - 10). At t = 12, y = 140 - 2.5(2) = 135, so T(12) is approximately 135 degrees Fahrenheit. (c) Because the graph is concave up on the interval, the tangent line lies below the graph, so the tangent line value 135 is less than the actual T(12). The approximation is an underestimate.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) At t = 10 minutes the coffee is cooling, falling at a rate of 2.5 degrees Fahrenheit per minute. (b) y - 140 = -2.5(t - 10). At t = 12, y = 140 - 2.5(2) = 135, so T(12) is about 135 degrees F. (c) It's an underestimate, because the graph is concave up, so the tangent line is below the curve between 10 and 12.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "At t = 10 minutes the coffee is cooling, falling at a rate of 2.5 degrees Fahrenheit per minute."
+        },
+        {
+         "point": 1,
+         "quote": "y - 140 = -2.5(t - 10)."
+        },
+        {
+         "point": 2,
+         "quote": "At t = 12, y = 140 - 2.5(2) = 135, so T(12) is about 135 degrees F."
+        },
+        {
+         "point": 3,
+         "quote": "It's an underestimate, because the graph is concave up, so the tangent line is below the curve between 10 and 12."
+        }
+       ],
+       "feedback": "Full marks. Your reason for the underestimate refers to the position of the tangent line relative to the graph, which is what a justification needs."
+      },
+      {
+       "tier": "full",
+       "text": "(a) T'(10) = -2.5 means 10 minutes after pouring the temperature is decreasing by about 2.5 degrees F each minute. (b) The tangent line: L(t) = 140 + (-2.5)(t - 10). L(12) = 140 - 5 = 135, so T(12) is approximately 135 F. (c) Concave up means the curve bends upward away from its tangent, so the curve is above the tangent line. So the actual temperature is higher than 135, and the estimate is an underestimate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "10 minutes after pouring the temperature is decreasing by about 2.5 degrees F each minute"
+        },
+        {
+         "point": 1,
+         "quote": "L(t) = 140 + (-2.5)(t - 10)"
+        },
+        {
+         "point": 2,
+         "quote": "L(12) = 140 - 5 = 135, so T(12) is approximately 135 F"
+        },
+        {
+         "point": 3,
+         "quote": "Concave up means the curve bends upward away from its tangent, so the curve is above the tangent line. So the actual temperature is higher than 135, and the estimate is an underestimate"
+        }
+       ],
+       "feedback": "All four marks. The words curve bends upward away from its tangent give a clear picture of the concavity."
+      },
+      {
+       "tier": "partial",
+       "text": "(a) The temperature is falling at 2.5 degrees F per minute at 10 minutes. (b) y - 140 = -2.5(t - 10). T(12) is about 142.5. (c) It's an overestimate.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The temperature is falling at 2.5 degrees F per minute at 10 minutes."
+        },
+        {
+         "point": 1,
+         "quote": "y - 140 = -2.5(t - 10)."
+        }
+       ],
+       "feedback": "Your interpretation and tangent line are right. At t = 12, -2.5(2) = -5, so the estimate is 135, not 142.5, and with a concave-up graph the tangent line is below the curve, so it is an underestimate."
+      },
+      {
+       "tier": "partial",
+       "text": "T(12) is about 135. It's an underestimate since it's concave up. The T'(10) = -2.5 means the coffee is 2.5 degrees.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "T(12) is about 135."
+        },
+        {
+         "point": 3,
+         "quote": "It's an underestimate since it's concave up."
+        }
+       ],
+       "feedback": "Your approximation and conclusion are right. T'(10) is a rate, not a temperature: the coffee is cooling at 2.5 degrees Fahrenheit per minute. Write the tangent line equation too.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "T'(10) = -2.5 means the temperature at 10 minutes is -2.5 degrees. T(12) is 140 - 2.5 = 137.5.",
+       "meets": [],
+       "feedback": "A derivative is a rate of change, not a value of the function. At 12 minutes the tangent line has moved 2 minutes from t = 10, so the change is 2 x (-2.5) = -5."
+      },
+      {
+       "tier": "weak",
+       "text": "y - 140 = -2.5(t - 10). The estimate is an overestimate because the temperature drops faster than the line.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "y - 140 = -2.5(t - 10)."
+        }
+       ],
+       "feedback": "Your equation is right. For a concave-up curve the tangent line is below the curve, so the temperature falls more slowly than the line suggests and the estimate is an underestimate."
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "topic": "Unit 2: Power, product and quotient rules, and derivatives of basic functions",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. use the power, product and quotient rules to find derivatives;\n2. differentiate sine, cosine, exponential and logarithmic functions and use the derivative to find horizontal tangents and tangent lines.\n\n## Materials\n\nGraphing handhelds, a derivative-rule reference sheet that students build, whiteboards, the problem set. All items are written for this class.\n\n## Starter (8 minutes)\n\nAsk: \"If f(x) = x^3 sin x, is f'(x) equal to (3x^2)(cos x)? Test with a value.\" Students compare a numerical derivative on their handhelds at x = 1 with the proposed formula. The mismatch motivates the product rule.\n\n## Main activity\n\n1. Power rule with negative and fractional exponents: 3x^4 - 5 times the square root of x + 2/x.\n2. Product rule: x^3 sin x and x^2 e^x. Quotient rule: (2x + 1)/(x^2 + 3), with a check on the order of terms in the numerator.\n3. Derivatives of sine, cosine, e^x and ln x: x ln x.\n4. Horizontal tangents: where the derivative is 0. Tangent line for a quotient: g(x) = (x^2 + 1)/(x - 3) at x = 4.\n\n## Checking for understanding\n\nFree-response style: \"Find the equation of the tangent line to y = x^2 e^x at x = 0 and explain how you know it is horizontal.\"\n\n## Problem set\n\nCollect the problem set at the next class.",
+   "reading": {
+    "title": "Differentiating products, quotients and the basic functions",
+    "content": "You already know that the derivative of x^n is n x^(n - 1). It works for negative and fractional exponents as well, once you rewrite roots and reciprocals as powers. For f(x) = 3x^4 - 5 times the square root of x + 2/x, write f(x) = 3x^4 - 5x^(1/2) + 2x^(-1). Then f'(x) = 12x^3 - (5/2)x^(-1/2) - 2x^(-2) = 12x^3 - 5/(2 times the square root of x) - 2/x^2. Constants multiply through and sums can be differentiated term by term.\n\nThe derivative of a product is not the product of the derivatives. The product rule says (fg)' = f'g + fg'. For f(x) = x^3 sin x, f'(x) = 3x^2 sin x + x^3 cos x. The quotient rule says (f/g)' = (f'g - fg')/g^2, and the order of the subtraction in the numerator matters. For (2x + 1)/(x^2 + 3), the top is f = 2x + 1 and the bottom is g = x^2 + 3, so the derivative is (2(x^2 + 3) - (2x + 1)(2x))/(x^2 + 3)^2 = (2x^2 + 6 - 4x^2 - 2x)/(x^2 + 3)^2 = (-2x^2 - 2x + 6)/(x^2 + 3)^2. A good habit is to remember \"low d-high minus high d-low, over low squared.\"\n\nThe basic derivatives to know are: d/dx of sin x is cos x; d/dx of cos x is -sin x; d/dx of e^x is e^x; and d/dx of ln x is 1/x. Combining them with the product rule, d/dx of x ln x = (1)(ln x) + x(1/x) = ln x + 1.\n\nThe derivative lets you find where a graph is flat. A horizontal tangent occurs where f'(x) = 0. For f(x) = x^3 - 6x^2 + 9x, f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3), so the tangent is horizontal at x = 1 and x = 3. For f(x) = x^2 e^x, the product rule gives f'(x) = 2x e^x + x^2 e^x = x e^x (x + 2). Since e^x is never 0, f'(x) = 0 only when x = 0 or x = -2, so the points with a horizontal tangent are (0, 0) and (-2, 4e^(-2)), about (-2, 0.541).\n\nTo find a tangent line to a quotient, find the value and the derivative at the point. Let g(x) = (x^2 + 1)/(x - 3). Then g'(x) = (2x(x - 3) - (x^2 + 1))/(x - 3)^2 = (x^2 - 6x - 1)/(x - 3)^2. At x = 4, g(4) = 17/1 = 17 and g'(4) = (16 - 24 - 1)/1 = -9, so the tangent line is y - 17 = -9(x - 4), or y = -9x + 53."
+   },
+   "cards": [
+    {
+     "front": "Power rule",
+     "back": "d/dx of x^n = n x^(n - 1), for any real n."
+    },
+    {
+     "front": "Product rule",
+     "back": "(fg)' = f'g + fg'."
+    },
+    {
+     "front": "Quotient rule",
+     "back": "(f/g)' = (f'g - fg')/g^2."
+    },
+    {
+     "front": "Derivative of sine and cosine",
+     "back": "d/dx sin x = cos x. d/dx cos x = -sin x."
+    },
+    {
+     "front": "Derivative of e^x",
+     "back": "d/dx e^x = e^x."
+    },
+    {
+     "front": "Derivative of ln x",
+     "back": "d/dx ln x = 1/x, for x > 0."
+    },
+    {
+     "front": "Horizontal tangent",
+     "back": "Occurs where f'(x) = 0."
+    },
+    {
+     "front": "Rewrite before differentiating",
+     "back": "Write roots and reciprocals as powers of x, then use the power rule."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "What is d/dx of 3x^4 - 5 times the square root of x + 2/x?",
+     "options": [
+      "12x^3 - 5/sqrt(x) + 2/x^2",
+      "12x^3 - (5/2) sqrt(x) - 2/x^2",
+      "12x^3 - 5/(2 sqrt(x)) - 2/x^2",
+      "12x^3 - 5/(2 sqrt(x)) + 2/x^2"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is d/dx of x^3 sin x?",
+     "options": [
+      "3x^2 sin x + x^3 cos x",
+      "3x^2 cos x",
+      "x^3 cos x",
+      "3x^2 sin x - x^3 cos x"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is d/dx of (2x + 1)/(x^2 + 3)?",
+     "options": [
+      "2/(2x)",
+      "(6x^2 + 4x + 6)/(x^2 + 3)^2",
+      "(-2x^2 - 2x + 6)/(x^2 + 3)",
+      "(-2x^2 - 2x + 6)/(x^2 + 3)^2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What is d/dx of x ln x?",
+     "options": [
+      "1/x + ln x",
+      "ln x + 1",
+      "ln x",
+      "1/x"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "At which values of x does the graph of f(x) = x^3 - 6x^2 + 9x have a horizontal tangent?",
+     "options": [
+      "x = 0 and x = 3",
+      "x = 3 only",
+      "x = 1 and x = 3",
+      "x = 0 and x = 9"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Let f(x) = x^2 e^x. Find f'(x) using the product rule, find all points on the graph of f where the tangent line is horizontal, and give the coordinates of each point.",
+     "markScheme": [
+      "Applies the product rule: f'(x) = 2x e^x + x^2 e^x",
+      "Factors to get f'(x) = x e^x (x + 2)",
+      "Sets f'(x) = 0 and says e^x is never 0, so x = 0 or x = -2",
+      "Gives the points (0, 0) and (-2, 4e^(-2)), about (-2, 0.541)"
+     ],
+     "modelAnswer": "By the product rule, f'(x) = (2x)(e^x) + (x^2)(e^x). Factor: f'(x) = x e^x (x + 2). A horizontal tangent occurs where f'(x) = 0. Since e^x is never 0, the solutions are x = 0 and x = -2. The y-values are f(0) = 0 and f(-2) = 4e^(-2), about 0.541. So the points are (0, 0) and (-2, 4e^(-2)).",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Product rule: (derivative of x^2) times e^x plus x^2 times (derivative of e^x) = 2x e^x + x^2 e^x. Factor out x e^x to get f'(x) = x e^x (x + 2). Horizontal tangent where f'(x) = 0. e^x is never zero, so x = 0 or x + 2 = 0, which is x = -2. f(0) = 0 and f(-2) = 4e^(-2), about 0.541, so the points are (0, 0) and (-2, 4e^(-2)).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Product rule: (derivative of x^2) times e^x plus x^2 times (derivative of e^x) = 2x e^x + x^2 e^x."
+        },
+        {
+         "point": 1,
+         "quote": "Factor out x e^x to get f'(x) = x e^x (x + 2)."
+        },
+        {
+         "point": 2,
+         "quote": "Horizontal tangent where f'(x) = 0. e^x is never zero, so x = 0 or x + 2 = 0, which is x = -2."
+        },
+        {
+         "point": 3,
+         "quote": "f(0) = 0 and f(-2) = 4e^(-2), about 0.541, so the points are (0, 0) and (-2, 4e^(-2))."
+        }
+       ],
+       "feedback": "Full marks. Saying that e^x is never zero justifies leaving it out of the solutions, as the exam expects."
+      },
+      {
+       "tier": "full",
+       "text": "f' = (x^2)'(e^x) + (x^2)(e^x)' = 2x e^x + x^2 e^x. Both terms have x e^x, so f'(x) = x e^x (2 + x). Set that to 0: e^x > 0 always, so either x = 0 or x = -2. The matching points on the graph: (0, 0) and (-2, 4/e^2), which is about (-2, 0.54).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "2x e^x + x^2 e^x"
+        },
+        {
+         "point": 1,
+         "quote": "Both terms have x e^x, so f'(x) = x e^x (2 + x)"
+        },
+        {
+         "point": 2,
+         "quote": "Set that to 0: e^x > 0 always, so either x = 0 or x = -2"
+        },
+        {
+         "point": 3,
+         "quote": "The matching points on the graph: (0, 0) and (-2, 4/e^2), which is about (-2, 0.54)"
+        }
+       ],
+       "feedback": "All four marks. Giving both the exact and the decimal form of the second point is a good habit."
+      },
+      {
+       "tier": "partial",
+       "text": "f'(x) = 2x e^x + x^2 e^x. It factors to x e^x (x + 2). So the tangent is horizontal at x = 0 and x = -2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f'(x) = 2x e^x + x^2 e^x."
+        },
+        {
+         "point": 1,
+         "quote": "It factors to x e^x (x + 2)."
+        }
+       ],
+       "feedback": "Your derivative and the x-values are right. The question asks for the points, so you need the y-coordinates: f(0) = 0 and f(-2) = 4e^(-2), about 0.541. Also say why e^x does not contribute a solution."
+      },
+      {
+       "tier": "partial",
+       "text": "e^x is never 0, so x = 0 or x = -2. The points are (0, 0) and (-2, 4e^(-2)).",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "e^x is never 0, so x = 0 or x = -2."
+        },
+        {
+         "point": 3,
+         "quote": "The points are (0, 0) and (-2, 4e^(-2))."
+        }
+       ],
+       "feedback": "Your solutions and points are right. Show the product rule and the factoring that produce x e^x (x + 2).",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "f'(x) = 2x e^x because the derivative of e^x is e^x and of x^2 is 2x, and you multiply them. So f'(x) = 0 at x = 0.",
+       "meets": [],
+       "feedback": "The derivative of a product is not the product of the derivatives. The product rule gives 2x e^x + x^2 e^x, which has a second zero at x = -2."
+      },
+      {
+       "tier": "weak",
+       "text": "f'(x) = 2x e^x + x^2 e^x. Setting it equal to 0, e^x = 0 or 2x + x^2 = 0 so x = 0, -2, and e^x = 0 gives x = ln 0.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f'(x) = 2x e^x + x^2 e^x."
+        }
+       ],
+       "feedback": "The derivative is right. e^x is never equal to 0, so there is no solution from that factor. ln 0 is not defined, which is another sign that it cannot be zero."
+      }
+     ]
+    },
+    {
+     "prompt": "Let g(x) = (x^2 + 1)/(x - 3). Use the quotient rule to find g'(x), simplify it, and find an equation of the line tangent to the graph of g at x = 4.",
+     "markScheme": [
+      "Applies the quotient rule: g'(x) = (2x(x - 3) - (x^2 + 1)(1))/(x - 3)^2",
+      "Simplifies to g'(x) = (x^2 - 6x - 1)/(x - 3)^2",
+      "Evaluates g(4) = 17 and g'(4) = -9",
+      "Writes the tangent line y - 17 = -9(x - 4), or y = -9x + 53"
+     ],
+     "modelAnswer": "By the quotient rule, g'(x) = (2x(x - 3) - (x^2 + 1)(1))/(x - 3)^2. The numerator is 2x^2 - 6x - x^2 - 1 = x^2 - 6x - 1, so g'(x) = (x^2 - 6x - 1)/(x - 3)^2. At x = 4, g(4) = (16 + 1)/(1) = 17 and g'(4) = (16 - 24 - 1)/1 = -9. The tangent line is y - 17 = -9(x - 4), which is y = -9x + 53.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "Quotient rule: bottom times derivative of top minus top times derivative of bottom, over bottom squared: ((x - 3)(2x) - (x^2 + 1)(1))/(x - 3)^2. The top is 2x^2 - 6x - x^2 - 1 = x^2 - 6x - 1, so g'(x) = (x^2 - 6x - 1)/(x - 3)^2. g(4) = 17/1 = 17 and g'(4) = (16 - 24 - 1)/1 = -9. The tangent line is y - 17 = -9(x - 4), which is y = -9x + 53.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "Quotient rule: bottom times derivative of top minus top times derivative of bottom, over bottom squared: ((x - 3)(2x) - (x^2 + 1)(1))/(x - 3)^2."
+        },
+        {
+         "point": 1,
+         "quote": "The top is 2x^2 - 6x - x^2 - 1 = x^2 - 6x - 1, so g'(x) = (x^2 - 6x - 1)/(x - 3)^2."
+        },
+        {
+         "point": 2,
+         "quote": "g(4) = 17/1 = 17 and g'(4) = (16 - 24 - 1)/1 = -9."
+        },
+        {
+         "point": 3,
+         "quote": "The tangent line is y - 17 = -9(x - 4), which is y = -9x + 53."
+        }
+       ],
+       "feedback": "Full marks. Your numerator has the minus sign applied to the whole second product, as the rule requires."
+      },
+      {
+       "tier": "full",
+       "text": "g' = (f'g - fg')/g^2 where f = x^2 + 1 and g = x - 3. g'(x) = (2x(x - 3) - (x^2 + 1)(1))/(x - 3)^2. Expanding the top, 2x^2 - 6x - x^2 - 1, gives x^2 - 6x - 1. At 4: the value g(4) = 17 and the slope is (16 - 24 - 1)/(1)^2 = -9. Point-slope form: y - 17 = -9(x - 4), or y = -9x + 36 + 17 = -9x + 53.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g'(x) = (2x(x - 3) - (x^2 + 1)(1))/(x - 3)^2"
+        },
+        {
+         "point": 1,
+         "quote": "Expanding the top, 2x^2 - 6x - x^2 - 1, gives x^2 - 6x - 1"
+        },
+        {
+         "point": 2,
+         "quote": "the value g(4) = 17 and the slope is (16 - 24 - 1)/(1)^2 = -9"
+        },
+        {
+         "point": 3,
+         "quote": "Point-slope form: y - 17 = -9(x - 4), or y = -9x + 36 + 17 = -9x + 53"
+        }
+       ],
+       "feedback": "All four marks. Giving the line in both forms avoids a question about which is expected."
+      },
+      {
+       "tier": "partial",
+       "text": "g'(x) = ((x - 3)(2x) - (x^2 + 1)(1))/(x - 3)^2. g(4) = 17 and g'(4) = -9. The tangent line is y = -9x.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g'(x) = ((x - 3)(2x) - (x^2 + 1)(1))/(x - 3)^2."
+        },
+        {
+         "point": 2,
+         "quote": "g(4) = 17 and g'(4) = -9."
+        }
+       ],
+       "feedback": "Your derivative and values are right. The tangent line passes through (4, 17): y - 17 = -9(x - 4), so y = -9x + 53. y = -9x would pass through the origin, not through (4, 17)."
+      },
+      {
+       "tier": "partial",
+       "text": "y - 17 = -9(x - 4). g'(x) = (x^2 - 6x - 1)/(x - 3)^2.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "y - 17 = -9(x - 4)."
+        },
+        {
+         "point": 1,
+         "quote": "g'(x) = (x^2 - 6x - 1)/(x - 3)^2."
+        }
+       ],
+       "feedback": "Your simplified derivative and tangent line are right. Show the quotient rule setup before simplifying, and the value of g(4) and g'(4) that go into the line.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "g'(x) = 2x/1 = 2x, you take the derivative of the top over the derivative of the bottom. g'(4) = 8.",
+       "meets": [],
+       "feedback": "The derivative of a quotient is not the quotient of the derivatives. Use the quotient rule: (low d-high minus high d-low) over low squared."
+      },
+      {
+       "tier": "weak",
+       "text": "g'(x) = ((x - 3)(2x) - (x^2 + 1))/(x - 3)^2. That's 2x^2 - 6x - x^2 + 1 so g'(x) = (x^2 - 6x + 1)/(x - 3)^2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g'(x) = ((x - 3)(2x) - (x^2 + 1))/(x - 3)^2."
+        }
+       ],
+       "feedback": "The setup is right. When you subtract the product (x^2 + 1), the minus sign applies to the 1 as well, so the constant is -1, not +1."
+      }
+     ]
+    }
+   ]
+  },
+  "5": {
+   "topic": "Unit 2 to 3: Differentiability, the chain rule and implicit differentiation",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. describe the relationship between differentiability and continuity;\n2. differentiate composite functions using the chain rule;\n3. differentiate implicitly and find the tangent line to an implicit curve.\n\n## Materials\n\nGraphing handhelds, graph paper, whiteboards, the worksheet. All items are written for this class.\n\n## Starter (8 minutes)\n\nGraph f(x) = |x - 2| and zoom in on x = 2. Ask: \"What does the graph look like when you zoom in? Does it ever look like a line?\" Compare with a smooth curve like x^2, which looks like a line under zoom. Discuss how a corner means different slopes from the left and the right.\n\n## Main activity\n\n1. Differentiability implies continuity, but not the converse. Piecewise function: x^2 for x <= 1 and 3x - 2 for x > 1. Check continuity and compare the left and right derivatives at 1.\n2. The chain rule: d/dx of sin(x^2), of the square root of (x^2 + 4) and of e^(3x^2). Use inner function and outer function labels.\n3. Implicit differentiation: x^2 + y^2 = 25 at (3, 4), and the folium x^3 + y^3 = 6xy at (3, 3).\n\n## Checking for understanding\n\nFree-response style: \"Show that f(x) = |x - 2| is continuous but not differentiable at x = 2.\"\n\n## Worksheet\n\nCollect the worksheet at the end of the period.",
+   "reading": {
+    "title": "Corners, chains and curves that are not functions",
+    "content": "A function can be continuous at a point without being differentiable there. Differentiability requires that the left and right slopes at the point agree, and it fails at a corner, a cusp, a vertical tangent or a discontinuity. If f is differentiable at x = c, then f is continuous at c, but a continuous function can fail to be differentiable, as f(x) = |x - 2| does at x = 2: its graph has a corner, the slope is -1 on the left and 1 on the right. For a piecewise function, check continuity first by comparing one-sided limits with the value, then compare the derivatives of the pieces at the join. Let f(x) = x^2 for x <= 1 and f(x) = 3x - 2 for x > 1. At x = 1, f(1) = 1 and the right-hand limit is 3(1) - 2 = 1, so f is continuous. The left derivative is 2x = 2 and the right derivative is 3, which are different. So f is not differentiable at x = 1, even though it is continuous there.\n\nThe chain rule handles composite functions. If y = f(g(x)), then y' = f'(g(x)) times g'(x): the derivative of the outer function evaluated at the inner function, times the derivative of the inner function. For sin(x^2), the outer function is sin and the inner is x^2, so the derivative is cos(x^2) times 2x, which is 2x cos(x^2). For the square root of (x^2 + 4), write (x^2 + 4)^(1/2), so the derivative is (1/2)(x^2 + 4)^(-1/2) times 2x = x/(the square root of (x^2 + 4)). For e^(3x^2), the derivative is e^(3x^2) times 6x = 6x e^(3x^2).\n\nNot every curve is the graph of a function y = f(x). The circle x^2 + y^2 = 25 has two y-values for most x. Implicit differentiation finds slopes anyway. Differentiate both sides with respect to x, treating y as a function of x, so the chain rule produces a factor dy/dx whenever you differentiate a term with y. For the circle, 2x + 2y(dy/dx) = 0, so dy/dx = -x/y, and at (3, 4) the slope is -3/4. For the folium x^3 + y^3 = 6xy, differentiate: 3x^2 + 3y^2(dy/dx) = 6y + 6x(dy/dx), where the right side uses the product rule. Collect the dy/dx terms: (3y^2 - 6x)(dy/dx) = 6y - 3x^2, so dy/dx = (6y - 3x^2)/(3y^2 - 6x) = (2y - x^2)/(y^2 - 2x). At the point (3, 3), which lies on the curve because 27 + 27 = 54 = 6(9), the slope is (6 - 9)/(9 - 6) = -1, and the tangent line is y - 3 = -1(x - 3), or y = -x + 6."
+   },
+   "cards": [
+    {
+     "front": "Differentiable implies continuous",
+     "back": "If f'(c) exists, then f is continuous at c."
+    },
+    {
+     "front": "Continuous does not imply differentiable",
+     "back": "A corner, cusp or vertical tangent can occur at a point of continuity."
+    },
+    {
+     "front": "Left and right derivatives",
+     "back": "The slopes of the two pieces at a join. They must agree for the derivative to exist."
+    },
+    {
+     "front": "Chain rule",
+     "back": "d/dx f(g(x)) = f'(g(x)) times g'(x)."
+    },
+    {
+     "front": "Inner and outer",
+     "back": "In sin(x^2) the outer is sin and the inner is x^2. Differentiate outside, keeping the inside, then multiply by the derivative of the inside."
+    },
+    {
+     "front": "Implicit differentiation",
+     "back": "Differentiate both sides with respect to x, with dy/dx after each y term, then solve for dy/dx."
+    },
+    {
+     "front": "Circle slope",
+     "back": "For x^2 + y^2 = 25, dy/dx = -x/y."
+    },
+    {
+     "front": "Check a point is on the curve",
+     "back": "Substitute the coordinates into the original equation before finding the slope there."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "At x = 2, the function f(x) = |x - 2| is which of the following?",
+     "options": [
+      "Continuous and differentiable",
+      "Continuous but not differentiable",
+      "Differentiable but not continuous",
+      "Neither continuous nor differentiable"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "What is d/dx of sin(x^2)?",
+     "options": [
+      "cos(x^2)",
+      "2x sin(x^2)",
+      "-2x cos(x^2)",
+      "2x cos(x^2)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What is d/dx of the square root of (x^2 + 4)?",
+     "options": [
+      "x/sqrt(x^2 + 4)",
+      "1/(2 sqrt(x^2 + 4))",
+      "2x/sqrt(x^2 + 4)",
+      "x sqrt(x^2 + 4)"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "For the curve x^2 + y^2 = 25, what is dy/dx at the point (3, 4)?",
+     "options": [
+      "3/4",
+      "-4/3",
+      "-3/4",
+      "4/3"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is d/dx of e^(3x^2)?",
+     "options": [
+      "6x e^(3x^2)",
+      "e^(3x^2)",
+      "3x e^(3x^2)",
+      "6x e^(3x^2 - 1)"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Consider the curve x^3 + y^3 = 6xy. (a) Show that the point (3, 3) is on the curve. (b) Find dy/dx in terms of x and y. (c) Find an equation of the line tangent to the curve at (3, 3).",
+     "markScheme": [
+      "Verifies the point: 27 + 27 = 54 and 6(3)(3) = 54",
+      "Differentiates implicitly, using the product rule on the right: 3x^2 + 3y^2(dy/dx) = 6y + 6x(dy/dx)",
+      "Solves for dy/dx = (6y - 3x^2)/(3y^2 - 6x) = (2y - x^2)/(y^2 - 2x)",
+      "Finds the slope -1 at (3, 3) and the tangent line y - 3 = -1(x - 3), or y = -x + 6"
+     ],
+     "modelAnswer": "(a) At (3, 3), the left side is 27 + 27 = 54 and the right side is 6(3)(3) = 54, so the point is on the curve. (b) Differentiate both sides with respect to x: 3x^2 + 3y^2(dy/dx) = 6y + 6x(dy/dx). Collect the dy/dx terms: (3y^2 - 6x)(dy/dx) = 6y - 3x^2, so dy/dx = (6y - 3x^2)/(3y^2 - 6x) = (2y - x^2)/(y^2 - 2x). (c) At (3, 3), dy/dx = (6 - 9)/(9 - 6) = -1. The tangent line is y - 3 = -1(x - 3), so y = -x + 6.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) 3^3 + 3^3 = 54 and 6 x 3 x 3 = 54, so (3, 3) is on the curve. (b) Differentiate with respect to x: 3x^2 + 3y^2 y' = 6y + 6x y', using the product rule on 6xy. Get the y' terms together: y'(3y^2 - 6x) = 6y - 3x^2, so dy/dx = (6y - 3x^2)/(3y^2 - 6x). (c) At (3, 3) it's (18 - 27)/(27 - 18) = -1, so the tangent line is y - 3 = -(x - 3), or y = -x + 6.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "3^3 + 3^3 = 54 and 6 x 3 x 3 = 54, so (3, 3) is on the curve."
+        },
+        {
+         "point": 1,
+         "quote": "Differentiate with respect to x: 3x^2 + 3y^2 y' = 6y + 6x y', using the product rule on 6xy."
+        },
+        {
+         "point": 2,
+         "quote": "Get the y' terms together: y'(3y^2 - 6x) = 6y - 3x^2, so dy/dx = (6y - 3x^2)/(3y^2 - 6x)."
+        },
+        {
+         "point": 3,
+         "quote": "At (3, 3) it's (18 - 27)/(27 - 18) = -1, so the tangent line is y - 3 = -(x - 3), or y = -x + 6."
+        }
+       ],
+       "feedback": "Full marks. Applying the product rule to 6xy and the chain rule to y^3 are the two steps where most errors occur, and both are right."
+      },
+      {
+       "tier": "full",
+       "text": "(a) Left: 27 + 27 = 54. Right: 6(9) = 54. They match, so the point is on the curve. (b) d/dx(x^3) = 3x^2, d/dx(y^3) = 3y^2 dy/dx, and d/dx(6xy) = 6y + 6x dy/dx. Solve: dy/dx (3y^2 - 6x) = 6y - 3x^2, so dy/dx = (2y - x^2)/(y^2 - 2x). (c) Substitute (3, 3): (6 - 9)/(9 - 6) = -1, so y = -x + 6.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "They match, so the point is on the curve."
+        },
+        {
+         "point": 1,
+         "quote": "d/dx(x^3) = 3x^2, d/dx(y^3) = 3y^2 dy/dx, and d/dx(6xy) = 6y + 6x dy/dx"
+        },
+        {
+         "point": 2,
+         "quote": "Solve: dy/dx (3y^2 - 6x) = 6y - 3x^2, so dy/dx = (2y - x^2)/(y^2 - 2x)"
+        },
+        {
+         "point": 3,
+         "quote": "Substitute (3, 3): (6 - 9)/(9 - 6) = -1, so y = -x + 6"
+        }
+       ],
+       "feedback": "All four marks. Dividing the top and bottom by 3 gives the simplified form, and it agrees with the unsimplified one."
+      },
+      {
+       "tier": "partial",
+       "text": "27 + 27 = 54 = 6 x 3 x 3, so it's on the curve. 3x^2 + 3y^2 y' = 6y + 6x y'. Then y' = 6y - 3x^2 and the slope at (3, 3) is -9.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "27 + 27 = 54 = 6 x 3 x 3, so it's on the curve."
+        },
+        {
+         "point": 1,
+         "quote": "3x^2 + 3y^2 y' = 6y + 6x y'."
+        }
+       ],
+       "feedback": "Your verification and differentiation are right. You must divide by the coefficient of y': (6y - 3x^2)/(3y^2 - 6x), which at (3, 3) is -9/9 = -1."
+      },
+      {
+       "tier": "partial",
+       "text": "dy/dx = (6y - 3x^2)/(3y^2 - 6x). At (3, 3) the slope is -1, so y = -x + 6.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "dy/dx = (6y - 3x^2)/(3y^2 - 6x)."
+        },
+        {
+         "point": 3,
+         "quote": "At (3, 3) the slope is -1, so y = -x + 6."
+        }
+       ],
+       "feedback": "Your formula and tangent line are right. Show the check that (3, 3) is on the curve and the differentiation step from which the formula comes.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "d/dx(x^3 + y^3) = 3x^2 + 3y^2 and d/dx(6xy) = 6, so 3x^2 + 3y^2 = 6.",
+       "meets": [],
+       "feedback": "When you differentiate y^3 with respect to x you must multiply by dy/dx, since y depends on x, and the product 6xy needs the product rule: 6y + 6x(dy/dx)."
+      },
+      {
+       "tier": "weak",
+       "text": "The tangent line is y = -x + 6. I just solved the curve for y.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "The tangent line is y = -x + 6."
+        }
+       ],
+       "feedback": "The line is right, but the question asks for implicit differentiation. The curve cannot be solved nicely for y, which is exactly why you differentiate both sides and solve for dy/dx."
+      }
+     ]
+    },
+    {
+     "prompt": "Let f(x) = x^2 for x <= 1 and f(x) = 3x - 2 for x > 1. Is f continuous at x = 1? Is f differentiable at x = 1? Justify your answers. What does this example show about the relationship between continuity and differentiability?",
+     "markScheme": [
+      "Shows f is continuous at 1: f(1) = 1, the left limit is 1 and the right limit 3(1) - 2 = 1",
+      "Finds the left derivative, 2x = 2 at x = 1",
+      "Finds the right derivative, 3",
+      "Concludes f is not differentiable at 1 since the one-sided derivatives differ, so continuity does not imply differentiability"
+     ],
+     "modelAnswer": "Continuity: f(1) = 1^2 = 1. The left limit is 1^2 = 1 and the right limit is 3(1) - 2 = 1. All three are equal, so f is continuous at x = 1. Differentiability: the derivative of x^2 is 2x, so the left-hand derivative at 1 is 2. The derivative of 3x - 2 is 3, so the right-hand derivative at 1 is 3. Since 2 is not equal to 3, f'(1) does not exist, so f is not differentiable at 1. This shows that a function can be continuous at a point without being differentiable there: differentiability implies continuity, but not conversely.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "f(1) = 1. The limit from the left is 1^2 = 1 and from the right is 3(1) - 2 = 1, so the limit equals f(1) and f is continuous. On the left of 1 the slope is 2x, which is 2 at x = 1. On the right of 1 the slope is 3. The slopes are different, so f'(1) doesn't exist, and f is not differentiable at 1. So continuous doesn't mean differentiable: this graph has a corner at (1, 1).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = 1. The limit from the left is 1^2 = 1 and from the right is 3(1) - 2 = 1, so the limit equals f(1) and f is continuous."
+        },
+        {
+         "point": 1,
+         "quote": "On the left of 1 the slope is 2x, which is 2 at x = 1."
+        },
+        {
+         "point": 2,
+         "quote": "On the right of 1 the slope is 3."
+        },
+        {
+         "point": 3,
+         "quote": "The slopes are different, so f'(1) doesn't exist, and f is not differentiable at 1. So continuous doesn't mean differentiable: this graph has a corner at (1, 1)."
+        }
+       ],
+       "feedback": "Full marks. You compared the one-sided derivatives, which is the correct test for a piecewise function."
+      },
+      {
+       "tier": "full",
+       "text": "Continuity check: f(1) = 1, left limit = 1, right limit = 1, all equal, so continuous. Differentiability: left-hand derivative = d/dx(x^2) at 1 = 2, right-hand derivative = d/dx(3x - 2) = 3. Since 2 is not equal to 3, the derivative doesn't exist: there is a corner. Differentiable implies continuous but a continuous function need not be differentiable.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = 1, left limit = 1, right limit = 1, all equal, so continuous"
+        },
+        {
+         "point": 1,
+         "quote": "left-hand derivative = d/dx(x^2) at 1 = 2"
+        },
+        {
+         "point": 2,
+         "quote": "right-hand derivative = d/dx(3x - 2) = 3"
+        },
+        {
+         "point": 3,
+         "quote": "Since 2 is not equal to 3, the derivative doesn't exist: there is a corner. Differentiable implies continuous but a continuous function need not be differentiable"
+        }
+       ],
+       "feedback": "All four marks. Naming the corner connects the algebra to the picture."
+      },
+      {
+       "tier": "partial",
+       "text": "f is continuous at 1 because both pieces equal 1 there. The left derivative is 2. It is differentiable because it is continuous.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f is continuous at 1 because both pieces equal 1 there."
+        },
+        {
+         "point": 1,
+         "quote": "The left derivative is 2."
+        }
+       ],
+       "feedback": "Your continuity and left derivative are right. Differentiable does not follow from continuous. The right derivative is 3, which differs from 2, so f is not differentiable at 1."
+      },
+      {
+       "tier": "partial",
+       "text": "The right derivative is 3. The slopes don't match, so it's not differentiable, even though it's continuous.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The right derivative is 3."
+        },
+        {
+         "point": 3,
+         "quote": "The slopes don't match, so it's not differentiable, even though it's continuous."
+        }
+       ],
+       "feedback": "Your conclusion is right. Also compute the left derivative, 2, and show the continuity check: both one-sided limits and f(1) equal 1.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "It isn't continuous at 1 because the two formulas are different. So it's not differentiable either.",
+       "meets": [],
+       "feedback": "The formulas differ, but they give the same value at x = 1: 1 and 3(1) - 2 = 1. So there is no jump, and f is continuous. It is the slopes that differ."
+      },
+      {
+       "tier": "weak",
+       "text": "f(1) = 1 and both sides approach 1, so it's continuous. The derivative is 2x for x <= 1 and 3 for x > 1, so f'(1) = 2x = 2.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f(1) = 1 and both sides approach 1, so it's continuous."
+        }
+       ],
+       "feedback": "Your continuity check is right. The derivative at 1 is defined only if the left and right derivatives agree. 2 and 3 do not, so f'(1) does not exist."
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "topic": "Unit 3: Derivatives of inverse functions and inverse trigonometric functions",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. find the derivative of an inverse function at a point from the derivative of the original;\n2. differentiate inverse trigonometric functions and use them in a context.\n\n## Materials\n\nGraphing handhelds, whiteboards, graph paper for sketching an inverse, the worksheet. All items are written for this class.\n\n## Starter (8 minutes)\n\nGraph f(x) = x^3 + 2x and its inverse on the same axes with the line y = x. Ask: \"If the tangent to f at (1, 3) has slope 5, what is the slope of the tangent to the inverse at (3, 1)?\" Discuss the reflection of a tangent line across y = x, and see that the slopes are reciprocals.\n\n## Main activity\n\n1. The rule: (f-inverse)'(b) = 1/f'(a), where f(a) = b. Do f(x) = x^3 + 2x at b = 3, and f(x) = x^3 + x - 2 at b = 0, including the reason f is invertible.\n2. Table problem: f(2) = 5 and f'(2) = 4, so (f-inverse)'(5) = 1/4.\n3. Derivatives of arctan and arcsin with the chain rule: arctan(3x), arcsin(x/2) and x arctan x.\n4. A context: the angle of elevation of a drone rising at a point 30 feet from an observer.\n\n## Checking for understanding\n\nFree-response style: \"Why must you check that f is one-to-one before using the inverse derivative rule?\"\n\n## Worksheet\n\nCollect the worksheet at the end of the period.",
+   "reading": {
+    "title": "Slopes of inverse functions",
+    "content": "If f has an inverse, the graph of the inverse is the reflection of the graph of f across the line y = x. A tangent line reflects as well, and reflecting a line swaps the roles of rise and run, so the slopes are reciprocals. This gives the formula for the derivative of an inverse function: if f is differentiable and one-to-one, f(a) = b and f'(a) is not 0, then (f-inverse)'(b) = 1/f'(a). The input b of the inverse corresponds to the output of f, and the derivative of f is evaluated at a, not at b.\n\nAn example: f(x) = x^3 + 2x. Since f'(x) = 3x^2 + 2 is always positive, f is increasing and so it has an inverse. To find (f-inverse)'(3), first find a with f(a) = 3: f(1) = 1 + 2 = 3, so a = 1. Then f'(1) = 3 + 2 = 5, so (f-inverse)'(3) = 1/5. For f(x) = x^3 + x - 2, f'(x) = 3x^2 + 1 > 0 so f is increasing and therefore one-to-one. Since f(1) = 1 + 1 - 2 = 0, f-inverse(0) = 1, and (f-inverse)'(0) = 1/f'(1) = 1/4. The tangent line to the inverse at (0, 1) is y = 1 + (1/4)x. If a table says f(2) = 5 and f'(2) = 4, then (f-inverse)'(5) = 1/4. Notice that the justification includes why the function is invertible: because f' > 0, f is strictly increasing.\n\nThe same idea gives the derivatives of the inverse trigonometric functions. The derivative of arcsin(x) is 1/(the square root of (1 - x^2)), the derivative of arccos(x) is the negative of that, and the derivative of arctan(x) is 1/(1 + x^2). With the chain rule, d/dx of arctan(3x) = 3/(1 + 9x^2), and d/dx of arcsin(x/2) = (1/2)/(the square root of (1 - x^2/4)) = 1/(the square root of (4 - x^2)). With the product rule, d/dx of x arctan(x) = arctan(x) + x/(1 + x^2).\n\nThese derivatives appear in geometric problems. A drone rises straight up at a point 30 feet from an observer. The angle of elevation is theta = arctan(h/30), where h is the height in feet. By the chain rule, d(theta)/dh = (1/(1 + (h/30)^2))(1/30) = 30/(900 + h^2). At h = 40, d(theta)/dh = 30/2500 = 0.012 radians per foot. This says that when the drone is at 40 feet, the angle is increasing by about 0.012 radians for each additional foot of height. The rate shrinks as h grows, which makes sense: higher up, a foot of height changes the viewing angle less."
+   },
+   "cards": [
+    {
+     "front": "Inverse function derivative",
+     "back": "(f-inverse)'(b) = 1/f'(a), where f(a) = b."
+    },
+    {
+     "front": "Why slopes are reciprocal",
+     "back": "Reflecting across y = x swaps rise and run."
+    },
+    {
+     "front": "Condition for an inverse",
+     "back": "f must be one-to-one, for example strictly increasing because f' > 0."
+    },
+    {
+     "front": "Derivative of arcsin",
+     "back": "d/dx arcsin(x) = 1/(the square root of (1 - x^2))."
+    },
+    {
+     "front": "Derivative of arctan",
+     "back": "d/dx arctan(x) = 1/(1 + x^2)."
+    },
+    {
+     "front": "Chain rule with inverse trig",
+     "back": "d/dx arctan(u) = u'/(1 + u^2)."
+    },
+    {
+     "front": "Units of a derivative",
+     "back": "d(theta)/dh has units of radians per foot."
+    },
+    {
+     "front": "Finding a",
+     "back": "To use the inverse rule at b, first solve f(a) = b for a."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Let f(x) = x^3 + 2x. What is (f-inverse)'(3)?",
+     "options": [
+      "5",
+      "3",
+      "1/5",
+      "1/3"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "What is d/dx of arctan(3x)?",
+     "options": [
+      "3/(1 + 9x^2)",
+      "1/(1 + 9x^2)",
+      "3/(1 + 3x^2)",
+      "9/(1 + 9x^2)"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "What is d/dx of arcsin(x/2)?",
+     "options": [
+      "1/(2 sqrt(1 - x^2))",
+      "2/sqrt(4 - x^2)",
+      "1/(sqrt(1 - x^2/4))",
+      "1/sqrt(4 - x^2)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "What is d/dx of x arctan(x)?",
+     "options": [
+      "1/(1 + x^2)",
+      "arctan(x) + x/(1 + x^2)",
+      "x/(1 + x^2)",
+      "arctan(x) + 1/(1 + x^2)"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A function f has f(2) = 5 and f'(2) = 4, and has an inverse. What is (f-inverse)'(5)?",
+     "options": [
+      "1/4",
+      "4",
+      "5/2",
+      "2/5"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Let f(x) = x^3 + x - 2. (a) Show that f has an inverse. (b) Find f-inverse(0). (c) Find (f-inverse)'(0). (d) Write an equation of the line tangent to the graph of f-inverse at the point where x = 0.",
+     "markScheme": [
+      "Shows f'(x) = 3x^2 + 1 > 0, so f is strictly increasing, one-to-one, and has an inverse",
+      "Finds f(1) = 0, so f-inverse(0) = 1",
+      "Finds (f-inverse)'(0) = 1/f'(1) = 1/4",
+      "Writes the tangent line to f-inverse at (0, 1): y = 1 + (1/4)x"
+     ],
+     "modelAnswer": "(a) f'(x) = 3x^2 + 1, which is greater than 0 for all x, so f is strictly increasing. A strictly increasing function is one-to-one, so f has an inverse. (b) f(1) = 1 + 1 - 2 = 0, so f-inverse(0) = 1. (c) By the inverse function rule, (f-inverse)'(0) = 1/f'(f-inverse(0)) = 1/f'(1) = 1/(3 + 1) = 1/4. (d) The tangent line passes through (0, 1) with slope 1/4: y - 1 = (1/4)(x - 0), so y = (1/4)x + 1.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) f'(x) = 3x^2 + 1 is always positive, so f is increasing everywhere, and that makes it one-to-one, so it has an inverse. (b) f(1) = 1 + 1 - 2 = 0, so f-inverse(0) = 1. (c) (f-inverse)'(0) = 1/f'(1) = 1/4, since f'(1) = 3 + 1 = 4. (d) The point on the inverse is (0, 1) and the slope is 1/4, so y = 1 + (1/4)x.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f'(x) = 3x^2 + 1 is always positive, so f is increasing everywhere, and that makes it one-to-one, so it has an inverse."
+        },
+        {
+         "point": 1,
+         "quote": "f(1) = 1 + 1 - 2 = 0, so f-inverse(0) = 1."
+        },
+        {
+         "point": 2,
+         "quote": "(f-inverse)'(0) = 1/f'(1) = 1/4, since f'(1) = 3 + 1 = 4."
+        },
+        {
+         "point": 3,
+         "quote": "The point on the inverse is (0, 1) and the slope is 1/4, so y = 1 + (1/4)x."
+        }
+       ],
+       "feedback": "Full marks. The reason for invertibility, f' > 0, is the justification the exam asks for."
+      },
+      {
+       "tier": "full",
+       "text": "(a) The derivative 3x^2 + 1 >= 1 > 0, so f is strictly increasing, therefore one-to-one, and invertible. (b) Solve f(a) = 0: a = 1 works since 1 + 1 - 2 = 0, so f-inverse(0) = 1. (c) Using 1/f'(a) with a = 1: 1/(3(1)^2 + 1) = 1/4. (d) y - 1 = (1/4)(x - 0).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The derivative 3x^2 + 1 >= 1 > 0, so f is strictly increasing, therefore one-to-one, and invertible"
+        },
+        {
+         "point": 1,
+         "quote": "Solve f(a) = 0: a = 1 works since 1 + 1 - 2 = 0, so f-inverse(0) = 1"
+        },
+        {
+         "point": 2,
+         "quote": "Using 1/f'(a) with a = 1: 1/(3(1)^2 + 1) = 1/4"
+        },
+        {
+         "point": 3,
+         "quote": "y - 1 = (1/4)(x - 0)"
+        }
+       ],
+       "feedback": "All four marks. Using the key a = 1 and the inverse point (0, 1) in the right order is the main skill here."
+      },
+      {
+       "tier": "partial",
+       "text": "(a) f' = 3x^2 + 1 is positive so f is increasing and invertible. (b) f-inverse(0) = 0 since f(0) = -2. (c) The answer is 1/f'(0) = 1.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "f' = 3x^2 + 1 is positive so f is increasing and invertible."
+        }
+       ],
+       "feedback": "Part (a) is right. To find f-inverse(0), solve f(a) = 0: a = 1, not 0. Then (f-inverse)'(0) = 1/f'(1) = 1/4, because the inverse's output is where you evaluate f'."
+      },
+      {
+       "tier": "partial",
+       "text": "(f-inverse)'(0) = 1/f'(1) = 1/4. The tangent line is y = 1 + x/4.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "(f-inverse)'(0) = 1/f'(1) = 1/4."
+        },
+        {
+         "point": 3,
+         "quote": "The tangent line is y = 1 + x/4."
+        }
+       ],
+       "feedback": "Your slope and line are right. Explain why f is invertible (f' > 0) and show that f(1) = 0 so f-inverse(0) = 1.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The inverse of f is 1/f, so (f-inverse)' = -f'/f^2 and at 0 it's undefined.",
+       "meets": [],
+       "feedback": "The inverse function is not the reciprocal. It undoes f, and its derivative at b is 1/f'(a) where f(a) = b."
+      },
+      {
+       "tier": "weak",
+       "text": "f(1) = 0, so f-inverse(0) = 1. The slope is f'(0) = 1 so the tangent line is y = x + 1.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "f(1) = 0, so f-inverse(0) = 1."
+        }
+       ],
+       "feedback": "The point (0, 1) is right. The slope uses f' at a = 1, not at 0: f'(1) = 4, and the inverse slope is 1/4."
+      }
+     ]
+    },
+    {
+     "prompt": "A drone rises straight up at a point 30 feet horizontally from an observer. The angle of elevation of the drone is theta = arctan(h/30) radians, where h is the height of the drone in feet. (a) Find d(theta)/dh. (b) Find d(theta)/dh when h = 40 feet and give the units. (c) Interpret your answer in context.",
+     "markScheme": [
+      "Applies the chain rule with d/dx arctan(u) = u'/(1 + u^2) and u = h/30",
+      "Simplifies to d(theta)/dh = 30/(900 + h^2)",
+      "Evaluates at h = 40 to get 30/2500 = 0.012 radians per foot",
+      "Interprets: when the drone is 40 feet up, the angle of elevation is increasing by about 0.012 radians for each additional foot of height"
+     ],
+     "modelAnswer": "(a) With u = h/30, d(theta)/dh = (1/(1 + u^2))(du/dh) = (1/(1 + h^2/900))(1/30) = 30/(900 + h^2). (b) At h = 40: 30/(900 + 1600) = 30/2500 = 0.012 radians per foot. (c) When the drone is 40 feet above the ground, the angle of elevation is increasing at about 0.012 radians for each additional foot of height.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) d/dh arctan(u) is u'/(1 + u^2), and u = h/30 so u' = 1/30. (1/30)/(1 + h^2/900) = 30/(900 + h^2). (b) At h = 40 it's 30/(900 + 1600) = 30/2500 = 0.012 radians per foot. (c) When the drone is 40 feet up, the angle of elevation is going up by about 0.012 radians for each extra foot of height.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "d/dh arctan(u) is u'/(1 + u^2), and u = h/30 so u' = 1/30."
+        },
+        {
+         "point": 1,
+         "quote": "(1/30)/(1 + h^2/900) = 30/(900 + h^2)."
+        },
+        {
+         "point": 2,
+         "quote": "At h = 40 it's 30/(900 + 1600) = 30/2500 = 0.012 radians per foot."
+        },
+        {
+         "point": 3,
+         "quote": "When the drone is 40 feet up, the angle of elevation is going up by about 0.012 radians for each extra foot of height."
+        }
+       ],
+       "feedback": "Full marks. Your units, radians per foot, make the interpretation in (c) clear."
+      },
+      {
+       "tier": "full",
+       "text": "Chain rule: (1/(1 + (h/30)^2)) times the derivative of h/30, which is 1/30. Multiply top and bottom by 900: (1/30) x 900/(900 + h^2) = 30/(900 + h^2). At 40 feet: 30/2500 = 0.012 rad/ft. At that height the angle opens up 0.012 radians per additional foot, and the rate gets smaller with height since the denominator grows.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "(1/(1 + (h/30)^2)) times the derivative of h/30, which is 1/30"
+        },
+        {
+         "point": 1,
+         "quote": "(1/30) x 900/(900 + h^2) = 30/(900 + h^2)"
+        },
+        {
+         "point": 2,
+         "quote": "30/2500 = 0.012 rad/ft"
+        },
+        {
+         "point": 3,
+         "quote": "At that height the angle opens up 0.012 radians per additional foot, and the rate gets smaller with height since the denominator grows"
+        }
+       ],
+       "feedback": "All four marks. Adding why the rate shrinks with height shows you can read the formula."
+      },
+      {
+       "tier": "partial",
+       "text": "d/dh arctan(h/30) = (1/(1 + (h/30)^2)) times 1/30. At h = 40 it's 0.012. That means the angle is 0.012.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "d/dh arctan(h/30) = (1/(1 + (h/30)^2)) times 1/30."
+        },
+        {
+         "point": 2,
+         "quote": "At h = 40 it's 0.012."
+        }
+       ],
+       "feedback": "Your derivative and value are right. The derivative is a rate: 0.012 radians per foot of height, not an angle. Say that the angle is increasing at that rate when h = 40 feet."
+      },
+      {
+       "tier": "partial",
+       "text": "d(theta)/dh = 30/(900 + h^2). The angle increases 0.012 radians per foot at 40 feet.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "d(theta)/dh = 30/(900 + h^2)."
+        },
+        {
+         "point": 3,
+         "quote": "The angle increases 0.012 radians per foot at 40 feet."
+        }
+       ],
+       "feedback": "Your formula and interpretation are right. Show how the chain rule produces it, and the value 30/2500 at h = 40, with units, before interpreting.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "d/dh arctan(h/30) = 1/(1 + h^2/900) with no other factor. At h = 40 that's 1/2.78 = 0.36.",
+       "meets": [],
+       "feedback": "The argument is h/30, so the chain rule needs a factor of the derivative of h/30, which is 1/30. That makes it 30/(900 + h^2), and 0.012 at h = 40."
+      },
+      {
+       "tier": "weak",
+       "text": "The rate is 0.012. The unit is feet because h is in feet, and it means the drone moves 0.012 feet.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "The rate is 0.012."
+        }
+       ],
+       "feedback": "The derivative of an angle with respect to height has units of radians per foot, not feet. It says how fast the angle changes as the drone rises."
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "topic": "Unit 4: Rates of change in context, motion and related rates",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. interpret the derivative as a rate of change in a real context, with units;\n2. solve a related-rates problem by writing an equation, differentiating with respect to time and substituting.\n\n## Materials\n\nGraphing handhelds, a model ladder and meter stick for the demonstration, whiteboards, the worksheet. All items are written for this class.\n\n## Starter (8 minutes)\n\nLean a meter stick against a wall and slide the foot outward at a steady pace. Ask: \"Is the top of the stick sliding down at a steady pace too?\" Students watch and see that the top accelerates as it nears the floor. Lead to the relationship x^2 + y^2 = L^2 and ask how the two rates are linked.\n\n## Main activity\n\n1. Interpreting derivatives with units: volume of water in a tank, V'(4) = -3 gallons per minute.\n2. Motion along a line: position, velocity and acceleration, the sign of velocity as direction, and when speed is increasing (v and a have the same sign).\n3. Related rates procedure: draw and label, write an equation among the variables, differentiate with respect to t, substitute the values at the instant, solve and give units. Practice with a ladder, a growing circle, a balloon and a sand pile.\n\n## Checking for understanding\n\nFree-response style: \"A particle has v(2) = -3 and a(2) = 2. Is its speed increasing or decreasing at t = 2? Why?\"\n\n## Worksheet\n\nCollect the worksheet at the end of the period.",
+   "reading": {
+    "title": "Rates in context, and rates that are linked",
+    "content": "A derivative is more than a slope: it is a rate of change, and in an application it has units and a meaning. If V(t) is the volume of water in a tank in gallons at time t minutes, then V'(4) = -3 means that at t = 4 minutes, the volume is decreasing at a rate of 3 gallons per minute. A good interpretation names the quantity, the instant, the rate with its units and the direction.\n\nFor a particle moving along a line with position s(t), the velocity is v(t) = s'(t) and the acceleration is a(t) = v'(t) = s''(t). The sign of the velocity gives the direction: positive means moving in the positive direction, and negative the opposite. The speed is |v(t)|. The speed increases when velocity and acceleration have the same sign, and decreases when they have opposite signs. For s(t) = t^3 - 6t^2 + 9t, v(t) = 3t^2 - 12t + 9 = 3(t - 1)(t - 3) and a(t) = 6t - 12. The particle is at rest at t = 1 and t = 3. It moves right for 0 < t < 1 and t > 3, and left for 1 < t < 3. At t = 4, v = 9 and a = 12 are both positive, so the speed is increasing. For s(t) = t^2 - 4t, v(t) = 2t - 4, so at t = 1, v = -2 and the particle is moving in the negative direction at a speed of 2.\n\nRelated rates problems link the rates of change of different quantities through an equation. The method: (1) draw a picture and label quantities that change with letters; (2) write an equation connecting them that is true at every moment; (3) differentiate both sides with respect to t, using the chain rule; (4) substitute the numbers for the instant in question, including any value you get from the original equation; and (5) solve and state the answer with units. Here is a ladder of length 13 feet. Its foot is x feet from the wall and its top is y feet high, with x^2 + y^2 = 169. Differentiating, 2x(dx/dt) + 2y(dy/dt) = 0, so dy/dt = -(x/y)(dx/dt). When x = 5, y = 12, and if dx/dt = 2 feet per second, dy/dt = -(5/12)(2) = -5/6 feet per second.\n\nAnother example: a spherical balloon with volume increasing at 36(pi) cubic inches per second. Use V = (4/3)(pi)r^3. Then dV/dt = 4(pi)r^2(dr/dt). At r = 3, 36(pi) = 4(pi)(9)(dr/dt), so dr/dt = 1 inch per second. The surface area S = 4(pi)r^2 has dS/dt = 8(pi)r(dr/dt) = 24(pi) square inches per second. And for a circle growing with dr/dt = 2 cm per second, A = (pi)r^2 gives dA/dt = 2(pi)r(dr/dt), which is 40(pi) square centimeters per second at r = 10. Do not substitute the value of a changing quantity before differentiating, because that would turn it into a constant."
+   },
+   "cards": [
+    {
+     "front": "Velocity",
+     "back": "v(t) = s'(t). The sign gives the direction and the absolute value is the speed."
+    },
+    {
+     "front": "Acceleration",
+     "back": "a(t) = v'(t) = s''(t)."
+    },
+    {
+     "front": "Speed increasing",
+     "back": "When velocity and acceleration have the same sign."
+    },
+    {
+     "front": "Particle at rest",
+     "back": "Where v(t) = 0."
+    },
+    {
+     "front": "Interpreting a rate",
+     "back": "Say what changes, when, how fast with units, and whether it is increasing or decreasing."
+    },
+    {
+     "front": "Related rates",
+     "back": "Rates of different quantities that are linked by an equation. Differentiate the equation with respect to t."
+    },
+    {
+     "front": "Do not substitute early",
+     "back": "Substitute the instant's values after differentiating, not before."
+    },
+    {
+     "front": "Units of dA/dt",
+     "back": "Units of A per unit of time, such as square centimeters per second."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "The volume of water in a tank is V(t) gallons at t minutes, and V'(4) = -3. Which statement is correct?",
+     "options": [
+      "At t = 4 minutes the tank holds -3 gallons",
+      "The tank loses 3 gallons in the first 4 minutes",
+      "At t = 4 minutes the volume of water in the tank is decreasing at 3 gallons per minute",
+      "At t = 4 minutes the tank has 3 gallons left"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "The radius of a circular ripple grows at 2 cm per second. How fast is the area increasing when the radius is 10 cm?",
+     "options": [
+      "20(pi) cm^2/s",
+      "40(pi) cm^2/s",
+      "100(pi) cm^2/s",
+      "4(pi) cm^2/s"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "A 13-foot ladder leans against a wall. Its foot slides away at 2 feet per second. How fast is the top sliding down when the foot is 5 feet from the wall?",
+     "options": [
+      "5/6 ft/s downward",
+      "12/5 ft/s downward",
+      "5/6 ft/s upward",
+      "2 ft/s downward"
+     ],
+     "answer": "A"
+    },
+    {
+     "prompt": "The position of a particle on a line is s(t) = t^2 - 4t. What is true at t = 1?",
+     "options": [
+      "It is moving in the positive direction at speed 2",
+      "It is at rest",
+      "It is moving in the positive direction at speed 4",
+      "It is moving in the negative direction at speed 2"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Sand falls onto a conical pile whose height always equals its radius, so V = (1/3)(pi)h^3. The volume increases at 12 cubic feet per minute. How fast is the height increasing when h = 3 feet?",
+     "options": [
+      "12/(pi) ft/min",
+      "4(pi)/3 ft/min",
+      "4/(3(pi)) ft/min",
+      "36(pi) ft/min"
+     ],
+     "answer": "C"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "A spherical balloon is inflated so that its volume increases at a constant 36(pi) cubic inches per second. The volume of a sphere is V = (4/3)(pi)r^3 and the surface area is S = 4(pi)r^2. (a) At what rate is the radius increasing when r = 3 inches? (b) At what rate is the surface area increasing at that instant? Show your work and include units.",
+     "markScheme": [
+      "Differentiates V = (4/3)(pi)r^3 with respect to t to get dV/dt = 4(pi)r^2(dr/dt)",
+      "Substitutes dV/dt = 36(pi) and r = 3 to find dr/dt = 1 inch per second",
+      "Differentiates S = 4(pi)r^2 to get dS/dt = 8(pi)r(dr/dt)",
+      "Finds dS/dt = 8(pi)(3)(1) = 24(pi) square inches per second, with units"
+     ],
+     "modelAnswer": "(a) Differentiate V = (4/3)(pi)r^3 with respect to t: dV/dt = 4(pi)r^2(dr/dt). At r = 3 and dV/dt = 36(pi): 36(pi) = 4(pi)(9)(dr/dt) = 36(pi)(dr/dt), so dr/dt = 1 inch per second. (b) Differentiate S = 4(pi)r^2: dS/dt = 8(pi)r(dr/dt). At r = 3 and dr/dt = 1: dS/dt = 8(pi)(3)(1) = 24(pi) square inches per second, about 75.4.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) dV/dt = 4 pi r^2 dr/dt by the chain rule, since r changes with time. 36 pi = 4 pi (3)^2 dr/dt = 36 pi dr/dt, so dr/dt = 1 inch per second. (b) S = 4 pi r^2 so dS/dt = 8 pi r dr/dt. dS/dt = 8 pi (3)(1) = 24 pi square inches per second.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "dV/dt = 4 pi r^2 dr/dt by the chain rule, since r changes with time."
+        },
+        {
+         "point": 1,
+         "quote": "36 pi = 4 pi (3)^2 dr/dt = 36 pi dr/dt, so dr/dt = 1 inch per second."
+        },
+        {
+         "point": 2,
+         "quote": "S = 4 pi r^2 so dS/dt = 8 pi r dr/dt."
+        },
+        {
+         "point": 3,
+         "quote": "dS/dt = 8 pi (3)(1) = 24 pi square inches per second."
+        }
+       ],
+       "feedback": "Full marks. You differentiated before substituting the radius, which is the key rule of related rates."
+      },
+      {
+       "tier": "full",
+       "text": "(a) Both V and r depend on t. d/dt of (4/3) pi r^3 is (4/3) pi (3r^2) dr/dt = 4 pi r^2 dr/dt. Plug in r = 3 and dV/dt = 36 pi: 36 pi = 36 pi dr/dt, so dr/dt = 1 in/s. (b) dS/dt = 4 pi (2r) dr/dt = 8 pi r dr/dt. At r = 3, dr/dt = 1 it's 24 pi in^2/s, about 75.4 square inches per second.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "d/dt of (4/3) pi r^3 is (4/3) pi (3r^2) dr/dt = 4 pi r^2 dr/dt"
+        },
+        {
+         "point": 1,
+         "quote": "Plug in r = 3 and dV/dt = 36 pi: 36 pi = 36 pi dr/dt, so dr/dt = 1 in/s"
+        },
+        {
+         "point": 2,
+         "quote": "dS/dt = 4 pi (2r) dr/dt = 8 pi r dr/dt"
+        },
+        {
+         "point": 3,
+         "quote": "At r = 3, dr/dt = 1 it's 24 pi in^2/s, about 75.4 square inches per second"
+        }
+       ],
+       "feedback": "All four marks. Giving the decimal as well as the exact value is useful for a context problem."
+      },
+      {
+       "tier": "partial",
+       "text": "dV/dt = 4 pi r^2 dr/dt. dr/dt = 1 in/s. (b) dS/dt = 8 pi r = 24 pi square inches per second.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "dV/dt = 4 pi r^2 dr/dt."
+        },
+        {
+         "point": 1,
+         "quote": "dr/dt = 1 in/s."
+        }
+       ],
+       "feedback": "Part (a) is right. In (b), dS/dt = 8 pi r times dr/dt. You left out the dr/dt factor, which happens to be 1 here, but it should be shown."
+      },
+      {
+       "tier": "partial",
+       "text": "dS/dt = 8 pi r dr/dt. At r = 3 and dr/dt = 1 that's 24 pi square inches per second.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "dS/dt = 8 pi r dr/dt."
+        },
+        {
+         "point": 3,
+         "quote": "At r = 3 and dr/dt = 1 that's 24 pi square inches per second."
+        }
+       ],
+       "feedback": "Part (b) is right. Show part (a): differentiate V to get 4 pi r^2 dr/dt, and solve for dr/dt = 1 inch per second, since you need it in (b).",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "V = (4/3) pi (3)^3 = 36 pi. dV/dt = 36 pi means the radius grows 36 pi.",
+       "meets": [],
+       "feedback": "Substituting r = 3 first makes V a constant, so you lose the rate. Differentiate V = (4/3) pi r^3 with respect to t first, then substitute."
+      },
+      {
+       "tier": "weak",
+       "text": "dS/dt = 8 pi r dr/dt. The answer is 24 pi, with no units because it's a rate.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "dS/dt = 8 pi r dr/dt."
+        }
+       ],
+       "feedback": "A rate has units: square inches per second here. Also show dr/dt = 1 inch per second from part (a) before you substitute into dS/dt."
+      }
+     ]
+    },
+    {
+     "prompt": "A particle moves along a line with position s(t) = t^3 - 6t^2 + 9t meters, for t >= 0 seconds. (a) Find the velocity and acceleration. (b) At what times is the particle at rest? (c) On what intervals is it moving to the right, and to the left? (d) At t = 4, is the speed increasing or decreasing? Justify.",
+     "markScheme": [
+      "Finds v(t) = 3t^2 - 12t + 9 and a(t) = 6t - 12",
+      "Factors v(t) = 3(t - 1)(t - 3) and finds the particle at rest at t = 1 and t = 3",
+      "Says it moves right when 0 < t < 1 and t > 3 (v > 0), and left when 1 < t < 3 (v < 0)",
+      "At t = 4, v = 9 and a = 12 are both positive, so the speed is increasing"
+     ],
+     "modelAnswer": "(a) v(t) = s'(t) = 3t^2 - 12t + 9 and a(t) = v'(t) = 6t - 12. (b) v(t) = 3(t - 1)(t - 3) = 0 at t = 1 and t = 3, so the particle is at rest at those times. (c) v > 0 for 0 < t < 1 and t > 3, so the particle moves right on those intervals; v < 0 for 1 < t < 3, so it moves left. (d) At t = 4, v(4) = 9 and a(4) = 12 are both positive, so velocity and acceleration have the same sign and the speed is increasing.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) v(t) = 3t^2 - 12t + 9, a(t) = 6t - 12. (b) v = 3(t - 1)(t - 3) = 0, so it's at rest at t = 1 and t = 3 seconds. (c) v is positive for 0 < t < 1 and for t > 3, so it moves right then. v is negative between 1 and 3, so it moves left. (d) At t = 4, v = 9 and a = 12, both positive, so speed is increasing.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "v(t) = 3t^2 - 12t + 9, a(t) = 6t - 12."
+        },
+        {
+         "point": 1,
+         "quote": "v = 3(t - 1)(t - 3) = 0, so it's at rest at t = 1 and t = 3 seconds."
+        },
+        {
+         "point": 2,
+         "quote": "v is positive for 0 < t < 1 and for t > 3, so it moves right then. v is negative between 1 and 3, so it moves left."
+        },
+        {
+         "point": 3,
+         "quote": "At t = 4, v = 9 and a = 12, both positive, so speed is increasing."
+        }
+       ],
+       "feedback": "Full marks. Naming that both v and a are positive is the justification the exam wants."
+      },
+      {
+       "tier": "full",
+       "text": "(a) The derivatives are v = 3t^2 - 12t + 9 and a = 6t - 12. (b) Rest means v = 0: 3(t^2 - 4t + 3) = 3(t - 1)(t - 3), so t = 1 and t = 3. (c) Sign chart for v: positive on (0, 1), negative on (1, 3), positive on (3, infinity), so right, left, right. (d) v(4) = 48 - 48 + 9 = 9 and a(4) = 12. Same sign, so speed is increasing.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "v = 3t^2 - 12t + 9 and a = 6t - 12"
+        },
+        {
+         "point": 1,
+         "quote": "3(t^2 - 4t + 3) = 3(t - 1)(t - 3), so t = 1 and t = 3"
+        },
+        {
+         "point": 2,
+         "quote": "positive on (0, 1), negative on (1, 3), positive on (3, infinity), so right, left, right"
+        },
+        {
+         "point": 3,
+         "quote": "v(4) = 48 - 48 + 9 = 9 and a(4) = 12. Same sign, so speed is increasing"
+        }
+       ],
+       "feedback": "All four marks. A sign chart for v is the most reliable way to answer (c)."
+      },
+      {
+       "tier": "partial",
+       "text": "v(t) = 3t^2 - 12t + 9 and a(t) = 6t - 12. It's at rest at t = 1 and t = 3. It moves right when t < 3 and left when t > 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "v(t) = 3t^2 - 12t + 9 and a(t) = 6t - 12."
+        },
+        {
+         "point": 1,
+         "quote": "It's at rest at t = 1 and t = 3."
+        }
+       ],
+       "feedback": "Parts (a) and (b) are right. The sign of v changes at both rest times: it is positive until t = 1, negative from 1 to 3 and positive after 3."
+      },
+      {
+       "tier": "partial",
+       "text": "It moves right on (0, 1) and (3, infinity) and left on (1, 3). At t = 4, v and a are both positive so the speed is increasing.",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "It moves right on (0, 1) and (3, infinity) and left on (1, 3)."
+        },
+        {
+         "point": 3,
+         "quote": "At t = 4, v and a are both positive so the speed is increasing."
+        }
+       ],
+       "feedback": "Your motion and speed conclusions are right. Show the derivatives v(t) and a(t), and the rest times t = 1 and t = 3 that you used to build the intervals.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The velocity is s(t) divided by t, so v = t^2 - 6t + 9. At rest when t = 3.",
+       "meets": [],
+       "feedback": "Velocity is the derivative of position, not the average. v(t) = s'(t) = 3t^2 - 12t + 9, which equals 0 at both t = 1 and t = 3."
+      },
+      {
+       "tier": "weak",
+       "text": "It's at rest at t = 1 and t = 3. At t = 4 the speed is decreasing because acceleration 12 is a big number.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "It's at rest at t = 1 and t = 3."
+        }
+       ],
+       "feedback": "The size of acceleration does not decide this. Speed increases when v and a have the same sign. At t = 4, v = 9 and a = 12 are both positive, so the speed is increasing."
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "topic": "Mathematical practices: justifying with theorems and communicating with notation",
+   "lessonNote": "## Objectives\n\nStudents will be able to:\n\n1. justify a conclusion with a theorem, naming its conditions and checking them;\n2. communicate a solution with correct notation and units.\n\n## Materials\n\nGraphing handhelds, a scoring checklist for justifications, whiteboards, the quiz. All items are written for this class.\n\n## Starter (8 minutes)\n\nDisplay a student answer, \"By the MVT there is a c with f'(c) = 5, so the car sped,\" with no conditions checked. Ask students to score it out of 3 using a rubric for justification: names the theorem, checks the conditions, states the conclusion. Discuss what is missing.\n\n## Main activity\n\n1. The Mean Value Theorem: statement, conditions and meaning. For g(x) = x^3 - 6x^2 + 9x on [0, 4], find the guaranteed values of c. Compare with Rolle's Theorem on f(x) = x^2 - 4x + 3 on [1, 3].\n2. Application: a car on I-71 covers 60 miles in 50 minutes, so the average speed is 72 mph. Use the MVT to argue that at some moment the speed was exactly 72 mph, and compare with a posted limit of 70.\n3. Common errors in communication: missing units, \"dy/dx = 3\" with no meaning, using = between a function and its derivative, and leaving out the conditions of a theorem.\n\n## Checking for understanding\n\nSelf-score a classmate's justification with the checklist and write one improvement.\n\n## Quiz\n\nGive the quiz in the last ten minutes.",
+   "reading": {
+    "title": "A conclusion needs a reason",
+    "content": "On the AP Exam, correct work is only part of the answer; the reasoning has to be written. A justification names the theorem or definition you are using, shows that its conditions are satisfied, and states the conclusion in context. The Mean Value Theorem is a good example. It says that if f is continuous on the closed interval [a, b] and differentiable on the open interval (a, b), then there is at least one number c in (a, b) with f'(c) = (f(b) - f(a))/(b - a). The right side is the average rate of change over the interval, so the theorem says that at some moment the instantaneous rate equals the average rate. Rolle's Theorem is the special case where f(a) = f(b), so there is a c with f'(c) = 0. For f(x) = x^2 - 4x + 3 on [1, 3], f(1) = f(3) = 0, and f'(x) = 2x - 4 = 0 gives c = 2.\n\nLet us apply the MVT to g(x) = x^3 - 6x^2 + 9x on [0, 4]. Since g is a polynomial it is continuous on [0, 4] and differentiable on (0, 4), so the conditions hold. The average rate of change is (g(4) - g(0))/(4 - 0) = (4 - 0)/4 = 1, since g(4) = 64 - 96 + 36 = 4. Now solve g'(c) = 1: 3c^2 - 12c + 9 = 1, so 3c^2 - 12c + 8 = 0 and c = (12 plus or minus the square root of 48)/6 = 2 plus or minus (2 times the square root of 3)/3, which is about 0.845 and 3.155. Both are in (0, 4), so there are two values of c. Theorem names, conditions and values all appear in a good answer.\n\nThe theorem is also an argument tool. Suppose a car's position along I-71, measured in miles from a starting point, is a differentiable function s(t) with t in hours. In 50 minutes, 5/6 of an hour, the car travels 60 miles. The average velocity is 60/(5/6) = 72 miles per hour. Since s is differentiable, it is continuous on [0, 5/6] and differentiable on (0, 5/6), so by the MVT there is a time c in (0, 5/6) with s'(c) = 72. At that moment the speed was exactly 72 miles per hour, which is over a posted limit of 70. Notice that the theorem does not say when it happened, only that it did, and that the argument depends on the conditions. For f(x) = |x| on [-2, 2], the MVT cannot be applied because f is not differentiable at x = 0.\n\nCommunication also includes notation and units. Write f'(3) = 4, not f'(x) = 4 when you mean one point. Do not write an equals sign between a function and its derivative. Give units: if P(t) is a population in thousands of people and t is in years, then P'(5) = 120 is \"120 thousand people per year,\" and the interpretation should say that the population is increasing at that instant."
+   },
+   "cards": [
+    {
+     "front": "Mean Value Theorem",
+     "back": "If f is continuous on [a, b] and differentiable on (a, b), then f'(c) = (f(b) - f(a))/(b - a) for some c in (a, b)."
+    },
+    {
+     "front": "Rolle's Theorem",
+     "back": "The special case of the MVT with f(a) = f(b), which gives f'(c) = 0 for some c."
+    },
+    {
+     "front": "Conditions of a theorem",
+     "back": "State and verify them before using the conclusion. A polynomial is continuous and differentiable everywhere."
+    },
+    {
+     "front": "Existence versus location",
+     "back": "The MVT says a c exists, not what it is or when it occurs, unless you solve for it."
+    },
+    {
+     "front": "Justification checklist",
+     "back": "Name the theorem, check the conditions, state the conclusion in context with units."
+    },
+    {
+     "front": "Notation",
+     "back": "Write f'(3) = 4 for a value at a point. Do not set a function equal to its derivative."
+    },
+    {
+     "front": "Units of a derivative",
+     "back": "Units of the output per unit of the input, such as thousands of people per year."
+    },
+    {
+     "front": "When the MVT fails",
+     "back": "A corner or break in the interval, such as |x| at 0, makes the hypothesis fail."
+    }
+   ],
+   "closed": [
+    {
+     "prompt": "Which is a correct statement of the conditions of the Mean Value Theorem for f on [a, b]?",
+     "options": [
+      "f is continuous on the open interval (a, b) only",
+      "f is continuous on [a, b] and differentiable on (a, b)",
+      "f is differentiable on [a, b] and f(a) = f(b)",
+      "f has a maximum on [a, b]"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "The function f(x) = x^2 - 4x + 3 satisfies f(1) = f(3) = 0. What value of c in (1, 3) is guaranteed by Rolle's Theorem?",
+     "options": [
+      "1",
+      "3",
+      "2",
+      "0"
+     ],
+     "answer": "C"
+    },
+    {
+     "prompt": "The population of a city is P(t) thousand people at t years, and P'(5) = 120. A student writes only \"The population is increasing at a rate of 120.\" What is missing?",
+     "options": [
+      "Nothing is missing",
+      "The units are missing, and the instant, so it should say 120 thousand people per year at t = 5",
+      "The student should have said the population is 120",
+      "The student should use the original function"
+     ],
+     "answer": "B"
+    },
+    {
+     "prompt": "To justify that f is continuous at x = c, which must be shown?",
+     "options": [
+      "Only that f(c) is defined",
+      "Only that the limit of f(x) as x approaches c exists",
+      "That f'(c) exists",
+      "That f(c) is defined, the limit exists, and the limit equals f(c)"
+     ],
+     "answer": "D"
+    },
+    {
+     "prompt": "Why can the Mean Value Theorem NOT be applied to f(x) = |x| on [-2, 2]?",
+     "options": [
+      "f is not differentiable at x = 0",
+      "f(-2) is not equal to f(2)",
+      "f is not continuous at x = 0",
+      "The interval is too wide"
+     ],
+     "answer": "A"
+    }
+   ],
+   "open": [
+    {
+     "prompt": "Let g(x) = x^3 - 6x^2 + 9x on the interval [0, 4]. (a) State the conditions of the Mean Value Theorem and explain why g satisfies them. (b) Find the average rate of change of g on [0, 4]. (c) Find all values of c in (0, 4) guaranteed by the theorem.",
+     "markScheme": [
+      "States that the MVT requires continuity on [0, 4] and differentiability on (0, 4), and that g is a polynomial, so both hold",
+      "Finds the average rate of change (g(4) - g(0))/4 = 4/4 = 1",
+      "Sets g'(c) = 1, giving 3c^2 - 12c + 8 = 0",
+      "Solves to get c = 2 plus or minus (2 times the square root of 3)/3, about 0.845 and 3.155, and checks both are in (0, 4)"
+     ],
+     "modelAnswer": "(a) The Mean Value Theorem requires that g be continuous on [0, 4] and differentiable on (0, 4). Since g is a polynomial, it is continuous and differentiable for all real numbers, so both conditions hold. (b) g(0) = 0 and g(4) = 64 - 96 + 36 = 4, so the average rate of change is (4 - 0)/(4 - 0) = 1. (c) g'(x) = 3x^2 - 12x + 9. Set g'(c) = 1: 3c^2 - 12c + 8 = 0. By the quadratic formula c = (12 plus or minus the square root of 48)/6 = 2 plus or minus (2 times the square root of 3)/3, about 0.845 and 3.155. Both are in (0, 4), so there are two values of c.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "(a) The MVT needs g continuous on [0, 4] and differentiable on (0, 4). g is a polynomial so it is continuous and differentiable everywhere, so the conditions are met. (b) g(4) = 64 - 96 + 36 = 4 and g(0) = 0, so the average rate of change is 4/4 = 1. (c) g'(x) = 3x^2 - 12x + 9, and g'(c) = 1 gives 3c^2 - 12c + 8 = 0. c = (12 plus or minus sqrt(144 - 96))/6 = 2 plus or minus (2 sqrt 3)/3, which is about 0.845 and 3.155, and both are between 0 and 4, so both count.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "The MVT needs g continuous on [0, 4] and differentiable on (0, 4). g is a polynomial so it is continuous and differentiable everywhere, so the conditions are met."
+        },
+        {
+         "point": 1,
+         "quote": "g(4) = 64 - 96 + 36 = 4 and g(0) = 0, so the average rate of change is 4/4 = 1."
+        },
+        {
+         "point": 2,
+         "quote": "g'(x) = 3x^2 - 12x + 9, and g'(c) = 1 gives 3c^2 - 12c + 8 = 0."
+        },
+        {
+         "point": 3,
+         "quote": "c = (12 plus or minus sqrt(144 - 96))/6 = 2 plus or minus (2 sqrt 3)/3, which is about 0.845 and 3.155, and both are between 0 and 4, so both count."
+        }
+       ],
+       "feedback": "Full marks. Checking that both values lie in the open interval completes the justification."
+      },
+      {
+       "tier": "full",
+       "text": "(a) The two conditions are continuous on the closed interval [0, 4] and differentiable on the open interval (0, 4). A polynomial has both properties, so the theorem applies. (b) (g(4) - g(0))/(4 - 0) = (4 - 0)/4 = 1. (c) Solve 3c^2 - 12c + 9 = 1, so 3c^2 - 12c + 8 = 0. The quadratic formula gives c = 2 plus or minus 2 sqrt(3)/3, about 0.845 and 3.155. Both are in (0, 4).",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "continuous on the closed interval [0, 4] and differentiable on the open interval (0, 4). A polynomial has both properties, so the theorem applies"
+        },
+        {
+         "point": 1,
+         "quote": "(g(4) - g(0))/(4 - 0) = (4 - 0)/4 = 1"
+        },
+        {
+         "point": 2,
+         "quote": "Solve 3c^2 - 12c + 9 = 1, so 3c^2 - 12c + 8 = 0"
+        },
+        {
+         "point": 3,
+         "quote": "The quadratic formula gives c = 2 plus or minus 2 sqrt(3)/3, about 0.845 and 3.155. Both are in (0, 4)"
+        }
+       ],
+       "feedback": "All four marks. Writing the equation g'(c) = 1 as 3c^2 - 12c + 9 = 1 before simplifying makes the logic easy to follow."
+      },
+      {
+       "tier": "partial",
+       "text": "(a) g is a polynomial so it is continuous and differentiable, so the MVT applies. (b) The average rate of change is (4 - 0)/4 = 1. (c) Solve g'(c) = 0, which gives c = 1 and c = 3.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g is a polynomial so it is continuous and differentiable, so the MVT applies."
+        },
+        {
+         "point": 1,
+         "quote": "The average rate of change is (4 - 0)/4 = 1."
+        }
+       ],
+       "feedback": "Parts (a) and (b) are right. The MVT sets g'(c) equal to the average rate of change, 1, not 0. Solving 3c^2 - 12c + 9 = 1 gives c of about 0.845 and 3.155."
+      },
+      {
+       "tier": "partial",
+       "text": "3c^2 - 12c + 8 = 0. c is about 0.845 and 3.155, which are in (0, 4).",
+       "meets": [
+        {
+         "point": 2,
+         "quote": "3c^2 - 12c + 8 = 0."
+        },
+        {
+         "point": 3,
+         "quote": "c is about 0.845 and 3.155, which are in (0, 4)."
+        }
+       ],
+       "feedback": "Your equation and values are right. Start with the conditions of the theorem and why g satisfies them, and state the average rate of change, 1, that you set g'(c) equal to.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The MVT says g'(c) = g(4) - g(0) = 4 so 3c^2 - 12c + 9 = 4.",
+       "meets": [],
+       "feedback": "The right side must be the average rate of change, which divides by the length of the interval: (g(4) - g(0))/(4 - 0) = 1."
+      },
+      {
+       "tier": "weak",
+       "text": "g is a polynomial so it's continuous and differentiable. So c = 2, the middle of the interval.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "g is a polynomial so it's continuous and differentiable."
+        }
+       ],
+       "feedback": "The theorem guarantees a point where the derivative equals the average rate, which has to be solved for, and it need not be the midpoint. Here the solutions are about 0.845 and 3.155."
+      }
+     ]
+    },
+    {
+     "prompt": "A car travels on I-71 so that its position s(t) is a differentiable function, measured in miles from the start, with t in hours. The car covers 60 miles in the first 50 minutes, that is, s(0) = 0 and s(5/6) = 60. The posted speed limit is 70 miles per hour. Use the Mean Value Theorem to show that the car's speed was exactly 72 miles per hour at some moment. State the theorem's conditions and verify them.",
+     "markScheme": [
+      "States that s is differentiable, so it is continuous on [0, 5/6] and differentiable on (0, 5/6), satisfying the conditions of the MVT",
+      "Computes the average velocity (60 - 0)/(5/6 - 0) = 72 miles per hour",
+      "Concludes by the MVT that there is a c in (0, 5/6) with s'(c) = 72",
+      "States in context that at that moment the speed was 72 miles per hour, over the 70 mph limit, with units"
+     ],
+     "modelAnswer": "Since s is differentiable on [0, 5/6], it is also continuous on [0, 5/6], so the conditions of the Mean Value Theorem hold on [0, 5/6]. The average velocity is (s(5/6) - s(0))/(5/6 - 0) = 60/(5/6) = 72 miles per hour. By the Mean Value Theorem, there is a time c in (0, 5/6) with s'(c) = 72. So at that time the car's speed was exactly 72 miles per hour, which is above the 70 miles per hour limit.",
+     "answers": [
+      {
+       "tier": "full",
+       "text": "s is differentiable, which means it's continuous too, so s is continuous on [0, 5/6] and differentiable on (0, 5/6), and the MVT applies. The average velocity is (60 - 0)/(5/6 - 0) = 60 x 6/5 = 72 mph. By the MVT there is a time c between 0 and 5/6 hours where s'(c) = 72. So at that moment the car was going exactly 72 miles per hour, over the limit of 70.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "s is differentiable, which means it's continuous too, so s is continuous on [0, 5/6] and differentiable on (0, 5/6), and the MVT applies."
+        },
+        {
+         "point": 1,
+         "quote": "The average velocity is (60 - 0)/(5/6 - 0) = 60 x 6/5 = 72 mph."
+        },
+        {
+         "point": 2,
+         "quote": "By the MVT there is a time c between 0 and 5/6 hours where s'(c) = 72."
+        },
+        {
+         "point": 3,
+         "quote": "So at that moment the car was going exactly 72 miles per hour, over the limit of 70."
+        }
+       ],
+       "feedback": "Full marks. You derived continuity from differentiability, which covers the other condition."
+      },
+      {
+       "tier": "full",
+       "text": "Conditions: s is differentiable on the interval, so it's continuous on [0, 5/6] and differentiable on (0, 5/6). Average rate: (60 miles)/(5/6 hour) = 72 miles per hour. MVT: there's a c in (0, 5/6) with s'(c) = (s(5/6) - s(0))/(5/6) = 72. So at some time during the first 50 minutes the speedometer read 72 mph, which is above 70 mph.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "s is differentiable on the interval, so it's continuous on [0, 5/6] and differentiable on (0, 5/6)"
+        },
+        {
+         "point": 1,
+         "quote": "(60 miles)/(5/6 hour) = 72 miles per hour"
+        },
+        {
+         "point": 2,
+         "quote": "MVT: there's a c in (0, 5/6) with s'(c) = (s(5/6) - s(0))/(5/6) = 72"
+        },
+        {
+         "point": 3,
+         "quote": "So at some time during the first 50 minutes the speedometer read 72 mph, which is above 70 mph"
+        }
+       ],
+       "feedback": "All four marks. Writing the units alongside each number keeps the argument honest."
+      },
+      {
+       "tier": "partial",
+       "text": "The average speed is 60 miles in 5/6 of an hour, which is 72 mph. So at some time the car was going 72 mph, over the limit.",
+       "meets": [
+        {
+         "point": 1,
+         "quote": "The average speed is 60 miles in 5/6 of an hour, which is 72 mph."
+        },
+        {
+         "point": 3,
+         "quote": "So at some time the car was going 72 mph, over the limit."
+        }
+       ],
+       "feedback": "Your computation and conclusion are right. A justification must also name the Mean Value Theorem and verify its conditions: s is continuous on [0, 5/6] and differentiable on (0, 5/6)."
+      },
+      {
+       "tier": "partial",
+       "text": "s is continuous and differentiable so the MVT applies. There is a c where s'(c) = 72. The average speed was 60 mph.",
+       "meets": [
+        {
+         "point": 0,
+         "quote": "s is continuous and differentiable so the MVT applies."
+        },
+        {
+         "point": 2,
+         "quote": "There is a c where s'(c) = 72."
+        }
+       ],
+       "feedback": "Your use of the theorem is right. The average speed is 60 miles per 5/6 of an hour, not per hour: 60/(5/6) = 72 mph. Use that value and state the conclusion in context with the limit.",
+       "unsure": true
+      },
+      {
+       "tier": "weak",
+       "text": "The car went 60 miles in 50 minutes so it was going 60 the whole time and was under the limit.",
+       "meets": [],
+       "feedback": "The 60 is a distance, not a speed. 60 miles in 50 minutes is more than 60 miles per hour: 72 mph on average. The MVT then says that speed was reached at some instant."
+      },
+      {
+       "tier": "weak",
+       "text": "At some time the car was going 72 mph, over the limit. It's true because 72 is bigger than 70.",
+       "meets": [
+        {
+         "point": 3,
+         "quote": "At some time the car was going 72 mph, over the limit."
+        }
+       ],
+       "feedback": "A conclusion needs a reason. Use the Mean Value Theorem: the average velocity is 72 mph, and the theorem guarantees an instant with exactly that velocity, once its conditions are verified."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

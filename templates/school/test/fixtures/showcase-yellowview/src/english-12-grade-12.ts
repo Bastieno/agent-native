@@ -1,0 +1,1615 @@
+import { writeCourse, type WeekInput } from "../../../sim/showcase/author.js";
+
+/**
+ * English 12, Grade 12, Quarter 1: British and world literature. Standards:
+ * Common Core State Standards, English Language Arts, Grade 12 (RL, RI, W, SL,
+ * L), in the school's own words. Anchor texts, all public domain: Mary
+ * Shelley's Frankenstein, Francis Bacon's "Of Studies" and Jonathan Swift's
+ * "A Modest Proposal". Other readings are original to the course.
+ */
+
+const w1: WeekInput = {
+  topic: "Evidence, themes and choices in Frankenstein",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. support a reading of a British or world work with precise evidence, and show how the text complicates a first impression;
+2. trace the development of two or more themes in a work and show how they connect;
+3. analyze how a character's choices in a drama or novel are shaped by the setting and the conflict.
+
+## Materials
+
+Class novels (Frankenstein, volumes 1 and 2 read), a chart for first impression versus complication, and a theme-connection web.
+
+## Starter (8 minutes)
+
+Ask: "When you hear the name Frankenstein, what do you picture? Now, who actually has that name in the novel?" Collect the popular images (a green giant with bolts) and list what the book says that differs: Frankenstein is the creator, and the creature is articulate and reads Milton.
+
+## Main activity
+
+1. First impression versus complication. Students record their first impression of the creature on meeting him in Victor's account, then find the passages in the creature's own narrative that complicate it.
+2. Setting and choice. Compare Geneva, Ingolstadt and the Alps. How does each place shape what Victor does or avoids? Why does he leave the creature alone on the night of its creation?
+3. Theme web. Place ambition, responsibility and isolation on the board. Students draw lines between them and annotate with evidence. Example: ambition without responsibility produces isolation for both Victor and the creature.
+4. Precision lab: students rewrite a vague claim ("Victor is selfish") into a precise one with evidence ("Victor abandons the creature at the moment of its birth and then avoids telling anyone, which shows he values his reputation over responsibility").
+
+## Checking for understanding
+
+Whiteboards: one precise claim with a page reference.
+
+## Exit ticket
+
+Name one way the novel complicates your first impression of the creature.
+`,
+  reading: [
+    "A creator, a creature, and the work of reading carefully",
+    `
+Mary Shelley published Frankenstein in 1818, when she was twenty, and the book has been misread ever since by those who only know it from films. The creature in the novel is not a mindless brute. He is a being who learns to speak, reads Milton's Paradise Lost, and argues with his maker in complete sentences. A first impression of him as a monster is the impression the book wants you to have and then complicates.
+
+The novel is told in layers. A sea captain named Robert Walton writes letters to his sister about an Arctic expedition, and he rescues Victor Frankenstein, who tells him a story. Inside Victor's story is the creature's narrative. In Victor's account, the creature is first seen as a horrifying figure: yellow skin, watery eyes, a frame that Victor finds unbearable. Victor flees the room on the night of the creature's creation and, in effect, abandons him. In the creature's own narrative, however, we hear what happened next. He wandered alone, was beaten by villagers, and watched a family in a cottage whom he secretly helped. His quarrel with humanity begins when he is rejected despite his good intentions. He later tells Victor, "I ought to be thy Adam, but I am rather the fallen angel." The line complicates the first impression: he sees himself as a creation who deserved care and was denied it.
+
+A strong reading follows the themes through such moments. **Ambition** drives Victor's experiment, and the novel does not condemn curiosity itself. It condemns a creator who refuses responsibility for what he makes. **Responsibility** appears again when Victor destroys the half-finished female companion he promised the creature, again putting fear and reputation before obligation. **Isolation** afflicts both. Victor withdraws from his family into his work; the creature is shut out of every human circle. The themes connect: ambition without responsibility leads to isolation, and isolation breeds more harm.
+
+Setting shapes choice. Victor builds the creature in Ingolstadt, a university town far from his family in Geneva, which allows secrecy. In the Alps, he meets the creature at the glacier, an empty landscape that matches their lack of human company. The Arctic frames the whole story as a cold, far place where ambition can end. In your writing, tie each claim to a precise passage, and show how the evidence complicates, and does not simply confirm, the obvious view.
+`,
+  ],
+  cards: [
+    ["Frame narrative", "A story told inside another story, such as Victor's account within Walton's letters."],
+    ["Complication", "A detail or turn that makes a first impression of a text less simple."],
+    ["Romanticism", "A literary movement valuing emotion, nature and individual experience."],
+    ["Epistolary", "Told through letters, as in Walton's frame."],
+    ["Theme connection", "A link between two themes that shows how one produces or affects the other."],
+    ["Precise evidence", "Specific textual support tied closely to the claim."],
+    ["Allusion", "A reference to another work, such as Paradise Lost in the creature's reading."],
+    ["Setting (as influence)", "Place and time that shape characters' choices."],
+  ],
+  closed: [
+    [
+      "Which of these is a fact from the novel that complicates a first impression of the creature as a mindless brute?",
+      [
+        "He is tall.",
+        "He learns language and reads books, including Paradise Lost, and argues with Victor in full sentences.",
+        "He has yellow skin.",
+        "He lives in the Arctic.",
+      ],
+      "B",
+    ],
+    [
+      "When the creature says, \"I ought to be thy Adam, but I am rather the fallen angel,\" he means that",
+      [
+        "he wants to be called Adam",
+        "he should have been cared for by his creator, but rejection has made him an outcast",
+        "he is an angel",
+        "he regrets learning to read",
+      ],
+      "B",
+    ],
+    [
+      "How do the themes of ambition and responsibility connect in the novel?",
+      [
+        "They never overlap.",
+        "Victor's ambition creates a being, but his refusal of responsibility for it causes harm.",
+        "Responsibility prevents all ambition.",
+        "Ambition is rewarded.",
+      ],
+      "B",
+    ],
+    [
+      "Why does Victor's choice to create the creature in Ingolstadt, away from his family, matter?",
+      [
+        "It makes the experiment easier to keep secret and isolates him from advice.",
+        "It makes him wealthier.",
+        "It brings him closer to Geneva.",
+        "It improves his health.",
+      ],
+      "A",
+    ],
+    [
+      "Which claim is the most precise?",
+      [
+        "Victor is bad.",
+        "Victor abandons the creature at the moment of its birth and tells no one, which shows he values his reputation over responsibility.",
+        "The book is about science.",
+        "The creature is sad.",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "Describe a first impression of the creature that the novel encourages, and then show with two specific pieces of evidence how the text complicates it.",
+      scheme: [
+        "States the first impression accurately",
+        "Gives a first specific complicating detail from the novel",
+        "Gives a second specific complicating detail",
+        "Explains how the evidence changes the reader's understanding",
+      ],
+      model:
+        "At first, through Victor's eyes, the creature is a horrifying monster whose very look is unbearable. The text complicates this when the creature reveals that he secretly helped the cottagers by gathering firewood, and that he learned to speak and read. He also tells Victor that he was meant to be Adam, not the fallen angel. These details show a being who began with goodness and was made cruel by rejection, which shifts blame toward Victor.",
+      answers: [
+        [
+          "full",
+          "[[0|At first the creature looks like a monster, since Victor describes him as hideous and runs from him on the night he is made.]] [[1|One complication is that the creature secretly helps the cottagers by leaving wood for them, which is a kind act.]] [[2|Another is that he learns language by watching the family and reads Paradise Lost, so he is intelligent and thoughtful.]] [[3|These details show he started out gentle and became violent after being rejected, which makes me blame Victor for abandoning him.]]",
+          "Full marks. Your final sentence says how the evidence changes the reading, not just that it exists.",
+        ],
+        [
+          "full",
+          "[[0|The book makes you expect a dangerous monster, because Victor describes him with disgust.]] [[1|But in his own story he says he ought to be Adam, which means he wanted a creator who would care for him.]] [[2|He also tells how a family he watched taught him to speak, and he was beaten when he tried to meet them.]] [[3|So the monster impression comes from how people react to his looks, and the novel suggests that the cruelty is a result of how he was treated.]]",
+          "All four marks. You see that the first impression is a product of Victor's perspective.",
+        ],
+        [
+          "partial",
+          "[[0|The creature seems like a monster at first.]] [[1|He helps a family by bringing them wood.]] That makes him seem nicer.",
+          "Good first impression and evidence. Add a second detail and explain how the evidence changes the reading.",
+        ],
+        [
+          "partial",
+          "[[2|He reads Paradise Lost and learns to speak.]] [[3|That makes me think he is smart and not an animal.]]",
+          "Good evidence and conclusion. State the first impression and add a second complicating detail.",
+          true,
+        ],
+        [
+          "weak",
+          "The creature is a monster at first and he is a monster at the end. Nothing in the book changes that.",
+          "The creature's own narrative changes the picture in several ways. Reread what he tells Victor about his life.",
+        ],
+        [
+          "weak",
+          "[[0|At first he seems like a monster.]] The book complicates it because it is old and has long sentences.",
+          "The complication has to come from what the text shows about the creature, not from the style. Look at what he does and says.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "Choose two themes in Frankenstein (ambition, responsibility, isolation, or knowledge). Explain how they connect, with evidence from the novel, and show how a setting (Ingolstadt, the Alps or the Arctic) shapes a character's choice.",
+      scheme: [
+        "Names two themes and states how they connect",
+        "Gives specific evidence for the connection",
+        "Identifies a setting and a choice it shapes",
+        "Explains how the setting influences the choice",
+      ],
+      model:
+        "Ambition and isolation connect in Victor's story. His ambition to conquer death makes him shut himself in his rooms in Ingolstadt, where he stops writing to his family and loses touch with his friends. In that distance from advice, he makes the choice to create life in secret. The university setting, far from Geneva, allows the secrecy that keeps him from asking whether he should proceed.",
+      answers: [
+        [
+          "full",
+          "[[0|Ambition and isolation are connected because Victor's ambition makes him cut himself off from people.]] [[1|He stops writing to his family and hides in his rooms for months while building the creature.]] [[2|The setting is Ingolstadt, a university town far from Geneva, so he is away from his family.]] [[3|Being so far away makes it easier to keep the experiment secret and to avoid anyone telling him to stop, which shapes his choice to go on.]]",
+          "Full marks. You joined theme, evidence and setting into one line of reasoning.",
+        ],
+        [
+          "full",
+          "[[0|Responsibility and isolation connect, since Victor avoids responsibility for the creature and that leaves both of them alone.]] [[1|He runs away from the creature the night it is created and later destroys the female companion he promised.]] [[2|The setting of the Alps, with the glacier where they meet, is empty and cold.]] [[3|The setting shapes the choice because there are no other people around to hold Victor to account, and the landscape reflects how both characters are cut off.]]",
+          "All four marks. Connecting the empty glacier to the characters' isolation is a strong use of setting.",
+        ],
+        [
+          "partial",
+          "[[0|Ambition and isolation are themes that connect.]] [[1|Victor works alone for months.]] That is not good.",
+          "Your connection and evidence are good. Add a setting and explain how it shapes his choice.",
+        ],
+        [
+          "partial",
+          "[[2|In Ingolstadt Victor is away from his family.]] [[3|It makes it easier for him to keep secrets.]]",
+          "Strong on setting and choice. Name two themes and show how they connect with evidence.",
+          true,
+        ],
+        [
+          "weak",
+          "The themes are monsters and science. They connect because science makes monsters.",
+          "Those are subjects. Consider how Victor's ambition leads him to withdraw from people.",
+        ],
+        [
+          "weak",
+          "[[0|Ambition and isolation connect.]] The setting does not matter because the story would be the same anywhere.",
+          "Setting does shape the choices here. Think about what Victor's distance from home allows.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w2: WeekInput = {
+  topic: "Structure, timing and competing interpretations in Frankenstein",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. analyze how an author's choices about structure and timing shape the meaning and aesthetic effect of a work;
+2. evaluate multiple interpretations of a story, play or poem, drawing on specific passages.
+
+## Materials
+
+Class novels (Frankenstein, complete), a structure diagram of the nested narratives, a set of four critical readings (the creature as victim, Victor as irresponsible parent, a warning about science, a Romantic critique of isolation), and an evidence-weighing chart.
+
+## Starter (8 minutes)
+
+Draw four nested boxes on the board: Walton's letters, Victor's story, the creature's story, Victor's story, Walton's letters. Ask: "Why would an author put a monster's story in the middle of a human story, and tell both through a polar explorer?"
+
+## Main activity
+
+1. Structure analysis. Students describe what each layer does. Walton's letters give a frame of ambition parallel to Victor's. Victor's tale gives the creator's view, and the creature's narrative sits at the center, delaying our hearing from him until the reader has formed a judgment.
+2. Timing. When does the creature first speak? What does it do to the reader's sympathy to hear him only after the murders of William and Justine?
+3. Interpretations. In groups, students take one of the four readings, find three passages that support it, and present. The class then asks: what does each reading explain well, and what does it ignore?
+4. Quiz at the end of the lesson on structure and interpretations.
+
+## Checking for understanding
+
+Each group states a question the others could ask to test its reading.
+
+## Exit ticket
+
+Which interpretation do you find the most convincing, and which passage is your strongest support?
+`,
+  reading: [
+    "Four tellers, four readings",
+    `
+Frankenstein is built like a set of nesting boxes. The outer layer is Robert Walton's letters to his sister, written during an expedition to the Arctic. Inside is Victor's account of his life, told to Walton. At the center is the creature's own narrative, told to Victor in a hut on the Alps. The novel then closes the boxes in reverse: Victor resumes, and Walton ends with the creature's last appearance beside Victor's body. The structure is not decoration. It makes the reader hear the same events from three different tellers, each with a motive for telling.
+
+The timing of the creature's voice is a deliberate choice. We meet him first through Victor, who describes him with horror. By the time he speaks, he has already been blamed for the deaths of Victor's young brother William and the servant Justine, who is executed. The reader arrives at the creature's narrative with a verdict half formed, and then hears reasons that complicate it. Shelley has withheld the creature's side long enough that his story shocks us into reconsideration. If the order were different, the effect would be weaker.
+
+The frame also matters. Walton is, like Victor, an ambitious man who risks others' lives for glory. By surrounding Victor's story with Walton's, Shelley invites us to ask whether Walton will learn what Victor failed to learn. At the end, Walton turns his ship south when his crew demands it. The frame ends on a note of choice, as a possible alternative to Victor's fate.
+
+Because the book is so layered, readers have produced many interpretations. One reads it as the story of a **victim**: the creature is a good being turned cruel by rejection. A second sees **Victor** as an irresponsible parent who creates and then abandons. A third reads it as a **warning about science** pursued without conscience. A fourth, close to Shelley's Romantic circle, reads it as a critique of **isolation**, since both characters are destroyed when they withdraw from human bonds.
+
+To evaluate interpretations, ask how many passages each can explain, how well it handles evidence that seems to contradict it, and whether it accounts for the structure. The victim reading explains the creature's narrative well but must deal with the murders he chooses to commit. The irresponsible-parent reading explains Victor's flight and the destruction of the female creature, but it may underplay the creature's agency. A strong essay will not choose a reading and ignore the others; it will weigh them against specific passages.
+`,
+  ],
+  cards: [
+    ["Nested narrative", "A story told within another story, creating layers of tellers."],
+    ["Timing (in narrative)", "When information is revealed, and the effect on the reader."],
+    ["Interpretation", "A reasoned reading of a work's meaning, supported by passages."],
+    ["Critical reading", "An interpretation of a work from a specific perspective."],
+    ["Parallel (character)", "A similarity between two characters that invites comparison, such as Walton and Victor."],
+    ["Aesthetic effect", "The artistic impression a work's form creates."],
+    ["Agency", "The capacity of a character to choose and act on their own."],
+    ["Weighing evidence", "Judging how well different passages support or challenge a reading."],
+  ],
+  closed: [
+    [
+      "Why might Shelley delay the creature's own voice until the middle of the novel?",
+      [
+        "She ran out of space.",
+        "It lets the reader form a judgment first, which his story then complicates.",
+        "It makes the novel shorter.",
+        "It hides his identity.",
+      ],
+      "B",
+    ],
+    [
+      "What parallel does the frame narrative create?",
+      [
+        "Between the creature and Justine",
+        "Between Walton, an ambitious explorer, and Victor, an ambitious scientist",
+        "Between Geneva and Ingolstadt",
+        "Between Elizabeth and William",
+      ],
+      "B",
+    ],
+    [
+      "Which interpretation reads the novel mainly as a critique of withdrawing from human bonds?",
+      [
+        "The victim reading",
+        "The irresponsible-parent reading",
+        "The isolation reading",
+        "The warning-about-science reading",
+      ],
+      "C",
+    ],
+    [
+      "A weakness of the victim reading is that it",
+      [
+        "ignores the creature's narrative",
+        "must explain why the creature chooses to murder innocent people",
+        "ignores the Arctic",
+        "treats Victor as good",
+      ],
+      "B",
+    ],
+    [
+      "What makes an interpretation convincing?",
+      [
+        "It is the most popular.",
+        "It explains many passages, handles contradicting evidence, and accounts for the structure.",
+        "It is the shortest.",
+        "It is the most recent.",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "Explain how the nested structure of Frankenstein shapes meaning, with attention to what the creature's narrative at the center does to the reader's judgment. Refer to at least two layers of the structure.",
+      scheme: [
+        "Describes the nested structure accurately",
+        "Explains the function of the frame (Walton) or Victor's layer",
+        "Explains the effect of placing the creature's narrative at the center",
+        "Connects the effect to the novel's meaning or the reader's judgment",
+      ],
+      model:
+        "The novel nests Walton's letters around Victor's story around the creature's narrative. Walton's frame parallels Victor's ambition and asks whether Walton will learn from it. The creature's voice comes late and at the center, after the reader has heard Victor's account and the deaths of William and Justine, so his story complicates a judgment already formed. The structure makes the reader weigh three tellers and see that the question of blame is more complex than Victor suggests.",
+      answers: [
+        [
+          "full",
+          "[[0|The novel is like nesting boxes, with Walton's letters on the outside, Victor's story inside and the creature's story in the middle.]] [[1|Walton's frame matters because he is also an ambitious man risking people's lives, so it makes us ask if he will learn from Victor.]] [[2|The creature doesn't speak until after we have heard Victor and seen William and Justine die, so by then we already think he's a monster.]] [[3|When he finally tells his story, it changes that judgment and makes us see that the question of who is to blame is more complicated than Victor says.]]",
+          "Full marks. You explained both the frame and the effect of delaying the creature's voice.",
+        ],
+        [
+          "full",
+          "[[0|The structure is layered, with Walton telling Victor's story which includes the creature telling his story.]] [[1|Victor's layer gives us the creator's view and Walton's gives an outsider's view that watches Victor die.]] [[2|Having the creature at the center, after we've seen his supposed crimes, forces us to listen to his side when we've already judged him.]] [[3|That makes the reader uncomfortable and shows that stories depend on who is telling them.]]",
+          "All four marks. The point about stories depending on tellers is an insight into the form.",
+        ],
+        [
+          "partial",
+          "[[0|The story is told in layers with Walton, Victor and the creature.]] [[2|The creature's story is in the middle.]] That is the structure.",
+          "You described the layers. Explain what the frame does and how the placement affects the reader's judgment.",
+        ],
+        [
+          "partial",
+          "[[1|Walton's frame shows another ambitious man.]] [[3|It makes you think about whether people can learn from mistakes.]]",
+          "Strong on the frame. Describe the nested structure and the creature's placement.",
+          true,
+        ],
+        [
+          "weak",
+          "The structure is just a way to make the book longer. It does not affect the meaning.",
+          "The structure changes how we judge the characters. Ask when the creature speaks and what we already know.",
+        ],
+        [
+          "weak",
+          "[[0|The novel has Walton's letters and Victor's story.]] The creature has no story, he is just a monster who kills.",
+          "The creature does tell his own story, in the middle of the novel. Reread his conversation with Victor in the Alps.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "Evaluate two interpretations of Frankenstein: (a) the creature is mainly a victim of rejection, and (b) Victor is mainly an irresponsible parent. State which you find more convincing, cite at least one passage for each, and explain a limit of the interpretation you prefer.",
+      scheme: [
+        "States a clear judgment about which interpretation is more convincing",
+        "Cites a passage or event that supports the victim reading",
+        "Cites a passage or event that supports the irresponsible-parent reading",
+        "Explains a limit or weakness of the preferred interpretation",
+      ],
+      model:
+        "I find the irresponsible-parent reading more convincing. Support for the victim reading comes from the creature's account of being beaten by villagers though he had helped the cottagers. Support for the parent reading comes from Victor fleeing the room on the night of creation and later destroying the female companion he had promised. The parent reading explains Victor's central failures and covers the whole plot. Its limit is that it can underplay the creature's agency, since he chooses to kill Clerval and Elizabeth.",
+      answers: [
+        [
+          "full",
+          "[[0|I find the irresponsible-parent reading more convincing.]] [[1|For the victim reading, the creature is beaten by villagers right after he saved a girl from drowning and had helped the cottagers.]] [[2|For the parent reading, Victor runs from the creature the night he is made and later destroys the female creature he promised.]] [[3|A limit of the parent reading is that it can make the creature seem like a child with no choices, when he chooses to kill Clerval and Elizabeth.]]",
+          "Full marks. Your limit is a real one, and it keeps the judgment honest.",
+        ],
+        [
+          "full",
+          "[[0|The victim reading seems more convincing to me, though not completely.]] [[1|The creature says he was benevolent at first and that cruelty came from being rejected by the cottagers, which is the best support for it.]] [[2|The parent reading is supported by Victor leaving him alone to fend for himself on the night he was created.]] [[3|The limit of the victim reading is that it has to account for the deaths of William and Justine, where the creature's choices are cruel by any standard.]]",
+          "All four marks. You included a passage for each reading and named the strongest challenge.",
+        ],
+        [
+          "partial",
+          "[[0|I think the parent reading is better.]] [[2|Victor runs away when the creature is created.]]",
+          "Good judgment and evidence. Add support for the victim reading and a limit of your preferred reading.",
+        ],
+        [
+          "partial",
+          "[[1|The creature is beaten by the villagers.]] [[3|The victim reading ignores that he kills people.]]",
+          "Strong evidence and a limit. State your judgment and cite a passage for the parent reading.",
+          true,
+        ],
+        [
+          "weak",
+          "Both readings are the same, so there's nothing to evaluate. The book is about a monster.",
+          "The readings differ in who they hold responsible. Compare what each explains in the novel.",
+        ],
+        [
+          "weak",
+          "[[0|I prefer the victim reading.]] It has no weaknesses because the creature is clearly innocent.",
+          "Every reading has limits. The creature chooses to kill, which the victim reading must address.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w3: WeekInput = {
+  topic: "Reading at the high end of the range: Bacon's \"Of Studies\"",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. read and comprehend literature at the high end of the grades 11 to 12 range;
+2. determine the central ideas of a complex text and provide an objective summary.
+
+## Materials
+
+Francis Bacon's essay "Of Studies" (1625) in a lightly glossed edition, a vocabulary-in-context sheet, and a summary frame (central idea, supporting ideas, one-sentence summary).
+
+## Starter (8 minutes)
+
+Write on the board: "Some books are to be tasted, others to be swallowed, and some few to be chewed and digested." Ask: "What is Bacon saying about reading? Which books fit each category for you?"
+
+## Main activity
+
+1. Prepare the reader. Introduce Bacon's seventeenth-century English: inverted word order, semicolons, balanced clauses, and words that have changed meaning ("conference" means conversation, "ready" means prepared).
+2. Chunked reading. Read in four sections: purposes of study, how to read, what each subject gives, and how study shapes character. After each section, write a one-sentence paraphrase.
+3. Central idea. Students draft a sentence naming Bacon's central idea and compare with a partner. Is it "reading is good" or something more specific?
+4. Objective summary. Using the frame, write a summary of 60 to 80 words without opinion.
+
+## Checking for understanding
+
+Pairs compare summaries and underline any opinion words.
+
+## Exit ticket
+
+Paraphrase one sentence of Bacon in modern English.
+`,
+  reading: [
+    "How to read a hard old essay",
+    `
+In 1625, Francis Bacon, a lawyer, statesman and philosopher, published a short essay called "Of Studies." It is about three pages long and contains more ideas per sentence than most books. For a modern reader, the difficulty comes from its compression and its seventeenth-century language, not from the ideas, which are practical. The key to reading such a text is to slow down, read in small sections, and restate each sentence in your own words.
+
+Bacon begins with the purposes of studying. "Studies serve for delight, for ornament, and for ability," he writes. Delight is private pleasure. Ornament is the polish of conversation. Ability is the judgment that helps in business and public life. Each has a danger. Too much time spent in study is laziness; too much used for ornament is affectation; and making judgments entirely by rules, he says, is the humor of a scholar. In other words, study should be balanced with experience.
+
+He next considers how to read. The much-quoted line is that "some books are to be tasted, others to be swallowed, and some few to be chewed and digested." Not every book deserves the same attention. Some may be sampled, some read quickly, and a few worth reading carefully and thinking about. He also notes that "crafty men condemn studies, simple men admire them, and wise men use them." Study alone does not teach how to use it; that wisdom comes from experience. His advice is not to read to contradict, to believe, or to find talk, but to weigh and consider.
+
+Finally, Bacon claims that study shapes character: "Reading maketh a full man; conference a ready man; and writing an exact man." Reading fills the mind, conversation prepares it to respond, and writing forces precision. He then lists what each subject does for the mind: histories make men wise, poets witty, mathematics subtle, natural philosophy deep, moral philosophy grave, logic and rhetoric able to contend. He ends with the claim that "there is no stond or impediment in the wit but may be wrought out by fit studies," like exercises for the body.
+
+The central idea is that study is valuable when used with judgment: different books call for different kinds of attention, and the right reading shapes the mind in particular ways. An objective summary states these points concisely, without adding praise or complaint, and keeps the proportions of the original.
+`,
+  ],
+  cards: [
+    ["Central idea", "The main point a text develops across its sections."],
+    ["Objective summary", "A concise statement of a text's central ideas, without opinion."],
+    ["Paraphrase", "Restating a sentence in your own words while keeping its meaning."],
+    ["Archaic usage", "A word or construction from an earlier period whose meaning may have changed."],
+    ["Balanced sentence", "A sentence whose parts have the same structure and weight."],
+    ["Aphorism", "A short, memorable statement of a general truth."],
+    ["Compression", "Packing many ideas into few words."],
+    ["Chunking", "Reading a hard text in small sections and pausing to restate each."],
+  ],
+  closed: [
+    [
+      "Bacon writes that some books are to be \"tasted,\" others \"swallowed,\" and a few \"chewed and digested.\" What is his point?",
+      [
+        "Books are food.",
+        "Different books deserve different degrees of attention.",
+        "Reading is unhealthy.",
+        "Books should be eaten.",
+      ],
+      "B",
+    ],
+    [
+      "Which statement paraphrases \"Reading maketh a full man; conference a ready man; and writing an exact man\"?",
+      [
+        "Reading fills the mind, conversation prepares it to respond, and writing makes it precise.",
+        "Reading is better than writing.",
+        "Writing is easier than reading.",
+        "Conversation is a waste of time.",
+      ],
+      "A",
+    ],
+    [
+      "What does Bacon mean by saying that \"crafty men condemn studies, simple men admire them, and wise men use them\"?",
+      [
+        "Studies are useless.",
+        "Wisdom lies in using study with judgment, not in rejecting or worshipping it.",
+        "Only simple men read.",
+        "Wise men avoid books.",
+      ],
+      "B",
+    ],
+    [
+      "Which sentence would NOT belong in an objective summary of the essay?",
+      [
+        "Bacon states three purposes of study.",
+        "Bacon advises that different books call for different attention.",
+        "Bacon's essay is brilliant and everyone should memorize it.",
+        "Bacon claims each subject shapes the mind in a particular way.",
+      ],
+      "C",
+    ],
+    [
+      "A useful strategy for a text like \"Of Studies\" is to",
+      [
+        "skim the first sentence only",
+        "read in sections and restate each in your own words",
+        "ignore unfamiliar words",
+        "read it aloud quickly",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "State the central idea of Bacon's \"Of Studies\" in one sentence, and then write an objective summary (about 50 to 70 words) that covers its three main parts: the purposes of study, how to read, and how study shapes the mind.",
+      scheme: [
+        "States the central idea accurately",
+        "Summarizes the purposes of study (delight, ornament, ability)",
+        "Summarizes the advice on how to read",
+        "Summarizes how study shapes the mind, in an objective tone",
+      ],
+      model:
+        "Central idea: Study is valuable when used with judgment, because different books call for different attention and reading shapes the mind. Summary: Bacon says study serves delight, ornament and ability, but each can be overdone. He advises that some books be tasted, some swallowed and a few digested, and that readers weigh instead of simply believing or arguing. Finally he claims that reading, conversation and writing shape a person, and that each subject develops a different quality of mind.",
+      answers: [
+        [
+          "full",
+          "[[0|The central idea is that study is useful when it is done with judgment and different reading calls for different attention.]] Bacon says [[1|that study serves delight, ornament and ability, though any of them can be overdone.]] [[2|He advises readers to taste some books, swallow others and chew a few, and to weigh what they read instead of just believing it or arguing with it.]] [[3|He also says reading, talking and writing form a person, and that subjects like history and mathematics shape the mind in different ways.]]",
+          "Full marks. Your summary follows the proportions of the essay and keeps your opinion out.",
+        ],
+        [
+          "full",
+          "[[0|Bacon's central idea is that wise people use study to improve their judgment and character.]] [[1|He lists three purposes, which are pleasure, polish in conversation and practical ability.]] [[2|He suggests reading some books lightly and a few with great care, and not to read only to contradict.]] [[3|He ends by saying that reading, conference and writing make a person full, ready and exact, and that each field of study trains the mind differently.]]",
+          "All four marks. You used his own contrast of full, ready and exact accurately.",
+        ],
+        [
+          "partial",
+          "[[0|The central idea is that reading is good for you.]] [[1|Bacon says studies serve for delight, ornament and ability.]] He also says to read carefully.",
+          "Your central idea is too general and the summary stops early. Be more specific and cover how study shapes the mind.",
+        ],
+        [
+          "partial",
+          "[[2|Bacon says some books are only to be tasted and a few are to be chewed and digested.]] [[3|He says reading, writing and talking shape a person.]]",
+          "These sections are well summarized. Add the central idea and the purposes of study.",
+          true,
+        ],
+        [
+          "weak",
+          "Bacon says that everyone should read every book and that people who don't read are crafty. I think he is right.",
+          "That adds your opinion and misreads him. Bacon says different books call for different attention.",
+        ],
+        [
+          "weak",
+          "[[1|Bacon says studies serve for delight.]] The essay is long and boring and has hard words so nobody should read it.",
+          "You picked out one accurate point. An objective summary should not judge the essay.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "Paraphrase the following Bacon sentences in modern English, then explain what each one shows about his view of study: (a) \"Studies serve for delight, for ornament, and for ability.\" (b) \"Histories make men wise; poets witty; the mathematics subtle; natural philosophy deep; moral grave; logic and rhetoric able to contend.\"",
+      scheme: [
+        "Gives an accurate paraphrase of (a)",
+        "Explains what (a) shows about the purposes of study",
+        "Gives an accurate paraphrase of (b)",
+        "Explains what (b) shows about study shaping particular qualities of mind",
+      ],
+      model:
+        "(a) Study gives pleasure, polish in speech and practical skill. This shows that Bacon sees study as serving private enjoyment, social grace and public usefulness. (b) Studying history gives wisdom, poetry gives wit, mathematics gives precision, natural science gives depth, ethics gives seriousness, and logic and rhetoric give skill in argument. This shows he believes each field develops a particular quality of mind.",
+      answers: [
+        [
+          "full",
+          "(a) [[0|Studying gives you pleasure, makes you better in conversation, and gives you practical skill.]] [[1|This shows that Bacon sees study as serving both private life and public life.]] (b) [[2|Learning history makes you wise, poetry makes you witty, mathematics makes you exact, science gives depth, ethics gives seriousness, and logic and rhetoric help you argue.]] [[3|This shows he believes that each subject builds a specific quality of mind, like exercise for different muscles.]]",
+          "Full marks. The exercise comparison is a good way to explain his final point.",
+        ],
+        [
+          "full",
+          "(a) [[0|People study to enjoy themselves, to look educated, and to get good at things.]] [[1|It shows that he is realistic and recognizes different reasons for study, including social ones.]] (b) [[2|History makes people wise, poetry makes them clever, math makes them precise, natural philosophy makes them deep, moral philosophy makes them serious, and logic and rhetoric let them debate.]] [[3|He thinks education shapes character in specific ways and that you choose subjects for the result you want.]]",
+          "All four marks. \"Realistic\" is a good word for his tone.",
+        ],
+        [
+          "partial",
+          "(a) [[0|Study is for pleasure, looks and skill.]] (b) [[2|History makes you wise, poetry makes you witty and math makes you subtle.]]",
+          "Both paraphrases are fine. Add what each shows about Bacon's view of study.",
+        ],
+        [
+          "partial",
+          "(a) [[1|He is saying study serves private and public purposes.]] (b) [[3|He is saying each field builds a different quality of mind.]]",
+          "Strong on meaning. Include the paraphrases in your own words so the reader sees both steps.",
+          true,
+        ],
+        [
+          "weak",
+          "(a) Studies are good for being delicious. (b) History is wise and poetry is witty so they are people.",
+          "Delight, ornament and ability are not about food. In (b) the subjects shape the people who study them.",
+        ],
+        [
+          "weak",
+          "(a) [[0|Studying is for fun, show and being able.]] (b) The mathematics is subtle which means mathematics is hidden.",
+          "Your paraphrase of (a) is accurate. In (b) \"subtle\" describes the quality of mind that mathematics produces: precise and fine.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w4: WeekInput = {
+  topic: "How a treatment changes across a text, and integrating information from different media",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. analyze how a writer's treatment of an event or idea changes as the text moves forward;
+2. integrate and evaluate information from several sources presented in different media.
+
+## Materials
+
+An original feature article ("The Season That Ended in Second Place") about a high school robotics team, a graph of the team's scores across the season, a transcript of a radio interview with the team's coach, and an integration chart.
+
+## Starter (8 minutes)
+
+Ask: "Think of a game your team lost. How did you feel right after, the next day, and a year later?" Elicit that the same event can be described differently as time and perspective change.
+
+## Main activity
+
+1. Read the feature article. Students mark the first sentence that describes the team's loss in the state finals and the last sentence that returns to it. How has the writer's language about it changed? Underline words that signal the shift.
+2. Analyze the progression with a timeline: the writer's treatment in the opening (disappointment), the middle (analysis of mistakes) and the end (pride and growth). Which paragraphs mark the turn?
+3. Multimedia. Examine a bar graph of the team's scores by competition and a transcript of the coach's radio interview. What does the graph show that the article does not? What does the interview add, such as tone or personal detail?
+4. Integrate: students write a short paragraph that draws on all three sources to answer the question, "Was the season a failure?"
+
+## Checking for understanding
+
+Cold call: "Which source best supports the claim that the team improved, and why?"
+
+## Exit ticket
+
+State one detail the graph shows that the article does not.
+`,
+  reading: [
+    "The Season That Ended in Second Place",
+    `
+On the last Saturday of March, in a gymnasium in Dayton, the Westerville North robotics team lost the state championship by four points. The students stood silent while the winning alliance posed for photographs. One senior put her face in her hands. For a team that had spent six weeks building a robot to stack crates, the result felt like a verdict.
+
+It was not, however, the whole story. Back in January, the team's first robot had failed to move in its opening match. A wire had come loose. The students rebuilt the drive system, learned to test each part separately, and began to keep a notebook of every failure. By the regional competition in February, the robot was scoring consistently, and the notebook, now forty pages long, had become a guide for the underclassmen who would take over.
+
+The coach, a physics teacher named Mr. Brandt, tells the students that the loss in Dayton was the result of a single decision. In the final match, they chose to attempt a risky climb with ten seconds left, and the robot tipped. He does not call it a mistake. "We took the swing," he says. "I would rather have a team that swings."
+
+Looking at the season whole, the shape is not a fall but a climb. The team's scores rose at every competition. They finished second in the state in only their third year, and they were the only rural-district school in the top four. They also built something that is harder to measure: a habit of recording what went wrong, so that next year's team does not repeat it.
+
+On the bus ride home, the senior who had cried in the gym was reading the failure notebook. She was looking for the page about the tipping risk. She wanted to add a line for the next team. "Don't be afraid of the climb," she wrote. "Just practice the landing." The writer of this article was a spectator that day, and what stays with her is not the four points but that sentence.
+`,
+  ],
+  cards: [
+    ["Treatment (of an event)", "How a writer presents and judges an event, including tone and emphasis."],
+    ["Shift", "A change in tone, attitude or emphasis within a text."],
+    ["Multimedia", "Information presented in more than one form, such as text, graph and audio."],
+    ["Integrate", "To combine information from different sources into one understanding."],
+    ["Evaluate (a source)", "To judge a source's accuracy, usefulness and bias."],
+    ["Trend", "A general direction shown by data over time."],
+    ["Transcript", "A written record of spoken words."],
+    ["Retrospective tone", "A tone that looks back on events with the benefit of hindsight."],
+  ],
+  closed: [
+    [
+      "How does the article's treatment of the loss change from the opening to the end?",
+      [
+        "It stays the same.",
+        "It moves from the sting of defeat toward a view of the season as growth and learning.",
+        "It moves from victory to defeat.",
+        "It moves from humor to anger.",
+      ],
+      "B",
+    ],
+    [
+      "Which paragraph marks the turn in the writer's treatment?",
+      [
+        "The first paragraph",
+        "The paragraph beginning \"It was not, however, the whole story.\"",
+        "The last paragraph",
+        "The coach's quotation only",
+      ],
+      "B",
+    ],
+    [
+      "What does a graph of the team's scores by competition add that the article only states in words?",
+      [
+        "The coach's tone",
+        "A visual record of the trend across the season",
+        "The students' names",
+        "The cost of the robot",
+      ],
+      "B",
+    ],
+    [
+      "What does the radio interview with Mr. Brandt add to the picture?",
+      [
+        "His tone and personal phrasing, such as 'We took the swing'",
+        "A map of Dayton",
+        "The scoring rules",
+        "The names of other teams",
+      ],
+      "A",
+    ],
+    [
+      "To answer the question \"Was the season a failure?\" a writer should",
+      [
+        "use only the article",
+        "integrate evidence from the article, graph and interview",
+        "ignore the graph",
+        "avoid the coach's view",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "Analyze how the writer's treatment of the state final changes from the opening to the end of the article. Identify the turn, quote or describe two details that show the shift, and explain the effect on the reader.",
+      scheme: [
+        "Describes the opening treatment (disappointment and a sense of verdict)",
+        "Identifies the turn in the text",
+        "Describes the closing treatment with a specific detail (the senior writing in the notebook)",
+        "Explains the effect on the reader",
+      ],
+      model:
+        "The opening treats the loss as a verdict: the students stand silent and one senior puts her face in her hands. The turn comes with 'It was not, however, the whole story,' which shifts to the season's progress. By the end, the senior is writing advice in the failure notebook, 'Just practice the landing,' and the loss is treated as a lesson. The effect is to make the reader see the defeat as part of a longer story of growth.",
+      answers: [
+        [
+          "full",
+          "[[0|At the start the loss feels like a verdict, with the students silent and a senior hiding her face in her hands.]] [[1|The turn comes at it was not, however, the whole story, where the writer goes back to the season.]] [[2|By the end the same senior is writing in the failure notebook, don't be afraid of the climb, just practice the landing, so the loss is treated as a lesson.]] [[3|The effect is that the reader stops seeing the second place as a defeat and starts seeing it as part of a longer story about growth.]]",
+          "Full marks. You used a before and after detail about the same character, which makes the shift concrete.",
+        ],
+        [
+          "full",
+          "[[0|The article begins with disappointment because the team loses by four points and the silence feels heavy.]] [[1|The turning point is when the writer says that this was not the whole story and describes how the team rebuilt after the early failure.]] [[2|The ending focuses on the notebook and the senior's note for the next team, so the treatment is hopeful and forward-looking.]] [[3|This leads the reader to feel pride in the team and to believe that their effort mattered more than the score.]]",
+          "All four marks. Linking the notebook to the forward-looking tone is exactly right.",
+        ],
+        [
+          "partial",
+          "[[0|The article starts sad because they lost.]] [[2|It ends with the senior writing in a notebook.]]",
+          "Good opening and closing. Identify the turn and explain the effect on the reader.",
+        ],
+        [
+          "partial",
+          "[[1|It was not, however, the whole story is the turn.]] [[3|The reader sees the season as a good one.]]",
+          "Good turn and effect. Describe the opening treatment and the closing detail.",
+          true,
+        ],
+        [
+          "weak",
+          "The article is happy the whole way through because robotics is fun. The treatment does not change.",
+          "The opening is sad and silent. Reread the first paragraph and compare it with the last.",
+        ],
+        [
+          "weak",
+          "[[0|The article is sad at the start.]] The shift is when the team wins the next year, which is the last paragraph.",
+          "The article doesn't say they win. The shift comes when the writer reframes the loss in the season's context.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "Write a short paragraph (four to six sentences) that answers \"Was the season a failure?\" by integrating the article (the team finished second in the state; the notebook), a graph (scores rose at each competition) and the radio interview (Mr. Brandt: \"We took the swing\"). Evaluate which source is most persuasive and why.",
+      scheme: [
+        "Uses evidence from the article",
+        "Uses evidence from the graph",
+        "Uses evidence from the interview",
+        "Evaluates the sources and reaches a clear answer",
+      ],
+      model:
+        "The season was not a failure. The article shows that the team finished second in the state in its third year and kept a failure notebook for the next team. The graph shows scores rising at every competition, which is the strongest evidence of improvement because it is quantitative. The coach's remark, 'We took the swing,' explains the final-match risk as a choice, not carelessness. Taken together, the sources show a team improving and learning, so I judge the season a success.",
+      answers: [
+        [
+          "full",
+          "[[0|The article shows the team got second place in the state in only their third year and made a notebook of failures to help the next team.]] [[1|The graph shows their scores going up at each competition, which is the strongest evidence of improvement because it is measured.]] [[2|Mr. Brandt's quote, we took the swing, shows the last-match risk was a choice and not carelessness.]] [[3|Together the sources show a team that improved and learned, so I would say the season was a success, not a failure.]]",
+          "Full marks. You compared the persuasiveness of the sources and reached a clear judgment.",
+        ],
+        [
+          "full",
+          "[[0|According to the article, the team recovered from an early failure and finished second in the state.]] [[1|The graph shows scores rising at every event, so improvement happened all season.]] [[2|The coach says he would rather have a team that swings, so he sees the loss as part of trying hard things.]] [[3|The graph is the most convincing because numbers show the trend, and the quote and article give the reasons, so the answer is that the season was a success.]]",
+          "All four marks. Saying the numbers show the trend and the other sources give the reasons is a good evaluation.",
+        ],
+        [
+          "partial",
+          "[[0|The article says they finished second in the state.]] [[1|The graph shows scores going up.]] So it was good.",
+          "Two sources are used. Add the interview and evaluate which source is most persuasive.",
+        ],
+        [
+          "partial",
+          "[[2|The coach said they took the swing.]] [[3|That shows it wasn't a failure.]]",
+          "Good use of the interview and conclusion. Add evidence from the article and the graph.",
+          true,
+        ],
+        [
+          "weak",
+          "The season was a failure because they did not win. Winning is the only thing that matters in sports.",
+          "That ignores the evidence in all three sources. Use the article, graph and interview to judge.",
+        ],
+        [
+          "weak",
+          "[[1|The graph shows scores going up.]] The article and interview are not needed since the graph proves everything.",
+          "The graph is strong but shows only scores. The other sources add the reasons. Use all three.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w5: WeekInput = {
+  topic: "A significant document of its time: Swift's A Modest Proposal; writing a sustained argument",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. analyze documents of historical and literary significance for their themes, purposes and rhetoric;
+2. write a sustained argument on a question of public concern, with a precise claim and counterclaims answered;
+3. write a personal essay or explanatory text with a controlling idea and a polished, formal style.
+
+## Materials
+
+Jonathan Swift, "A Modest Proposal" (1729), excerpted and glossed; a one-page history of the Irish famine-era conditions that prompted it (the 1720s); an argument essay planner; a sample personal-essay introduction.
+
+## Starter (8 minutes)
+
+Write on the board: "I propose that schools be closed on every Friday to save money." Ask: "Is this a serious proposal? How would you know?" Elicit signals: tone, context, exaggeration, the gap between the reasonable voice and the shocking idea.
+
+## Main activity
+
+1. Context. In the 1720s, Ireland was suffering from poverty and hunger under English rule and absentee landlords. Many pamphlets proposed economic reforms. Swift's essay mocks the style of such pamphlets.
+2. Read the essay's opening and the proposal. Students annotate the persona: a calm "projector" who cites statistics and offers to solve a problem. Identify the devices: understatement, mock logic, deadpan.
+3. Analyze purpose: whose behavior is Swift attacking? How does the ironic distance between the speaker's tone and the proposal's cruelty serve that purpose?
+4. Writing workshop: choose a question of public concern, draft a precise claim, and plan a counterclaim and rebuttal. Alternatively, plan a personal essay with a controlling idea.
+
+## Checking for understanding
+
+Pairs finish: "The speaker says ..., but Swift means ..."
+
+## Exit ticket
+
+Write one precise claim for a sustained argument.
+`,
+  reading: [
+    "When the calmest voice makes the cruelest suggestion",
+    `
+In 1729, the Anglo-Irish writer Jonathan Swift published a short pamphlet with a long title: A Modest Proposal for Preventing the Children of Poor People in Ireland from Being a Burden to Their Parents or Country, and for Making Them Beneficial to the Public. The title sounds like many pamphlets of its day, which proposed schemes to solve Ireland's poverty. The speaker is a reasonable-sounding "projector," a man who offers plans for improvement. He describes the beggars in Dublin, cites figures about the number of children born to poor families, and then presents his solution: poor families should sell their children as food for the wealthy.
+
+The proposal is monstrous, and the speaker's calm is the most disturbing thing about it. He weighs costs, lists benefits and anticipates objections in the manner of an economist. He even claims that the plan will improve family life, reduce the number of Catholics, and provide landlords with something at last that they can call their own. By treating the unthinkable with the tone of reasonable policy, Swift forces the reader to see how the real policy makers of his time were treating the poor: as resources to be managed, not as people.
+
+This is **satire**, writing that exposes folly or vice through irony, exaggeration or mockery. The mechanism here is **verbal irony**, in which the speaker means the opposite of what he says. Swift does not mean that Irish children should be eaten. He means that England's economic policies and Ireland's landlords were already devouring the poor. Later in the essay, he lists other, sensible reforms that the speaker dismisses, such as taxing absentee landlords, spending on native goods and showing compassion, and these are the proposals he truly supports. By having the speaker reject them as impractical, he shows the reader how unlikely they are to be adopted.
+
+Learning to read such a document means asking about its historical context, its speaker versus its author, and the gap between what is said and what is meant. It also offers a model for your own writing. A **sustained argument** on a public question requires a precise claim, reasons supported with evidence, and an honest treatment of counterclaims. A **personal essay** requires a controlling idea, a single insight that organizes the scenes. In both, style matters: choose a formal register, vary your sentences, and keep your purpose in view.
+`,
+  ],
+  cards: [
+    ["Satire", "Writing that exposes folly or vice through irony, exaggeration or mockery."],
+    ["Verbal irony", "Saying the opposite of what one means."],
+    ["Persona", "The voice or character that a writer adopts."],
+    ["Projector", "In Swift's time, a person who proposed schemes for improvement."],
+    ["Deadpan", "A calm tone that gives no sign of humor or emotion."],
+    ["Sustained argument", "A long, carefully developed argument with a precise claim and counterclaims."],
+    ["Controlling idea", "The central insight that organizes a personal or explanatory essay."],
+    ["Formal register", "A style that avoids slang and contractions, suited to serious audiences."],
+  ],
+  closed: [
+    [
+      "Swift's speaker calmly proposes selling children as food. This is an example of",
+      ["literal advice", "satire using verbal irony", "a news report", "a fable"],
+      "B",
+    ],
+    [
+      "What is Swift's real target in \"A Modest Proposal\"?",
+      [
+        "Poor Irish families",
+        "The policies and attitudes of those in power that treat the poor as resources to be consumed",
+        "Children",
+        "Dublin's weather",
+      ],
+      "B",
+    ],
+    [
+      "Why does the speaker's calm tone make the proposal more disturbing?",
+      [
+        "It makes the proposal seem humorous.",
+        "It shows how monstrous ideas can be made to sound reasonable.",
+        "It means Swift agrees.",
+        "It shortens the essay.",
+      ],
+      "B",
+    ],
+    [
+      "Which reforms does Swift truly support in the essay?",
+      [
+        "Selling children",
+        "Taxing absentee landlords, buying native goods and showing compassion",
+        "Raising rents",
+        "Moving to England",
+      ],
+      "B",
+    ],
+    [
+      "A strong sustained argument includes",
+      [
+        "only evidence that supports the claim",
+        "a precise claim, reasons with evidence, and honest answers to counterclaims",
+        "a joke at the end",
+        "a list of quotations",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "Explain how Swift uses a persona and verbal irony in \"A Modest Proposal\" to attack a social problem. Distinguish between what the speaker says and what Swift means, and say why the strategy is more powerful than a direct complaint.",
+      scheme: [
+        "Identifies the persona (the calm projector) and its tone",
+        "States what the speaker says (selling children as food)",
+        "States what Swift means (criticizing the treatment of the poor by the powerful)",
+        "Explains why the strategy is more powerful than a direct complaint",
+      ],
+      model:
+        "Swift adopts the persona of a calm, reasonable projector who weighs costs and benefits. The speaker proposes that poor families sell their children as food, but Swift means that England's policies and Ireland's landlords were already devouring the poor. By presenting the unthinkable in the language of economics, he forces readers to see the real policy as equally monstrous. The irony is more powerful than a direct complaint because the reader draws the conclusion for themselves and feels the shock.",
+      answers: [
+        [
+          "full",
+          "[[0|Swift writes as a calm, reasonable projector who talks about costs and benefits like an economist.]] [[1|The speaker says that poor families should sell their children as food for the rich.]] [[2|What Swift really means is that landlords and English policy are already treating the poor as something to consume.]] [[3|This is stronger than a direct complaint because the reader is shocked, and then realizes that the shock is aimed at the real policy, so they reach the conclusion on their own.]]",
+          "Full marks. The final point, that the reader draws the conclusion, explains why satire persuades.",
+        ],
+        [
+          "full",
+          "[[0|The persona is a deadpan projector who writes as if he were solving an economic problem.]] [[1|He seriously suggests eating Irish babies.]] [[2|Swift's real message is that the powerful already treat the poor as disposable, and he wants people to be disgusted by that.]] [[3|The irony hits harder than a plain complaint because the cruel idea is stated so calmly that readers see their own society's calm cruelty in it.]]",
+          "All four marks. \"Their own society's calm cruelty\" is exactly the effect Swift wants.",
+        ],
+        [
+          "partial",
+          "[[0|The speaker is a projector who sounds reasonable.]] [[1|He says to eat babies.]] Swift is kind of mean.",
+          "Persona and statement are accurate. Say what Swift really means and why the strategy is effective.",
+        ],
+        [
+          "partial",
+          "[[2|Swift means the rich are already hurting the poor.]] [[3|It's stronger because it shocks you.]]",
+          "Good meaning and effect. Identify the persona and say what the speaker literally proposes.",
+          true,
+        ],
+        [
+          "weak",
+          "Swift really wants people to eat children. He is serious and the essay is a plan for helping the poor.",
+          "Swift is using irony. His real proposals appear later, and they are humane. Reread the middle of the essay.",
+        ],
+        [
+          "weak",
+          "[[0|Swift uses a calm speaker.]] It is funny and has nothing to do with real problems in Ireland.",
+          "The humor has a serious purpose. Ask what Swift thinks about the way the poor were treated.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "Write a precise claim for a sustained argument on a question of public concern in Ohio (for example, school funding, public transit, or water quality), state the strongest counterclaim to it, and write two or three sentences that answer it with reasoning or evidence.",
+      scheme: [
+        "States a precise, arguable claim about a public question",
+        "States a fair, strong counterclaim",
+        "Answers the counterclaim with reasoning",
+        "Supports the answer with evidence or a concrete example",
+      ],
+      model:
+        "Claim: Columbus should expand its bus network to the east side before building new highway lanes, because transit reaches more workers per dollar. Counterclaim: Highways serve more drivers and ease traffic for everyone. Answer: Highway lanes tend to fill with new drivers within a few years, while a bus route offers workers without cars a way to reach jobs. A single added crosstown line could carry thousands of riders a day at a fraction of the cost of a new interchange.",
+      answers: [
+        [
+          "full",
+          "[[0|Columbus should expand bus service on the east side before building new highway lanes, because transit reaches more workers per dollar.]] [[1|The strongest counterclaim is that highways serve more drivers and ease traffic for everyone.]] [[2|But new highway lanes tend to fill up with new drivers within a few years, so the relief doesn't last.]] [[3|A single new crosstown bus route could carry thousands of riders a day for a fraction of the cost of an interchange, including people who have no car at all.]]",
+          "Full marks. Your claim is precise, the counterclaim is fair, and the answer uses a concrete example.",
+        ],
+        [
+          "full",
+          "[[0|Ohio should increase state funding for school repairs, because crumbling buildings reduce learning and put students at risk.]] [[1|Opponents say that local districts should pay for their own repairs and the state should not raise taxes.]] [[2|However, districts in poorer areas cannot raise enough money from local levies, which makes the gap in building quality unfair.]] [[3|For example, a levy in a district with low property values raises far less per student than in a wealthy suburb, so the state share is the only way to equalize repairs.]]",
+          "All four marks. Using the fairness of the levy system is a strong, concrete rebuttal.",
+        ],
+        [
+          "partial",
+          "[[0|Ohio should clean up its water more.]] [[1|People say it costs too much.]]",
+          "Your claim is general and you do not answer the counterclaim. Make the claim precise and respond with reasoning.",
+        ],
+        [
+          "partial",
+          "[[2|New lanes fill with new drivers, so they don't fix congestion for long.]] [[3|Cities that added lanes saw traffic return.]]",
+          "Good reasoning and example. State the claim and the counterclaim to which you are responding.",
+          true,
+        ],
+        [
+          "weak",
+          "Public transit is good. People who disagree are wrong and do not understand how cities work.",
+          "A claim should be specific, and a counterclaim treated fairly. Say what should happen and why.",
+        ],
+        [
+          "weak",
+          "[[0|Columbus should have better buses.]] A counterclaim is that buses are bad. I disagree.",
+          "Your claim is a start, but a counterclaim must be a strong objection, and you must answer it with reasons.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w6: WeekInput = {
+  topic: "Revising with feedback, and gathering and citing authoritative sources",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. revise for focus, organization and style, drawing on peer and teacher feedback;
+2. gather and assess information from several authoritative print and digital sources and cite them in a standard format.
+
+## Materials
+
+A draft argument paragraph with teacher and peer comments, a revision plan template (what, why, effect), a search-strategy handout for library databases and the open web, and an MLA citation guide.
+
+## Starter (8 minutes)
+
+Show a paragraph in which three sentences are on three different ideas. Ask: "What is this paragraph about? How would you fix it without adding any words?" Discuss focus and where to cut or move.
+
+## Main activity
+
+1. Focus, organization, style. Mini-lessons: topic sentences that control a paragraph, ordering by importance or logic, and style choices such as cutting filler and choosing active verbs.
+2. Feedback triage. Students receive three comments on a draft (one about focus, one about order, one about word choice). They decide which to implement first and write a revision plan with reasons.
+3. Source gathering. Practice database search with keywords and limiters. Rank six results (a peer-reviewed study, a government report, a news article, a company blog, a Wikipedia article, an anonymous forum) by authority, and explain what each is good for.
+4. Citation. Write MLA works-cited entries for a journal article, a government webpage and a news article, plus matching in-text citations.
+
+## Checking for understanding
+
+Exit slip: one revision and one citation.
+
+## Exit ticket
+
+Write the works-cited entry for one source you would use.
+`,
+  reading: [
+    "Draft, feedback, revise, and know where it came from",
+    `
+Experienced writers do not expect a first draft to be right. They expect it to be useful. Revision is a systematic process of asking what the draft needs, and it begins with three levels of attention. **Focus** asks whether every part of the draft serves the central claim. A paragraph that wanders onto three ideas has lost its focus, and the usual fix is to cut or move sentences, not to add more. **Organization** asks whether the order of ideas helps a reader follow the argument. Sometimes the strongest point should come first; sometimes it should come last. **Style** asks whether sentences are clear, direct and varied: active verbs instead of "is" and "was," precise nouns instead of vague ones, and no filler like "it is important to note that."
+
+Feedback can come from a teacher, a classmate or your own rereading. Because comments differ in importance, a revision plan helps. A good plan sorts comments by level. If a reader says the claim is unclear, fix that before you touch commas. For each change, record what you are changing, why, and what effect it will have. "I moved the example about the school levy to the front of the paragraph because the reader said I buried my best evidence. Now the claim is supported at once." This turns a vague intention into a decision.
+
+Research requires its own discipline. A search engine returns thousands of results, but only some are authoritative. **Authority** comes from the author's expertise, the publisher's standards, the evidence given and the purpose. A peer-reviewed journal article and a government report are generally strong. A news article from a reputable paper can be reliable for events and quotations. A company blog may be accurate about its own product but has a stake. An anonymous forum is weak. School databases such as those the Columbus Metropolitan Library provides let you search for scholarly articles using keywords and filters for date and source type. Use several sources so you can check them against each other.
+
+Finally, **cite** what you use. A works-cited entry in MLA includes the author, title, container (the journal or website), publisher, date and location. The in-text citation, such as (Rivera 42), points to it. Accurate citation is part of the ethics of writing, and it makes your argument checkable. A reader who can follow your sources can judge your claim.
+`,
+  ],
+  cards: [
+    ["Focus", "The degree to which every part of a draft serves the central claim."],
+    ["Organization", "The order in which ideas are arranged to help a reader follow."],
+    ["Style", "The choices of word, sentence and tone that shape how writing reads."],
+    ["Revision plan", "A list of changes, with the reason and expected effect of each."],
+    ["Authority (of a source)", "The credibility of a source based on expertise, standards and evidence."],
+    ["Peer-reviewed", "Evaluated by other experts in the field before publication."],
+    ["Container (MLA)", "The larger work in which a source appears, such as a journal or website."],
+    ["In-text citation", "A short reference in the paper that points to a works-cited entry."],
+  ],
+  closed: [
+    [
+      "A paragraph covers three different ideas. The best first revision is to",
+      [
+        "add more detail to each idea",
+        "decide on the main idea and cut or move sentences that don't serve it",
+        "fix the commas",
+        "make it longer",
+      ],
+      "B",
+    ],
+    [
+      "A reader writes, \"I can't tell what your claim is.\" What should you address first?",
+      [
+        "Spelling",
+        "The clarity of the claim",
+        "The font",
+        "The title page",
+      ],
+      "B",
+    ],
+    [
+      "Which source is generally the most authoritative for a scientific question?",
+      [
+        "An anonymous forum post",
+        "A peer-reviewed journal article",
+        "A company's advertising",
+        "A social media comment",
+      ],
+      "B",
+    ],
+    [
+      "Which sentence is the better revision for style?",
+      [
+        "It is important to note that the levy was passed by the voters.",
+        "Voters passed the levy.",
+        "The levy, it was passed by the voters, which was important.",
+        "There was a passing of the levy.",
+      ],
+      "B",
+    ],
+    [
+      "An MLA works-cited entry usually includes",
+      [
+        "only the title",
+        "the author, title, container, publisher, date and location",
+        "the number of pages",
+        "the reader's name",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "A draft paragraph about school levies includes these sentences in this order: (1) Levies fund most Ohio schools. (2) My uncle's farm has been in the family for years. (3) Levies often fail in small districts because voters are on fixed incomes. (4) When levies fail, schools cut transportation and sports. Revise the paragraph for focus and organization, explain each change, and write a topic sentence.",
+      scheme: [
+        "Writes a topic sentence that controls the paragraph",
+        "Cuts or moves the off-focus sentence and explains why",
+        "Orders the remaining sentences logically",
+        "Explains the effect of the revisions on the reader",
+      ],
+      model:
+        "Revision: Levies fund most Ohio schools, and when they fail, students lose services. In small districts, levies often fail because voters are on fixed incomes. When levies fail, schools cut transportation and sports. I deleted the sentence about the uncle's farm because it did not support the point. I put the cause before the effect so the reader follows the chain from funding to failure to cuts. The paragraph now stays on one idea.",
+      answers: [
+        [
+          "full",
+          "[[0|Levies fund most Ohio schools, and when they fail, students lose services.]] Levies often fail in small districts because voters are on fixed incomes. When they fail, schools cut transportation and sports. [[1|I deleted the sentence about my uncle's farm because it doesn't support the point about levies.]] [[2|I put the cause of failure before the cuts so it goes from funding to failure to results.]] [[3|The reader now follows one idea in a clear chain and the paragraph feels tighter.]]",
+          "Full marks. Your topic sentence gives the paragraph a purpose, and the order is logical.",
+        ],
+        [
+          "full",
+          "[[0|When levies fail in small Ohio districts, schools lose the services students depend on.]] Levies fund most of the schools. They often fail because voters are on fixed incomes. Then schools cut transportation and sports. [[1|I took out the uncle's farm sentence since it is a different topic.]] [[2|The new order follows cause and effect, which makes the argument easy to track.]] [[3|The paragraph has a single focus, so the reader understands the point faster.]]",
+          "All four marks. \"A different topic\" is a clear reason for the cut.",
+        ],
+        [
+          "partial",
+          "[[0|Levies fund most Ohio schools and affect students.]] I wrote it in a better way.",
+          "Your topic sentence works. Explain the cut, the new order and the effect on the reader.",
+        ],
+        [
+          "partial",
+          "[[1|I cut the farm sentence because it is off topic.]] [[3|The paragraph is easier to read now.]]",
+          "Good cut and effect. Write a topic sentence and put the sentences in a logical order.",
+          true,
+        ],
+        [
+          "weak",
+          "I would add more sentences about my uncle's farm since it makes the paragraph personal and interesting.",
+          "A personal detail can help if it serves the point. Here it distracts from the argument about levies.",
+        ],
+        [
+          "weak",
+          "[[2|The order is fine as it is.]] I would just fix the punctuation and leave everything else.",
+          "The off-topic sentence and the order of ideas need attention before punctuation.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "You are researching whether Ohio should expand its use of wind and solar power. You find (a) a state energy agency report, (b) a peer-reviewed journal article, (c) a local news article, (d) an anonymous blog post. Rank them by authority, explain what each is best used for, and write an MLA works-cited entry for source (a) using invented but plausible details.",
+      scheme: [
+        "Ranks the agency report or journal article highest with a reason",
+        "Explains what the news article is best used for",
+        "Identifies the anonymous blog as least authoritative and explains why",
+        "Writes a works-cited entry with the essential elements (author, title, container, date, location)",
+      ],
+      model:
+        "I would rank the journal article and the state agency report highest because both name expert authors and evidence. The news article is useful for recent events and quotations from local officials but depends on its reporters' sourcing. The anonymous blog is least authoritative because the author and evidence are unknown. Works cited: Ohio Department of Development. Renewable Energy in Ohio: 2023 Status Report. State of Ohio, 15 Mar. 2023, development.ohio.gov/energy-report.",
+      answers: [
+        [
+          "full",
+          "[[0|The peer-reviewed journal article and the state agency report are the most authoritative because both are written by experts and give their evidence.]] [[1|The news article is best for recent events and for quotes from local officials, but it depends on the reporter's sources.]] [[2|The anonymous blog is last because we don't know who wrote it or where the claims come from.]] [[3|Works Cited: Ohio Department of Development. Renewable Energy in Ohio: 2023 Status Report. State of Ohio, 15 Mar. 2023, development.ohio.gov/energy-report.]]",
+          "Full marks. Your entry has the author, title, container, date and location in order.",
+        ],
+        [
+          "full",
+          "[[0|I would rank the journal article first because it is peer-reviewed, and the agency report second because it has expert authors and data.]] [[1|The news piece is good for how local people are reacting, and for dates and quotations.]] [[2|The blog is worst because it is anonymous and has no evidence I can check.]] [[3|Works Cited: Ohio Energy Office. Wind and Solar in Ohio: A 2023 Review. Ohio.gov, 4 Apr. 2023, ohio.gov/wind-solar-review.]]",
+          "All four marks. You explain the difference between a peer-reviewed article and a report.",
+        ],
+        [
+          "partial",
+          "[[0|The journal article is the most authoritative.]] [[2|The blog is the least because it is anonymous.]]",
+          "Good ranking at both ends. Explain the news article's use and add the works-cited entry.",
+        ],
+        [
+          "partial",
+          "[[1|The news article is useful for local reactions.]] [[3|Works Cited: Ohio Department of Development. Renewable Energy Report. 2023.]]",
+          "Your use of the news article is right. Your entry needs the container, publisher, exact date and location, and you should rank the sources.",
+          true,
+        ],
+        [
+          "weak",
+          "The blog is best because it is the easiest to read and it agrees with me. The journal article is too hard so it is not useful.",
+          "Authority does not depend on ease or agreement. Peer-reviewed and agency sources are strong because of expertise and evidence.",
+        ],
+        [
+          "weak",
+          "[[2|The blog is not authoritative.]] All the others are the same, and the works-cited entry is not needed.",
+          "Not all sources are equal, and a works-cited entry is essential. Rank them and write the entry.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w7: WeekInput = {
+  topic: "Credibility in presentations, and evaluating a speaker's reasoning and rhetoric",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. integrate multiple sources of information, evaluating their credibility, when preparing a presentation;
+2. evaluate a speaker's point of view, reasoning and use of evidence and rhetoric.
+
+## Materials
+
+An original transcript, "A Levy Speech," a school-levy supporter's address to a town meeting; the rhetoric-evaluation chart (claim, reasoning, evidence, appeals, fallacies, omissions); a presentation planning sheet for integrating sources.
+
+## Starter (8 minutes)
+
+Ask: "A speaker says, 'Nine out of ten dentists recommend this toothpaste.' What would you want to know before believing it?" Elicit questions about who counted, which dentists, and what the alternative was.
+
+## Main activity
+
+1. Listen to or read "A Levy Speech." Students fill the chart: claim, main reasons, evidence given, evidence missing, appeals used, and any weaknesses in reasoning.
+2. Evaluate point of view: what is the speaker's stake? How does it shape what she emphasizes and omits?
+3. Presentation planning. Students plan a two-minute talk that integrates three sources (a government figure, an expert quotation, a local anecdote), marking the credibility of each and how the talk will signal it to the audience.
+4. Quiz on the chart categories using a second short excerpt.
+
+## Checking for understanding
+
+Cold call: "Name one place where the speaker's evidence is strong and one where it is weak."
+
+## Exit ticket
+
+Write one sentence that evaluates the speaker's reasoning, using a signal such as "The speaker overlooks..."
+`,
+  reading: [
+    "A Levy Speech",
+    `
+Good evening. I'm Ruth Delgado, and I have taught in this district for twenty-six years. I am here tonight to ask you to vote yes on the school levy.
+
+Let me begin with a number. For nine years, this district has not asked for new operating money. In that time, the price of the buses that carry your children has risen by a third, and the cost of heating our buildings has doubled. We have cut and cut, and last year we cut again. We now have the smallest art and music program in the county.
+
+Some of you will say, "Taxes are already high." I understand that. My own mother lives on a fixed income two streets from here, and every bill matters to her. But consider what this levy asks. For a home valued at one hundred fifty thousand dollars, it costs about nine dollars a month. That is less than the price of a pizza. In exchange, we keep our bus routes, our reading specialists and our after-school program.
+
+You may have heard that the neighboring district defeated its levy last year and has since "done just fine." It's true that they have not closed their doors. But they have also cut their foreign language classes, their sports and most of their bus routes. Ask the parents there how fine they feel. The parents here deserve better, and so do the children.
+
+I will end with a story. A few years ago, a student of mine named Marcus, who had never found a subject he cared about, joined our robotics club, which exists only because of the after-school program. He now studies engineering at Ohio State. One program, one student. I think of him whenever I walk past the empty club room.
+
+Vote yes. Not for me, and not for the school, but for the children who will walk through those doors next September. Thank you.
+`,
+  ],
+  cards: [
+    ["Point of view (speaker)", "The speaker's position and stake in an issue, which shapes what they emphasize."],
+    ["Reasoning", "The logic that connects evidence to a claim."],
+    ["Omission", "A relevant fact or perspective that a speaker leaves out."],
+    ["Appeal to fear", "Persuading by emphasizing dangers or losses."],
+    ["Anecdotal evidence", "Evidence from a single story, which may not represent the larger group."],
+    ["Analogy", "A comparison between two things to explain or persuade, such as nine dollars compared with a pizza."],
+    ["Credibility signal", "A phrase that tells the audience where information comes from."],
+    ["Stake", "A personal or professional interest in the outcome."],
+  ],
+  closed: [
+    [
+      "Delgado compares the cost of the levy to \"the price of a pizza.\" This is mainly",
+      [
+        "a statistic",
+        "an analogy that makes the cost seem small",
+        "an anecdote",
+        "an appeal to authority",
+      ],
+      "B",
+    ],
+    [
+      "Her story about Marcus is an example of",
+      [
+        "statistical evidence",
+        "anecdotal evidence, which is vivid but representative of only one student",
+        "a counterclaim",
+        "a fallacy of authority",
+      ],
+      "B",
+    ],
+    [
+      "Which feature is most likely to affect the audience's trust in her evidence?",
+      [
+        "Her use of the word 'tonight'",
+        "Her stake as a teacher in the district, which a listener should weigh",
+        "The length of the speech",
+        "Her use of a pause",
+      ],
+      "B",
+    ],
+    [
+      "Which is a weakness in her reasoning about the neighboring district?",
+      [
+        "She cites a specific example.",
+        "She assumes the cuts there came from the failed levy alone, without showing other causes.",
+        "She asks parents to be consulted.",
+        "She uses a comparison.",
+      ],
+      "B",
+    ],
+    [
+      "What important information is missing from her argument?",
+      [
+        "The dollar cost per month",
+        "How the district will spend the money, and how much is the total",
+        "Her name",
+        "The date of the vote",
+      ],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "Evaluate the strength of Delgado's reasoning and evidence in \"A Levy Speech.\" Identify one strong element and one weakness, and explain how her point of view as a teacher in the district affects what she emphasizes or omits.",
+      scheme: [
+        "Identifies a strong element (such as the clear cost per month or concession to taxpayers)",
+        "Explains why it is strong",
+        "Identifies a weakness (such as the anecdote, the causal assumption, or missing total cost)",
+        "Explains how her point of view as a teacher shapes emphasis or omission",
+      ],
+      model:
+        "A strong element is that she gives a concrete cost, about nine dollars a month for a $150,000 home, which lets listeners measure the request. A weakness is that she supports the benefits mainly with a single anecdote about Marcus, which is vivid but not representative, and she does not say what the levy's total cost is. As a teacher, she has a stake and emphasizes what the district would lose, such as art and music, while omitting what taxpayers on fixed incomes would give up.",
+      answers: [
+        [
+          "full",
+          "[[0|One strong part is that she says the levy costs about nine dollars a month for a $150,000 home.]] [[1|That is strong because it gives a number listeners can compare with their own budgets, and she also acknowledges that taxes are already high.]] [[2|A weakness is that her best evidence of benefit is just one story about Marcus, and she never says how much money the levy raises in total.]] [[3|Because she is a teacher in the district she emphasizes the programs the children would lose, and she doesn't talk about what the tax means for people on fixed incomes beyond mentioning her mother.]]",
+          "Full marks. You tied her point of view to what she emphasizes and omits.",
+        ],
+        [
+          "full",
+          "[[0|A strength is that she concedes the objection that taxes are already high instead of ignoring it.]] [[1|That is effective because it shows she understands the audience's worry, which makes her more believable.]] [[2|A weakness is that she implies the neighboring district's cuts happened because it defeated its levy, but she does not prove that was the cause.]] [[3|Her stake as a teacher means she is going to stress losses to the schools, so listeners should weigh her claims with that in mind.]]",
+          "All four marks. Questioning the causal link to the neighboring district is exactly what evaluating reasoning looks for.",
+        ],
+        [
+          "partial",
+          "[[0|She gives a clear monthly cost of nine dollars.]] [[2|She uses one story about Marcus as evidence.]]",
+          "You found a strength and a weakness. Explain why each is strong or weak and how her point of view shapes the speech.",
+        ],
+        [
+          "partial",
+          "[[1|The cost comparison is strong because it is easy to understand.]] [[3|As a teacher she has a stake, so she emphasizes losses.]]",
+          "Good explanation and point of view. Identify a specific weakness in the reasoning or evidence.",
+          true,
+        ],
+        [
+          "weak",
+          "Her reasoning is perfect and there are no weaknesses. She is a teacher so she knows what she is talking about.",
+          "A speaker's job does not make every claim correct. Look for a place where the evidence is one story or the cause is assumed.",
+        ],
+        [
+          "weak",
+          "[[0|She gives the cost of nine dollars.]] I think she is lying because teachers always want more money.",
+          "Evaluate the evidence and reasoning, not motives alone. Her stake is worth noting, but explain how it shapes the speech.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "You will give a two-minute presentation arguing for or against the levy. Plan how you will integrate three sources: (a) a state report on district spending, (b) a quotation from a retired principal, and (c) a story from a local parent. For each source, rate its credibility, say what it is best used for, and describe how you will signal its credibility to the audience.",
+      scheme: [
+        "Rates the state report as highly credible and says what it supports",
+        "Rates the retired principal as credible with limits, and says what it supports",
+        "Rates the parent's story as vivid but limited, and says what it supports",
+        "Describes how to signal credibility to the audience (naming the source, date or role)",
+      ],
+      model:
+        "The state report is most credible and best for figures on how the district spends money. The retired principal's quotation is credible for experience but is one expert opinion, so I would use it to explain the effects of cuts. The parent's story is vivid but limited to one family, so I would use it to make the issue human, not as proof. I would signal credibility by naming each source aloud, such as 'According to the Ohio Department of Education's 2023 report,' so listeners know where the claims come from.",
+      answers: [
+        [
+          "full",
+          "[[0|The state report is the most credible and I would use it for the district's spending figures.]] [[1|The retired principal is credible because of experience, but is only one opinion, so I would use the quote to explain what cuts do to students.]] [[2|The parent's story is vivid but only one family, so I'd use it to make the issue human and not as proof.]] [[3|I would signal credibility by saying the source out loud, like according to the Ohio Department of Education's 2023 report, and describing who the principal and parent are.]]",
+          "Full marks. You matched each source to the job it can honestly do.",
+        ],
+        [
+          "full",
+          "[[0|I would trust the state report most because it is an official source with data, and use it to show where the money goes.]] [[1|The principal's quote is useful because a person who ran a school knows the effects, but it is one person's view, so I would pair it with the report.]] [[2|The parent story helps the audience feel the stakes, but I'd tell them it is one example.]] [[3|To signal credibility, I'd name the source and say the role of each speaker, so listeners can judge them.]]",
+          "All four marks. Saying it is one example to the audience is an honest way to signal credibility.",
+        ],
+        [
+          "partial",
+          "[[0|The state report is credible and shows the money.]] [[3|I will say who each source is.]]",
+          "Good on the report and signaling. Rate the principal's quote and the parent's story and say what each supports.",
+        ],
+        [
+          "partial",
+          "[[1|The principal has experience.]] [[2|The parent story is only one family.]]",
+          "Both ratings are fair. Rate the state report, say how you will use each, and describe how you will signal credibility.",
+          true,
+        ],
+        [
+          "weak",
+          "All three sources are equally credible because they are all about the levy. I will not say who they are.",
+          "Sources differ in credibility, and naming them helps the audience judge. Rate each and explain how to signal it.",
+        ],
+        [
+          "weak",
+          "[[2|The parent story is the best because it is emotional.]] The state report is boring so I will skip it.",
+          "Emotion can help, but a single story doesn't prove a claim. Use the report for facts and the story to humanize.",
+        ],
+      ],
+    },
+  ],
+};
+
+const w8: WeekInput = {
+  topic: "Figures of speech, shades of meaning and academic vocabulary",
+  note: `
+## Objectives
+
+Students will be able to:
+
+1. interpret figures of speech and subtle shades of word meaning in context;
+2. acquire and use academic and domain-specific vocabulary accurately for college and career readiness.
+
+## Materials
+
+A figures-of-speech card set (paradox, oxymoron, euphemism, hyperbole, understatement, irony, metonymy), a synonym-shades chart, a list of academic words (analyze, infer, bias, correlate, coherent, substantiate, ambiguous, qualify), and a dictionary or thesaurus for each pair.
+
+## Starter (8 minutes)
+
+Write three words on the board: "thin," "slender," "gaunt." Ask: "Are they interchangeable? Which would you use for a model, an athlete, and a person who has been ill, and why?" Introduce connotation as the source of difference.
+
+## Main activity
+
+1. Figures of speech. Introduce each with an example from the unit: the creature's "fallen angel" (allusion and metaphor), Swift's modest proposal (irony), Bacon's "full man" (metaphor). Students match cards to examples, then write an original example of each.
+2. Shades of meaning. Using the synonym chart, students choose the best word for a sentence and justify with connotation and register: "The senator was (stubborn / resolute / obstinate / firm) in her refusal."
+3. Academic vocabulary. Teach a set of eight words with example sentences from history, science and English. Students write a sentence using each in context and check its meaning with a dictionary.
+4. Quiz: figures and shades of meaning in context.
+
+## Checking for understanding
+
+Whiteboard: write a sentence that uses 'qualify' in a precise, academic sense.
+
+## Exit ticket
+
+Choose the best of three near-synonyms for a given sentence and explain your choice.
+`,
+  reading: [
+    "Words, figures and shades of meaning",
+    `
+Language has two layers: what a word says and what it suggests. Skilled readers and writers attend to both. Near-synonyms are rarely interchangeable. "Stubborn," "resolute," "obstinate" and "firm" can all describe a person who will not give way, but "resolute" is admiring, "stubborn" is neutral to critical, and "obstinate" is harsh. The difference is **connotation**, the associations a word carries, together with **register**, the level of formality. A writer chooses among them to signal attitude. A reader who misses the difference misses the tone.
+
+**Figures of speech** use words in nonliteral ways for effect. A **metaphor** says one thing is another ("Reading maketh a full man"). A **simile** uses "like" or "as." **Irony** says the opposite of what is meant, as in Swift's modest proposal. **Hyperbole** exaggerates for emphasis ("I've told you a million times"), and **understatement** minimizes ("It was a bit chilly," said of a blizzard). An **oxymoron** places contradictory terms together ("deafening silence," "bittersweet"). A **paradox** is a statement that seems contradictory but reveals a truth ("the more you know, the more you realize how little you know"). A **euphemism** replaces a harsh term with a softer one ("passed away"; "downsizing"), and notice that euphemisms can hide uncomfortable realities. **Metonymy** names a thing by something associated with it ("the crown" for the monarchy; "Washington" for the federal government). Recognizing a figure lets you ask what it does: why this comparison, and what feeling does it create?
+
+Academic and domain-specific vocabulary matters for college and career readiness. Words such as **analyze**, **infer**, **bias**, **correlate**, **coherent**, **substantiate**, **ambiguous** and **qualify** appear across history, science and literature. To "substantiate" a claim is to support it with evidence. To "qualify" a claim is to limit it ("this applies only to rural districts"). A "coherent" argument is one whose parts fit together logically. Domain-specific words, such as "phosphorus" in chemistry or "precedent" in law, have precise meanings within their fields, and using them accurately signals expertise.
+
+The best way to learn a word is to meet it several times in context, use it yourself, and check it against a dictionary. Using a word incorrectly can be worse than avoiding it, so test each new word in a sentence you can explain.
+`,
+  ],
+  cards: [
+    ["Oxymoron", "Two contradictory terms joined together, such as deafening silence."],
+    ["Paradox", "A statement that seems contradictory but reveals a truth."],
+    ["Euphemism", "A mild word used in place of a harsh or unpleasant one."],
+    ["Hyperbole", "Deliberate exaggeration for emphasis."],
+    ["Understatement", "Deliberately minimizing something for effect."],
+    ["Metonymy", "Naming something by an attribute or associated thing, such as 'the crown' for the monarchy."],
+    ["Substantiate", "To support a claim with evidence."],
+    ["Qualify (a claim)", "To limit or add conditions to a claim."],
+  ],
+  closed: [
+    [
+      "\"The room fell into a deafening silence.\" This is an example of",
+      ["hyperbole", "an oxymoron", "a euphemism", "metonymy"],
+      "B",
+    ],
+    [
+      "A company announces that it is \"rightsizing\" its workforce, meaning it is laying off employees. This is a",
+      ["metaphor", "euphemism", "paradox", "simile"],
+      "B",
+    ],
+    [
+      "Which word has the most admiring connotation?",
+      ["obstinate", "stubborn", "resolute", "pigheaded"],
+      "C",
+    ],
+    [
+      "To \"substantiate\" a claim means to",
+      [
+        "deny it",
+        "support it with evidence",
+        "repeat it",
+        "make it shorter",
+      ],
+      "B",
+    ],
+    [
+      "\"The pen is mightier than the sword.\" Here 'pen' and 'sword' are examples of",
+      ["oxymoron", "metonymy", "understatement", "euphemism"],
+      "B",
+    ],
+  ],
+  open: [
+    {
+      prompt:
+        "Choose the best word to complete each sentence, and explain the difference in connotation: (a) \"The mayor was ______ in her refusal to cut the library budget\" (stubborn / resolute / obstinate). (b) \"Her ______ frame made the climb look effortless\" (gaunt / slender / scrawny). Explain each choice.",
+      scheme: [
+        "Chooses an appropriate word for (a)",
+        "Explains the connotation of the chosen word for (a) in contrast with the others",
+        "Chooses an appropriate word for (b)",
+        "Explains the connotation of the chosen word for (b) in contrast with the others",
+      ],
+      model:
+        "(a) 'Resolute' fits when the writer admires the mayor, since it suggests firm and principled determination, while 'stubborn' and 'obstinate' suggest unreasonable refusal. (b) 'Slender' fits because it suggests lightness and grace, appropriate to an effortless climb; 'gaunt' suggests illness and 'scrawny' suggests weakness.",
+      answers: [
+        [
+          "full",
+          "(a) [[0|Resolute.]] [[1|It sounds admiring and principled, like she is firm for a good reason, but stubborn and obstinate suggest she refuses to listen.]] (b) [[2|Slender.]] [[3|It suggests a light, graceful body that fits an effortless climb, while gaunt makes you think of sickness and scrawny sounds weak.]]",
+          "Full marks. Your explanation names the feeling that each rejected word carries.",
+        ],
+        [
+          "full",
+          "(a) [[0|I would use resolute.]] [[1|The sentence is about protecting a library, so the writer likely approves, and resolute is positive while obstinate is insulting.]] (b) [[2|I choose slender.]] [[3|It has a positive feeling of grace, and gaunt and scrawny would contradict the idea that the climb looks effortless.]]",
+          "All four marks. Matching the choice to the writer's attitude is a strong approach.",
+        ],
+        [
+          "partial",
+          "(a) [[0|Resolute.]] (b) [[2|Slender.]] Those are the best words.",
+          "Both choices are good. Explain the connotation of each against the other options.",
+        ],
+        [
+          "partial",
+          "(a) [[1|Resolute is positive and obstinate is negative.]] (b) [[3|Slender sounds graceful, but gaunt sounds sick.]]",
+          "Good explanations. State your choice for each sentence.",
+          true,
+        ],
+        [
+          "weak",
+          "(a) Stubborn. (b) Gaunt. They all mean the same thing so it doesn't matter which one you pick.",
+          "Near-synonyms differ in connotation. Think about the attitude each word shows.",
+        ],
+        [
+          "weak",
+          "(a) [[0|Resolute.]] (b) Scrawny, because it sounds like the most descriptive word.",
+          "Scrawny suggests weakness, which clashes with an effortless climb. Think about connotation.",
+        ],
+      ],
+    },
+    {
+      prompt:
+        "Write four sentences, each using one of the following correctly in context: (a) a paradox or oxymoron, (b) a euphemism, (c) the verb \"substantiate,\" (d) the verb \"qualify\" in the sense of limiting a claim. Label each, and use a topic from this unit or your life.",
+      scheme: [
+        "Uses a paradox or oxymoron correctly",
+        "Uses a euphemism correctly and identifies it",
+        "Uses 'substantiate' correctly",
+        "Uses 'qualify' correctly in the sense of limiting a claim",
+      ],
+      model:
+        "(a) Oxymoron: The creature's welcome at the cottage was a cruel kindness. (b) Euphemism: The company said it was 'letting people go' when it laid off forty workers. (c) The author must substantiate her claim with data from at least two studies. (d) I would qualify my argument by saying it applies only to small rural districts.",
+      answers: [
+        [
+          "full",
+          "(a) [[0|Victor's grief was a bitter relief, because the creature's death meant the end of his fear.]] (b) [[1|The memo said the school was 'realigning staff,' which is a euphemism for laying off teachers.]] (c) [[2|You need to substantiate your claim about school funding with figures from the state report.]] (d) [[3|I would qualify my claim by saying that it applies only to small districts with fixed-income voters.]]",
+          "Full marks. All four words are used precisely, and the labels are accurate.",
+        ],
+        [
+          "full",
+          "(a) [[0|The silence in the gym after the loss was deafening.]] (b) [[1|He said his grandfather had 'passed on,' a euphemism for died.]] (c) [[2|To substantiate her argument, she cited three peer-reviewed studies.]] (d) [[3|The researchers qualified their conclusion, noting that the results held only for teenagers.]]",
+          "All four marks. The sentence for 'qualify' shows the meaning of limiting a claim clearly.",
+        ],
+        [
+          "partial",
+          "(a) [[0|The deafening silence made everyone nervous.]] (b) [[1|The mayor called the cuts a 'reduction in services,' a euphemism for closing programs.]] (c) I will substantiate my feelings.",
+          "Your first two are good. 'Substantiate' means to support with evidence, and you need a sentence for 'qualify.'",
+        ],
+        [
+          "partial",
+          "(c) [[2|The author must substantiate the claim with data.]] (d) [[3|I would qualify the claim by saying it only applies in Ohio.]]",
+          "Both sentences are precise. Add a paradox or oxymoron and a euphemism.",
+          true,
+        ],
+        [
+          "weak",
+          "(a) The silence was loud. (b) He said he was very tired. (c) I substantiate my homework. (d) I qualify for lunch.",
+          "These sentences do not use the terms in the required senses. Try the definitions on the cards.",
+        ],
+        [
+          "weak",
+          "(a) A paradox is a place where doctors work. [[2|(c) The report will substantiate the claim with evidence.]]",
+          "Your sentence with 'substantiate' is correct. A paradox is a statement that seems contradictory but reveals a truth.",
+        ],
+      ],
+    },
+  ],
+};
+
+writeCourse("english-12-grade-12.json", "English 12", "Grade 12", {
+  1: w1,
+  2: w2,
+  3: w3,
+  4: w4,
+  5: w5,
+  6: w6,
+  7: w7,
+  8: w8,
+});
