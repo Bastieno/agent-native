@@ -10,7 +10,20 @@ const auth = createAuthPlugin({
   // The scheduler's own call: no session, gated by CRON_SECRET in the route.
   // The cron call (gated by CRON_SECRET) the manifest (a browser fetches it without cookies; it holds only the
   // school's name) and the install steps, which a school may print and hand out.
-  publicPaths: ["/api/school/cron/daily", "/manifest.json", "/install"],
+  // The landing page and privacy notice are for anyone (`/` matches only
+  // itself); the Cal.com webhook is gated by its own signature.
+  publicPaths: [
+    "/api/school/cron/daily",
+    "/manifest.json",
+    "/install",
+    "/",
+    "/privacy",
+    // The data React Router fetches for those two pages on a client-side
+    // navigation or revalidation; the loader still decides what to send.
+    "/_root.data",
+    "/privacy.data",
+    "/api/school/cal-webhook",
+  ],
   // Learners without an email address sign in with their school ID.
   usernameLogin: true,
   marketing: {

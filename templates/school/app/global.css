@@ -68,6 +68,38 @@
   --sidebar-ring: 221 83% 60%;
 }
 
+/* The public pages: warm paper and ink, the app's blue as the only accent. */
+.landing {
+  --background: 40 33% 97%;
+  --foreground: 30 12% 9%;
+  --card: 40 40% 99.5%;
+  --card-foreground: 30 12% 9%;
+  --muted: 38 22% 92%;
+  --muted-foreground: 30 6% 38%;
+  --border: 36 16% 85%;
+  --input: 36 16% 85%;
+  /* Tailwind resolves its colours at :root; resolve them again here. */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+}
+
+.dark .landing {
+  --background: 30 8% 7%;
+  --foreground: 40 20% 92%;
+  --card: 30 7% 10%;
+  --card-foreground: 40 20% 92%;
+  --muted: 30 6% 14%;
+  --muted-foreground: 35 7% 62%;
+  --border: 30 6% 19%;
+  --input: 30 6% 19%;
+}
+
 @layer base {
   body {
     @apply bg-background text-foreground;

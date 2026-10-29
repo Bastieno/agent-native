@@ -1,4 +1,11 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useMatches,
+} from "react-router";
 import { useCallback, useState } from "react";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import {
@@ -132,6 +139,13 @@ export default function Root() {
   const [queryClient] = useState(() => new QueryClient());
   const [cmdkOpen, setCmdkOpen] = useState(false);
   useCommandMenuShortcut(useCallback(() => setCmdkOpen(true), []));
+  // Public pages (the landing page, privacy) render on the server for
+  // visitors and crawlers, without the signed-in app's providers.
+  const publicPage = useMatches().some((m) => {
+    const flag = (m.handle as { publicPage?: unknown } | undefined)?.publicPage;
+    return typeof flag === "function" ? flag(m.data) : flag === true;
+  });
+  if (publicPage) return <Outlet />;
   return (
     <ClientOnly fallback={<DefaultSpinner />}>
       <QueryClientProvider client={queryClient}>

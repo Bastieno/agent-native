@@ -712,6 +712,26 @@ export const passwordResets = table("password_resets", {
   createdAt: text("created_at").notNull().default(now()),
 });
 
+/**
+ * A call booked from the landing page through Cal.com: one row per booking,
+ * kept current by the webhook (booked, rescheduled, cancelled). The
+ * operator's own list; it belongs to no school.
+ */
+export const pilotBookings = table("pilot_bookings", {
+  id: text("id").primaryKey(), // Cal.com booking uid
+  status: text("status").notNull(), // booked | rescheduled | cancelled
+  name: text("name"),
+  email: text("email"),
+  timeZone: text("time_zone"),
+  startTime: text("start_time"),
+  endTime: text("end_time"),
+  responsesJson: text("responses_json"),
+  edition: text("edition"), // ng | us: the landing page the visitor saw
+  rescheduledFrom: text("rescheduled_from"),
+  createdAt: text("created_at").notNull().default(now()),
+  updatedAt: text("updated_at").notNull().default(now()),
+});
+
 /** A phone or browser that agreed to receive push notifications. */
 export const pushSubscriptions = table("push_subscriptions", {
   id: text("id").primaryKey(),

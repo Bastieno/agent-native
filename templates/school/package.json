@@ -40,7 +40,8 @@
     "adopt:school-guide": "tsx ops/adopt-school-guide.ts",
     "add:school": "tsx ops/add-school-db.ts",
     "backfill:org-invitations": "tsx ops/backfill-org-invitations.ts",
-    "report:accountless-users": "tsx ops/accountless-users.ts"
+    "report:accountless-users": "tsx ops/accountless-users.ts",
+    "report:pilot-bookings": "tsx ops/pilot-bookings.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",

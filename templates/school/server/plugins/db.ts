@@ -1026,6 +1026,16 @@ const migrations = runMigrations(
       version: 109,
       sql: `ALTER TABLE subjects ADD COLUMN credits TEXT`,
     },
+    // Calls booked from the landing page, written by the Cal.com webhook.
+    // The operator's, not any school's: no school_id.
+    {
+      version: 110,
+      sql: `CREATE TABLE IF NOT EXISTS pilot_bookings (id TEXT PRIMARY KEY, status TEXT NOT NULL, name TEXT, email TEXT, time_zone TEXT, start_time TEXT, end_time TEXT, responses_json TEXT, edition TEXT, rescheduled_from TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')), updated_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+    },
+    {
+      version: 111,
+      sql: `CREATE INDEX IF NOT EXISTS pilot_bookings_start_idx ON pilot_bookings (start_time)`,
+    },
   ],
   { table: "school_migrations" },
 );
