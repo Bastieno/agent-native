@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { useLessonEditor } from "@/hooks/use-lesson-editor";
 import { useSchoolDates } from "@/hooks/use-school-dates";
 import { weekNumberIn, withoutWeekPrefix } from "@shared/week-prefix";
@@ -81,6 +82,11 @@ export function LessonNote({
   });
 
   const [content, setContent] = useState("");
+  // Write or Preview, kept in the address so a reload or Back keeps it.
+  const [editorView, setEditorView] = useUrlTab("write", {
+    key: "view",
+    allowed: ["write", "preview"] as const,
+  });
   const editorRef = useRef<HTMLTextAreaElement | null>(null);
   /**
    * While this is in the future, what the teacher is typing wins.
@@ -342,7 +348,8 @@ export function LessonNote({
           // height it is given rather than a fixed 500px box with dead space
           // under it.
           <Tabs
-            defaultValue="write"
+            value={editorView}
+            onValueChange={setEditorView}
             // Grows into the space there is, never shrinks below a usable
             // writing area. The page scrolls when the window is too short —
             // which is what keeps the editor and what the class sees as two

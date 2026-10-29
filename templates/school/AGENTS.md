@@ -1901,6 +1901,8 @@ Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Upda
 
 **Never use browser dialogs** (`window.confirm`/`alert`/`prompt`) — use shadcn `AlertDialog`.
 
+**Tabs live in the address.** A page with tabs (or a day picker that works like one) keeps the chosen tab in the URL with `useUrlTab` (`app/hooks/use-url-tab.ts`), never only in component state: a reload, or leaving the page and pressing Back, must land on the same tab. `test/tabs-in-url.check.ts` fails when a file renders `<Tabs` without it.
+
 ## Learners without an email address
 
 Many learners have no email, and a school should not have to make one for each. `create-student-accounts` makes accounts that sign in with an ID (usually the admission number) and a password; `reset-student-password` gives a learner who forgot theirs a new one. `create-student-accounts` is admin-only. `reset-student-password` is for an admin (any ID learner) or a teacher who is the form teacher (`arms.formTeacherUserId`) of the learner's arm; a teacher only sees learners of their own arms, and a subject coordinator may not. Every reset is written to `password_resets` (who, for whom, when, never the password); `list-password-resets` (admin) reads it.

@@ -1,4 +1,5 @@
-import { useEffect, useState, type ReactElement } from "react";
+import { useEffect, type ReactElement } from "react";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { Link, useSearchParams } from "react-router";
 import { IconCalendarWeek } from "@tabler/icons-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -308,7 +309,11 @@ export default function StudentWeek() {
   const { data, isLoading } = useMyWeek(
     date && /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : undefined,
   );
-  const [picked, setPicked] = useState<string | null>(null);
+  // The day chosen is in the address (?day=3); with none chosen it opens on today.
+  const [picked, setPicked] = useUrlTab<string>("", {
+    key: "day",
+    explicit: true,
+  });
 
   useEffect(() => {
     sync({ role: "student", view: "week" });

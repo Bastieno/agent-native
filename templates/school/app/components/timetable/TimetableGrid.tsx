@@ -1,4 +1,5 @@
 import { useMemo, useState, type ReactElement, type ReactNode } from "react";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useMinWidth } from "@/hooks/use-min-width";
 import {
@@ -132,7 +133,13 @@ export function TimetableGrid({
   // Five columns do not fit a phone: below lg it is one day at a time. Only
   // one layout is rendered, so each lesson has a single editor and card.
   const wide = useMinWidth(1024);
-  const [picked, setPicked] = useState<number | null>(null);
+  // The day chosen on a phone is in the address (?day=3); with none chosen it
+  // opens on today.
+  const [pickedDay, setPickedDay] = useUrlTab<string>("", {
+    key: "day",
+    explicit: true,
+  });
+  const picked = pickedDay ? Number(pickedDay) : null;
   if (!wide) {
     // Monday = 1 … Sunday = 7, like the school's own day numbers.
     const jsDay = new Date().getDay();
@@ -143,10 +150,7 @@ export function TimetableGrid({
       days[0];
     return (
       <div className="space-y-3" data-testid="timetable-day-list">
-        <Tabs
-          value={String(active.day)}
-          onValueChange={(v) => setPicked(Number(v))}
-        >
+        <Tabs value={String(active.day)} onValueChange={setPickedDay}>
           <TabsList className="w-full justify-between">
             {days.map((d) => (
               <TabsTrigger

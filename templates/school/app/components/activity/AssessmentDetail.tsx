@@ -1,4 +1,5 @@
-import { Link, useLocation, useNavigate, useSearchParams } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { originOf, useOrigin } from "@/lib/origin";
 import { PaperSummary } from "@/components/activity/PaperSummary";
 import { BackLink } from "@/components/layout/BackLink";
@@ -195,12 +196,15 @@ export function AssessmentDetail({
 
   // Someone who has come to mark should land on the work to mark, not on the
   // questions. A link can say which tab; otherwise, work waiting opens it.
-  const [searchParams] = useSearchParams();
-  const [chosenTab, setChosenTab] = useState<string | null>(
-    searchParams.get("tab"),
-  );
+  // The tab is in the address, so a reload or Back keeps it. With none chosen
+  // the default depends on whether work is waiting, so a choice is always
+  // written (`explicit`) and the default never moves under it.
+  const [chosenTab, setChosenTab] = useUrlTab<string>("", {
+    explicit: true,
+    allowed: ["variants", "submissions"],
+  });
   const activeTab =
-    chosenTab ??
+    chosenTab ||
     (!isMaterial && submittedCount > 0 ? "submissions" : "variants");
 
   // The list, with what needs marking first, then what has been marked, then

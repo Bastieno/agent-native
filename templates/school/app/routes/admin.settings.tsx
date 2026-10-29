@@ -6,6 +6,22 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useUrlTab } from "@/hooks/use-url-tab";
+
+// The guide's Write/Preview choice belongs to that tab, so it goes when the
+// tab does.
+const CLEAR_ON_TAB_CHANGE = ["view"] as const;
+const SETTINGS_TABS = [
+  "grading",
+  "terms",
+  "school-week",
+  "rooms",
+  "custom-fields",
+  "labels",
+  "branding",
+  "guide",
+  "assistant",
+] as const;
 import { Markdown } from "@/components/Markdown";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -59,7 +75,12 @@ export default function AdminSettings() {
   const [guideSaving, setGuideSaving] = useState(false);
 
   // Which tab is open is part of what the agent can see.
-  const [tab, setTab] = useState("grading");
+  // The open tab lives in the address (?tab=guide), so a reload or coming back
+  // from another page lands on it, not on the first tab.
+  const [tab, setTab] = useUrlTab("grading", {
+    allowed: SETTINGS_TABS,
+    clear: CLEAR_ON_TAB_CHANGE,
+  });
   useEffect(() => {
     sync({ role: "admin", view: "settings", settingsTab: tab });
   }, [sync, tab]);
@@ -87,7 +108,10 @@ export default function AdminSettings() {
 
   // Starting from a draft built out of the school's own data: correcting one
   // takes minutes, and writing a guide from an empty box does not happen.
-  const [guideView, setGuideView] = useState("write");
+  const [guideView, setGuideView] = useUrlTab("write", {
+    key: "view",
+    allowed: ["write", "preview"] as const,
+  });
   const [drafting, setDrafting] = useState(false);
   const [confirmDraft, setConfirmDraft] = useState(false);
 
