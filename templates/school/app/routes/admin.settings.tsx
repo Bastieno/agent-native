@@ -5,6 +5,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Markdown } from "@/components/Markdown";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -85,6 +86,7 @@ export default function AdminSettings() {
 
   // Starting from a draft built out of the school's own data: correcting one
   // takes minutes, and writing a guide from an empty box does not happen.
+  const [guideView, setGuideView] = useState("write");
   const [drafting, setDrafting] = useState(false);
   const [confirmDraft, setConfirmDraft] = useState(false);
 
@@ -519,12 +521,38 @@ export default function AdminSettings() {
                   fills this in from what the app already knows about your
                   school and marks what it cannot know, for you to answer.
                 </p>
-                <Textarea
-                  className="font-mono text-xs min-h-80 resize-y"
-                  placeholder="Start from a draft, or write your own — year groups, how the year is divided, marking, curriculum, subjects, the words your school uses, and anything the agent should always or never do."
-                  value={guideContent}
-                  onChange={(e) => setGuideContent(e.target.value)}
-                />
+                {/* Write is the markdown itself; Preview is what it says, so
+                    an admin can read the guide as the agent will. Both fill
+                    the screen's height rather than a fixed 20rem box. */}
+                <Tabs value={guideView} onValueChange={setGuideView}>
+                  <TabsList className="h-8">
+                    <TabsTrigger value="write" className="text-xs">
+                      Write
+                    </TabsTrigger>
+                    <TabsTrigger value="preview" className="text-xs">
+                      Preview
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="write" className="mt-2">
+                    <Textarea
+                      className="h-[calc(100dvh-30rem)] min-h-80 resize-none font-mono text-xs"
+                      placeholder="Start from a draft, or write your own — year groups, how the year is divided, marking, curriculum, subjects, the words your school uses, and anything the agent should always or never do."
+                      value={guideContent}
+                      onChange={(e) => setGuideContent(e.target.value)}
+                    />
+                  </TabsContent>
+                  <TabsContent value="preview" className="mt-2">
+                    <div className="h-[calc(100dvh-30rem)] min-h-80 overflow-auto rounded-md border bg-background px-4 py-3">
+                      {guideContent.trim() ? (
+                        <Markdown className="text-sm">{guideContent}</Markdown>
+                      ) : (
+                        <p className="text-sm text-muted-foreground">
+                          Nothing to preview yet.
+                        </p>
+                      )}
+                    </div>
+                  </TabsContent>
+                </Tabs>
               </div>
               {guideData?.updatedAt && (
                 <p className="text-xs text-muted-foreground">
