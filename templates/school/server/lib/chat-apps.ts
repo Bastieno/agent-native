@@ -195,6 +195,32 @@ const ANALYTICS = [
   "get-paper-profile",
 ];
 
+/**
+ * What a head reads to answer "show me…" about the teaching itself: a
+ * subject's curriculum and calendar, a class's lesson notes and work, its
+ * learners and marks. Without these the head's own AI app could list classes
+ * but not open one, and handed every such question to `ask_app`.
+ */
+const ADMIN_READING = [
+  "get-current-term",
+  "get-subject",
+  "get-subject-curriculum",
+  "list-units",
+  "list-learning-objectives",
+  "get-curriculum-calendar",
+  "get-curriculum-coverage",
+  "get-class",
+  "list-class-students",
+  "list-lesson-notes",
+  "get-lesson-note",
+  "list-assessments",
+  "get-assessment",
+  "get-gradebook",
+  "get-student-performance",
+  "list-announcements",
+  "create-announcement",
+];
+
 /** What only a head may look into: one teacher, and one class in depth. */
 const ADMIN_ANALYTICS = ["get-teacher-profile", "get-class-profile"];
 
@@ -231,6 +257,7 @@ export const CHAT_APP_EXPOSURE: Record<
     "get-school-stats",
     "get-school-attention",
     "get-lesson-note-coverage",
+    ...ADMIN_READING,
     ...EXTENSION_ACTIONS,
     "get-custom-fields-schema",
     // An admin may set work for any class and share it, to cover an absence

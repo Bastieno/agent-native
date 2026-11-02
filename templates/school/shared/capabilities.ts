@@ -318,6 +318,8 @@ export const CAPABILITIES: Capability[] = [
     where: { admin: "/admin/classes" },
     actions: [
       "list-classes",
+      "get-class",
+      "list-class-students",
       "create-class",
       "bulk-enroll-students",
       "list-arms",
@@ -389,6 +391,13 @@ export const CAPABILITIES: Capability[] = [
       "commit-curriculum-draft",
       "discard-curriculum-draft",
       "generate-scheme-of-work",
+      "get-current-term",
+      "get-subject",
+      "get-subject-curriculum",
+      "list-units",
+      "list-learning-objectives",
+      "get-curriculum-calendar",
+      "get-curriculum-coverage",
     ],
     aiApp: true,
     keywords: [
@@ -417,6 +426,8 @@ export const CAPABILITIES: Capability[] = [
     where: { admin: "/admin/lessons" },
     actions: [
       "get-lesson-note-coverage",
+      "list-lesson-notes",
+      "get-lesson-note",
       "get-school-attention",
       "get-school-stats",
     ],
@@ -441,6 +452,8 @@ export const CAPABILITIES: Capability[] = [
       "get-paper-profile",
       "identify-struggling-students",
       "get-class-performance",
+      "get-gradebook",
+      "get-student-performance",
     ],
     starters: [
       {
@@ -494,6 +507,8 @@ export const CAPABILITIES: Capability[] = [
     actions: [
       "create-activity",
       "create-document-resource",
+      "list-assessments",
+      "get-assessment",
       "publish-assessment",
     ],
     aiApp: true,
