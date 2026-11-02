@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { useRememberedSearch } from "@/lib/remembered-address";
 import {
   IconBook,
   IconChartBar,
@@ -37,6 +38,8 @@ const navItems = [
 export function TeacherSidebar({
   showAgentToggle = true,
 }: { showAgentToggle?: boolean } = {}) {
+  // A section opens as it was left: its tab, filters and page.
+  const remembered = useRememberedSearch();
   const { config } = useSchoolConfig();
   // Shown only once the admin has put something in front of teachers.
   const { extensions } = useTeacherExtensions();
@@ -62,7 +65,7 @@ export function TeacherSidebar({
         {items.map(({ href, label, icon: Icon, end }: any) => (
           <NavLink
             key={href}
-            to={href}
+            to={remembered(href)}
             end={end}
             className={({ isActive }) =>
               cn(

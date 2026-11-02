@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { SearchableSelect } from "@/components/SearchableSelect";
 import { termWord } from "@shared/school-words";
 import { Link, useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
@@ -301,26 +302,22 @@ export default function AdminTimetable() {
         </SelectContent>
       </Select>
       {entityOptions.length ? (
-        <Select
+        <SearchableSelect
           value={entityValue}
           onValueChange={(v) => set({ [entityKey]: v })}
-        >
-          <SelectTrigger
-            className="h-8 w-44 text-xs"
-            aria-label={
-              view === "arm" ? Arm : view === "teacher" ? "Teacher" : "Room"
-            }
-          >
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {entityOptions.map((o) => (
-              <SelectItem key={o.value} value={o.value}>
-                {o.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          aria-label={
+            view === "arm" ? Arm : view === "teacher" ? "Teacher" : "Room"
+          }
+          searchPlaceholder={
+            view === "arm"
+              ? `Search ${Arm.toLowerCase()}s…`
+              : view === "teacher"
+                ? "Search teachers…"
+                : "Search rooms…"
+          }
+          className="h-8 w-44 text-xs"
+          options={entityOptions}
+        />
       ) : null}
       {tt?.week && tt.term && !readOnly && termId ? (
         <GenerateButton termId={termId} />

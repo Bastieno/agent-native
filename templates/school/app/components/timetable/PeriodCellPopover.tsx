@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type ReactElement } from "react";
+import { SearchableSelect } from "@/components/SearchableSelect";
 import { IconPlus } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,13 +9,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { roomKey, type Room } from "@shared/school-week";
@@ -177,42 +171,34 @@ export function PeriodCellPopover({
 
         <div className="space-y-1.5">
           <Label className="text-xs">Class</Label>
-          <Select value={classId || undefined} onValueChange={setClassId}>
-            <SelectTrigger className="h-8 text-sm" aria-label="Class">
-              <SelectValue placeholder="Choose a class" />
-            </SelectTrigger>
-            <SelectContent>
-              {options.map((c) => (
-                <SelectItem key={c.id} value={c.id}>
-                  {c.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <SearchableSelect
+            value={classId}
+            onValueChange={setClassId}
+            aria-label="Class"
+            placeholder="Choose a class"
+            searchPlaceholder="Search classes…"
+            className="h-8 text-sm"
+            options={options.map((c) => ({ value: c.id, label: c.name }))}
+          />
         </div>
 
         {rooms.length > 0 ? (
           <div className="space-y-1.5">
             <Label className="text-xs">Room</Label>
-            <Select
+            <SearchableSelect
               value={room}
               onValueChange={(v) => {
                 setRoom(v);
                 setRoomTouched(true);
               }}
-            >
-              <SelectTrigger className="h-8 text-sm" aria-label="Room">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={OWN_ROOM}>The class's own room</SelectItem>
-                {rooms.map((r) => (
-                  <SelectItem key={r.name} value={r.name}>
-                    {r.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              aria-label="Room"
+              searchPlaceholder="Search rooms…"
+              className="h-8 text-sm"
+              options={[
+                { value: OWN_ROOM, label: "The class's own room" },
+                ...rooms.map((r) => ({ value: r.name, label: r.name })),
+              ]}
+            />
           </div>
         ) : null}
 

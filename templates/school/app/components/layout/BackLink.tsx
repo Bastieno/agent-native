@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { IconChevronLeft } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import { withRememberedSearch } from "@/lib/remembered-address";
 
 /**
  * The way out of a detail page.
@@ -14,7 +15,9 @@ import { cn } from "@/lib/utils";
  * two jobs: it is the way out, and it is the only thing on the page telling a
  * teacher which class they are looking at. `to` rather than `history.back()`
  * for the same reason — a real destination behaves the same however the page
- * was reached, including from a deep link out of Claude.
+ * was reached, including from a deep link out of Claude. A destination with
+ * no filters of its own returns to the list as it was left (its tab, filters
+ * and page), not to a fresh one.
  */
 export function BackLink({
   to,
@@ -27,7 +30,7 @@ export function BackLink({
 }) {
   return (
     <Link
-      to={to}
+      to={withRememberedSearch(to)}
       className={cn(
         "mb-1 inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground",
         className,

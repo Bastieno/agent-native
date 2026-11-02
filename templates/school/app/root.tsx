@@ -8,6 +8,7 @@ import {
 } from "react-router";
 import { useCallback, useState } from "react";
 import { useNavigationState } from "@/hooks/use-navigation-state";
+import { RememberAddresses } from "@/lib/remembered-address";
 import {
   QueryClient,
   QueryClientProvider,
@@ -158,6 +159,7 @@ export default function Root() {
           <TooltipProvider>
             <DbSyncSetup />
             <NavigationStateSync />
+            <RememberAddresses />
             <Toaster richColors position="bottom-left" />
             <CommandMenu open={cmdkOpen} onOpenChange={setCmdkOpen}>
               <CommandMenu.Group heading="Appearance">

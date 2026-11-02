@@ -1,4 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
+import { useUrlTab } from "@/hooks/use-url-tab";
+import { SearchableSelect } from "@/components/SearchableSelect";
 import { termWord } from "@shared/school-words";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { agentNativePath } from "@agent-native/core/client";
@@ -75,9 +77,13 @@ export default function AdminCalendar() {
   const { sync } = useNavigationState();
   const { formatDate } = useSchoolDates();
   const { config } = useSchoolConfig();
-  const [termId, setTermId] = useState("");
-  const [gradeLevelId, setGradeLevelId] = useState("");
-  const [subjectId, setSubjectId] = useState(ALL);
+  // In the address, so opening something and coming back (or a reload)
+  // keeps the term, year group and subject being looked at.
+  const [termId, setTermId] = useUrlTab<string>("", { key: "term" });
+  const [gradeLevelId, setGradeLevelId] = useUrlTab<string>("", {
+    key: "grade",
+  });
+  const [subjectId, setSubjectId] = useUrlTab<string>(ALL, { key: "subject" });
 
   // The lesson note open for reading, if any. A head teacher checking
   // preparation needs to see what "draft" actually says, not only that it is.
@@ -195,19 +201,17 @@ export default function AdminCalendar() {
               ))}
             </SelectContent>
           </Select>
-          <Select value={subjectId} onValueChange={setSubjectId}>
-            <SelectTrigger className="w-44">
-              <SelectValue placeholder="All subjects" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={ALL}>All subjects</SelectItem>
-              {subjects.map((s: any) => (
-                <SelectItem key={s.id} value={s.id}>
-                  {s.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <SearchableSelect
+            value={subjectId}
+            onValueChange={setSubjectId}
+            aria-label="Subject"
+            searchPlaceholder="Search subjects…"
+            className="w-44"
+            options={[
+              { value: ALL, label: "All subjects" },
+              ...subjects.map((s: any) => ({ value: s.id, label: s.name })),
+            ]}
+          />
           <Select value={termId} onValueChange={setTermId}>
             <SelectTrigger className="w-36">
               <SelectValue placeholder={termWord(config).Term} />

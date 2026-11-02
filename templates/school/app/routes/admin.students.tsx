@@ -1,4 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
@@ -66,12 +67,22 @@ async function callAction(name: string, params: Record<string, unknown>) {
   return res.json();
 }
 
+const PAGE_PARAM = ["page"] as const;
+
 export default function AdminStudents() {
   const { sync } = useNavigationState();
   const qc = useQueryClient();
   const { fields: studentFields } = useCustomFields("student");
-  const [search, setSearch] = useState("");
-  const [gradeFilter, setGradeFilter] = useState("all");
+  // Search and year group live in the address, so opening a learner and
+  // coming back keeps them; a new filter starts again from the first page.
+  const [search, setSearch] = useUrlTab<string>("", {
+    key: "q",
+    clear: PAGE_PARAM,
+  });
+  const [gradeFilter, setGradeFilter] = useUrlTab<string>("all", {
+    key: "grade",
+    clear: PAGE_PARAM,
+  });
 
   // Invite dialog
   const [inviteOpen, setInviteOpen] = useState(false);

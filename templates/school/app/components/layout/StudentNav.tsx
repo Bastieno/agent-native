@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { useRememberedSearch } from "@/lib/remembered-address";
 import {
   IconLayoutDashboard,
   IconBook,
@@ -34,6 +35,8 @@ const navItems = [
 ];
 
 export function StudentNav({ agent = true }: { agent?: boolean }) {
+  // A section opens as it was left: its tab, filters and page.
+  const remembered = useRememberedSearch();
   const { config } = useSchoolConfig();
   const schoolName =
     (config as any)?.theme?.displayName ??
@@ -58,7 +61,7 @@ export function StudentNav({ agent = true }: { agent?: boolean }) {
         {navItems.map(({ href, label, icon: Icon, end, dot, count }: any) => (
           <NavLink
             key={href}
-            to={href}
+            to={remembered(href)}
             end={end}
             className={({ isActive }) =>
               cn(

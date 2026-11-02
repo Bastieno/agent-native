@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Input } from "@/components/ui/input";
 import {
@@ -36,7 +37,11 @@ const ALL = "all";
  */
 export default function TeacherStudents() {
   const { sync } = useNavigationState();
-  const [search, setSearch] = useState("");
+  // In the address, so opening a learner and coming back keeps it.
+  const [search, setSearch] = useUrlTab<string>("", {
+    key: "q",
+    clear: ["page"],
+  });
   const [searchParams, setSearchParams] = useSearchParams();
   const classId = searchParams.get("class") ?? ALL;
 
@@ -119,6 +124,7 @@ export default function TeacherStudents() {
               const next = new URLSearchParams(searchParams);
               if (value === ALL) next.delete("class");
               else next.set("class", value);
+              next.delete("page");
               setSearchParams(next, { replace: true });
             }}
           >

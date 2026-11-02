@@ -170,9 +170,16 @@ export default function TeacherClass() {
     enabled: enrollOpen,
   });
 
-  const lessonsPaged = usePagination(lessons);
-  const assessmentsPaged = usePagination(assessments);
-  const studentsPaged = usePagination(students);
+  // Each tab keeps its own page in the address.
+  const lessonsPaged = usePagination(lessons, undefined, {
+    pageKey: "lessonsPage",
+  });
+  const assessmentsPaged = usePagination(assessments, undefined, {
+    pageKey: "workPage",
+  });
+  const studentsPaged = usePagination(students, undefined, {
+    pageKey: "learnersPage",
+  });
   const enrolledUserIds = useMemo(
     () => new Set(students.map((s: any) => s.studentUserId)),
     [students],

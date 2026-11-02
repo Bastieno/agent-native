@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback } from "react";
 import { useSearchParams } from "react-router";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
@@ -18,28 +18,43 @@ export const PAGE_SIZES = [10, 25, 50, 100];
  * Client-side paging for a list that is already in memory.
  *
  * A school's lists (learners, classes, staff) run to hundreds of rows, and
- * drawing them all makes the page long and slow to scan. The page resets to
- * the last one that still exists whenever the list shrinks, so a filter or a
- * search never leaves someone on a page that is no longer there.
+ * drawing them all makes the page long and slow to scan. The page lives in
+ * the address (?page=3), so opening a row and coming Back returns to the same
+ * page. A page past the end (the list shrank under a filter) shows the last
+ * one that exists, and the address is left alone while the list is still
+ * loading, so a reload lands on the page it was on.
+ *
+ * `pageKey` names the parameter when one screen pages several lists.
  */
 export function usePagination<T>(
   items: T[],
   defaultPageSize: number = PAGE_SIZE,
+  { pageKey = "page" }: { pageKey?: string } = {},
 ) {
-  const [page, setPage] = useState(1);
   // The chosen size lives in the address (?rows=25), so it survives a reload
   // and can be shared; a page with several lists shares one choice.
   const [searchParams, setSearchParams] = useSearchParams();
   const fromUrl = Number(searchParams.get("rows"));
   const pageSize = PAGE_SIZES.includes(fromUrl) ? fromUrl : defaultPageSize;
   const pageCount = Math.max(1, Math.ceil(items.length / pageSize));
+  const asked = Math.max(1, Math.floor(Number(searchParams.get(pageKey))) || 1);
 
-  // Filtering shrinks the list; stay on a page that still exists.
-  useEffect(() => {
-    setPage((p) => Math.min(p, pageCount));
-  }, [pageCount]);
+  const setPage = useCallback(
+    (page: number) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          if (page <= 1) next.delete(pageKey);
+          else next.set(pageKey, String(page));
+          return next;
+        },
+        { replace: true, preventScrollReset: true },
+      );
+    },
+    [setSearchParams, pageKey],
+  );
 
-  const current = Math.min(page, pageCount);
+  const current = Math.min(asked, pageCount);
   const start = (current - 1) * pageSize;
   return {
     page: current,
@@ -53,11 +68,11 @@ export function usePagination<T>(
           const next = new URLSearchParams(prev);
           if (size === defaultPageSize) next.delete("rows");
           else next.set("rows", String(size));
+          next.delete(pageKey);
           return next;
         },
         { replace: true, preventScrollReset: true },
       );
-      setPage(1);
     },
     total: items.length,
     items: items.slice(start, start + pageSize),

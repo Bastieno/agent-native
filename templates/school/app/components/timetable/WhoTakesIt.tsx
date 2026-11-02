@@ -1,13 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox";
+import { SearchableSelect } from "@/components/SearchableSelect";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useArmWord, type Arm } from "./arms-shared";
 
 export type Taker =
@@ -49,21 +43,15 @@ export function WhoTakesIt({
           </Label>
         </div>
         {value.kind === "arm" && (
-          <Select
+          <SearchableSelect
             value={value.armId}
             onValueChange={(armId) => onChange({ kind: "arm", armId })}
-          >
-            <SelectTrigger className="ml-6 w-48" aria-label={`Which ${arm}`}>
-              <SelectValue placeholder={`Choose a ${arm}`} />
-            </SelectTrigger>
-            <SelectContent>
-              {arms.map((a) => (
-                <SelectItem key={a.id} value={a.id}>
-                  {a.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+            aria-label={`Which ${arm}`}
+            placeholder={`Choose a ${arm}`}
+            searchPlaceholder={`Search ${arm}s…`}
+            className="ml-6 w-48"
+            options={arms.map((a) => ({ value: a.id, label: a.name }))}
+          />
         )}
         <div className="flex items-center gap-2">
           <RadioGroupItem

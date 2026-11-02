@@ -11,6 +11,8 @@ import { NewClassDialog } from "@/components/timetable/NewClassDialog";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
+import { SearchableSelect } from "@/components/SearchableSelect";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -47,14 +49,24 @@ import { useDoubleWord } from "@/components/timetable/arms-shared";
  */
 const UNASSIGNED = "__unassigned__";
 
+const PAGE_PARAM = ["page"] as const;
+
 export default function AdminClasses() {
   const { sync } = useNavigationState();
   const qc = useQueryClient();
   const [searchParams, setSearchParams] = useSearchParams();
   const tab = searchParams.get("tab") === "arms" ? "arms" : "classes";
   const [newClassOpen, setNewClassOpen] = useState(false);
-  const [gradeFilter, setGradeFilter] = useState("all");
-  const [teacherFilter, setTeacherFilter] = useState("all");
+  // Filters live in the address, so opening a class and coming back keeps
+  // them; a new filter starts again from the first page.
+  const [gradeFilter, setGradeFilter] = useUrlTab<string>("all", {
+    key: "grade",
+    clear: PAGE_PARAM,
+  });
+  const [teacherFilter, setTeacherFilter] = useUrlTab<string>("all", {
+    key: "teacher",
+    clear: PAGE_PARAM,
+  });
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
 
   // Class detail dialog
@@ -244,7 +256,16 @@ export default function AdminClasses() {
     <ClassesTabs
       value={tab}
       onChange={(t) =>
-        setSearchParams(t === "arms" ? { tab: "arms" } : {}, { replace: true })
+        setSearchParams(
+          (prev) => {
+            // The Classes tab's filters wait for it while Arms is open.
+            const next = new URLSearchParams(prev);
+            if (t === "arms") next.set("tab", "arms");
+            else next.delete("tab");
+            return next;
+          },
+          { replace: true },
+        )
       }
     />
   );
@@ -284,25 +305,30 @@ export default function AdminClasses() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={teacherFilter} onValueChange={setTeacherFilter}>
-              <SelectTrigger className="h-8 text-xs w-40">
-                <SelectValue placeholder="Teacher" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All teachers</SelectItem>
-                {teachers.map((t: any) => (
-                  <SelectItem key={t} value={t}>
-                    {t}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <SearchableSelect
+              value={teacherFilter}
+              onValueChange={setTeacherFilter}
+              aria-label="Teacher"
+              searchPlaceholder="Search teachers…"
+              className="h-8 w-40 text-xs"
+              options={[
+                { value: "all", label: "All teachers" },
+                ...teachers.map((t: any) => ({ value: t, label: t })),
+              ]}
+            />
             {hasFilters && (
               <button
-                onClick={() => {
-                  setGradeFilter("all");
-                  setTeacherFilter("all");
-                }}
+                onClick={() =>
+                  setSearchParams(
+                    (prev) => {
+                      const next = new URLSearchParams(prev);
+                      for (const key of ["grade", "teacher", "page"])
+                        next.delete(key);
+                      return next;
+                    },
+                    { replace: true },
+                  )
+                }
                 className="h-8 px-2.5 text-xs text-muted-foreground hover:text-foreground border rounded-md"
               >
                 Clear
@@ -519,24 +545,22 @@ export default function AdminClasses() {
                   an item uses it. The throw took the whole portal down to an
                   error page the moment anyone opened a class, so this uses a
                   sentinel and maps it back when saving. */}
-              <Select
+              <SearchableSelect
                 value={editTeacher || UNASSIGNED}
                 onValueChange={(value) =>
                   setEditTeacher(value === UNASSIGNED ? "" : value)
                 }
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Unassigned" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={UNASSIGNED}>Unassigned</SelectItem>
-                  {staffList.map((s: any) => (
-                    <SelectItem key={s.userId} value={s.userId}>
-                      {s.name ?? s.email}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                aria-label="Primary teacher"
+                searchPlaceholder="Search staff…"
+                options={[
+                  { value: UNASSIGNED, label: "Unassigned" },
+                  ...staffList.map((s: any) => ({
+                    value: s.userId,
+                    label: s.name ?? s.email,
+                    hint: s.name ? s.email : undefined,
+                  })),
+                ]}
+              />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">

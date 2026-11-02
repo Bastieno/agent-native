@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SearchableSelect } from "@/components/SearchableSelect";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -139,18 +140,17 @@ export function NewClassDialog({
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
               <Label>Subject</Label>
-              <Select value={subjectId} onValueChange={setSubjectId}>
-                <SelectTrigger aria-label="Subject">
-                  <SelectValue placeholder="Choose" />
-                </SelectTrigger>
-                <SelectContent>
-                  {subjects.map((s: any) => (
-                    <SelectItem key={s.id} value={s.id}>
-                      {s.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <SearchableSelect
+                value={subjectId}
+                onValueChange={setSubjectId}
+                aria-label="Subject"
+                placeholder="Choose"
+                searchPlaceholder="Search subjects…"
+                options={subjects.map((s: any) => ({
+                  value: s.id,
+                  label: s.name,
+                }))}
+              />
             </div>
             <div className="space-y-1.5">
               <Label>Year group</Label>

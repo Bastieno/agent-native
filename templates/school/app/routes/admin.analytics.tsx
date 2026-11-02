@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
@@ -194,6 +195,20 @@ export default function AdminAnalytics() {
 }
 
 type SortKey = "name" | "average" | "classes" | "students";
+const SORT_KEYS: readonly SortKey[] = [
+  "name",
+  "average",
+  "classes",
+  "students",
+];
+
+/** "name:1" from the address, or the default for anything else. */
+function parseSort(raw: string): { key: SortKey; dir: 1 | -1 } {
+  const [key, dir] = raw.split(":");
+  return SORT_KEYS.includes(key as SortKey)
+    ? { key: key as SortKey, dir: dir === "-1" ? -1 : 1 }
+    : { key: "average", dir: 1 };
+}
 
 const averageOf = (s: any): number | null => {
   const n = parseFloat(s.average);
@@ -219,10 +234,24 @@ function SubjectPerformance({
 }) {
   const { config } = useSchoolConfig();
   const passMark = config.passMark ?? 50;
-  const [sort, setSort] = useState<{ key: SortKey; dir: 1 | -1 }>({
-    key: "average",
-    dir: 1,
+  // The order lives in the address (?sort=name:1), so opening a subject and
+  // coming back keeps it.
+  const [sortParam, setSortParam] = useUrlTab<string>("average:1", {
+    key: "sort",
+    clear: ["page"],
   });
+  const sort = parseSort(sortParam);
+  const setSort = (
+    next:
+      | { key: SortKey; dir: 1 | -1 }
+      | ((cur: { key: SortKey; dir: 1 | -1 }) => {
+          key: SortKey;
+          dir: 1 | -1;
+        }),
+  ) => {
+    const value = typeof next === "function" ? next(sort) : next;
+    setSortParam(`${value.key}:${value.dir}`);
+  };
 
   const sorted = useMemo(() => {
     const value = (s: any) =>

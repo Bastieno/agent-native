@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import {
   IconChevronLeft,
@@ -42,7 +43,8 @@ export default function StudentRevise() {
   const origin = useOrigin();
   const { classId } = useParams<{ classId: string }>();
   const { sync } = useNavigationState();
-  const [search, setSearch] = useState("");
+  // In the address, so opening something and coming back keeps it.
+  const [search, setSearch] = useUrlTab<string>("", { key: "q" });
 
   useEffect(() => {
     sync({ role: "student", view: "revise", classId });

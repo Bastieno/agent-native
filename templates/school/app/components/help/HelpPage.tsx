@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { Link, useLocation } from "react-router";
 import { IconChevronDown, IconCopy, IconSearch } from "@tabler/icons-react";
 import { toast } from "sonner";
@@ -28,7 +29,8 @@ import { searchCapabilities } from "../../../shared/help-search";
 export function HelpPage({ role }: { role: HelpRole }) {
   const { capabilities, seen, fresh, coordinator, markSeen, isLoading } =
     useHelp();
-  const [query, setQuery] = useState("");
+  // In the address, so following a link and coming back keeps it.
+  const [query, setQuery] = useUrlTab<string>("", { key: "q" });
   // A link from the welcome card or a hint opens its entry straight away.
   const { hash } = useLocation();
   const [openId, setOpenId] = useState<string | null>(

@@ -1,4 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { SearchableSelect } from "@/components/SearchableSelect";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
 import { agentNativePath } from "@agent-native/core/client";
@@ -243,18 +244,17 @@ export default function AdminAnnouncements() {
             {scope === "class" && (
               <div className="space-y-1.5">
                 <Label>Class</Label>
-                <Select value={classId} onValueChange={setClassId}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a class" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {classes.map((c: any) => (
-                      <SelectItem key={c.id} value={c.id}>
-                        {c.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <SearchableSelect
+                  value={classId}
+                  onValueChange={setClassId}
+                  aria-label="Class"
+                  placeholder="Select a class"
+                  searchPlaceholder="Search classes…"
+                  options={classes.map((c: any) => ({
+                    value: c.id,
+                    label: c.name,
+                  }))}
+                />
               </div>
             )}
           </div>
