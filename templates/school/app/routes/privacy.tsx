@@ -6,6 +6,7 @@ export const handle = { publicPage: true };
 
 export const meta: MetaFunction = () => [
   { title: "Privacy · Ellai" },
+  { tagName: "link", rel: "canonical", href: "https://ellai.dev/privacy" },
   {
     name: "description",
     content:

@@ -30,6 +30,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     { property: "og:title", content: "Run a school by asking." },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://ellai.dev/" },
+    { tagName: "link", rel: "canonical", href: "https://ellai.dev/" },
     { name: "twitter:card", content: "summary" },
   ];
 };
