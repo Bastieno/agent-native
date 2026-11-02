@@ -72,6 +72,26 @@ export function createToolSearchEntry(
   };
 }
 
+/**
+ * The tool names a `tool-search` result found, read back from its JSON, so an
+ * engine can load the deferred ones. Undefined when the text is not a search
+ * result (an error, or a result cut short).
+ */
+export function toolReferencesFromSearchResult(
+  content: string,
+): string[] | undefined {
+  try {
+    const parsed = JSON.parse(content);
+    if (!Array.isArray(parsed?.results)) return undefined;
+    const names = parsed.results
+      .map((r: { name?: unknown }) => r?.name)
+      .filter((n: unknown): n is string => typeof n === "string" && !!n);
+    return names.length > 0 ? names : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export function attachToolSearch(
   registry: Record<string, ActionEntry>,
   options: ToolSearchOptions = {},

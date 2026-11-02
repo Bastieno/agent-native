@@ -32,6 +32,11 @@ export interface AgentRunGateDecision {
   reply?: string;
   /** Only the tools this returns true for are offered or run. */
   toolFilter?: (name: string) => boolean;
+  /**
+   * Tools kept out of the prompt until tool-search finds them, on engines that
+   * support it. They remain callable.
+   */
+  deferTool?: (name: string) => boolean;
 }
 
 export type AgentRunGate = (

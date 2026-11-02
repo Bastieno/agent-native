@@ -17,6 +17,7 @@ import {
 } from "../lib/chat-apps.js";
 import { promptGuide } from "../lib/prompt-guide.js";
 import { readyBeforeServing } from "../lib/plugin-readiness.js";
+import { STAFF_DEFAULT_MODEL } from "../../shared/agent-settings.js";
 
 const agentChat = createAgentChatPlugin({
   // Every action is role-checked. This map backs both the agent's tools and
@@ -36,10 +37,15 @@ const agentChat = createAgentChatPlugin({
   // Each person's assistant is sent the guide for their own role, not all
   // three roles' (see server/lib/prompt-guide.ts).
   transformAgentsMd: promptGuide,
+  // Every action already reaches the model as a tool with its own
+  // description; listing them all again as text cost ~24k tokens a step.
+  actionsInPrompt: false,
   mcpToolFilter: chatAppToolFilter,
   mcpInstructions: CHAT_APP_INSTRUCTIONS,
   appId: "school",
-  model: "claude-haiku-4-5",
+  // Someone with a school but no profile yet is usually its head setting it
+  // up, which is several steps of real work: the staff model.
+  model: STAFF_DEFAULT_MODEL,
   // The admin decides who has the assistant, on which model and how many
   // messages a day (Settings → Assistant). Enforced here, per message, so a
   // learner cannot get round it by picking a model or calling the endpoint
@@ -49,6 +55,7 @@ const agentChat = createAgentChatPlugin({
     event,
     ownerEmail,
     message,
+    attachments,
     internalContinuation,
   }) => {
     // "How do I make a PDF?" from a teacher or admin, when one Help entry is
@@ -65,7 +72,13 @@ const agentChat = createAgentChatPlugin({
     } catch {
       // The person's own school profile names the school anyway.
     }
-    return gateAgentMessage({ ownerEmail, orgId, internalContinuation });
+    return gateAgentMessage({
+      ownerEmail,
+      orgId,
+      internalContinuation,
+      message,
+      hasAttachments: attachments.length > 0,
+    });
   },
   // Everything else that runs the agent for someone — sub-agents a teacher's
   // chat starts, automations, scheduled jobs, integrations, agent-to-agent
@@ -115,6 +128,10 @@ Roles:
 - admin: school setup, staff/student management, curriculum co-authoring, analytics
 - teacher: lesson creation, differentiated assessments, grading, student support
 - student: TUTOR MODE — guide without giving answers, be encouraging
+
+Staff: only your most-used tools are loaded. For anything else, call tool-search with what you want to do in a few words ("invite a teacher", "publish marks", "lesson note coverage"), then call the tool it finds. Do not tell the person you are searching for tools.
+
+Before a task, read get-school-guidance once for the one topic it is (setup, staff, curriculum, lesson-notes, activities, marking, timetable, report-cards, analytics, extensions) and follow it. The talking-to-people rules are already in these instructions: do not fetch them. A small change (adding one subject, inviting one person) needs no guidance beyond its own topic.
 
 Before executing destructive or irreversible actions (suspend, remove, delete, publish grades, close assessment), always confirm with the user first — describe what will happen and ask them to confirm.
 

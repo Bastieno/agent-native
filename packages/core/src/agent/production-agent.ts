@@ -63,9 +63,11 @@ import {
   type AgentRunGateDecision,
   type AgentRunSource,
 } from "./run-gate.js";
+import { splitSystemPrompt } from "./runtime-context.js";
 import {
   createToolSearchEntry,
   TOOL_SEARCH_ACTION_NAME,
+  toolReferencesFromSearchResult,
 } from "./tool-search.js";
 import {
   getDefaultMaxIterations,
@@ -568,7 +570,9 @@ export interface ProductionAgentOptions {
    * fixed message without calling a model (a switched-off agent, a used-up
    * allowance), or `toolFilter` to narrow the tools for this request (e.g. by
    * role): a filtered-out tool is neither offered nor run, and tool-search
-   * cannot surface it.
+   * cannot surface it. `deferTool` keeps the tools it returns true for out of
+   * the prompt until tool-search finds them (on engines that support it); they
+   * stay callable, so a long tool list costs only the tools a turn needs.
    */
   prepareRequest?: (details: {
     event: any;
@@ -592,6 +596,8 @@ export interface ProductionAgentOptions {
         reply?: string;
         /** Only the tools this returns true for are offered or run. */
         toolFilter?: (name: string) => boolean;
+        /** Tools sent for loading on demand, found through tool-search. */
+        deferTool?: (name: string) => boolean;
       }
     | Promise<void | {
         message?: string;
@@ -600,6 +606,7 @@ export interface ProductionAgentOptions {
         model?: string;
         reply?: string;
         toolFilter?: (name: string) => boolean;
+        deferTool?: (name: string) => boolean;
       }>;
   /** Optional per-app agent run chunk budget in milliseconds. Defaults to
    *  AGENT_RUN_SOFT_TIMEOUT_MS when set, otherwise no framework-imposed
@@ -988,6 +995,7 @@ export function structuredHistoryToEngineMessages(
           toolInput,
           content: wire.content,
           ...(part.isError ? { isError: true } : {}),
+          ...withSearchReferences(toolName, wire.content, part.isError),
         });
       }
     }
@@ -1437,7 +1445,36 @@ export async function applyAgentRunGate(
     next.actions = filterRequestActions(opts.actions, allow);
     next.tools = opts.tools.filter((t) => allow(t.name));
   }
+  if (decision.deferTool) {
+    next.tools = deferEngineTools(next.tools, decision.deferTool);
+  }
   return { opts: next };
+}
+
+/** Marks the tools `defer` returns true for as loaded on demand. */
+function deferEngineTools(
+  tools: EngineTool[],
+  defer: (name: string) => boolean,
+): EngineTool[] {
+  return tools.map((t) => (defer(t.name) ? { ...t, deferLoading: true } : t));
+}
+
+/** As Anthropic's own tool search: the five best matches are loaded. */
+const MAX_SEARCH_REFERENCES = 5;
+
+/** A tool-search result names the tools it found, for the engine to load. */
+function withSearchReferences(
+  toolName: string,
+  content: string,
+  isError?: boolean,
+): { toolReferences?: string[] } {
+  if (toolName !== TOOL_SEARCH_ACTION_NAME || isError) return {};
+  // The best few: each one found is loaded with its full definition.
+  const refs = toolReferencesFromSearchResult(content)?.slice(
+    0,
+    MAX_SEARCH_REFERENCES,
+  );
+  return refs ? { toolReferences: refs } : {};
 }
 
 function emptyUsage(model: string): AgentLoopUsage {
@@ -1470,6 +1507,15 @@ export async function runAgentLoop(
     send,
     signal,
   } = opts;
+  // What the engine may cache, and what changes per request (see
+  // SYSTEM_PROMPT_VOLATILE_MARKER).
+  const split = splitSystemPrompt(systemPrompt);
+  const promptParts = {
+    systemPrompt: split.systemPrompt,
+    ...(split.cacheBoundary !== undefined
+      ? { systemPromptCacheBoundary: split.cacheBoundary }
+      : {}),
+  };
 
   const usage: AgentLoopUsage = {
     inputTokens: 0,
@@ -1519,7 +1565,7 @@ export async function runAgentLoop(
       try {
         const streamOpts = {
           model,
-          systemPrompt,
+          ...promptParts,
           messages,
           tools,
           abortSignal: signal,
@@ -1583,6 +1629,12 @@ export async function runAgentLoop(
           } else if (event.type === "assistant-content") {
             assistantContent = event.parts;
           } else if (event.type === "usage") {
+            // One line per model step, for measuring what a turn costs.
+            if (process.env.AGENT_USAGE_LOG) {
+              console.log(
+                `[agent-usage] ${model} step ${iterations} in=${event.inputTokens} cacheWrite=${event.cacheWriteTokens ?? 0} cacheRead=${event.cacheReadTokens ?? 0} out=${event.outputTokens}`,
+              );
+            }
             usage.inputTokens += event.inputTokens;
             usage.outputTokens += event.outputTokens;
             usage.cacheReadTokens += event.cacheReadTokens ?? 0;
@@ -1946,6 +1998,7 @@ export async function runAgentLoop(
         toolInput: wireToolInput,
         content: result,
         ...(isError ? { isError } : {}),
+        ...withSearchReferences(toolCall.name, result, isError),
       };
     };
 
@@ -2147,6 +2200,10 @@ export function createProductionAgentHandler(
     const preparedToolFilter =
       preparedRequest && typeof preparedRequest.toolFilter === "function"
         ? preparedRequest.toolFilter
+        : undefined;
+    const preparedDeferTool =
+      preparedRequest && typeof preparedRequest.deferTool === "function"
+        ? preparedRequest.deferTool
         : undefined;
     const forcedModel =
       typeof preparedModel === "string" && preparedModel
@@ -2522,7 +2579,9 @@ export function createProductionAgentHandler(
     const requestActions = preparedToolFilter
       ? filterRequestActions(modeActions, preparedToolFilter)
       : modeActions;
-    const requestTools = getEngineTools(requestActions);
+    const requestTools = preparedDeferTool
+      ? deferEngineTools(getEngineTools(requestActions), preparedDeferTool)
+      : getEngineTools(requestActions);
     const requestSystemPrompt =
       requestMode === "plan"
         ? `${systemPrompt}\n\n${PLAN_MODE_SYSTEM_PROMPT}`

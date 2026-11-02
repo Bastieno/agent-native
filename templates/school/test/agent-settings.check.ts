@@ -5,6 +5,8 @@ import assert from "node:assert/strict";
 import {
   audienceForRole,
   learnerAgentOn,
+  modelLabel,
+  withCurrentModels,
   resolveAgentSettings,
   schoolDay,
   storedAgentSettings,
@@ -13,7 +15,50 @@ import {
 // A school that never set anything gets the defaults.
 const none = resolveAgentSettings(undefined);
 assert.equal(none.learnerAgentEnabled, true);
-assert.equal(none.models.learner, "claude-haiku-4-5");
+assert.equal(none.models.learner, "claude-haiku-5-5");
+assert.equal(none.models.teacher, "claude-sonnet-5-5");
+assert.equal(none.routineModel, "claude-haiku-5-5");
+// A school stored before routing existed is seeded once with the default;
+// one that switched it off keeps null.
+assert.equal(
+  resolveAgentSettings({ models: { learner: "claude-haiku-4-5" } }).models
+    .learner,
+  "claude-haiku-4-5",
+);
+assert.equal(resolveAgentSettings({ routineModel: null }).routineModel, null);
+
+// A superseded model moves to the newest of its family; others stay.
+const current = ["claude-haiku-5-5", "claude-sonnet-5-5", "claude-opus-5-5"];
+const old = resolveAgentSettings({
+  models: {
+    learner: "claude-haiku-4-5",
+    teacher: "claude-sonnet-4-6",
+    admin: "claude-opus-4-7",
+  },
+  routineModel: "claude-haiku-4-5-20251001",
+});
+const moved = withCurrentModels(old, current);
+assert.equal(moved.changed, true);
+assert.deepEqual(moved.settings.models, {
+  learner: "claude-haiku-5-5",
+  teacher: "claude-sonnet-5-5",
+  admin: "claude-opus-5-5",
+});
+assert.equal(moved.settings.routineModel, "claude-haiku-5-5");
+assert.equal(withCurrentModels(moved.settings, current).changed, false);
+const odd = resolveAgentSettings({
+  models: { learner: "gpt-unknown" },
+  routineModel: null,
+});
+const oddMoved = withCurrentModels(odd, current);
+assert.equal(oddMoved.settings.models.learner, "gpt-unknown");
+assert.equal(oddMoved.settings.routineModel, null);
+
+// Models are named with their version on screen.
+assert.equal(modelLabel("claude-haiku-5-5"), "Haiku 5.5");
+assert.equal(modelLabel("claude-haiku-4-5-20251001"), "Haiku 4.5");
+assert.equal(modelLabel("claude-opus-5"), "Opus 5");
+assert.equal(modelLabel("gpt-unknown"), "gpt-unknown");
 assert.deepEqual(none.dailyMessageLimits, {
   learner: 30,
   teacher: 200,

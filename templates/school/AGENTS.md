@@ -843,7 +843,7 @@ limits under Advanced.
 ```bash
 pnpm action update-school-config --agent '{"learnerAgentEnabled":false}'
 pnpm action update-school-config --agent '{"learnerAgentByYearGroup":{"<gradeLevelId>":true}}'  # null removes it
-pnpm action update-school-config --agent '{"models":{"learner":"claude-haiku-4-5"},"dailyMessageLimits":{"learner":30,"admin":null}}'
+pnpm action update-school-config --agent '{"models":{"learner":"claude-haiku-5-5"},"dailyMessageLimits":{"learner":30,"admin":null}}'
 pnpm action update-school-config --agent '{"dailySchoolLimit":500,"chatAppDailyLimit":20}'
 pnpm action get-my-agent-access   # whether the signed-in person has you now, and why not
 ```
@@ -855,8 +855,16 @@ pnpm action get-my-agent-access   # whether the signed-in person has you now, an
   not handed it in gets a short reply instead of you, whatever is set; you are
   back once they submit or the time runs out. Untimed work is not affected.
 - **Model per role** (learner, teacher, admin), from `agentModelChoices` only.
-  Defaults: Haiku for learners, Sonnet for staff. The server forces it for
-  everyone, and the chat has no model picker in any portal. When a teacher
+  Defaults: Haiku 5.5 for learners, Sonnet 5.5 for staff. The server forces
+  it for everyone, and the chat has no model picker in any portal. A school
+  that saved an older model of a family (Sonnet 4.6) is moved to the newest
+  one the list offers (Sonnet 5.5) the next time its settings are read.
+- **Quick staff questions on the cheap model** (`routineModel`, default Haiku
+  5.5; null turns it off). A teacher's or admin's short question or "show me"
+  request, with no attachment and nothing to write, mark, plan, change or
+  judge, runs on it; everything else, and a bare "yes, go ahead", runs on the
+  role's model (`server/lib/turn-routing.ts`). An admin finds the switch under
+  Advanced → Model and daily limit. When a teacher
   asks for a stronger model, say it is the admin's choice and they can ask
   for it; when an admin asks, offer to change their role's model.
 - **Every value is the school's own.** The defaults below are written into
@@ -886,7 +894,9 @@ Changing or disconnecting the AI engine is for org owners and admins only.
 the school actions its policy allows, plus moving its own screen and tool
 search. Staff also get memory and workspace files, sub-agents, automations,
 jobs, notifications, progress, web requests and any MCP server they
-connected; admins also get extensions. Learners get none of those: they
+connected; admins also get extensions. For staff, only the most-used tools
+are loaded on every step; the rest load when `tool-search` finds them, so
+search for what you need in a few words rather than concluding it is missing. Learners get none of those: they
 would let a learner rewrite their tutor or run models outside the daily
 limit. Nobody gets browser or computer control, Builder connect, docs
 search, call-agent, chat search or the engine and loop settings (an admin

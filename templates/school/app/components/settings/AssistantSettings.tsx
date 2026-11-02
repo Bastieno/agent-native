@@ -28,6 +28,7 @@ import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useSaveSchoolConfig } from "@/components/timetable/useSaveSchoolConfig";
 import {
   AGENT_AUDIENCES,
+  modelLabel,
   resolveAgentSettings,
   type AgentAudience,
   type AgentSettings,
@@ -81,6 +82,13 @@ export function AssistantSettings() {
   const settings = resolveAgentSettings((config as any).agent);
   const choices: Array<{ id: string; label: string; note: string }> =
     (config as any).agentModelChoices ?? [];
+  // A school keeps the model it saved even once the list offers a newer one;
+  // show it by name rather than as an empty box.
+  const choicesFor = (current: string | null) =>
+    current && !choices.some((c) => c.id === current)
+      ? [...choices, { id: current, label: modelLabel(current), note: "older" }]
+      : choices;
+  const cheapest = choices[0];
   const [advanced, setAdvanced] = useState(false);
 
   const { data: yearGroups = [] } = useQuery<
@@ -221,7 +229,7 @@ export function AssistantSettings() {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {choices.map((c) => (
+                      {choicesFor(settings.models[who]).map((c) => (
                         <SelectItem key={c.id} value={c.id}>
                           {c.label} · {c.note}
                         </SelectItem>
@@ -244,6 +252,35 @@ export function AssistantSettings() {
                 </div>
               ))}
             </div>
+            {cheapest ? (
+              <div className="flex items-start justify-between gap-4 border-t pt-3">
+                <div className="space-y-1">
+                  <Label htmlFor="routine-model" className="text-sm">
+                    Quick staff questions on {cheapest.label}
+                  </Label>
+                  <p className="text-xs text-muted-foreground">
+                    Questions and lookups from teachers and admins use the
+                    cheapest model. Writing, marking, planning and changes stay
+                    on the model above.
+                  </p>
+                </div>
+                <Switch
+                  id="routine-model"
+                  checked={settings.routineModel !== null}
+                  onCheckedChange={(on) =>
+                    update(
+                      {
+                        ...settings,
+                        routineModel: on ? cheapest.id : null,
+                      },
+                      on
+                        ? `Quick staff questions on ${cheapest.label}`
+                        : "Every staff message on the model above",
+                    )
+                  }
+                />
+              </div>
+            ) : null}
           </section>
 
           <section className="space-y-2 rounded-lg border bg-card p-4">

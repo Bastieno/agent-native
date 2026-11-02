@@ -13,6 +13,8 @@ import type {
   EngineCapabilities,
   EngineStreamOptions,
   EngineEvent,
+  EngineMessage,
+  EngineTool,
 } from "./types.js";
 import {
   engineToolsToAnthropic,
@@ -79,6 +81,105 @@ export function withConversationCacheBreakpoints<
   return out;
 }
 
+/**
+ * The tools for an Anthropic request, with deferred loading applied.
+ *
+ * A tool marked `deferLoading` is sent with `defer_loading: true`, so its
+ * definition stays out of the prompt until a `tool-search` result references
+ * it. Loaded tools come first and the last of them carries the cache
+ * breakpoint (a deferred tool may not). A deferred tool the conversation
+ * called without first finding it through a search is loaded, so the history
+ * never names a tool the model cannot see. If nothing would be loaded,
+ * nothing is deferred.
+ */
+export function anthropicToolsWithDeferral(
+  tools: EngineTool[],
+  messages: EngineMessage[],
+  cacheEnabled: boolean,
+): { tools: any[]; deferred: Set<string> } {
+  // A tool found by an earlier search stays loaded for the rest of the
+  // conversation (the API expands references throughout the history), so
+  // only a tool called without having been found needs loading up front.
+  // Loading one changes the tool list and costs the whole cache for that step.
+  const found = new Set<string>();
+  const called = new Set<string>();
+  for (const m of messages) {
+    for (const p of m.content) {
+      if (p.type === "tool-call") called.add(p.name);
+      if (p.type === "tool-result")
+        p.toolReferences?.forEach((n) => found.add(n));
+    }
+  }
+  let deferred = new Set(
+    tools
+      .filter(
+        (t) => t.deferLoading && !(called.has(t.name) && !found.has(t.name)),
+      )
+      .map((t) => t.name),
+  );
+  if (deferred.size === tools.length) deferred = new Set();
+  const loaded = tools.filter((t) => !deferred.has(t.name));
+  const later = tools.filter((t) => deferred.has(t.name));
+  const out: any[] = [
+    ...engineToolsToAnthropic(loaded),
+    ...engineToolsToAnthropic(later).map((t) => ({
+      ...t,
+      defer_loading: true,
+    })),
+  ];
+  if (cacheEnabled && loaded.length > 0) {
+    out[loaded.length - 1] = {
+      ...out[loaded.length - 1],
+      cache_control: { type: "ephemeral" },
+    };
+  }
+  return { tools: out, deferred };
+}
+
+/**
+ * Turns the tool results that found deferred tools (`toolReferences` on the
+ * engine part) into `tool_reference` blocks, so the API loads those tools for
+ * the model. Such a result holds only the references: the API refuses them
+ * mixed with text. References to tools that are not deferred in this request
+ * are left out, and a result with none keeps its text.
+ */
+export function withToolReferences(
+  out: any[],
+  messages: EngineMessage[],
+  deferred: Set<string>,
+): any[] {
+  if (deferred.size === 0) return out;
+  const refs = new Map<string, string[]>();
+  for (const m of messages) {
+    for (const p of m.content) {
+      if (p.type !== "tool-result" || !p.toolReferences) continue;
+      const names = p.toolReferences.filter((n) => deferred.has(n));
+      if (names.length > 0) refs.set(p.toolCallId, names);
+    }
+  }
+  if (refs.size === 0) return out;
+  return out.map((msg) => {
+    if (!Array.isArray(msg.content)) return msg;
+    let changed = false;
+    const content = msg.content.map((block: any) => {
+      const names =
+        block?.type === "tool_result" ? refs.get(block.tool_use_id) : undefined;
+      if (!names) return block;
+      changed = true;
+      // The API refuses references mixed with text in one result; the
+      // definitions it expands them into say everything the text did.
+      return {
+        ...block,
+        content: names.map((tool_name) => ({
+          type: "tool_reference",
+          tool_name,
+        })),
+      };
+    });
+    return changed ? { ...msg, content } : msg;
+  });
+}
+
 export const ANTHROPIC_CAPABILITIES: EngineCapabilities = {
   thinking: true,
   promptCaching: true,
@@ -108,8 +209,6 @@ class AnthropicEngine implements AgentEngine {
     const Anthropic = (await import("@anthropic-ai/sdk")).default;
     const client = new Anthropic({ apiKey: this.apiKey });
 
-    const tools = engineToolsToAnthropic(opts.tools);
-    const messages = engineMessagesToAnthropic(opts.messages);
     const anthropicOpts = opts.providerOptions?.anthropic;
 
     // Build extra body params for Anthropic-native features
@@ -140,20 +239,36 @@ class AnthropicEngine implements AgentEngine {
     // changes turn-to-turn, it's a no-op. Templates can opt out by setting
     // providerOptions.anthropic.cacheControl = false.
     const cacheEnabled = anthropicOpts?.cacheControl !== false;
-    const systemBlocks: any[] = [{ type: "text", text: opts.systemPrompt }];
+    // The stable leading part is cached; what changes per request (the time,
+    // the current screen) follows in its own uncached block, so it does not
+    // force the instructions to be written to the cache again every turn.
+    const boundary = opts.systemPromptCacheBoundary;
+    const systemBlocks: any[] =
+      boundary !== undefined &&
+      boundary > 0 &&
+      boundary < opts.systemPrompt.length
+        ? [
+            { type: "text", text: opts.systemPrompt.slice(0, boundary) },
+            { type: "text", text: opts.systemPrompt.slice(boundary) },
+          ]
+        : [{ type: "text", text: opts.systemPrompt }];
     if (cacheEnabled) {
       systemBlocks[0].cache_control = { type: "ephemeral" };
     }
 
-    // Apply cache_control to the last tool definition when caching is enabled.
-    // Anthropic caches the prefix up to and including the last cached block.
-    let cachedTools = tools;
-    if (cacheEnabled && tools.length > 0) {
-      cachedTools = [...tools];
-      const last = { ...cachedTools[cachedTools.length - 1] } as any;
-      last.cache_control = { type: "ephemeral" };
-      cachedTools[cachedTools.length - 1] = last;
-    }
+    // Apply cache_control to the last loaded tool definition when caching is
+    // enabled. Anthropic caches the prefix up to and including the last cached
+    // block; deferred tools are not part of that prefix.
+    const { tools: cachedTools, deferred } = anthropicToolsWithDeferral(
+      opts.tools,
+      opts.messages,
+      cacheEnabled,
+    );
+    const messages = withToolReferences(
+      engineMessagesToAnthropic(opts.messages),
+      opts.messages,
+      deferred,
+    );
 
     const requestParams: any = {
       model: opts.model,

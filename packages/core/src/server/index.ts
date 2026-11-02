@@ -106,6 +106,7 @@ export {
   resolveEngine,
   BUILDER_DEFAULT_MODEL,
   BUILDER_SUPPORTED_MODELS,
+  ANTHROPIC_SUPPORTED_MODELS,
 } from "../agent/engine/index.js";
 export { createDevScriptRegistry } from "../scripts/dev/index.js";
 

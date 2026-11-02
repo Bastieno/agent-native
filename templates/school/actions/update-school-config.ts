@@ -289,6 +289,13 @@ export default defineAction({
         models: perAudience(z.string()).describe(
           "The model for each of learner, teacher and admin — one of agentModelChoices from get-school-config.",
         ),
+        routineModel: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(
+            "The model a teacher's or admin's quick question runs on (asking, looking up, moving around); work that writes, marks, plans or sets up runs on their role's model. One of agentModelChoices; null runs every staff message on the role's model.",
+          ),
         dailyMessageLimits: perAudience(
           z.number().int().min(0).nullable(),
         ).describe(
@@ -362,13 +369,32 @@ export default defineAction({
       const patch = args.agent as any;
       for (const who of AGENT_AUDIENCES) {
         const m = patch.models?.[who];
-        if (m !== undefined && !isAgentModelChoice(m)) {
+        // The model already stored may be one the list no longer offers (an
+        // older Sonnet); keeping it as it is is not a new choice.
+        if (
+          m !== undefined &&
+          m !== before.models[who] &&
+          !isAgentModelChoice(m)
+        ) {
           throw new Error(
             `Nothing was saved. "${m}" is not one of the models the school can use: ${agentModelChoices()
               .map((c) => c.id)
               .join(", ")}.`,
           );
         }
+      }
+      const routine = patch.routineModel;
+      if (
+        routine !== undefined &&
+        routine !== null &&
+        routine !== before.routineModel &&
+        !isAgentModelChoice(routine)
+      ) {
+        throw new Error(
+          `Nothing was saved. "${routine}" is not one of the models the school can use: ${agentModelChoices()
+            .map((c) => c.id)
+            .join(", ")}.`,
+        );
       }
       const byYear = { ...before.learnerAgentByYearGroup };
       for (const [id, on] of Object.entries(
@@ -382,6 +408,7 @@ export default defineAction({
           patch.learnerAgentEnabled ?? before.learnerAgentEnabled,
         learnerAgentByYearGroup: byYear,
         models: { ...before.models, ...stripUndefined(patch.models) },
+        routineModel: routine !== undefined ? routine : before.routineModel,
         dailyMessageLimits: {
           ...before.dailyMessageLimits,
           ...stripUndefined(patch.dailyMessageLimits),

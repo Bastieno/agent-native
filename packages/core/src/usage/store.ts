@@ -70,6 +70,20 @@ export function builderCreditsFromCostCents(cents: number): number {
 }
 
 const PRICING: Array<{ match: RegExp; pricing: ModelPricing }> = [
+  // Newer models first: they are priced differently from the family default.
+  // Haiku 5.5 is the price for prompts up to 100k tokens.
+  {
+    match: /opus-5-5/i,
+    pricing: { input: 400, output: 2000, cacheRead: 20, cacheWrite: 500 },
+  },
+  {
+    match: /sonnet-5-5/i,
+    pricing: { input: 200, output: 1000, cacheRead: 10, cacheWrite: 250 },
+  },
+  {
+    match: /haiku-5-5/i,
+    pricing: { input: 10, output: 50, cacheRead: 1, cacheWrite: 12.5 },
+  },
   {
     match: /opus/i,
     pricing: { input: 1500, output: 7500, cacheRead: 150, cacheWrite: 1875 },

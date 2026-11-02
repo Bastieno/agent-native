@@ -5,8 +5,9 @@ import { sql } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { actorForEmail } from "./class-access.js";
 import { activityWindow } from "./activity-window.js";
-import { ensureAgentSettings } from "./agent-settings-store.js";
-import { toolFilterForRole } from "./role-tools.js";
+import { ensureAgentSettings, hasOlderModel } from "./agent-settings-store.js";
+import { deferToolForRole, toolFilterForRole } from "./role-tools.js";
+import { isQuickStaffMessage } from "./turn-routing.js";
 import type { SchoolRole } from "./action-policy.js";
 import { isOrgMember } from "./signup-access.js";
 import {
@@ -39,6 +40,12 @@ export interface AgentAccess {
    * Null only for someone with no school yet, who gets the app's own model.
    */
   model: string | null;
+  /**
+   * The model a teacher's or admin's quick question runs on instead (see
+   * turn-routing.ts). Null for learners, or when the school runs every
+   * message on the role's model.
+   */
+  routineModel?: string | null;
   /** Why the assistant is unavailable, or null when it is available. */
   blocked: AgentBlock | null;
   /** What to say instead, in the person's own terms. */
@@ -84,8 +91,12 @@ async function schoolSettings(
     {}) as any;
   // Only what the school has stored. A school whose settings were never
   // written gets them written now, once, and then read back like any other.
+  // A model the list has superseded is moved up and written back first.
+  const stored = storedAgentSettings(config?.agent);
   const settings =
-    storedAgentSettings(config?.agent) ?? (await ensureAgentSettings(schoolId));
+    stored && !hasOlderModel(stored)
+      ? stored
+      : await ensureAgentSettings(schoolId);
   return {
     settings,
     timeZone:
@@ -266,6 +277,8 @@ export async function agentAccessFor(
     day,
     audience,
     model: settings ? settings.models[audience] : null,
+    routineModel:
+      settings && audience !== "learner" ? settings.routineModel : null,
     used,
     limit,
   };
@@ -323,8 +336,16 @@ export async function gateAgentMessage(details: {
   internalContinuation?: boolean;
   /** What started a run that is not a chat message; "mcp" is an AI app. */
   source?: string;
+  /** The person's message, when this is a chat message: it picks the model. */
+  message?: string;
+  hasAttachments?: boolean;
 }): Promise<
-  { model?: string; toolFilter?: (name: string) => boolean } | { reply: string }
+  | {
+      model?: string;
+      toolFilter?: (name: string) => boolean;
+      deferTool?: (name: string) => boolean;
+    }
+  | { reply: string }
 > {
   const access = await agentAccessFor(details.ownerEmail, details.orgId);
   if (access.blocked && access.message) {
@@ -357,12 +378,24 @@ export async function gateAgentMessage(details: {
   if (!details.internalContinuation) {
     await countMessage(access.who, access.day);
   }
+  // A teacher's or admin's quick question runs on the school's cheap model;
+  // a continuation finishes on the role's model, which started it.
+  const model =
+    access.routineModel &&
+    !details.internalContinuation &&
+    isQuickStaffMessage(details.message, details.hasAttachments)
+      ? access.routineModel
+      : access.model;
+  const role = access.who.role as SchoolRole | null;
   return {
-    ...(access.model ? { model: access.model } : {}),
+    ...(model ? { model } : {}),
     // Someone with no school profile yet is setting a school up; the role
     // guard still applies to them, but their tools are not narrowed.
-    ...(access.who.userId && access.who.role
-      ? { toolFilter: toolFilterForRole(access.who.role as SchoolRole) }
+    ...(access.who.userId && role
+      ? {
+          toolFilter: toolFilterForRole(role),
+          deferTool: deferToolForRole(role),
+        }
       : {}),
   };
 }

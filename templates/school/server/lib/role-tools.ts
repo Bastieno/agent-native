@@ -71,3 +71,35 @@ export function roleMayUseTool(role: SchoolRole, name: string): boolean {
 export function toolFilterForRole(role: SchoolRole): (name: string) => boolean {
   return (name) => roleMayUseTool(role, name);
 }
+
+/**
+ * The tools a staff member's assistant has loaded on every step. The rest of
+ * what their role may run (about 200 for an admin, 120 for a teacher, ~35k
+ * and ~20k tokens of definitions) stays callable but is loaded only when
+ * tool-search finds it, so a turn pays for the tools it uses. These are the
+ * ones nearly every conversation reaches for: seeing the screen, moving
+ * around, the school's rules and settings, and the day's lists.
+ */
+const LOADED_FOR_STAFF = new Set([
+  ...EVERYONE,
+  "view-screen",
+  "navigate",
+  "get-school-guidance",
+  "get-help",
+  "get-school-config",
+  "check-school-setup",
+  "get-school-attention",
+  "get-my-schedule",
+  "get-my-week",
+  "list-classes",
+]);
+
+/**
+ * Which tools are loaded on demand for this role. A learner has few enough
+ * tools (about 30) that all stay loaded: a search step would cost more than
+ * it saves, and the tutor should not be hunting for tools.
+ */
+export function deferToolForRole(role: SchoolRole): (name: string) => boolean {
+  if (role === "student") return () => false;
+  return (name) => !LOADED_FOR_STAFF.has(name);
+}

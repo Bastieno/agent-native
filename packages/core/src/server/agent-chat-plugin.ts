@@ -140,7 +140,10 @@ import {
 } from "../a2a/artifact-response.js";
 import { updateTaskStatusMessage } from "../a2a/task-store.js";
 import { collectFinalResponseTextFromAgentEvents } from "../a2a/response-text.js";
-import { buildRuntimeContextPrompt } from "../agent/runtime-context.js";
+import {
+  buildRuntimeContextPrompt,
+  SYSTEM_PROMPT_VOLATILE_MARKER,
+} from "../agent/runtime-context.js";
 
 // Lazy fs — loaded via dynamic import() on first use.
 // This avoids require() which bundlers convert to createRequire(import.meta.url)
@@ -2063,6 +2066,15 @@ export interface AgentChatPluginOptions {
     owner: string,
   ) => string | Promise<string>;
   /**
+   * Whether the system prompt also lists every template action as text (name,
+   * parameters and description). Defaults to true. The same actions already
+   * reach the model as native tools, each with its own description and
+   * schema, so an app with many actions can turn this off and stop sending
+   * them twice on every step — tens of thousands of tokens for a large app,
+   * and the list is not narrowed to what the person may run.
+   */
+  actionsInPrompt?: boolean;
+  /**
    * Adjust the framework's extension actions (`create-extension`,
    * `update-extension`, `list-extensions`, ...) before they are registered for
    * the agent and over MCP. A template can mark some as
@@ -3823,8 +3835,18 @@ export function createAgentChatPlugin(
           const extra = await resolveExtraContext(context.event, owner);
           const runtimeContext = runtimeContextForEvent(context.event);
           const systemPrompt = devActive
-            ? devPrompt + runtimeContext + resources + schemaBlock + extra
-            : basePrompt + runtimeContext + resources + schemaBlock + extra;
+            ? devPrompt +
+              resources +
+              schemaBlock +
+              SYSTEM_PROMPT_VOLATILE_MARKER +
+              runtimeContext +
+              extra
+            : basePrompt +
+              resources +
+              schemaBlock +
+              SYSTEM_PROMPT_VOLATILE_MARKER +
+              runtimeContext +
+              extra;
 
           const model =
             options?.model ??
@@ -3972,7 +3994,10 @@ export function createAgentChatPlugin(
       // Dev: actions are invoked via bash — emit `pnpm action name --arg <type>`
       //      and include discoveredActions too, since those are also missing
       //      from the dev tool registry.
-      const prodActionsPrompt = generateActionsPrompt(templateScripts, "tool");
+      const prodActionsPrompt =
+        options?.actionsInPrompt === false
+          ? ""
+          : generateActionsPrompt(templateScripts, "tool");
       const devActionsPrompt = generateActionsPrompt(
         { ...discoveredActions, ...templateScripts },
         "cli",
@@ -4704,8 +4729,9 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
           if (leanPrompt) {
             return setSystemPromptOnContext(
               leanBasePrompt +
-                runtimeContext +
                 codeEditingSurfaceRestriction +
+                SYSTEM_PROMPT_VOLATILE_MARKER +
+                runtimeContext +
                 extra,
             );
           }
@@ -4721,10 +4747,11 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
             : await buildSchemaBlock(owner, false);
           return setSystemPromptOnContext(
             basePrompt +
-              runtimeContext +
               resources +
               schemaBlock +
               codeEditingSurfaceRestriction +
+              SYSTEM_PROMPT_VOLATILE_MARKER +
+              runtimeContext +
               extra,
           );
         },
@@ -4768,6 +4795,7 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
                 const { extra } = await prepareRun(event);
                 return setSystemPromptOnContext(
                   anonymousReadOnlyPrompt +
+                    SYSTEM_PROMPT_VOLATILE_MARKER +
                     runtimeContextForEvent(event) +
                     extra,
                 );
@@ -4861,7 +4889,10 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
             const runtimeContext = runtimeContextForEvent(event);
             if (leanPrompt) {
               return setSystemPromptOnContext(
-                leanBasePrompt + runtimeContext + extra,
+                leanBasePrompt +
+                  SYSTEM_PROMPT_VOLATILE_MARKER +
+                  runtimeContext +
+                  extra,
               );
             }
             const resources = await loadResourcesForPrompt(
@@ -4873,7 +4904,12 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
               ? ""
               : await buildSchemaBlock(owner, true);
             return setSystemPromptOnContext(
-              devPrompt + runtimeContext + resources + schemaBlock + extra,
+              devPrompt +
+                resources +
+                schemaBlock +
+                SYSTEM_PROMPT_VOLATILE_MARKER +
+                runtimeContext +
+                extra,
             );
           },
           model: options?.model,

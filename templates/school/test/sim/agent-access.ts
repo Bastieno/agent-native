@@ -3,6 +3,11 @@ import type { Findings } from "./findings.js";
 import type { School } from "./setup.js";
 import { idOf } from "./shapes.js";
 import { connect, mcp, tool } from "./mcp-client.js";
+import {
+  LEARNER_DEFAULT_MODEL,
+  ROUTINE_DEFAULT_MODEL,
+  STAFF_DEFAULT_MODEL,
+} from "../../shared/agent-settings.js";
 
 /**
  * Who has the assistant, on which model, and how often.
@@ -15,8 +20,8 @@ import { connect, mcp, tool } from "./mcp-client.js";
  * it chose when it let the message through. No model is ever called.
  */
 
-const LEARNER_MODEL = "claude-haiku-4-5";
-const PRICIER_MODEL = "claude-opus-4-7";
+const LEARNER_MODEL = LEARNER_DEFAULT_MODEL;
+const PRICIER_MODEL = "claude-opus-5-5";
 
 export async function checkAgentAccess(
   client: Client,
@@ -60,12 +65,22 @@ export async function checkAgentAccess(
     `asked for ${PRICIER_MODEL}, got ${picked.model}`,
   );
 
-  const staff = await client.chat(teacher, "What do I teach today?");
+  const staff = await client.chat(
+    teacher,
+    "Draft a short worksheet on adding fractions for my class.",
+  );
   findings.expect(
     phase,
-    !!staff.model && staff.model !== LEARNER_MODEL,
-    "a teacher's message runs on the staff model, not the learner one",
+    staff.model === STAFF_DEFAULT_MODEL,
+    "a teacher's piece of work runs on the staff model",
     `got ${staff.model}`,
+  );
+  const quick = await client.chat(teacher, "What do I teach today?");
+  findings.expect(
+    phase,
+    quick.model === ROUTINE_DEFAULT_MODEL,
+    "a teacher's quick question runs on the school's cheap model",
+    `got ${quick.model}`,
   );
 
   const grab = await client.refused(learner, "update-school-config", {

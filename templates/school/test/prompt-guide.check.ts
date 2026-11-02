@@ -33,12 +33,35 @@ assert.ok(
   "no admin onboarding for a learner",
 );
 
-// A teacher still gets subject work from the admin's section, and no more.
-assert.ok(has(teacher, "### A2. Curriculum Co-Authoring"));
-assert.ok(has(teacher, "### A2b."));
+// Long procedures are read on demand (get-school-guidance), not sent every
+// step: each staff role gets an index of its topics in their place.
+const indexOf = (text: string) =>
+  text.split("### Guidance by topic")[1]?.split("\n\n")[1] ?? "";
+assert.ok(!has(admin, "### A1. School Onboarding"), "admin: setup on demand");
+assert.ok(!has(admin, "### A2c."), "admin: timetable on demand");
+for (const topic of ["setup", "curriculum", "timetable", "staff"]) {
+  assert.ok(indexOf(admin).includes(topic), `admin index names ${topic}`);
+}
+assert.ok(has(admin, "### A4b. The assistant's settings"), "no topic: kept");
+assert.ok(has(admin, "### A6. Navigation Map"), "navigation map kept");
+assert.ok(!has(teacher, "### B3b."), "teacher: marking on demand");
+for (const topic of ["marking", "activities", "lesson-notes", "curriculum"]) {
+  assert.ok(indexOf(teacher).includes(topic), `teacher index names ${topic}`);
+}
+assert.ok(has(teacher, "### B4. Student Categorization"), "no topic: kept");
 assert.ok(!has(teacher, "### A3. Staff Management"));
 assert.ok(!has(teacher, "### A2c."), "no timetable building for a teacher");
-assert.ok(has(coordinator, "### A2. Curriculum Co-Authoring"));
+assert.ok(indexOf(coordinator).includes("curriculum"));
+
+// A learner's section has no topics and is sent whole.
+assert.ok(has(student, "### C1. Tutor Behavior"));
+assert.ok(!has(student, "### Guidance by topic"));
+
+// Written for people developing the app: sent to nobody with a role.
+for (const [who, text] of Object.entries({ admin, teacher, student })) {
+  assert.ok(!has(text, "## Running Actions"), `${who}: no terminal commands`);
+  assert.ok(!has(text, "## UI Components"), `${who}: no UI rules`);
+}
 
 // The action table is left out for everyone.
 for (const [who, text] of Object.entries({ admin, teacher, student })) {

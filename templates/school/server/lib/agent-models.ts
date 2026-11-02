@@ -1,13 +1,13 @@
-import {
-  BUILDER_DEFAULT_MODEL,
-  BUILDER_SUPPORTED_MODELS,
-} from "@agent-native/core/server";
+import { ANTHROPIC_SUPPORTED_MODELS } from "@agent-native/core/server";
+import { modelFamilyVersion, modelLabel } from "../../shared/agent-settings.js";
 
 /**
- * The models an admin may choose from for the school's assistant: the Claude
- * models in the framework's own catalog, cheapest first. A short list on
- * purpose — the choice a school makes is cost against capability, and three
- * points on that line say it.
+ * The models an admin may choose from for the school's assistant: the newest
+ * Claude model of each family in the framework's Anthropic catalog (the school
+ * pays with its own Anthropic key), cheapest first. A short list on purpose —
+ * the choice a school makes is cost against capability, and three points on
+ * that line say it. Each is named with its version, so the screen says which
+ * Haiku a school is on.
  */
 export interface AgentModelChoice {
   id: string;
@@ -15,31 +15,27 @@ export interface AgentModelChoice {
   note: string;
 }
 
-const DESCRIBE: Record<string, { label: string; note: string }> = {
-  haiku: { label: "Haiku", note: "cheapest" },
-  sonnet: { label: "Sonnet", note: "balanced" },
-  opus: { label: "Opus", note: "most capable, dearest" },
+const NOTE: Record<string, string> = {
+  haiku: "cheapest",
+  sonnet: "balanced",
+  opus: "most capable, dearest",
 };
 const ORDER = ["haiku", "sonnet", "opus"];
 
-function family(id: string): string | undefined {
-  return ORDER.find((f) => id.includes(f));
-}
-
 export function agentModelChoices(): AgentModelChoice[] {
-  const ids = (BUILDER_SUPPORTED_MODELS as readonly string[]).filter(
-    (id) => id.startsWith("claude-") && family(id),
-  );
-  return ids
-    .sort((a, b) => ORDER.indexOf(family(a)!) - ORDER.indexOf(family(b)!))
-    .map((id) => {
-      const d = DESCRIBE[family(id)!];
-      return {
-        id,
-        label: id === BUILDER_DEFAULT_MODEL ? `${d.label} (default)` : d.label,
-        note: d.note,
-      };
-    });
+  const newest = new Map<string, { id: string; version: number }>();
+  for (const id of ANTHROPIC_SUPPORTED_MODELS as readonly string[]) {
+    const fv = modelFamilyVersion(id);
+    if (!fv || !ORDER.includes(fv.family)) continue;
+    const seen = newest.get(fv.family);
+    if (!seen || fv.version > seen.version) {
+      newest.set(fv.family, { id, version: fv.version });
+    }
+  }
+  return ORDER.filter((f) => newest.has(f)).map((f) => {
+    const id = newest.get(f)!.id;
+    return { id, label: modelLabel(id), note: NOTE[f] };
+  });
 }
 
 export function isAgentModelChoice(id: string): boolean {
