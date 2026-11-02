@@ -78,6 +78,7 @@ export async function sendDailyDigests(now = new Date()) {
       .where(
         and(
           inArray(schema.notifications.userId, userIds),
+          eq(schema.notifications.schoolId, schoolId),
           isNull(schema.notifications.readAt),
           isNull(schema.notifications.emailedAt),
           gt(schema.notifications.createdAt, since),

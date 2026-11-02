@@ -15,7 +15,7 @@ export default defineAction({
     const { userEmail } = currentAccess();
     const actor = userEmail ? await actorForEmail(userEmail) : null;
     if (!actor) throw new Error("No school context.");
-    await markRead(actor.userId, args.ids);
+    await markRead(actor.userId, actor.schoolId, args.ids);
     return { success: true };
   },
 });

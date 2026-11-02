@@ -15,6 +15,6 @@ export default defineAction({
     const { userEmail } = currentAccess();
     const actor = userEmail ? await actorForEmail(userEmail) : null;
     if (!actor) return { items: [], unread: 0 };
-    return listFor(actor.userId, args.limit);
+    return listFor(actor.userId, actor.schoolId, args.limit);
   },
 });

@@ -85,8 +85,11 @@ export async function notify(
   return added;
 }
 
-/** A person's own notifications, newest first, with how many are unread. */
-export async function listFor(userId: string, limit = 50) {
+/**
+ * A person's own notifications in one school, newest first, with how many are
+ * unread. Someone in two schools sees each school's notifications only there.
+ */
+export async function listFor(userId: string, schoolId: string, limit = 50) {
   const db = getDb();
   const items = await db
     .select({
@@ -99,7 +102,12 @@ export async function listFor(userId: string, limit = 50) {
       readAt: schema.notifications.readAt,
     })
     .from(schema.notifications)
-    .where(eq(schema.notifications.userId, userId))
+    .where(
+      and(
+        eq(schema.notifications.userId, userId),
+        eq(schema.notifications.schoolId, schoolId),
+      ),
+    )
     .orderBy(desc(schema.notifications.createdAt))
     .limit(limit);
   const [{ n }] = (await db
@@ -108,14 +116,19 @@ export async function listFor(userId: string, limit = 50) {
     .where(
       and(
         eq(schema.notifications.userId, userId),
+        eq(schema.notifications.schoolId, schoolId),
         isNull(schema.notifications.readAt),
       ),
     )) as { n: number }[];
   return { items, unread: Number(n) };
 }
 
-/** Mark some, or all, of a person's own notifications read. */
-export async function markRead(userId: string, ids?: string[]) {
+/** Mark some, or all, of a person's own notifications in one school read. */
+export async function markRead(
+  userId: string,
+  schoolId: string,
+  ids?: string[],
+) {
   const db = getDb();
   const readAt = new Date().toISOString();
   await db
@@ -124,6 +137,7 @@ export async function markRead(userId: string, ids?: string[]) {
     .where(
       and(
         eq(schema.notifications.userId, userId),
+        eq(schema.notifications.schoolId, schoolId),
         isNull(schema.notifications.readAt),
         ids?.length ? inArray(schema.notifications.id, ids) : undefined,
       ),
