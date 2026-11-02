@@ -157,6 +157,10 @@ export async function accessWithoutProfile(
     }
   }
 
-  if (!config && mayRunSetup(orgRole)) return { access: "setup", schoolName };
+  // Setup writes the name. Other settings (the assistant's defaults) are
+  // stored the first time anything reads the config, so their presence does
+  // not mean the school has been set up.
+  if (!config?.name && mayRunSetup(orgRole))
+    return { access: "setup", schoolName };
   return { access: "waiting", schoolName };
 }

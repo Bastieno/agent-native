@@ -27,6 +27,7 @@ import {
 } from "../lib/class-access.js";
 import { rowOf, rowsOf, runSql } from "../lib/raw-sql.js";
 import { orgForHost } from "../lib/school-host.js";
+import { schoolProfileFor } from "../lib/school-profile.js";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
 
@@ -82,12 +83,7 @@ async function guard(fn: () => Promise<void>): Promise<void> {
 }
 
 async function getSchoolProfile(db: any, userId: string) {
-  const profile = await db
-    .select()
-    .from(schema.schoolProfiles)
-    .where(eq(schema.schoolProfiles.userId, userId))
-    .limit(1);
-  return profile[0] ?? null;
+  return schoolProfileFor(userId);
 }
 
 // ─── Session info (role detection) ───────────────────────────────────────────
@@ -229,9 +225,6 @@ async function getMyStudentRecordId(
 export const getSessionInfo = defineEventHandler(async (event) => {
   const session = await requireSession(event);
   const db = getDb();
-  let profile = session.userId
-    ? await getSchoolProfile(db, session.userId)
-    : null;
 
   // The school this request acts in, as every action sees it. A school's own
   // address decides it for anyone who belongs to that school.
@@ -239,6 +232,9 @@ export const getSessionInfo = defineEventHandler(async (event) => {
     getRequestHost(event, { xForwardedHost: true }),
   );
   const activeOrgId = session.email ? (await getOrgContext(event)).orgId : null;
+  let profile: { schoolId: string; schoolRole: string } | null = session.userId
+    ? await schoolProfileFor(session.userId, hostOrgId ?? activeOrgId)
+    : null;
   if (hostOrgId && session.email) {
     const mine = await rowsOf<{ org_id: string }>(
       sql`SELECT org_id FROM org_members WHERE LOWER(email) = ${session.email.toLowerCase()}`,

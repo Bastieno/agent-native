@@ -1,6 +1,7 @@
 import { sql, eq, and } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { rowOf } from "./raw-sql.js";
+import { schoolProfileFor } from "./school-profile.js";
 
 /** The signed-in user's ID, looked up by email (actions only carry the email). */
 export async function getUserIdByEmail(email: string): Promise<string | null> {
@@ -12,14 +13,9 @@ export async function getUserIdByEmail(email: string): Promise<string | null> {
 }
 
 export async function getSchoolRole(email: string): Promise<string | null> {
-  const db = getDb();
   const userId = await getUserIdByEmail(email);
   if (!userId) return null;
-  const [profile] = await db
-    .select({ schoolRole: schema.schoolProfiles.schoolRole })
-    .from(schema.schoolProfiles)
-    .where(eq(schema.schoolProfiles.userId, userId))
-    .limit(1);
+  const profile = await schoolProfileFor(userId);
   return profile?.schoolRole ?? null;
 }
 
