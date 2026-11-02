@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Pagination, usePagination } from "@/components/Pagination";
+import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
@@ -63,7 +64,7 @@ export default function AdminLessons() {
   const year = searchParams.get("year") ?? ALL;
   const classId = searchParams.get("classId");
 
-  const { data } = useQuery<Coverage | null>({
+  const { data, isPending } = useQuery<Coverage | null>({
     queryKey: ["lesson-note-coverage"],
     queryFn: async () => {
       const res = await fetch(
@@ -87,7 +88,26 @@ export default function AdminLessons() {
     year === ALL ? rows : rows.filter((r) => r.gradeLevelName === year);
   const paged = usePagination(shown);
 
-  if (classId) return <ClassNotes classId={classId} rows={rows} />;
+  // Opening a class keeps the year tab and page size in the address, so
+  // "back" returns to the same list rather than to All.
+  const withParams = (changes: Record<string, string | null>) => {
+    const next = new URLSearchParams(searchParams);
+    for (const [key, value] of Object.entries(changes)) {
+      if (value === null) next.delete(key);
+      else next.set(key, value);
+    }
+    const query = next.toString();
+    return query ? `/admin/lessons?${query}` : "/admin/lessons";
+  };
+
+  if (classId)
+    return (
+      <ClassNotes
+        classId={classId}
+        rows={rows}
+        backTo={withParams({ classId: null })}
+      />
+    );
 
   return (
     <div className="h-full space-y-6 overflow-auto p-6">
@@ -102,9 +122,15 @@ export default function AdminLessons() {
         <Tabs
           value={year}
           onValueChange={(value) =>
-            setSearchParams(value === ALL ? {} : { year: value }, {
-              replace: true,
-            })
+            setSearchParams(
+              (prev) => {
+                const next = new URLSearchParams(prev);
+                if (value === ALL) next.delete("year");
+                else next.set("year", value);
+                return next;
+              },
+              { replace: true },
+            )
           }
         >
           <TabsList className="h-auto max-w-full flex-wrap justify-start">
@@ -118,23 +144,19 @@ export default function AdminLessons() {
         </Tabs>
       ) : null}
 
-      {data && shown.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconNotebook
-            size={32}
-            className="mx-auto mb-3 text-muted-foreground"
-          />
-          <p className="text-sm font-medium">Nothing to show</p>
-          <p className="mx-auto mt-1 max-w-xs text-xs text-muted-foreground">
-            No classes are running for this term yet.
-          </p>
-        </div>
+      {isPending || shown.length === 0 ? (
+        <ListState
+          loading={isPending}
+          icon={IconNotebook}
+          title="Nothing to show"
+          description="No classes are running for this term yet."
+        />
       ) : (
         <div className="divide-y rounded-lg border">
           {paged.items.map((row) => (
             <Link
               key={row.classId}
-              to={`/admin/lessons?classId=${row.classId}`}
+              to={withParams({ classId: row.classId })}
               className="flex items-center gap-4 p-4 transition-colors hover:bg-muted/50"
             >
               <div className="min-w-0 flex-1">
@@ -193,10 +215,18 @@ function Readiness({ row }: { row: ClassRow }) {
 }
 
 /** One class's notes, week by week. */
-function ClassNotes({ classId, rows }: { classId: string; rows: ClassRow[] }) {
+function ClassNotes({
+  classId,
+  rows,
+  backTo,
+}: {
+  classId: string;
+  rows: ClassRow[];
+  backTo: string;
+}) {
   const { formatDate } = useSchoolDates();
   const row = rows.find((r) => r.classId === classId);
-  const { data: notes } = useQuery<any[] | null>({
+  const { data: notes, isPending } = useQuery<any[] | null>({
     queryKey: ["lesson-notes", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -216,7 +246,7 @@ function ClassNotes({ classId, rows }: { classId: string; rows: ClassRow[] }) {
   return (
     <div className="h-full space-y-6 overflow-auto p-6 pb-24">
       <div className="space-y-2">
-        <BackLink to="/admin/lessons">Lesson notes</BackLink>
+        <BackLink to={backTo}>Lesson notes</BackLink>
         <h1 className="text-xl font-semibold">
           {row?.className ?? "This class"}
         </h1>
@@ -229,13 +259,12 @@ function ClassNotes({ classId, rows }: { classId: string; rows: ClassRow[] }) {
         </p>
       </div>
 
-      {notes && ordered.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <p className="text-sm font-medium">No lesson notes yet</p>
-          <p className="mx-auto mt-1 max-w-xs text-xs text-muted-foreground">
-            Ask the agent to plan them from this subject's curriculum.
-          </p>
-        </div>
+      {isPending || ordered.length === 0 ? (
+        <ListState
+          loading={isPending}
+          title="No lesson notes yet"
+          description="Ask the agent to plan them from this subject's curriculum."
+        />
       ) : (
         <div className="divide-y rounded-lg border">
           {ordered.map((note) => {
@@ -247,7 +276,7 @@ function ClassNotes({ classId, rows }: { classId: string; rows: ClassRow[] }) {
             return (
               <Link
                 key={note.id}
-                to={`/admin/lessons/${note.id}`}
+                to={`/admin/lessons/${note.id}${backTo.slice("/admin/lessons".length)}`}
                 className={cn(
                   "flex items-center gap-4 p-4 transition-colors hover:bg-muted/50",
                   thisWeek && "bg-primary/5",

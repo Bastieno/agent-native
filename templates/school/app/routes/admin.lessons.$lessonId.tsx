@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, useSearchParams } from "react-router";
 import { LessonNote } from "@/components/lesson/LessonNote";
 
 /**
@@ -10,12 +10,25 @@ import { LessonNote } from "@/components/lesson/LessonNote";
  */
 export default function AdminLesson() {
   const { lessonId } = useParams();
+  // The list's year tab and page size ride along, so back lands where the
+  // admin came from.
+  const [searchParams] = useSearchParams();
+  const back = (classId?: string) => {
+    const next = new URLSearchParams();
+    for (const key of ["year", "rows"]) {
+      const value = searchParams.get(key);
+      if (value) next.set(key, value);
+    }
+    if (classId) next.set("classId", classId);
+    const query = next.toString();
+    return query ? `/admin/lessons?${query}` : "/admin/lessons";
+  };
   return (
     <LessonNote
       lessonId={lessonId!}
       role="admin"
-      backTo={(classId) => `/admin/lessons?classId=${classId}`}
-      backFallback="/admin/lessons"
+      backTo={(classId) => back(classId)}
+      backFallback={back()}
     />
   );
 }
