@@ -87,6 +87,9 @@ export async function runAgentLoopDirectWithSoftTimeout(
     usage.outputTokens += next.outputTokens;
     usage.cacheReadTokens += next.cacheReadTokens;
     usage.cacheWriteTokens += next.cacheWriteTokens;
+    if (next.costCentsX100 !== undefined) {
+      usage.costCentsX100 = (usage.costCentsX100 ?? 0) + next.costCentsX100;
+    }
     usage.model = next.model;
   };
 

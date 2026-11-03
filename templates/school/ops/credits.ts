@@ -2,7 +2,7 @@
  * Assistant credit, for operators.
  *
  *   pnpm credits:grant --school <id or name> --credits 10000 --ref "GTB-20261103" [--note "..."]
- *   pnpm credits:report [--school <id or name>]
+ *   pnpm credits:report [--school <id or name>] [--month 2026-11 [--invoice 123.45]]
  *   pnpm credits:set-mode --school <id or name> --mode managed|byo
  *
  * Run it on the server, against the deployment's own `DATABASE_URL`. Like
@@ -122,6 +122,49 @@ async function main() {
       console.log(
         "If it saved its own key, that key still wins until it is removed in Settings.",
       );
+    }
+    return;
+  }
+
+  if (command === "report" && arg("month")) {
+    // Reconciliation: what the app thinks the managed schools cost for a month,
+    // to set beside Anthropic's invoice for the managed workspace.
+    const month = arg("month")!;
+    if (!/^\d{4}-\d{2}$/.test(month)) fail("--month looks like 2026-11.");
+    const [y, m] = month.split("-").map(Number);
+    const from = Date.UTC(y, m - 1, 1);
+    const to = Date.UTC(y, m, 1);
+    const rows = await rowsOf<{ org_id: string; total: number | string }>(
+      sql`SELECT t.org_id AS org_id, COALESCE(SUM(t.cost_cents_x100), 0) AS total
+          FROM token_usage t INNER JOIN school_billing b ON b.school_id = t.org_id
+          WHERE t.created_at >= ${from} AND t.created_at < ${to}
+          GROUP BY t.org_id`,
+    );
+    let totalCc = 0;
+    for (const r of rows) {
+      const cc = Number(r.total);
+      totalCc += cc;
+      console.log(
+        `${(await schoolName(r.org_id)).padEnd(31).slice(0, 31)} $${(cc / 10_000).toFixed(2)}`,
+      );
+    }
+    const estimate = totalCc / 10_000; // centicents -> dollars
+    console.log(
+      `\nEstimated provider cost for ${month}: $${estimate.toFixed(2)}`,
+    );
+    const invoice = Number(arg("invoice"));
+    if (Number.isFinite(invoice) && invoice > 0) {
+      const gap = ((invoice - estimate) / invoice) * 100;
+      console.log(
+        `Anthropic invoice: $${invoice.toFixed(2)}. The invoice is ${gap >= 0 ? gap.toFixed(1) + "% above" : (-gap).toFixed(1) + "% below"} the estimate.`,
+      );
+      console.log(
+        Math.abs(gap) > 5
+          ? "More than 5% apart: check the price table in packages/core/src/usage/store.ts, runs recorded without a school or an owner, and the margin."
+          : "Within 5%: the margin covers the difference.",
+      );
+    } else {
+      console.log("Add --invoice <dollars> to compare with the invoice.");
     }
     return;
   }

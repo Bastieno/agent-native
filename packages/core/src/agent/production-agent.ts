@@ -9,6 +9,7 @@ import {
   readDeployCredentialEnv,
   resolveManagedCredential,
 } from "../server/credential-provider.js";
+import { stepCostCenticents } from "../usage/store.js";
 import type { EventHandler as H3EventHandler } from "h3";
 import type {
   ActionTool,
@@ -1085,6 +1086,12 @@ export interface AgentLoopUsage {
   cacheReadTokens: number;
   cacheWriteTokens: number;
   model: string;
+  /**
+   * What the run cost in centicents, added up per model step, because the
+   * price depends on each request's own prompt length. Pass it on to
+   * `recordUsage` as `costCentsX100`.
+   */
+  costCentsX100?: number;
 }
 
 export interface AgentLoopToolCallSummary {
@@ -1647,6 +1654,15 @@ export async function runAgentLoop(
             usage.outputTokens += event.outputTokens;
             usage.cacheReadTokens += event.cacheReadTokens ?? 0;
             usage.cacheWriteTokens += event.cacheWriteTokens ?? 0;
+            usage.costCentsX100 =
+              (usage.costCentsX100 ?? 0) +
+              stepCostCenticents(
+                event.inputTokens,
+                event.outputTokens,
+                model,
+                event.cacheReadTokens ?? 0,
+                event.cacheWriteTokens ?? 0,
+              );
           } else if (event.type === "stop" && event.reason === "error") {
             throw new EngineError(event.error ?? "Engine stream error", {
               errorCode: event.errorCode,
@@ -2742,6 +2758,7 @@ export function createProductionAgentHandler(
                     outputTokens: subUsage.outputTokens,
                     cacheReadTokens: subUsage.cacheReadTokens,
                     cacheWriteTokens: subUsage.cacheWriteTokens,
+                    costCentsX100: subUsage.costCentsX100,
                     model: subUsage.model,
                     label: `custom-agent:${ref.name}`,
                   });
@@ -3002,6 +3019,7 @@ export function createProductionAgentHandler(
               outputTokens: loopUsage.outputTokens,
               cacheReadTokens: loopUsage.cacheReadTokens,
               cacheWriteTokens: loopUsage.cacheWriteTokens,
+              costCentsX100: loopUsage.costCentsX100,
               model: loopUsage.model,
               label: body.usageLabel || "chat",
             });
