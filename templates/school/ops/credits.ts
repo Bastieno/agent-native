@@ -3,7 +3,7 @@
  *
  *   pnpm credits:grant --school <id or name> --credits 10000 --ref "GTB-20261103" [--note "..."]
  *   pnpm credits:report [--school <id or name>] [--month 2026-11 [--invoice 123.45]]
- *   pnpm credits:set-mode --school <id or name> --mode managed|byo
+ *   pnpm credits:set-mode --school <id or name> --mode managed|byo [--remove-key]
  *
  * Run it on the server, against the deployment's own `DATABASE_URL`. Like
  * `provision:school` it is a script on purpose: every action is a tool the
@@ -12,6 +12,7 @@
  */
 import { loadEnv } from "@agent-native/core/scripts";
 import { closeDbExec } from "@agent-native/core/db";
+import { deleteAppSecret, readAppSecretMeta } from "@agent-native/core/secrets";
 import { sql } from "drizzle-orm";
 import {
   creditStatus,
@@ -110,7 +111,7 @@ async function main() {
     const mode = arg("mode");
     if (!ref || (mode !== "managed" && mode !== "byo")) {
       fail(
-        "Usage: pnpm credits:set-mode --school <id or name> --mode managed|byo",
+        "Usage: pnpm credits:set-mode --school <id or name> --mode managed|byo [--remove-key]",
       );
     }
     const school = await findSchool(ref);
@@ -119,9 +120,23 @@ async function main() {
       `${school.name} now uses ${mode === "managed" ? "Ellai's credit" : "its own key"}.`,
     );
     if (mode === "managed") {
-      console.log(
-        "If it saved its own key, that key still wins until it is removed in Settings.",
-      );
+      // A saved key wins over the credit, so the school would keep paying for
+      // the assistant itself while its credit sat unused. Deleting it cannot
+      // be undone, so it is only done when asked for.
+      const ref = {
+        key: "ANTHROPIC_API_KEY",
+        scope: "org" as const,
+        scopeId: school.id,
+      };
+      const saved = await readAppSecretMeta(ref);
+      if (saved && process.argv.includes("--remove-key")) {
+        await deleteAppSecret(ref);
+        console.log("Its saved key was removed.");
+      } else if (saved) {
+        console.warn(
+          `WARNING: ${school.name} has its own key saved, and that key wins: the assistant keeps running on it and none of the credit is used. Remove it with --remove-key (cannot be undone), or the admin can switch in Settings, Assistant.`,
+        );
+      }
     }
     return;
   }
