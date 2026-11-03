@@ -18,6 +18,7 @@ vi.mock("../server/request-context.js", () => ({
 }));
 
 import { getOwnerApiKey } from "./production-agent.js";
+import { setManagedCredentialResolver } from "../server/credential-provider.js";
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -110,5 +111,29 @@ describe("getOwnerApiKey", () => {
         scopeId: "solo:solo@example.com",
       },
     ]);
+  });
+
+  it("falls back to the operator's managed key only when nothing of the org's own exists", async () => {
+    mockGetRequestOrgId.mockReturnValue("org-1");
+    setManagedCredentialResolver(async ({ key, orgId }) =>
+      key === "ANTHROPIC_API_KEY" && orgId === "org-1"
+        ? "sk-ant-managed"
+        : null,
+    );
+    try {
+      await expect(
+        getOwnerApiKey("anthropic", "owner@example.com"),
+      ).resolves.toBe("sk-ant-managed");
+      mockReadAppSecret.mockResolvedValueOnce(null).mockResolvedValueOnce({
+        value: "sk-ant-own",
+        last4: "-own",
+        updatedAt: 1,
+      });
+      await expect(
+        getOwnerApiKey("anthropic", "owner@example.com"),
+      ).resolves.toBe("sk-ant-own");
+    } finally {
+      setManagedCredentialResolver(null);
+    }
   });
 });

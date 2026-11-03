@@ -592,6 +592,43 @@ export const CAPABILITIES: Capability[] = [
     added: "2026-11-03",
   },
   {
+    id: "admin-assistant-credit",
+    roles: ["admin"],
+    group: "Setting up",
+    title: "Check and top up the assistant's credit",
+    summary:
+      "A school on Ellai's credit sees how much is left and tops it up when it runs low. No Anthropic key is needed.",
+    steps: [
+      "Open Settings, then Assistant. The credit left is at the top, with roughly how many staff requests it covers.",
+      "Press Top up, choose a pack, pay as shown, then press I've paid. The credit is added once the payment is seen.",
+      "When the credit is used up the assistant pauses for everyone, with a calm message, and returns when it is topped up.",
+      "To use your own Anthropic key instead, open Use your own Anthropic key instead under the credit.",
+    ],
+    where: { admin: "/admin/settings" },
+    actions: [
+      "get-school-credit",
+      "request-credit-top-up",
+      "switch-assistant-billing",
+    ],
+    starters: [
+      {
+        label: "How much credit is left?",
+        text: "How much assistant credit do we have left, and will it last the term?",
+      },
+    ],
+    keywords: [
+      "credit",
+      "credits",
+      "top up",
+      "top-up",
+      "balance",
+      "pay",
+      "api key",
+      "anthropic",
+    ],
+    added: "2026-11-03",
+  },
+  {
     id: "admin-ai-app",
     roles: ["admin"],
     group: "Your own AI app",

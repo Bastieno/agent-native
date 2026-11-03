@@ -28,6 +28,10 @@ import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useSaveSchoolConfig } from "@/components/timetable/useSaveSchoolConfig";
 import { SchoolUsage } from "@/components/settings/SchoolUsage";
 import {
+  SchoolCredit,
+  useSchoolCredit,
+} from "@/components/settings/SchoolCredit";
+import {
   AGENT_AUDIENCES,
   modelLabel,
   resolveAgentSettings,
@@ -38,8 +42,10 @@ import {
 /** Whether the school has an API key, with a way to add or replace it. */
 function ConnectionRow() {
   const { data: connected, isLoading } = useAssistantConnected();
+  const { data: credit, isLoading: creditLoading } = useSchoolCredit();
   const [editing, setEditing] = useState(false);
-  if (isLoading) return null;
+  // On Ellai's credit the credit card below says all there is to say.
+  if (isLoading || creditLoading || credit?.mode === "managed") return null;
   return (
     <div className="rounded-lg border bg-card p-4">
       <div className="flex items-center justify-between gap-4">
@@ -113,6 +119,7 @@ export function AssistantSettings() {
   return (
     <div className="space-y-4">
       <ConnectionRow />
+      <SchoolCredit />
       <div className="flex items-start justify-between gap-4 rounded-lg border bg-card p-4">
         <div className="space-y-1">
           <Label htmlFor="learner-agent" className="text-sm font-medium">

@@ -337,6 +337,8 @@ export {
   writeBuilderCredentials,
   deleteBuilderCredentials,
   resolveSecret,
+  setManagedCredentialResolver,
+  type ManagedCredentialResolver,
 } from "./credential-provider.js";
 export {
   getBuilderBranchProjectId,

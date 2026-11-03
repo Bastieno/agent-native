@@ -1,6 +1,7 @@
 import { createError, defineEventHandler, getHeader } from "h3";
 import { timingSafeEqual } from "node:crypto";
 import { runDailyNotifications } from "../../../../lib/daily-notifications.js";
+import { settleAllSchools } from "../../../../lib/credits.js";
 
 /**
  * The once-a-day job, called by the host's scheduler (Vercel cron sends
@@ -19,5 +20,11 @@ export default defineEventHandler(async (event) => {
   if (a.length !== b.length || !timingSafeEqual(a, b)) {
     throw createError({ statusCode: 401, statusMessage: "Unauthorized" });
   }
-  return { ok: true, ...(await runDailyNotifications()) };
+  const notifications = await runDailyNotifications();
+  // Settle each school's assistant use into its credit ledger, and warn the
+  // operator of any school running low. A failure here must not hide the rest.
+  const credits = await settleAllSchools().catch((err) => ({
+    error: err instanceof Error ? err.message : String(err),
+  }));
+  return { ok: true, ...notifications, credits };
 });

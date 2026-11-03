@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { writeAppSecret } from "@agent-native/core/secrets";
 import { z } from "zod";
+import { getBilling, setBillingMode } from "../server/lib/credits.js";
 
 export default defineAction({
   description:
@@ -27,6 +28,11 @@ export default defineAction({
       scopeId: orgId,
       description: "School assistant key",
     });
+    // A school that was on Ellai's credit now pays for its own runs: stop
+    // charging it, and keep what credit is left for if it comes back.
+    if (await getBilling(orgId)) {
+      await setBillingMode(orgId, "byo", "school key saved");
+    }
     return { saved: true };
   },
 });

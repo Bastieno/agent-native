@@ -20,6 +20,8 @@ import {
   type AgentSettings,
 } from "../../shared/agent-settings.js";
 import { rowOf, runSql } from "./raw-sql.js";
+import { creditsRunOut } from "./credits.js";
+import { creditsOutMessage } from "../../shared/credits.js";
 
 /**
  * Whether this person may talk to the assistant right now, and on which model.
@@ -31,7 +33,13 @@ import { rowOf, runSql } from "./raw-sql.js";
  * never disagree.
  */
 
-export type AgentBlock = "none" | "off" | "sitting" | "limit" | "school-limit";
+export type AgentBlock =
+  | "none"
+  | "off"
+  | "sitting"
+  | "credits"
+  | "limit"
+  | "school-limit";
 
 export interface AgentAccess {
   audience: AgentAudience;
@@ -301,6 +309,16 @@ export async function agentAccessFor(
       };
     }
   }
+  // A school on Ellai's credit that has used it all gets no model run. This
+  // comes after being off or sitting a paper, which are the more specific
+  // reasons, and before the day's limits, which would only hide it.
+  if (await creditsRunOut(who.schoolId)) {
+    return {
+      ...base,
+      blocked: "credits",
+      message: creditsOutMessage(audience),
+    };
+  }
   // The school's total sits above each person's own limit.
   const schoolLimit = settings ? settings.dailySchoolLimit : null;
   if (
@@ -354,7 +372,9 @@ export async function gateAgentMessage(details: {
     if (
       !(
         details.internalContinuation &&
-        (access.blocked === "limit" || access.blocked === "school-limit")
+        (access.blocked === "limit" ||
+          access.blocked === "school-limit" ||
+          access.blocked === "credits")
       )
     ) {
       return { reply: access.message };

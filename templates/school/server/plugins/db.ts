@@ -1036,6 +1036,25 @@ const migrations = runMigrations(
       version: 111,
       sql: `CREATE INDEX IF NOT EXISTS pilot_bookings_start_idx ON pilot_bookings (start_time)`,
     },
+    // How a school pays for the assistant: its own key, or Ellai's credit.
+    // A school with no row is on its own key. Additive only.
+    {
+      version: 112,
+      sql: `CREATE TABLE IF NOT EXISTS school_billing (school_id TEXT PRIMARY KEY, mode TEXT NOT NULL, margin_bp BIGINT, charged_to TEXT, low_notified_at TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL)`,
+    },
+    // Every credit given or used, append-only: the audit trail of grants.
+    {
+      version: 113,
+      sql: `CREATE TABLE IF NOT EXISTS school_credit_ledger (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, kind TEXT NOT NULL, amount_cc BIGINT NOT NULL, provider_cost_cc BIGINT, margin_bp BIGINT, usage_from TEXT, usage_to TEXT, payment_ref TEXT, note TEXT, created_by TEXT NOT NULL, created_at TEXT NOT NULL)`,
+    },
+    {
+      version: 114,
+      sql: `CREATE INDEX IF NOT EXISTS school_credit_ledger_school_idx ON school_credit_ledger (school_id, created_at)`,
+    },
+    {
+      version: 115,
+      sql: `CREATE TABLE IF NOT EXISTS credit_top_up_requests (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, requested_by TEXT NOT NULL, credits BIGINT, reference TEXT, note TEXT, status TEXT NOT NULL, created_at TEXT NOT NULL)`,
+    },
   ],
   { table: "school_migrations" },
 );

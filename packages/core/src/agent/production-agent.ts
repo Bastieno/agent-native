@@ -7,6 +7,7 @@ import {
 import {
   isDeployCredentialFallbackAllowed,
   readDeployCredentialEnv,
+  resolveManagedCredential,
 } from "../server/credential-provider.js";
 import type { EventHandler as H3EventHandler } from "h3";
 import type {
@@ -183,12 +184,19 @@ export async function getOwnerApiKey(
       const legacy = await getSetting(`user-anthropic-api-key:${ownerEmail}`);
       const legacyKey =
         legacy && typeof legacy.key === "string" ? legacy.key.trim() : "";
-      return legacyKey || undefined;
+      if (legacyKey) return legacyKey;
     }
-    return undefined;
   } catch {
-    return undefined;
+    // Fall through to the operator's managed credential.
   }
+  // Nothing of the person's or their org's own: an operator may supply one.
+  return (
+    (await resolveManagedCredential(
+      secretKey,
+      ownerEmail,
+      getRequestOrgId(),
+    )) ?? undefined
+  );
 }
 
 /**

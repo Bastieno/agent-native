@@ -1,8 +1,10 @@
 /**
  * Create a school for its head to set up.
  *
- *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"] [--slug greenvalley]
+ *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"] [--slug greenvalley] [--byo]
  *
+ * The school starts on Ellai's credit with a starter grant, so its head has an
+ * assistant with no key to find. `--byo` leaves it on its own key instead.
  * `--slug` gives the school its own address, `<slug>.<SCHOOL_BASE_DOMAIN>`
  * (ellai.dev unless set). The DNS record and the Vercel domain are separate
  * steps; see docs/school-domains.md.
@@ -38,6 +40,8 @@ import {
   fromWithName,
 } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
+import { grantCredit, setBillingMode } from "../server/lib/credits.js";
+import { STARTER_CREDITS, creditsToCc } from "../shared/credits.js";
 import {
   assignHost,
   inviteLink,
@@ -107,6 +111,16 @@ async function main() {
     },
   ] as any);
 
+  if (!process.argv.includes("--byo")) {
+    await setBillingMode(org.id, "managed", "provision");
+    await grantCredit({
+      schoolId: org.id,
+      amountCc: creditsToCc(STARTER_CREDITS),
+      note: "Starter credit",
+      by: "provision",
+    });
+  }
+
   let appUrl = getAppProductionUrl();
   if (slug) {
     const base = process.env.SCHOOL_BASE_DOMAIN?.trim() || "ellai.dev";
@@ -152,6 +166,11 @@ async function main() {
       : `No email was sent. Tell ${headEmail} to create an account at ${link} with that address.`,
   );
   console.log(`To set up from an MCP client, connect it to ${mcpUrl}.`);
+  if (!process.argv.includes("--byo")) {
+    console.log(
+      `It starts with ${STARTER_CREDITS.toLocaleString("en")} credits. The deployment needs ELLAI_MANAGED_ANTHROPIC_KEY set for the assistant to run on them.`,
+    );
+  }
 }
 
 main()

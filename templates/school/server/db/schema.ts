@@ -238,6 +238,54 @@ export const agentMessageUsage = table("agent_message_usage", {
   updatedAt: text("updated_at").notNull(),
 });
 
+/**
+ * How a school pays for the assistant. One row per school, written only by
+ * operator code and the school's own "use my key / use Ellai's credit" switch;
+ * a school with no row is on its own key. `chargedTo` (ms since epoch, as
+ * text) is how far `token_usage` has already been settled into the ledger.
+ */
+export const schoolBilling = table("school_billing", {
+  schoolId: text("school_id").primaryKey(),
+  mode: text("mode").notNull(), // managed | byo
+  marginBp: integer("margin_bp"), // null: the default margin
+  chargedTo: text("charged_to"),
+  lowNotifiedAt: text("low_notified_at"),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+});
+
+/**
+ * Every credit a school was given or used, append-only: rows are inserted and
+ * never changed or deleted, so it is the audit trail. Amounts are retail
+ * centicents (see shared/credits.ts), positive for a grant, negative for use.
+ */
+export const schoolCreditLedger = table("school_credit_ledger", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  kind: text("kind").notNull(), // grant | debit | adjustment | refund
+  amountCc: integer("amount_cc").notNull(),
+  providerCostCc: integer("provider_cost_cc"),
+  marginBp: integer("margin_bp"),
+  usageFrom: text("usage_from"),
+  usageTo: text("usage_to"),
+  paymentRef: text("payment_ref"),
+  note: text("note"),
+  createdBy: text("created_by").notNull(), // operator email, a head's, or "system"
+  createdAt: text("created_at").notNull(),
+});
+
+/** "We've paid": a head telling the operator a top-up is on its way. */
+export const creditTopUpRequests = table("credit_top_up_requests", {
+  id: text("id").primaryKey(),
+  schoolId: text("school_id").notNull(),
+  requestedBy: text("requested_by").notNull(),
+  credits: integer("credits"),
+  reference: text("reference"),
+  note: text("note"),
+  status: text("status").notNull(), // pending | granted
+  createdAt: text("created_at").notNull(),
+});
+
 export const timetableProposals = table("timetable_proposals", {
   id: text("id").primaryKey(),
   schoolId: text("school_id").notNull(),
