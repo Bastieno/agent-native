@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/select";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useSaveSchoolConfig } from "@/components/timetable/useSaveSchoolConfig";
+import { SchoolUsage } from "@/components/settings/SchoolUsage";
 import {
   AGENT_AUDIENCES,
   modelLabel,
@@ -90,6 +91,7 @@ export function AssistantSettings() {
       : choices;
   const cheapest = choices[0];
   const [advanced, setAdvanced] = useState(false);
+  const [usageOpen, setUsageOpen] = useState(false);
 
   const { data: yearGroups = [] } = useQuery<
     Array<{ id: string; name: string }>
@@ -320,6 +322,20 @@ export function AssistantSettings() {
               }
             />
           </section>
+        </CollapsibleContent>
+      </Collapsible>
+
+      <Collapsible open={usageOpen} onOpenChange={setUsageOpen}>
+        <CollapsibleTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+          <IconChevronDown
+            size={16}
+            className={usageOpen ? "rotate-180 transition" : "transition"}
+          />
+          Usage
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-3">
+          {/* Mounted only when open, so the figures load only when asked for. */}
+          {usageOpen ? <SchoolUsage /> : null}
         </CollapsibleContent>
       </Collapsible>
     </div>

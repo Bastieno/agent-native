@@ -8,6 +8,7 @@
  * Cost is stored as "centicents" (1/100th of a cent) for integer precision.
  */
 import { getDbExec, intType, isPostgres } from "../db/client.js";
+import { getRequestOrgId } from "../server/request-context.js";
 
 /**
  * Per-million-token pricing in cents. Cache read is typically ~10% of
@@ -117,6 +118,11 @@ export interface UsageRecord {
   label?: string;
   /** Optional template/app name (e.g. "mail"). Falls back to AGENT_APP / APP_NAME env. */
   app?: string;
+  /**
+   * The organization the call was made in. Falls back to the request's org,
+   * so someone in two orgs has each org's spend kept apart.
+   */
+  orgId?: string | null;
 }
 
 let _initPromise: Promise<void> | undefined;
@@ -137,6 +143,7 @@ async function ensureUsageTable(): Promise<void> {
           model TEXT NOT NULL DEFAULT '',
           label TEXT NOT NULL DEFAULT 'chat',
           app TEXT NOT NULL DEFAULT '',
+          org_id TEXT,
           created_at ${intType()} NOT NULL
         )
       `);
@@ -149,6 +156,9 @@ async function ensureUsageTable(): Promise<void> {
         ["cache_write_tokens", `${intType()} NOT NULL DEFAULT 0`],
         ["label", `TEXT NOT NULL DEFAULT 'chat'`],
         ["app", `TEXT NOT NULL DEFAULT ''`],
+        // Rows from before this column have no org: they count towards the
+        // person's own total but no organization's.
+        ["org_id", `TEXT`],
       ];
       for (const [col, def] of additions) {
         try {
@@ -169,6 +179,11 @@ async function ensureUsageTable(): Promise<void> {
       try {
         await client.execute(
           `CREATE INDEX IF NOT EXISTS idx_token_usage_owner_created ON token_usage (owner_email, created_at)`,
+        );
+      } catch {}
+      try {
+        await client.execute(
+          `CREATE INDEX IF NOT EXISTS idx_token_usage_org_created ON token_usage (org_id, created_at)`,
         );
       } catch {}
     })();
@@ -235,6 +250,7 @@ export async function recordUsage(
     model: modelName,
     label,
     app,
+    orgId,
   } = record;
 
   // Skip no-op writes (e.g. a stream aborted before any tokens flowed)
@@ -253,10 +269,11 @@ export async function recordUsage(
   const resolvedApp =
     app ?? process.env.AGENT_APP ?? process.env.APP_NAME ?? "";
   const resolvedLabel = label ?? "chat";
+  const resolvedOrg = orgId === undefined ? (getRequestOrgId() ?? null) : orgId;
   await client.execute({
     sql: `INSERT INTO token_usage
-      (id, owner_email, input_tokens, output_tokens, cache_read_tokens, cache_write_tokens, cost_cents_x100, model, label, app, created_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      (id, owner_email, input_tokens, output_tokens, cache_read_tokens, cache_write_tokens, cost_cents_x100, model, label, app, org_id, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       id,
       ownerEmail,
@@ -268,6 +285,7 @@ export async function recordUsage(
       modelName,
       resolvedLabel,
       resolvedApp,
+      resolvedOrg,
       Date.now(),
     ],
   });
@@ -288,7 +306,10 @@ export async function getUserUsageCents(ownerEmail: string): Promise<number> {
 // ─── Admin / UI queries ─────────────────────────────────────────────────
 
 export interface UsageSummaryOptions {
-  ownerEmail: string;
+  /** One person's calls. With `orgId` too, their calls in that org only. */
+  ownerEmail?: string;
+  /** One organization's calls, everyone's. With `ownerEmail`, that person's. */
+  orgId?: string;
   /** Inclusive lower bound (ms since epoch). Defaults to 30 days ago. */
   sinceMs?: number;
 }
@@ -312,6 +333,7 @@ export interface DailyBucket {
 
 export interface UsageRecentEntry {
   id: number;
+  ownerEmail: string;
   createdAt: number;
   label: string;
   app: string;
@@ -335,6 +357,8 @@ export interface UsageSummary {
   byLabel: UsageBucket[];
   byModel: UsageBucket[];
   byApp: UsageBucket[];
+  /** Spend per person, highest first. */
+  byOwner: UsageBucket[];
   byDay: DailyBucket[];
   recent: UsageRecentEntry[];
 }
@@ -343,7 +367,11 @@ const DAY_MS = 86_400_000;
 
 /**
  * Produce an aggregated spend view for the Usage admin panel.
- * Scoped to the passed owner email; the UI always passes the session user.
+ *
+ * Scoped to a person, an organization, or a person within one. At least one
+ * is required: an unscoped summary would be every user's spend. Callers
+ * decide who may see an organization's summary (its admins, typically); this
+ * only runs the query.
  */
 export async function getUsageSummary(
   options: UsageSummaryOptions,
@@ -351,6 +379,20 @@ export async function getUsageSummary(
   await ensureUsageTable();
   const client = getDbExec();
   const sinceMs = options.sinceMs ?? Date.now() - 30 * DAY_MS;
+  if (!options.ownerEmail && !options.orgId) {
+    throw new Error("getUsageSummary needs an ownerEmail or an orgId");
+  }
+  const conds = ["created_at >= ?"];
+  const scopeArgs: Array<string | number> = [sinceMs];
+  if (options.ownerEmail) {
+    conds.push("owner_email = ?");
+    scopeArgs.push(options.ownerEmail);
+  }
+  if (options.orgId) {
+    conds.push("org_id = ?");
+    scopeArgs.push(options.orgId);
+  }
+  const where = conds.join(" AND ");
 
   const totalRow = await client.execute({
     sql: `SELECT
@@ -360,8 +402,8 @@ export async function getUsageSummary(
       COALESCE(SUM(output_tokens), 0) AS out_tok,
       COALESCE(SUM(cache_read_tokens), 0) AS cr_tok,
       COALESCE(SUM(cache_write_tokens), 0) AS cw_tok
-      FROM token_usage WHERE owner_email = ? AND created_at >= ?`,
-    args: [options.ownerEmail, sinceMs],
+      FROM token_usage WHERE ${where}`,
+    args: scopeArgs,
   });
   const t = (totalRow.rows[0] ?? {}) as Record<string, number | null>;
 
@@ -374,10 +416,10 @@ export async function getUsageSummary(
         COALESCE(SUM(cache_read_tokens), 0) AS cr_tok,
         COALESCE(SUM(cache_write_tokens), 0) AS cw_tok
       FROM token_usage
-      WHERE owner_email = ? AND created_at >= ?
+      WHERE ${where}
       GROUP BY ${col}
       ORDER BY cents DESC`,
-    args: [options.ownerEmail, sinceMs],
+    args: scopeArgs,
   });
 
   const mapBuckets = (rows: unknown[]): UsageBucket[] =>
@@ -394,10 +436,11 @@ export async function getUsageSummary(
       };
     });
 
-  const [byLabelR, byModelR, byAppR] = await Promise.all([
+  const [byLabelR, byModelR, byAppR, byOwnerR] = await Promise.all([
     client.execute(bucketSql("label")),
     client.execute(bucketSql("model")),
     client.execute(bucketSql("app")),
+    client.execute(bucketSql("owner_email")),
   ]);
 
   // By-day aggregation — done in JS so we don't depend on dialect-specific
@@ -405,8 +448,8 @@ export async function getUsageSummary(
   // for a 30-day window; if this grows, swap for a dialect-aware query.
   const dayRows = await client.execute({
     sql: `SELECT created_at, cost_cents_x100 FROM token_usage
-      WHERE owner_email = ? AND created_at >= ?`,
-    args: [options.ownerEmail, sinceMs],
+      WHERE ${where}`,
+    args: scopeArgs,
   });
   const dayMap = new Map<string, { cents: number; calls: number }>();
   for (const row of dayRows.rows as Array<Record<string, number>>) {
@@ -425,19 +468,20 @@ export async function getUsageSummary(
     .sort((a, b) => a.date.localeCompare(b.date));
 
   const recentRows = await client.execute({
-    sql: `SELECT id, created_at, label, app, model,
+    sql: `SELECT id, owner_email, created_at, label, app, model,
         input_tokens, output_tokens, cache_read_tokens, cache_write_tokens,
         cost_cents_x100
       FROM token_usage
-      WHERE owner_email = ?
+      WHERE ${where}
       ORDER BY created_at DESC
       LIMIT 50`,
-    args: [options.ownerEmail],
+    args: scopeArgs,
   });
   const recent: UsageRecentEntry[] = (
     recentRows.rows as Array<Record<string, number | string | null>>
   ).map((row) => ({
     id: Number(row.id),
+    ownerEmail: String(row.owner_email ?? ""),
     createdAt: Number(row.created_at),
     label: String(row.label ?? "chat"),
     app: String(row.app ?? ""),
@@ -461,6 +505,7 @@ export async function getUsageSummary(
     byLabel: mapBuckets(byLabelR.rows),
     byModel: mapBuckets(byModelR.rows),
     byApp: mapBuckets(byAppR.rows),
+    byOwner: mapBuckets(byOwnerR.rows),
     byDay,
     recent,
   };

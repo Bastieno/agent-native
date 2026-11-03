@@ -560,6 +560,38 @@ export const CAPABILITIES: Capability[] = [
     added: "2026-10-05",
   },
   {
+    id: "admin-assistant-usage",
+    roles: ["admin"],
+    group: "Setting up",
+    title: "See what the assistant costs",
+    summary:
+      "The school's estimated spend on the assistant, by role and by person, with who uses it most.",
+    steps: [
+      "Open Settings, then Assistant, then Usage.",
+      "Pick 7, 30 or 90 days. Learners, teachers and admins are shown apart, then the people who used it most.",
+      "Or ask the assistant who uses it most, or what learners cost this month.",
+      "Figures are estimates from published model prices; the provider's bill is the final word.",
+    ],
+    where: { admin: "/admin/settings" },
+    actions: ["get-school-usage"],
+    starters: [
+      {
+        label: "Who uses it most?",
+        text: "Who used the assistant most in the last 30 days, and what did it cost?",
+      },
+    ],
+    keywords: [
+      "usage",
+      "cost",
+      "spend",
+      "tokens",
+      "bill",
+      "who uses",
+      "credits",
+    ],
+    added: "2026-11-03",
+  },
+  {
     id: "admin-ai-app",
     roles: ["admin"],
     group: "Your own AI app",

@@ -219,6 +219,7 @@ const ADMIN_READING = [
   "get-student-performance",
   "list-announcements",
   "create-announcement",
+  "get-school-usage",
 ];
 
 /** What only a head may look into: one teacher, and one class in depth. */

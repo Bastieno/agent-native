@@ -126,6 +126,9 @@ export default function AdminLayout() {
       // enforces it, so a picker here would offer a choice it cannot honour.
       // Someone who needs a stronger model asks the admin.
       showModelSelector={false}
+      // The same holds for the app's default model: every school turn runs on
+      // the model its role is set to, so a default here would never be used.
+      hiddenSettingsSections={["app-models"]}
       // Side by side only on a large desktop; below that the panel overlays
       // the page instead of squeezing navigation + content + chat into one row.
       overlayBreakpointPx={1279}

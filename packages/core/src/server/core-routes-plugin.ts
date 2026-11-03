@@ -2119,9 +2119,11 @@ export function createCoreRoutesPlugin(
     );
 
     // ─── Usage & cost summary ────────────────────────────────────────
-    // GET /_agent-native/usage?sinceDays=30
+    // GET /_agent-native/usage?sinceDays=30[&scope=all]
     // Returns spend broken down by label, model, app, and day for the
     // current user. Powers the Usage section in the agent settings panel.
+    // Within an org it is the user's spend in that org only, so someone in
+    // two orgs sees each one's apart; `scope=all` adds up every org.
     getH3App(nitroApp).use(
       `${P}/usage`,
       defineEventHandler(async (event: H3Event) => {
@@ -2130,10 +2132,18 @@ export function createCoreRoutesPlugin(
           setResponseStatus(event, 401);
           return { error: "unauthorized" };
         }
-        const sinceDaysParam = new URL(
+        const params = new URL(
           `${event.url?.pathname || "/"}${event.url?.search || ""}`,
           "http://x",
-        ).searchParams.get("sinceDays");
+        ).searchParams;
+        const sinceDaysParam = params.get("sinceDays");
+        // The org the request is in, as the agent run resolves it, so the
+        // panel and the recorded rows agree on which org a call belongs to.
+        const currentOrg =
+          (await getOrgContext(event).catch(() => null))?.orgId ??
+          session.orgId ??
+          undefined;
+        const orgId = params.get("scope") === "all" ? undefined : currentOrg;
         const sinceDays = Math.max(
           1,
           Math.min(365, Number(sinceDaysParam) || 30),
@@ -2143,6 +2153,7 @@ export function createCoreRoutesPlugin(
         const [summary, engineName] = await Promise.all([
           getUsageSummary({
             ownerEmail: session.email,
+            orgId,
             sinceMs: Date.now() - sinceDays * 86_400_000,
           }),
           detectUsageEngineName(event, session.email),
@@ -2150,6 +2161,10 @@ export function createCoreRoutesPlugin(
         return {
           ...summary,
           billing: usageBillingForEngine(engineName),
+          /** True when only the current org's spend is counted. */
+          orgScoped: !!orgId,
+          /** Whether there is an org to narrow to, so the UI can offer it. */
+          inOrg: !!currentOrg,
         };
       }),
     );

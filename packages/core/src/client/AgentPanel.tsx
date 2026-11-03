@@ -365,6 +365,12 @@ export interface AgentPanelProps extends Omit<
   showWorkspace?: boolean;
   /** Show the settings gear (engine, keys, limits). Default: true. */
   showSettings?: boolean;
+  /**
+   * Settings sections to leave out, by id (for example `"app-models"` when
+   * the app picks the model itself on the server, so the default would never
+   * be used).
+   */
+  hiddenSettingsSections?: string[];
   /** CSS class for the outer container */
   className?: string;
   /** Called when the user clicks the collapse button. If provided, a collapse button appears in the header. */
@@ -506,6 +512,7 @@ function AgentPanelInner({
   codeAccess,
   showWorkspace = true,
   showSettings = true,
+  hiddenSettingsSections,
   ...assistantChatProps
 }: AgentPanelProps) {
   const mounted = useClientOnly();
@@ -1502,6 +1509,7 @@ function AgentPanelInner({
               devAppUrl={devAppUrl}
               initialSection={settingsSection.section}
               sectionRequestKey={settingsSection.requestKey}
+              hiddenSections={hiddenSettingsSections}
             />
           </Suspense>
         </div>
@@ -2058,6 +2066,12 @@ export interface AgentSidebarProps {
   showWorkspace?: boolean;
   /** Show the settings gear (engine, keys, limits). Default: true. */
   showSettings?: boolean;
+  /**
+   * Settings sections to leave out, by id (for example `"app-models"` when
+   * the app picks the model itself on the server, so the default would never
+   * be used).
+   */
+  hiddenSettingsSections?: string[];
 }
 
 /**
@@ -2081,6 +2095,7 @@ export function AgentSidebar({
   showModelSelector,
   showWorkspace,
   showSettings,
+  hiddenSettingsSections,
 }: AgentSidebarProps) {
   const initialWidth = defaultSidebarWidth ?? sidebarWidth ?? 380;
   const [open, setOpen] = useState(() =>
@@ -2545,6 +2560,7 @@ export function AgentSidebar({
           showModelSelector={showModelSelector}
           showWorkspace={showWorkspace}
           showSettings={showSettings}
+          hiddenSettingsSections={hiddenSettingsSections}
         />
       </div>
       {showResizeHandle && isLeft && (

@@ -54,6 +54,8 @@ interface UsageSummary {
   byApp: UsageBucket[];
   byDay: DailyBucket[];
   recent: UsageRecentEntry[];
+  orgScoped?: boolean;
+  inOrg?: boolean;
 }
 
 const RANGES = [
@@ -193,15 +195,19 @@ export function UsageSection() {
   const [days, setDays] = useState(30);
   const [data, setData] = useState<UsageSummary | null>(null);
   const [loading, setLoading] = useState(false);
+  // Someone in two organizations sees one at a time unless they ask for all.
+  const [allOrgs, setAllOrgs] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const billing = data?.billing ?? USD_BILLING;
 
-  const load = async (rangeDays: number) => {
+  const load = async (rangeDays: number, everyOrg = allOrgs) => {
     setLoading(true);
     setError(null);
     try {
       const res = await fetch(
-        agentNativePath(`/_agent-native/usage?sinceDays=${rangeDays}`),
+        agentNativePath(
+          `/_agent-native/usage?sinceDays=${rangeDays}${everyOrg ? "&scope=all" : ""}`,
+        ),
       );
       if (!res.ok) {
         throw new Error(`Failed (${res.status})`);
@@ -216,8 +222,8 @@ export function UsageSection() {
   };
 
   useEffect(() => {
-    load(days);
-  }, [days]);
+    load(days, allOrgs);
+  }, [days, allOrgs]);
 
   return (
     <div className="space-y-3">
@@ -250,6 +256,20 @@ export function UsageSection() {
           )}
         </button>
       </div>
+
+      {data?.inOrg && (
+        <p className="text-[10px] text-muted-foreground">
+          {allOrgs
+            ? "Across all your organizations. "
+            : "In this organization. "}
+          <button
+            onClick={() => setAllOrgs((v) => !v)}
+            className="underline underline-offset-2 hover:text-foreground"
+          >
+            {allOrgs ? "Show this one only" : "Show all"}
+          </button>
+        </p>
+      )}
 
       {error && <p className="text-[10px] text-red-500">{error}</p>}
 
