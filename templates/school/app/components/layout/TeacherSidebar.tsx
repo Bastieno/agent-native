@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import { useRememberedSearch } from "@/lib/remembered-address";
 import {
   IconBook,
+  IconCalendarWeek,
   IconChartBar,
   IconLayoutDashboard,
   IconLogout,
@@ -27,6 +28,7 @@ const navItems = [
     icon: IconLayoutDashboard,
     end: true,
   },
+  { href: "/teacher/week", label: "My Week", icon: IconCalendarWeek },
   { href: "/teacher/classes", label: "My Classes", icon: IconSchool },
   // What they are meant to be teaching — and, for the subjects they teach,
   // where they can help draft it.

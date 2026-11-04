@@ -64,6 +64,8 @@ export interface TeacherNav {
   role: "teacher";
   view:
     | "dashboard"
+    // Their own timetable.
+    | "week"
     | "classes"
     | "class"
     | "unit"
