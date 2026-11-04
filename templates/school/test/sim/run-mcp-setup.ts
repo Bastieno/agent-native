@@ -81,6 +81,7 @@ async function provisionedHead(tag: string): Promise<Head> {
       headEmail,
       "--headName",
       "Mrs Ada Okafor",
+      "--no-address",
     ],
     {
       encoding: "utf8",

@@ -1,11 +1,12 @@
 /**
  * Create a school for its head to set up.
  *
- *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"] [--slug greenvalley] [--byo]
+ *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"] --slug greenvalley [--byo]
  *
  * The school starts on Ellai's credit with a starter grant, so its head has an
  * assistant with no key to find. `--byo` leaves it on its own key instead.
- * `--slug` gives the school its own address, `<slug>.<SCHOOL_BASE_DOMAIN>`
+ * `--slug` is required: it gives the school its own address,
+ * `<slug>.<SCHOOL_BASE_DOMAIN>`
  * (ellai.dev unless set). The DNS record and the Vercel domain are separate
  * steps; see docs/school-domains.md.
  *
@@ -74,6 +75,13 @@ async function main() {
   if (slug) {
     const problem = slugProblem(slug);
     if (problem) fail(`--slug: ${problem}`);
+  } else if (!process.argv.includes("--no-address")) {
+    // The shared address (ellai.dev) has no sign-in page for a school, and a
+    // school without its own address would send its invitations there.
+    // --no-address is for local test schools.
+    fail(
+      "--slug is required: it is the school's own address (<slug>.ellai.dev). Use --no-address only for a local test school.",
+    );
   }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(headEmail)) {
     fail(`"${headEmail}" is not an email address.`);

@@ -57,6 +57,7 @@ async function main() {
     name,
     "--headEmail",
     headEmail,
+    "--no-address",
   ]);
   const orgId = /\(([^)]+)\) with /.exec(out)?.[1];
   if (!orgId) throw new Error(`could not read the school id from: ${out}`);

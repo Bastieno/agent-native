@@ -52,12 +52,6 @@ export function SiteHeader({
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Wordmark />
         <nav className="flex items-center gap-1 sm:gap-3">
-          <a
-            href="/login"
-            className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
-          >
-            Sign in
-          </a>
           <BookCall
             calLink={calLink}
             edition={edition}
@@ -76,9 +70,6 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <Wordmark className="text-foreground" />
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
-          <a href="/login" className="hover:text-foreground">
-            Sign in
-          </a>
           <a href="/privacy" className="hover:text-foreground">
             Privacy
           </a>

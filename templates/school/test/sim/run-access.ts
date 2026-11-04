@@ -44,7 +44,15 @@ function provision(label: string): {
   const head = `head.${label.toLowerCase()}.${run}@access-sim.test`;
   const result = spawnSync(
     "npx",
-    ["tsx", "ops/provision-school.ts", "--name", name, "--headEmail", head],
+    [
+      "tsx",
+      "ops/provision-school.ts",
+      "--name",
+      name,
+      "--headEmail",
+      head,
+      "--no-address",
+    ],
     {
       encoding: "utf8",
       env: {
