@@ -1,3 +1,5 @@
+import { and, inArray } from "drizzle-orm";
+import { getDb, schema } from "../db/index.js";
 import { calendarPositionFor } from "./calendar-position.js";
 import type { CalendarPosition } from "../../shared/calendar-position.js";
 import {
@@ -30,6 +32,11 @@ export interface MyWeekLesson {
   doubleWithNext: boolean;
   /** The school's own name for this lesson; null for none. */
   lessonLabel: string | null;
+  /**
+   * The lesson note written for this class on this day: staff only, and left
+   * out for a learner, who never sees whether one exists. Null is "none yet".
+   */
+  note?: { id: string; status: string } | null;
 }
 
 export interface MyWeek {
@@ -179,6 +186,36 @@ export async function getMyWeek(
   for (const [first, second] of validPairs(week, mine).values()) {
     secondSlot.set(first.scheduleId, placementSlot(week, second)?.number);
   }
+  // Staff see which of this week's lessons have a note written. A note is
+  // found by class and date, as the dashboard's "Today" finds it.
+  const dayDate = (weekday: number) => {
+    const base = new Date(`${date ?? today}T12:00:00Z`);
+    base.setUTCDate(base.getUTCDate() + (weekday - now.weekday));
+    return base.toISOString().slice(0, 10);
+  };
+  const noteFor = new Map<string, { id: string; status: string }>();
+  if (role !== "student" && mine.length > 0) {
+    const dates = [...new Set(week.days.map((d) => dayDate(d.day)))];
+    const classIds = [...new Set(mine.map((p) => p.classId))];
+    const notes = await getDb()
+      .select({
+        id: schema.lessonNotes.id,
+        classId: schema.lessonNotes.classId,
+        status: schema.lessonNotes.status,
+        lessonDate: schema.lessonNotes.lessonDate,
+      })
+      .from(schema.lessonNotes)
+      .where(
+        and(
+          inArray(schema.lessonNotes.classId, classIds),
+          inArray(schema.lessonNotes.lessonDate, dates),
+        ),
+      );
+    for (const n of notes) {
+      const key = `${n.classId}|${n.lessonDate}`;
+      if (!noteFor.has(key)) noteFor.set(key, { id: n.id, status: n.status });
+    }
+  }
   const days = [...week.days]
     .sort((a, b) => a.day - b.day)
     .map((d) => {
@@ -212,6 +249,11 @@ export async function getMyWeek(
                 secondSlot.has(p.scheduleId) &&
                 secondSlot.get(p.scheduleId) === slots[at + 1]?.number,
               lessonLabel: p.lessonLabel,
+              ...(role !== "student"
+                ? {
+                    note: noteFor.get(`${p.classId}|${dayDate(d.day)}`) ?? null,
+                  }
+                : {}),
             });
           }
           lessons.sort((a, b) => a.className.localeCompare(b.className));

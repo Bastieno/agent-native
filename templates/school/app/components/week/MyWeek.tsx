@@ -54,6 +54,23 @@ type WeekRole = "student" | "teacher";
 const subjectOf = (l: MyWeekLesson, role: WeekRole) =>
   role === "teacher" ? l.className : l.subjectName || l.className;
 
+/** One line on a teacher's lesson: is there a note for it yet? */
+function NoteMark({ note }: { note: MyWeekLesson["note"] }) {
+  if (!note) {
+    return (
+      <p className="truncate text-xs text-muted-foreground">No lesson note</p>
+    );
+  }
+  return (
+    <Link
+      to={`/teacher/lessons/${note.id}`}
+      className="block truncate text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+    >
+      {note.status === "finalized" ? "Lesson note ready" : "Lesson note draft"}
+    </Link>
+  );
+}
+
 function Lessons({
   period,
   range,
@@ -80,6 +97,9 @@ function Lessons({
             </p>
             {lesson.lessonLabel ? (
               <p className="truncate text-xs">{lesson.lessonLabel}</p>
+            ) : null}
+            {role === "teacher" && lesson.note !== undefined ? (
+              <NoteMark note={lesson.note} />
             ) : null}
             {role === "student" && lesson.teacherName ? (
               <p className="truncate text-xs text-muted-foreground">
