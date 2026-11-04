@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { IconChevronDown, IconCopy } from "@tabler/icons-react";
 import { toast } from "sonner";
@@ -12,6 +12,16 @@ import {
 } from "@/components/settings/AssistantKey";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import {
   Collapsible,
   CollapsibleContent,
@@ -378,6 +388,7 @@ export function McpAddress() {
           </a>
         </Button>
       </div>
+      <ConnectedApps />
       <div className="space-y-1">
         <Label className="text-xs">Or paste this address</Label>
         <div className="flex gap-2">
@@ -398,6 +409,114 @@ export function McpAddress() {
       </div>
     </div>
   );
+}
+
+/**
+ * The AI apps that can act as someone at this school right now. Disconnecting
+ * is the only way to take one back: the app is never told when its owner
+ * deletes it on their side, so without this a connection outlives the person
+ * who thought they had removed it. An admin sees everyone's.
+ */
+function ConnectedApps() {
+  const qc = useQueryClient();
+  const [target, setTarget] = useState<ConnectedApp | null>(null);
+  const { data } = useQuery<{ apps: ConnectedApp[] }>({
+    queryKey: ["connected-apps"],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath("/_agent-native/actions/list-connected-apps"),
+      );
+      if (!res.ok) throw new Error("Could not load connected apps");
+      return res.json();
+    },
+  });
+  const apps = data?.apps ?? [];
+
+  async function disconnect() {
+    const app = target;
+    if (!app) return;
+    setTarget(null);
+    // Optimistic: the row goes at once, and comes back if the server refuses.
+    qc.setQueryData<{ apps: ConnectedApp[] }>(["connected-apps"], (old) => ({
+      apps: (old?.apps ?? []).filter(
+        (a) =>
+          !(a.clientId === app.clientId && a.ownerEmail === app.ownerEmail),
+      ),
+    }));
+    const res = await fetch(
+      agentNativePath("/_agent-native/actions/disconnect-connected-app"),
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          clientId: app.clientId,
+          ownerEmail: app.ownerEmail,
+        }),
+      },
+    );
+    if (!res.ok) toast.error("Could not disconnect that app.");
+    else toast.success("Disconnected");
+    qc.invalidateQueries({ queryKey: ["connected-apps"] });
+  }
+
+  if (apps.length === 0) return null;
+  return (
+    <div className="space-y-1.5">
+      <Label className="text-xs">Connected now</Label>
+      <ul className="divide-y rounded-lg border">
+        {apps.map((a) => (
+          <li
+            key={`${a.ownerEmail}|${a.clientId}`}
+            className="flex items-center justify-between gap-3 px-3 py-2"
+          >
+            <div className="min-w-0">
+              <p className="truncate text-sm">
+                {a.app} {a.mine ? "(you)" : ""}
+              </p>
+              <p className="truncate text-xs text-muted-foreground">
+                Acts as {a.ownerEmail}
+              </p>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="shrink-0"
+              onClick={() => setTarget(a)}
+            >
+              Disconnect
+            </Button>
+          </li>
+        ))}
+      </ul>
+      <AlertDialog open={!!target} onOpenChange={(o) => !o && setTarget(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              Disconnect {target?.app} from {target?.ownerEmail}?
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              It can no longer act for them until it is connected again. What it
+              was already doing can carry on for up to an hour.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Keep it</AlertDialogCancel>
+            <AlertDialogAction onClick={disconnect}>
+              Disconnect
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </div>
+  );
+}
+
+interface ConnectedApp {
+  clientId: string;
+  app: string;
+  ownerEmail: string;
+  mine: boolean;
+  lastRenewedAt: string;
 }
 
 function LimitInput({

@@ -117,6 +117,9 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-school-config": ADMIN,
   // Whether the signed-in person has the assistant right now, and why not.
   "get-my-agent-access": EVERYONE,
+  // AI apps connected to the school: your own, or everyone's for an admin.
+  "list-connected-apps": STAFF,
+  "disconnect-connected-app": STAFF,
   // Who in the school used the assistant and what it cost: names everyone.
   "get-school-usage": ADMIN,
   // Who the signed-in person is: their own name, role and school.
