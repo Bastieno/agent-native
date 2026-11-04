@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, inArray } from "drizzle-orm";
+import { eq, and, inArray, sql } from "drizzle-orm";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
 import { isUnassignedTeacher } from "../shared/class-teacher.js";
@@ -68,10 +68,16 @@ export default defineAction({
     // How many learners are in each class — an admin scanning the list wants
     // the roster size, not just the name.
     const classIds = rows.map((r: any) => r.cls.id);
+    // Counted by the database: a school has hundreds of classes, and sending
+    // every enrolment row across just to count them made this the slow part
+    // of every page that lists classes.
     const enrolled =
       classIds.length > 0
         ? await db
-            .select({ classId: schema.classEnrollments.classId })
+            .select({
+              classId: schema.classEnrollments.classId,
+              n: sql<number>`count(*)`.mapWith(Number),
+            })
             .from(schema.classEnrollments)
             .where(
               and(
@@ -79,6 +85,7 @@ export default defineAction({
                 eq(schema.classEnrollments.status, "active"),
               ),
             )
+            .groupBy(schema.classEnrollments.classId)
         : [];
     // The arms each option class draws on: one query for every class listed.
     const optionRows =
@@ -95,8 +102,7 @@ export default defineAction({
     for (const o of optionRows)
       (optionsByClass[o.classId] ??= []).push(o.armId);
     const countByClass: Record<string, number> = {};
-    for (const e of enrolled)
-      countByClass[e.classId] = (countByClass[e.classId] ?? 0) + 1;
+    for (const e of enrolled) countByClass[e.classId] = e.n;
 
     return rows.map((r: any) => ({
       ...r.cls,

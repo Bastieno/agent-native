@@ -1,15 +1,23 @@
 import { httpError } from "@/lib/http-error";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { SearchableSelect } from "@/components/SearchableSelect";
+import {
+  keepPreviousData,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
+import { SearchableMultiSelect } from "@/components/SearchableSelect";
+import { SearchInput } from "@/components/SearchInput";
+import { Markdown } from "@/components/Markdown";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import {
   Dialog,
@@ -30,6 +38,13 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -37,7 +52,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { IconBell, IconPlus, IconTrash } from "@tabler/icons-react";
+import { IconBell, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
 import { useSchoolDates } from "@/hooks/use-school-dates";
 
 async function callAction(name: string, params: Record<string, unknown>) {
@@ -53,44 +68,135 @@ async function callAction(name: string, params: Record<string, unknown>) {
   return res.json();
 }
 
+interface Announcement {
+  id: string;
+  ids: string[];
+  groupId: string | null;
+  scope: "school" | "class";
+  title: string;
+  content: string;
+  createdAt: string;
+  edited: boolean;
+  authorName: string | null;
+  classes: Array<{ id: string; name: string }>;
+}
+
+const keyOf = (a: Announcement) => a.groupId ?? a.id;
+
+/** The classes an announcement is for, as one short phrase. */
+function audienceOf(a: Announcement): string {
+  if (a.scope !== "class") return "Everyone";
+  const classes = a.classes;
+  if (classes.length === 0) return "A class";
+  if (classes.length <= 2) return classes.map((c) => c.name).join(" and ");
+  return `${classes[0].name}, ${classes[1].name} and ${classes.length - 2} more`;
+}
+
+/**
+ * The words of an announcement for a card: what it says, without the marks of
+ * how it is set out. A table is left for the full view.
+ */
+function preview(markdown: string): string {
+  const beforeTable = markdown.split(/\n\s*\|/)[0].split(/\s\|\s/)[0];
+  const text = beforeTable
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[`*_>#~$]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return beforeTable.length < markdown.length ? `${text} …` : text;
+}
+
+const SHOW = ["all", "school", "class"] as const;
+const SHOW_LABEL = {
+  all: "All announcements",
+  school: "Whole school",
+  class: "Classes",
+} as const;
+
 export default function AdminAnnouncements() {
   const { formatDate } = useSchoolDates();
   const { sync } = useNavigationState();
   const qc = useQueryClient();
 
-  const [createOpen, setCreateOpen] = useState(false);
+  // Search and the audience filter live in the address, so opening an
+  // announcement and coming back keeps them; a new one starts at page one.
+  const [q, setQ] = useUrlTab<string>("", { key: "q", clear: ["page"] });
+  const [show, setShow] = useUrlTab<(typeof SHOW)[number]>("all", {
+    key: "show",
+    allowed: SHOW,
+    clear: ["page"],
+  });
+  // The box answers at once; the list asks the server once typing pauses.
+  const [typed, setTyped] = useState(q);
+  useEffect(() => {
+    if (typed === q) return;
+    const t = window.setTimeout(() => setQ(typed), 250);
+    return () => window.clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typed]);
+
+  // One form for writing and for editing. `editing` is the card being
+  // changed, or null when writing a new one.
+  const [formOpen, setFormOpen] = useState(false);
+  const [editing, setEditing] = useState<Announcement | null>(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [scope, setScope] = useState<"school" | "class">("school");
-  const [classId, setClassId] = useState("");
-  const [creating, setCreating] = useState(false);
+  const [classIds, setClassIds] = useState<string[]>([]);
+  const [notifyAgain, setNotifyAgain] = useState(false);
+  const [saving, setSaving] = useState(false);
 
-  const [deleteTarget, setDeleteTarget] = useState<any>(null);
+  const [openKey, setOpenKey] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<Announcement | null>(null);
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     sync({ role: "admin", view: "announcements" } as any);
   }, [sync]);
 
-  const { data: announcements = [], isLoading } = useQuery<any[]>({
-    queryKey: ["admin-announcements"],
+  // Paged by the server: it knows the real total and sends one page.
+  const [knownTotal, setKnownTotal] = useState(0);
+  const pageState = usePagination(
+    Array.from({ length: knownTotal }, (_, i) => i),
+    10,
+  );
+  const { page, pageSize } = pageState;
+
+  const { data, isLoading } = useQuery<{
+    items: Announcement[];
+    total: number;
+  }>({
+    queryKey: ["admin-announcements", { q, show, page, pageSize }],
     queryFn: async () => {
       const res = await fetch(
         agentNativePath(`/_agent-native/actions/list-announcements`),
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({}),
+          body: JSON.stringify({
+            search: q || undefined,
+            scope: show,
+            limit: pageSize,
+            offset: (page - 1) * pageSize,
+          }),
         },
       );
       if (!res.ok) throw await httpError(res);
-      const data = await res.json();
-      return Array.isArray(data) ? data : (data.announcements ?? []);
+      return res.json();
     },
+    // The old page stays until the next arrives, so searching or paging never
+    // flashes an empty list.
+    placeholderData: keepPreviousData,
   });
+  const items = data?.items ?? [];
+  const total = data?.total ?? 0;
+  useEffect(() => {
+    if (data) setKnownTotal(data.total);
+  }, [data]);
 
-  const paged = usePagination(announcements);
-  const { data: classes = [] } = useQuery<any[]>({
+  const selected = items.find((a) => keyOf(a) === openKey) ?? null;
+
+  const { data: classes = [], isLoading: classesLoading } = useQuery<any[]>({
     queryKey: ["admin-classes"],
     queryFn: async () => {
       const res = await fetch(
@@ -101,27 +207,57 @@ export default function AdminAnnouncements() {
     },
   });
 
-  async function handleCreate() {
+  function openNew() {
+    setEditing(null);
+    setTitle("");
+    setContent("");
+    setScope("school");
+    setClassIds([]);
+    setNotifyAgain(false);
+    setFormOpen(true);
+  }
+
+  function openEdit(a: Announcement) {
+    setEditing(a);
+    setTitle(a.title);
+    setContent(a.content);
+    setScope(a.scope);
+    setClassIds(a.classes.map((c) => c.id));
+    setNotifyAgain(false);
+    setFormOpen(true);
+  }
+
+  async function handleSave() {
     if (!title || !content) return;
-    setCreating(true);
+    if (scope === "class" && classIds.length === 0) return;
+    setSaving(true);
     try {
-      await callAction("create-announcement", {
-        title,
-        content,
-        scope,
-        classId: scope === "class" ? classId || undefined : undefined,
-      });
+      if (editing) {
+        await callAction("update-announcement", {
+          id: editing.id,
+          title,
+          content,
+          classIds: scope === "class" ? classIds : undefined,
+          notifyAgain,
+        });
+        toast.success("Announcement updated");
+        // Its key can change when a single class becomes several.
+        setOpenKey(null);
+      } else {
+        await callAction("create-announcement", {
+          title,
+          content,
+          scope,
+          classIds: scope === "class" ? classIds : undefined,
+        });
+        toast.success("Announcement posted");
+      }
       qc.invalidateQueries({ queryKey: ["admin-announcements"] });
-      toast.success("Announcement posted");
-      setCreateOpen(false);
-      setTitle("");
-      setContent("");
-      setScope("school");
-      setClassId("");
+      setFormOpen(false);
     } catch (e: any) {
-      toast.error(e.message ?? "Failed to post announcement");
+      toast.error(e.message ?? "Failed to save the announcement");
     } finally {
-      setCreating(false);
+      setSaving(false);
     }
   }
 
@@ -133,6 +269,7 @@ export default function AdminAnnouncements() {
       qc.invalidateQueries({ queryKey: ["admin-announcements"] });
       toast.success("Announcement deleted");
       setDeleteTarget(null);
+      setOpenKey(null);
     } catch (e: any) {
       toast.error(e.message ?? "Failed to delete announcement");
     } finally {
@@ -140,73 +277,158 @@ export default function AdminAnnouncements() {
     }
   }
 
+  const filtering = !!q || show !== "all";
+
   return (
     <div className="h-full overflow-auto p-6 space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-xl font-semibold">Announcements</h1>
           <p className="text-xs text-muted-foreground mt-0.5">
-            {announcements.length} total
+            {total} {filtering ? "found" : "total"}
           </p>
         </div>
-        <Button size="sm" onClick={() => setCreateOpen(true)}>
+        <Button size="sm" onClick={openNew}>
           <IconPlus size={15} className="mr-1.5" /> New Announcement
         </Button>
       </div>
 
+      <div className="flex gap-2">
+        <SearchInput
+          className="flex-1"
+          placeholder="Search announcements…"
+          value={typed}
+          onChange={setTyped}
+        />
+        <Select value={show} onValueChange={setShow}>
+          <SelectTrigger className="h-9 w-44 text-sm" aria-label="Audience">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {SHOW.map((s) => (
+              <SelectItem key={s} value={s}>
+                {SHOW_LABEL[s]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
       {isLoading ? (
         <ListState loading title="Announcements" />
-      ) : announcements.length === 0 ? (
+      ) : items.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <IconBell size={32} className="mx-auto text-muted-foreground mb-3" />
-          <p className="text-sm font-medium">No announcements yet</p>
+          <p className="text-sm font-medium">
+            {filtering ? "No announcements match" : "No announcements yet"}
+          </p>
           <p className="text-xs text-muted-foreground mt-1">
-            Post an announcement to notify staff and students.
+            {filtering
+              ? "Try different words, or another audience."
+              : "Post an announcement to notify staff and students."}
           </p>
         </div>
       ) : (
         <div className="space-y-3">
-          {paged.items.map((a: any) => (
-            <div key={a.id} className="rounded-lg border p-4 space-y-1.5">
+          {items.map((a) => (
+            <button
+              key={keyOf(a)}
+              type="button"
+              onClick={() => setOpenKey(keyOf(a))}
+              className="block w-full rounded-lg border p-4 text-left transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
               <div className="flex items-start justify-between gap-2">
-                <div className="space-y-0.5 flex-1 min-w-0">
+                <div className="min-w-0 flex-1 space-y-0.5">
                   <p className="text-sm font-medium">{a.title}</p>
-                  <p className="text-xs text-muted-foreground line-clamp-2">
-                    {a.content}
+                  <p className="line-clamp-2 text-xs text-muted-foreground">
+                    {preview(a.content)}
                   </p>
                 </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <Badge variant="outline" className="text-xs capitalize">
-                    {a.scope === "class" ? `Class` : "School-wide"}
-                  </Badge>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-7 w-7 text-muted-foreground hover:text-destructive"
-                    onClick={() => setDeleteTarget(a)}
-                  >
-                    <IconTrash size={14} />
-                  </Button>
-                </div>
+                <Badge variant="outline" className="shrink-0 text-xs">
+                  {a.scope === "class"
+                    ? a.classes.length > 1
+                      ? `${a.classes.length} classes`
+                      : "Class"
+                    : "School-wide"}
+                </Badge>
               </div>
-              {a.createdAt && (
-                <p className="text-xs text-muted-foreground">
-                  {formatDate(a.createdAt, { dateStyle: "medium" })}
-                </p>
-              )}
-            </div>
+              {/* Who posted it, who it is for, and when: the three things a
+                  reader asks before the text. */}
+              <p className="mt-1.5 text-xs text-muted-foreground">
+                {[
+                  a.authorName ? `Posted by ${a.authorName}` : null,
+                  audienceOf(a),
+                  a.createdAt
+                    ? formatDate(a.createdAt, { dateStyle: "medium" })
+                    : null,
+                  a.edited ? "Edited" : null,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+            </button>
           ))}
         </div>
       )}
-      <Pagination {...paged} noun="announcements" />
+      <Pagination {...pageState} noun="announcements" />
 
-      {/* Create Announcement Dialog */}
-      <Dialog open={createOpen} onOpenChange={setCreateOpen}>
+      {/* The whole announcement: the text as written, with its tables. */}
+      <Sheet open={!!selected} onOpenChange={(o) => !o && setOpenKey(null)}>
+        <SheetContent className="w-full overflow-y-auto sm:max-w-xl">
+          {selected ? (
+            <>
+              <SheetHeader className="pr-6 text-left">
+                <SheetTitle>{selected.title}</SheetTitle>
+                <SheetDescription>
+                  {[
+                    selected.authorName
+                      ? `Posted by ${selected.authorName}`
+                      : null,
+                    audienceOf(selected),
+                    formatDate(selected.createdAt, { dateStyle: "medium" }),
+                    selected.edited ? "Edited" : null,
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </SheetDescription>
+              </SheetHeader>
+              {selected.scope === "class" && selected.classes.length > 2 ? (
+                <p className="mt-3 text-xs text-muted-foreground">
+                  {selected.classes.map((c) => c.name).join(", ")}
+                </p>
+              ) : null}
+              <div className="mt-5 overflow-x-auto">
+                <Markdown>{selected.content}</Markdown>
+              </div>
+              <div className="mt-6 flex gap-2 border-t pt-4">
+                <Button size="sm" onClick={() => openEdit(selected)}>
+                  <IconPencil size={14} className="mr-1.5" /> Edit
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="text-destructive hover:text-destructive"
+                  onClick={() => setDeleteTarget(selected)}
+                >
+                  <IconTrash size={14} className="mr-1.5" /> Delete
+                </Button>
+              </div>
+            </>
+          ) : null}
+        </SheetContent>
+      </Sheet>
+
+      {/* Write or edit */}
+      <Dialog open={formOpen} onOpenChange={setFormOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>New Announcement</DialogTitle>
+            <DialogTitle>
+              {editing ? "Edit Announcement" : "New Announcement"}
+            </DialogTitle>
             <DialogDescription>
-              Post an announcement to staff and students.
+              {editing
+                ? "Changes show for everyone it was sent to. Nobody is told again unless you choose to."
+                : "Post an announcement to staff and students."}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-2">
@@ -222,34 +444,45 @@ export default function AdminAnnouncements() {
               <Label>Content</Label>
               <Textarea
                 placeholder="Announcement details…"
-                rows={4}
+                rows={6}
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
               />
             </div>
-            <div className="space-y-1.5">
-              <Label>Audience</Label>
-              <Select
-                value={scope}
-                onValueChange={(v) => setScope(v as "school" | "class")}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="school">School-wide</SelectItem>
-                  <SelectItem value="class">Specific class</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            {/* Who it goes to is chosen once; changing it later would mean
+                telling a different set of people, so only the classes of a
+                class announcement can be changed. */}
+            {!editing ? (
+              <div className="space-y-1.5">
+                <Label>Audience</Label>
+                <Select
+                  value={scope}
+                  onValueChange={(v) => setScope(v as "school" | "class")}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="school">School-wide</SelectItem>
+                    <SelectItem value="class">Specific classes</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            ) : null}
             {scope === "class" && (
               <div className="space-y-1.5">
-                <Label>Class</Label>
-                <SearchableSelect
-                  value={classId}
-                  onValueChange={setClassId}
-                  aria-label="Class"
-                  placeholder="Select a class"
+                <Label>Classes</Label>
+                <SearchableMultiSelect
+                  values={classIds}
+                  onValuesChange={setClassIds}
+                  aria-label="Classes"
+                  noun="classes selected"
+                  disabled={classesLoading && classes.length === 0}
+                  placeholder={
+                    classesLoading && classes.length === 0
+                      ? "Loading classes…"
+                      : "Select classes"
+                  }
                   searchPlaceholder="Search classes…"
                   options={classes.map((c: any) => ({
                     value: c.id,
@@ -258,16 +491,36 @@ export default function AdminAnnouncements() {
                 />
               </div>
             )}
+            {editing && scope === "class" ? (
+              <label className="flex items-center gap-2 text-sm">
+                <Checkbox
+                  checked={notifyAgain}
+                  onCheckedChange={(v) => setNotifyAgain(v === true)}
+                />
+                Tell them again
+              </label>
+            ) : null}
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setCreateOpen(false)}>
+            <Button variant="outline" onClick={() => setFormOpen(false)}>
               Cancel
             </Button>
             <Button
-              onClick={handleCreate}
-              disabled={creating || !title || !content}
+              onClick={handleSave}
+              disabled={
+                saving ||
+                !title ||
+                !content ||
+                (scope === "class" && classIds.length === 0)
+              }
             >
-              {creating ? "Posting…" : "Post"}
+              {saving
+                ? editing
+                  ? "Saving…"
+                  : "Posting…"
+                : editing
+                  ? "Save"
+                  : "Post"}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -282,7 +535,11 @@ export default function AdminAnnouncements() {
           <AlertDialogHeader>
             <AlertDialogTitle>Delete announcement?</AlertDialogTitle>
             <AlertDialogDescription>
-              "{deleteTarget?.title}" will be permanently removed.
+              "{deleteTarget?.title}" will be permanently removed
+              {deleteTarget && deleteTarget.classes.length > 1
+                ? ` from all ${deleteTarget.classes.length} classes`
+                : ""}
+              .
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

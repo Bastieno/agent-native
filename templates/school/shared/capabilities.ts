@@ -520,18 +520,21 @@ export const CAPABILITIES: Capability[] = [
     roles: ["admin"],
     group: "Running the term",
     title: "Announcements",
-    summary: "Send a message to the whole school or to one class.",
+    summary:
+      "Send a message to the whole school, to one class or to several. Open one to read it in full, change it or delete it.",
     steps: [
       "Open Announcements and write it, or ask the assistant to.",
-      "Choose the whole school or a class.",
+      "Choose the whole school, or pick one or more classes.",
+      "Press an announcement to read it, edit it or delete it. Editing does not tell anyone again unless you ask it to.",
     ],
     where: { admin: "/admin/announcements" },
     actions: [
       "create-announcement",
       "list-announcements",
+      "update-announcement",
       "delete-announcement",
     ],
-    keywords: ["announcement", "notice", "message", "broadcast"],
+    keywords: ["announcement", "notice", "message", "broadcast", "edit"],
     added: "2026-09-01",
   },
   {

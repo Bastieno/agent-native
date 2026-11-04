@@ -1055,6 +1055,12 @@ const migrations = runMigrations(
       version: 115,
       sql: `CREATE TABLE IF NOT EXISTS credit_top_up_requests (id TEXT PRIMARY KEY, school_id TEXT NOT NULL, requested_by TEXT NOT NULL, credits BIGINT, reference TEXT, note TEXT, status TEXT NOT NULL, created_at TEXT NOT NULL)`,
     },
+    // One announcement posted to several classes is one row per class, tied
+    // together by this id so the list can show it as a single card.
+    {
+      version: 116,
+      sql: `ALTER TABLE announcements ADD COLUMN group_id TEXT`,
+    },
   ],
   { table: "school_migrations" },
 );

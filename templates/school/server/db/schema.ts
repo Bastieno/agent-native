@@ -879,6 +879,8 @@ export const announcements = table("announcements", {
   content: text("content").notNull(),
   publishedAt: text("published_at"),
   authorUserId: text("author_user_id").notNull(),
+  // Shared by the rows of one announcement posted to several classes.
+  groupId: text("group_id"),
   createdAt: text("created_at").notNull().default(now()),
   updatedAt: text("updated_at").notNull().default(now()),
   ...ownableColumns(),

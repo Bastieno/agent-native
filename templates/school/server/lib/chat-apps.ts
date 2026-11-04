@@ -219,6 +219,8 @@ const ADMIN_READING = [
   "get-student-performance",
   "list-announcements",
   "create-announcement",
+  // Fixing a date or a class is common; deleting is left to the app itself.
+  "update-announcement",
   "get-school-usage",
 ];
 

@@ -11,7 +11,9 @@ export default defineAction({
     classId: z.string().describe("Class ID"),
     unitId: z.string().optional(),
     status: z.enum(["draft", "finalized"]).optional(),
-    limit: numberish().optional().default(20),
+    // A year is about forty weeks; callers show a count and pages from what
+    // comes back, so the cap must sit above any real class, not at a screenful.
+    limit: numberish().optional().default(500),
   }),
   http: { method: "GET" },
   run: async (args) => {
@@ -40,7 +42,7 @@ export default defineAction({
         asc(schema.lessonNotes.lessonDate),
         desc(schema.lessonNotes.updatedAt),
       )
-      .limit(args.limit ?? 20);
+      .limit(args.limit ?? 500);
     if (rows.length === 0) return rows;
 
     // What each row needs to say where it sits: its unit, which week of the

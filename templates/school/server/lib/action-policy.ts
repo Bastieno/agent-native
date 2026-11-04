@@ -386,6 +386,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "mark-notifications-read": EVERYONE,
   "update-my-notifications": EVERYONE,
   "create-announcement": STAFF,
+  "update-announcement": ADMIN,
   "delete-announcement": ADMIN,
 };
 

@@ -31,6 +31,13 @@ export default defineAction({
       )
       .orderBy(desc(schema.passwordResets.createdAt))
       .limit(200);
-    return { days: args.days, count: rows.length, resets: rows };
+    // At the cap there may be more; say so rather than let the count pass for
+    // the whole.
+    return {
+      days: args.days,
+      count: rows.length,
+      truncated: rows.length >= 200,
+      resets: rows,
+    };
   },
 });

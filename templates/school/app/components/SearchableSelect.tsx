@@ -14,6 +14,16 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
+/**
+ * Inside a Dialog, the dialog's scroll lock cancels the wheel and touch moves
+ * over anything outside it, and a picker is drawn outside it. Stopping the
+ * event here keeps it from reaching the lock, so the list scrolls.
+ */
+const scrollInsideDialog = {
+  onWheel: (e: React.WheelEvent) => e.stopPropagation(),
+  onTouchMove: (e: React.TouchEvent) => e.stopPropagation(),
+};
+
 export interface SearchableOption {
   value: string;
   label: string;
@@ -80,6 +90,7 @@ export function SearchableSelect({
       </PopoverTrigger>
       <PopoverContent
         align="start"
+        {...scrollInsideDialog}
         className={cn(
           "w-[var(--radix-popover-trigger-width)] min-w-56 p-0",
           contentClassName,
@@ -137,4 +148,160 @@ function matchShownWords(
     .every((word) => haystack.includes(word))
     ? 1
     : 0;
+}
+
+/**
+ * The same drop-down for choosing several: it stays open while you pick, and
+ * "Select all shown" takes everything the search currently matches, so a whole
+ * year group is one search and one press.
+ */
+export function SearchableMultiSelect({
+  values,
+  onValuesChange,
+  options,
+  noun = "selected",
+  placeholder = "Choose…",
+  searchPlaceholder = "Search…",
+  emptyText = "Nothing matches.",
+  className,
+  disabled,
+  "aria-label": ariaLabel,
+}: {
+  values: string[];
+  onValuesChange: (values: string[]) => void;
+  options: SearchableOption[];
+  /** Said after the count: "3 classes selected". */
+  noun?: string;
+  placeholder?: string;
+  searchPlaceholder?: string;
+  emptyText?: string;
+  className?: string;
+  disabled?: boolean;
+  "aria-label"?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const chosen = new Set(values);
+  const shown = options.filter(
+    (o) => matchShownWords(o.value, search, [o.label, o.hint ?? ""]) > 0,
+  );
+  const allShownChosen =
+    shown.length > 0 && shown.every((o) => chosen.has(o.value));
+  const label =
+    values.length === 0
+      ? placeholder
+      : values.length === 1
+        ? (options.find((o) => o.value === values[0])?.label ?? placeholder)
+        : `${values.length} ${noun}`;
+
+  function toggle(value: string) {
+    onValuesChange(
+      chosen.has(value)
+        ? values.filter((v) => v !== value)
+        : [...values, value],
+    );
+  }
+  function toggleShown() {
+    const shownValues = new Set(shown.map((o) => o.value));
+    onValuesChange(
+      allShownChosen
+        ? values.filter((v) => !shownValues.has(v))
+        : [...new Set([...values, ...shownValues])],
+    );
+  }
+
+  return (
+    <Popover
+      open={open}
+      onOpenChange={(o) => {
+        setOpen(o);
+        if (!o) setSearch("");
+      }}
+    >
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          role="combobox"
+          aria-expanded={open}
+          aria-label={ariaLabel}
+          disabled={disabled}
+          className={cn(
+            "flex h-10 w-full items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-left text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            className,
+          )}
+        >
+          <span
+            className={cn(
+              "truncate",
+              values.length === 0 && "text-muted-foreground",
+            )}
+          >
+            {label}
+          </span>
+          <IconChevronDown size={16} className="shrink-0 opacity-50" />
+        </button>
+      </PopoverTrigger>
+      <PopoverContent
+        align="start"
+        {...scrollInsideDialog}
+        className="w-[var(--radix-popover-trigger-width)] min-w-56 p-0"
+      >
+        <Command shouldFilter={false}>
+          <CommandInput
+            placeholder={searchPlaceholder}
+            className="h-9"
+            value={search}
+            onValueChange={setSearch}
+          />
+          <CommandList>
+            {shown.length === 0 ? (
+              <p className="py-6 text-center text-sm text-muted-foreground">
+                {emptyText}
+              </p>
+            ) : (
+              <>
+                <CommandItem value="__all" onSelect={toggleShown}>
+                  <IconCheck
+                    size={14}
+                    className={cn(
+                      "mr-2 shrink-0",
+                      allShownChosen ? "opacity-100" : "opacity-0",
+                    )}
+                  />
+                  <span className="font-medium">
+                    {search.trim()
+                      ? `Select all ${shown.length} shown`
+                      : `Select all ${shown.length}`}
+                  </span>
+                </CommandItem>
+                {shown.map((option) => (
+                  <CommandItem
+                    key={option.value}
+                    value={option.value}
+                    onSelect={() => toggle(option.value)}
+                  >
+                    <IconCheck
+                      size={14}
+                      className={cn(
+                        "mr-2 shrink-0",
+                        chosen.has(option.value) ? "opacity-100" : "opacity-0",
+                      )}
+                    />
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate">{option.label}</span>
+                      {option.hint ? (
+                        <span className="block truncate text-xs text-muted-foreground">
+                          {option.hint}
+                        </span>
+                      ) : null}
+                    </span>
+                  </CommandItem>
+                ))}
+              </>
+            )}
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
 }

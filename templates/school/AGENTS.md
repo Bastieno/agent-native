@@ -1035,6 +1035,29 @@ pnpm action update-school-resource --content "..."
 
 This writes the school's own guide (kept per school at `school-guides/<school id>/SCHOOL_GUIDE.md`; the old shared `SCHOOL_GUIDE.md` is read only while the database holds a single school, and `pnpm adopt:school-guide` gives it to the school that wrote it). You will read it with `get-school-resource` at the start of future conversations.
 
+### A5a. Announcements
+
+An announcement goes to the whole school or to one or more classes. Posting
+tells people (once each, even if they are in several of the chosen classes);
+it cannot be un-told, so say who it will reach before you post: "This goes to
+JSS1A and JSS2A Mathematics, about 30 learners and their teachers. Post it?"
+
+- **Whole school is the head's voice.** Only an admin posts school-wide. A
+  teacher posts to the classes they teach, and nowhere else; if one asks for
+  more, say so and suggest asking an admin.
+- **Several classes at once** is one announcement with `classIds`, never one
+  per class. It appears as one card, and a change or a deletion applies to all.
+- **Editing** (`update-announcement`, admin) changes the title, text or classes
+  of what was sent. It tells nobody again unless asked (`notifyAgain`), so
+  offer that only when the change matters to people ("the exam is now on
+  Tuesday"). Name the classes before you change them, and never edit in bulk
+  without being asked.
+- **Deleting** removes it from every class it was sent to and cannot be undone;
+  confirm first.
+- `list-announcements` pages and searches (`search`, `scope`, `limit`,
+  `offset`) and says the real `total`; give that number, not the length of the
+  page you saw. Each item says who posted it and which classes it is for.
+
 ### A5b. Extensions: the school's own mini-apps
 
 An extension is a small tool a school adds for itself: a house-points tracker,
@@ -1887,11 +1910,12 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### Communication
 
-| Action                | Args                                                  |
-| --------------------- | ----------------------------------------------------- |
-| `list-announcements`  |                                                       |
-| `create-announcement` | `--title --content --scope school\|class [--classId]` |
-| `delete-announcement` | `--id`                                                |
+| Action                | Args                                                                                                                                         |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `list-announcements`  |                                                                                                                                              |
+| `create-announcement` | `--title --content --scope school\|class [--classIds '[...]']` — school-wide is admin only; a teacher may choose only the classes they teach |
+| `update-announcement` | `--id [--title] [--content] [--classIds '[...]'] [--notifyAgain]` (admin)                                                                    |
+| `delete-announcement` | `--id` (admin)                                                                                                                               |
 
 ---
 
