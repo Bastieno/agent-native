@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
 import { agentNativePath } from "@agent-native/core/client";
@@ -20,25 +21,25 @@ type Draft = {
  */
 export function DraftsWaiting({ role }: { role: "admin" | "teacher" }) {
   const origin = useOrigin();
-  const { data } = useQuery<{ drafts: Draft[] }>({
+  const { data } = useQuery<{ drafts: Draft[]; total: number }>({
     queryKey: ["my-drafts"],
     queryFn: async () => {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-my-drafts"),
       );
-      return res.ok ? res.json() : { drafts: [] };
+      if (!res.ok) throw await httpError(res);
+      return res.json();
     },
     staleTime: 15_000,
   });
   const drafts = data?.drafts ?? [];
+  const total = data?.total ?? drafts.length;
   if (drafts.length === 0) return null;
   return (
     <section className="space-y-2">
       <h2 className="text-sm font-medium">
         Waiting for you to read and share{" "}
-        <span className="font-normal text-muted-foreground">
-          ({drafts.length})
-        </span>
+        <span className="font-normal text-muted-foreground">({total})</span>
       </h2>
       <div className="divide-y rounded-lg border">
         {drafts.map((d) => (
@@ -69,6 +70,12 @@ export function DraftsWaiting({ role }: { role: "admin" | "teacher" }) {
           </Link>
         ))}
       </div>
+      {total > drafts.length ? (
+        <p className="text-xs text-muted-foreground">
+          Showing the latest {drafts.length} of {total}. The rest are in each
+          class&rsquo;s activities.
+        </p>
+      ) : null}
     </section>
   );
 }

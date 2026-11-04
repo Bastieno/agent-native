@@ -50,7 +50,8 @@ export function NotificationsPage({
   const { sync } = useNavigationState();
   const navigate = useNavigate();
   const qc = useQueryClient();
-  const { items, unread, isLoading } = useNotifications();
+  const [limit, setLimit] = useState(30);
+  const { items, unread, total, isLoading } = useNotifications(limit);
 
   useEffect(() => {
     sync({ role, view: "notifications" } as any);
@@ -58,13 +59,18 @@ export function NotificationsPage({
 
   const markRead = (ids?: string[]) => {
     // The screen changes first; the server catches up.
-    qc.setQueryData(NOTIFICATIONS_KEY, (old: any) => {
+    qc.setQueriesData({ queryKey: NOTIFICATIONS_KEY }, (old: any) => {
       if (!old) return old;
       const now = new Date().toISOString();
       const items = old.items.map((n: NotificationItem) =>
         !n.readAt && (!ids || ids.includes(n.id)) ? { ...n, readAt: now } : n,
       );
-      return { items, unread: items.filter((n: any) => !n.readAt).length };
+      // Unread is the school's real count, not the shown ones: take away only
+      // what this change marked.
+      const marked = items.filter(
+        (n: NotificationItem, i: number) => n.readAt !== old.items[i].readAt,
+      ).length;
+      return { ...old, items, unread: Math.max(0, old.unread - marked) };
     });
     call("mark-notifications-read", "POST", ids ? { ids } : {}).catch(() =>
       qc.invalidateQueries({ queryKey: NOTIFICATIONS_KEY }),
@@ -126,6 +132,17 @@ export function NotificationsPage({
             ))}
           </ul>
         )}
+        {total > items.length ? (
+          <div className="text-center">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setLimit((l) => l + 30)}
+            >
+              Show older ({total - items.length} more)
+            </Button>
+          </div>
+        ) : null}
 
         <HowToHear />
       </div>

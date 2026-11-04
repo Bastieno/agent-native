@@ -6,7 +6,7 @@ import { listFor } from "../server/lib/notifications.js";
 
 export default defineAction({
   description:
-    "Your own notifications, newest first, with how many are unread: new announcements, work due soon, work waiting to be marked. Use it for 'what's new for me?'. Only ever your own.",
+    "Your own notifications, newest first, with how many are unread and how many there are in all: new announcements, work due soon, work waiting to be marked. Use it for 'what's new for me?'. Only ever your own.",
   schema: z.object({
     limit: z.coerce.number().int().min(1).max(100).default(30),
   }),
@@ -14,7 +14,7 @@ export default defineAction({
   run: async (args) => {
     const { userEmail } = currentAccess();
     const actor = userEmail ? await actorForEmail(userEmail) : null;
-    if (!actor) return { items: [], unread: 0 };
+    if (!actor) return { items: [], unread: 0, total: 0 };
     return listFor(actor.userId, actor.schoolId, args.limit);
   },
 });

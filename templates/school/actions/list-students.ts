@@ -6,13 +6,17 @@ import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
 import { numberish } from "../shared/zod-json.js";
 
+// guard:capped-ok — no cap unless the caller passes `limit`; the whole roll is
+// returned, so the length is the total.
 export default defineAction({
   description:
     "List students enrolled in the school, optionally filtered by grade level or status.",
   schema: z.object({
     gradeLevelId: z.string().optional(),
     status: z.enum(["active", "graduated", "withdrawn"]).optional(),
-    limit: numberish().optional().default(5000),
+    // No cap unless asked for: pages show a count and filter from the whole
+    // roll, and a silent cut would drop learners from pickers.
+    limit: numberish().optional(),
   }),
   http: { method: "GET" },
   run: async (args) => {
@@ -23,7 +27,7 @@ export default defineAction({
     if (args.gradeLevelId)
       conditions.push(eq(schema.students.gradeLevelId, args.gradeLevelId));
     if (args.status) conditions.push(eq(schema.students.status, args.status));
-    const rows = await db
+    const query = db
       .select({
         student: schema.students,
         gradeLevelName: schema.gradeLevels.name,
@@ -33,8 +37,8 @@ export default defineAction({
         schema.gradeLevels,
         eq(schema.students.gradeLevelId, schema.gradeLevels.id),
       )
-      .where(and(...conditions))
-      .limit(args.limit ?? 5000);
+      .where(and(...conditions));
+    const rows = args.limit ? await query.limit(args.limit) : await query;
 
     const labels = await getUserLabels(rows.map((r: any) => r.student.userId));
 

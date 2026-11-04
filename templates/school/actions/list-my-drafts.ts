@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
-import { and, desc, eq, inArray } from "drizzle-orm";
+import { and, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
 import {
@@ -23,14 +23,26 @@ export default defineAction({
   run: async () => {
     const { userEmail, orgId } = currentAccess();
     const actor = userEmail ? await actorForEmail(userEmail) : null;
-    if (!actor || !orgId) return { drafts: [] };
+    if (!actor || !orgId) return { drafts: [], total: 0 };
     const db = getDb();
 
     const mine = actor.schoolRole === "teacher";
     const classIds = await accessibleClassIds(actor);
-    if (classIds.length === 0) return { drafts: [] };
+    if (classIds.length === 0) return { drafts: [], total: 0 };
 
-    const rows = await db
+    // The teacher sees every draft in their classes; anyone else only their
+    // own. Chosen in the query, so the count and the page agree.
+    const where = and(
+      eq(schema.assessments.orgId, orgId),
+      eq(schema.assessments.status, "draft"),
+      inArray(schema.assessments.classId, classIds),
+      ...(mine ? [] : [eq(schema.assessments.ownerEmail, userEmail ?? "")]),
+    );
+    const [{ n }] = (await db
+      .select({ n: sql<number>`count(*)` })
+      .from(schema.assessments)
+      .where(where)) as { n: number }[];
+    const visible = await db
       .select({
         id: schema.assessments.id,
         title: schema.assessments.title,
@@ -41,20 +53,11 @@ export default defineAction({
         ownerEmail: schema.assessments.ownerEmail,
       })
       .from(schema.assessments)
-      .where(
-        and(
-          eq(schema.assessments.orgId, orgId),
-          eq(schema.assessments.status, "draft"),
-          inArray(schema.assessments.classId, classIds),
-        ),
-      )
+      .where(where)
       .orderBy(desc(schema.assessments.createdAt))
-      .limit(60);
-
-    const visible = rows
-      .filter((r) => mine || r.ownerEmail === userEmail)
-      .slice(0, 6);
-    if (visible.length === 0) return { drafts: [] };
+      // The latest few are shown; `total` says how many there are.
+      .limit(6);
+    if (visible.length === 0) return { drafts: [], total: 0 };
 
     const classes = await db
       .select({ id: schema.classes.id, name: schema.classes.name })
@@ -75,6 +78,7 @@ export default defineAction({
     const isPdf = new Set(pdfs.map((p) => p.id));
 
     return {
+      total: Number(n),
       drafts: visible.map((r) => ({
         id: r.id,
         title: r.title,

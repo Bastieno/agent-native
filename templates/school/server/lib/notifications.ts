@@ -120,7 +120,18 @@ export async function listFor(userId: string, schoolId: string, limit = 50) {
         isNull(schema.notifications.readAt),
       ),
     )) as { n: number }[];
-  return { items, unread: Number(n) };
+  // How many there are in all, so a page that shows the latest few can say
+  // there are more and offer them.
+  const [{ n: all }] = (await db
+    .select({ n: sql<number>`count(*)` })
+    .from(schema.notifications)
+    .where(
+      and(
+        eq(schema.notifications.userId, userId),
+        eq(schema.notifications.schoolId, schoolId),
+      ),
+    )) as { n: number }[];
+  return { items, unread: Number(n), total: Number(all) };
 }
 
 /** Mark some, or all, of a person's own notifications in one school read. */

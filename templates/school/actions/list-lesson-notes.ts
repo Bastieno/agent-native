@@ -4,6 +4,8 @@ import { eq, and, asc, desc, sql, inArray, getTableColumns } from "drizzle-orm";
 import { z } from "zod";
 import { numberish } from "../shared/zod-json.js";
 
+// guard:capped-ok — no cap unless the caller passes `limit`; a class's notes
+// are all returned, so the length is the total.
 export default defineAction({
   description:
     "List lesson notes for a class, optionally filtered by unit or status. Returns titles, weeks and status, not the note text: use get-lesson-note to read one.",
@@ -11,9 +13,9 @@ export default defineAction({
     classId: z.string().describe("Class ID"),
     unitId: z.string().optional(),
     status: z.enum(["draft", "finalized"]).optional(),
-    // A year is about forty weeks; callers show a count and pages from what
-    // comes back, so the cap must sit above any real class, not at a screenful.
-    limit: numberish().optional().default(500),
+    // No cap unless one is asked for: a class's notes are bounded by its year,
+    // and callers show a count and pages from what comes back.
+    limit: numberish().optional(),
   }),
   http: { method: "GET" },
   run: async (args) => {
@@ -29,7 +31,7 @@ export default defineAction({
     const { content: _content, ...columns } = getTableColumns(
       schema.lessonNotes,
     );
-    const rows = await db
+    const query = db
       .select(columns)
       .from(schema.lessonNotes)
       .where(and(...conditions))
@@ -41,8 +43,8 @@ export default defineAction({
         sql`CASE WHEN ${schema.lessonNotes.lessonDate} IS NULL THEN 1 ELSE 0 END`,
         asc(schema.lessonNotes.lessonDate),
         desc(schema.lessonNotes.updatedAt),
-      )
-      .limit(args.limit ?? 500);
+      );
+    const rows = args.limit ? await query.limit(args.limit) : await query;
     if (rows.length === 0) return rows;
 
     // What each row needs to say where it sits: its unit, which week of the

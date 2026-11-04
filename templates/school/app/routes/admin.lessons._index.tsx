@@ -232,7 +232,7 @@ function ClassNotes({
     queryFn: async () => {
       const res = await fetch(
         agentNativePath(
-          `/_agent-native/actions/list-lesson-notes?classId=${classId}&limit=500`,
+          `/_agent-native/actions/list-lesson-notes?classId=${classId}`,
         ),
       );
       if (!res.ok) throw await httpError(res);
