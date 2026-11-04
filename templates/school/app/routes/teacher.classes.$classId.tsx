@@ -1,4 +1,5 @@
 import { CapabilityHint } from "@/components/help/CapabilityHint";
+import { SearchInput } from "@/components/SearchInput";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
 import { useParams, useSearchParams } from "react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -14,7 +15,6 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { isCurrentWeek } from "@shared/term-weeks";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Dialog,
@@ -45,7 +45,6 @@ import {
   IconUsers,
   IconDotsVertical,
   IconUserPlus,
-  IconSearch,
 } from "@tabler/icons-react";
 import { BackLink } from "@/components/layout/BackLink";
 
@@ -534,18 +533,11 @@ export default function TeacherClass() {
             <DialogTitle>Enroll Student</DialogTitle>
           </DialogHeader>
           <div className="space-y-3 py-1">
-            <div className="relative">
-              <IconSearch
-                size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-              />
-              <Input
-                placeholder="Search students…"
-                className="pl-8"
-                value={enrollSearch}
-                onChange={(e) => setEnrollSearch(e.target.value)}
-              />
-            </div>
+            <SearchInput
+              placeholder="Search students…"
+              value={enrollSearch}
+              onChange={setEnrollSearch}
+            />
             <div className="max-h-64 overflow-auto space-y-1">
               {filteredAllStudents.length === 0 ? (
                 <p className="text-sm text-muted-foreground text-center py-4">

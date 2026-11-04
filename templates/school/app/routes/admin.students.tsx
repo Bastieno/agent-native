@@ -5,6 +5,7 @@ import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
 import { Input } from "@/components/ui/input";
+import { SearchInput } from "@/components/SearchInput";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
 import { Badge } from "@/components/ui/badge";
@@ -42,7 +43,6 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import {
-  IconSearch,
   IconUsers,
   IconDotsVertical,
   IconUserPlus,
@@ -334,18 +334,12 @@ export default function AdminStudents() {
       ) : null}
 
       <div className="flex gap-2">
-        <div className="relative flex-1">
-          <IconSearch
-            size={14}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-          />
-          <Input
-            placeholder="Search students…"
-            className="pl-8"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+        <SearchInput
+          className="flex-1"
+          placeholder="Search students…"
+          value={search}
+          onChange={setSearch}
+        />
         {gradeLevels.length > 0 && (
           <Select value={gradeFilter} onValueChange={setGradeFilter}>
             <SelectTrigger className="h-9 w-36 text-sm">

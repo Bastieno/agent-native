@@ -1,15 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
+import { SearchInput } from "@/components/SearchInput";
 import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router";
-import {
-  IconChevronLeft,
-  IconChevronRight,
-  IconSearch,
-} from "@tabler/icons-react";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { ListState } from "@/components/ListState";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { submissionStatusWord } from "@/lib/submission-status";
@@ -220,19 +216,11 @@ export default function StudentRevise() {
         </div>
       ) : null}
 
-      <div className="relative">
-        <IconSearch
-          size={15}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-        />
-        <Input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Find a topic or a piece of work"
-          className="pl-9"
-          aria-label="Find a topic or a piece of work"
-        />
-      </div>
+      <SearchInput
+        value={search}
+        onChange={setSearch}
+        placeholder="Find a topic or a piece of work"
+      />
 
       {shownWeeks.length === 0 && shownLoose.length === 0 ? (
         <ListState

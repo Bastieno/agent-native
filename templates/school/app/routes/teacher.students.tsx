@@ -4,7 +4,7 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
-import { Input } from "@/components/ui/input";
+import { SearchInput } from "@/components/SearchInput";
 import {
   Select,
   SelectContent,
@@ -15,7 +15,7 @@ import {
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
 import { Badge } from "@/components/ui/badge";
-import { IconUsers, IconSearch } from "@tabler/icons-react";
+import { IconUsers } from "@tabler/icons-react";
 
 const categoryColors: Record<string, string> = {
   advanced: "bg-green-100 text-green-700",
@@ -104,18 +104,13 @@ export default function TeacherStudents() {
       </div>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-        <div className="relative flex-1">
-          <IconSearch
-            size={14}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-          />
-          <Input
-            placeholder="Search students…"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="pl-8 text-sm h-8"
-          />
-        </div>
+        <SearchInput
+          className="flex-1"
+          placeholder="Search students…"
+          value={search}
+          onChange={setSearch}
+          inputClassName="text-sm h-8"
+        />
         {/* Nothing to choose between when you teach one class. */}
         {myClasses.length > 1 ? (
           <Select

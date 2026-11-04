@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { useUrlTab } from "@/hooks/use-url-tab";
 import { Link, useLocation } from "react-router";
-import { IconChevronDown, IconCopy, IconSearch } from "@tabler/icons-react";
+import { IconChevronDown, IconCopy } from "@tabler/icons-react";
+import { SearchInput } from "@/components/SearchInput";
 import { toast } from "sonner";
 import { copyText } from "@/lib/copy-text";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +12,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Input } from "@/components/ui/input";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
 import { useHelp } from "@/hooks/use-help";
 import { cn } from "@/lib/utils";
@@ -79,19 +79,12 @@ export function HelpPage({ role }: { role: HelpRole }) {
             open a topic.
           </p>
         </div>
-        <div className="relative">
-          <IconSearch
-            size={15}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-          />
-          <Input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="How do I…"
-            className="pl-9"
-            aria-label="Search help"
-          />
-        </div>
+        <SearchInput
+          value={query}
+          onChange={setQuery}
+          placeholder="How do I…"
+          ariaLabel="Search help"
+        />
 
         {isLoading && capabilities.length === 0 ? null : query.trim() ? (
           results.length === 0 ? (

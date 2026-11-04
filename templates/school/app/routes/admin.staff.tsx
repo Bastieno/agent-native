@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ListState } from "@/components/ListState";
 import { Pagination, usePagination } from "@/components/Pagination";
 import { Input } from "@/components/ui/input";
+import { SearchInput } from "@/components/SearchInput";
 import { Label } from "@/components/ui/label";
 import {
   Dialog,
@@ -48,7 +49,6 @@ import {
   IconUser,
   IconDotsVertical,
   IconUserPlus,
-  IconSearch,
 } from "@tabler/icons-react";
 
 const roleLabel: Record<string, string> = {
@@ -221,18 +221,11 @@ export default function AdminStaff() {
         </Button>
       </div>
 
-      <div className="relative">
-        <IconSearch
-          size={14}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-        />
-        <Input
-          placeholder="Search staff…"
-          className="pl-8"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+      <SearchInput
+        placeholder="Search staff…"
+        value={search}
+        onChange={setSearch}
+      />
 
       {isLoading || isEmpty ? (
         <ListState
