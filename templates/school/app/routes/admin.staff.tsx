@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath, sendToAgentChat } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useEffect, useState } from "react";
+import { useUrlTab } from "@/hooks/use-url-tab";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ListState } from "@/components/ListState";
@@ -47,6 +48,7 @@ import {
   IconUser,
   IconDotsVertical,
   IconUserPlus,
+  IconSearch,
 } from "@tabler/icons-react";
 
 const roleLabel: Record<string, string> = {
@@ -103,13 +105,29 @@ export default function AdminStaff() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-staff"),
       );
-      if (!res.ok) return { active: [], pending: [] };
+      // A failure is not an empty school: throwing keeps the skeleton up
+      // while the query retries, instead of flashing "No staff members yet".
+      if (!res.ok) throw new Error("Could not load staff");
       return res.json();
     },
   });
 
-  const active = data?.active ?? [];
-  const pending = data?.pending ?? [];
+  // The search lives in the address, so opening a person and coming back
+  // keeps it; a new search starts again from the first page.
+  const [search, setSearch] = useUrlTab<string>("", {
+    key: "q",
+    clear: ["page"],
+  });
+  const needle = search.trim().toLowerCase();
+  const matches = (m: any) =>
+    !needle ||
+    [m.name, m.email, roleLabel[m.schoolRole] ?? m.schoolRole].some((v) =>
+      v?.toLowerCase().includes(needle),
+    );
+  const allActive = data?.active ?? [];
+  const allPending = data?.pending ?? [];
+  const active = allActive.filter(matches);
+  const pending = allPending.filter(matches);
   const activePaged = usePagination(active);
   const isEmpty = active.length === 0 && pending.length === 0;
 
@@ -194,8 +212,8 @@ export default function AdminStaff() {
         <div>
           <h1 className="text-xl font-semibold">Staff</h1>
           <p className="text-xs text-muted-foreground mt-0.5">
-            {active.length} active
-            {pending.length > 0 ? `, ${pending.length} pending` : ""}
+            {allActive.length} active
+            {allPending.length > 0 ? `, ${allPending.length} pending` : ""}
           </p>
         </div>
         <Button size="sm" onClick={() => setInviteOpen(true)}>
@@ -203,12 +221,29 @@ export default function AdminStaff() {
         </Button>
       </div>
 
+      <div className="relative">
+        <IconSearch
+          size={14}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+        />
+        <Input
+          placeholder="Search staff…"
+          className="pl-8"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
       {isLoading || isEmpty ? (
         <ListState
           loading={isLoading}
           icon={IconUsers}
-          title="No staff members yet"
-          description="Click “Invite Staff” to add your first team member."
+          title={needle ? "No staff match" : "No staff members yet"}
+          description={
+            needle
+              ? "Try a different name or email."
+              : "Click “Invite Staff” to add your first team member."
+          }
         />
       ) : (
         <>

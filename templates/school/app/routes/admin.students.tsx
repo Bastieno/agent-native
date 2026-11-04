@@ -126,7 +126,9 @@ export default function AdminStudents() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-students"),
       );
-      if (!res.ok) return [];
+      // A failure is not an empty roll: throwing keeps the skeleton up while
+      // the query retries, instead of flashing "No students yet".
+      if (!res.ok) throw new Error("Could not load students");
       return res.json();
     },
   });
