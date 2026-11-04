@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import type { MyWeek } from "../../server/lib/my-week";
@@ -15,7 +16,7 @@ export function useMyWeek(date?: string) {
       const res = await fetch(
         agentNativePath(`/_agent-native/actions/get-my-week${qs}`),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

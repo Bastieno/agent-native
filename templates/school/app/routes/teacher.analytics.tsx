@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { CapabilityHint } from "@/components/help/CapabilityHint";
 import { useQuery } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
@@ -28,7 +29,7 @@ export default function TeacherAnalytics() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-analytics"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

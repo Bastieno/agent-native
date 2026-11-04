@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { termWord } from "@shared/school-words";
 import { useSchoolConfig } from "@/hooks/use-school-config";
@@ -94,7 +95,7 @@ export default function AdminSettings() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-school-resource"),
       );
-      if (!res.ok) return { content: null, updatedAt: null };
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -147,7 +148,7 @@ export default function AdminSettings() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-academic-years"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -181,7 +182,7 @@ export default function AdminSettings() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-terms"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -191,7 +192,7 @@ export default function AdminSettings() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-custom-fields-schema"),
       );
-      if (!res.ok) return {};
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

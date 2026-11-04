@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { CalendarBanner } from "@/components/CalendarBanner";
 import { TeacherAttention } from "@/components/help/TeacherAttention";
 import { HelpNudge } from "@/components/help/HelpNudge";
@@ -22,7 +23,7 @@ export default function TeacherDashboard() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-classes"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -123,7 +124,7 @@ function Today() {
           body: "{}",
         },
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

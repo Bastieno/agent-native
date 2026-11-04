@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -20,7 +21,7 @@ export default function TeacherClasses() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-classes"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

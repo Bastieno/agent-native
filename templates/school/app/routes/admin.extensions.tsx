@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Link } from "react-router";
@@ -24,7 +25,7 @@ export default function AdminExtensions() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-extension-audience"),
       );
-      if (!res.ok) return { teacherIds: [] as string[] };
+      if (!res.ok) throw await httpError(res);
       return res.json() as Promise<{ teacherIds: string[] }>;
     },
   });
@@ -83,7 +84,7 @@ export default function AdminExtensions() {
     queryKey: ["school-extensions"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/_agent-native/extensions"));
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

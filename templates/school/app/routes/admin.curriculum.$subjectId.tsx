@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -68,7 +69,7 @@ export default function AdminSubjectDetail() {
           `/_agent-native/actions/get-subject-curriculum?subjectId=${subjectId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!subjectId,

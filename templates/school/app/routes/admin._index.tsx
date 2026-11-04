@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { DraftsWaiting } from "@/components/help/DraftsWaiting";
 import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
@@ -64,7 +65,7 @@ function useAttention() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-school-attention"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -100,7 +101,7 @@ export default function AdminOverview() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-school-stats"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       const fresh = await res.json();
       try {
         if (schoolId) {

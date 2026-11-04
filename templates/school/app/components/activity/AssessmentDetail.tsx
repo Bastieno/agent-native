@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { Link, useLocation, useNavigate } from "react-router";
 import { useUrlTab } from "@/hooks/use-url-tab";
 import { originOf, useOrigin } from "@/lib/origin";
@@ -117,7 +118,7 @@ export function AssessmentDetail({
           `/_agent-native/actions/get-assessment?id=${assessmentId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       // The endpoint returns { assessment, variants, submissionSummary }.
       const data = await res.json();
       return data?.assessment ?? null;
@@ -133,7 +134,7 @@ export function AssessmentDetail({
           `/_agent-native/actions/list-variants?assessmentId=${assessmentId}`,
         ),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!assessmentId,
@@ -163,7 +164,7 @@ export function AssessmentDetail({
           `/_agent-native/actions/list-submissions?assessmentId=${assessmentId}`,
         ),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!assessmentId,
@@ -245,7 +246,7 @@ export function AssessmentDetail({
           `/_agent-native/actions/get-submission?id=${gradingTarget.id}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!gradingTarget?.id,

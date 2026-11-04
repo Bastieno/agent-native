@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -89,7 +90,7 @@ export function useAssistantConnected() {
       const res = await fetch(
         agentNativePath("/_agent-native/agent-engine/status"),
       );
-      if (!res.ok) return false;
+      if (!res.ok) throw await httpError(res);
       const data = await res.json().catch(() => null);
       return data?.configured === true;
     },

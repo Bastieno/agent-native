@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
@@ -117,7 +118,7 @@ export default function AdminCurriculumLibrary() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-grade-levels"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       const json = await res.json();
       return Array.isArray(json) ? json : (json?.levels ?? []);
     },
@@ -131,7 +132,7 @@ export default function AdminCurriculumLibrary() {
           `/_agent-native/actions/get-school-library?includeSamples=${showSamples}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

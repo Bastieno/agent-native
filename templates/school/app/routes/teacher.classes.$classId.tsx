@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { CapabilityHint } from "@/components/help/CapabilityHint";
 import { SearchInput } from "@/components/SearchInput";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
@@ -93,7 +94,7 @@ export default function TeacherClass() {
       const res = await fetch(
         agentNativePath(`/_agent-native/actions/get-class?classId=${classId}`),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!classId,
@@ -107,7 +108,7 @@ export default function TeacherClass() {
           `/_agent-native/actions/list-lesson-notes?classId=${classId}`,
         ),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!classId,
@@ -123,7 +124,7 @@ export default function TeacherClass() {
           `/_agent-native/actions/list-assessments?classId=${classId}`,
         ),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!classId,
@@ -151,7 +152,7 @@ export default function TeacherClass() {
           `/_agent-native/actions/list-class-students?classId=${classId}`,
         ),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!classId,
@@ -163,7 +164,7 @@ export default function TeacherClass() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-students"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: enrollOpen,

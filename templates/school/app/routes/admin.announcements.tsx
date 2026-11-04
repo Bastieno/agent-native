@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { SearchableSelect } from "@/components/SearchableSelect";
 import { ListState } from "@/components/ListState";
@@ -82,7 +83,7 @@ export default function AdminAnnouncements() {
           body: JSON.stringify({}),
         },
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       const data = await res.json();
       return Array.isArray(data) ? data : (data.announcements ?? []);
     },
@@ -95,7 +96,7 @@ export default function AdminAnnouncements() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-classes"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

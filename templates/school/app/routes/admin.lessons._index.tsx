@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { Pagination, usePagination } from "@/components/Pagination";
 import { ListState } from "@/components/ListState";
@@ -70,7 +71,7 @@ export default function AdminLessons() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-lesson-note-coverage"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     placeholderData: (previous) => previous,
@@ -234,7 +235,7 @@ function ClassNotes({
           `/_agent-native/actions/list-lesson-notes?classId=${classId}&limit=100`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

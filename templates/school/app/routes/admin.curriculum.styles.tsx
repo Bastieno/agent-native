@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -84,7 +85,7 @@ export default function AdminCurriculumStyles() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-assessment-styles"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -95,7 +96,7 @@ export default function AdminCurriculumStyles() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-subjects"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       const json = await res.json();
       return Array.isArray(json) ? json : (json.subjects ?? []);
     },

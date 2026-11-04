@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
@@ -142,7 +143,7 @@ export default function AdminStudents() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/check-student-records"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -153,7 +154,7 @@ export default function AdminStudents() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-student-invites"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -196,7 +197,7 @@ export default function AdminStudents() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-grade-levels"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

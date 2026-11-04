@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { termWord } from "@shared/school-words";
 import { formatGpa, type Gpa } from "@shared/gpa";
@@ -95,7 +96,7 @@ export default function StudentGrades() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-term-grades"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

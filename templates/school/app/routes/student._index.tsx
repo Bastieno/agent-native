@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { CalendarBanner } from "@/components/CalendarBanner";
 import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
@@ -43,7 +44,7 @@ export default function StudentDashboard() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-assessments"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

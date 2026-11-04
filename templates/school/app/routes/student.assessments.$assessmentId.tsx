@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { DocumentViewer } from "@/components/activity/DocumentViewer";
 import { useLocation, useParams } from "react-router";
 import { originOf } from "@/lib/origin";
@@ -40,7 +41,7 @@ export default function StudentAssessment() {
           `/_agent-native/actions/get-my-assessment?assessmentId=${assessmentId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!assessmentId,

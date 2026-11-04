@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { SearchInput } from "@/components/SearchInput";
 import { useUrlTab } from "@/hooks/use-url-tab";
@@ -55,7 +56,7 @@ export default function StudentRevise() {
           `/_agent-native/actions/get-my-class?classId=${classId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!classId,
@@ -66,7 +67,7 @@ export default function StudentRevise() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-term-grades"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

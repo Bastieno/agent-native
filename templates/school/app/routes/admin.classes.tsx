@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -85,7 +86,7 @@ export default function AdminClasses() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-staff"),
       );
-      if (!res.ok) return { active: [] };
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!selectedClass,
@@ -100,7 +101,7 @@ export default function AdminClasses() {
         // class is archived, so hiding them would leave no way back.
         agentNativePath("/_agent-native/actions/list-classes?status=all"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

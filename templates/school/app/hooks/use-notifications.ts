@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 
@@ -21,7 +22,7 @@ export function useNotifications() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-my-notifications"),
       );
-      if (!res.ok) return { items: [], unread: 0 };
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     refetchInterval: () => (document.hidden ? false : 60_000),

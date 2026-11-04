@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -117,7 +118,7 @@ export function AssistantSettings() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-grade-levels"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

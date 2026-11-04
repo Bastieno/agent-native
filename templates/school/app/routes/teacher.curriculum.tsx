@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
@@ -46,7 +47,7 @@ export default function TeacherCurriculum() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-my-classes"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -71,7 +72,7 @@ export default function TeacherCurriculum() {
           "/_agent-native/actions/list-curriculum-drafts?status=in_progress",
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -159,7 +160,7 @@ function SubjectCurriculum({
           `/_agent-native/actions/get-subject-curriculum?subjectId=${subject.id}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: open,

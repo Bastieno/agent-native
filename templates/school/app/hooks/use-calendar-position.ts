@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 
@@ -19,7 +20,7 @@ export function useCalendarPosition(): CalendarPositionView | null {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-current-term"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return (await res.json()).calendar ?? null;
     },
     // The week changes on a Monday, not by the minute.

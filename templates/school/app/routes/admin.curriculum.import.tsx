@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -66,7 +67,7 @@ export default function AdminSyllabusImport() {
           `/_agent-native/actions/get-syllabus-import?id=${importId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!importId,
@@ -80,7 +81,7 @@ export default function AdminSyllabusImport() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-syllabus-imports"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !importId,

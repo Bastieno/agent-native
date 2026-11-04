@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { useUrlTab } from "@/hooks/use-url-tab";
 import { agentNativePath } from "@agent-native/core/client";
@@ -61,7 +62,7 @@ export default function TeacherStudents() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-my-students"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

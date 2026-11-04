@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { NO_TEACHER_LABEL } from "@shared/class-teacher";
 import { agentNativePath } from "@agent-native/core/client";
@@ -75,7 +76,7 @@ export default function StudentClassDetail() {
           `/_agent-native/actions/get-my-class?classId=${classId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!classId,

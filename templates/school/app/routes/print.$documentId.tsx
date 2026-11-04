@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { Navigate, useParams } from "react-router";
 import { agentNativePath } from "@agent-native/core/client";
@@ -34,7 +35,7 @@ export default function PrintDocument() {
           `/_agent-native/application-state/document-${documentId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       // A key that does not exist comes back as 200 with an empty body, so
       // res.json() would throw and the query would retry forever behind a
       // "Loading…" that never resolves.

@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -68,7 +69,7 @@ export default function AdminCurriculum() {
           `/_agent-native/actions/get-curriculum-coverage${params}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     placeholderData: (previous) => previous,
@@ -92,7 +93,7 @@ export default function AdminCurriculum() {
           "/_agent-native/actions/list-curriculum-drafts?status=in_progress",
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
@@ -105,7 +106,7 @@ export default function AdminCurriculum() {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-assessment-styles"),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });

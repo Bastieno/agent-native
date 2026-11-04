@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 
 export type SchoolRole =
@@ -32,7 +33,9 @@ export function useRole({ poll = false }: { poll?: boolean } = {}) {
     queryKey: ["session"],
     queryFn: async () => {
       const res = await fetch("/api/school/session");
-      if (!res.ok) return {};
+      // Signed out is an answer, not a failure: the page sends them to sign in.
+      if (res.status === 401) return {} as SessionData;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     staleTime: 60_000,

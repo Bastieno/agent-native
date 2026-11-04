@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useCallback, useMemo } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -40,7 +41,7 @@ export function useHelp() {
     queryKey: ["help-seen"],
     queryFn: async () => {
       const res = await fetch(agentNativePath("/api/school/help"));
-      if (!res.ok) return { seen: [], tourAt: null };
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!helpRole,

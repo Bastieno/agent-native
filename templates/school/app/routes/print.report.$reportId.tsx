@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { agentNativePath } from "@agent-native/core/client";
@@ -32,7 +33,7 @@ export default function PrintReportCard() {
           `/_agent-native/actions/get-report-card?id=${reportId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       const text = await res.text();
       if (!text.trim()) return null;
       try {

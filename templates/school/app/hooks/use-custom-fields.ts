@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 
@@ -24,7 +25,7 @@ export function useCustomFields(entity?: CustomFieldEntity) {
       const res = await fetch(
         agentNativePath("/_agent-native/actions/get-custom-fields-schema"),
       );
-      if (!res.ok) return {} as CustomFieldsSchema;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     staleTime: 5 * 60_000,

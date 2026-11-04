@@ -26,6 +26,7 @@ import {
   useCommandMenuShortcut,
 } from "@agent-native/core/client";
 import { Toaster } from "@/components/ui/sonner";
+import { shouldRetry } from "@/lib/http-error";
 import { useNewVersion } from "@/hooks/use-new-version";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { LinksFunction } from "react-router";
@@ -143,7 +144,10 @@ function ThemeToggleItem() {
 }
 
 export default function Root() {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({ defaultOptions: { queries: { retry: shouldRetry } } }),
+  );
   const [cmdkOpen, setCmdkOpen] = useState(false);
   useCommandMenuShortcut(useCallback(() => setCmdkOpen(true), []));
   // Public pages (the landing page, privacy) render on the server for

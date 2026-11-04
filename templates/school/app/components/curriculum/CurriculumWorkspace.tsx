@@ -1,3 +1,4 @@
+import { httpError } from "@/lib/http-error";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
 import { agentNativePath } from "@agent-native/core/client";
@@ -106,7 +107,7 @@ export function CurriculumWorkspace({
           `/_agent-native/actions/get-curriculum-draft?id=${draftId}`,
         ),
       );
-      if (!res.ok) return null;
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
     enabled: !!draftId,
@@ -120,7 +121,7 @@ export function CurriculumWorkspace({
       const res = await fetch(
         agentNativePath("/_agent-native/actions/list-terms"),
       );
-      if (!res.ok) return [];
+      if (!res.ok) throw await httpError(res);
       return res.json();
     },
   });
