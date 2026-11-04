@@ -26,6 +26,7 @@ import {
   useCommandMenuShortcut,
 } from "@agent-native/core/client";
 import { Toaster } from "@/components/ui/sonner";
+import { useNewVersion } from "@/hooks/use-new-version";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { LinksFunction } from "react-router";
 import stylesheet from "./global.css?url";
@@ -117,6 +118,11 @@ function DbSyncSetup() {
   return null;
 }
 
+function NewVersionPrompt() {
+  useNewVersion();
+  return null;
+}
+
 function NavigationStateSync() {
   useNavigationState();
   return null;
@@ -159,6 +165,7 @@ export default function Root() {
           <TooltipProvider>
             <DbSyncSetup />
             <NavigationStateSync />
+            <NewVersionPrompt />
             <RememberAddresses />
             <Toaster richColors position="bottom-left" />
             <CommandMenu open={cmdkOpen} onOpenChange={setCmdkOpen}>
