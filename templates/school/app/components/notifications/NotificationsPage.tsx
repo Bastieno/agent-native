@@ -79,9 +79,12 @@ export function NotificationsPage({
   };
 
   return (
-    <div className="h-full overflow-auto p-4 sm:p-6">
-      <div className="mx-auto max-w-2xl space-y-6">
-        <div className="flex items-center justify-between gap-3">
+    // The page itself does not scroll: the heading and "How you hear" stay in
+    // view and only the list moves, so a long run of notifications never
+    // pushes the settings off the screen.
+    <div className="h-full p-4 sm:p-6">
+      <div className="mx-auto flex h-full max-w-2xl flex-col gap-6">
+        <div className="flex shrink-0 items-center justify-between gap-3">
           <h1 className="text-xl font-semibold">Notifications</h1>
           {unread > 0 ? (
             <Button variant="outline" size="sm" onClick={() => markRead()}>
@@ -90,63 +93,67 @@ export function NotificationsPage({
           ) : null}
         </div>
 
-        {isLoading || items.length === 0 ? (
-          <ListState
-            loading={isLoading}
-            title="Nothing yet"
-            description="Announcements, work due soon and work waiting to be marked will show up here."
-          />
-        ) : (
-          <ul className="divide-y rounded-lg border bg-card">
-            {items.map((n) => (
-              <li key={n.id}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (!n.readAt) markRead([n.id]);
-                    if (n.link) navigate(n.link);
-                  }}
-                  className={cn(
-                    "flex w-full items-start gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-muted/40",
-                    !n.link && "cursor-default",
-                  )}
-                >
-                  <span
+        <div className="min-h-0 space-y-4 overflow-y-auto">
+          {isLoading || items.length === 0 ? (
+            <ListState
+              loading={isLoading}
+              title="Nothing yet"
+              description="Announcements, work due soon and work waiting to be marked will show up here."
+            />
+          ) : (
+            <ul className="divide-y rounded-lg border bg-card">
+              {items.map((n) => (
+                <li key={n.id}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (!n.readAt) markRead([n.id]);
+                      if (n.link) navigate(n.link);
+                    }}
                     className={cn(
-                      "mt-1.5 h-2 w-2 shrink-0 rounded-full",
-                      n.readAt ? "bg-transparent" : "bg-primary",
+                      "flex w-full items-start gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-muted/40",
+                      !n.link && "cursor-default",
                     )}
-                    aria-hidden
-                  />
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-medium">{n.title}</span>
-                    {n.body ? (
-                      <span className="mt-0.5 block whitespace-pre-line text-xs text-muted-foreground">
-                        {n.body}
+                  >
+                    <span
+                      className={cn(
+                        "mt-1.5 h-2 w-2 shrink-0 rounded-full",
+                        n.readAt ? "bg-transparent" : "bg-primary",
+                      )}
+                      aria-hidden
+                    />
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-medium">{n.title}</span>
+                      {n.body ? (
+                        <span className="mt-0.5 block whitespace-pre-line text-xs text-muted-foreground">
+                          {n.body}
+                        </span>
+                      ) : null}
+                      <span className="mt-1 block text-[11px] text-muted-foreground/80">
+                        {ago(n.createdAt)}
                       </span>
-                    ) : null}
-                    <span className="mt-1 block text-[11px] text-muted-foreground/80">
-                      {ago(n.createdAt)}
                     </span>
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-        {total > items.length ? (
-          <div className="text-center">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setLimit((l) => l + 30)}
-            >
-              Show older ({total - items.length} more)
-            </Button>
-          </div>
-        ) : null}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          {total > items.length ? (
+            <div className="text-center">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLimit((l) => l + 30)}
+              >
+                Show older ({total - items.length} more)
+              </Button>
+            </div>
+          ) : null}
+        </div>
 
-        <HowToHear />
+        <div className="shrink-0">
+          <HowToHear />
+        </div>
       </div>
     </div>
   );
