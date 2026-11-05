@@ -204,9 +204,16 @@ export function AssessmentDetail({
     explicit: true,
     allowed: ["variants", "submissions"],
   });
+  // A draft has nobody's work to look at, so it opens on its questions. Work
+  // that has been handed in opens on the learners, whether it is waiting to
+  // be marked or already marked: a closed worksheet used to open on its
+  // questions and tell a teacher "0 submitted" above twelve marked papers.
+  const isDraft = assessment?.status === "draft";
+  const hasWork =
+    submittedCount > 0 || submissions.some((s: any) => s.status === "graded");
   const activeTab =
     chosenTab ||
-    (!isMaterial && submittedCount > 0 ? "submissions" : "variants");
+    (!isMaterial && !isDraft && hasWork ? "submissions" : "variants");
 
   // The list, with what needs marking first, then what has been marked, then
   // the learners still working or who have not handed in.
@@ -423,66 +430,74 @@ export function AssessmentDetail({
           </div>
         </div>
 
+        {/* A draft is the one state with something to do: nobody but the
+            teacher can see it yet. Said first, on every kind of work, with the
+            way forward beside it — it used to be only on a PDF, so a drafted
+            worksheet opened on its questions with no sign that learners could
+            not see it and no button to give it to them. */}
+        {assessment?.status === "draft" ? (
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border bg-muted/30 px-4 py-3">
+            <p className="text-sm">
+              {assessment.audienceStudentIdsJson
+                ? "Draft. Only the learners it was made for will see it, once you share it."
+                : "Draft. Learners cannot see this yet. Read it, change what you want, then share it."}
+            </p>
+            <div className="flex gap-2">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() =>
+                  sendToAgentChat({
+                    message: `Change "${assessment.title}": `,
+                    submit: false,
+                    openSidebar: true,
+                  })
+                }
+              >
+                Ask for changes
+              </Button>
+              <Button
+                size="sm"
+                disabled={publishDoc}
+                onClick={async () => {
+                  setPublishDoc(true);
+                  try {
+                    const res = await fetch(
+                      agentNativePath(
+                        "/_agent-native/actions/publish-assessment",
+                      ),
+                      {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ id: assessmentId }),
+                      },
+                    );
+                    if (!res.ok) throw new Error(await res.text());
+                    toast.success("Shared");
+                    qc.invalidateQueries({
+                      queryKey: ["assessment", assessmentId],
+                    });
+                    qc.invalidateQueries({ queryKey: ["my-drafts"] });
+                    qc.invalidateQueries({ queryKey: ["my-attention"] });
+                  } catch (e: any) {
+                    toast.error(e?.message || "Could not share it");
+                  } finally {
+                    setPublishDoc(false);
+                  }
+                }}
+              >
+                {assessment.audienceStudentIdsJson
+                  ? "Share"
+                  : "Share with class"}
+              </Button>
+            </div>
+          </div>
+        ) : null}
+
         {/* A PDF set as the material: read it here, then publish it or ask
           for changes. What the class gets is exactly this file. */}
         {assessment?.document ? (
           <div className="space-y-3">
-            {assessment.status === "draft" ? (
-              <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border bg-muted/30 px-4 py-3">
-                <p className="text-sm">
-                  {assessment.audienceStudentIdsJson
-                    ? "A draft, for the learners it was made for. Read it, then share it."
-                    : "A draft only you can see. Read it, then share it with the class."}
-                </p>
-                <div className="flex gap-2">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() =>
-                      sendToAgentChat({
-                        message: `Change the PDF "${assessment.title}": `,
-                        submit: false,
-                        openSidebar: true,
-                      })
-                    }
-                  >
-                    Ask for changes
-                  </Button>
-                  <Button
-                    size="sm"
-                    disabled={publishDoc}
-                    onClick={async () => {
-                      setPublishDoc(true);
-                      try {
-                        const res = await fetch(
-                          agentNativePath(
-                            "/_agent-native/actions/publish-assessment",
-                          ),
-                          {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ id: assessmentId }),
-                          },
-                        );
-                        if (!res.ok) throw new Error(await res.text());
-                        toast.success("Shared");
-                        qc.invalidateQueries({
-                          queryKey: ["assessment", assessmentId],
-                        });
-                      } catch (e: any) {
-                        toast.error(e?.message || "Could not share it");
-                      } finally {
-                        setPublishDoc(false);
-                      }
-                    }}
-                  >
-                    {assessment.audienceStudentIdsJson
-                      ? "Share"
-                      : "Share with class"}
-                  </Button>
-                </div>
-              </div>
-            ) : null}
             <DocumentViewer
               assessmentId={assessmentId}
               document={assessment.document}
@@ -493,31 +508,31 @@ export function AssessmentDetail({
         {/* Something to read is not work to mark. Counting submissions and
           "variants" on a page nobody hands in told a teacher about machinery
           they have no use for, and hid the one thing they came to see. */}
-        {!isMaterial ? (
+        {/* Results and marking counts say nothing about a draft: nobody can
+            have done it yet. They appear once it is shared. */}
+        {!isMaterial && !isDraft ? (
           <PaperSummary assessmentId={assessmentId} role={role} />
         ) : null}
 
-        {!isMaterial ? (
+        {!isMaterial && !isDraft ? (
           <div className="flex gap-4 text-sm">
             <div className="text-center">
               <p className="text-xl font-semibold">{submittedCount}</p>
-              <p className="text-xs text-muted-foreground">Submitted</p>
+              <p className="text-xs text-muted-foreground">To mark</p>
             </div>
             <div className="text-center">
               <p className="text-xl font-semibold">{gradedCount}</p>
-              <p className="text-xs text-muted-foreground">Graded</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xl font-semibold">{variants.length}</p>
-              <p className="text-xs text-muted-foreground">Variants</p>
+              <p className="text-xs text-muted-foreground">Marked</p>
             </div>
           </div>
         ) : null}
 
         {assessment?.document ? null : (
           <Tabs value={activeTab} onValueChange={setChosenTab}>
-            <TabsList className={isMaterial ? "hidden" : undefined}>
-              <TabsTrigger value="variants">Variants</TabsTrigger>
+            <TabsList className={isMaterial || isDraft ? "hidden" : undefined}>
+              <TabsTrigger value="variants">
+                {variants.length > 1 ? "Levels" : "Questions"}
+              </TabsTrigger>
               <TabsTrigger value="submissions">Submissions</TabsTrigger>
             </TabsList>
             <TabsContent value="variants" className="mt-4 space-y-3">
@@ -679,12 +694,31 @@ export function AssessmentDetail({
                             </Badge>
                           ) : null}
                         </p>
-                        {sub.score != null && (
-                          <p className="text-xs text-muted-foreground">
-                            Score: {sub.score} /{" "}
-                            {sub.maxScore ?? assessment?.totalPoints ?? "—"}
-                          </p>
-                        )}
+                        {(() => {
+                          // Which version of the paper this learner sat. With
+                          // more than one, it is also why marks are out of
+                          // different totals, so it is said beside the mark.
+                          const level =
+                            variants.length > 1
+                              ? variants.find(
+                                  (v: any) => v.id === sub.variantId,
+                                )?.label
+                              : null;
+                          const score =
+                            sub.score != null
+                              ? `Score: ${sub.score} / ${
+                                  sub.maxScore ?? assessment?.totalPoints ?? "—"
+                                }`
+                              : null;
+                          const line = [level, score]
+                            .filter(Boolean)
+                            .join(" · ");
+                          return line ? (
+                            <p className="text-xs text-muted-foreground">
+                              {line}
+                            </p>
+                          ) : null;
+                        })()}
                       </div>
                       <Badge
                         variant={

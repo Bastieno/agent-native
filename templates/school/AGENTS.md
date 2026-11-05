@@ -1201,8 +1201,14 @@ pnpm action create-activity --classId c-1 --unitId u-1 \
   --variants '[...]' --rubric '[...]'
 ```
 
-It previews by default. Show the teacher what you intend — format, objectives,
-timing, marking — and create it only once they agree.
+A preview is not saved: the teacher cannot see it anywhere in the app, so
+"I've drafted it but not saved it" leaves them with nothing to find. A draft is
+private to them, so once the content is written **save it at once** with
+`confirm=true` (publish stays off), give them the link in the result, and only
+then ask what is open — a closing date, which learners take which level — and
+apply the answers with `update-assessment`. Never publish unless they ask for
+the class to see it. The result's `alreadyThisWeek` lists work the week already
+has: say so rather than quietly adding a second.
 
 **Judgement, not rules:**
 
@@ -1265,7 +1271,8 @@ planned, is held for its Monday.
 its marks are published, but learners see the right answers on their returned
 paper only once it closes, so work that is never marked, or marked late, needs
 a date. `create-activity`'s preview says when one is missing (`closingNote`);
-put the question to the teacher rather than choosing a date for them.
+put the question to the teacher rather than choosing a date for them — after
+the draft is saved, not before.
 | `durationMinutes` | each learner | time allowed once **that learner** begins |
 
 `durationMinutes` starts when the learner presses begin, not when you create the

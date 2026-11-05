@@ -6,7 +6,7 @@ import { z } from "zod";
 
 export default defineAction({
   description:
-    "Update an assessment's title, description, due date, total points, type, or the week's lesson it belongs to.",
+    "Update an assessment's title, description, due date, closing date, total points, type, or the week's lesson it belongs to.",
   schema: z.object({
     id: z.string().describe("Assessment ID"),
     title: z.string().optional(),
@@ -29,6 +29,12 @@ export default defineAction({
       .optional()
       .describe(
         "ISO date/time it becomes available to the class. Until then learners see its title and when it opens, not its content. Pass an empty string to open it at once.",
+      ),
+    closesAt: z
+      .string()
+      .optional()
+      .describe(
+        "ISO date/time it closes. Once closed, learners see the right answers on their returned paper. Pass an empty string for no closing date.",
       ),
     lessonNoteId: z
       .string()
@@ -60,6 +66,8 @@ export default defineAction({
     // Empty string clears it, for the same reason as the lesson above.
     if (args.opensAt !== undefined)
       updates.opensAt = args.opensAt === "" ? null : args.opensAt;
+    if (args.closesAt !== undefined)
+      updates.closesAt = args.closesAt === "" ? null : args.closesAt;
 
     await db
       .update(schema.assessments)

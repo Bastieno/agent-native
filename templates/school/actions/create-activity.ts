@@ -14,6 +14,8 @@ import { jsonish } from "../shared/zod-json.js";
 import { withCardIds } from "../shared/card-key.js";
 import { styleForClass } from "../server/lib/assessment-style.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
+import { actorForEmail } from "../server/lib/class-access.js";
+import { buildDeepLink } from "@agent-native/core/server";
 
 /**
  * Create a piece of work for a class — a worksheet, a reading task, a problem
@@ -75,7 +77,7 @@ function blueprintNotes(
 
 export default defineAction({
   description:
-    "Create an activity for a class: any piece of work a learner does — worksheet, reading, problem set, essay, practical, oral. You supply the content (instructions, questions, optional difficulty variants, optional rubric); this records it with its objectives, timing and marking mode. Read the week's objectives and the school's activity blueprints first, then draft. Preview by default; pass confirm=true to create.",
+    "Create an activity for a class: any piece of work a learner does — worksheet, reading, problem set, essay, practical, oral. You supply the content (instructions, questions, optional difficulty variants, optional rubric); this records it with its objectives, timing and marking mode. Read the week's objectives and the school's activity blueprints first, then draft. Preview by default, and a preview is NOT saved: the teacher cannot see it anywhere in the app. A draft is private to the teacher, so once the content is written, save it with confirm=true (leave publish off) and give the teacher the link in the result; put open questions — a closing date, which learners take which level — to them afterwards and apply the answers with update-assessment. Never pass publish=true unless the teacher has asked for the class to see it. The result lists any work this week already has (alreadyThisWeek): say so rather than quietly making a second.",
   schema: z.object({
     classId: z.string().describe("Class this is for"),
     studentIds: jsonish(z.array(z.string()))
@@ -228,6 +230,26 @@ export default defineAction({
       .describe("false returns a preview; true creates it"),
   }),
   http: { method: "POST" },
+  /** A link that opens the draft in the school app, where they are signed in. */
+  link: ({ result }) => {
+    const r = result as
+      | { assessmentId?: string; openPath?: string; status?: string }
+      | undefined;
+    if (!r?.assessmentId || !r.openPath) return null;
+    return {
+      url: buildDeepLink({
+        app: "school",
+        view: "assessment",
+        params: { assessmentId: r.assessmentId },
+        to: r.openPath,
+      }),
+      label:
+        r.status === "draft"
+          ? "Open the draft to read and share it"
+          : "Open it in the app",
+      view: "assessment",
+    };
+  },
   run: async (args) => {
     const { orgId, userEmail } = currentAccess();
     if (!orgId) throw new Error("No school context.");
@@ -314,6 +336,31 @@ export default defineAction({
 
     const shape = args.renderAs ?? "prose";
 
+    // What this week already has, so a second worksheet is a decision and not
+    // an accident. Only knowable when the work is for a particular week.
+    const alreadyThisWeek = args.lessonNoteId
+      ? (
+          await db
+            .select({
+              id: schema.assessments.id,
+              title: schema.assessments.title,
+              status: schema.assessments.status,
+            })
+            .from(schema.assessments)
+            .where(
+              and(
+                eq(schema.assessments.classId, args.classId),
+                eq(schema.assessments.lessonNoteId, args.lessonNoteId),
+              ),
+            )
+        ).map((a: any) => ({ id: a.id, title: a.title, status: a.status }))
+      : [];
+    const alreadyNote = alreadyThisWeek.length
+      ? ` This week already has: ${alreadyThisWeek
+          .map((a: any) => `"${a.title}" (${a.status})`)
+          .join(", ")}. Tell the teacher before adding another.`
+      : "";
+
     // Work for named learners. It is never marked and never handed in, so no
     // class average, gradebook or report card has to know it exists, and
     // nobody is counted as having missed it.
@@ -396,6 +443,7 @@ export default defineAction({
           : "No closing date: it stays open until its marks are published (which closes it) or the teacher closes it. Learners see the right answers only once it closes.",
       dueDate: args.dueDate ?? null,
       willPublish: !!args.publish,
+      alreadyThisWeek,
       // Named for what it is: this school's answer, not the app's.
       subjectBlueprint: blueprint
         ? {
@@ -427,7 +475,7 @@ export default defineAction({
       return {
         preview: true,
         ...preview,
-        message: `${blueprintNotes(blueprint, args, cls.subjectName).join(" ")}${
+        message: `This is only a preview: nothing is saved and the teacher cannot see it yet.${alreadyNote} ${blueprintNotes(blueprint, args, cls.subjectName).join(" ")}${
           blueprintNotes(blueprint, args, cls.subjectName).length ? " " : ""
         }Ready to create "${args.title}" (${args.format}) for ${cls.name}${
           objectives.length
@@ -437,7 +485,7 @@ export default defineAction({
           houseStyle
             ? ` ${cls.name} questions are worded like ${houseStyle.name} here — check the content against houseStyle.followWhenWritingQuestions before confirming.`
             : ""
-        } Re-run with confirm=true to create it.`,
+        } Save it as a draft now with confirm=true (publish stays off), then ask the teacher what is still open.`,
       };
     }
 
@@ -547,10 +595,20 @@ export default defineAction({
       preview: false,
       ...preview,
       assessmentId,
+      // Where it opens, in this person's own portal.
+      openPath: `/${
+        (await actorForEmail(userEmail ?? ""))?.schoolRole === "school_admin"
+          ? "admin"
+          : "teacher"
+      }/assessments/${assessmentId}`,
       status: args.publish ? "published" : "draft",
-      message: `Created "${args.title}" for ${
+      message: `Saved "${args.title}" for ${
         args.studentIds ? audienceNames.join(", ") : cls.name
-      }${args.publish ? " and published it" : " as a draft"}.`,
+      }${
+        args.publish
+          ? " and published it"
+          : " as a draft. It is in the app now, marked Draft, and learners cannot see it until the teacher shares it. Give them the link, then ask what is still open (closing date, levels)"
+      }.${alreadyNote}`,
     };
   },
 });

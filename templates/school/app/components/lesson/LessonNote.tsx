@@ -422,91 +422,112 @@ export function LessonNote({
           </div>
           {lesson.material?.length ? (
             <div className="divide-y rounded-lg border">
-              {lesson.material.map((m: any) => (
-                <div key={m.id} className="flex items-center gap-3 p-3">
-                  <div className="min-w-0 flex-1">
-                    {/* The week is the heading of this page; repeating it on
+              {[...lesson.material]
+                .sort(
+                  (a: any, b: any) =>
+                    Number(b.status === "draft") - Number(a.status === "draft"),
+                )
+                .map((m: any) => (
+                  <div key={m.id} className="flex items-center gap-3 p-3">
+                    <div className="min-w-0 flex-1">
+                      {/* The week is the heading of this page; repeating it on
                         every row pushes the part that differs out of sight. */}
-                    <p className="truncate text-sm">
-                      {withoutWeekPrefix(m.title, weekNumberIn(lesson.title))}
-                    </p>
-                    {/* The school's own word for the format, as it wrote it
+                      <p className="flex items-center gap-2 text-sm">
+                        <span className="truncate">
+                          {withoutWeekPrefix(
+                            m.title,
+                            weekNumberIn(lesson.title),
+                          )}
+                        </span>
+                        {/* Not yet seen by the class: the one state a teacher
+                          has to act on, so it is said, not left to be read
+                          from the absence of a "Shared" tick. */}
+                        {m.status === "draft" ? (
+                          <Badge
+                            variant="secondary"
+                            className="shrink-0 text-xs"
+                          >
+                            Draft
+                          </Badge>
+                        ) : null}
+                      </p>
+                      {/* The school's own word for the format, as it wrote it
                         — "worksheet", "WAEC practical". Only the first letter
                         is lifted, because it starts the line; capitalising
                         each word would make "Practical Write-Up" of it. */}
-                    <p className="text-xs text-muted-foreground first-letter:uppercase">
-                      {[
-                        m.format,
-                        m.gradingMode === "none" ? "not marked" : "marked",
-                        m.durationMinutes ? `${m.durationMinutes} min` : null,
-                        // Who gave it to the class. Said here rather than left
-                        // to be noticed: an admin may share work with any
-                        // class, and the teacher whose class it is should read
-                        // that they did, not discover it.
-                        (m.status === "published" || m.status === "closed") &&
-                        m.publishedBy
-                          ? `shared by ${m.publishedBy}${
-                              m.publishedAt
-                                ? `, ${formatDate(m.publishedAt, {
-                                    day: "numeric",
-                                    month: "short",
-                                  })}`
-                                : ""
-                            }`
-                          : null,
-                      ]
-                        .filter(Boolean)
-                        .join(" · ")}
-                    </p>
-                  </div>
-                  {/* Reading it must not depend on its state. Sharing used
+                      <p className="text-xs text-muted-foreground first-letter:uppercase">
+                        {[
+                          m.format,
+                          m.gradingMode === "none" ? "not marked" : "marked",
+                          m.durationMinutes ? `${m.durationMinutes} min` : null,
+                          // Who gave it to the class. Said here rather than left
+                          // to be noticed: an admin may share work with any
+                          // class, and the teacher whose class it is should read
+                          // that they did, not discover it.
+                          (m.status === "published" || m.status === "closed") &&
+                          m.publishedBy
+                            ? `shared by ${m.publishedBy}${
+                                m.publishedAt
+                                  ? `, ${formatDate(m.publishedAt, {
+                                      day: "numeric",
+                                      month: "short",
+                                    })}`
+                                  : ""
+                              }`
+                            : null,
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </p>
+                    </div>
+                    {/* Reading it must not depend on its state. Sharing used
                       to replace the only way in with a tick, so the moment a
                       teacher gave something to the class they could no
                       longer see what they had given. */}
-                  <div className="flex shrink-0 items-center gap-1">
-                    <Link
-                      to={`/${role === "admin" ? "admin" : "teacher"}/assessments/${m.id}`}
-                      className="text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-                    >
-                      Read it
-                    </Link>
-                    {/* Closed: marked and on the record. Offering to share
+                    <div className="flex shrink-0 items-center gap-1">
+                      <Link
+                        to={`/${role === "admin" ? "admin" : "teacher"}/assessments/${m.id}`}
+                        className="text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+                      >
+                        {m.status === "draft" ? "Review" : "Read it"}
+                      </Link>
+                      {/* Closed: marked and on the record. Offering to share
                         it again would quietly reopen it. */}
-                    {m.status === "closed" ? (
-                      <span className="ml-2 flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <IconCheck size={12} />
-                        Closed
-                      </span>
-                    ) : m.status === "published" ? (
-                      <>
+                      {m.status === "closed" ? (
                         <span className="ml-2 flex items-center gap-1.5 text-xs text-muted-foreground">
                           <IconCheck size={12} />
-                          Shared
+                          Closed
                         </span>
+                      ) : m.status === "published" ? (
+                        <>
+                          <span className="ml-2 flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <IconCheck size={12} />
+                            Shared
+                          </span>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            className="text-xs text-muted-foreground"
+                            onClick={() => unshareMutation.mutate({ id: m.id })}
+                            disabled={unshareMutation.isPending}
+                          >
+                            Stop sharing
+                          </Button>
+                        </>
+                      ) : (
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="text-xs text-muted-foreground"
-                          onClick={() => unshareMutation.mutate({ id: m.id })}
-                          disabled={unshareMutation.isPending}
+                          className="text-xs"
+                          onClick={() => publishMutation.mutate(m.id)}
+                          disabled={publishMutation.isPending}
                         >
-                          Stop sharing
+                          Share with class
                         </Button>
-                      </>
-                    ) : (
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        className="text-xs"
-                        onClick={() => publishMutation.mutate(m.id)}
-                        disabled={publishMutation.isPending}
-                      >
-                        Share with class
-                      </Button>
-                    )}
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           ) : (
             <p className="text-sm text-muted-foreground">
