@@ -1,4 +1,11 @@
 import { httpError } from "@/lib/http-error";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { CapabilityHint } from "@/components/help/CapabilityHint";
 import { SearchInput } from "@/components/SearchInput";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
@@ -170,8 +177,24 @@ export default function TeacherClass() {
     enabled: enrollOpen,
   });
 
+  // A class's lessons one term at a time, for looking back at an earlier term.
+  // Only offered when the notes span more than one; the choice is in the
+  // address (?term=) and an unknown value shows them all.
+  const termsWithLessons: { id: string; name: string }[] = [];
+  for (const l of lessons) {
+    if (l.termId && !termsWithLessons.some((t) => t.id === l.termId)) {
+      termsWithLessons.push({ id: l.termId, name: l.termName });
+    }
+  }
+  const chosenTerm = termsWithLessons.find(
+    (t) => t.id === searchParams.get("term"),
+  );
+  const shownLessons = chosenTerm
+    ? lessons.filter((l: any) => l.termId === chosenTerm.id)
+    : lessons;
+
   // Each tab keeps its own page in the address.
-  const lessonsPaged = usePagination(lessons, undefined, {
+  const lessonsPaged = usePagination(shownLessons, undefined, {
     pageKey: "lessonsPage",
   });
   const assessmentsPaged = usePagination(assessments, undefined, {
@@ -288,6 +311,35 @@ export default function TeacherClass() {
           >
             Make a PDF handout from a reference document with your own AI app.
           </CapabilityHint>
+          {termsWithLessons.length > 1 ? (
+            <Select
+              value={chosenTerm?.id ?? "all"}
+              onValueChange={(v) =>
+                setSearchParams(
+                  (prev) => {
+                    const params = new URLSearchParams(prev);
+                    if (v === "all") params.delete("term");
+                    else params.set("term", v);
+                    params.delete("lessonsPage");
+                    return params;
+                  },
+                  { replace: true },
+                )
+              }
+            >
+              <SelectTrigger className="w-44" aria-label="Term">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All terms</SelectItem>
+                {termsWithLessons.map((t) => (
+                  <SelectItem key={t.id} value={t.id}>
+                    {t.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          ) : null}
           {lessonsLoading ? (
             <ListState loading rows={3} title="Lesson notes" />
           ) : lessons.length === 0 ? (

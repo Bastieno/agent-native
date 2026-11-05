@@ -2,16 +2,21 @@ import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { assertSubjectInSchool } from "../server/lib/curriculum-access.js";
+import { termIdsForYear, unitInYear } from "../server/lib/academic-year.js";
 import { eq, and, asc } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
   description:
-    "List curriculum units for a subject, optionally filtered by grade level or term.",
+    "List curriculum units for a subject, optionally filtered by grade level or term. The school's current year unless another is named.",
   schema: z.object({
     subjectId: z.string().describe("Subject ID"),
     gradeLevelId: z.string().optional(),
     termId: z.string().optional(),
+    academicYearId: z
+      .string()
+      .optional()
+      .describe("Which academic year's units. Omit for the current year."),
     status: z.enum(["draft", "active", "archived"]).optional(),
   }),
   http: { method: "GET" },
@@ -30,6 +35,9 @@ export default defineAction({
       .from(schema.units)
       .where(and(...conditions))
       .orderBy(asc(schema.units.sequence));
-    return units;
+    // One year's, unless a term was named (a term is already one year's).
+    if (args.termId) return units;
+    const yearTerms = await termIdsForYear(orgId, args.academicYearId);
+    return units.filter((u: any) => unitInYear(u, yearTerms));
   },
 });

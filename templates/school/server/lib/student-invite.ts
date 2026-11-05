@@ -20,6 +20,9 @@ export interface PendingStudentInvite {
   /** The year group they are joining, when it is already settled. */
   gradeLevelId?: string;
   gradeLevelName?: string;
+  /** The arm (class group) within that year group, when settled: they join its classes on sign-in. */
+  armId?: string;
+  armName?: string;
   /** Values for the school's own student fields, checked when given. */
   fields?: Record<string, unknown>;
 }
@@ -30,6 +33,8 @@ export async function recordStudentInvite(args: {
   email: string;
   name: string;
   gradeLevel?: string;
+  /** The arm within the year group, by its name or id. Needs a year group. */
+  arm?: string;
   fields?: Record<string, unknown>;
 }): Promise<PendingStudentInvite> {
   const { orgId, userEmail, email } = args;
@@ -76,6 +81,44 @@ export async function recordStudentInvite(args: {
     gradeLevelName = match.name ?? undefined;
   }
 
+  // The arm, by name or id, and it must be one of that year group's: placed
+  // here, they join its classes the moment their record exists, rather than
+  // waiting for someone to remember to do it. Refused now, while the person
+  // typing it is still here.
+  let armId: string | undefined;
+  let armName: string | undefined;
+  if (args.arm?.trim()) {
+    if (!gradeLevelId) {
+      throw new Error(
+        "Name their year group as well as the arm: an arm belongs to one year group.",
+      );
+    }
+    const wanted = args.arm.trim();
+    const arms = await getDb()
+      .select({ id: schema.arms.id, name: schema.arms.name })
+      .from(schema.arms)
+      .where(
+        and(
+          eq(schema.arms.orgId, orgId),
+          eq(schema.arms.gradeLevelId, gradeLevelId),
+          eq(schema.arms.status, "active"),
+        ),
+      );
+    const squash = (s: string) => s.replace(/\s+/gu, "").toLowerCase();
+    const found = arms.find(
+      (a: any) => a.id === wanted || squash(a.name ?? "") === squash(wanted),
+    );
+    if (!found) {
+      throw new Error(
+        `${gradeLevelName} has no group called "${args.arm}". It has: ${
+          arms.map((a: any) => a.name).join(", ") || "none yet"
+        }.`,
+      );
+    }
+    armId = found.id;
+    armName = found.name ?? undefined;
+  }
+
   // Whatever else this school records about a student — its own fields,
   // its own options. An unrecognised one is refused rather than stored,
   // because a value no screen can read is worse than no value at all.
@@ -91,6 +134,7 @@ export async function recordStudentInvite(args: {
     name: args.name,
     invitedAt: Date.now(),
     ...(gradeLevelId ? { gradeLevelId, gradeLevelName } : {}),
+    ...(armId ? { armId, armName } : {}),
     ...(Object.keys(fieldValues).length ? { fields: fieldValues } : {}),
   };
   // One writer at a time: read, append and write are a single operation.

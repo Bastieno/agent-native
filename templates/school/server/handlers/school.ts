@@ -27,6 +27,7 @@ import {
 } from "../lib/class-access.js";
 import { rowOf, rowsOf, runSql } from "../lib/raw-sql.js";
 import { orgForHost } from "../lib/school-host.js";
+import { moveLearnersArm } from "../lib/arm-enrolment.js";
 import { schoolProfileFor } from "../lib/school-profile.js";
 
 // ─── Helper ──────────────────────────────────────────────────────────────────
@@ -168,6 +169,17 @@ async function activateInvite(
       orgId,
       visibility: "org",
     });
+    // An arm named at invitation: place them in it now, which also enrols
+    // them in its classes for the current year. Never blocks a sign-in; a
+    // refusal here leaves a learner with a year group and no arm, which the
+    // school can place by hand.
+    if (match.armId) {
+      try {
+        await moveLearnersArm(orgId, [userId], match.armId);
+      } catch {
+        // See above.
+      }
+    }
   }
   // Taking this invitation off the list is a read-modify-write like adding
   // one, so it takes the same lock: two people signing in at the same moment

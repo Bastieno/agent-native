@@ -57,7 +57,7 @@ export type TrendHalf = {
 export async function termGradesFor(
   studentId: string,
   orgId: string,
-  options: { trendPieces?: boolean } = {},
+  options: { trendPieces?: boolean; academicYearId?: string } = {},
 ) {
   const db = getDb();
 
@@ -86,11 +86,26 @@ export async function termGradesFor(
         .where(
           and(
             eq(schema.classEnrollments.studentUserId, student.userId),
-            eq(schema.classEnrollments.status, "active"),
+            // Looking back reads the classes a learner finished with their year.
+            options.academicYearId
+              ? inArray(schema.classEnrollments.status, ["active", "completed"])
+              : eq(schema.classEnrollments.status, "active"),
           ),
         )
     : [];
-  const classIds = enrollments.map((e) => e.classId);
+  let classIds = enrollments.map((e) => e.classId);
+  if (options.academicYearId && classIds.length) {
+    const inYear = await db
+      .select({ id: schema.classes.id })
+      .from(schema.classes)
+      .where(
+        and(
+          inArray(schema.classes.id, classIds),
+          eq(schema.classes.academicYearId, options.academicYearId),
+        ),
+      );
+    classIds = inYear.map((c) => c.id);
+  }
   if (!classIds.length) {
     return {
       summary: null,

@@ -48,7 +48,9 @@ export default defineAction({
         blocks: true,
       });
     }
-    const behind = (totals?.withGaps ?? 0) + (totals?.withNothing ?? 0);
+    // Classes with nothing written are among the classes with gaps, so adding
+    // the two counted each of them twice.
+    const behind = totals?.withGaps ?? 0;
     if (behind > 0) {
       items.push({
         text: `${plural(behind, "class is", "classes are")} behind on lesson notes`,

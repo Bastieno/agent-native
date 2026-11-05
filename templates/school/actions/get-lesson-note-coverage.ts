@@ -5,6 +5,7 @@ import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
 import { boolish } from "../shared/zod-json.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
+import { termContext } from "../server/lib/timetable.js";
 import {
   accessibleClassIds,
   actorForEmail,
@@ -63,10 +64,16 @@ export default defineAction({
       .select()
       .from(schema.terms)
       .where(eq(schema.terms.schoolId, orgId));
+    // The terms of the current year only. Across every year, "the term
+    // running today" can be a closed year's, and "the most recent" the last
+    // one of next year; the school's own current year is what is meant.
     const today = new Date().toISOString().slice(0, 10);
+    const ctx = await termContext(orgId);
     const term = args.termId
       ? terms.find((t: any) => t.id === args.termId)
-      : (terms.find((t: any) => t.startDate <= today && t.endDate >= today) ??
+      : (ctx?.current ??
+        ctx?.next ??
+        ctx?.terms[ctx.terms.length - 1] ??
         [...terms].sort((a: any, b: any) =>
           b.startDate.localeCompare(a.startDate),
         )[0]);

@@ -253,6 +253,47 @@ When an admin has a new/empty school, walk them through setup in this order:
    `set-active-academic-year`, which archives the year it replaces (its
    classes, marks and report cards are kept). Say which year is current
    before you change it, and confirm first.
+
+   **Moving into a new year.** A year's terms start with no curriculum, because
+   units belong to a term. After `create-academic-year` and its terms, run
+   `copy-curriculum-forward` (previews until `--confirm true`): it copies last
+   year's units, objectives, week plans and standards into the new terms by
+   position (first term to first term) and leaves last year's as it was taught.
+   Run it again and it adds nothing twice. Changing the current year archives
+   the old year's classes and closes the learners' enrolments in them, so
+   dashboards, class lists and analytics show only the current year; the old
+   year's marks, report cards and curriculum stay readable (`get-subject-curriculum`
+   and `list-units` take `--academicYearId`). Running
+   `set-active-academic-year` on the year that is already current repairs a school
+   that was promoted before this existed.
+
+   **Promotion day, in order:** `create-academic-year` and its terms,
+   `copy-classes-forward` (previews until `--confirm true`: whole-arm and
+   unattached classes, and option classes with the arms they draw from, each
+   with its teacher, room and lesson counts; rolls are not copied, and option
+   classes start empty for the school to enrol), `set-active-academic-year`,
+   `promote-learners` (previews until `--confirm true`: every active learner
+   moves up one year group and into the same-numbered arm there, joining that
+   arm's current-year classes; the last year group graduates; `--armMap` says
+   otherwise for a school that splits or merges arms; `--gradeLevelId` does one
+   year group), `copy-curriculum-forward`, then `plan-lesson-notes` for each
+   subject and year group. Read the preview back in words ("135 learners move
+   up: 15 to JSS2 (JSS2A) … 45 graduate") before confirming. An arm with no
+   learners coming up (a year group's new intake, or an arm the year below does
+   not feed) stays empty until the school enrols or places learners.
+   Learners look back too: `get-my-classes` and `get-my-term-grades` take
+   `--academicYearId`, and the classes they finished are read-only to them (a
+   completed enrolment lets a `get-`/`list-` action through the class guard and
+   nothing else, so they cannot start, save or hand in work there).
+   **New learners join an arm at invitation.** `invite-student` and
+   `create-student-accounts` take `--arm` (by name or id, within the year group
+   named): it is checked then, and when the learner first signs in and their
+   record is made they are placed in the arm and enrolled in its classes for the
+   current year. Name the year group too; an arm belongs to one.
+   Teachers and admins look back with the year select on their class lists
+   (`get-my-classes --academicYearId`, `list-classes --academicYearId`) and
+   the term select on a class's lessons.
+
 9. **Scheme of work** — `generate-scheme-of-work` per subject and year group,
    so the year is laid out week by week. Lesson notes belong to a class, so
    create the classes first; for a curriculum that already exists, use
@@ -1743,25 +1784,28 @@ Pass a `date` for "tomorrow" or "on Friday" (work out the date from today's); it
 
 ### School Setup (admin)
 
-| Action                                         | Args                                                                                                                                                     |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `get-school`                                   |                                                                                                                                                          |
-| `setup-school`                                 | `--name --type`                                                                                                                                          |
-| `get-school-config`                            |                                                                                                                                                          |
-| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels --schoolWeek '{cycleLength,days:[{day,periods:[...]}]}' --rooms '[{name,kind}]'` |
-| `get-my-agent-access`                          | — whether the signed-in person has the assistant now; `blocked` is off, sitting or limit, with messages used and the day's limit                         |
-| `get-custom-fields-schema`                     |                                                                                                                                                          |
-| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                                                                |
-| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate [--setActive]` — upcoming unless `--setActive` or the school has no current year                                           |
-| `set-active-academic-year`                     | `--id` — make a year current at promotion; archives the one it replaces                                                                                  |
-| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                                                                               |
-| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                                                                           |
-| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred                                                       |
-| `draft-school-guide`                           | — proposes a SCHOOL_GUIDE.md from the school's own data, with questions for what it cannot know. Saves nothing                                           |
-| `get-school-attention`                         | — what needs doing, most important first, each with the page that fixes it; the same list the overview page shows (admin)                                |
-| `check-school-setup`                           | — which settings are still empty and what the app falls back to meanwhile, including the school week, rooms and the current term's timetable clashes     |
-| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                                                                                  |
-| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                                                                                  |
+| Action                                         | Args                                                                                                                                                                                                 |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `get-school`                                   |                                                                                                                                                                                                      |
+| `setup-school`                                 | `--name --type`                                                                                                                                                                                      |
+| `get-school-config`                            |                                                                                                                                                                                                      |
+| `update-school-config`                         | `--gradingScale --termStructure --gradePrefix --passMark --customLabels --schoolWeek '{cycleLength,days:[{day,periods:[...]}]}' --rooms '[{name,kind}]'`                                             |
+| `get-my-agent-access`                          | — whether the signed-in person has the assistant now; `blocked` is off, sitting or limit, with messages used and the day's limit                                                                     |
+| `get-custom-fields-schema`                     |                                                                                                                                                                                                      |
+| `update-custom-fields-schema`                  | `--entity --add/--remove`                                                                                                                                                                            |
+| `list-academic-years` / `create-academic-year` | `--name --startDate --endDate [--setActive]` — upcoming unless `--setActive` or the school has no current year                                                                                       |
+| `set-active-academic-year`                     | `--id` — make a year current at promotion; archives the one it replaces                                                                                                                              |
+| `copy-curriculum-forward`                      | `[--fromAcademicYearId] [--toAcademicYearId] [--subjectId] [--gradeLevelId] [--confirm]` — copy a year's curriculum into the next, term for term; previews unless `--confirm true`; admin            |
+| `copy-classes-forward`                         | `[--fromAcademicYearId] [--toAcademicYearId] [--gradeLevelId] [--confirm]` — copy a year's classes (arm, unattached, option) into the next; previews unless `--confirm true`; admin                  |
+| `promote-learners`                             | `[--gradeLevelId] [--armMap '{"fromArmId":"toArmId"}'] [--graduateLastYear false] [--confirm]` — move learners up a year group into the next year's classes; previews unless `--confirm true`; admin |
+| `list-terms` / `create-term`                   | `--academicYearId --name --startDate --endDate --sequence`                                                                                                                                           |
+| `list-departments` / `create-department`       | `--name [--headTeacherUserId]`                                                                                                                                                                       |
+| `manage-grade-levels`                          | `--levels '[...]'` — replaces all grade levels; pass `levels` array directly, `action` is inferred                                                                                                   |
+| `draft-school-guide`                           | — proposes a SCHOOL_GUIDE.md from the school's own data, with questions for what it cannot know. Saves nothing                                                                                       |
+| `get-school-attention`                         | — what needs doing, most important first, each with the page that fixes it; the same list the overview page shows (admin)                                                                            |
+| `check-school-setup`                           | — which settings are still empty and what the app falls back to meanwhile, including the school week, rooms and the current term's timetable clashes                                                 |
+| `update-school-resource`                       | `--content "..."` — writes SCHOOL_GUIDE.md (org-scoped)                                                                                                                                              |
+| `get-school-resource`                          | — reads current SCHOOL_GUIDE.md content                                                                                                                                                              |
 
 ### Staff Management (admin)
 

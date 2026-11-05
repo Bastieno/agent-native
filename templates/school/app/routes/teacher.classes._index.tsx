@@ -6,6 +6,10 @@ import { useEffect } from "react";
 import { Link } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { ListState } from "@/components/ListState";
+import {
+  AcademicYearSelect,
+  useViewedYear,
+} from "@/components/AcademicYearSelect";
 import { IconSchool, IconUsers, IconChevronRight } from "@tabler/icons-react";
 
 export default function TeacherClasses() {
@@ -15,11 +19,17 @@ export default function TeacherClasses() {
     sync({ role: "teacher", view: "classes" });
   }, [sync]);
 
+  const { years, current, viewed, choose } = useViewedYear();
+
   const { data: classes, isLoading } = useQuery({
-    queryKey: ["my-classes"],
+    queryKey: ["my-classes", viewed?.id ?? "current"],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath("/_agent-native/actions/get-my-classes"),
+        agentNativePath(
+          `/_agent-native/actions/get-my-classes${
+            viewed ? `?academicYearId=${viewed.id}` : ""
+          }`,
+        ),
       );
       if (!res.ok) throw await httpError(res);
       return res.json();
@@ -28,11 +38,20 @@ export default function TeacherClasses() {
 
   return (
     <div className="p-6 space-y-6 overflow-y-auto h-full">
-      <div>
-        <h1 className="text-xl font-semibold">My Classes</h1>
-        <p className="text-sm text-muted-foreground mt-1">
-          All classes you're assigned to this term.
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold">My Classes</h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            {viewed
+              ? `The classes you taught in ${viewed.name}.`
+              : "All classes you're assigned to this term."}
+          </p>
+        </div>
+        <AcademicYearSelect
+          years={years}
+          value={(viewed ?? current)?.id}
+          onChange={choose}
+        />
       </div>
 
       {isLoading || !classes || classes.length === 0 ? (

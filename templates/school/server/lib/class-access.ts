@@ -1,4 +1,4 @@
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq, inArray, sql } from "drizzle-orm";
 import { getDb, schema } from "../db/index.js";
 import { rowOf } from "./raw-sql.js";
 import { schoolProfileFor } from "./school-profile.js";
@@ -76,9 +76,15 @@ export class AccessDeniedError extends Error {
   }
 }
 
+/**
+ * `read: true` is for looking at a class, not changing it: a learner who
+ * finished a class with its year (an enrolment marked "completed") may read
+ * it, but only a current enrolment lets them do anything in it.
+ */
 export async function canAccessClass(
   actor: ClassAccessActor,
   classId: string,
+  options: { read?: boolean } = {},
 ): Promise<boolean> {
   if (!classId) return false;
   const db = getDb();
@@ -127,7 +133,9 @@ export async function canAccessClass(
         and(
           eq(schema.classEnrollments.classId, classId),
           eq(schema.classEnrollments.studentUserId, actor.userId),
-          eq(schema.classEnrollments.status, "active"),
+          options.read
+            ? inArray(schema.classEnrollments.status, ["active", "completed"])
+            : eq(schema.classEnrollments.status, "active"),
         ),
       )
       .limit(1);
@@ -205,9 +213,44 @@ export async function assertSubmissionAccess(
   await assertClassAccess(actor, classId);
 }
 
-/** Every class id the actor may see — used to scope list queries. */
+/**
+ * Every class id the actor may see — used to scope list queries.
+ *
+ * Running classes only, unless `includeArchived` is passed. Last year's
+ * classes are archived at promotion; a list that is meant to say what someone
+ * is doing now must not carry them. Reading by id (`canAccessClass`) is
+ * unaffected, so last year's work is still reachable by its address.
+ */
 export async function accessibleClassIds(
   actor: ClassAccessActor,
+  options: { includeArchived?: boolean } = {},
+): Promise<string[]> {
+  const ids = await allAccessibleClassIds(actor, options);
+  return options.includeArchived ? ids : runningClassIds(ids, actor.schoolId);
+}
+
+/** Of these class ids, the ones still running (not archived with their year). */
+export async function runningClassIds(
+  ids: string[],
+  orgId: string,
+): Promise<string[]> {
+  if (ids.length === 0) return ids;
+  const running = await getDb()
+    .select({ id: schema.classes.id })
+    .from(schema.classes)
+    .where(
+      and(
+        inArray(schema.classes.id, ids),
+        eq(schema.classes.orgId, orgId),
+        eq(schema.classes.status, "active"),
+      ),
+    );
+  return running.map((r: any) => r.id);
+}
+
+async function allAccessibleClassIds(
+  actor: ClassAccessActor,
+  options: { includeArchived?: boolean } = {},
 ): Promise<string[]> {
   const db = getDb();
 
@@ -251,7 +294,9 @@ export async function accessibleClassIds(
       .where(
         and(
           eq(schema.classEnrollments.studentUserId, actor.userId),
-          eq(schema.classEnrollments.status, "active"),
+          options.includeArchived
+            ? inArray(schema.classEnrollments.status, ["active", "completed"])
+            : eq(schema.classEnrollments.status, "active"),
         ),
       );
     return [...new Set(rows.map((r: any) => r.id))];

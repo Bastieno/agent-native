@@ -1,4 +1,8 @@
 import { httpError } from "@/lib/http-error";
+import {
+  AcademicYearSelect,
+  useViewedYear,
+} from "@/components/AcademicYearSelect";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -93,13 +97,23 @@ export default function AdminClasses() {
   });
   const staffList = staffData?.active ?? [];
 
+  // One academic year at a time, the current one unless another is chosen:
+  // the page used to list every year's classes together, so a school in its
+  // second year opened it on last year's archived classes.
+  const { years, current, viewed, choose, loaded } = useViewedYear();
+  const yearId = (viewed ?? current)?.id;
   const { data: classes = [], isLoading } = useQuery<any[]>({
-    queryKey: ["admin-classes"],
+    queryKey: ["admin-classes", yearId ?? "all"],
+    enabled: loaded,
     queryFn: async () => {
       const res = await fetch(
         // Archived classes too: this page shows the status and is where a
         // class is archived, so hiding them would leave no way back.
-        agentNativePath("/_agent-native/actions/list-classes?status=all"),
+        agentNativePath(
+          `/_agent-native/actions/list-classes?status=all${
+            yearId ? `&academicYearId=${yearId}` : ""
+          }`,
+        ),
       );
       if (!res.ok) throw await httpError(res);
       return res.json();
@@ -293,6 +307,11 @@ export default function AdminClasses() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            <AcademicYearSelect
+              years={years}
+              value={yearId}
+              onChange={choose}
+            />
             <Select value={gradeFilter} onValueChange={setGradeFilter}>
               <SelectTrigger className="h-8 text-xs w-36">
                 <SelectValue placeholder="Grade level" />

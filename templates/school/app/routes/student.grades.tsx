@@ -1,4 +1,8 @@
 import { httpError } from "@/lib/http-error";
+import {
+  AcademicYearSelect,
+  useViewedYear,
+} from "@/components/AcademicYearSelect";
 import { ListState } from "@/components/ListState";
 import { useQuery } from "@tanstack/react-query";
 import { termWord } from "@shared/school-words";
@@ -91,11 +95,17 @@ export default function StudentGrades() {
     });
   }, [sync, open]);
 
+  const { years, current, viewed, choose } = useViewedYear();
+
   const { data, isLoading } = useQuery<TermGrades | null>({
-    queryKey: ["my-term-grades"],
+    queryKey: ["my-term-grades", viewed?.id ?? "current"],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath("/_agent-native/actions/get-my-term-grades"),
+        agentNativePath(
+          `/_agent-native/actions/get-my-term-grades${
+            viewed ? `?academicYearId=${viewed.id}` : ""
+          }`,
+        ),
       );
       if (!res.ok) throw await httpError(res);
       return res.json();
@@ -108,11 +118,20 @@ export default function StudentGrades() {
 
   return (
     <div className="space-y-8 p-6">
-      <div>
-        <h1 className="text-xl font-semibold">My Grades</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          How your {termWord(config).term} is going, subject by subject.
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold">My Grades</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {viewed
+              ? `How ${viewed.name} went, subject by subject.`
+              : `How your ${termWord(config).term} is going, subject by subject.`}
+          </p>
+        </div>
+        <AcademicYearSelect
+          years={years}
+          value={(viewed ?? current)?.id}
+          onChange={choose}
+        />
       </div>
 
       {isLoading || !summary || !anyMarked ? (

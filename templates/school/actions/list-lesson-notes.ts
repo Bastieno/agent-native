@@ -64,6 +64,8 @@ export default defineAction({
     const terms = orgId
       ? await db
           .select({
+            id: schema.terms.id,
+            name: schema.terms.name,
             startDate: schema.terms.startDate,
             endDate: schema.terms.endDate,
           })
@@ -71,14 +73,19 @@ export default defineAction({
           .where(eq(schema.terms.schoolId, orgId))
       : [];
     const day = (d: string) => Date.parse(d.slice(0, 10));
-    const weekOf = (date: string | null) => {
+    const termOf = (date: string | null) => {
       if (!date) return null;
       const t = day(date);
-      const term = terms.find(
-        (x: any) => day(x.startDate) <= t && t <= day(x.endDate) + 86_400_000,
+      return (
+        terms.find(
+          (x: any) => day(x.startDate) <= t && t <= day(x.endDate) + 86_400_000,
+        ) ?? null
       );
+    };
+    const weekOf = (date: string | null) => {
+      const term = termOf(date);
       return term
-        ? Math.floor((t - day(term.startDate)) / 604_800_000) + 1
+        ? Math.floor((day(date!) - day(term.startDate)) / 604_800_000) + 1
         : null;
     };
 
@@ -101,6 +108,10 @@ export default defineAction({
         ...r,
         unitTitle: unitTitle.get(r.unitId) ?? null,
         weekNumber: weekOf(r.lessonDate),
+        // Which term the lesson falls in, so a class's notes can be read one
+        // term at a time.
+        termId: termOf(r.lessonDate)?.id ?? null,
+        termName: termOf(r.lessonDate)?.name ?? null,
         materialCount: mine.length,
         materialShared: mine.filter(
           (m: any) => m.status === "published" || m.status === "closed",

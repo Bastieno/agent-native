@@ -31,7 +31,12 @@ export default defineAction({
     const primaryClasses = await db
       .select({ id: schema.classes.id, name: schema.classes.name })
       .from(schema.classes)
-      .where(eq(schema.classes.primaryTeacherUserId, session.userId));
+      .where(
+        and(
+          eq(schema.classes.primaryTeacherUserId, session.userId),
+          eq(schema.classes.status, "active"),
+        ),
+      );
 
     if (primaryClasses.length === 0) return null;
 

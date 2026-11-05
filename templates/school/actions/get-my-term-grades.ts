@@ -25,6 +25,12 @@ export default defineAction({
       .describe(
         "Student record ID. Omit when the signed-in user is the student — it is resolved from the session.",
       ),
+    academicYearId: z
+      .string()
+      .optional()
+      .describe(
+        "Look back at an earlier academic year's marks. Omit for the current year.",
+      ),
   }),
   http: { method: "GET" },
   run: async (rawArgs) => {
@@ -34,6 +40,8 @@ export default defineAction({
     }
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
-    return termGradesFor(studentId, orgId);
+    return termGradesFor(studentId, orgId, {
+      academicYearId: rawArgs.academicYearId,
+    });
   },
 });

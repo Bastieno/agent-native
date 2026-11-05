@@ -10,9 +10,11 @@ export default defineAction({
   schema: z.object({
     classId: z.string().describe("Class ID"),
     status: z
-      .enum(["active", "withdrawn", "suspended"])
+      .enum(["active", "withdrawn", "suspended", "completed"])
       .optional()
-      .default("active"),
+      .describe(
+        "One roll status. Omit for the learners in the class: current ones, and for an earlier year's class those who completed it.",
+      ),
   }),
   http: { method: "GET" },
   run: async (args) => {
@@ -23,7 +25,11 @@ export default defineAction({
       .where(
         and(
           eq(schema.classEnrollments.classId, args.classId),
-          eq(schema.classEnrollments.status, args.status ?? "active"),
+          // "completed" is a learner who finished the class with its year; a running
+          // class has none, so this only widens the roll of a class looked back on.
+          args.status
+            ? eq(schema.classEnrollments.status, args.status)
+            : inArray(schema.classEnrollments.status, ["active", "completed"]),
         ),
       );
     if (enrollments.length === 0) return [];

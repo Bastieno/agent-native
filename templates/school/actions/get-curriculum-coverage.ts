@@ -3,6 +3,7 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
 import { and, asc, eq, inArray, ne } from "drizzle-orm";
 import { z } from "zod";
+import { termIdsForYear, unitInYear } from "../server/lib/academic-year.js";
 import { parseGradeLevelIds } from "../server/lib/subject-year-groups.js";
 
 /**
@@ -77,15 +78,20 @@ export default defineAction({
     }
 
     const subjectIds = subjects.map((s: any) => s.id);
-    const units = await db
-      .select()
-      .from(schema.units)
-      .where(
-        and(
-          inArray(schema.units.subjectId, subjectIds),
-          ne(schema.units.status, "archived"),
-        ),
-      );
+    // The current year's curriculum: coverage says what the school teaches
+    // now, and two years of units would count every one of them twice.
+    const yearTerms = await termIdsForYear(orgId, undefined);
+    const units = (
+      await db
+        .select()
+        .from(schema.units)
+        .where(
+          and(
+            inArray(schema.units.subjectId, subjectIds),
+            ne(schema.units.status, "archived"),
+          ),
+        )
+    ).filter((u: any) => unitInYear(u, yearTerms));
     const objectives = units.length
       ? await db
           .select({ unitId: schema.learningObjectives.unitId })

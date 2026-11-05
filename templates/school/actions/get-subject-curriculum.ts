@@ -20,13 +20,23 @@ export default defineAction({
       .string()
       .optional()
       .describe("Only this year group. Omit for every year group."),
+    academicYearId: z
+      .string()
+      .optional()
+      .describe(
+        "Which academic year's curriculum. Omit for the school's current year.",
+      ),
   }),
   http: { method: "GET" },
   run: async (args) => {
     const { orgId } = currentAccess();
     if (!orgId) throw new Error("No school context.");
 
-    const curriculum = await loadSubjectCurriculum(args.subjectId, orgId);
+    const curriculum = await loadSubjectCurriculum(
+      args.subjectId,
+      orgId,
+      args.academicYearId,
+    );
     if (!curriculum) throw new Error("Subject not found.");
 
     const yearGroups = args.gradeLevelId

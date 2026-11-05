@@ -191,7 +191,7 @@ export const classEnrollments = table("class_enrollments", {
   classId: text("class_id").notNull(),
   studentUserId: text("student_user_id").notNull(),
   enrolledAt: text("enrolled_at").notNull().default(now()),
-  status: text("status").notNull().default("active"), // active | withdrawn | suspended
+  status: text("status").notNull().default("active"), // active | withdrawn | suspended | completed (the class was archived with its year)
   createdAt: text("created_at").notNull().default(now()),
 });
 

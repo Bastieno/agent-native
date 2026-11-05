@@ -4,7 +4,7 @@ import { getOrgSetting } from "@agent-native/core/settings";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
-import { actorForEmail } from "../server/lib/class-access.js";
+import { actorForEmail, runningClassIds } from "../server/lib/class-access.js";
 import {
   classAveragesFor,
   isStrugglingFigure,
@@ -51,9 +51,10 @@ export default defineAction({
       .select({ id: schema.classTeachers.classId })
       .from(schema.classTeachers)
       .where(eq(schema.classTeachers.teacherUserId, actor.userId));
-    const classIds = [
-      ...new Set([...primary.map((r) => r.id), ...assigned.map((r) => r.id)]),
-    ];
+    const classIds = await runningClassIds(
+      [...new Set([...primary.map((r) => r.id), ...assigned.map((r) => r.id)])],
+      orgId,
+    );
     if (classIds.length === 0) return { items: [] };
 
     const classes = await db

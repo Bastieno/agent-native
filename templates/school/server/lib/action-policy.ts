@@ -130,7 +130,8 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "manage-grade-levels": ADMIN,
   // Read-only list of the year groups, so pages need not poll the writer.
   "list-grade-levels": STAFF,
-  "list-academic-years": STAFF,
+  // Everyone: a learner picks which year of their own classes to look at.
+  "list-academic-years": EVERYONE,
   "create-academic-year": ADMIN,
   "set-active-academic-year": ADMIN,
   "list-terms": STAFF,
@@ -177,6 +178,10 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "update-subject": ADMIN_COORD,
   "list-units": STAFF,
   "create-unit": ADMIN_COORD,
+  // A school-wide step of moving into a new year, so an admin's, not a subject's.
+  "copy-classes-forward": ADMIN,
+  "copy-curriculum-forward": ADMIN,
+  "promote-learners": ADMIN,
   "update-unit": ADMIN_COORD,
   "reorder-units": ADMIN_COORD,
   "list-learning-objectives": STAFF,

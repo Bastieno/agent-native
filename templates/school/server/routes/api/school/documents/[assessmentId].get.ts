@@ -50,7 +50,10 @@ export default defineEventHandler(async (event) => {
         .from(schema.assessments)
         .where(eq(schema.assessments.id, assessmentId))
         .limit(1);
-      if (!activity || !(await canAccessClass(actor, activity.classId))) {
+      if (
+        !activity ||
+        !(await canAccessClass(actor, activity.classId, { read: true }))
+      ) {
         throw createError({ statusCode: 404 });
       }
 

@@ -1,6 +1,6 @@
 import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
-import { eq, and, ne, or, isNull } from "drizzle-orm";
+import { eq, and, ne, or, isNull, inArray } from "drizzle-orm";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
 import { z } from "zod";
 
@@ -21,7 +21,8 @@ export default defineAction({
       .where(
         and(
           eq(schema.classEnrollments.classId, args.classId),
-          eq(schema.classEnrollments.status, "active"),
+          // Learners who finished an earlier year's class are on its record too.
+          inArray(schema.classEnrollments.status, ["active", "completed"]),
         ),
       );
 

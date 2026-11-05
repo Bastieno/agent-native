@@ -31,6 +31,12 @@ export default defineAction({
               .string()
               .optional()
               .describe("Year group, by the school's own name or its id."),
+            arm: z
+              .string()
+              .optional()
+              .describe(
+                "The arm within that year group, by name or id; they join its classes when they first sign in.",
+              ),
             fields: z.record(z.string(), z.unknown()).optional(),
             password: z
               .string()
@@ -68,6 +74,7 @@ export default defineAction({
       name: string;
       username: string;
       gradeLevel?: string;
+      arm?: string;
       fields?: Record<string, unknown>;
       password?: string;
     }[]) {
@@ -93,6 +100,7 @@ export default defineAction({
           email,
           name: s.name,
           gradeLevel: s.gradeLevel,
+          arm: s.arm,
           fields: s.fields,
         });
         await createPasswordUser({ email, name: s.name, password });

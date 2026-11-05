@@ -24,6 +24,12 @@ export default defineAction({
       .describe(
         "Student user ID. Omit when the signed-in user is the student — it is resolved from the session.",
       ),
+    academicYearId: z
+      .string()
+      .optional()
+      .describe(
+        "An earlier academic year's classes, or 'all' for every year. Omit for the classes running now.",
+      ),
   }),
   http: { method: "GET" },
   run: async (rawArgs) => {
@@ -43,7 +49,24 @@ export default defineAction({
           "studentUserId is required — say which student you mean.",
         );
       }
-      const taught = await accessibleClassIds(actor);
+      // Running classes unless an earlier year is asked for; reading last
+      // year's is how a teacher looks back at what they taught.
+      const looking = !!args.academicYearId;
+      let taught = await accessibleClassIds(actor, {
+        includeArchived: looking,
+      });
+      if (looking && args.academicYearId !== "all" && taught.length > 0) {
+        const inYear = await db
+          .select({ id: schema.classes.id })
+          .from(schema.classes)
+          .where(
+            and(
+              inArray(schema.classes.id, taught),
+              eq(schema.classes.academicYearId, args.academicYearId!),
+            ),
+          );
+        taught = inYear.map((c: any) => c.id);
+      }
       if (taught.length === 0) return [];
 
       const rows = await db
@@ -69,7 +92,9 @@ export default defineAction({
         .where(
           and(
             inArray(schema.classEnrollments.classId, taught),
-            eq(schema.classEnrollments.status, "active"),
+            // Completed: those who finished a class that was archived with
+            // its year, so a past class shows the learners it had.
+            inArray(schema.classEnrollments.status, ["active", "completed"]),
           ),
         );
       const countByClass: Record<string, number> = {};
@@ -85,18 +110,37 @@ export default defineAction({
       }));
     }
     const studentRecordId = await studentRecordIdForUser(args.studentUserId);
+    // Current classes unless an earlier year is asked for. A learner looking
+    // back reads the classes they finished ("completed"), which stay on their
+    // record when the year closes.
+    const looking = !!args.academicYearId;
     const enrollments = await db
       .select()
       .from(schema.classEnrollments)
       .where(
         and(
           eq(schema.classEnrollments.studentUserId, args.studentUserId),
-          eq(schema.classEnrollments.status, "active"),
+          looking
+            ? inArray(schema.classEnrollments.status, ["active", "completed"])
+            : eq(schema.classEnrollments.status, "active"),
         ),
       );
 
     if (enrollments.length === 0) return [];
-    const classIds = enrollments.map((e: any) => e.classId);
+    let classIds = enrollments.map((e: any) => e.classId);
+    if (looking && args.academicYearId !== "all") {
+      const inYear = await db
+        .select({ id: schema.classes.id })
+        .from(schema.classes)
+        .where(
+          and(
+            inArray(schema.classes.id, classIds),
+            eq(schema.classes.academicYearId, args.academicYearId!),
+          ),
+        );
+      classIds = inYear.map((c: any) => c.id);
+      if (classIds.length === 0) return [];
+    }
 
     // Names, not ids: the class list is read by a student, and by the tutor
     // explaining it to them.

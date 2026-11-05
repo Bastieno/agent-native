@@ -82,7 +82,11 @@ export default defineAction({
             .where(
               and(
                 inArray(schema.classEnrollments.classId, classIds),
-                eq(schema.classEnrollments.status, "active"),
+                // Completed: learners who finished a class archived with its year.
+                inArray(schema.classEnrollments.status, [
+                  "active",
+                  "completed",
+                ]),
               ),
             )
             .groupBy(schema.classEnrollments.classId)

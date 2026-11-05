@@ -1,4 +1,5 @@
 import { getDb, schema } from "../db/index.js";
+import { termIdsForYear, unitInYear } from "./academic-year.js";
 import { and, asc, eq, inArray, ne } from "drizzle-orm";
 import {
   describeWeeks,
@@ -94,6 +95,8 @@ function parseStandards(json: string | null): CurriculumUnit["standards"] {
 export async function loadSubjectCurriculum(
   subjectId: string,
   schoolId: string,
+  /** Which year's curriculum. Defaults to the school's current year. */
+  academicYearId?: string,
 ): Promise<SubjectCurriculum | null> {
   const db = getDb();
 
@@ -110,15 +113,18 @@ export async function loadSubjectCurriculum(
     .limit(1);
   if (!subject) return null;
 
-  const units = await db
-    .select()
-    .from(schema.units)
-    .where(
-      and(
-        eq(schema.units.subjectId, subjectId),
-        ne(schema.units.status, "archived"),
-      ),
-    );
+  const yearTerms = await termIdsForYear(schoolId, academicYearId);
+  const units = (
+    await db
+      .select()
+      .from(schema.units)
+      .where(
+        and(
+          eq(schema.units.subjectId, subjectId),
+          ne(schema.units.status, "archived"),
+        ),
+      )
+  ).filter((u: any) => unitInYear(u, yearTerms));
 
   const objectiveRows = units.length
     ? await db

@@ -48,6 +48,12 @@ export default defineAction({
       .describe(
         "The year group they are joining, by the school's own name for it or its id. Optional — a school may invite before placement is settled.",
       ),
+    arm: z
+      .string()
+      .optional()
+      .describe(
+        "The arm (class group) within that year group, by name or id. They join its classes in the current year when they first sign in. Needs gradeLevel.",
+      ),
     fields: jsonish(z.record(z.string(), z.unknown()))
       .optional()
       .describe(
@@ -67,6 +73,7 @@ export default defineAction({
       email,
       name: args.name,
       gradeLevel: args.gradeLevel,
+      arm: args.arm,
       fields: args.fields as Record<string, unknown> | undefined,
     });
 

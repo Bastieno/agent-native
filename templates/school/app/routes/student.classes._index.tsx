@@ -1,4 +1,8 @@
 import { httpError } from "@/lib/http-error";
+import {
+  AcademicYearSelect,
+  useViewedYear,
+} from "@/components/AcademicYearSelect";
 import { useQuery } from "@tanstack/react-query";
 import { NO_TEACHER_LABEL } from "@shared/class-teacher";
 import { agentNativePath } from "@agent-native/core/client";
@@ -16,11 +20,17 @@ export default function StudentClasses() {
     sync({ role: "student", view: "classes" });
   }, [sync]);
 
+  const { years, current, viewed, choose } = useViewedYear();
+
   const { data: classes, isLoading } = useQuery({
-    queryKey: ["my-enrolled-classes"],
+    queryKey: ["my-enrolled-classes", viewed?.id ?? "current"],
     queryFn: async () => {
       const res = await fetch(
-        agentNativePath("/_agent-native/actions/get-my-classes"),
+        agentNativePath(
+          `/_agent-native/actions/get-my-classes${
+            viewed ? `?academicYearId=${viewed.id}` : ""
+          }`,
+        ),
       );
       if (!res.ok) throw await httpError(res);
       return res.json();
@@ -29,11 +39,20 @@ export default function StudentClasses() {
 
   return (
     <div className="p-6 space-y-6">
-      <div>
-        <h1 className="text-xl font-semibold">My Classes</h1>
-        <p className="text-sm text-muted-foreground mt-1">
-          All classes you're enrolled in.
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold">My Classes</h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            {viewed
+              ? `The classes you took in ${viewed.name}.`
+              : "All classes you're enrolled in."}
+          </p>
+        </div>
+        <AcademicYearSelect
+          years={years}
+          value={(viewed ?? current)?.id}
+          onChange={choose}
+        />
       </div>
 
       {isLoading || !classes || classes.length === 0 ? (

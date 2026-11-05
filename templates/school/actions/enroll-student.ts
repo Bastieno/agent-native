@@ -1,6 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { getDb, schema } from "../server/db/index.js";
 import { and, eq } from "drizzle-orm";
+import { currentAccess } from "@agent-native/core/sharing";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 
@@ -12,7 +13,22 @@ export default defineAction({
   }),
   http: { method: "POST" },
   run: async (args) => {
+    const { orgId } = currentAccess();
+    if (!orgId) throw new Error("No school context.");
     const db = getDb();
+    // Both must be this school's: the central guard vouches for the class, and
+    // nothing else says the learner is not another school's.
+    const [learner] = await db
+      .select({ id: schema.students.id })
+      .from(schema.students)
+      .where(
+        and(
+          eq(schema.students.userId, args.studentUserId),
+          eq(schema.students.orgId, orgId),
+        ),
+      )
+      .limit(1);
+    if (!learner) throw new Error("That learner is not in this school.");
     // Check if already enrolled
     const [existing] = await db
       .select()

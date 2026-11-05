@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { currentAccess } from "@agent-native/core/sharing";
 import { getDb, schema } from "../server/db/index.js";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 export default defineAction({
@@ -69,10 +69,17 @@ export default defineAction({
     if (args.closesAt !== undefined)
       updates.closesAt = args.closesAt === "" ? null : args.closesAt;
 
+    // Scoped to this school here as well as by the central class guard, so
+    // the action is safe on its own.
     await db
       .update(schema.assessments)
       .set(updates)
-      .where(eq(schema.assessments.id, args.id));
+      .where(
+        and(
+          eq(schema.assessments.id, args.id),
+          eq(schema.assessments.orgId, orgId),
+        ),
+      );
 
     return { id: args.id, updated: true };
   },

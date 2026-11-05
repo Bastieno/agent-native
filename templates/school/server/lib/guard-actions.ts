@@ -193,7 +193,13 @@ async function assertCallerMayTouch(
     // A null means the referenced row does not exist; let the action itself
     // produce its own "not found" error rather than masking it here.
     if (!classId) continue;
-    if (!(await canAccessClass(actor, classId))) {
+    // Looking is not changing: a learner may read the classes they finished
+    // with their year, never act in them.
+    if (
+      !(await canAccessClass(actor, classId, {
+        read: /^(get|list)-/.test(actionName),
+      }))
+    ) {
       console.warn(
         `[guard] ${actor.schoolRole} attempted "${actionName}" on a class they do not have`,
       );
