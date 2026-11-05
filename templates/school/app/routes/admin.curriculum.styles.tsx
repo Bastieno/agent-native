@@ -162,7 +162,7 @@ export default function AdminCurriculumStyles() {
       </div>
 
       {missing > 0 ? (
-        <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+        <div className="rounded-lg border border-attention/30 bg-attention/5 p-4">
           <p className="text-sm font-medium">
             {missing} subject{missing === 1 ? "" : "s"} have no style set
           </p>

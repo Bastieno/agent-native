@@ -339,7 +339,7 @@ function SubjectPerformance({
                 key={s.subjectId}
                 className={cn(
                   "inline-flex items-center gap-2 rounded-md border px-2.5 py-1 text-xs",
-                  below.length > 0 && "border-destructive/40 text-destructive",
+                  below.length > 0 && "border-alert/40 text-alert",
                 )}
               >
                 {s.subjectName}
@@ -462,13 +462,13 @@ function SubjectCard({
           <span
             className={cn(
               "flex shrink-0 items-center gap-1 text-sm tabular-nums",
-              weak && "font-medium text-destructive",
+              weak && "font-medium text-alert",
             )}
           >
             {subject.trend === "up" ? (
-              <IconTrendingUp size={14} className="text-green-500" />
+              <IconTrendingUp size={14} className="text-success" />
             ) : subject.trend === "down" ? (
-              <IconTrendingDown size={14} className="text-red-500" />
+              <IconTrendingDown size={14} className="text-alert" />
             ) : null}
             {avg === null ? "—" : `${subject.average}%`}
           </span>
@@ -502,7 +502,7 @@ function SubjectCard({
                 </Link>
                 <span className="flex items-baseline gap-3">
                   {cls.strugglingCount > 0 ? (
-                    <span className="text-xs text-destructive">
+                    <span className="text-xs text-alert">
                       {cls.strugglingCount} struggling
                     </span>
                   ) : null}
@@ -592,7 +592,7 @@ function SubjectRow({
             <span
               className={cn(
                 "w-12 shrink-0 tabular-nums",
-                weak && "font-medium text-destructive",
+                weak && "font-medium text-alert",
               )}
             >
               {avg === null ? "—" : `${subject.average}%`}
@@ -614,9 +614,9 @@ function SubjectRow({
               />
             </div>
             {subject.trend === "up" ? (
-              <IconTrendingUp size={14} className="shrink-0 text-green-500" />
+              <IconTrendingUp size={14} className="shrink-0 text-success" />
             ) : subject.trend === "down" ? (
-              <IconTrendingDown size={14} className="shrink-0 text-red-500" />
+              <IconTrendingDown size={14} className="shrink-0 text-alert" />
             ) : (
               <span className="w-3.5 shrink-0" />
             )}
@@ -653,7 +653,7 @@ function SubjectRow({
                     )}
                   </span>
                   {cls.strugglingCount > 0 ? (
-                    <span className="ml-auto text-xs text-destructive">
+                    <span className="ml-auto text-xs text-alert">
                       {cls.strugglingCount} struggling
                     </span>
                   ) : null}

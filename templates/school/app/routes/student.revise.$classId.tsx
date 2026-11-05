@@ -173,7 +173,7 @@ export default function StudentRevise() {
         <span
           className={cn(
             "flex shrink-0 items-center gap-1 tabular-nums",
-            m.weak ? "font-medium text-destructive" : "text-muted-foreground",
+            m.weak ? "font-medium text-alert" : "text-muted-foreground",
           )}
         >
           {m.text}

@@ -290,7 +290,7 @@ function SubjectRow({
             <p
               className={cn(
                 "text-sm font-semibold tabular-nums",
-                subject.belowPassMark && "text-destructive",
+                subject.belowPassMark && "text-alert",
               )}
             >
               {subject.percentage === null ? "—" : `${subject.percentage}%`}

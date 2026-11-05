@@ -19,9 +19,9 @@ import { Badge } from "@/components/ui/badge";
 import { IconUsers } from "@tabler/icons-react";
 
 const categoryColors: Record<string, string> = {
-  advanced: "bg-green-100 text-green-700",
-  developing: "bg-blue-100 text-blue-700",
-  foundational: "bg-amber-100 text-amber-700",
+  advanced: "bg-success/15 text-success",
+  developing: "bg-primary/15 text-primary",
+  foundational: "bg-amber-100 text-attention",
 };
 
 const ALL = "all";

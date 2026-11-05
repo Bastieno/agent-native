@@ -151,7 +151,7 @@ export function AnswerReview({
               key={a.responseId}
               className={cn(
                 "rounded-md border",
-                attention ? "border-destructive/40" : "",
+                attention ? "border-alert/40" : "",
               )}
             >
               <CollapsibleTrigger className="group flex w-full items-center gap-2 p-2.5 text-left">
@@ -165,7 +165,7 @@ export function AnswerReview({
                 {a.timedOut ? (
                   <IconClock
                     size={13}
-                    className="shrink-0 text-amber-600 dark:text-amber-500"
+                    className="shrink-0 text-attention"
                     title="Answered after this question's time ran out"
                   />
                 ) : null}
@@ -174,10 +174,10 @@ export function AnswerReview({
                   a.isCorrect ? (
                     <IconCheck size={14} className="shrink-0 text-primary" />
                   ) : (
-                    <IconX size={14} className="shrink-0 text-destructive" />
+                    <IconX size={14} className="shrink-0 text-alert" />
                   )
                 ) : attention ? (
-                  <IconFlag size={13} className="shrink-0 text-destructive" />
+                  <IconFlag size={13} className="shrink-0 text-alert" />
                 ) : null}
 
                 <span className="shrink-0 text-xs tabular-nums">

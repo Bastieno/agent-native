@@ -49,7 +49,7 @@ function StatCard({
           <p className="text-2xl font-semibold">{value}</p>
         )}
         <p className="text-xs text-muted-foreground">{label}</p>
-        {note && <p className="mt-0.5 text-xs text-amber-600">{note}</p>}
+        {note && <p className="mt-0.5 text-xs text-attention">{note}</p>}
       </div>
     </div>
   );
@@ -320,7 +320,7 @@ function AttentionRow({
         <IconPointFilled
           size={14}
           className={`mt-0.5 shrink-0 ${
-            item.blocks ? "text-amber-500" : "text-muted-foreground/60"
+            item.blocks ? "text-attention" : "text-muted-foreground/60"
           }`}
         />
         <span className="underline-offset-2 group-hover:underline">

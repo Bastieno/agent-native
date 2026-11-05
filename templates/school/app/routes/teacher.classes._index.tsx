@@ -79,7 +79,7 @@ export default function TeacherClasses() {
                   {cls.status}
                 </Badge>
                 {cls.pendingSubmissions > 0 && (
-                  <span className="text-xs text-amber-600 font-medium">
+                  <span className="text-xs text-attention font-medium">
                     {cls.pendingSubmissions} to grade
                   </span>
                 )}

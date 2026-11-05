@@ -67,9 +67,9 @@ export function ActivityCountdown({
       className={cn(
         "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium tabular-nums",
         urgent
-          ? "bg-destructive/10 text-destructive"
+          ? "bg-alert/10 text-alert"
           : low
-            ? "bg-amber-500/10 text-amber-700 dark:text-amber-500"
+            ? "bg-attention/10 text-attention"
             : "bg-muted text-muted-foreground",
       )}
       // Tablets are shared and read over shoulders; the label says what the

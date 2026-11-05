@@ -75,20 +75,13 @@ export function PaperSummary({
           <p className="text-xs text-muted-foreground">handed in</p>
         </div>
         <div>
-          <p
-            className={cn("text-xl font-semibold", weak && "text-destructive")}
-          >
+          <p className={cn("text-xl font-semibold", weak && "text-alert")}>
             {data.average != null ? `${data.average}%` : "—"}
           </p>
           <p className="text-xs text-muted-foreground">average</p>
         </div>
         <div>
-          <p
-            className={cn(
-              "text-xl font-semibold",
-              below > 0 && "text-destructive",
-            )}
-          >
+          <p className={cn("text-xl font-semibold", below > 0 && "text-alert")}>
             {below}
           </p>
           <p className="text-xs text-muted-foreground">
@@ -160,7 +153,7 @@ export function PaperSummary({
                     className={cn(
                       "shrink-0 text-xs tabular-nums",
                       q.earnedPercent < data.passMark
-                        ? "font-medium text-destructive"
+                        ? "font-medium text-alert"
                         : "text-muted-foreground",
                     )}
                   >

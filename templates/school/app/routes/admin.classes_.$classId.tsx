@@ -179,10 +179,7 @@ export default function AdminClass() {
         <div className="rounded-lg border bg-card p-4">
           <p className="text-xs text-muted-foreground">Class average</p>
           <p
-            className={cn(
-              "mt-1 text-2xl font-semibold",
-              below && "text-destructive",
-            )}
+            className={cn("mt-1 text-2xl font-semibold", below && "text-alert")}
           >
             {summary.average != null ? `${summary.average}%` : "—"}
           </p>
@@ -207,7 +204,7 @@ export default function AdminClass() {
           <p
             className={cn(
               "mt-1 text-2xl font-semibold",
-              summary.waitingForMarks > 0 && "text-destructive",
+              summary.waitingForMarks > 0 && "text-alert",
             )}
           >
             {summary.waitingForMarks}
@@ -261,7 +258,7 @@ export default function AdminClass() {
                 className={cn(
                   "flex shrink-0 items-center gap-1 tabular-nums",
                   l.percentage != null && l.percentage < data.passMark
-                    ? "font-medium text-destructive"
+                    ? "font-medium text-alert"
                     : "text-muted-foreground",
                 )}
               >
@@ -300,7 +297,7 @@ export default function AdminClass() {
                 className={cn(
                   "shrink-0 tabular-nums",
                   p.average != null && p.average < data.passMark
-                    ? "font-medium text-destructive"
+                    ? "font-medium text-alert"
                     : "text-muted-foreground",
                 )}
               >

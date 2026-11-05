@@ -135,7 +135,7 @@ export default function TeacherAnalytics() {
                     <span>{cls.studentCount} students</span>
                     <span>{cls.completionRate ?? 0}% completion</span>
                     {cls.pendingGrading > 0 && (
-                      <span className="text-amber-600">
+                      <span className="text-attention">
                         {cls.pendingGrading} to grade
                       </span>
                     )}
@@ -147,10 +147,10 @@ export default function TeacherAnalytics() {
                         key={g.id}
                         to={`/teacher/assessments/${g.id}?tab=submissions`}
                         state={origin("Analytics")}
-                        className="flex items-center justify-between gap-3 rounded-md border border-amber-600/30 px-3 py-1.5 text-xs hover:bg-accent/50"
+                        className="flex items-center justify-between gap-3 rounded-md border border-attention/30 px-3 py-1.5 text-xs hover:bg-accent/50"
                       >
                         <span className="min-w-0 truncate">{g.title}</span>
-                        <span className="shrink-0 text-amber-600">
+                        <span className="shrink-0 text-attention">
                           {g.count} to grade
                         </span>
                       </Link>
@@ -160,7 +160,7 @@ export default function TeacherAnalytics() {
                       with nobody to speak to. */}
                   {cls.strugglingLearners?.length > 0 && (
                     <Collapsible>
-                      <CollapsibleTrigger className="group flex w-full items-center justify-between gap-2 pt-1 text-xs font-medium text-destructive">
+                      <CollapsibleTrigger className="group flex w-full items-center justify-between gap-2 pt-1 text-xs font-medium text-alert">
                         <span>{cls.strugglingCount} struggling</span>
                         <IconChevronDown
                           size={14}

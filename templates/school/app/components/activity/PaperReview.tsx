@@ -78,8 +78,8 @@ export function PaperReview({ review }: { review: PaperReviewData }) {
                 </p>
               ) : null}
               {q.modelAnswer ? (
-                <div className="mt-2 rounded-md border border-emerald-600/40 bg-emerald-600/5 p-2">
-                  <p className="mb-1 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                <div className="mt-2 rounded-md border border-success/40 bg-success/5 p-2">
+                  <p className="mb-1 text-xs font-medium text-success">
                     A full-mark answer
                   </p>
                   <Markdown className="text-sm">{q.modelAnswer}</Markdown>
@@ -114,9 +114,9 @@ function QuestionMark({
   return (
     <span className="flex shrink-0 items-center gap-1 text-xs font-medium tabular-nums">
       {q.isCorrect === true ? (
-        <IconCheck size={14} className="text-emerald-600" />
+        <IconCheck size={14} className="text-success" />
       ) : q.isCorrect === false ? (
-        <IconX size={14} className="text-destructive" />
+        <IconX size={14} className="text-alert" />
       ) : null}
       {q.awardedPoints}
       {typeof q.points === "number" ? `/${q.points}` : ""}
@@ -143,10 +143,10 @@ function ChoiceAnswer({
             key={oi}
             className={`flex items-start gap-2 rounded-md border p-2 text-sm ${
               isRight
-                ? "border-emerald-600/60 bg-emerald-600/10"
+                ? "border-success/60 bg-success/10"
                 : isChosen
                   ? q.correctAnswer
-                    ? "border-destructive/50 bg-destructive/5"
+                    ? "border-alert/50 bg-alert/5"
                     : "border-primary bg-primary/5"
                   : ""
             }`}
@@ -158,7 +158,7 @@ function ChoiceAnswer({
                 {isRight ? "Your answer, correct" : "Your answer"}
               </span>
             ) : isRight ? (
-              <span className="shrink-0 text-xs text-emerald-600">
+              <span className="shrink-0 text-xs text-success">
                 Correct answer
               </span>
             ) : null}

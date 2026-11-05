@@ -226,7 +226,7 @@ export function LearnerProfile({
             <p
               className={cn(
                 "mt-1 text-2xl font-semibold",
-                weak && "text-destructive",
+                weak && "text-alert",
               )}
             >
               {summary.percentage != null ? `${summary.percentage}%` : "—"}
@@ -426,7 +426,7 @@ function SubjectRow({ subject }: { subject: Subject }) {
           <p
             className={cn(
               "text-sm font-medium tabular-nums",
-              subject.belowPassMark && "text-destructive",
+              subject.belowPassMark && "text-alert",
             )}
           >
             {subject.percentage != null ? `${subject.percentage}%` : "—"}
@@ -461,7 +461,7 @@ function SubjectRow({ subject }: { subject: Subject }) {
               <span
                 className={cn(
                   "shrink-0 tabular-nums text-muted-foreground",
-                  p.state === "missed" && "font-medium text-destructive",
+                  p.state === "missed" && "font-medium text-alert",
                 )}
               >
                 {p.state === "marked"

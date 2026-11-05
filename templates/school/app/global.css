@@ -27,6 +27,13 @@
   --ring: 221 83% 53%;
   --radius: 0.5rem;
 
+  /* How a learner or a piece of work is doing. Quieter than --destructive,
+     which is for the thing you are about to delete: a figure that is low is
+     news, not an alarm, and a whole page of it should not shout. */
+  --alert: 4 52% 46%;
+  --attention: 33 68% 37%;
+  --success: 152 38% 31%;
+
   --sidebar-background: 221 10% 97%;
   --sidebar-foreground: 222 5% 40%;
   --sidebar-primary: 221 83% 53%;
@@ -58,6 +65,10 @@
   --input: 222 10% 16%;
   --ring: 221 83% 60%;
 
+  --alert: 5 78% 65%; /* #EC6C60 */
+  --attention: 38 82% 62%;
+  --success: 152 50% 56%;
+
   --sidebar-background: 222 20% 5%;
   --sidebar-foreground: 222 4% 58%;
   --sidebar-primary: 221 83% 60%;
@@ -66,6 +77,12 @@
   --sidebar-accent-foreground: 0 0% 90%;
   --sidebar-border: 222 10% 12%;
   --sidebar-ring: 221 83% 60%;
+}
+
+@theme inline {
+  --color-alert: hsl(var(--alert));
+  --color-attention: hsl(var(--attention));
+  --color-success: hsl(var(--success));
 }
 
 /* The public pages: warm paper and ink, the app's blue as the only accent. */

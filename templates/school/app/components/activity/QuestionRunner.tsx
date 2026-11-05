@@ -185,7 +185,7 @@ export function QuestionRunner({
   // would tell a learner their work is done when it may not have started.
   if (error) {
     return (
-      <div className="rounded-lg border border-destructive/40 p-6 text-center">
+      <div className="rounded-lg border border-alert/40 p-6 text-center">
         <p className="text-sm font-medium">This could not be opened</p>
         <p className="mt-1 text-xs text-muted-foreground">
           {(error as Error).message}
@@ -317,14 +317,14 @@ export function QuestionRunner({
             "flex items-center justify-between gap-3 rounded-lg border p-3",
             feedback.isCorrect
               ? "border-primary/40 bg-primary/5"
-              : "border-destructive/40 bg-destructive/5",
+              : "border-alert/40 bg-alert/5",
           )}
         >
           <span className="flex items-center gap-2 text-sm font-medium">
             {feedback.isCorrect ? (
               <IconCheck size={16} className="text-primary" />
             ) : (
-              <IconX size={16} className="text-destructive" />
+              <IconX size={16} className="text-alert" />
             )}
             {feedback.text ?? (feedback.isCorrect ? "Correct." : "Not quite.")}
           </span>

@@ -197,7 +197,7 @@ export default function AdminCurriculum() {
           <IconWriting size={14} />
           How we word questions
           {styleGaps > 0 ? (
-            <span className="rounded-full bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 dark:text-amber-500">
+            <span className="rounded-full bg-attention/15 px-1.5 py-0.5 text-[10px] font-medium text-attention">
               {styleGaps} not set
             </span>
           ) : null}

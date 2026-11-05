@@ -73,7 +73,7 @@ function FindingRow({
             size={16}
             className={cn(
               "mt-0.5 shrink-0",
-              tone === "concern" ? "text-destructive" : "text-green-500",
+              tone === "concern" ? "text-alert" : "text-success",
             )}
           />
           <p className="min-w-0 flex-1 text-sm">{finding.text}</p>

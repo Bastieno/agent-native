@@ -237,12 +237,7 @@ function Tile({
   return (
     <div className="rounded-lg border bg-card p-4">
       <p className="text-xs text-muted-foreground">{label}</p>
-      <p
-        className={cn(
-          "mt-1 text-2xl font-semibold",
-          warn && "text-destructive",
-        )}
-      >
+      <p className={cn("mt-1 text-2xl font-semibold", warn && "text-alert")}>
         {value}
       </p>
       {note ? <p className="text-xs text-muted-foreground">{note}</p> : null}
@@ -287,7 +282,7 @@ function ClassLine({
         <p
           className={cn(
             "text-sm font-medium tabular-nums",
-            below && "text-destructive",
+            below && "text-alert",
           )}
         >
           {c.average != null ? `${c.average}%` : "—"}
