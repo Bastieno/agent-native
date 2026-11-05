@@ -296,40 +296,43 @@ export default function AdminAnnouncements() {
   const filtering = !!q || show !== "all";
 
   return (
-    <div className="h-full overflow-auto p-6 space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-xl font-semibold">Announcements</h1>
-          <p className="text-xs text-muted-foreground mt-0.5">
-            {failed && !lastGood.current
-              ? "Could not load"
-              : `${knownTotal} ${filtering ? "found" : "total"}`}
-          </p>
+    <div className="h-full overflow-auto px-6 pb-6 space-y-4">
+      {/* Title, search and filter stay put while the list scrolls under them. */}
+      <div className="sticky top-0 z-10 -mx-6 space-y-4 bg-background px-6 pb-3 pt-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h1 className="text-xl font-semibold">Announcements</h1>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              {failed && !lastGood.current
+                ? "Could not load"
+                : `${knownTotal} ${filtering ? "found" : "total"}`}
+            </p>
+          </div>
+          <Button size="sm" onClick={openNew}>
+            <IconPlus size={15} className="mr-1.5" /> New Announcement
+          </Button>
         </div>
-        <Button size="sm" onClick={openNew}>
-          <IconPlus size={15} className="mr-1.5" /> New Announcement
-        </Button>
-      </div>
 
-      <div className="flex gap-2">
-        <SearchInput
-          className="flex-1"
-          placeholder="Search announcements…"
-          value={typed}
-          onChange={setTyped}
-        />
-        <Select value={show} onValueChange={setShow}>
-          <SelectTrigger className="h-9 w-44 text-sm" aria-label="Audience">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {SHOW.map((s) => (
-              <SelectItem key={s} value={s}>
-                {SHOW_LABEL[s]}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <div className="flex gap-2">
+          <SearchInput
+            className="flex-1"
+            placeholder="Search announcements…"
+            value={typed}
+            onChange={setTyped}
+          />
+          <Select value={show} onValueChange={setShow}>
+            <SelectTrigger className="h-9 w-44 text-sm" aria-label="Audience">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {SHOW.map((s) => (
+                <SelectItem key={s} value={s}>
+                  {SHOW_LABEL[s]}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       {isLoading ? (

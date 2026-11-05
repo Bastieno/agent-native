@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { ListState } from "@/components/ListState";
 import { useNavigate } from "react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -89,11 +90,12 @@ export function NotificationsPage({
           ) : null}
         </div>
 
-        {isLoading ? null : items.length === 0 ? (
-          <p className="rounded-lg border border-dashed p-8 text-center text-sm text-muted-foreground">
-            Nothing yet. Announcements, work due soon and work waiting to be
-            marked will show up here.
-          </p>
+        {isLoading || items.length === 0 ? (
+          <ListState
+            loading={isLoading}
+            title="Nothing yet"
+            description="Announcements, work due soon and work waiting to be marked will show up here."
+          />
         ) : (
           <ul className="divide-y rounded-lg border bg-card">
             {items.map((n) => (

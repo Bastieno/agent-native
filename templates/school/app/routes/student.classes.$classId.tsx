@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { ListState } from "@/components/ListState";
 import { useQuery } from "@tanstack/react-query";
 import { NO_TEACHER_LABEL } from "@shared/class-teacher";
 import { agentNativePath } from "@agent-native/core/client";
@@ -68,7 +69,7 @@ export default function StudentClassDetail() {
     sync({ role: "student", view: "class", classId });
   }, [sync, classId]);
 
-  const { data: classDetail } = useQuery({
+  const { data: classDetail, isLoading } = useQuery({
     queryKey: ["student-class", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -85,9 +86,7 @@ export default function StudentClassDetail() {
   if (!classDetail) {
     return (
       <div className="p-6">
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <p className="text-sm text-muted-foreground">Loading class…</p>
-        </div>
+        <ListState loading={isLoading} title="Class not available" />
       </div>
     );
   }
@@ -240,16 +239,11 @@ export default function StudentClassDetail() {
       {work.length === 0 &&
         loose.length === 0 &&
         (!lessons || lessons.length === 0) && (
-          <div className="rounded-lg border border-dashed p-10 text-center">
-            <IconBook
-              size={28}
-              className="mx-auto text-muted-foreground mb-2"
-            />
-            <p className="text-sm font-medium">Nothing here yet</p>
-            <p className="text-xs text-muted-foreground mt-1">
-              Your teacher will add lessons and assessments soon.
-            </p>
-          </div>
+          <ListState
+            icon={IconBook}
+            title="Nothing here yet"
+            description="Your teacher will add lessons and assessments soon."
+          />
         )}
     </div>
   );

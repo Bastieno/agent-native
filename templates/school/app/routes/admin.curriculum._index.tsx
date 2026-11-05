@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { ListState } from "@/components/ListState";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -60,7 +61,7 @@ export default function AdminCurriculum() {
   const [searchParams, setSearchParams] = useSearchParams();
   const year = searchParams.get("year") ?? ALL;
 
-  const { data } = useQuery<CoverageResponse | null>({
+  const { data, isLoading } = useQuery<CoverageResponse | null>({
     queryKey: ["curriculum-coverage", year],
     queryFn: async () => {
       const params = year === ALL ? "" : `?gradeLevelId=${year}`;
@@ -223,18 +224,19 @@ export default function AdminCurriculum() {
         </Tabs>
       ) : null}
 
-      {data && subjects.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconBook size={32} className="mx-auto mb-3 text-muted-foreground" />
-          <p className="text-sm font-medium">
-            {selected ? `No subjects for ${selected.name}` : "No subjects yet"}
-          </p>
-          <p className="mx-auto mt-1 max-w-xs text-xs text-muted-foreground">
-            {selected
+      {isLoading || (data ? subjects.length === 0 : !isLoading) ? (
+        <ListState
+          loading={isLoading}
+          icon={IconBook}
+          title={
+            selected ? `No subjects for ${selected.name}` : "No subjects yet"
+          }
+          description={
+            selected
               ? `Ask the agent to record which subjects ${selected.name} takes.`
-              : "Ask the agent to start a curriculum co-authoring session."}
-          </p>
-        </div>
+              : "Ask the agent to start a curriculum co-authoring session."
+          }
+        />
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ordered.map((subject) => (

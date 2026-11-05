@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { ListState } from "@/components/ListState";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -47,7 +48,7 @@ export default function TeacherGradebook() {
     sync({ role: "teacher", view: "gradebook", classId });
   }, [sync, classId]);
 
-  const { data: gradebook } = useQuery({
+  const { data: gradebook, isLoading } = useQuery({
     queryKey: ["gradebook", classId],
     queryFn: async () => {
       const res = await fetch(
@@ -65,10 +66,11 @@ export default function TeacherGradebook() {
     return (
       <div className="space-y-4 p-6">
         <h1 className="text-xl font-semibold">Gradebook</h1>
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconTable size={28} className="mx-auto mb-2 text-muted-foreground" />
-          <p className="text-sm font-medium">Loading gradebook…</p>
-        </div>
+        <ListState
+          loading={isLoading}
+          icon={IconTable}
+          title="Gradebook not available"
+        />
       </div>
     );
   }
@@ -118,22 +120,17 @@ export default function TeacherGradebook() {
       </div>
 
       {students.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconTable size={28} className="mx-auto mb-2 text-muted-foreground" />
-          <p className="text-sm font-medium">No students enrolled</p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Enrol students in this class to see their marks here.
-          </p>
-        </div>
+        <ListState
+          icon={IconTable}
+          title="No students enrolled"
+          description="Enrol students in this class to see their marks here."
+        />
       ) : assessments.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconTable size={28} className="mx-auto mb-2 text-muted-foreground" />
-          <p className="text-sm font-medium">Nothing marked yet</p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Work that carries no marks — reading, card decks, reference sheets —
-            is not listed here.
-          </p>
-        </div>
+        <ListState
+          icon={IconTable}
+          title="Nothing marked yet"
+          description="Work that carries no marks — reading, card decks, reference sheets — is not listed here."
+        />
       ) : (
         <>
           {/* One card per learner on a narrow screen. */}

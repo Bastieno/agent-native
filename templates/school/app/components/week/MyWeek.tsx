@@ -1,9 +1,9 @@
 import { useEffect, type ReactElement } from "react";
+import { ListState } from "@/components/ListState";
 import { useUrlTab } from "@/hooks/use-url-tab";
 import { Link, useSearchParams } from "react-router";
 import { IconCalendarWeek } from "@tabler/icons-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   HoverCard,
   HoverCardContent,
@@ -374,18 +374,12 @@ export function MyWeek({ role }: { role: WeekRole }) {
         ) : null}
       </div>
 
-      {isLoading ? (
-        <Skeleton className="h-64 w-full" />
-      ) : !data || empty ? (
-        <div className="rounded-lg border border-dashed p-8 text-center">
-          <IconCalendarWeek
-            size={28}
-            className="mx-auto mb-2 text-muted-foreground"
-          />
-          <p className="text-sm text-muted-foreground">
-            {data?.message ?? "Your week isn't available right now."}
-          </p>
-        </div>
+      {isLoading || !data || empty ? (
+        <ListState
+          loading={isLoading}
+          icon={IconCalendarWeek}
+          title={data?.message ?? "Your week isn't available right now."}
+        />
       ) : (
         <>
           <div className="hidden lg:block">

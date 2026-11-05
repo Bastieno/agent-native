@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { ListState } from "@/components/ListState";
 import { useQuery } from "@tanstack/react-query";
 import { termWord } from "@shared/school-words";
 import { formatGpa, type Gpa } from "@shared/gpa";
@@ -114,18 +115,16 @@ export default function StudentGrades() {
         </p>
       </div>
 
-      {isLoading ? null : !summary || !anyMarked ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconTrophy
-            size={28}
-            className="mx-auto mb-2 text-muted-foreground"
-          />
-          <p className="text-sm font-medium">No marks yet</p>
-          <p className="mx-auto mt-1 max-w-xs text-xs text-muted-foreground">
-            {data?.message ??
-              "Your marks appear here once your teachers have marked work you handed in."}
-          </p>
-        </div>
+      {isLoading || !summary || !anyMarked ? (
+        <ListState
+          loading={isLoading}
+          icon={IconTrophy}
+          title="No marks yet"
+          description={
+            data?.message ??
+            "Your marks appear here once your teachers have marked work you handed in."
+          }
+        />
       ) : (
         <>
           <TermSummary summary={summary} />

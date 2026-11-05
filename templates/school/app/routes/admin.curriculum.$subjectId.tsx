@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { ListState } from "@/components/ListState";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
@@ -127,14 +128,11 @@ export default function AdminSubjectDetail() {
           <Skeleton className="h-40 w-full" />
         </div>
       ) : yearGroups.length === 0 ? (
-        <div className="rounded-lg border border-dashed p-10 text-center">
-          <IconBook size={28} className="mx-auto mb-3 text-muted-foreground" />
-          <p className="text-sm font-medium">No curriculum yet</p>
-          <p className="mx-auto mt-1 max-w-xs text-xs text-muted-foreground">
-            Ask the agent to build this subject's curriculum for a year group
-            and term.
-          </p>
-        </div>
+        <ListState
+          icon={IconBook}
+          title="No curriculum yet"
+          description="Ask the agent to build this subject's curriculum for a year group and term."
+        />
       ) : (
         <>
           {/* One year group needs no switcher; several get one, so a subject
