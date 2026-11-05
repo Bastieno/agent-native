@@ -1,3 +1,4 @@
+import { pollDelay } from "@/lib/poll-pace";
 import { useRef, useCallback } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -178,7 +179,9 @@ export function useNavigationState() {
       }
       return null;
     },
-    refetchInterval: 2_000,
+    // The assistant's "go there" command: a few seconds is fast enough, and a
+    // page nobody is touching asks less often.
+    refetchInterval: () => pollDelay(5_000),
     // No assistant, no commands to wait for.
     enabled: agentWatching,
     structuralSharing: false,

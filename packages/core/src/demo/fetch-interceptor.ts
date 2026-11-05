@@ -181,9 +181,9 @@ export function ensureDemoModeFetchInterceptor(): void {
     if (!(typeof document !== "undefined" && document.hidden)) {
       void refreshDemoFlag();
     }
-    pollTimer = setTimeout(tick, idlePollDelay(4_000));
+    pollTimer = setTimeout(tick, idlePollDelay(15_000));
   };
-  pollTimer = setTimeout(tick, idlePollDelay(4_000));
+  pollTimer = setTimeout(tick, idlePollDelay(15_000));
   if (typeof pollTimer === "object" && "unref" in pollTimer) {
     try {
       (pollTimer as unknown as { unref: () => void }).unref();

@@ -1,3 +1,4 @@
+import { pollDelay } from "@/lib/poll-pace";
 import { useRef, useCallback } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -30,7 +31,7 @@ export function useLessonEditor(lessonId: string) {
   const { data: liveEdit } = useQuery<LessonEditState | null>({
     queryKey: ["lesson-edit", lessonId],
     queryFn: () => apiFetch(`/_agent-native/application-state/${appStateKey}`),
-    refetchInterval: 2_000,
+    refetchInterval: () => pollDelay(2_000),
     enabled: !!lessonId,
   });
 

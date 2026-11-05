@@ -1,3 +1,4 @@
+import { pollDelay } from "@/lib/poll-pace";
 import { useRef, useCallback } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
@@ -27,7 +28,7 @@ export function useSubmissionEditor(submissionId: string) {
   const { data: draft } = useQuery<SubmissionDraftState | null>({
     queryKey: ["submission-draft", submissionId],
     queryFn: () => apiFetch(`/_agent-native/application-state/${appStateKey}`),
-    refetchInterval: 2_000,
+    refetchInterval: () => pollDelay(2_000),
     enabled: !!submissionId,
   });
 

@@ -116,6 +116,10 @@ function DbSyncSetup() {
       "my-agent-access",
     ],
     ignoreSource: TAB_ID,
+    // Asks "has anything changed?" every few seconds, and the core slows it
+    // further for an idle tab. Two seconds was fast enough for nobody to
+    // notice and enough requests to use up a free hosting plan.
+    interval: 5000,
   });
   return null;
 }
@@ -147,7 +151,15 @@ function ThemeToggleItem() {
 export default function Root() {
   const [queryClient] = useState(
     () =>
-      new QueryClient({ defaultOptions: { queries: { retry: shouldRetry } } }),
+      new QueryClient({
+        defaultOptions: {
+          // Coming back to a tab does not refetch everything on screen: the
+          // change poll already says what changed while it was away, and
+          // refetching every list on each focus was a large share of the
+          // requests a page made.
+          queries: { retry: shouldRetry, refetchOnWindowFocus: false },
+        },
+      }),
   );
   const [cmdkOpen, setCmdkOpen] = useState(false);
   useCommandMenuShortcut(useCallback(() => setCmdkOpen(true), []));

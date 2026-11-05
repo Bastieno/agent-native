@@ -12,6 +12,7 @@
  * accidentally turned off on stage.
  */
 
+import { idlePollDelay } from "../idle-poll.js";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "../api-path.js";
@@ -37,7 +38,9 @@ export function DemoModeSection() {
       if (!res.ok) return null;
       return (await res.json()) as DemoStatus | null;
     },
-    refetchInterval: 4_000,
+    // Demo mode changes rarely, and this is asked on every page the agent panel
+    // is on, so ask slowly, and slower still when nobody is at the page.
+    refetchInterval: () => idlePollDelay(15_000),
     staleTime: 2_000,
   });
 

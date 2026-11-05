@@ -1739,7 +1739,7 @@ function URLSync({ browserTabId }: { browserTabId?: string }) {
         return null;
       }
     },
-    refetchInterval: () => idlePollDelay(2_000),
+    refetchInterval: () => idlePollDelay(4_000),
     retry: false,
   });
 
@@ -1827,7 +1827,10 @@ function URLSync({ browserTabId }: { browserTabId?: string }) {
   return null;
 }
 function ScreenRefreshBoundary({ children }: { children: React.ReactNode }) {
-  const key = useScreenRefreshKey();
+  // Asked on every page the panel is on, so not every two seconds: a screen
+  // refresh the agent asks for can arrive a few seconds later without anyone
+  // noticing, and on a serverless host each ask is a function run.
+  const key = useScreenRefreshKey({ interval: 5000 });
   const queryClient = useQueryClient();
   const lastKeyRef = React.useRef(key);
   if (key !== lastKeyRef.current) {

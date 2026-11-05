@@ -1,3 +1,4 @@
+import { pollDelay } from "@/lib/poll-pace";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { agentNativePath } from "@agent-native/core/client";
 
@@ -35,7 +36,7 @@ export function useCurriculumDraft(draftId: string | null) {
         appStateKey
           ? apiFetch(`/_agent-native/application-state/${appStateKey}`)
           : null,
-      refetchInterval: 2_000,
+      refetchInterval: () => pollDelay(2_000),
       enabled: !!draftId,
     },
   );
