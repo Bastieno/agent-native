@@ -10,7 +10,7 @@
  * A person in several schools acts in the one whose address they are using.
  */
 import { defineEventHandler, getRequestHost, setResponseStatus } from "h3";
-import { getSession } from "@agent-native/core/server";
+import { getSession, setRequestSessionOrg } from "@agent-native/core/server";
 import { putUserSetting } from "@agent-native/core/settings";
 import { resolveOrgIdForEmail } from "@agent-native/core/org";
 import { getDbExec } from "@agent-native/core/db";
@@ -47,11 +47,18 @@ export default defineEventHandler(async (event) => {
   });
   const orgs = rows.map((r: any) => String(r.org_id ?? r.orgId));
   if (orgs.length === 0 || orgs.includes(hostOrg)) {
-    if (orgs.length > 1 && (await resolveOrgIdForEmail(email)) !== hostOrg) {
-      await putUserSetting(email, "active-org-id", { orgId: hostOrg });
+    if (orgs.length > 1) {
+      // This request acts in the school whose address it came from. The
+      // stored "active school" is one value for the account, so with tabs open
+      // on several schools it flips between them; reading it would answer a
+      // request for the wrong school, empty lists or, worse, another school's
+      // data. Pinning the session here makes every request independent of it.
+      await setRequestSessionOrg(event, hostOrg);
+      // Kept in step for the code that still reads the setting.
+      if ((await resolveOrgIdForEmail(email)) !== hostOrg) {
+        await putUserSetting(email, "active-org-id", { orgId: hostOrg });
+      }
     }
-    // Their session may already carry another school; the setting above
-    // covers the next request, and the session endpoint answers for this one.
     return;
   }
 

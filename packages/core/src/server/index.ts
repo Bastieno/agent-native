@@ -42,6 +42,7 @@ export {
   mountAuthMiddleware,
   autoMountAuth,
   getSession,
+  setRequestSessionOrg,
   COOKIE_NAME,
   addSession,
   removeSession,

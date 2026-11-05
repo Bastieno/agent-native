@@ -1842,6 +1842,29 @@ export async function getSession(event: H3Event): Promise<AuthSession | null> {
   })());
 }
 
+/**
+ * Make this one request act in the given organization.
+ *
+ * `getSession` works out the organization once per request, from the
+ * account's stored "active organization" setting. That setting is one value
+ * per account, so an account in several organizations, with tabs open on each
+ * organization's own address, has every request answered for whichever
+ * organization was written last. A host that knows which organization a
+ * request is for (an organization's own domain) calls this to pin it, so the
+ * answer comes from the address the request came from and not from shared
+ * state. The caller is responsible for checking the account is a member.
+ */
+export async function setRequestSessionOrg(
+  event: H3Event,
+  orgId: string,
+): Promise<void> {
+  const session = await getSession(event);
+  if (!session || session.orgId === orgId) return;
+  (
+    event.context as { __anSessionCache?: Promise<AuthSession | null> }
+  ).__anSessionCache = Promise.resolve({ ...session, orgId });
+}
+
 async function resolveSessionUncached(
   event: H3Event,
 ): Promise<AuthSession | null> {
