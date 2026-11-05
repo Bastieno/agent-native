@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { TermLine } from "@/components/TermLine";
 import { CalendarBanner } from "@/components/CalendarBanner";
 import { TeacherAttention } from "@/components/help/TeacherAttention";
 import { HelpNudge } from "@/components/help/HelpNudge";
@@ -49,9 +50,7 @@ export default function TeacherDashboard() {
             ? `Welcome back, ${realNameOrNull(user?.name, user?.email)}`
             : "Welcome back"}
         </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Here's your overview.
-        </p>
+        <TermLine />
       </div>
       <HelpNudge />
       <CalendarBanner />

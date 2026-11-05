@@ -1,4 +1,5 @@
 import { httpError } from "@/lib/http-error";
+import { TermLine } from "@/components/TermLine";
 import { CalendarBanner } from "@/components/CalendarBanner";
 import { HelpNudge } from "@/components/help/HelpNudge";
 import { useQuery } from "@tanstack/react-query";
@@ -92,6 +93,7 @@ export default function StudentDashboard() {
         <h1 className="text-xl font-semibold">
           {firstName ? `Welcome back, ${firstName}` : "Welcome back"}
         </h1>
+        <TermLine />
         {/* The page used to promise upcoming work above an empty panel. */}
         <p className="mt-1 text-sm text-muted-foreground">
           {isLoading
