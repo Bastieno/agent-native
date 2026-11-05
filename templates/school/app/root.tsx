@@ -27,6 +27,7 @@ import {
 } from "@agent-native/core/client";
 import { Toaster } from "@/components/ui/sonner";
 import { shouldRetry } from "@/lib/http-error";
+import { ConnectionNotice } from "@/components/ConnectionNotice";
 import { useNewVersion } from "@/hooks/use-new-version";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { LinksFunction } from "react-router";
@@ -170,6 +171,7 @@ export default function Root() {
             <DbSyncSetup />
             <NavigationStateSync />
             <NewVersionPrompt />
+            <ConnectionNotice />
             <RememberAddresses />
             <Toaster richColors position="bottom-left" />
             <CommandMenu open={cmdkOpen} onOpenChange={setCmdkOpen}>

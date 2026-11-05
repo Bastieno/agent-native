@@ -121,7 +121,11 @@ export default function AdminStudents() {
     sync({ role: "admin", view: "students" });
   }, [sync]);
 
-  const { data: students = [], isLoading } = useQuery<any[]>({
+  const {
+    data: students = [],
+    isLoading,
+    isError: studentsFailed,
+  } = useQuery<any[]>({
     queryKey: ["admin-students"],
     queryFn: async () => {
       const res = await fetch(
@@ -317,10 +321,14 @@ export default function AdminStudents() {
           <p className="text-xs text-muted-foreground mt-0.5">
             {/* "Enrolled" means enrolled in a class here, which is a different
                 thing — these are the students on roll. */}
-            {students.length} student{students.length === 1 ? "" : "s"}
-            {pendingInvites.length > 0
-              ? ` · ${pendingInvites.length} invited`
-              : ""}
+            {/* A count from a failed load would be 0, which is not an answer. */}
+            {studentsFailed && students.length === 0
+              ? "\u00a0"
+              : `${students.length} student${students.length === 1 ? "" : "s"}${
+                  pendingInvites.length > 0
+                    ? ` · ${pendingInvites.length} invited`
+                    : ""
+                }`}
           </p>
         </div>
         <Button size="sm" onClick={() => setInviteOpen(true)}>

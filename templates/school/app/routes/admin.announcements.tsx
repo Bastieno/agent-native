@@ -45,6 +45,12 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -52,7 +58,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { IconBell, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
+import { IconBell, IconDotsVertical, IconPlus } from "@tabler/icons-react";
 import { useSchoolDates } from "@/hooks/use-school-dates";
 
 async function callAction(name: string, params: Record<string, unknown>) {
@@ -411,8 +417,42 @@ export default function AdminAnnouncements() {
         <SheetContent className="w-full overflow-y-auto sm:max-w-xl">
           {selected ? (
             <>
-              <SheetHeader className="pr-6 text-left">
-                <SheetTitle>{selected.title}</SheetTitle>
+              <SheetHeader className="pr-8 text-left">
+                <div className="flex items-start justify-between gap-3">
+                  <SheetTitle className="min-w-0">{selected.title}</SheetTitle>
+                  {/* Edit is the action people come for; Delete is rare and
+                      cannot be undone, so it sits one step away. */}
+                  <div className="flex shrink-0 items-center gap-1">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="h-8"
+                      onClick={() => openEdit(selected)}
+                    >
+                      Edit
+                    </Button>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button
+                          size="icon"
+                          variant="ghost"
+                          className="h-8 w-8"
+                          aria-label="More actions"
+                        >
+                          <IconDotsVertical size={16} />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem
+                          className="text-destructive focus:text-destructive"
+                          onSelect={() => setDeleteTarget(selected)}
+                        >
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                </div>
                 <SheetDescription>
                   {[
                     selected.authorName
@@ -433,19 +473,6 @@ export default function AdminAnnouncements() {
               ) : null}
               <div className="mt-5 overflow-x-auto">
                 <Markdown>{selected.content}</Markdown>
-              </div>
-              <div className="mt-6 flex gap-2 border-t pt-4">
-                <Button size="sm" onClick={() => openEdit(selected)}>
-                  <IconPencil size={14} className="mr-1.5" /> Edit
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="text-destructive hover:text-destructive"
-                  onClick={() => setDeleteTarget(selected)}
-                >
-                  <IconTrash size={14} className="mr-1.5" /> Delete
-                </Button>
               </div>
             </>
           ) : null}

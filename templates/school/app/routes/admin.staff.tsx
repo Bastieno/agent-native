@@ -99,7 +99,10 @@ export default function AdminStaff() {
     sync({ role: "admin", view: "staff" });
   }, [sync]);
 
-  const { data, isLoading } = useQuery<{ active: any[]; pending: any[] }>({
+  const { data, isLoading, isError } = useQuery<{
+    active: any[];
+    pending: any[];
+  }>({
     queryKey: ["admin-staff"],
     queryFn: async () => {
       const res = await fetch(
@@ -212,8 +215,12 @@ export default function AdminStaff() {
         <div>
           <h1 className="text-xl font-semibold">Staff</h1>
           <p className="text-xs text-muted-foreground mt-0.5">
-            {allActive.length} active
-            {allPending.length > 0 ? `, ${allPending.length} pending` : ""}
+            {/* A count from a failed load would be 0, which is not an answer. */}
+            {isError && !data ? "\u00a0" : null}
+            {isError && !data ? null : `${allActive.length} active`}
+            {!(isError && !data) && allPending.length > 0
+              ? `, ${allPending.length} pending`
+              : ""}
           </p>
         </div>
         <Button size="sm" onClick={() => setInviteOpen(true)}>
