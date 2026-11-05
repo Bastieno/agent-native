@@ -81,6 +81,59 @@ export function usePagination<T>(
   };
 }
 
+/**
+ * Paging for a list the server pages (`{ items, total }`).
+ *
+ * `usePagination` slices a list already in memory, so it can clamp the page to
+ * the list's length. Here the total arrives with the page, so the page must
+ * not be derived from it: a total that changed between two responses would
+ * move the page, which would fetch another response, and so on. The page is
+ * only what the address says. A page past the end is moved back once, by the
+ * caller, when the server has confirmed the total (see `clampPage`).
+ */
+export function useServerPagination(
+  total: number,
+  defaultPageSize: number = PAGE_SIZE,
+  { pageKey = "page" }: { pageKey?: string } = {},
+) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const fromUrl = Number(searchParams.get("rows"));
+  const pageSize = PAGE_SIZES.includes(fromUrl) ? fromUrl : defaultPageSize;
+  const page = Math.max(1, Math.floor(Number(searchParams.get(pageKey))) || 1);
+  const pageCount = Math.max(1, Math.ceil(total / pageSize));
+
+  const setPage = useCallback(
+    (next: number) => {
+      setSearchParams(
+        (prev) => {
+          const params = new URLSearchParams(prev);
+          if (next <= 1) params.delete(pageKey);
+          else params.set(pageKey, String(next));
+          return params;
+        },
+        { replace: true, preventScrollReset: true },
+      );
+    },
+    [setSearchParams, pageKey],
+  );
+  const setPageSize = useCallback(
+    (size: number) => {
+      setSearchParams(
+        (prev) => {
+          const params = new URLSearchParams(prev);
+          if (size === defaultPageSize) params.delete("rows");
+          else params.set("rows", String(size));
+          params.delete(pageKey);
+          return params;
+        },
+        { replace: true, preventScrollReset: true },
+      );
+    },
+    [setSearchParams, pageKey, defaultPageSize],
+  );
+  return { page, pageSize, pageCount, total, setPage, setPageSize };
+}
+
 /** 1 2 3 4 5 … 26, with the window following the current page. */
 function pageNumbers(page: number, pageCount: number): (number | "gap")[] {
   if (pageCount <= 7) {

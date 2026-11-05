@@ -8,11 +8,11 @@ import { SearchableMultiSelect } from "@/components/SearchableSelect";
 import { SearchInput } from "@/components/SearchInput";
 import { Markdown } from "@/components/Markdown";
 import { ListState } from "@/components/ListState";
-import { Pagination, usePagination } from "@/components/Pagination";
+import { Pagination, useServerPagination } from "@/components/Pagination";
 import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { useUrlTab } from "@/hooks/use-url-tab";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
@@ -154,15 +154,16 @@ export default function AdminAnnouncements() {
     sync({ role: "admin", view: "announcements" } as any);
   }, [sync]);
 
-  // Paged by the server: it knows the real total and sends one page.
-  const [knownTotal, setKnownTotal] = useState(0);
-  const pageState = usePagination(
-    Array.from({ length: knownTotal }, (_, i) => i),
-    10,
+  // Paged by the server: it knows the real total and sends one page. The
+  // page is what the address says; the total is only shown, never used to
+  // decide the page, so two answers that disagree cannot make it flip.
+  const lastGood = useRef<{ items: Announcement[]; total: number } | null>(
+    null,
   );
-  const { page, pageSize } = pageState;
+  const pager = useServerPagination(0, 10);
+  const { page, pageSize } = pager;
 
-  const { data, isLoading } = useQuery<{
+  const { data, isLoading, isError, isPlaceholderData, refetch } = useQuery<{
     items: Announcement[];
     total: number;
   }>({
@@ -188,11 +189,20 @@ export default function AdminAnnouncements() {
     // flashes an empty list.
     placeholderData: keepPreviousData,
   });
+  if (data && !isPlaceholderData) lastGood.current = data;
+  // A failed load is not an empty list: nothing is counted or listed from it.
+  const failed = isError && !data;
   const items = data?.items ?? [];
-  const total = data?.total ?? 0;
+  const knownTotal = data?.total ?? lastGood.current?.total ?? 0;
+  // A page past the end (the list shrank) goes back to the last one, once the
+  // server has confirmed the total for the page that was asked.
   useEffect(() => {
-    if (data) setKnownTotal(data.total);
-  }, [data]);
+    if (data && !isPlaceholderData && data.total > 0) {
+      const last = Math.max(1, Math.ceil(data.total / pageSize));
+      if (page > last) pager.setPage(last);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, isPlaceholderData, page, pageSize]);
 
   const selected = items.find((a) => keyOf(a) === openKey) ?? null;
 
@@ -285,7 +295,9 @@ export default function AdminAnnouncements() {
         <div>
           <h1 className="text-xl font-semibold">Announcements</h1>
           <p className="text-xs text-muted-foreground mt-0.5">
-            {total} {filtering ? "found" : "total"}
+            {failed && !lastGood.current
+              ? "Could not load"
+              : `${knownTotal} ${filtering ? "found" : "total"}`}
           </p>
         </div>
         <Button size="sm" onClick={openNew}>
@@ -316,6 +328,23 @@ export default function AdminAnnouncements() {
 
       {isLoading ? (
         <ListState loading title="Announcements" />
+      ) : failed ? (
+        // Saying "nothing" when the list could not be fetched is a lie that
+        // looks like lost data. Say what happened, and offer another try.
+        <div className="rounded-lg border border-dashed p-10 text-center">
+          <p className="text-sm font-medium">Could not load announcements</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Nothing has been lost. Check your connection and try again.
+          </p>
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-3"
+            onClick={() => refetch()}
+          >
+            Try again
+          </Button>
+        </div>
       ) : items.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <IconBell size={32} className="mx-auto text-muted-foreground mb-3" />
@@ -370,7 +399,12 @@ export default function AdminAnnouncements() {
           ))}
         </div>
       )}
-      <Pagination {...pageState} noun="announcements" />
+      <Pagination
+        {...pager}
+        total={knownTotal}
+        pageCount={Math.max(1, Math.ceil(knownTotal / pageSize))}
+        noun="announcements"
+      />
 
       {/* The whole announcement: the text as written, with its tables. */}
       <Sheet open={!!selected} onOpenChange={(o) => !o && setOpenKey(null)}>
