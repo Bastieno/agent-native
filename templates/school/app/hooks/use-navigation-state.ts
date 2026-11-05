@@ -1,3 +1,4 @@
+import { readJson } from "@/lib/read-json";
 import { pollDelay } from "@/lib/poll-pace";
 import { useRef, useCallback } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
@@ -131,7 +132,7 @@ async function apiFetch<T>(url: string, options?: RequestInit): Promise<T> {
     if (res.status === 404) return undefined as T;
     throw new Error(`Request failed (${res.status})`);
   }
-  return res.json();
+  return readJson<T>(res);
 }
 
 export function useNavigationState() {
