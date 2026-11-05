@@ -359,6 +359,15 @@ class's copy has the answers and mark schemes removed on the server, not
 hidden. Reach for `create-document` only for something nobody has stored — a
 term's marks on one page, a class list with room to write in.
 
+**A curriculum as a PDF.** "Make a PDF of the Mathematics curriculum" is a
+printable document: read it with `get-subject-curriculum` (pass `gradeLevelId`
+for one year group), write it as markdown with `create-document` — a heading per
+year group and term, each unit with its weeks and objectives, `---page---`
+between year groups — and take them to it with `navigate --view document`.
+They save it as a PDF from Print. For a teacher, include only the year groups
+they have a class in (`get-my-classes`), as the Curriculum page does; say so
+rather than silently adding the rest.
+
 **Printing a document: markdown only, and `---page---` for a new page.** The print view
 does not render raw HTML — it prints it as the text you typed, which is how a
 worksheet came to carry `<div style="break-before: page">` across the middle
