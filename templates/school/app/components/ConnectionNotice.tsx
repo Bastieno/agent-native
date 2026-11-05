@@ -6,6 +6,8 @@ import { useFailedLoads } from "@/lib/failed-loads";
 
 /** How long a refresh must keep failing before anyone is told. */
 const TELL_AFTER_MS = 30_000;
+/** How long a load that never worked must keep failing before the banner. */
+const TELL_EMPTY_AFTER_MS = 15_000;
 /** How soon a list whose last refresh failed tries again. */
 const HEAL_EVERY_MS = 5_000;
 
@@ -25,16 +27,39 @@ const HEAL_EVERY_MS = 5_000;
 export function ConnectionNotice() {
   const qc = useQueryClient();
   const [failing, setFailing] = useState(false);
+  const [failingEmpty, setFailingEmpty] = useState(false);
   const failedLoads = useFailedLoads();
 
   useEffect(() => {
     // When each visible query first failed, kept until it works again.
     const since = new Map<string, number>();
     const lastTry = new Map<string, number>();
+    const emptySince = new Map<string, number>();
     const evaluate = () => {
       const now = Date.now();
       let late = false;
+      let lateEmpty = false;
       for (const q of qc.getQueryCache().getAll()) {
+        // A load that has never worked: a blip that mends itself within
+        // seconds is not worth a banner, but it is worth knowing which one.
+        const neverWorked =
+          q.state.status === "error" &&
+          q.state.data === undefined &&
+          q.getObserversCount() > 0;
+        if (neverWorked) {
+          if (!emptySince.has(q.queryHash)) {
+            emptySince.set(q.queryHash, now);
+            console.warn(
+              "[school] a load failed:",
+              q.queryKey,
+              (q.state.error as Error | null)?.message,
+            );
+          }
+          if (now - (emptySince.get(q.queryHash) ?? now) >= TELL_EMPTY_AFTER_MS)
+            lateEmpty = true;
+        } else {
+          emptySince.delete(q.queryHash);
+        }
         const failed =
           q.state.status === "error" &&
           q.state.data !== undefined &&
@@ -60,6 +85,7 @@ export function ConnectionNotice() {
         }
       }
       setFailing((was) => (was === late ? was : late));
+      setFailingEmpty((was) => (was === lateEmpty ? was : lateEmpty));
     };
     const unsubscribe = qc.getQueryCache().subscribe(evaluate);
     // Time passing is itself a reason to look again.
@@ -71,9 +97,10 @@ export function ConnectionNotice() {
     };
   }, [qc]);
 
-  // Something that never loaded: said at once, with a way to try again. The
-  // list beneath may look empty; this says why.
-  if (failedLoads.count > 0) {
+  // Something that never loaded and keeps failing: said, with a way to try
+  // again. The list beneath may look empty; this says why. (The list itself
+  // already says so at once; this is only the app-wide banner.)
+  if (failedLoads.count > 0 && failingEmpty) {
     return (
       <div
         role="status"
