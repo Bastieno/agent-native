@@ -119,6 +119,10 @@ function DbSyncSetup() {
     // Asks "has anything changed?" every few seconds, and the core slows it
     // further for an idle tab. Two seconds was fast enough for nobody to
     // notice and enough requests to use up a free hosting plan.
+    // No event stream: the hosted site is serverless, where each open stream
+    // holds a function for five minutes until it is cut and reopened. Polling
+    // every few seconds is the same answer for a fraction of the cost.
+    sseUrl: false,
     interval: 5000,
   });
   return null;
