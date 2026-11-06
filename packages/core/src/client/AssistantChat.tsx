@@ -443,6 +443,9 @@ const markdownStyles = `
 .agent-markdown > :last-child { margin-bottom: 0; }
 .agent-markdown p { margin: 0.5em 0; }
 .agent-markdown ul, .agent-markdown ol { margin: 0.5em 0; padding-left: 1.5em; }
+.agent-markdown ul { list-style-type: disc; }
+.agent-markdown ol { list-style-type: decimal; }
+.agent-markdown ul ul, .agent-markdown ol ul { list-style-type: circle; }
 .agent-markdown li { margin: 0.2em 0; }
 .agent-markdown li > p { margin: 0; }
 .agent-markdown h1 { font-size: 1.25em; font-weight: 600; margin: 0.75em 0 0.25em; }
