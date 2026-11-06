@@ -307,6 +307,15 @@ class AnthropicEngine implements AgentEngine {
       }
 
       const finalMessage = await apiStream.finalMessage();
+      // A stream cut off after some text but before Anthropic's closing
+      // message_delta has no stop_reason. Reading that as a normal end of turn
+      // saves the partial text as a finished reply, so fail it instead and let
+      // the run loop retry the step.
+      if (!finalMessage.stop_reason) {
+        throw new Error(
+          "Anthropic stream closed early: connection reset before the model finished",
+        );
+      }
       const assistantContent = anthropicContentToEngine(finalMessage.content);
 
       // Emit usage
@@ -325,7 +334,7 @@ class AnthropicEngine implements AgentEngine {
       yield { type: "assistant-content", parts: assistantContent };
 
       // Emit stop reason
-      const stopReason = finalMessage.stop_reason ?? "end_turn";
+      const stopReason = finalMessage.stop_reason;
       yield {
         type: "stop",
         reason:
