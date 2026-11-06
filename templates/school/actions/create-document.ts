@@ -4,6 +4,10 @@ import { currentAccess } from "@agent-native/core/sharing";
 import { buildDeepLink } from "@agent-native/core/server";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+import {
+  findUnmarkedNotation,
+  unmarkedNotationMessage,
+} from "../shared/notation.js";
 
 /**
  * Compose a printable document, on demand, for whatever a teacher just asked
@@ -88,6 +92,8 @@ export default defineAction({
     };
   },
   run: async (args) => {
+    const unmarked = findUnmarkedNotation(args.body);
+    if (unmarked.length) throw new Error(unmarkedNotationMessage(unmarked));
     const { userEmail } = currentAccess();
     const documentId = nanoid();
 

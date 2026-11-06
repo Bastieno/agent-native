@@ -121,6 +121,7 @@ exactly as you type it, except between dollar signs, where it is set as notation
 - Chemistry: `$\ce{MgCl2}$`, `$\ce{Ca(NO3)2}$`, `$\ce{Mg^2+}$`, `$\ce{2H2 + O2 -> 2H2O}$`. Plain `MgCl2` or `Mg2+` shows as typed, with the numbers on the line.
 - Maths and physics: `$x^2$`, `$\frac{1}{2}mv^2$`, `$9.8\ \text{m/s}^2$`.
 - Leave ordinary words, prices, class names and grades (N300, SS3B, B+) outside the dollar signs.
+- A power typed as plain `3^2` shows as typed, so `create-activity` and `create-document` refuse it (the reply quotes where) and ask for `$3^2$`. Learners' own answers are typed with `^`; the answer fields and the instructions are not checked.
 
 ## Running Actions
 

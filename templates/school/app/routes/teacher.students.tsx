@@ -21,7 +21,7 @@ import { IconUsers } from "@tabler/icons-react";
 const categoryColors: Record<string, string> = {
   advanced: "bg-success/15 text-success",
   developing: "bg-primary/15 text-primary",
-  foundational: "bg-amber-100 text-attention",
+  foundational: "bg-attention/15 text-attention",
 };
 
 const ALL = "all";

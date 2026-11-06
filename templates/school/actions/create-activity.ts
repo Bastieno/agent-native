@@ -11,6 +11,10 @@ import {
   type ActivityContent,
 } from "../shared/activity-content.js";
 import { jsonish } from "../shared/zod-json.js";
+import {
+  findUnmarkedNotation,
+  unmarkedNotationMessage,
+} from "../shared/notation.js";
 import { withCardIds } from "../shared/card-key.js";
 import { styleForClass } from "../server/lib/assessment-style.js";
 import { getUserLabels, labelFor } from "../server/lib/user-names.js";
@@ -77,7 +81,7 @@ function blueprintNotes(
 
 export default defineAction({
   description:
-    "Create an activity for a class: any piece of work a learner does — worksheet, reading, problem set, essay, practical, oral. You supply the content (instructions, questions, optional difficulty variants, optional rubric); this records it with its objectives, timing and marking mode. Read the week's objectives and the school's activity blueprints first, then draft. Preview by default, and a preview is NOT saved: the teacher cannot see it anywhere in the app. A draft is private to the teacher, so once the content is written, save it with confirm=true (leave publish off) and give the teacher the link in the result; put open questions — a closing date, which learners take which level — to them afterwards and apply the answers with update-assessment. Never pass publish=true unless the teacher has asked for the class to see it. The result lists any work this week already has (alreadyThisWeek): say so rather than quietly making a second.",
+    "Create an activity for a class: any piece of work a learner does — worksheet, reading, problem set, essay, practical, oral. You supply the content (instructions, questions, optional difficulty variants, optional rubric); this records it with its objectives, timing and marking mode. Read the week's objectives and the school's activity blueprints first, then draft. Preview by default, and a preview is NOT saved: the teacher cannot see it anywhere in the app. A draft is private to the teacher, so once the content is written, save it with confirm=true (leave publish off) and give the teacher the link in the result; put open questions — a closing date, which learners take which level — to them afterwards and apply the answers with update-assessment. Write every power, fraction and root between dollar signs ($3^2$, $\\frac{1}{2}$): plain 3^2 is refused when saving. Never pass publish=true unless the teacher has asked for the class to see it. The result lists any work this week already has (alreadyThisWeek): say so rather than quietly making a second.",
   schema: z.object({
     classId: z.string().describe("Class this is for"),
     studentIds: jsonish(z.array(z.string()))
@@ -471,11 +475,27 @@ export default defineAction({
         : null,
     };
 
+    // Maths typed as plain text ("3^2") shows as typed; it has to be marked.
+    const unmarked = findUnmarkedNotation(
+      args.content,
+      args.blocks,
+      (args.variants as any[] | undefined)?.flatMap((v) => [
+        v.content,
+        v.blocks,
+      ]),
+    );
+    if (unmarked.length && args.confirm) {
+      throw new Error(unmarkedNotationMessage(unmarked));
+    }
+
     if (!args.confirm) {
       return {
         preview: true,
         ...preview,
-        message: `This is only a preview: nothing is saved and the teacher cannot see it yet.${alreadyNote} ${blueprintNotes(blueprint, args, cls.subjectName).join(" ")}${
+        ...(unmarked.length
+          ? { notationProblem: unmarkedNotationMessage(unmarked) }
+          : {}),
+        message: `This is only a preview: nothing is saved and the teacher cannot see it yet.${unmarked.length ? ` ${unmarkedNotationMessage(unmarked)}` : ""}${alreadyNote} ${blueprintNotes(blueprint, args, cls.subjectName).join(" ")}${
           blueprintNotes(blueprint, args, cls.subjectName).length ? " " : ""
         }Ready to create "${args.title}" (${args.format}) for ${cls.name}${
           objectives.length
