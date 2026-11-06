@@ -236,7 +236,7 @@ function Marking({ block }: { block: QuestionBlock }) {
         </p>
       ) : null}
       {block.markScheme ? (
-        <Markdown className="text-xs text-muted-foreground">
+        <Markdown breaks className="text-xs text-muted-foreground">
           {block.markScheme}
         </Markdown>
       ) : null}
@@ -245,7 +245,9 @@ function Marking({ block }: { block: QuestionBlock }) {
           <span className="text-muted-foreground">
             Model answer, given back once the paper closes:{" "}
           </span>
-          <Markdown className="text-xs">{block.modelAnswer}</Markdown>
+          <Markdown breaks className="text-xs">
+            {block.modelAnswer}
+          </Markdown>
         </div>
       ) : null}
     </div>

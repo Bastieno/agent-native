@@ -1265,6 +1265,13 @@ has: say so rather than quietly adding a second.
   the way a good answer at their level would read, and they get it back on
   their marked paper once the paper closes. Keep it to what full marks need,
   not an essay beyond the question.
+- Lay out marking to suit the question, so it can be read at a glance. A
+  calculation or short-answer question: the `markScheme` is one mark per line,
+  each saying what earns it, and the `modelAnswer` is one line of working per
+  step, with no step numbers. An essay, explanation or extended answer: the
+  `markScheme` says what a good answer must cover, in a few lines, and the
+  `modelAnswer` is ordinary paragraphs. Never turn prose into a numbered
+  list, and never put one run-on string where the answer has distinct steps.
 - Not everything is marked. Reading and practice can carry `gradingMode: none`
   — say so rather than inventing points.
 - Time-limit only what genuinely needs it. A 30-minute quiz, yes; a week's

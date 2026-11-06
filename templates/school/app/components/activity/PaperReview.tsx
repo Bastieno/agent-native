@@ -82,7 +82,9 @@ export function PaperReview({ review }: { review: PaperReviewData }) {
                   <p className="mb-1 text-xs font-medium text-success">
                     A full-mark answer
                   </p>
-                  <Markdown className="text-sm">{q.modelAnswer}</Markdown>
+                  <Markdown breaks className="text-sm">
+                    {q.modelAnswer}
+                  </Markdown>
                 </div>
               ) : null}
             </div>

@@ -28,11 +28,15 @@ export function Markdown({
   children,
   className,
   pageBreaks = false,
+  breaks = false,
 }: {
   children: string | null | undefined;
   className?: string;
   /** Honour `---page---` as a page break. For print views. */
   pageBreaks?: boolean;
+  /** Keep a single line break as a line break. For mark schemes and model
+   * answers, where the agent writes one step per line. */
+  breaks?: boolean;
 }) {
   if (!children) return null;
 
@@ -46,7 +50,9 @@ export function Markdown({
             // Every page but the last ends with a break.
             className={i < pages.length - 1 ? "break-after-page" : undefined}
           >
-            <Markdown className={className}>{page.trim()}</Markdown>
+            <Markdown className={className} breaks={breaks}>
+              {page.trim()}
+            </Markdown>
           </div>
         ))}
       </>
@@ -70,6 +76,7 @@ export function Markdown({
         "[&_blockquote]:border-l-2 [&_blockquote]:pl-3 [&_blockquote]:text-muted-foreground",
         "[&_.katex-display]:overflow-x-auto [&_.katex-display]:py-1",
         "[&>*:first-child]:mt-0",
+        breaks && "[&_p]:whitespace-pre-line",
         className,
       )}
     >
