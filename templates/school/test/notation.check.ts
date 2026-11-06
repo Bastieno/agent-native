@@ -17,4 +17,9 @@ assert.equal(
   0,
 );
 assert.equal(f("a ^ b caret in prose", "snake_case and 5 + 3").length, 0);
+assert.equal(f("Simplify 6a³ × 2a⁴.").length, 1);
+assert.equal(f("a³ × a⁴ = a³⁺⁴ = a⁷").length, 1);
+assert.equal(f("a² + b² = c²").length, 1);
+assert.equal(f("The room is 12 m² and the tank 3 m³.").length, 0);
+assert.equal(f("Simplify $6a^3 \\times 2a^4$.").length, 0);
 console.log("notation: ok");
