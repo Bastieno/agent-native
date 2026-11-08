@@ -222,7 +222,35 @@ export function AssessmentDetail({
     resubmission_requested: 1,
     graded: 2,
   };
-  const orderedSubmissions = [...submissions].sort(
+  // The "How the class did" card counts every enrolled learner. This tab used
+  // to list only those with a submission record, so a learner who never opened
+  // the paper was counted in the card and missing here. Add them, as not
+  // started, from the same list the card reads.
+  const { data: paperProfile } = useQuery<{
+    notHandedIn: { studentId: string; name: string }[];
+  } | null>({
+    queryKey: ["paper-profile", assessmentId],
+    queryFn: async () => {
+      const res = await fetch(
+        agentNativePath(
+          `/_agent-native/actions/get-paper-profile?assessmentId=${assessmentId}`,
+        ),
+      );
+      return res.ok ? res.json() : null;
+    },
+    enabled: !isMaterial && !isDraft,
+  });
+  const listedIds = new Set(submissions.map((s: any) => s.studentId));
+  const notStarted = (paperProfile?.notHandedIn ?? [])
+    .filter((n) => !listedIds.has(n.studentId))
+    .map((n) => ({
+      id: `not-started-${n.studentId}`,
+      studentId: n.studentId,
+      studentName: n.name,
+      status: "not_started",
+      synthetic: true,
+    }));
+  const orderedSubmissions = [...submissions, ...notStarted].sort(
     (a: any, b: any) =>
       (RANK[a.status] ?? 3) - (RANK[b.status] ?? 3) ||
       String(a.studentName ?? "").localeCompare(String(b.studentName ?? "")),
@@ -647,7 +675,7 @@ export function AssessmentDetail({
             <TabsContent value="submissions" className="mt-4 space-y-2">
               {submissionsLoading ? (
                 <ListState loading rows={3} title="Submissions" />
-              ) : submissions.length === 0 ? (
+              ) : orderedSubmissions.length === 0 ? (
                 <p className="text-sm text-muted-foreground">
                   No submissions yet.
                 </p>
@@ -672,8 +700,11 @@ export function AssessmentDetail({
                       </p>
                     ) : null}
                     <button
-                      onClick={() => openGrading(sub)}
-                      className="w-full flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors text-left"
+                      onClick={() => {
+                        if (!sub.synthetic) openGrading(sub);
+                      }}
+                      disabled={sub.synthetic}
+                      className="w-full flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50 transition-colors text-left disabled:cursor-default disabled:hover:bg-transparent"
                     >
                       <div className="min-w-0">
                         <p className="flex items-center gap-2 text-sm font-medium">
