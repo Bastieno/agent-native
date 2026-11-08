@@ -161,6 +161,16 @@ export function isHowToQuestion(message: string): boolean {
   const text = message.trim().toLowerCase();
   if (text.length === 0 || text.length > 220) return false;
   if (text.split(/\s+/).length > 28) return false;
+  // "Can I have the list of ...", "can I see who ...": a request for the
+  // school's own data, which Help cannot answer. Better sent to the assistant
+  // than answered with the nearest how-to. ("Where do I see who ..." is a
+  // question about where, and Help answers it.)
+  if (
+    /^can (i|we) /.test(text) &&
+    (/^can (i|we) (have|get|see|view|know|check|find|look)\b/.test(text) ||
+      /\b(list of|which|who|how many)\b/.test(text))
+  )
+    return false;
   return /^(how (do|can|to|would|should)|how does|where (do|can|is|are)|what can|what is the (way|best way)|can (i|we|the app|it) |is there a way|does (the|this) (app|school)|do (i|we) (have to|need to)|what does)/.test(
     text,
   );

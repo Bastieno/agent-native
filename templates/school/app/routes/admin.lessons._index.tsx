@@ -8,6 +8,13 @@ import { useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { BackLink } from "@/components/layout/BackLink";
 import { IconCheck, IconNotebook, IconPencil } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
@@ -47,6 +54,22 @@ type Coverage = {
 
 const ALL = "all";
 
+type Show = "behind" | "notready" | "ready";
+
+/** The status views the Needs attention list links to. */
+const SHOW: Record<Show, { label: string; matches: (r: ClassRow) => boolean }> =
+  {
+    behind: { label: "Behind", matches: (r) => r.missing > 0 },
+    notready: {
+      label: "Written, not marked ready",
+      matches: (r) => r.expectedNotes > 0 && r.missing === 0 && r.drafts > 0,
+    },
+    ready: {
+      label: "Ready",
+      matches: (r) => r.expectedNotes > 0 && r.missing === 0 && r.drafts === 0,
+    },
+  };
+
 /**
  * Whether the school's lessons are prepared.
  *
@@ -64,6 +87,7 @@ export default function AdminLessons() {
   const [searchParams, setSearchParams] = useSearchParams();
   const year = searchParams.get("year") ?? ALL;
   const classId = searchParams.get("classId");
+  const show = (searchParams.get("show") as Show | null) ?? ALL;
 
   const { data, isPending } = useQuery<Coverage | null>({
     queryKey: ["lesson-note-coverage"],
@@ -85,8 +109,9 @@ export default function AdminLessons() {
   const yearGroups = [
     ...new Set(rows.map((r) => r.gradeLevelName).filter(Boolean)),
   ] as string[];
-  const shown =
-    year === ALL ? rows : rows.filter((r) => r.gradeLevelName === year);
+  const shown = rows
+    .filter((r) => year === ALL || r.gradeLevelName === year)
+    .filter((r) => show === ALL || SHOW[show]?.matches(r));
   const paged = usePagination(shown);
 
   // Opening a class keeps the year tab and page size in the address, so
@@ -119,38 +144,70 @@ export default function AdminLessons() {
         </p>
       </div>
 
-      {yearGroups.length > 1 ? (
-        <Tabs
-          value={year}
+      <div className="flex flex-wrap items-center gap-3">
+        {yearGroups.length > 1 ? (
+          <Tabs
+            value={year}
+            onValueChange={(value) =>
+              setSearchParams(
+                (prev) => {
+                  const next = new URLSearchParams(prev);
+                  if (value === ALL) next.delete("year");
+                  else next.set("year", value);
+                  return next;
+                },
+                { replace: true },
+              )
+            }
+          >
+            <TabsList className="h-auto max-w-full flex-wrap justify-start">
+              <TabsTrigger value={ALL}>All</TabsTrigger>
+              {yearGroups.map((y) => (
+                <TabsTrigger key={y} value={y}>
+                  {y}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+        ) : null}
+        <Select
+          value={show}
           onValueChange={(value) =>
             setSearchParams(
               (prev) => {
                 const next = new URLSearchParams(prev);
-                if (value === ALL) next.delete("year");
-                else next.set("year", value);
+                if (value === ALL) next.delete("show");
+                else next.set("show", value);
                 return next;
               },
               { replace: true },
             )
           }
         >
-          <TabsList className="h-auto max-w-full flex-wrap justify-start">
-            <TabsTrigger value={ALL}>All</TabsTrigger>
-            {yearGroups.map((y) => (
-              <TabsTrigger key={y} value={y}>
-                {y}
-              </TabsTrigger>
+          <SelectTrigger className="h-9 w-auto min-w-44">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={ALL}>Any status</SelectItem>
+            {Object.entries(SHOW).map(([key, { label }]) => (
+              <SelectItem key={key} value={key}>
+                {label}
+              </SelectItem>
             ))}
-          </TabsList>
-        </Tabs>
-      ) : null}
+          </SelectContent>
+        </Select>
+      </div>
 
       {isPending || shown.length === 0 ? (
         <ListState
           loading={isPending}
           icon={IconNotebook}
           title="Nothing to show"
-          description="No classes are running for this term yet."
+          description={
+            rows.length > 0
+              ? "No classes match this view. Change the year or status above."
+              : "No classes are running for this term yet."
+          }
         />
       ) : (
         <div className="divide-y rounded-lg border">

@@ -19,7 +19,7 @@ import checkStudentRecords from "./check-student-records.js";
  */
 export default defineAction({
   description:
-    "What the school needs doing, most important first: classes with no teacher or curriculum, lesson notes behind or not marked ready, learners with missing records. Each item names the page that fixes it. Use it to answer 'what needs attention?' or to open an overview.",
+    "What the school needs doing, most important first: classes with no teacher or curriculum, lesson notes behind or not marked ready, learners with missing records. Each item names the page that fixes it, and lesson-note items list the classes involved (class and teacher), so 'which classes?' needs no second lookup. Use it to answer 'what needs attention?' or to open an overview.",
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
@@ -33,7 +33,26 @@ export default defineAction({
     const plural = (n: number, one: string, many: string) =>
       `${n} ${n === 1 ? one : many}`;
 
-    const items: { text: string; page: string; blocks: boolean }[] = [];
+    // Which classes a lesson-note line is about, so neither the page nor the
+    // assistant has to hunt for them. A handful is shown; `more` says how many
+    // are left.
+    const rows: any[] = coverage?.classes ?? [];
+    const named = (matching: any[]) => ({
+      classes: matching
+        .slice(0, 12)
+        .map((c) => `${c.className} (${c.teacher})`),
+      ...(matching.length > 12 ? { more: matching.length - 12 } : {}),
+    });
+
+    const items: {
+      text: string;
+      page: string;
+      blocks: boolean;
+      /** The lesson-notes view that lists exactly these classes. */
+      show?: "behind" | "notready";
+      classes?: string[];
+      more?: number;
+    }[] = [];
     if (totals?.withoutTeacher) {
       items.push({
         text: `${plural(totals.withoutTeacher, "class has", "classes have")} no teacher, so no work can be published to ${totals.withoutTeacher === 1 ? "it" : "them"}`,
@@ -56,6 +75,8 @@ export default defineAction({
         text: `${plural(behind, "class is", "classes are")} behind on lesson notes`,
         page: "lesson notes",
         blocks: true,
+        show: "behind",
+        ...named(rows.filter((c) => c.missing > 0)),
       });
     }
     // Written but not declared ready is its own state: the notes exist, but
@@ -67,6 +88,12 @@ export default defineAction({
         text: `${plural(notReady, "class has", "classes have")} lesson notes written but not yet marked ready`,
         page: "lesson notes",
         blocks: false,
+        show: "notready",
+        ...named(
+          rows.filter(
+            (c) => c.expectedNotes > 0 && c.missing === 0 && c.drafts > 0,
+          ),
+        ),
       });
     }
     const noYear = records?.withoutYearGroup?.length ?? 0;

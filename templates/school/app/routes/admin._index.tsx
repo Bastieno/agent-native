@@ -254,11 +254,13 @@ function NeedsAttention() {
 
   const items: { text: string; to: string; blocks?: boolean }[] = (
     attention?.items ?? []
-  ).map((i: { text: string; page: string; blocks: boolean }) => ({
-    text: i.text,
-    to: PAGE_ROUTE[i.page] ?? "/admin",
-    blocks: i.blocks,
-  }));
+  ).map(
+    (i: { text: string; page: string; blocks: boolean; show?: string }) => ({
+      text: i.text,
+      to: `${PAGE_ROUTE[i.page] ?? "/admin"}${i.show ? `?show=${i.show}` : ""}`,
+      blocks: i.blocks,
+    }),
+  );
 
   // Still loading, and nothing to say yet.
   if (!attention) return null;

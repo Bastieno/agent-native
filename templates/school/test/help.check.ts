@@ -114,6 +114,9 @@ const cases: Array<[string, typeof teacherCaps, string | null]> = [
   ["Why did the Week 5 paper score so low?", adminCaps, null],
   ["Can you draft the lesson notes for this week?", teacherCaps, null],
   ["What is 3x + 5 = 20?", studentCaps, null],
+  ["Can I have the list of lesson notes not marked as ready?", adminCaps, null],
+  ["Which classes are behind on lesson notes?", adminCaps, null],
+  ["Can I see who has not marked their papers?", adminCaps, null],
   ["hello", teacherCaps, null],
 ];
 for (const [q, caps, expected] of cases) {

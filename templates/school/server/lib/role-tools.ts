@@ -89,6 +89,9 @@ const LOADED_FOR_STAFF = new Set([
   "get-school-config",
   "check-school-setup",
   "get-school-attention",
+  // The classes behind "lesson notes not ready": a short question reaches for
+  // it, and a model that has to search for it answers from help text instead.
+  "get-lesson-note-coverage",
   "get-my-schedule",
   "get-my-week",
   "list-classes",
