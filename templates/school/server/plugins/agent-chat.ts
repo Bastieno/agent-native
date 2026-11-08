@@ -9,6 +9,7 @@ import { guardActions } from "../lib/guard-actions.js";
 import { gateAgentMessage } from "../lib/agent-gate.js";
 import { freeHelpReply } from "../lib/help-reply.js";
 import { orgForConnectorCaller } from "../lib/school-host.js";
+import { withViewLinks } from "../lib/view-links.js";
 import {
   CHAT_APP_INSTRUCTIONS,
   chatAppToolFilter,
@@ -26,7 +27,7 @@ const agentChat = createAgentChatPlugin({
   // The actions a head or teacher's own AI app (Claude, ChatGPT) may call
   // directly are marked here, with their guidance; see server/lib/chat-apps.ts.
   actions: withChatAppSurface(
-    guardActions(loadActionsFromStaticRegistry(actionsRegistry)),
+    withViewLinks(guardActions(loadActionsFromStaticRegistry(actionsRegistry))),
   ),
   // From an outside AI app: learners and people with no school are turned
   // away, each role sees its own short list, and the client is told how the
