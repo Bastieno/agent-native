@@ -6,6 +6,7 @@
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import {
+  NO_VIEW_LINK,
   VIEW_LINKS,
   viewPath,
   type ViewKind,
@@ -45,6 +46,9 @@ const kinds: ViewKind[] = [
   "classesList",
   "studentsList",
   "curriculumList",
+  "analytics",
+  "timetable",
+  "week",
 ];
 for (const area of ["admin", "teacher", "student"] as const) {
   for (const kind of kinds) {
@@ -70,6 +74,32 @@ for (const name of Object.keys(VIEW_LINKS)) {
     `action ${name} exists`,
   );
 }
+
+// Every read action is linked or says why not, so a new one is not forgotten.
+import { readFileSync } from "node:fs";
+const actionsDir = join(import.meta.dirname, "../actions");
+const reads = readdirSync(actionsDir)
+  .filter((f) => f.endsWith(".ts"))
+  .filter((f) =>
+    readFileSync(join(actionsDir, f), "utf8").includes('method: "GET"'),
+  )
+  .map((f) => f.replace(/\.ts$/, ""));
+const undecided = reads.filter(
+  (n) => !(n in VIEW_LINKS) && !(n in NO_VIEW_LINK),
+);
+ok(
+  undecided.length === 0,
+  `every read action is linked or exempt (undecided: ${undecided.join(", ") || "none"})`,
+);
+const stale = Object.keys(NO_VIEW_LINK).filter((n) => !reads.includes(n));
+ok(
+  stale.length === 0,
+  `exemptions name real read actions (stale: ${stale.join(", ") || "none"})`,
+);
+ok(
+  Object.keys(NO_VIEW_LINK).every((n) => !(n in VIEW_LINKS)),
+  "no action is both linked and exempt",
+);
 
 // Results get links.
 const link = (

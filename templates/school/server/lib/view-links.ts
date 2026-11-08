@@ -29,7 +29,10 @@ export type ViewKind =
   | "subjectCurriculum"
   | "classesList"
   | "studentsList"
-  | "curriculumList";
+  | "curriculumList"
+  | "analytics"
+  | "timetable"
+  | "week";
 
 type Area = "admin" | "teacher" | "student";
 
@@ -91,7 +94,13 @@ export function viewPath(
     case "studentsList":
       return `${base}/students`;
     case "curriculumList":
-      return area === "admin" ? "/admin/curriculum" : null;
+      return `${base}/curriculum`;
+    case "analytics":
+      return `${base}/analytics`;
+    case "timetable":
+      return area === "admin" ? "/admin/timetable" : null;
+    case "week":
+      return area === "teacher" ? "/teacher/week" : null;
   }
 }
 
@@ -193,6 +202,28 @@ export const VIEW_LINKS: Record<string, Spec> = {
       ? { ...withRows, ...list }
       : withRows;
   },
+  "get-student": one("student", (a) => a.id),
+  "list-my-students": rows("student", (r) => r.studentId),
+  "list-class-students": rows("student", (r) => r.studentId),
+  "get-subject": one("subjectCurriculum", (a) => a.id),
+  "list-subjects": rows("subjectCurriculum", (r) => r.id),
+  // A paper's views and what is said about it all open the paper.
+  "get-submission": one("assessment", (_a, r) => r?.assessmentId),
+  "list-submissions": one("assessment", (a) => a.assessmentId),
+  "get-marking-queue": one("assessment", (a) => a.assessmentId),
+  "get-paper-profile": one("assessment", (a) => a.assessmentId),
+  "get-assessment-analytics": one("assessment", (a) => a.assessmentId),
+  "get-answer-insights": one("assessment", (a) => a.assessmentId),
+  "get-card-difficulty": one("assessment", (a) => a.assessmentId),
+  "get-print-material": one("assessment", (a) => a.assessmentId),
+  "get-school-analytics": one("analytics", () => undefined),
+  "get-my-analytics": one("analytics", () => undefined),
+  "get-timetable": one("timetable", () => undefined),
+  "get-timetable-coverage": one("timetable", () => undefined),
+  "get-timetable-proposal": one("timetable", () => undefined),
+  "get-curriculum-coverage": one("curriculumList", () => undefined),
+  "get-curriculum-calendar": one("curriculumList", () => undefined),
+  "get-my-week": one("week", () => undefined),
   "get-teacher-profile": one("staff", (a) => a.userId),
   "list-staff": rows("staff", (r) => r.userId, "active"),
   "get-subject-curriculum": one("subjectCurriculum", (a) => a.subjectId),
@@ -221,6 +252,66 @@ export const VIEW_LINKS: Record<string, Spec> = {
       }),
     };
   },
+};
+
+/**
+ * Read actions that give no link, and why. A read action is in `VIEW_LINKS` or
+ * here: a new one is not left without a decision (test/view-links.check.ts).
+ */
+const SETUP = "a setting or setup read: no page shows it on its own";
+const MINE = "a learner's own view: a learner has no page for it to open";
+const LINKED = "carries its own links";
+const ROWS = "rows of curriculum or setup with no page of their own";
+export const NO_VIEW_LINK: Record<string, string> = {
+  "check-school-setup": SETUP,
+  "check-student-records": SETUP,
+  "draft-school-guide": SETUP,
+  "get-assessment-style": SETUP,
+  "get-current-term": SETUP,
+  "get-custom-fields-schema": SETUP,
+  "get-extension-audience": SETUP,
+  "get-help": "help text",
+  "get-my-agent-access": SETUP,
+  "get-school-config": SETUP,
+  "get-school-credit": SETUP,
+  "get-school-guidance": "guidance for the assistant",
+  "get-school-library": SETUP,
+  "get-school-resource": SETUP,
+  "get-school-stats": "counts for the overview",
+  "get-school-usage": SETUP,
+  "get-school": SETUP,
+  "get-syllabus-import": SETUP,
+  "get-curriculum-draft": "a draft the assistant is building",
+  "list-curriculum-drafts": "drafts the assistant is building",
+  "list-style-imports": SETUP,
+  "list-syllabus-imports": SETUP,
+  "list-assessment-styles": SETUP,
+  "list-connected-apps": SETUP,
+  "list-password-resets": SETUP,
+  "list-student-invites": SETUP,
+  "list-academic-years": SETUP,
+  "list-arms": SETUP,
+  "list-departments": SETUP,
+  "list-grade-levels": SETUP,
+  "list-terms": SETUP,
+  "list-framework-objectives": ROWS,
+  "list-learning-objectives": ROWS,
+  "list-units": ROWS,
+  "list-lesson-resources": ROWS,
+  "list-variants": "versions of a paper, returned as a bare list",
+  "list-my-notifications": "notifications carry their own links",
+  "list-my-drafts": LINKED,
+  "get-my-attention": LINKED,
+  "get-report-card": LINKED,
+  "get-my-assessment": MINE,
+  "get-my-assessments": MINE,
+  "get-my-class": MINE,
+  "get-my-classes": MINE,
+  "get-my-grades": MINE,
+  "get-my-profile": MINE,
+  "get-my-progress": MINE,
+  "get-my-submission": MINE,
+  "get-my-term-grades": MINE,
 };
 
 /** The area of the app the signed-in person works in. */
