@@ -8,6 +8,7 @@ import actionsRegistry from "../../.generated/actions-registry.js";
 import { guardActions } from "../lib/guard-actions.js";
 import { gateAgentMessage } from "../lib/agent-gate.js";
 import { freeHelpReply } from "../lib/help-reply.js";
+import { orgForConnectorCaller } from "../lib/school-host.js";
 import {
   CHAT_APP_INSTRUCTIONS,
   chatAppToolFilter,
@@ -34,6 +35,10 @@ const agentChat = createAgentChatPlugin({
   // them directly; each call is role-checked.
   transformExtensionActions: withChatAppExtensionSurface,
   mcpRefuseCaller: refuseChatAppCaller,
+  // A connector acts in the school whose address it was connected to, not in
+  // whichever school the person last had open.
+  mcpResolveCallerOrg: async (caller) =>
+    (await orgForConnectorCaller(caller)) ?? undefined,
   // Each person's assistant is sent the guide for their own role, not all
   // three roles' (see server/lib/prompt-guide.ts).
   transformAgentsMd: promptGuide,

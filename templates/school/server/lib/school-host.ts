@@ -129,3 +129,33 @@ export function inviteLink(appUrl: string, email: string): string {
   const base = appUrl.replace(/\/$/, "");
   return `${base}/login?tab=signup&email=${encodeURIComponent(email)}`;
 }
+
+/**
+ * The school a connector request (someone's own Claude or ChatGPT) acts in:
+ * the one whose address it came to, when the person belongs to it.
+ *
+ * A person in several schools has one stored "active school", which tabs open
+ * on each school's address keep changing. Left to that, one conversation read
+ * two schools: the profile of one and the settings of the other. The address
+ * is what the person chose to connect to, so it decides. Null falls back to
+ * the default, for an address that is no school's (localhost, the shared demo)
+ * or a person who is not a member of this school.
+ */
+export async function orgForConnectorCaller(caller: {
+  userEmail: string;
+  origin?: string;
+}): Promise<string | null> {
+  let host: string;
+  try {
+    host = new URL(caller.origin ?? "").host;
+  } catch {
+    return null;
+  }
+  const hostOrg = await orgForHost(host);
+  if (!hostOrg) return null;
+  const member = await first(
+    `SELECT 1 AS ok FROM org_members WHERE LOWER(email) = ? AND org_id = ? LIMIT 1`,
+    [caller.userEmail.toLowerCase(), hostOrg],
+  );
+  return member ? hostOrg : null;
+}

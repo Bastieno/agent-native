@@ -2091,6 +2091,8 @@ export interface AgentChatPluginOptions {
    * Runs inside the caller's request context.
    */
   mcpRefuseCaller?: () => string | null | Promise<string | null>;
+  /** The organization a connector request acts in (see `MCPConfig.resolveCallerOrg`). */
+  mcpResolveCallerOrg?: import("../mcp/build-server.js").MCPConfig["resolveCallerOrg"];
   a2aMessageFallback?: (details: {
     message: import("../a2a/types.js").Message;
     text: string;
@@ -4049,6 +4051,9 @@ export function createAgentChatPlugin(
           : {}),
         ...(options?.mcpRefuseCaller
           ? { refuseCaller: options.mcpRefuseCaller }
+          : {}),
+        ...(options?.mcpResolveCallerOrg
+          ? { resolveCallerOrg: options.mcpResolveCallerOrg }
           : {}),
         askAgent: async (message: string) => {
           // Runs inside the MCP caller's request context (build-server wraps

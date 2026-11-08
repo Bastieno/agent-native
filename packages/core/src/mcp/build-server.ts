@@ -120,6 +120,18 @@ export interface MCPConfig {
    * error is logged — actions still enforce their own permissions.
    */
   refuseCaller?: () => string | null | Promise<string | null>;
+  /**
+   * The organization a request acts in, when the app knows it from the address
+   * the request came to (an organization's own domain). Without it a person in
+   * several organizations is answered for their one stored "active"
+   * organization, which tabs open on each organization's address keep flipping,
+   * so one conversation can read two organizations. Return undefined to fall
+   * back to the default. The app must check the person belongs to it.
+   */
+  resolveCallerOrg?: (caller: {
+    userEmail: string;
+    origin?: string;
+  }) => string | undefined | Promise<string | undefined>;
 }
 
 /**
@@ -1051,7 +1063,20 @@ export async function createMCPServerForRequest(
   // in that case we run with no userEmail/orgId, which makes downstream
   // tools that require per-user scope return empty results rather than
   // cross-tenant data (the safe default).
-  const orgIdPromise = resolveCallerOrgId(effectiveIdentity);
+  const orgIdPromise = (async () => {
+    if (config.resolveCallerOrg && effectiveIdentity?.userEmail) {
+      try {
+        const fromAddress = await config.resolveCallerOrg({
+          userEmail: effectiveIdentity.userEmail,
+          origin: requestMeta?.origin,
+        });
+        if (fromAddress) return fromAddress;
+      } catch (err) {
+        console.error("[mcp] resolveCallerOrg failed; using the default", err);
+      }
+    }
+    return resolveCallerOrgId(effectiveIdentity);
+  })();
 
   /**
    * Wrap a callback in
