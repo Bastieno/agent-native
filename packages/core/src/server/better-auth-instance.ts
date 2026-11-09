@@ -7,6 +7,11 @@
  */
 
 import crypto from "node:crypto";
+import {
+  CONNECT_ATTEMPTS,
+  connectRetryDelay,
+  isTransientConnectionError,
+} from "../db/transient-errors.js";
 import fs from "node:fs";
 import path from "node:path";
 import { betterAuth, type BetterAuthOptions } from "better-auth";
@@ -556,8 +561,33 @@ export async function getBetterAuth(
   if (_auth) return _auth;
   if (_initPromise) return _initPromise;
 
-  _initPromise = createBetterAuthInstance(config);
-  _auth = await _initPromise;
+  // A cold instance can reach the database before the connection will hold.
+  // Try again a few times, and do not remember a failure: a rejected promise
+  // kept in `_initPromise` is handed to every later caller, so the instance
+  // would stay without sign-in for as long as it lives, even once the
+  // database is reachable.
+  _initPromise = (async () => {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        return await createBetterAuthInstance(config);
+      } catch (err) {
+        if (attempt < CONNECT_ATTEMPTS && isTransientConnectionError(err)) {
+          console.warn(
+            `[agent-native] Sign-in could not reach the database (attempt ${attempt} of ${CONNECT_ATTEMPTS}); trying again`,
+          );
+          await connectRetryDelay(attempt);
+          continue;
+        }
+        throw err;
+      }
+    }
+  })();
+  try {
+    _auth = await _initPromise;
+  } catch (err) {
+    _initPromise = null;
+    throw err;
+  }
   return _auth;
 }
 

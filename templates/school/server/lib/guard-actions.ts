@@ -4,6 +4,7 @@ import { getDb } from "../db/index.js";
 import { runWithRequestContext } from "@agent-native/core/server";
 import { getSchoolRole } from "./student-access.js";
 import {
+  AccessDeniedError,
   actorForEmail,
   canAccessClass,
   classIdForAssessment,
@@ -170,13 +171,17 @@ async function assertCallerMayTouch(
   if (actor.schoolRole === "student") {
     const ownRecordId = await studentRecordIdForUser(actor.userId);
     if (typeof args.studentId === "string" && args.studentId !== ownRecordId) {
-      throw new Error("Not permitted: you can only access your own record.");
+      throw new AccessDeniedError(
+        "Not permitted: you can only access your own record.",
+      );
     }
     if (
       typeof args.studentUserId === "string" &&
       args.studentUserId !== actor.userId
     ) {
-      throw new Error("Not permitted: you can only access your own record.");
+      throw new AccessDeniedError(
+        "Not permitted: you can only access your own record.",
+      );
     }
   }
 
@@ -203,7 +208,7 @@ async function assertCallerMayTouch(
       console.warn(
         `[guard] ${actor.schoolRole} attempted "${actionName}" on a class they do not have`,
       );
-      throw new Error(
+      throw new AccessDeniedError(
         // The action's name is ours, not the reader's. A teacher told
         // 'you do not have access to that class (action "get-gradebook")'
         // is being handed the plumbing; the guide asks every refusal to
@@ -243,7 +248,7 @@ export async function assertCallerMayRun(actionName: string): Promise<void> {
   // holder's identity). The CLI loads action files directly and never reaches
   // this guard, so "no identity" here means an unauthenticated caller.
   if (!userEmail) {
-    throw new Error(
+    throw new AccessDeniedError(
       `Not permitted: "${actionName}" requires a signed-in school member.`,
     );
   }
@@ -263,7 +268,7 @@ export async function assertCallerMayRun(actionName: string): Promise<void> {
     console.warn(
       `[guard] ${role} attempted "${actionName}", which is not available to that role`,
     );
-    throw new Error(
+    throw new AccessDeniedError(
       `Not permitted: that is not something a ${roleWord(role)} can do.`,
     );
   }
