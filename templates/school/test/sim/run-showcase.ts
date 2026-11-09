@@ -1,4 +1,4 @@
-import { Client } from "./client.js";
+import { Client, TEST_PASSWORD } from "./client.js";
 import { Findings } from "./findings.js";
 import { scenario } from "../scenarios/index.js";
 import { buildSchool } from "./showcase/build.js";
@@ -208,6 +208,23 @@ console.log(
   `findings: ${findings.count("broken")} broken, ${findings.count("wrong")} wrong, ${findings.count("missing")} missing`,
 );
 console.log(`files: ${dir} (copied to docs/${scenario.outputDir}/)`);
+{
+  const teacher = run.staff.find((s) => s.schoolRole === "teacher");
+  const learner = run.learners[0];
+  console.log(
+    [
+      "",
+      `Ready. Open ${client.baseUrl} and sign in with one of these.`,
+      `  principal  ${run.admin.email}`,
+      teacher ? `  teacher    ${teacher.email}  (${teacher.name})` : "",
+      learner ? `  learner    ${learner.email}  (${learner.label})` : "",
+      `  password   ${TEST_PASSWORD}  (every account; set SIM_PASSWORD before the run to choose your own)`,
+      `Everyone's email is in docs/${scenario.outputDir}/school-roster.md, with a guide to where to look in where-to-look.md. Those files stay on this machine.`,
+    ]
+      .filter(Boolean)
+      .join("\n"),
+  );
+}
 if (empty.length) {
   console.error(
     `\n${empty.length} checklist feature(s) ended empty: ${empty.map((r) => r.area).join(", ")}`,

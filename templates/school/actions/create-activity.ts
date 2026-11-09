@@ -13,6 +13,7 @@ import {
 import { jsonish } from "../shared/zod-json.js";
 import {
   findUnmarkedNotation,
+  plainNotationAllowed,
   unmarkedNotationMessage,
 } from "../shared/notation.js";
 import { withCardIds } from "../shared/card-key.js";
@@ -476,14 +477,16 @@ export default defineAction({
     };
 
     // Maths typed as plain text ("3^2") shows as typed; it has to be marked.
-    const unmarked = findUnmarkedNotation(
-      args.content,
-      args.blocks,
-      (args.variants as any[] | undefined)?.flatMap((v) => [
-        v.content,
-        v.blocks,
-      ]),
-    );
+    const unmarked = plainNotationAllowed()
+      ? []
+      : findUnmarkedNotation(
+          args.content,
+          args.blocks,
+          (args.variants as any[] | undefined)?.flatMap((v) => [
+            v.content,
+            v.blocks,
+          ]),
+        );
     if (unmarked.length && args.confirm) {
       throw new Error(unmarkedNotationMessage(unmarked));
     }

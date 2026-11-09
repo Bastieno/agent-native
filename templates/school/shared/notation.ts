@@ -7,19 +7,37 @@
  * and a worksheet saved with "3^2" in a question reads as a typing slip.
  *
  * This finds two cases outside any `$...$` or backticks: a caret used as a
- * power, and Unicode superscript or subscript characters. The second looks
+ * power, and Unicode superscript characters. The second looks
  * like notation and is not: ² and ³ come from one block of a font and ⁴ to ⁹
  * and ⁺ from another, so "a³ × a⁴" shows its 3 larger than its 4. Learners are told to type powers with ^ in their answers, so
  * the fields they type into (`instructions`, `answer`) are not looked at.
  */
 const MARKED = /\$\$[\s\S]*?\$\$|\$[^$\n]+\$|`[^`\n]*`/g;
 const POWER = /[A-Za-z0-9)\]]\^[-+(\w{]/;
-/** Characters outside the ¹²³ block, which no font sets consistently. */
-const UNICODE_SCRIPT = /[⁰⁴-⁹⁺⁻⁼⁽⁾ⁿⁱ₀-₉₊₋₌₍₎]/;
+/**
+ * Superscripts outside the ¹²³ block, which no font sets consistently.
+ * Subscripts (H₂O, 1011₂) are all in one block and draw alike, so they pass.
+ */
+const UNICODE_SCRIPT = /[⁰⁴-⁹⁺⁻⁼⁽⁾ⁿⁱ]/;
 /** ¹²³ alone are ordinary in units ("12 m²"); in a sum they are maths. */
 const LOW_SCRIPT = /[¹²³]/;
 const SUM = /[=+×÷]/;
 const COMMAND = /\\(?:frac|sqrt|times|div|cdot|ce)\b/;
+
+/**
+ * Whether this server builds demo schools from hand-written content, which was
+ * written before this check and is full of plain powers. The local showcase
+ * servers set `ALLOW_PLAIN_NOTATION` for that; a hosted school never does, so
+ * the check always holds for what an agent writes there.
+ */
+export function plainNotationAllowed(): boolean {
+  return (
+    typeof process !== "undefined" &&
+    ["1", "true"].includes(
+      String(process.env?.ALLOW_PLAIN_NOTATION ?? "").toLowerCase(),
+    )
+  );
+}
 
 /** Fields whose text is what a learner reads, not what they are asked to type. */
 const SKIP_KEYS = new Set([

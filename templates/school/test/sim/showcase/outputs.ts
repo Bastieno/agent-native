@@ -314,21 +314,15 @@ export async function checklist(
   );
 
   // Announcements
-  // Asked per scope, with room for a term of them: the default page is 20.
-  const schoolWide = asList(
-    await client.as(admin, "list-announcements", {
-      scope: "school",
-      limit: 200,
-    }),
-    "announcements",
-  ).length;
-  const perClass = asList(
-    await client.as(admin, "list-announcements", {
-      scope: "class",
-      limit: 500,
-    }),
-    "announcements",
-  ).length;
+  // The list is capped at 100 a page and reports the real total, so ask for
+  // one and read the total.
+  const announcementsIn = async (scope: "school" | "class") =>
+    Number(
+      (await client.as(admin, "list-announcements", { scope, limit: 1 }))
+        ?.total ?? 0,
+    );
+  const schoolWide = await announcementsIn("school");
+  const perClass = await announcementsIn("class");
   row(
     "Announcements",
     "School-wide and per class",

@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 import { z } from "zod";
 import {
   findUnmarkedNotation,
+  plainNotationAllowed,
   unmarkedNotationMessage,
 } from "../shared/notation.js";
 
@@ -92,7 +93,9 @@ export default defineAction({
     };
   },
   run: async (args) => {
-    const unmarked = findUnmarkedNotation(args.body);
+    const unmarked = plainNotationAllowed()
+      ? []
+      : findUnmarkedNotation(args.body);
     if (unmarked.length) throw new Error(unmarkedNotationMessage(unmarked));
     const { userEmail } = currentAccess();
     const documentId = nanoid();
