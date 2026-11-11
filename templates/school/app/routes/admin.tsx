@@ -126,9 +126,13 @@ export default function AdminLayout() {
       // enforces it, so a picker here would offer a choice it cannot honour.
       // Someone who needs a stronger model asks the admin.
       showModelSelector={false}
-      // The same holds for the app's default model: every school turn runs on
-      // the model its role is set to, so a default here would never be used.
-      hiddenSettingsSections={["app-models"]}
+      // No Workspace or settings tabs for anyone. Workspace is the files area
+      // every school shares, including the app's own instructions, and the
+      // settings hold the platform's hosting, database, keys and Builder.io. A
+      // school's own settings are on its Settings page (Assistant), and the
+      // server refuses the platform routes as well (server/lib/platform-limits.ts).
+      showWorkspace={false}
+      showSettings={false}
       // Side by side only on a large desktop; below that the panel overlays
       // the page instead of squeezing navigation + content + chat into one row.
       overlayBreakpointPx={1279}

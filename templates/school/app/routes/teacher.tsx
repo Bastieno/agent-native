@@ -75,7 +75,9 @@ export default function TeacherLayout() {
       // enforces it, so a picker here would offer a choice it cannot honour.
       // Someone who needs a stronger model asks the admin.
       showModelSelector={false}
-      // Engine, keys and limits are the admin's to set, not a teacher's.
+      // No Workspace (the files area every school shares) and no settings
+      // (engine, keys and limits are the admin's, and the platform's).
+      showWorkspace={false}
       showSettings={false}
       overlayBreakpointPx={1279}
       defaultOpen={
