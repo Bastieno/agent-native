@@ -8,20 +8,29 @@ older provider-neutral draft it replaces is in git history.
 
 One server, everything on it:
 
-| Part           | What                                                                                    | Where                                                               |
-| -------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Server         | Hetzner Cloud CPX22 (2 vCPU, 4 GB, 80 GB), Helsinki, Ubuntu 24.04, IPv4 `135.181.29.76` | Hetzner console, project `Default`, server `school`                 |
-| App            | The school app built for plain Node (`NITRO_PRESET=node-server`)                        | `/srv/school/app/.output`, run by `school.service` as user `school` |
-| Settings       | Environment variables                                                                   | `/etc/school.env` (root only, mode 600)                             |
-| Database       | Postgres 18, database `school`, role `school`, listening on localhost only              | `/var/lib/postgresql/18/main`                                       |
-| Web server     | Caddy: TLS certificates (Let's Encrypt) and reverse proxy to `127.0.0.1:3000`           | `/etc/caddy/Caddyfile`                                              |
-| Daily job      | Notifications, digests and credit settlement, 05:00 UTC                                 | `school-daily.timer` → `/usr/local/bin/school-daily`                |
-| Nightly backup | `pg_dump` at 02:30, 14 days kept                                                        | `/etc/cron.d/school-backup` → `/var/backups/school`                 |
-| Firewall       | `ufw`: ports 22, 80, 443 only                                                           |                                                                     |
-| DNS            | A records, DNS only (not proxied), in Cloudflare                                        | `crestfield`, `yellowview`, `sebscollege` `.ellai.dev`              |
+| Part           | What                                                                                    | Where                                                                      |
+| -------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Server         | Hetzner Cloud CPX22 (2 vCPU, 4 GB, 80 GB), Helsinki, Ubuntu 24.04, IPv4 `135.181.29.76` | Hetzner console, project `Default`, server `school`                        |
+| App            | The school app built for plain Node (`NITRO_PRESET=node-server`)                        | `/srv/school/app/.output`, run by `school.service` as user `school`        |
+| Settings       | Environment variables                                                                   | `/etc/school.env` (root only, mode 600)                                    |
+| Database       | Postgres 18, database `school`, role `school`, listening on localhost only              | `/var/lib/postgresql/18/main`                                              |
+| Web server     | Caddy: TLS certificates (Let's Encrypt) and reverse proxy to `127.0.0.1:3000`           | `/etc/caddy/Caddyfile`                                                     |
+| Daily job      | Notifications, digests and credit settlement, 05:00 UTC                                 | `school-daily.timer` → `/usr/local/bin/school-daily`                       |
+| Nightly backup | `pg_dump` at 02:30, 14 days kept                                                        | `/etc/cron.d/school-backup` → `/var/backups/school`                        |
+| Firewall       | `ufw`: ports 22, 80, 443 only                                                           |                                                                            |
+| DNS            | A records, DNS only (not proxied), in Cloudflare                                        | `ellai.dev`, `www`, `crestfield`, `yellowview`, `sebscollege` `.ellai.dev` |
 
 A school is reached by its address: `school_domains` maps a host to a school,
 and Caddy must list the host to get a certificate for it.
+
+The apex, `ellai.dev` and `www.ellai.dev`, is the public landing page, served by
+the same app. It belongs to no school and has no sign-in: `/login` there
+redirects to `/` (`server/middleware/apex-login.ts`, which reads
+`SCHOOL_BASE_DOMAIN`, `ellai.dev` by default). A school signs in at its own
+address. Both names are listed in the Caddyfile alongside the schools'. There is
+no wildcard DNS record, no Cloudflare token on the server, and Caddy has no DNS
+plugin or on-demand TLS, so each new name needs its own A record and Caddyfile
+entry.
 
 ## Getting in
 
@@ -91,9 +100,12 @@ safe. Check afterwards: sign in as an admin on each school and open a page.
    `DATABASE_URL` pointing at `127.0.0.1:5433`; the password is in
    `/etc/school.env`).
 2. Add its host to `school_domains` if the script did not.
-3. Cloudflare: an A record for the host to `135.181.29.76`, DNS only.
+3. Cloudflare: an A record for the host to `135.181.29.76`, DNS only. Remove
+   any CNAME or other A record on the same name first (an old Vercel record
+   makes the certificate fail, because Let's Encrypt reaches the wrong server).
 4. Add the host to the first line of `/etc/caddy/Caddyfile`, then
-   `systemctl reload caddy`. The certificate arrives within seconds.
+   `systemctl reload caddy`. The certificate arrives within seconds once DNS
+   points here; if it was added before DNS was right, reload Caddy again after.
 
 ## Backups and restore
 
@@ -149,7 +161,8 @@ the app does not exit on request.
   anything done since exists only here, so do not point a school back at it
   without copying the data across first.
 
-Done since the move: the laptop copy of the dumps is scheduled daily at 11:00
+Done since the move: the apex (`ellai.dev`, `www`) was moved from Vercel to this
+server on 2026-11-11 (A records, Caddyfile, certificates); the laptop copy of the dumps is scheduled daily at 11:00
 (`dev.ellai.school-backup` launch agent on the owner's Mac); the kernel
 update was applied and the server rebooted; `/root/neon.dump` was deleted; the
 Credit Test Academy school (and its owner's account) was removed from this
