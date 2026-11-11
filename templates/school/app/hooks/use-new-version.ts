@@ -14,9 +14,9 @@ const mid = (pathname: string) =>
   /^\/student\/assessments\/[^/]+/.test(pathname);
 
 /**
- * Tells someone with the app open that a newer version is live. The first
- * answer is the version this tab is running; a different one later means a
- * deploy happened since. It only offers: reloading on its own could throw
+ * Tells someone with the app open that a newer version is live. A tab's own
+ * build is the one its browser loaded (or, where that is unknown, the first
+ * answer from the server); a different one later means a deploy happened since. It only offers: reloading on its own could throw
  * away a half-written lesson note.
  */
 export function useNewVersion() {
@@ -37,6 +37,14 @@ export function useNewVersion() {
 
   useEffect(() => {
     let stopped = false;
+    // The build this tab actually loaded, when the browser can say: a tab left
+    // open across a deploy then learns on its first check that it is behind,
+    // instead of taking the new build's id as its own. Only for a production
+    // build, whose manifest version is the one the server reports.
+    const own: string | undefined = import.meta.env.PROD
+      ? (window as any).__reactRouterManifest?.version
+      : undefined;
+    if (own) loaded.current = own;
     async function check() {
       try {
         const res = await fetch(agentNativePath("/api/school/version"), {
