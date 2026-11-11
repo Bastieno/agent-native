@@ -74,8 +74,18 @@ export async function withSetupProgress<T>(
   actionName: string,
   orgId: string | null | undefined,
   result: T,
+  args?: Record<string, unknown>,
 ): Promise<T> {
   if (!SETUP_ACTIONS.has(actionName) || !orgId) return result;
+  // A look-and-feel change (the school's colour or name) is not a setup step:
+  // do not report setup progress under it.
+  if (
+    actionName === "update-school-config" &&
+    args &&
+    Object.keys(args).every((k) => k === "theme")
+  ) {
+    return result;
+  }
   if (!result || typeof result !== "object" || Array.isArray(result)) {
     return result;
   }

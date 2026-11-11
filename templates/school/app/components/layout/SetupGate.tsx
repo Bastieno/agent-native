@@ -77,7 +77,8 @@ export function SetupGate({
                   onClick={() =>
                     sendToAgentChat({
                       message: NEEDS[next].ask,
-                      submit: true,
+                      // into the box, not sent: the person reads it, edits it and presses send
+                      submit: false,
                       openSidebar: true,
                     })
                   }

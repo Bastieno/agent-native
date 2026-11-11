@@ -17,7 +17,7 @@ import { parsePrimary } from "../shared/theme-colour.js";
  */
 export default defineAction({
   description:
-    "Show the person a colour in their own school before it is saved: the app recolours for them alone, with Keep and Undo. Always do this before changing the school's colour, then ask whether to keep it; save only when they say so. Give the link in the result to anyone not looking at the app. Accepts a hex code or three numbers.",
+    "Show the person a colour in their own school before it is saved: the app recolours for them alone, with Keep and Undo. Always do this before changing the school's colour, then ask whether to keep it; save only when they say so. Do not offer the link in the app's own chat, where the person already sees the preview. Give it only to an admin working from their own AI app, and say it opens for admins of their school after they sign in. Never suggest sending it to anyone else. Accepts a hex code or three numbers.",
   schema: z.object({
     colour: z
       .string()
@@ -42,7 +42,7 @@ export default defineAction({
       textColour: parsed.primaryForeground === "0 0% 100%" ? "white" : "dark",
       ...(parsed.note ? { note: parsed.note } : {}),
       link,
-      next: "The app is showing it to this person now. Ask whether to keep it; keep it by saving the school's colour, or drop it by doing nothing. Give the link to anyone who is not looking at the app.",
+      next: "The app is showing it to this person now if they are looking at it. Ask whether to keep it; keep it by saving the school's colour, or drop it by doing nothing. If you are in the app's own chat, do not mention the link. If you are working from the person's own AI app, give them the link and say it opens for admins of their school after signing in. It is not for sharing with anyone else.",
     };
   },
 });

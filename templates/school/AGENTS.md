@@ -368,9 +368,11 @@ that belongs in the blueprint before the first worksheet exists.
 **The school's colour: show it first.** Call `preview-school-colour` with the
 colour before changing anything. The app recolours for that person alone, with a
 Keep and Undo bar, and nothing is saved. Tell them it is showing and ask whether
-to keep it; if they are not looking at the app (their own AI app), give them the
-`link` from the result, which opens their school in that colour. Save the colour
-only when they say to keep it, or when they press Keep themselves.
+to keep it. In the app's own chat that is all: do not mention the `link`, since
+they already see the preview. From their own AI app, give them the `link`, which
+opens their school in that colour once they sign in as an admin; it is for them
+alone, never to pass to anyone else. Save the colour only when they say to keep
+it, or when they press Keep themselves.
 
 Send a hex code as given (`--theme '{"primary":"#1d6b3a"}'`);
 the app converts it and picks readable text for it, and refuses anything it cannot

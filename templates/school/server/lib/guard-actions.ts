@@ -78,13 +78,14 @@ export function guardActions<T extends Record<string, any>>(actions: T): T {
                   name,
                   resolved,
                   await entry.run(args, ctx),
+                  args,
                 );
               },
             );
           }
         }
         await assertSetupDone(name, orgId);
-        return withSetupProgress(name, orgId, await entry.run(args, ctx));
+        return withSetupProgress(name, orgId, await entry.run(args, ctx), args);
       },
     };
   }

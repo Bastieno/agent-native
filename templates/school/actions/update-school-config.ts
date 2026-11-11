@@ -16,6 +16,7 @@ import { schoolLocale } from "../shared/dates.js";
 import { reservedWeeksForTerm, termWeekCount } from "../shared/term-weeks.js";
 import { AGENT_AUDIENCES } from "../shared/agent-settings.js";
 import { parsePrimary } from "../shared/theme-colour.js";
+import { deleteAppState } from "@agent-native/core/application-state";
 import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
 import {
   agentModelChoices,
@@ -385,6 +386,11 @@ export default defineAction({
         }
       }
       merged.theme = theme;
+      // A colour was just chosen or put back: whatever this person was
+      // previewing is settled, so their preview bar goes.
+      if (typeof args.theme.primary === "string") {
+        await deleteAppState("colour-preview").catch(() => {});
+      }
     }
     if (args.agent) {
       const before = await ensureAgentSettings(orgId);

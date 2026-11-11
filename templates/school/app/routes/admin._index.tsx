@@ -296,7 +296,8 @@ function SetupChecklist({ facts }: { facts: Record<string, boolean> }) {
                 onClick={() =>
                   sendToAgentChat({
                     message: NEEDS[n].ask,
-                    submit: true,
+                    // into the box, not sent: the person reads it, edits it and presses send
+                    submit: false,
                     openSidebar: true,
                   })
                 }

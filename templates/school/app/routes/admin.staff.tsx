@@ -311,7 +311,8 @@ export default function AdminStaff() {
                             sendToAgentChat({
                               message: `Suspend ${member.name ?? member.email}`,
                               context: `userId: ${member.userId}`,
-                              submit: true,
+                              // into the box, not sent: the person reads it, edits it and presses send
+                              submit: false,
                               openSidebar: true,
                             })
                           }
@@ -324,7 +325,8 @@ export default function AdminStaff() {
                             sendToAgentChat({
                               message: `Remove ${member.name ?? member.email} from the school`,
                               context: `userId: ${member.userId}`,
-                              submit: true,
+                              // into the box, not sent: the person reads it, edits it and presses send
+                              submit: false,
                               openSidebar: true,
                             })
                           }
