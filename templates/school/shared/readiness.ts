@@ -211,7 +211,9 @@ export function checklistText(facts: ReadinessFacts): string {
     const tail = facts[n]
       ? ""
       : `${n === next ? " (next)" : ""} — ${NEEDS[n].opens.replace(/^Opens /, "opens ")}`;
-    return `${mark} ${NEEDS[n].label}${tail}`;
+    // A markdown list: single line breaks would run the steps together into one
+    // paragraph wherever this is shown.
+    return `- ${mark} ${NEEDS[n].label}${tail}`;
   }).join("\n");
 }
 

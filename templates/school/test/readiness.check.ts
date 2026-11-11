@@ -72,7 +72,12 @@ assert.equal(nextStep(partway), "terms");
 assert.equal(nextStep(all), null);
 assert.equal(progressSummary(partway), "1 of 4 first steps done");
 const text = checklistText(partway);
-assert.ok(text.startsWith("✓ Year groups"));
+assert.ok(text.startsWith("- ✓ Year groups"));
+assert.equal(text.split("\n").length, 4, "one line per step");
+assert.ok(
+  text.split("\n").every((l) => l.startsWith("- ")),
+  "a markdown list",
+);
 assert.ok(
   text.includes("○ Terms for this academic year (next) — opens the Calendar"),
 );

@@ -93,7 +93,7 @@ export async function withSetupProgress<T>(
     const facts = await readinessFor(orgId);
     return {
       ...(result as object),
-      setupProgress: `Setup: ${progressSummary(facts)}.\n${checklistText(facts)}\nShow this to the person as it is, then offer the next step.`,
+      setupProgress: `Setup: ${progressSummary(facts)}.\n\n${checklistText(facts)}\n\nShow this to the person as it is, then offer the next step.`,
     } as T;
   } catch {
     // The step itself worked; the progress line is a courtesy.
