@@ -229,3 +229,19 @@
     height: 100dvh;
   }
 }
+
+/*
+ * A checklist in the assistant's reply (the setup steps) is a task list: the
+ * box is the marker, so it gets no bullet beside it. Ordinary lists keep theirs.
+ */
+.agent-markdown .contains-task-list {
+  list-style: none;
+  padding-left: 0;
+}
+.agent-markdown .contains-task-list > .task-list-item {
+  list-style: none;
+}
+.agent-markdown .task-list-item > input[type="checkbox"] {
+  margin-right: 0.5rem;
+  vertical-align: -0.1em;
+}
