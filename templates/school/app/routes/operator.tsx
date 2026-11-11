@@ -26,6 +26,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Switch } from "@/components/ui/switch";
+import { STARTER_CREDITS } from "@shared/credits";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 /**
@@ -844,11 +845,22 @@ function NewSchool({
                 onChange={(e) => setHeadName(e.target.value)}
               />
             </div>
-            <div className="flex items-center justify-between gap-3 text-sm">
-              <Label htmlFor="n-own" className="font-normal">
-                School brings its own key (no starter credit)
-              </Label>
-              <Switch id="n-own" checked={ownKey} onCheckedChange={setOwnKey} />
+            <div className="flex items-start justify-between gap-3 text-sm">
+              <div className="space-y-0.5">
+                <Label htmlFor="n-starter">
+                  Start with {STARTER_CREDITS.toLocaleString("en")} credits
+                </Label>
+                <p className="text-xs text-muted-foreground">
+                  {ownKey
+                    ? "Off: the school uses its own Anthropic key."
+                    : "On: the assistant runs on Ellai's credit."}
+                </p>
+              </div>
+              <Switch
+                id="n-starter"
+                checked={!ownKey}
+                onCheckedChange={(on) => setOwnKey(!on)}
+              />
             </div>
             {error && <p className="text-sm text-destructive">{error}</p>}
             <DialogFooter>
