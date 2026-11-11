@@ -150,7 +150,7 @@ export default function Operator() {
     return <p className="p-8 text-sm text-muted-foreground">Loading</p>;
   }
   if (state === "signin") {
-    return <SignIn onDone={() => void load()} />;
+    return <SignIn />;
   }
   if (state === "denied") {
     return (
@@ -316,7 +316,7 @@ export default function Operator() {
   );
 }
 
-function SignIn({ onDone }: { onDone: () => void }) {
+function SignIn() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [sent, setSent] = useState(false);
@@ -347,7 +347,10 @@ function SignIn({ onDone }: { onDone: () => void }) {
         method: "POST",
         body: JSON.stringify({ email, code }),
       });
-      onDone();
+      // A full reload, not a refetch: the framework's client remembers a 401
+      // for the same URL for a minute, so the first requests after signing in
+      // would be answered with the "signed out" answer it kept.
+      window.location.reload();
     } catch (e) {
       setError((e as Error).message);
       setBusy(false);
