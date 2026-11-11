@@ -93,7 +93,7 @@ export async function withSetupProgress<T>(
     const facts = await readinessFor(orgId);
     return {
       ...(result as object),
-      setupProgress: `Setup: ${progressSummary(facts)}.\n\n${checklistText(facts)}\n\nCopy the checklist into your reply exactly as written, one step per line with its ✓ and ○ marks (never joined into a paragraph), then offer the next step.`,
+      setupProgress: `Setup: ${progressSummary(facts)}.\n\n${checklistText(facts)}\n\nCopy the checklist into your reply exactly as written, one step per line (never joined into a paragraph), then offer the next step.`,
     } as T;
   } catch {
     // The step itself worked; the progress line is a courtesy.

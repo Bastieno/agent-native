@@ -207,13 +207,15 @@ export function progressSummary(facts: ReadinessFacts): string {
 export function checklistText(facts: ReadinessFacts): string {
   const next = nextStep(facts);
   return NEED_ORDER.map((n) => {
-    const mark = facts[n] ? "✓" : "○";
+    const mark = facts[n] ? "- [x]" : "- [ ]";
     const tail = facts[n]
       ? ""
       : `${n === next ? " (next)" : ""} — ${NEEDS[n].opens.replace(/^Opens /, "opens ")}`;
-    // No bullet: the tick or circle is the marker, as on the Overview page.
+    // A task list: a ticked box for a done step and an empty one for the rest. A
+    // model copies list syntax faithfully, where it flattens loose lines into a
+    // paragraph, and chat shows these as boxes.
     return `${mark} ${NEEDS[n].label}${tail}`;
-  }).join("\n\n");
+  }).join("\n");
 }
 
 /** Actions whose result carries where the school stands (`setupProgress`). */
