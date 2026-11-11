@@ -44,6 +44,7 @@
     "convert:notation": "tsx ops/convert-notation.ts",
     "migrate:school": "tsx ops/migrate-school.ts",
     "load:school": "tsx ops/load-school-db.ts",
+    "move:school-guides": "tsx ops/move-school-guides.ts",
     "adopt:school-guide": "tsx ops/adopt-school-guide.ts",
     "add:school": "tsx ops/add-school-db.ts",
     "backfill:org-invitations": "tsx ops/backfill-org-invitations.ts",

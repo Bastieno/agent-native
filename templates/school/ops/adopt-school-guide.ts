@@ -19,7 +19,7 @@ import { resourceGetByPath, SHARED_OWNER } from "@agent-native/core/resources";
 import { orgForHost } from "../server/lib/school-host.js";
 import {
   GUIDE_FILE,
-  guidePath,
+  readSchoolGuide,
   writeSchoolGuide,
 } from "../server/lib/school-guide.js";
 
@@ -44,8 +44,8 @@ async function main() {
   const orgId = school.includes(".") ? await orgForHost(school) : school;
   if (!orgId) fail(`No school has the address ${school}.`);
 
-  const own = await resourceGetByPath(SHARED_OWNER, guidePath(orgId));
-  if (own?.content?.trim()) {
+  const own = await readSchoolGuide(orgId);
+  if (own.content?.trim()) {
     console.log(`School ${orgId} already has its own guide; nothing to do.`);
     return;
   }
@@ -55,14 +55,16 @@ async function main() {
     return;
   }
   console.log(
-    `Would copy the shared guide (${shared.content.length} characters, first line "${shared.content.split("\n")[0].slice(0, 60)}") to ${guidePath(orgId)}.`,
+    `Would copy the shared guide (${shared.content.length} characters, first line "${shared.content.split("\n")[0].slice(0, 60)}") to the school's own private guide.`,
   );
   if (!process.argv.includes("--write")) {
     console.log("Dry run: nothing was written. Run again with --write.");
     return;
   }
   await writeSchoolGuide(orgId, shared.content);
-  console.log("Done. The shared file itself was left as it was.");
+  console.log(
+    "Done. The shared file was left as it was; `pnpm move:school-guides --write --remove-shared` takes it out of the shared area.",
+  );
 }
 
 main()
