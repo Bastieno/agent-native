@@ -121,13 +121,16 @@ export default function AdminOverview() {
   const noYearGroup: number = attention?.counts?.learnersWithoutYearGroup ?? 0;
   const noTeacher: number = attention?.counts?.classesWithoutTeacher ?? 0;
 
-  const isNewSchool = !schoolId;
+  // New until it has something to teach with, not only until it has a record:
+  // a school with no subjects, classes or learners is not "all clear".
+  const isNewSchool =
+    !schoolId || (!!stats && !isPlaceholderData && !!stats.needsSetup);
 
   useEffect(() => {
     sync({
       role: "admin",
       view: "overview",
-      isNewSchool: !schoolId,
+      isNewSchool,
       // Left out until the counts have loaded, so the agent is never told 0.
       ...(stats && !isPlaceholderData
         ? {
@@ -138,7 +141,7 @@ export default function AdminOverview() {
           }
         : {}),
     } as any);
-  }, [sync, schoolId, stats, isPlaceholderData]);
+  }, [sync, schoolId, isNewSchool, stats, isPlaceholderData]);
 
   return (
     <div className="h-full overflow-auto p-6 space-y-6">

@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import getLessonNoteCoverage from "./get-lesson-note-coverage.js";
 import checkStudentRecords from "./check-student-records.js";
+import getSchoolStats from "./get-school-stats.js";
 
 /**
  * What this school needs doing, in the order it matters.
@@ -23,10 +24,32 @@ export default defineAction({
   schema: z.object({}),
   http: { method: "GET" },
   run: async () => {
-    const [coverage, records] = await Promise.all([
+    const [coverage, records, stats] = await Promise.all([
       getLessonNoteCoverage.run({ onlyGaps: false } as any) as Promise<any>,
       checkStudentRecords.run({} as any) as Promise<any>,
+      getSchoolStats.run({} as any) as Promise<any>,
     ]);
+
+    // A school with no subjects, classes or learners has nothing to be behind
+    // on, which is not the same as being in good order. Say so, and point at
+    // the setup sheet, instead of returning an empty list that reads as "all
+    // clear".
+    if (stats?.needsSetup) {
+      return {
+        term: null,
+        needsSetup: true,
+        counts: { classesWithoutTeacher: 0, learnersWithoutYearGroup: 0 },
+        items: [
+          {
+            text: "The school isn't set up yet: it has no subjects, classes or learners. Start with the setup sheet: ask the assistant to set up the school.",
+            page: "setup",
+            blocks: true,
+          },
+        ],
+        message:
+          "The school isn't set up yet, so there is nothing to report on. Start with the setup sheet (identity, year groups, terms, grading), then subjects and classes.",
+      };
+    }
 
     const totals = coverage?.totals;
     const term: string | undefined = coverage?.term?.name;
@@ -116,6 +139,7 @@ export default defineAction({
 
     return {
       term: term ?? null,
+      needsSetup: false,
       counts: {
         classesWithoutTeacher: totals?.withoutTeacher ?? 0,
         learnersWithoutYearGroup: noYear,

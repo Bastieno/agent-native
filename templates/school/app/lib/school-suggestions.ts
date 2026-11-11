@@ -28,7 +28,10 @@ export function getSchoolSuggestions(
       if (nav.classCount === 0) s.push("Create a class");
       if (nav.subjectCount === 0) s.push("Set up subjects");
       if (s.length === 0) s.push("Give me a school overview");
-      s.push("Show me struggling students");
+      // Only where there are classes and learners to find them among.
+      if (nav.classCount > 0 && nav.studentCount > 0) {
+        s.push("Show me struggling students");
+      }
       return s.slice(0, 4);
     }
     if (view === "staff") {

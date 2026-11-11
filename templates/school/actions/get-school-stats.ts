@@ -66,14 +66,21 @@ export default defineAction({
         ),
       );
 
+    const studentCount = Number(studentRows[0]?.c ?? 0);
+    const classCount = Number(classRows[0]?.c ?? 0);
+    const subjectCount = Number(subjectRows[0]?.c ?? 0);
     return {
       staffCount: Math.max(
         0,
         Number(staffRows[0]?.c ?? 0) - Number(studentProfiles[0]?.c ?? 0),
       ),
-      studentCount: Number(studentRows[0]?.c ?? 0),
-      classCount: Number(classRows[0]?.c ?? 0),
-      subjectCount: Number(subjectRows[0]?.c ?? 0),
+      studentCount,
+      classCount,
+      subjectCount,
+      // Nothing to teach with yet: no subjects, classes or learners. Every
+      // "all is well" line (the overview, the attention list, the suggested
+      // questions) must not be read as health on a school in this state.
+      needsSetup: studentCount === 0 && classCount === 0 && subjectCount === 0,
     };
   },
 });
