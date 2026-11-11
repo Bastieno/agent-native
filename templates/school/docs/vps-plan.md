@@ -1,170 +1,156 @@
-# VPS runbook
+# The school server (Hetzner VPS)
 
-Status: draft, provider-neutral. Written before the owner named a provider, OS
-or domain; the steps assume a Debian/Ubuntu-family Linux with root or sudo, and
-a domain whose DNS the owner controls. Replace the placeholders when those are
-known. Target: running by Sunday 2026-10-25.
+Status: live since 2026-11-11. This replaced the Vercel + Neon deployment after
+both hit their free-plan limits. It describes what is actually running; the
+older provider-neutral draft it replaces is in git history.
 
-Placeholders: `school.example.com` (domain), `/srv/school` (app directory),
-`school` (the unix user that runs the app).
+## What runs where
 
-## 1. Server basics
+One server, everything on it:
 
-- Open only ports 22, 80, 443. SSH by key only. Automatic security updates.
-- Add 2 GB swap if RAM is 2 GB or less (the build needs it), or build elsewhere
-  and copy `.output` over (step 3, option B).
-- Create the user: `adduser --system --group --home /srv/school school`.
-- DNS: an `A` record for `school.example.com` to the server's IPv4 (and `AAAA`
-  if it has IPv6).
+| Part           | What                                                                                    | Where                                                               |
+| -------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Server         | Hetzner Cloud CPX22 (2 vCPU, 4 GB, 80 GB), Helsinki, Ubuntu 24.04, IPv4 `135.181.29.76` | Hetzner console, project `Default`, server `school`                 |
+| App            | The school app built for plain Node (`NITRO_PRESET=node-server`)                        | `/srv/school/app/.output`, run by `school.service` as user `school` |
+| Settings       | Environment variables                                                                   | `/etc/school.env` (root only, mode 600)                             |
+| Database       | Postgres 18, database `school`, role `school`, listening on localhost only              | `/var/lib/postgresql/18/main`                                       |
+| Web server     | Caddy: TLS certificates (Let's Encrypt) and reverse proxy to `127.0.0.1:3000`           | `/etc/caddy/Caddyfile`                                              |
+| Daily job      | Notifications, digests and credit settlement, 05:00 UTC                                 | `school-daily.timer` → `/usr/local/bin/school-daily`                |
+| Nightly backup | `pg_dump` at 02:30, 14 days kept                                                        | `/etc/cron.d/school-backup` → `/var/backups/school`                 |
+| Firewall       | `ufw`: ports 22, 80, 443 only                                                           |                                                                     |
+| DNS            | A records, DNS only (not proxied), in Cloudflare                                        | `crestfield`, `yellowview`, `sebscollege` `.ellai.dev`              |
 
-## 2. Node and pnpm
+A school is reached by its address: `school_domains` maps a host to a school,
+and Caddy must list the host to get a certificate for it.
 
-Node 24 (see `.nvmrc`) and the pnpm the repo pins (10.x):
-
-```bash
-curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
-sudo apt-get install -y nodejs git caddy
-sudo corepack enable
-```
-
-## 3. Build
-
-Option A, on the server (repo is private: use a deploy key or a token):
+## Getting in
 
 ```bash
-sudo -u school git clone --branch claude/k12-app-assessment-b562c4 <repo-url> /srv/school/repo
-cd /srv/school/repo && sudo -u school pnpm install
-cd templates/school && sudo -u school pnpm build        # default node preset -> .output/
+ssh -i ~/.ssh/hetzner_school root@135.181.29.76
 ```
 
-Option B, on the laptop, then copy: `pnpm build` in `templates/school`, then
-`rsync -a .output/ server:/srv/school/repo/templates/school/.output/`. Cheaper
-for a small server. The scripts in step 6 still need the repo and `pnpm install`
-on whichever machine runs them.
+`~/.ssh/hetzner_school` is a key without a passphrase, made for this server and
+added when the server was created. Keep a copy in a password manager: without
+it the only way in is Hetzner's rescue mode. Add a second key to
+`/root/.ssh/authorized_keys` so one lost laptop never locks anyone out.
 
-Run the app with `node .output/server/index.mjs` (that is what `pnpm start`
-does).
+## Settings (`/etc/school.env`)
 
-## 4. Environment
+Names and what they do. Never paste the file; it holds secrets.
 
-`/etc/school.env`, mode 600, owned by root (systemd reads it):
+| Variable                                                  | Purpose                                                                                                                                                                          |
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NODE_ENV`, `PORT`, `HOST`                                | `production`, `3000`, `127.0.0.1` (Caddy is the only thing that reaches it)                                                                                                      |
+| `DATABASE_URL`                                            | The local Postgres                                                                                                                                                               |
+| `BETTER_AUTH_SECRET`                                      | Signs sessions. Generated on this server. Also encrypts values stored in `app_secrets` (empty today); changing it would make any stored there unreadable, and signs everyone out |
+| `BETTER_AUTH_URL`, `APP_URL`                              | `https://crestfield.ellai.dev`; other schools work from their own host                                                                                                           |
+| `ALLOW_UNVERIFIED_SIGNUP`, `AUTH_SKIP_EMAIL_VERIFICATION` | Demo only: sign-up without an email check. Remove for a real school                                                                                                              |
+| `CRON_SECRET`                                             | Protects `/api/school/cron/daily`; `school-daily` sends it                                                                                                                       |
+| `ELLAI_MANAGED_ANTHROPIC_KEY`                             | Ellai's own Anthropic key. Every school on Ellai's credit uses it. Without it the chat asks for a key                                                                            |
+| `ELLAI_OPERATOR_EMAILS`, `ELLAI_TOPUP_INSTRUCTIONS`       | Who is told about credit, and the bank details shown when topping up. A multi-line value goes inside double quotes on real lines                                                 |
+| `RESEND_API_KEY`, `EMAIL_FROM`                            | Email. `EMAIL_FROM` is `Ellai <noreply@ellai.dev>`; the school name replaces `Ellai` per school                                                                                  |
+| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT`  | Phone push. Do not change the keys once people have subscribed                                                                                                                   |
+| `CAL_LINK`, `CAL_WEBHOOK_SECRET`                          | The pilot booking link and its webhook                                                                                                                                           |
 
-```
-NODE_ENV=production
-PORT=3000
-HOST=127.0.0.1
-DATABASE_URL=...                 # section 5
-BETTER_AUTH_SECRET=...           # openssl rand -hex 32, new for this server
-BETTER_AUTH_URL=https://school.example.com
-APP_URL=https://school.example.com
-# Demo only (no email configured); never on a real school's server:
-ALLOW_UNVERIFIED_SIGNUP=1
-AUTH_SKIP_EMAIL_VERIFICATION=1
-```
-
-Never set `AUTO_CREATE_DEFAULT_ORG` (the app refuses to start). The Anthropic
-key is not an env var: each school adds its own in the app (Settings,
-Assistant). Real email later: `RESEND_API_KEY`, `EMAIL_FROM`, and drop the two
-`*_UNVERIFIED*` lines.
-
-## 5. Postgres: keep Neon or run it locally
-
-- **Keep Neon (current Ohio project).** Nothing to move, managed backups and
-  point-in-time restore. Cost: every query crosses the internet, so pick a VPS
-  in or near US East; a European VPS would be slow, and Neon's free plan sleeps
-  after 5 idle minutes.
-- **Postgres on the VPS.** Fastest and free, no sleep. Cost: backups, upgrades
-  and restores are yours; the server is then a single point of failure for the
-  data too.
-
-If local: `apt install postgresql`, create a role and database, set
-`DATABASE_URL=postgres://school:<pw>@127.0.0.1:5432/school`, listen on
-localhost only. Then run `pnpm migrate:school` once (section 6) before the
-first start: a fresh database should not be migrated by a first web request.
-
-## 6. Demo data
-
-The demo is not rebuilt on the server. Load the existing copy from Neon (or
-from a rebuilt local SQLite file; recipe in `deployment-plan.md`, "Building the
-demo"). From a checkout with `pnpm install` and the target `DATABASE_URL`
-exported:
+Add or change a secret without it passing through a chat or shell history:
 
 ```bash
-pnpm --filter school migrate:school
-pnpm --filter school load:school --from <source-url> --exclude-email dev@local.test
+read -s "K?Value: "; echo; printf '%s' "$K" | ssh -i ~/.ssh/hetzner_school root@135.181.29.76 'read -r K; echo "NAME=$K" >> /etc/school.env'; unset K
 ```
 
-`load:school` only inserts, checks both schemas and every table's row count
-(about 3 minutes). To copy Neon to a local Postgres instead, a plain
-`pg_dump --no-owner -Fc` / `pg_restore` works for the same result. The shared
-demo password stays in `SIM_PASSWORD`, outside the repo.
+Then `systemctl restart school`. A name set twice takes the last line; remove
+the old one with `sed -i '/^NAME=/d' /etc/school.env` first. Never set
+`AUTO_CREATE_DEFAULT_ORG` (the app refuses to start).
 
-## 7. systemd
+## Deploying an update
 
-`/etc/systemd/system/school.service`:
+There is no automatic deploy. Build on the laptop, copy, restart (about a
+minute). From the repo root, on the commit to ship:
 
-```ini
-[Unit]
-Description=Crestfield school app
-After=network-online.target postgresql.service
-
-[Service]
-User=school
-WorkingDirectory=/srv/school/repo/templates/school
-EnvironmentFile=/etc/school.env
-ExecStart=/usr/bin/node .output/server/index.mjs
-Restart=always
-RestartSec=3
-
-[Install]
-WantedBy=multi-user.target
+```bash
+cd templates/school
+COREPACK_ENABLE_STRICT=0 NITRO_PRESET=node-server pnpm build
 ```
 
 ```bash
-sudo systemctl daemon-reload && sudo systemctl enable --now school
-journalctl -u school -f
+rsync -a --delete -e "ssh -i $HOME/.ssh/hetzner_school" .output root@135.181.29.76:/srv/school/app/
 ```
-
-## 8. Caddy (TLS)
-
-`/etc/caddy/Caddyfile`:
-
-```
-school.example.com {
-    reverse_proxy 127.0.0.1:3000
-}
-```
-
-`sudo systemctl reload caddy`. Caddy gets and renews the certificate itself once
-DNS points at the server and ports 80/443 are open.
-
-## 9. Backups
-
-- Neon: nothing to do; rehearse a restore once.
-- Local Postgres: nightly `pg_dump -Fc school > school-$(date +%F).dump` from
-  cron, copied off the box (object storage or another machine), keep 14 days,
-  and test one restore. Plus the provider's disk snapshots if offered.
-- The app keeps no other state on disk; `/etc/school.env` is the only file to
-  back up besides the database.
-
-## 10. Deploying an update
 
 ```bash
-cd /srv/school/repo && sudo -u school git pull
-sudo -u school pnpm install && cd templates/school && sudo -u school pnpm build
-sudo systemctl restart school
+ssh -i ~/.ssh/hetzner_school root@135.181.29.76 'chown -R school:school /srv/school && systemctl restart school'
 ```
 
-Migrations are additive and run on start, so rolling back the code is safe.
+Rebuild `packages/core` first if it changed (`pnpm --filter @agent-native/core build`).
+Migrations are additive and run when the app starts, so rolling back the code is
+safe. Check afterwards: sign in as an admin on each school and open a page.
 
-## 11. Check it works
+## Adding a school
 
-Sign in as the principal, open pages as admin, teacher and student, restart the
-service and confirm the first request after the restart succeeds (the readiness
-gate holds it for a few seconds), and `curl -I https://school.example.com/login`
-returns 200.
+1. Provision it (`pnpm provision:school`), run from a laptop through a tunnel
+   to the server's database (`ssh -L 5433:127.0.0.1:5432 ...`, with
+   `DATABASE_URL` pointing at `127.0.0.1:5433`; the password is in
+   `/etc/school.env`).
+2. Add its host to `school_domains` if the script did not.
+3. Cloudflare: an A record for the host to `135.181.29.76`, DNS only.
+4. Add the host to the first line of `/etc/caddy/Caddyfile`, then
+   `systemctl reload caddy`. The certificate arrives within seconds.
 
-## Open questions for the owner
+## Backups and restore
 
-Provider and plan, region, OS image, domain (and where its DNS is), whether
-Postgres stays on Neon, and whether the repo may be cloned on the server.
+Three copies, none a substitute for the others:
+
+- **On the server:** nightly dumps in `/var/backups/school`, 14 days.
+- **Hetzner:** daily whole-server backups (7 kept), switched on at creation.
+- **The laptop:** `~/bin/pull-school-backups` copies the dumps to
+  `~/Backups/school-server` and keeps 30 days. Run it by hand, or schedule it.
+
+Restore a dump into a fresh database (tested 2026-11-11: 426 users, migration
+116, identical to live):
+
+```bash
+sudo -u postgres createdb restore_test
+sudo -u postgres pg_restore --no-owner --no-acl -d restore_test /var/backups/school/school-YYYY-MM-DD.dump
+```
+
+To replace the live database: stop the app (`systemctl stop school`), restore
+into a new database, check it, then swap the name in `DATABASE_URL`. Do not
+restore over the live one. The one thing a dump does not hold is
+`/etc/school.env`; keep its secrets in a password manager.
+
+## Routine care
+
+- Security updates install on their own (`unattended-upgrades`). A kernel update
+  needs a reboot: `reboot`, about a minute, and every service starts by itself.
+  Check all three schools afterwards.
+- Do not upgrade the Ubuntu release; this was built and tested on 24.04.
+- Disk and memory: `df -h /`, `free -m`. About 6% of the disk and 18% of the
+  memory were in use at launch.
+
+## Looking around
+
+| Question                    | Command                                               |
+| --------------------------- | ----------------------------------------------------- |
+| Is the app up?              | `systemctl status school`                             |
+| App logs, live              | `journalctl -u school -f`                             |
+| Web server and certificates | `systemctl status caddy`, `journalctl -u caddy -f`    |
+| Daily job                   | `systemctl list-timers`, `journalctl -u school-daily` |
+| Database                    | `sudo -u postgres psql school`, then `\dt`            |
+| Which names are set         | `cut -d= -f1 /etc/school.env`                         |
+| Firewall                    | `ufw status`                                          |
+
+`systemctl restart school` takes up to 10 seconds to stop (`TimeoutStopSec=10`);
+the app does not exit on request.
+
+## Still to do
+
+- Retire the Vercel project and Neon database once the new server has run for a
+  week or two, and then the old `vercel-dns` CNAME rows and the `_vercel` TXT
+  record in Cloudflare. Neon holds a copy frozen at the move (2026-11-11);
+  anything done since exists only here, so do not point a school back at it
+  without copying the data across first.
+
+Done since the move: the laptop copy of the dumps is scheduled daily at 11:00
+(`dev.ellai.school-backup` launch agent on the owner's Mac); the kernel
+update was applied and the server rebooted; `/root/neon.dump` was deleted; the
+Credit Test Academy school (and its owner's account) was removed from this
+database on 2026-11-11 (it remains in the frozen Neon copy).
