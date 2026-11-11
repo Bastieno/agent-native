@@ -75,6 +75,7 @@ interface Created {
   name: string;
   host: string | null;
   inviteUrl: string;
+  existingAccount: boolean;
   emailed: boolean;
   emailError: string | null;
   starterCredits: number;
@@ -760,6 +761,9 @@ function NewSchool({
                 {created.emailed
                   ? `The invitation was emailed to ${headEmail}.`
                   : `No email went out${created.emailError ? ` (${created.emailError})` : ""}. Send the head this link.`}
+                {created.existingAccount
+                  ? " They already have an account, so the link opens Sign in."
+                  : ""}
               </DialogDescription>
             </DialogHeader>
             <div className="space-y-2 text-sm">

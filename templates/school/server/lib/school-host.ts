@@ -134,9 +134,27 @@ export async function schoolAppUrl(
  * The link an invitation sends: the school's sign-in page, on the sign-up tab,
  * with the invited address filled in.
  */
-export function inviteLink(appUrl: string, email: string): string {
+export function inviteLink(
+  appUrl: string,
+  email: string,
+  /** The address already has an account: open Sign in, not Create account. */
+  hasAccount = false,
+): string {
   const base = appUrl.replace(/\/$/, "");
-  return `${base}/login?tab=signup&email=${encodeURIComponent(email)}`;
+  return `${base}/login?tab=${hasAccount ? "login" : "signup"}&email=${encodeURIComponent(email)}`;
+}
+
+/** Whether an account already exists for this address (any school's). */
+export async function accountExists(email: string): Promise<boolean> {
+  try {
+    const row = await first(
+      'SELECT 1 AS ok FROM "user" WHERE LOWER(email) = ? LIMIT 1',
+      [email.trim().toLowerCase()],
+    );
+    return !!row;
+  } catch {
+    return false;
+  }
 }
 
 /**

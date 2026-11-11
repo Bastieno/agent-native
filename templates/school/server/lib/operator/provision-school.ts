@@ -14,6 +14,7 @@ import { nanoid } from "nanoid";
 import { grantCredit, setBillingMode } from "../credits.js";
 import { STARTER_CREDITS, creditsToCc } from "../../../shared/credits.js";
 import {
+  accountExists,
   assignHost,
   hostTaken,
   inviteLink,
@@ -50,6 +51,8 @@ export interface ProvisionResult {
   host: string | null;
   appUrl: string;
   inviteUrl: string;
+  /** The head already has an account, so the link opens Sign in. */
+  existingAccount: boolean;
   mcpUrl: string;
   emailed: boolean;
   emailError: string | null;
@@ -142,7 +145,8 @@ export async function provisionSchool(
     host = await assignHost(org.id, `${slug}.${baseDomainName()}`);
     appUrl = `https://${host}`;
   }
-  const inviteUrl = inviteLink(appUrl, headEmail);
+  const existingAccount = await accountExists(headEmail);
+  const inviteUrl = inviteLink(appUrl, headEmail, existingAccount);
   const mcpUrl = `${appUrl.replace(/\/$/, "")}/_agent-native/mcp`;
 
   let emailed = false;
@@ -153,7 +157,9 @@ export async function provisionSchool(
         heading: `Set up ${name}`,
         paragraphs: [
           `${emailStrong(name)} is ready for you to set up.`,
-          `Create your account with ${emailStrong(headEmail)}. That address is how the school knows you, so use it exactly.`,
+          existingAccount
+            ? `Sign in with ${emailStrong(headEmail)}, the account you already have. That address is how the school knows you.`
+            : `Create your account with ${emailStrong(headEmail)}. That address is how the school knows you, so use it exactly.`,
           `You can set the school up with the assistant in the app, or from Claude or another AI app by connecting it to ${emailStrong(mcpUrl)}.`,
         ],
         cta: { label: "Open the app", url: inviteUrl },
@@ -179,6 +185,7 @@ export async function provisionSchool(
     host,
     appUrl,
     inviteUrl,
+    existingAccount,
     mcpUrl,
     emailed,
     emailError,
