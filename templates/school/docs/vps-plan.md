@@ -27,10 +27,13 @@ The apex, `ellai.dev` and `www.ellai.dev`, is the public landing page, served by
 the same app. It belongs to no school and has no sign-in: `/login` there
 redirects to `/` (`server/middleware/apex-login.ts`, which reads
 `SCHOOL_BASE_DOMAIN`, `ellai.dev` by default). A school signs in at its own
-address. Both names are listed in the Caddyfile alongside the schools'. There is
-no wildcard DNS record, no Cloudflare token on the server, and Caddy has no DNS
-plugin or on-demand TLS, so each new name needs its own A record and Caddyfile
-entry.
+address. Both names are listed in the Caddyfile alongside the schools'.
+
+New schools need no DNS or Caddy step: a wildcard A record (`*.ellai.dev`,
+DNS only, to the server) and Caddy's on-demand certificates bring a school's
+address up as soon as it is in `school_domains`. See "Wildcard addresses" below.
+The apex also serves the operator console, `/operator`, for the emails in
+`ELLAI_OPERATOR_EMAILS` (below).
 
 ## Getting in
 
@@ -93,19 +96,88 @@ Rebuild `packages/core` first if it changed (`pnpm --filter @agent-native/core b
 Migrations are additive and run when the app starts, so rolling back the code is
 safe. Check afterwards: sign in as an admin on each school and open a page.
 
+## Wildcard addresses (one-time setup)
+
+Caddy gets a certificate the first time a name is asked for, but only if the app
+says the name is a school's. Without that check anyone could point a made-up name
+at the server and make Caddy request certificates for it.
+
+1. Cloudflare: an A record `*` to `135.181.29.76`, DNS only. Existing records
+   (the apex, `www`, the three schools) keep their own and win over the wildcard.
+2. `/etc/caddy/Caddyfile`: replace the one block that lists every host with the
+   global option and two blocks, then `caddy validate` and `systemctl reload caddy`:
+
+```caddyfile
+{
+	on_demand_tls {
+		ask http://127.0.0.1:3000/api/caddy/allow
+	}
+}
+
+ellai.dev, www.ellai.dev {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000
+}
+
+https:// {
+	tls {
+		on_demand
+	}
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000
+}
+```
+
+The `ask` address is the app's `GET /api/caddy/allow?domain=<name>`
+(`server/routes/api/caddy/allow.get.ts`). It answers 200 only for the apex,
+`www` and a host in `school_domains`, and 404 for everything else, and it
+refuses any request that carries `X-Forwarded-For`, so only Caddy on this
+machine can use it. 3. Check: `curl -s -o /dev/null -w '%{http_code}' 'http://127.0.0.1:3000/api/caddy/allow?domain=nope.ellai.dev'`
+is 404; the same with `crestfield.ellai.dev` is 200. Then
+`curl -I https://crestfield.ellai.dev` still answers, and a name that is no
+school's, `https://nope.ellai.dev`, fails the TLS handshake.
+
+Let's Encrypt allows about 50 new certificates a week for the domain; one per
+school is far below that.
+
+## The operator console
+
+`https://ellai.dev/operator`, for the emails in `ELLAI_OPERATOR_EMAILS` in
+`/etc/school.env` (comma separated, e.g. `francis...,support@ellai.dev`). On
+every school's own address, and for anyone off the list, it does not exist (404).
+
+**Signing in needs no school account.** An operator enters their address; if it
+is on the list, a six-digit code is emailed to it (valid 10 minutes, one use,
+five tries; three requests per address per 15 minutes). The code gives a signed,
+HttpOnly cookie that lasts 12 hours, signed with a key derived from
+`BETTER_AUTH_SECRET`, and is checked against the list on every request, so
+removing an address ends its session at once. **Sign out** is in the page header.
+The mailbox for each address on the list is therefore the credential: keep
+`support@ellai.dev` to people who should be operators. Local development has no
+mailbox, so the code is printed in the server log instead.
+
+It shows each school's address, credit balance, 30-day use and days left, opens a
+school to grant credit and read its ledger, lists top-up requests, and has a New
+school form that does what `pnpm provision:school` does (both call
+`server/lib/operator/provision-school.ts`). Everything it changes is written to
+`operator_audit` (who, what, which school; sign-ins too). Its routes are
+`/api/operator/*`, hand-written and not actions, so the assistant and connected
+AI apps can never call them; they refuse non-JSON posts and run only on the
+shared address.
+
 ## Adding a school
 
-1. Provision it (`pnpm provision:school`), run from a laptop through a tunnel
-   to the server's database (`ssh -L 5433:127.0.0.1:5432 ...`, with
-   `DATABASE_URL` pointing at `127.0.0.1:5433`; the password is in
-   `/etc/school.env`).
-2. Add its host to `school_domains` if the script did not.
-3. Cloudflare: an A record for the host to `135.181.29.76`, DNS only. Remove
-   any CNAME or other A record on the same name first (an old Vercel record
-   makes the certificate fail, because Let's Encrypt reaches the wrong server).
-4. Add the host to the first line of `/etc/caddy/Caddyfile`, then
-   `systemctl reload caddy`. The certificate arrives within seconds once DNS
-   points here; if it was added before DNS was right, reload Caddy again after.
+From the console: New school, name, address, the head's email. The school gets
+its address, the starter 5,000 credits and an invitation email (the link is shown
+if email fails). Nothing to do in Cloudflare or Caddy once the wildcard is in.
+
+From a terminal, the same thing: `pnpm provision:school --name "..." --headEmail
+... --slug ...`, run from a laptop through a tunnel to the server's database
+(`ssh -L 5433:127.0.0.1:5432 ...`, with `DATABASE_URL` pointing at
+`127.0.0.1:5433`; the password is in `/etc/school.env`).
+
+Before the wildcard is set up, a new school's address needs its own A record and
+its host added to the Caddyfile (then `systemctl reload caddy`).
 
 ## Backups and restore
 

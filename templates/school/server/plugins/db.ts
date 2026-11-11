@@ -1061,6 +1061,27 @@ const migrations = runMigrations(
       version: 116,
       sql: `ALTER TABLE announcements ADD COLUMN group_id TEXT`,
     },
+    // Everything an operator does from the operator console: who, what, which
+    // school. Append-only, and the operator's own: no school reads it.
+    {
+      version: 117,
+      sql: `CREATE TABLE IF NOT EXISTS operator_audit (id TEXT PRIMARY KEY, actor TEXT NOT NULL, action TEXT NOT NULL, school_id TEXT, detail TEXT, created_at TEXT NOT NULL)`,
+    },
+    {
+      version: 118,
+      sql: `CREATE INDEX IF NOT EXISTS operator_audit_created_idx ON operator_audit (created_at)`,
+    },
+    // One-time sign-in codes for the operator console, emailed to an address on
+    // the operator list. Only a hash of the code is kept. Operators have no
+    // school account, so the console signs them in by email alone.
+    {
+      version: 119,
+      sql: `CREATE TABLE IF NOT EXISTS operator_login_codes (id TEXT PRIMARY KEY, email TEXT NOT NULL, code_hash TEXT NOT NULL, attempts BIGINT NOT NULL, expires_at TEXT NOT NULL, used_at TEXT, created_at TEXT NOT NULL)`,
+    },
+    {
+      version: 120,
+      sql: `CREATE INDEX IF NOT EXISTS operator_login_codes_email_idx ON operator_login_codes (email, created_at)`,
+    },
   ],
   { table: "school_migrations" },
 );

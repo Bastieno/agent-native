@@ -87,6 +87,15 @@ export async function hostForOrg(orgId: string): Promise<string | null> {
   }
 }
 
+/** Whether an address belongs to a school already. Reads the table, not the cache. */
+export async function hostTaken(rawHost: string): Promise<boolean> {
+  const row = await first(
+    "SELECT org_id FROM school_domains WHERE host = ? LIMIT 1",
+    [normalizeHost(rawHost)],
+  );
+  return !!row;
+}
+
 /** Give a school an address. Refuses one already taken by another school. */
 export async function assignHost(orgId: string, rawHost: string) {
   const host = normalizeHost(rawHost);

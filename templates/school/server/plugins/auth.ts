@@ -23,6 +23,17 @@ const auth = createAuthPlugin({
     "/_root.data",
     "/privacy.data",
     "/api/school/cal-webhook",
+    // Caddy asking whether it may get a certificate for a name. The route
+    // refuses anything that did not come straight from Caddy on this machine.
+    "/api/caddy/allow",
+    // The operator console signs its people in by an emailed code, not by a
+    // school account, so the framework's sign-in does not apply. Every
+    // /api/operator route checks the operator session itself
+    // (server/lib/operator/access.ts), and the console answers 404 off the
+    // shared address.
+    "/operator",
+    "/operator.data",
+    "/api/operator",
   ],
   // Learners without an email address sign in with their school ID.
   usernameLogin: true,

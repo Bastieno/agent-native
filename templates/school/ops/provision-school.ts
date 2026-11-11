@@ -3,51 +3,30 @@
  *
  *   pnpm provision:school --name "Green Valley Academy" --headEmail head@example.com [--headName "Mrs Okafor"] --slug greenvalley [--byo]
  *
+ * The operator console (`/operator` on the shared address) does the same thing
+ * from a page; both call `server/lib/operator/provision-school.ts`.
+ *
  * The school starts on Ellai's credit with a starter grant, so its head has an
  * assistant with no key to find. `--byo` leaves it on its own key instead.
  * `--slug` is required: it gives the school its own address,
- * `<slug>.<SCHOOL_BASE_DOMAIN>`
- * (ellai.dev unless set). The DNS record and the Vercel domain are separate
- * steps; see docs/school-domains.md.
+ * `<slug>.<SCHOOL_BASE_DOMAIN>` (ellai.dev unless set). On the server a
+ * wildcard DNS record and Caddy's on-demand certificates bring the address
+ * up by themselves; see docs/vps-plan.md.
  *
  * Operators only. Run it on the server, against the deployment's own
  * `DATABASE_URL`. Open sign-up never gives anyone a school (see
  * `server/plugins/signup-policy.ts`), so this is how a school comes to exist.
  *
- * It is a script rather than an action on purpose: every action is a tool the
- * agent and every MCP client can call, and creating schools must not be one.
- *
- * What it does:
- * - creates the school's organisation, with the head as its owner, so the
- *   head acts in it from the web app and from an MCP client alike;
- * - records the head's invitation as a school admin, so their first sign-in
- *   activates them like an invited teacher;
- * - emails the invitation when email is configured, and prints what to send
- *   otherwise.
- *
- * The head then runs `setup-school` — from the in-app agent or over MCP —
- * which makes them the school's admin and starts the setup sheet.
+ * It is a script, and the console's routes are not actions, on purpose: every
+ * action is a tool the agent and every MCP client can call, and creating
+ * schools must not be one.
  */
 import { loadEnv } from "@agent-native/core/scripts";
-import { closeDbExec, getDbExec } from "@agent-native/core/db";
-import { createOrganization } from "@agent-native/core/org";
-import { putOrgSetting } from "@agent-native/core/settings";
+import { closeDbExec } from "@agent-native/core/db";
 import {
-  emailStrong,
-  getAppProductionUrl,
-  isEmailConfigured,
-  renderEmail,
-  sendEmail,
-  fromWithName,
-} from "@agent-native/core/server";
-import { nanoid } from "nanoid";
-import { grantCredit, setBillingMode } from "../server/lib/credits.js";
-import { STARTER_CREDITS, creditsToCc } from "../shared/credits.js";
-import {
-  assignHost,
-  inviteLink,
-  slugProblem,
-} from "../server/lib/school-host.js";
+  ProvisionError,
+  provisionSchool,
+} from "../server/lib/operator/provision-school.js";
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -64,126 +43,48 @@ async function main() {
   loadEnv();
 
   const name = arg("name");
-  const headEmail = arg("headEmail")?.toLowerCase();
-  const headName = arg("headName") ?? "";
+  const headEmail = arg("headEmail");
   if (!name || !headEmail) {
     fail(
-      'Usage: pnpm provision:school --name "School name" --headEmail head@example.com [--headName "Their name"]',
+      'Usage: pnpm provision:school --name "School name" --headEmail head@example.com --slug address [--headName "Their name"] [--byo]',
     );
   }
-  const slug = arg("slug")?.toLowerCase();
-  if (slug) {
-    const problem = slugProblem(slug);
-    if (problem) fail(`--slug: ${problem}`);
-  } else if (!process.argv.includes("--no-address")) {
-    // The shared address (ellai.dev) has no sign-in page for a school, and a
-    // school without its own address would send its invitations there.
-    // --no-address is for local test schools.
-    fail(
-      "--slug is required: it is the school's own address (<slug>.ellai.dev). Use --no-address only for a local test school.",
-    );
-  }
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(headEmail)) {
-    fail(`"${headEmail}" is not an email address.`);
-  }
+  const byo = process.argv.includes("--byo");
+  const by =
+    (process.env.ELLAI_OPERATOR_EMAILS ?? "").split(",")[0]?.trim() ||
+    "provision";
 
-  const exec = getDbExec();
-  let existing: Array<Record<string, unknown>>;
-  try {
-    const { rows } = await exec.execute({
-      sql: `SELECT o.id FROM organizations o
-            INNER JOIN org_members m ON m.org_id = o.id
-            WHERE LOWER(o.name) = ? AND LOWER(m.email) = ?`,
-      args: [name.toLowerCase(), headEmail],
-    });
-    existing = rows as Array<Record<string, unknown>>;
-  } catch {
-    fail(
-      "This database has no organisations table yet. Start the app against it once, so its tables are created, then run this again.",
-    );
-  }
-  if (existing.length > 0) {
-    fail(
-      `${headEmail} already heads a school called "${name}" (${String(existing[0].id)}). Nothing was created.`,
-    );
-  }
+  const r = await provisionSchool({
+    name,
+    headEmail,
+    headName: arg("headName"),
+    slug: arg("slug"),
+    noAddress: process.argv.includes("--no-address"),
+    ownKey: byo,
+    by,
+  });
 
-  const org = await createOrganization(name, headEmail, "owner");
-  await putOrgSetting(org.id, "pending-staff-invites", [
-    {
-      id: nanoid(),
-      email: headEmail,
-      name: headName,
-      schoolRole: "school_admin",
-      invitedAt: Date.now(),
-    },
-  ] as any);
-
-  if (!process.argv.includes("--byo")) {
-    await setBillingMode(org.id, "managed", "provision");
-    await grantCredit({
-      schoolId: org.id,
-      amountCc: creditsToCc(STARTER_CREDITS),
-      note: "Starter credit",
-      by: "provision",
-    });
-  }
-
-  let appUrl = getAppProductionUrl();
-  if (slug) {
-    const base = process.env.SCHOOL_BASE_DOMAIN?.trim() || "ellai.dev";
-    const host = await assignHost(org.id, `${slug}.${base}`);
-    appUrl = `https://${host}`;
-  }
-  const link = inviteLink(appUrl, headEmail);
-  const mcpUrl = `${appUrl.replace(/\/$/, "")}/_agent-native/mcp`;
-
-  let emailed = false;
-  if (isEmailConfigured()) {
-    try {
-      const { html, text } = renderEmail({
-        heading: `Set up ${name}`,
-        paragraphs: [
-          `${emailStrong(name)} is ready for you to set up.`,
-          `Create your account with ${emailStrong(headEmail)}. That address is how the school knows you, so use it exactly.`,
-          `You can set the school up with the assistant in the app, or from Claude or another AI app by connecting it to ${emailStrong(mcpUrl)}.`,
-        ],
-        cta: { label: "Open the app", url: link },
-        footer:
-          "If you weren't expecting this, you can safely ignore this email.",
-      });
-      await sendEmail({
-        to: headEmail,
-        subject: `Set up ${name}`,
-        html,
-        text,
-        from: fromWithName(name),
-      });
-      emailed = true;
-    } catch (err) {
-      console.error(
-        `The email to ${headEmail} failed: ${err instanceof Error ? err.message : String(err)}`,
-      );
-    }
-  }
-
-  console.log(`Created "${name}" (${org.id}) with ${headEmail} as its head.`);
   console.log(
-    emailed
-      ? `Invitation emailed to ${headEmail}.`
-      : `No email was sent. Tell ${headEmail} to create an account at ${link} with that address.`,
+    `Created "${r.name}" (${r.orgId}) with ${headEmail} as its head.`,
   );
-  console.log(`To set up from an MCP client, connect it to ${mcpUrl}.`);
-  if (!process.argv.includes("--byo")) {
+  console.log(
+    r.emailed
+      ? `Invitation emailed to ${headEmail}.`
+      : `No email was sent${r.emailError ? ` (${r.emailError})` : ""}. Tell ${headEmail} to create an account at ${r.inviteUrl} with that address.`,
+  );
+  console.log(`To set up from an MCP client, connect it to ${r.mcpUrl}.`);
+  if (!byo) {
     console.log(
-      `It starts with ${STARTER_CREDITS.toLocaleString("en")} credits. The deployment needs ELLAI_MANAGED_ANTHROPIC_KEY set for the assistant to run on them.`,
+      `It starts with ${r.starterCredits.toLocaleString("en")} credits. The deployment needs ELLAI_MANAGED_ANTHROPIC_KEY set for the assistant to run on them.`,
     );
   }
 }
 
 main()
   .catch((err) => {
-    console.error(err instanceof Error ? err.message : err);
+    console.error(
+      err instanceof ProvisionError || err instanceof Error ? err.message : err,
+    );
     process.exitCode = 1;
   })
   .finally(() => closeDbExec());

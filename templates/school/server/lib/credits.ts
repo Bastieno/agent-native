@@ -340,7 +340,7 @@ export async function setBillingMode(
 }
 
 /** What the operator is told when a school runs low. */
-function operatorEmails(): string[] {
+export function operatorEmails(): string[] {
   return (process.env.ELLAI_OPERATOR_EMAILS ?? "")
     .split(",")
     .map((e) => e.trim().toLowerCase())
