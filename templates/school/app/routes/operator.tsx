@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   IconCheck,
   IconCopy,
+  IconLogout,
   IconPlus,
   IconRefresh,
 } from "@tabler/icons-react";
@@ -174,14 +175,15 @@ export default function Operator() {
 
   return (
     <main className="mx-auto max-w-5xl space-y-6 p-4 sm:p-8">
-      <header className="flex items-center justify-between gap-3">
-        <div>
+      <header className="flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0">
           <h1 className="text-xl font-semibold">Operator</h1>
-          <p className="text-sm text-muted-foreground">{me?.email}</p>
+          <p className="truncate text-sm text-muted-foreground">{me?.email}</p>
         </div>
         <div className="flex gap-2">
           <Button
             variant="outline"
+            aria-label="Sign out"
             onClick={async () => {
               await api("/api/operator/logout", { method: "POST" }).catch(
                 () => {},
@@ -189,7 +191,8 @@ export default function Operator() {
               setState("signin");
             }}
           >
-            Sign out
+            <IconLogout size={16} className="sm:mr-1.5" />
+            <span className="hidden sm:inline">Sign out</span>
           </Button>
           <Button
             variant="outline"
@@ -215,7 +218,37 @@ export default function Operator() {
         </TabsList>
 
         <TabsContent value="schools" className="mt-4">
-          <div className="overflow-x-auto rounded-lg border">
+          <ul className="divide-y rounded-lg border text-sm sm:hidden">
+            {schools.map((s) => (
+              <li
+                key={s.id}
+                className="cursor-pointer space-y-1.5 p-3 active:bg-muted/40"
+                onClick={() => setOpenId(s.id)}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="truncate font-medium">{s.name}</div>
+                    <div className="truncate text-xs text-muted-foreground">
+                      {s.host ?? "no address"}
+                    </div>
+                  </div>
+                  <Status s={s} />
+                </div>
+                {s.mode === "managed" && (
+                  <div className="text-xs text-muted-foreground tabular-nums">
+                    {n(s.credits)} credits left, {n(s.spent30)} used in 30 days
+                    {s.daysLeft == null ? "" : `, about ${n(s.daysLeft)} days`}
+                  </div>
+                )}
+              </li>
+            ))}
+            {schools.length === 0 && (
+              <li className="p-6 text-center text-muted-foreground">
+                No schools yet.
+              </li>
+            )}
+          </ul>
+          <div className="hidden overflow-x-auto rounded-lg border sm:block">
             <table className="w-full text-sm">
               <thead className="border-b bg-muted/40 text-left text-xs text-muted-foreground">
                 <tr>
@@ -450,9 +483,11 @@ function SchoolSheet({
   const [ref, setRef] = useState("");
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
+  const [granting, setGranting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setGranting(false);
     setDetail(null);
     setError(null);
     setCredits("");
@@ -486,6 +521,7 @@ function SchoolSheet({
       setCredits("");
       setRef("");
       setNote("");
+      setGranting(false);
       onChanged();
     } catch (e) {
       setError((e as Error).message);
@@ -498,7 +534,7 @@ function SchoolSheet({
   return (
     <Sheet open={!!id} onOpenChange={(o) => !o && onClose()}>
       <SheetContent className="w-full overflow-y-auto sm:max-w-md">
-        <SheetHeader>
+        <SheetHeader className="text-left">
           <SheetTitle>{s?.name ?? "School"}</SheetTitle>
           <SheetDescription>
             {s?.host ?? "no address"}
@@ -508,7 +544,7 @@ function SchoolSheet({
 
         {s && (
           <div className="mt-6 space-y-6 text-sm">
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
               <Stat
                 label="Credits"
                 value={s.mode === "managed" ? n(s.credits) : "-"}
@@ -529,52 +565,72 @@ function SchoolSheet({
               </p>
             )}
 
-            <form
-              className="space-y-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                void grant();
-              }}
-            >
-              <h3 className="font-medium">Grant credit</h3>
-              <div className="space-y-1.5">
-                <Label htmlFor="g-credits">Credits</Label>
-                <Input
-                  id="g-credits"
-                  inputMode="numeric"
-                  placeholder="10000"
-                  value={credits}
-                  onChange={(e) => setCredits(e.target.value)}
-                />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="g-ref">Payment reference</Label>
-                <Input
-                  id="g-ref"
-                  value={ref}
-                  onChange={(e) => setRef(e.target.value)}
-                />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="g-note">Note</Label>
-                <Input
-                  id="g-note"
-                  value={note}
-                  onChange={(e) => setNote(e.target.value)}
-                />
-              </div>
-              {error && <p className="text-destructive">{error}</p>}
-              <Button type="submit" disabled={busy || !credits.trim()}>
-                {busy ? "Granting" : "Grant"}
+            {granting ? (
+              <form
+                className="space-y-3 rounded-lg border p-4"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  void grant();
+                }}
+              >
+                <h3 className="font-medium">Grant credit to {s.name}</h3>
+                <div className="space-y-1.5">
+                  <Label htmlFor="g-credits">Credits</Label>
+                  <Input
+                    id="g-credits"
+                    inputMode="numeric"
+                    placeholder="e.g. 10000"
+                    autoFocus
+                    value={credits}
+                    onChange={(e) => setCredits(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="g-ref">Payment reference</Label>
+                  <Input
+                    id="g-ref"
+                    value={ref}
+                    onChange={(e) => setRef(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="g-note">Note</Label>
+                  <Input
+                    id="g-note"
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                  />
+                </div>
+                {error && <p className="text-destructive">{error}</p>}
+                <div className="flex gap-2">
+                  <Button type="submit" disabled={busy || !credits.trim()}>
+                    {busy ? "Granting" : "Grant"}
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() => {
+                      setGranting(false);
+                      setError(null);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                </div>
+              </form>
+            ) : (
+              <Button className="w-full" onClick={() => setGranting(true)}>
+                <IconPlus size={16} className="mr-1.5" />
+                Grant credit
               </Button>
-            </form>
+            )}
 
             <div>
-              <h3 className="mb-2 font-medium">Ledger</h3>
+              <h3 className="mb-2 font-medium">Recent activity</h3>
               <ul className="divide-y rounded-lg border">
                 {detail!.ledger.map((l) => (
                   <li key={l.id} className="flex justify-between gap-3 p-2.5">
-                    <div>
+                    <div className="min-w-0 break-words">
                       <div className="capitalize">{l.kind}</div>
                       <div className="text-xs text-muted-foreground">
                         {day(l.createdAt)} - {l.createdBy}
@@ -603,9 +659,11 @@ function SchoolSheet({
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border p-3">
+    <div className="rounded-lg border p-2.5 sm:p-3">
       <div className="text-xs text-muted-foreground">{label}</div>
-      <div className="text-lg font-semibold tabular-nums">{value}</div>
+      <div className="text-base font-semibold tabular-nums sm:text-lg">
+        {value}
+      </div>
     </div>
   );
 }
