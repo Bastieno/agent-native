@@ -9,7 +9,7 @@ At the start of every conversation:
 1. **Navigation context is pre-injected** — a `<current-screen>` block in the system prompt already tells you `role`, `view`, and any active entity IDs. You do NOT need to call `view-screen` just to discover the role or current view.
 2. Call `view-screen` only when you need a **full data snapshot** — entity details, live content, submission drafts, stats. Skip it for simple lookups or when the pre-injected context is enough.
 3. Read the school's guide with `get-school-resource` (each school has its own) — needed for grading, curriculum co-authoring, onboarding, analytics, or anything school-policy-specific. Skip for simple lookups.
-4. Read `LEARNINGS.md` resource (`--scope personal` and `--scope shared`) — needed when preferences, corrections, or past context may affect the answer. Skip for simple lookups.
+4. Your own saved notes (`save-memory`) come with the conversation. There is no notebook shared between people or schools, and you have no tool to read or write the app's shared files: another school must never see what this one tells you.
 
 **CRITICAL: Always check `navigation.role` first.** It determines which section of this guide applies and how you should behave.
 
@@ -959,7 +959,7 @@ Changing or disconnecting the AI engine is for org owners and admins only.
 
 **Each role's assistant has its own tool list** (`server/lib/role-tools.ts`):
 the school actions its policy allows, plus moving its own screen and tool
-search. Staff also get memory and workspace files, sub-agents, automations,
+search. Staff also get their own memory notes, sub-agents, automations,
 jobs, notifications, progress, web requests and any MCP server they
 connected; admins also get extensions. For staff, only the most-used tools
 are loaded on every step; the rest load when `tool-search` finds them, so
@@ -2032,13 +2032,13 @@ Student opens assessment → reads variant (no difficulty shown) → types in ed
 
 ## Resources
 
-| Resource       | Scope             | Purpose                                                                             |
-| -------------- | ----------------- | ----------------------------------------------------------------------------------- |
-| `AGENTS.md`    | shared            | This file — agent behavior guide                                                    |
-| School guide   | per school        | School identity, terminology, pedagogy, grading conventions (`get-school-resource`) |
-| `LEARNINGS.md` | personal + shared | Corrections, preferences, patterns from past conversations                          |
+| Resource     | Scope      | Purpose                                                                             |
+| ------------ | ---------- | ----------------------------------------------------------------------------------- |
+| `AGENTS.md`  | shared     | This file — agent behavior guide                                                    |
+| School guide | per school | School identity, terminology, pedagogy, grading conventions (`get-school-resource`) |
+| Your notes   | personal   | Corrections and preferences a person tells you (`save-memory`); never shared        |
 
-Update `SCHOOL_GUIDE.md` whenever the admin shares school-specific context. Update `LEARNINGS.md` when you learn a preference, pattern, or correction.
+Update the school guide whenever the admin shares school-specific context. Save a person's own preference or correction with `save-memory`; it stays theirs.
 
 ---
 

@@ -74,7 +74,6 @@ expectTools(
 const staffExtras = [
   "save-memory",
   "delete-memory",
-  "resources",
   "agent-teams",
   "manage-automations",
   "manage-jobs",
@@ -87,7 +86,14 @@ const staffExtras = [
 expectTools(
   "teacher",
   [...screen, ...staffExtras, "grade-submission", "create-activity"],
-  [...nobody, "create-extension", "update-school-config", "invite-staff"],
+  [
+    ...nobody,
+    "create-extension",
+    "update-school-config",
+    "invite-staff",
+    // The shared files area belongs to every school; no school's staff get it.
+    "resources",
+  ],
 );
 
 // An admin: the school's settings, staff, and its extensions.

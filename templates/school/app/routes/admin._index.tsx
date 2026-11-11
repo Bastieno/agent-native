@@ -123,8 +123,15 @@ export default function AdminOverview() {
 
   // New until it has something to teach with, not only until it has a record:
   // a school with no subjects, classes or learners is not "all clear".
-  const isNewSchool =
-    !schoolId || (!!stats && !isPlaceholderData && !!stats.needsSetup);
+  // Figures cached by an older version carry no flag: work it out from the counts.
+  const needsSetup = stats
+    ? (stats.needsSetup ??
+      (!stats.studentCount && !stats.classCount && !stats.subjectCount))
+    : false;
+  const isNewSchool = !schoolId || !!needsSetup;
+  // Neither the cached nor the fresh figures yet: show nothing in their place,
+  // not zeros that are about to be replaced by the setup card.
+  const countsLoading = !!schoolId && !stats;
 
   useEffect(() => {
     sync({
@@ -155,10 +162,13 @@ export default function AdminOverview() {
           Manage your school, staff, students, and curriculum.
         </p>
       </div>
-      <HelpNudge />
+      {/* A school with nothing in it has one clear next step, the card below. */}
+      {!isNewSchool && !countsLoading && <HelpNudge />}
       <DraftsWaiting role="admin" />
 
-      {isNewSchool ? (
+      {countsLoading ? (
+        <div className="h-40 animate-pulse rounded-lg border bg-muted/30" />
+      ) : isNewSchool ? (
         <div className="rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-8 flex flex-col items-center text-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
             <IconSchool size={28} />

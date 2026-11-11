@@ -11,9 +11,10 @@ import { rolesFor, type SchoolRole } from "./action-policy.js";
  *
  *   - the school actions its policy lets it run (action-policy.ts);
  *   - the tools that move its own screen or find a tool;
- *   - for staff, the framework tools staff work uses: memory and workspace
- *     files, sub-agents, automations and jobs, notifications, progress, web
- *     requests, the framework guide, and any MCP server they connected;
+ *   - for staff, the framework tools staff work uses: their own memory notes,
+ *     sub-agents, automations and jobs, notifications, progress, web
+ *     requests, the framework guide, and any MCP server they connected. Not
+ *     the generic workspace-files tool: it reaches an area every school shares;
  *   - for admins, also extensions — the school's own widgets.
  *
  * A learner gets none of the framework extras: memory and workspace files
@@ -30,10 +31,15 @@ const EVERYONE = new Set([
   "tool-search",
 ]);
 
+// `resources` (the generic workspace-files tool) is deliberately not here. It
+// reads and writes the framework's shared area, which every school shares:
+// one school's assistant could read another's files, or rewrite the shared
+// AGENTS.md or LEARNINGS.md that every school's assistant follows. Nothing in
+// the school needs it: guides and settings have their own actions, and a
+// person's own notes go through `save-memory`.
 const STAFF = new Set([
   "save-memory",
   "delete-memory",
-  "resources",
   "agent-teams",
   "manage-automations",
   "manage-jobs",
