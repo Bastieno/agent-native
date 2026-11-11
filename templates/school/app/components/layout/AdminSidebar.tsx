@@ -16,13 +16,21 @@ import {
   IconCalendarTime,
   IconHelp,
   IconPlugConnected,
+  IconChevronDown,
 } from "@tabler/icons-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
 import { NotificationCount } from "@/components/notifications/NotificationCount";
 import { HelpDot } from "@/components/help/HelpDot";
 import { cn } from "@/lib/utils";
 import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useCurrentTerm } from "@/hooks/use-current-term";
+import { useReadiness } from "@/hooks/use-readiness";
+import { isGated } from "@shared/readiness";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
 const navItems = [
@@ -47,6 +55,12 @@ export function AdminSidebar({
   const remembered = useRememberedSearch();
   const { config } = useSchoolConfig();
   const term = useCurrentTerm();
+  // Screens that need setup first stay out of the menu until it is done.
+  const { loaded, missing } = useReadiness();
+  const waiting = (href: string) =>
+    isGated(href) && (!loaded || missing(href).length > 0);
+  const shown = navItems.filter((item) => !waiting(item.href));
+  const hiddenCount = navItems.length - shown.length;
   const schoolName =
     (config as any)?.theme?.displayName ??
     (config as any)?.name ??
@@ -69,7 +83,7 @@ export function AdminSidebar({
         {showAgentToggle ? <AgentToggleButton /> : null}
       </div>
       <nav className="flex-1 overflow-y-auto p-2 space-y-0.5">
-        {navItems.map(({ href, label, icon: Icon, end }) => (
+        {shown.map(({ href, label, icon: Icon, end }) => (
           <NavLink
             key={href}
             to={remembered(href)}
@@ -87,6 +101,26 @@ export function AdminSidebar({
             {label}
           </NavLink>
         ))}
+        {loaded && hiddenCount > 0 ? (
+          <Collapsible className="px-3 py-2">
+            <CollapsibleTrigger className="flex w-full items-center gap-1 text-xs text-muted-foreground hover:text-foreground [&[data-state=open]>svg]:rotate-180">
+              More opens as you set up
+              <IconChevronDown size={12} className="transition-transform" />
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <p className="mt-1.5 text-xs text-muted-foreground">
+                {navItems
+                  .filter((item) => waiting(item.href))
+                  .map((item) => item.label)
+                  .join(", ")}
+                .{" "}
+                <NavLink to="/admin" end className="underline">
+                  See what each needs
+                </NavLink>
+              </p>
+            </CollapsibleContent>
+          </Collapsible>
+        ) : null}
       </nav>
       <div className="border-t p-2">
         <NavLink

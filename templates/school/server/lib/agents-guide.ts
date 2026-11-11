@@ -21,6 +21,7 @@ export const GUIDANCE_TOPICS = {
   setup: [
     "### A0. Where a new school comes from",
     "### A1. School Onboarding (first run)",
+    "### A1a. Showing setup progress",
   ],
   curriculum: ["### A2. Curriculum Co-Authoring"],
   "lesson-notes": [

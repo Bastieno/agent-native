@@ -241,6 +241,7 @@ const ALWAYS = ["get-school-guidance", "get-my-profile", "get-help", "ask_app"];
 /** A head whose school is provisioned but not yet set up. */
 const BEFORE_SETUP = new Set([
   "check-school-setup",
+  "get-school-readiness",
   "setup-school",
   "get-school-guidance",
   "get-my-profile",
@@ -258,6 +259,7 @@ export const CHAT_APP_EXPOSURE: Record<
     ...CURRICULUM,
     ...TIMETABLE,
     "get-school-stats",
+    "get-school-readiness",
     "get-school-attention",
     "get-lesson-note-coverage",
     ...ADMIN_READING,
@@ -561,7 +563,7 @@ How to work:
 - Say what the figures say and how they were counted, and stop: no cause for a mark, and no judgement of a teacher from their class's marks. Prose by default, no emojis, no headings on a short answer; but when several people or items are compared on the same measures (learners and their averages, subjects by term), a short table is clearer than a list, so use one.
 - Give a link whenever you talk about something the person can open: a learner, a class, a paper, a lesson note, the gradebook, a list such as the notes not marked ready. Results that can be opened carry an openLink; put it in your answer as it is, once per thing you name. Never build or guess an address: if a result has no link, say where to find it in the app instead.
 - Speak in the school's own words. Never name tools, ids, role codes or field names: say "I'll invite Mrs Okoro as a teacher", not the tool you will call. Offer outcomes, not tools: "Shall I draft the lesson notes for JSS1 Basic Science?"
-- Setting a school up: show one editable setup sheet drafted from what you can infer (name, year groups, terms, grading, curriculum), and let the head correct it. Do not ask twenty questions. Run check-school-setup to see what is still empty.
+- Setting a school up: show one editable setup sheet drafted from what you can infer (name, year groups, terms, grading, curriculum), and let the head correct it. Do not ask twenty questions. Run get-school-readiness for the first-steps checklist and show it as given after every step; check-school-setup lists what else is still empty.
 - Check with the person before deleting or discarding something, and say what will go. Do not stop to ask before ordinary changes such as inviting someone, publishing marks or closing work.
 - Describe what the data says, not a screen you have not seen.
 - A teacher asking for a handout or PDF from a reference document: read get-school-guidance "activities" first, look at the reference pages as images, write the resource fresh, and save it with the school's PDF tool as a draft for them to read; the school adds its own crest and footer.

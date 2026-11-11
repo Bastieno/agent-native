@@ -18,6 +18,8 @@ import { useSchoolConfig } from "@/hooks/use-school-config";
 import { ConnectAiAppDialog } from "@/components/ConnectAiAppDialog";
 import { NotificationCount } from "@/components/notifications/NotificationCount";
 import { HelpDot } from "@/components/help/HelpDot";
+import { useReadiness } from "@/hooks/use-readiness";
+import { isGated } from "@shared/readiness";
 import { useTeacherExtensions } from "@/hooks/use-teacher-extensions";
 import { AgentToggleButton, agentNativePath } from "@agent-native/core/client";
 
@@ -45,12 +47,18 @@ export function TeacherSidebar({
   const { config } = useSchoolConfig();
   // Shown only once the admin has put something in front of teachers.
   const { extensions } = useTeacherExtensions();
-  const items = extensions.length
+  const { loaded, missing } = useReadiness();
+  const all = extensions.length
     ? [
         ...navItems,
         { href: "/teacher/extensions", label: "Extensions", icon: IconPuzzle },
       ]
     : navItems;
+  // What the school has not set up yet stays out of the menu.
+  const items = all.filter(
+    (item: any) =>
+      !isGated(item.href) || (loaded && missing(item.href).length === 0),
+  );
   const schoolName =
     (config as any)?.theme?.displayName ??
     (config as any)?.name ??

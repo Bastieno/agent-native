@@ -278,6 +278,7 @@ export const NO_VIEW_LINK: Record<string, string> = {
   "get-school-library": SETUP,
   "get-school-resource": SETUP,
   "get-school-stats": "counts for the overview",
+  "get-school-readiness": SETUP,
   "get-school-usage": SETUP,
   "get-school": SETUP,
   "get-syllabus-import": SETUP,

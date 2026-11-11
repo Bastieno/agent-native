@@ -113,6 +113,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "switch-assistant-billing": ADMIN,
   "get-school": EVERYONE,
   "get-school-stats": STAFF,
+  "get-school-readiness": STAFF,
   "get-school-config": EVERYONE, // grading scale, labels — UI needs it
   "update-school-config": ADMIN,
   // Whether the signed-in person has the assistant right now, and why not.

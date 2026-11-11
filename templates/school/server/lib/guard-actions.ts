@@ -22,6 +22,7 @@ import {
   type SchoolRole,
 } from "./action-policy.js";
 import { rowOf, rowsOf } from "./raw-sql.js";
+import { assertSetupDone, withSetupProgress } from "./school-readiness.js";
 
 /**
  * Wrap every template action with a role check.
@@ -69,12 +70,21 @@ export function guardActions<T extends Record<string, any>>(actions: T): T {
           const resolved =
             actor?.schoolId ?? (await frameworkOrgForEmail(userEmail));
           if (resolved) {
-            return runWithRequestContext({ userEmail, orgId: resolved }, () =>
-              entry.run(args, ctx),
+            return runWithRequestContext(
+              { userEmail, orgId: resolved },
+              async () => {
+                await assertSetupDone(name, resolved);
+                return withSetupProgress(
+                  name,
+                  resolved,
+                  await entry.run(args, ctx),
+                );
+              },
             );
           }
         }
-        return entry.run(args, ctx);
+        await assertSetupDone(name, orgId);
+        return withSetupProgress(name, orgId, await entry.run(args, ctx));
       },
     };
   }

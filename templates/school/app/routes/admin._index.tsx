@@ -6,6 +6,11 @@ import { agentNativePath } from "@agent-native/core/client";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { realNameOrNull } from "@shared/person-name";
 import { useRole } from "@/hooks/use-role";
+import { useReadiness } from "@/hooks/use-readiness";
+import { sendToAgentChat } from "@agent-native/core/client";
+import { NEEDS, NEED_ORDER } from "@shared/readiness";
+import { Button } from "@/components/ui/button";
+import { IconCheck, IconCircle } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import {
@@ -117,6 +122,8 @@ export default function AdminOverview() {
     placeholderData: () => (schoolId ? cachedStats(schoolId) : undefined),
   });
 
+  const { facts } = useReadiness();
+  const setupIncomplete = !!facts && NEED_ORDER.some((n) => !facts[n]);
   const { data: attention } = useAttention();
   const noYearGroup: number = attention?.counts?.learnersWithoutYearGroup ?? 0;
   const noTeacher: number = attention?.counts?.classesWithoutTeacher ?? 0;
@@ -168,6 +175,9 @@ export default function AdminOverview() {
 
       {countsLoading ? (
         <div className="h-40 animate-pulse rounded-lg border bg-muted/30" />
+      ) : isNewSchool && setupIncomplete ? (
+        // Nothing to count yet: the checklist is the whole page.
+        <SetupChecklist facts={facts!} />
       ) : isNewSchool ? (
         <div className="rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-8 flex flex-col items-center text-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -193,6 +203,7 @@ export default function AdminOverview() {
         </div>
       ) : (
         <>
+          {setupIncomplete && <SetupChecklist facts={facts!} />}
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             <Link
               to="/admin/staff"
@@ -242,6 +253,61 @@ export default function AdminOverview() {
           <NeedsAttention />
         </>
       )}
+    </div>
+  );
+}
+
+/**
+ * The first steps, each with what it opens. It is the one place that names
+ * what a hidden page needs, and it goes away when the steps are done.
+ */
+function SetupChecklist({ facts }: { facts: Record<string, boolean> }) {
+  const next = NEED_ORDER.find((n) => !facts[n]);
+  return (
+    <div className="rounded-lg border bg-card p-6">
+      <h2 className="text-sm font-medium">Set up your school</h2>
+      <p className="mt-1 text-sm text-muted-foreground">
+        A few first steps, and more of the app opens as each is done.
+      </p>
+      <ul className="mt-4 space-y-3">
+        {NEED_ORDER.map((n) => (
+          <li key={n} className="flex items-start gap-2.5">
+            {facts[n] ? (
+              <IconCheck size={16} className="mt-0.5 shrink-0 text-primary" />
+            ) : (
+              <IconCircle
+                size={16}
+                className="mt-0.5 shrink-0 text-muted-foreground"
+              />
+            )}
+            <div className="min-w-0 flex-1">
+              <p
+                className={
+                  facts[n] ? "text-sm text-muted-foreground" : "text-sm"
+                }
+              >
+                {NEEDS[n].label}
+              </p>
+              <p className="text-xs text-muted-foreground">{NEEDS[n].opens}</p>
+            </div>
+            {n === next ? (
+              <Button
+                size="sm"
+                onClick={() =>
+                  sendToAgentChat({
+                    message: NEEDS[n].ask,
+                    submit: true,
+                    openSidebar: true,
+                  })
+                }
+              >
+                <IconMessageDots size={14} className="mr-1.5" />
+                Start
+              </Button>
+            ) : null}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

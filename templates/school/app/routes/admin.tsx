@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
 import { AgentSidebar } from "@agent-native/core/client";
 import { getSchoolSuggestions } from "@/lib/school-suggestions";
@@ -6,6 +6,8 @@ import { SchoolTheme } from "@/components/SchoolTheme";
 import { AdminSidebar } from "@/components/layout/AdminSidebar";
 import { AssistantSetupCard } from "@/components/settings/AssistantKey";
 import { PortalShell } from "@/components/layout/PortalShell";
+import { SetupGate } from "@/components/layout/SetupGate";
+import { useReadiness } from "@/hooks/use-readiness";
 import { useRole } from "@/hooks/use-role";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import { DefaultSpinner } from "@agent-native/core/client";
@@ -24,6 +26,9 @@ function timetablePath(nav: Record<string, unknown>): string {
 export default function AdminLayout() {
   const { role, isLoading, isAuthenticated, access } = useRole();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const readiness = useReadiness();
+  const gapsHere = readiness.missing(pathname);
   const { command, clearCommand } = useNavigationState();
 
   useEffect(() => {
@@ -146,7 +151,16 @@ export default function AdminLayout() {
         drawerSidebar={<AdminSidebar showAgentToggle={false} />}
         title="Admin Portal"
       >
-        <Outlet />
+        {readiness.facts && gapsHere.length > 0 ? (
+          <SetupGate
+            path={pathname}
+            missing={gapsHere}
+            facts={readiness.facts}
+            canSetUp={true}
+          />
+        ) : (
+          <Outlet />
+        )}
       </PortalShell>
     </AgentSidebar>
   );

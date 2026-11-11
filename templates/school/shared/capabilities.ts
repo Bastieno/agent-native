@@ -121,6 +121,7 @@ export const CAPABILITIES: Capability[] = [
     actions: [
       "setup-school",
       "check-school-setup",
+      "get-school-readiness",
       "get-school-config",
       "update-school-config",
       "manage-grade-levels",

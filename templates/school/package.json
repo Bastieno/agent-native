@@ -23,6 +23,7 @@
     "check:host": "tsx test/school-host.check.ts",
     "check:credits": "tsx test/credits.check.ts",
     "check:suggestions": "tsx test/suggestions.check.ts",
+    "check:readiness": "tsx test/readiness.check.ts",
     "journey:mcp-setup": "tsx test/sim/run-mcp-setup.ts",
     "journey:agent-access": "tsx test/sim/run-agent-access.ts",
     "journey:access": "tsx test/sim/run-access.ts",
