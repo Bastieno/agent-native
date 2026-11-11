@@ -15,6 +15,7 @@ import {
 import { schoolLocale } from "../shared/dates.js";
 import { reservedWeeksForTerm, termWeekCount } from "../shared/term-weeks.js";
 import { AGENT_AUDIENCES } from "../shared/agent-settings.js";
+import { parsePrimary } from "../shared/theme-colour.js";
 import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
 import {
   agentModelChoices,
@@ -219,7 +220,12 @@ export default defineAction({
       z.object({
         // HSL triples, matching the CSS variables the app already uses:
         // "221 83% 53%". Stored per school so one deployment can carry many.
-        primary: z.string().optional().describe('e.g. "221 83% 53%"'),
+        primary: z
+          .string()
+          .optional()
+          .describe(
+            'The school\'s colour: a hex code ("#1d6b3a") or three numbers ("142 71% 35%"). The text colour on it is chosen for you. An empty string puts the app\'s own colour back.',
+          ),
         primaryForeground: z.string().optional(),
         logoUrl: z.string().optional().describe("Shown in the portal header"),
         displayName: z
@@ -357,12 +363,28 @@ export default defineAction({
       );
     }
     const merged = { ...existing, ...args } as Record<string, unknown>;
+    let colourNote: string | undefined;
     if (args.theme) {
       // Merge, so setting a logo does not clear a colour set earlier.
-      merged.theme = {
+      const theme: Record<string, unknown> = {
         ...((existing.theme as Record<string, unknown>) ?? {}),
         ...args.theme,
       };
+      if (typeof args.theme.primary === "string") {
+        if (args.theme.primary.trim() === "") {
+          // Back to the app's own colour.
+          delete theme.primary;
+          delete theme.primaryForeground;
+        } else {
+          const colour = parsePrimary(args.theme.primary);
+          if (colour.ok === false)
+            throw new Error(`Nothing was saved. ${colour.message}`);
+          theme.primary = colour.primary;
+          theme.primaryForeground = colour.primaryForeground;
+          colourNote = colour.note;
+        }
+      }
+      merged.theme = theme;
     }
     if (args.agent) {
       const before = await ensureAgentSettings(orgId);
@@ -498,7 +520,9 @@ export default defineAction({
     return {
       success: true,
       config: merged,
-      ...(notes.length ? { notes } : {}),
+      ...(notes.length || colourNote
+        ? { notes: [...notes, ...(colourNote ? [colourNote] : [])] }
+        : {}),
       ...(warning ? { warning, message: warning } : {}),
     };
   },

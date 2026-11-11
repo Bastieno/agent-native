@@ -27,6 +27,7 @@ const SETUP = [
   "check-school-setup",
   "get-school-config",
   "update-school-config",
+  "preview-school-colour",
   "manage-grade-levels",
   "list-academic-years",
   "create-academic-year",

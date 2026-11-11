@@ -5,7 +5,7 @@ import { useSchoolConfig } from "@/hooks/use-school-config";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ListState } from "@/components/ListState";
-import { agentNativePath } from "@agent-native/core/client";
+import { agentNativePath, sendToAgentChat } from "@agent-native/core/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUrlTab } from "@/hooks/use-url-tab";
 
@@ -250,11 +250,59 @@ export default function AdminSettings() {
                 currentLogoUrl={(config as any)?.theme?.logoUrl ?? null}
               />
             </div>
-            <p className="text-xs text-muted-foreground">
-              The crest is stored with this school's settings, so it appears
-              only for this school. Colours and the display name are set by
-              asking the agent.
-            </p>
+            <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-card p-4">
+              <div className="min-w-0">
+                <h3 className="text-sm font-medium">Colour and name</h3>
+                <p className="mt-0.5 text-sm text-muted-foreground">
+                  Ask the assistant, for example &ldquo;Make our school colour
+                  green&rdquo;, or give it a hex code.
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                {(config as any)?.theme?.primary ? (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={async () => {
+                      try {
+                        const res = await fetch(
+                          agentNativePath(
+                            "/_agent-native/actions/update-school-config",
+                          ),
+                          {
+                            method: "PUT",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ theme: { primary: "" } }),
+                          },
+                        );
+                        if (!res.ok) throw await httpError(res);
+                        await qc.invalidateQueries({
+                          queryKey: ["school-config"],
+                        });
+                        toast.success("Back to the app's own colour");
+                      } catch {
+                        toast.error("Could not change the colour");
+                      }
+                    }}
+                  >
+                    Use the default colour
+                  </Button>
+                ) : null}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() =>
+                    sendToAgentChat({
+                      message: "Change our school colour",
+                      submit: true,
+                      openSidebar: true,
+                    })
+                  }
+                >
+                  Ask the assistant
+                </Button>
+              </div>
+            </div>
           </TabsContent>
 
           <TabsContent value="grading" className="mt-4 space-y-4">

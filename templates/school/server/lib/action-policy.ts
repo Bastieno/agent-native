@@ -116,6 +116,7 @@ export const ACTION_POLICY: Record<string, SchoolRole[]> = {
   "get-school-readiness": STAFF,
   "get-school-config": EVERYONE, // grading scale, labels — UI needs it
   "update-school-config": ADMIN,
+  "preview-school-colour": ADMIN,
   // Whether the signed-in person has the assistant right now, and why not.
   "get-my-agent-access": EVERYONE,
   // AI apps connected to the school: your own, or everyone's for an admin.

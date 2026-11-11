@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/sheet";
 import { Switch } from "@/components/ui/switch";
 import { STARTER_CREDITS } from "@shared/credits";
+// tabs:local — the console is one page and opens on Schools each visit
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 /**

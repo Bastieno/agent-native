@@ -6,6 +6,7 @@ import { SchoolTheme } from "@/components/SchoolTheme";
 import { AdminSidebar } from "@/components/layout/AdminSidebar";
 import { AssistantSetupCard } from "@/components/settings/AssistantKey";
 import { PortalShell } from "@/components/layout/PortalShell";
+import { ColourPreviewBar } from "@/components/ColourPreviewBar";
 import { SetupGate } from "@/components/layout/SetupGate";
 import { useReadiness } from "@/hooks/use-readiness";
 import { useRole } from "@/hooks/use-role";
@@ -146,6 +147,7 @@ export default function AdminLayout() {
       }
     >
       <SchoolTheme />
+      <ColourPreviewBar />
       <PortalShell
         sidebar={<AdminSidebar />}
         drawerSidebar={<AdminSidebar showAgentToggle={false} />}

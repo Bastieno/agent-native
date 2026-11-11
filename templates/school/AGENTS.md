@@ -234,7 +234,7 @@ Cover at least:
 | Activities  | How each subject is usually assessed (see `manage-activity-blueprints`)               |
 | People      | What learners and staff are called, and how learners are identified                   |
 | Words       | What a piece of work is called, singular **and** plural — "homework" stays "homework" |
-| Branding    | Primary colour (a hex code is fine — convert it), logo, display name                  |
+| Branding    | Primary colour (send a hex code as it is), logo, display name                         |
 
 Then write the answers where they belong:
 
@@ -364,6 +364,20 @@ a school that marks Mathematics on method rather than answers will say so, and
 that belongs in the blueprint before the first worksheet exists.
 
 **Important**: The school defines its own grade structure. Never hardcode "Grade 9–12". Ask them what they use.
+
+**The school's colour: show it first.** Call `preview-school-colour` with the
+colour before changing anything. The app recolours for that person alone, with a
+Keep and Undo bar, and nothing is saved. Tell them it is showing and ask whether
+to keep it; if they are not looking at the app (their own AI app), give them the
+`link` from the result, which opens their school in that colour. Save the colour
+only when they say to keep it, or when they press Keep themselves.
+
+Send a hex code as given (`--theme '{"primary":"#1d6b3a"}'`);
+the app converts it and picks readable text for it, and refuses anything it cannot
+paint with (a colour name, an out-of-range number) before saving. A very dark or
+very light colour is saved with a warning in `notes`: pass it on. To undo a
+change, send an empty `primary` and the app's own colour returns; an admin can do
+the same from Settings, Branding. Offer that when someone says they do not like it.
 
 ### A1a. Showing setup progress
 

@@ -163,6 +163,50 @@ export const CAPABILITIES: Capability[] = [
     added: "2026-09-01",
   },
   {
+    id: "admin-branding",
+    roles: ["admin"],
+    group: "Setting up",
+    title: "Change your school's colour and crest",
+    summary:
+      "The app wears your school's own colour, crest and name. The colour and the displayed name are set by asking the assistant; the crest is a file you choose yourself.",
+    steps: [
+      "To change the colour, ask the assistant, for example 'Make our school colour green', or give it a hex code such as #1d6b3a.",
+      "To change the name shown at the top, ask the assistant for the display name you want.",
+      "To add or replace the crest, open Settings, then Branding, and choose the image file.",
+      "The change shows for everyone in your school straight away, and only your school.",
+    ],
+    where: { admin: "/admin/settings?tab=branding" },
+    actions: [
+      "update-school-config",
+      "set-school-logo",
+      "preview-school-colour",
+    ],
+    starters: [
+      {
+        label: "Change our colour",
+        text: "Change our school colour to [colour or hex code].",
+      },
+      {
+        label: "Change the display name",
+        text: "Show our school as [name] at the top of the app.",
+      },
+    ],
+    keywords: [
+      "colour",
+      "color",
+      "primary colour",
+      "brand",
+      "branding",
+      "theme",
+      "crest",
+      "logo",
+      "display name",
+      "school name",
+      "look",
+    ],
+    added: "2026-11-11",
+  },
+  {
     id: "admin-staff",
     roles: ["admin"],
     group: "People",
