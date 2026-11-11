@@ -94,6 +94,9 @@ const LOADED_FOR_STAFF = new Set([
   "get-help",
   "get-school-config",
   "check-school-setup",
+  // The first-steps checklist: asked for by name ("show me my setup
+  // checklist"), and shown to the person as it is.
+  "get-school-readiness",
   "get-school-attention",
   // The classes behind "lesson notes not ready": a short question reaches for
   // it, and a model that has to search for it answers from help text instead.

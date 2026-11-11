@@ -72,12 +72,11 @@ assert.equal(nextStep(partway), "terms");
 assert.equal(nextStep(all), null);
 assert.equal(progressSummary(partway), "1 of 4 first steps done");
 const text = checklistText(partway);
-assert.ok(text.startsWith("- ✓ Year groups"));
-assert.equal(text.split("\n").length, 4, "one line per step");
-assert.ok(
-  text.split("\n").every((l) => l.startsWith("- ")),
-  "a markdown list",
-);
+assert.ok(text.startsWith("✓ Year groups"));
+// One step per paragraph, so chat shows each on its own line, with no bullet
+// beside the tick or circle.
+assert.equal(text.split("\n\n").length, 4, "one paragraph per step");
+assert.ok(!/^- /m.test(text), "no bullet");
 assert.ok(
   text.includes("○ Terms for this academic year (next) — opens the Calendar"),
 );
