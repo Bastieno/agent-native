@@ -15,8 +15,8 @@ export async function storeMoniepointEvent(
 ): Promise<{ stored: boolean; day: string }> {
   const day = lagosDay(e.occurredAt);
   const seen = await rows(
-    `SELECT id FROM moniepoint_events WHERE webhook_id = ?`,
-    [e.webhookId],
+    `SELECT id FROM moniepoint_events WHERE org_id = ? AND webhook_id = ?`,
+    [orgId, e.webhookId],
   );
   if (seen.length) return { stored: false, day };
   try {
