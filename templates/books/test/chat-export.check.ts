@@ -91,4 +91,43 @@ await check("a pending receipt becomes an expense", async () => {
   assert.equal(row.source, "history");
   assert.equal((await asOwner(() => listPending.run({}))).receipts.length, 2);
 });
+await check("receipts arrive in small batches", async () => {
+  const queue = (await import("../actions/queue-history-receipts.js")).default;
+  const receipt = (n: number) => ({
+    sentAt: `2026-11-0${n}T10:00:00.000Z`,
+    note: null,
+    fileName: `r${n}.jpg`,
+    mimeType: "image/jpeg",
+    dataBase64: Buffer.from(`receipt ${n}`).toString("base64"),
+  });
+  const r = await asOwner(() =>
+    queue.run({ receipts: [receipt(1), receipt(2)] }),
+  );
+  assert.equal(r.queued, 2);
+  assert.equal(
+    (await asOwner(() => queue.run({ receipts: [receipt(1)] }))).alreadyQueued,
+    1,
+  );
+  await assert.rejects(() =>
+    asOwner(() =>
+      queue.run({
+        receipts: Array.from({ length: 11 }, (_, i) => receipt((i % 9) + 1)),
+      }),
+    ),
+  );
+  await assert.rejects(
+    () =>
+      asOwner(() =>
+        queue.run({ receipts: [{ ...receipt(3), mimeType: "text/html" }] }),
+      ),
+    /Only images and PDFs/,
+  );
+});
+await check("the export reader runs without Node's Buffer", async () => {
+  const src = (await import("node:fs")).readFileSync(
+    "shared/chat-export.ts",
+    "utf8",
+  );
+  assert.doesNotMatch(src, /Buffer\./);
+});
 await finish();

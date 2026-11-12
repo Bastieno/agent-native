@@ -47,6 +47,7 @@ import {
   receiptUrl,
   shortDay,
 } from "@/lib/books";
+import { readChatExport } from "@shared/chat-export";
 
 export function meta() {
   return [{ title: "Expenses · Books" }];
@@ -71,19 +72,47 @@ function HistoryUpload() {
   async function upload(file: File) {
     const id = toast.loading("Reading the chat export…");
     try {
-      const res = await fetch("/api/books/history-upload", {
-        method: "POST",
-        body: file,
-        headers: { "Content-Type": "application/zip" },
-      });
-      if (!res.ok)
-        throw new Error(
-          (await res.json().catch(() => ({})))?.statusMessage ??
-            `HTTP ${res.status}`,
+      // Unzip here and send the receipts a few at a time: hosted servers cap
+      // request size well below a chat export with media.
+      const messages = readChatExport(new Uint8Array(await file.arrayBuffer()));
+      const receipts = messages
+        .filter(
+          (m) =>
+            m.attachment &&
+            /^(image\/|application\/pdf)/.test(m.attachment.mimeType),
+        )
+        .map((m) => ({ sentAt: m.at, note: m.text || null, ...m.attachment! }));
+      let queued = 0;
+      let already = 0;
+      for (let i = 0; i < receipts.length; i += 5) {
+        toast.loading(
+          `Loading receipts ${i + 1}–${Math.min(i + 5, receipts.length)} of ${receipts.length}…`,
+          { id },
         );
-      const r = (await res.json()) as { queued: number; alreadyQueued: number };
+        const res = await fetch(
+          "/_agent-native/actions/queue-history-receipts",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Agent-Native-CSRF": "1",
+            },
+            body: JSON.stringify({ receipts: receipts.slice(i, i + 5) }),
+          },
+        );
+        if (!res.ok)
+          throw new Error(
+            (await res.json().catch(() => ({})))?.error ?? `HTTP ${res.status}`,
+          );
+        const r = (await res.json()) as {
+          queued: number;
+          alreadyQueued: number;
+        };
+        queued += r.queued;
+        already += r.alreadyQueued;
+      }
       toast.success(
-        `${r.queued} old receipts ready to read${r.alreadyQueued ? ` (${r.alreadyQueued} already in)` : ""}. Read them from Today.`,
+        `${queued} old receipts ready to read${already ? ` (${already} already in)` : ""}. Read them from Today.`,
         { id },
       );
       qc.invalidateQueries({ queryKey: ["action"] });
