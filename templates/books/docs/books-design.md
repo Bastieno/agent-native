@@ -27,7 +27,34 @@ whether money recorded as received actually arrived, where cash went, what
 was given away, or which costs are growing. The partner, who co-owns both
 businesses, sees none of it.
 
-### What the inventory export contains
+### What Moniebook exports
+
+Moniebook (the inventory app's web dashboard, `moniebook.moniepoint.com`)
+exports several reports as CSV. Three are used:
+
+| Report             | Grain                         | Gives Books                                                    | Sent                                        |
+| ------------------ | ----------------------------- | -------------------------------------------------------------- | ------------------------------------------- |
+| **Sales summary**  | One row per order             | Every sale, its items, payment parts, references, change       | Daily                                       |
+| **Payment method** | One row per method, for range | Amount and count per method, with split parts counted per part | Daily                                       |
+| **Sales by item**  | One row per item, for range   | Each item's **category** and **cost of items**                 | Weekly, and whenever items or prices change |
+
+Sales by category is not needed: it is the item report summed by category.
+
+**Date ranges end at the start of the end date.** A range of "Nov 1, 12:00
+AM → Nov 10, 12:00 AM" covers 1–9 Nov. One day is exported as that day
+12:00 AM → the next day 12:00 AM. The file name carries the range
+(`payment-method-report-2026-11-01-2026-11-10.csv`); Books reads the end as
+exclusive and then checks the file against the sales summary for the same
+days (see Reconciliation), so a mis-set range is caught, not counted.
+
+Checked on 1–9 Nov: the payment method report's Bank Transfer row (105
+payments, ₦524,300) is the 59 single-method transfers (₦309,900) plus the 46
+transfer parts of split orders (₦214,400); its Cash row (34, ₦34,500) is 17
+cash sales (₦28,400) plus 17 cash parts of splits (₦6,100). The item report's
+units (465) and gross sales (₦1,062,900) equal the sales summary's completed
+orders exactly, and include The House, Subscription Perk and Leakages.
+
+### What the sales summary contains
 
 A sample export (1–10 Nov 2026, 175 orders) settles the shape. It is one row
 per order with these columns, among others:
@@ -41,6 +68,8 @@ per order with these columns, among others:
 | `staffName`          | Who rang the sale                                                              |
 | `customerName`       | Sometimes set (hub subscribers)                                                |
 | `total`              | Order total in naira                                                           |
+| `collectedAmount`    | What the customer paid; more than `total` when they overpaid                   |
+| `change`             | Cash handed back from the till for an overpayment                              |
 | `paymentMode`        | `REGULAR` (one method) or `SPLIT` (several)                                    |
 | `paymentMethodNames` | Comma-separated, e.g. `Bank Transfer, Cash`                                    |
 | `paymentDetails`     | `\|\|`-separated per payment: transfer reference, bank, sender; card RRN, etc. |
@@ -60,41 +89,62 @@ Payment methods seen, and what each means:
 | Subscription Perk | Free meal for a monthly Hub subscriber                                  | Not income; Hub cost |
 | Leakages          | Recorded loss                                                           | Not income           |
 
-Two facts in the sample shape the design:
+Four facts in the samples shape the design:
 
 1. **Payment method does not decide the business.** A Hub night subscription
-   was paid by Bank Transfer to Moniepoint. The business comes from the item.
-2. **Split payments carry no per-leg amounts.** A `SPLIT` order is paid in
-   several parts: two or three bank transfers adding up to the sale, or
-   transfers plus cash. The export gives the order total and each
-   transfer's reference, but not how much each part was. The Moniepoint feed
-   supplies each transfer's amount. In the sample, 33 of 175 orders are
-   split: 14 by two or three transfers with no cash (₦109,400), 17 by one
-   transfer plus cash, and 2 by two transfers plus cash.
+   was paid by Bank Transfer to Moniepoint. The business comes from the
+   item's category: `Subscription` is the Hub; Drinks, Shawarma, Meals and
+   Water are the Lounge.
+2. **Split payments carry no per-part amounts per order.** A `SPLIT` order is
+   paid in several parts: two or three bank transfers adding up to the sale,
+   or transfers plus cash. The sales summary gives the order total and each
+   transfer's reference, but not how much each part was. In the sample, 33
+   of 175 orders are split: 14 by two or three transfers with no cash
+   (₦109,400), 17 by one transfer plus cash, and 2 by two transfers plus cash.
+   The **payment method report** gives the day's totals per method with
+   split parts included, so the day's cash is exact without the feed; the
+   **Moniepoint feed** gives each transfer's amount, so each order can be
+   checked.
+3. **Overpayments are returned in cash.** When a customer transfers more than
+   the bill, the cashier hands the difference back from the till, recorded
+   in `change`. In 1–9 Nov: ₦4,900 on 2 Nov and ₦300 on 6 Nov, both on
+   transfer-paid orders. Cash left in the till is cash collected minus change.
+4. **Cost is known per item.** The item report's cost of items divided by
+   units sold gives each item's unit cost, so free items, leakages and gross
+   profit can be valued at cost. Hub items carry a cost too (e.g. ₦20,000 per
+   monthly plan); Books treats it as the Hub's direct cost, as Moniebook does.
 
 ## Decisions taken
 
-| Question                          | Answer                                                                                                          |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Where it lives                    | New template `templates/books/`, same structure as `templates/school/`                                          |
-| Who uses it                       | One org: owner (edits) and partner (reads everything, changes nothing)                                          |
-| Businesses                        | Restaurant & Lounge, Hub — stored as rows, editable, not hardcoded                                              |
-| Business of a sale                | From the item, via an item → business map; new items are asked about once                                       |
-| Sales source                      | The inventory CSV export, sent to the WhatsApp number or uploaded in the app                                    |
-| Re-sending an export              | Safe: orders upsert by `orderNumber`; later files update status (cancellations, refunds)                        |
-| Logging in to Moniepoint as a bot | Not built — OTP and device checks break it, it needs the banking password, and likely breaks Moniepoint's terms |
-| Moniepoint data                   | Moniepoint's official signed webhook feed, matched to sales by reference                                        |
-| If transfers aren't in the feed   | Fallback: Moniepoint account statement export sent to the WhatsApp number weekly, parsed the same way           |
-| Expense source                    | Photos/PDFs/short texts sent to a WhatsApp Business (Cloud API) number                                          |
-| Expense business and category     | Agent guesses from the receipt; owner corrects by reply or in the app                                           |
-| Subscription Perk                 | Valued at menu price and charged to the Hub as a cost                                                           |
-| Accepted manually                 | Moniepoint income; matched to an unlinked Moniepoint transfer by amount and time, else flagged                  |
-| Opay                              | Reported as recorded; no feed. A statement upload can be added later like the Moniepoint fallback               |
-| Who computes figures              | Code. The agent writes commentary from computed figures and never does arithmetic of its own                    |
-| Digest delivery                   | WhatsApp summary + link, email, and a Reports page in the app                                                   |
-| Digest times (Africa/Lagos)       | Daily 08:00 for the previous day; weekly Monday 08:00; monthly on the 1st at 08:00                              |
-| History                           | Older exports uploaded once; old WhatsApp group exported once (with media) and read as receipts                 |
-| Customer data                     | Stored in the app; never shown in digests                                                                       |
+| Question                          | Answer                                                                                                            |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Where it lives                    | New template `templates/books/`, same structure as `templates/school/`                                            |
+| Who uses it                       | One org: owner (edits) and partner (reads everything, changes nothing)                                            |
+| Businesses                        | Restaurant & Lounge, Hub — stored as rows, editable, not hardcoded                                                |
+| Business of a sale                | From the item's Moniebook category, via an editable category → business map (Subscription → Hub, others → Lounge) |
+| Item with no category             | The agent picks a category from the name (e.g. Heineken Can → Drinks); counted at once, shown for confirmation    |
+| Item not yet in any item report   | Same as no category; its cost is unknown until the next item report, and gross profit says so                     |
+| Sales sources                     | Sales summary and payment method report daily; Sales by item weekly — sent to WhatsApp or uploaded                |
+| Date ranges                       | End date is exclusive; every file is checked against the sales summary for the same days                          |
+| Cost of goods                     | Unit cost from the latest item report on or before the sale's day                                                 |
+| Change                            | Paid from the till; subtracted from cash                                                                          |
+| Scheduled email from Moniebook    | Unknown whether Moniebook can; not built. If it can, an email intake can be added later                           |
+| Re-sending an export              | Safe: orders upsert by `orderNumber`; later files update status (cancellations, refunds)                          |
+| Logging in to Moniepoint as a bot | Not built — OTP and device checks break it, it needs the banking password, and likely breaks Moniepoint's terms   |
+| Moniepoint data                   | Moniepoint's official signed webhook feed, matched to sales by reference                                          |
+| If transfers aren't in the feed   | Fallback: Moniepoint account statement export sent to the WhatsApp number weekly, parsed the same way             |
+| Expense source                    | Photos/PDFs/short texts sent to a WhatsApp Business (Cloud API) number                                            |
+| Expense business and category     | Agent guesses from the receipt; owner corrects by reply or in the app                                             |
+| Subscription Perk                 | Valued at cost and charged to the Hub as a cost; menu value shown alongside                                       |
+| The House, Leakages               | Not income; valued at cost, with menu value shown alongside                                                       |
+| Trends                            | Every digest has "Going well" and "To watch", computed in code, written up by the agent                           |
+| Accepted manually                 | Moniepoint income; matched to an unlinked Moniepoint transfer by amount and time, else flagged                    |
+| Opay                              | Reported as recorded; no feed. A statement upload can be added later like the Moniepoint fallback                 |
+| Who computes figures              | Code. The agent writes commentary from computed figures and never does arithmetic of its own                      |
+| Digest delivery                   | WhatsApp summary + link, email, and a Reports page in the app                                                     |
+| Digest times (Africa/Lagos)       | Daily 08:00 for the previous day; weekly Monday 08:00; monthly on the 1st at 08:00                                |
+| History                           | Older exports uploaded once; old WhatsApp group exported once (with media) and read as receipts                   |
+| Customer data                     | Stored in the app; never shown in digests                                                                         |
 
 ## Data
 
@@ -103,19 +153,28 @@ through `accessFilter` / `resolveAccess`, and written through
 `assertAccess`. Amounts are stored as integer kobo to avoid rounding.
 
 - **`businesses`** — `id`, `name`, `slug` (`lounge`, `hub`).
+- **`item_categories`** — `name` (as in Moniebook), `businessId`. Seeded:
+  Subscription → Hub; Drinks, Shawarma, Meals, Water → Lounge. A new
+  category name is assigned by the agent and shown for confirmation.
 - **`items`** — every item name ever seen: `name` (as in the export),
-  `businessId` (null until known), `source` (`rule` / `agent` / `owner`).
-  Seeded rules: names containing _subscription_, _hub_, _hour_, _full day_,
-  _weekend plan_, _weekly plan_ → Hub. Any other new name goes to the agent,
-  which assigns obvious food and drink to the Lounge (`source = agent`) and
-  leaves the rest unassigned for the owner.
+  `categoryId` (null until known), `categorySource` (`moniebook` / `agent` /
+  `owner`), `confirmed` (false for agent guesses until the owner confirms).
+  Business follows from the category.
+- **`item_costs`** — `itemId`, `unitCost`, `effectiveFrom` (the item
+  report's start day), `importId`. A sale line's cost is the latest row with
+  `effectiveFrom` ≤ the sale's day.
 - **`sales`** — one row per order: `orderNumber` (unique), `orderedAt`, `branchName`,
   `status`, `refundAmount`, `staffName`, `customerName`, `total`,
-  `paymentMode`, `importId`. Cancelled orders are kept but excluded from
-  totals.
+  `collectedAmount`, `change`, `paymentMode`, `importId`. Cancelled orders
+  are kept but excluded from totals.
+- **`payment_method_totals`** — one row per method per imported range:
+  `rangeStart`, `rangeEnd` (exclusive), `method`, `payments`, `collected`,
+  `refunded`, `net`, `importId`. Only single-day ranges feed the daily cash
+  figure; longer ranges are used for checks only.
 - **`sale_lines`** — `saleId`, `itemId`, `quantity`, `unitPrice`,
-  `lineTotal`, `businessId` (copied from the item at import, re-resolved when
-  the item is assigned later).
+  `lineTotal`. Business and cost are resolved at reconciliation time from
+  the item's category and `item_costs`, so a later category change or item
+  report re-prices past days on the next reconciliation.
 - **`sale_payments`** — one row per payment inside an order: `saleId`,
   `method`, `reference` (transfer `<id>` or card RRN), `amount` (known for
   single-method orders; null for split legs until reconciled), `bank`,
@@ -181,12 +240,28 @@ The webhook only queues the message; nothing is imported inside it.
 - Single-method orders get one `sale_payments` row with `amount = total`.
   Split orders get one row per leg with the reference where present and
   `amount` null.
-- New item names are assigned by rule or by the agent. Any it cannot place
-  stay unassigned, and Books messages the owner once per import listing them
-  ("New items: _More_ — Hub or Lounge?"); the reply assigns them. Sales with
-  unassigned items count under "Unassigned" until then.
+- An item name not yet known is created without a category. The agent picks
+  one from the name (Heineken Can → Drinks) as an unconfirmed guess, which
+  counts at once and appears in the review queue. A name it cannot place
+  ("More") is asked about on WhatsApp; until answered its sales count under
+  "Unassigned".
 - A file whose headers don't match is rejected with a message naming the
   missing columns.
+
+### The payment method and item reports
+
+Sent the same way. Books tells the three files apart by their header row,
+not their name. `import-payment-method-report` and `import-item-report`
+read the range from the file name (end exclusive); if the name carries no
+range, the agent asks for it.
+
+- **Payment method report**: one `payment_method_totals` row per method.
+- **Item report**: for each item, set its category (`categorySource =
+moniebook`, confirmed — overriding an agent guess) and add an `item_costs`
+  row with `unitCost = cost of items ÷ total sold` when units sold > 0. An
+  item with an empty category gets an agent guess as above. Category names
+  not in `item_categories` are added and assigned by the agent.
+- After either import, the covered days are re-reconciled.
 
 ### Moniepoint feed
 
@@ -233,17 +308,35 @@ over the day's rows, so it is testable without a database.
      unpaid amounts don't add up to it.
 3. **Accepted manually.** Each is matched to an unlinked Moniepoint event of
    the same amount within ±2 hours; ties pick the nearest time.
-4. **Cash.** Cash sales plus the cash part of split orders from step 2.
-5. **Expected cash in hand** = day's cash income − expenses with
-   `paidWith = cash`.
-6. **Not income.** The House, Subscription Perk and Leakages totals per
-   business and per staff member. Perk value is added to Hub costs.
-7. **Flags.**
+4. **Cash collected.** From the day's payment method report when one covers
+   exactly that day: its Cash `collected`. Otherwise cash sales plus the cash
+   part of split orders from step 2 (unknown if any part is unknown).
+5. **Expected cash in till** = cash collected − the day's `change` (sales
+   summary) − expenses with `paidWith = cash`.
+6. **File cross-checks.** For a day with a payment method report: the sum of
+   its methods' `collected` must equal the sales summary's completed
+   `collectedAmount`; single-method totals per method must not exceed the
+   report's figure for that method; and where the Moniepoint feed has every
+   transfer of the day, the report's Bank Transfer total must equal them.
+   For an item report: its gross sales must equal the sales summary's
+   completed totals over the same days. Any mismatch is flagged as "files
+   don't agree" with both figures — usually a wrong date range.
+7. **Cost and gross profit.** Each completed line's cost = quantity × unit
+   cost. Gross profit per business = income − cost of goods sold (paid lines
+   only) − cost of The House, Leakages and Subscription Perk lines. Lines
+   whose item has no cost yet are counted with cost unknown, and the figure
+   says how much revenue that covers.
+8. **Not income.** The House, Subscription Perk and Leakages at cost and at
+   menu value, per business and per staff member. Perk cost is charged to
+   the Hub.
+9. **Flags.**
    - Moniepoint money with no sale against it (possible unrecorded sale).
    - A sale whose transfer reference never arrived (possible fake or failed
      transfer).
    - Accepted manually with no matching transfer.
    - Split orders whose transfers fall short of, or exceed, the total.
+   - Files that don't agree (step 6).
+   - Unconfirmed category guesses and items with no cost.
    - Orders cancelled after completion, with who cancelled.
    - The House or Leakages above the daily threshold.
    - Any expense above the large-expense threshold.
@@ -259,14 +352,40 @@ what happened, what to look at — quoting only numbers it was given. The
 digest is saved before it is sent, so a failed delivery never loses a
 report.
 
-- **Daily** (08:00, previous day): net per business and combined; income by
-  method; the 5 largest expenses; reconciliation results and flags; count of
-  receipts awaiting review.
+- **Daily** (08:00, previous day): income, gross profit and net (after
+  expenses) per business and combined; income by method; expected cash in
+  till; the 5 largest expenses; reconciliation results and flags; count of
+  items awaiting review.
 - **Weekly** (Monday 08:00): the same for the week; change on the previous
-  week; best and worst sellers per business; sales and The House / Leakages
-  per staff member; categories that rose.
-- **Monthly** (1st, 08:00): P&L per business and combined; category trend
-  over 3 months; Hub subscription income by plan; margin trend.
+  week; best and worst sellers per business by gross profit; sales and The
+  House / Leakages per staff member; categories that rose.
+- **Monthly** (1st, 08:00): P&L per business and combined (income, cost of
+  goods, gross profit, expenses, net); margin by Moniebook category; expense
+  category trend over 3 months; Hub subscription income by plan; margin
+  trend.
+
+### Trends: going well and to watch
+
+Every digest ends with two short lists. The signals are computed in
+`server/lib/trends.ts`; the agent words them and picks at most three of each,
+largest first. Comparisons: daily against the same weekday's 4-week average;
+weekly against the previous week and the 4-week average; monthly against the
+previous month.
+
+- **Going well**: a business's income or gross profit up by 10% or more; a
+  category's margin up by 2 points or more (e.g. Shawarma 34.4% in 1–9 Nov
+  against 32.6% over 30 days); a best day, week or month since records
+  began; new Hub subscribers or renewals (customers on Subscription items
+  not seen in the previous 30 days, and those seen again); an expense
+  category down by 10% or more; a run of 3+ days with no reconciliation
+  flags.
+- **To watch**: the same measures moving the other way by the same amounts;
+  The House or Leakages up on the comparison; expenses growing faster than
+  income; the weakest weekday by income for the period; an item selling
+  more while its margin falls.
+
+Customer names are used only to count new and returning subscribers; the
+digest shows counts, never names.
 
 If no export covering the previous day has arrived by 08:00, the owner gets a
 reminder instead of a daily digest, and the digest is sent when the export
@@ -289,7 +408,7 @@ Following the template UX rules — one focused surface each, secondary
 actions behind menus.
 
 - **Today** — latest digest, flags, and the review queue (receipts to
-  confirm, items to assign).
+  confirm, category guesses to confirm, items with no cost).
 - **Expenses** — list with filters; a row opens a sheet with the receipt
   image and editable fields.
 - **Sales** — totals by business and method for a chosen period; import
@@ -306,23 +425,26 @@ digest, so the agent knows what the user is looking at.
 All in `actions/` with `defineAction`, used by the agent, the UI and the
 WhatsApp handler alike. Writes require the owner role.
 
-| Action                         | Purpose                                              |
-| ------------------------------ | ---------------------------------------------------- |
-| `import-sales-export`          | Parse and upsert an inventory CSV                    |
-| `import-sales-from-whatsapp`   | Fetch a CSV sent on WhatsApp and import it           |
-| `import-moniepoint-statement`  | Fallback: load Moniepoint transfers from a statement |
-| `import-whatsapp-history`      | Load past receipts from a chat export                |
-| `record-expense-from-receipt`  | Save an expense read from a receipt                  |
-| `record-expense`               | Save an expense from fields or a short text          |
-| `update-expense`               | Change business, category, amount, status            |
-| `list-expenses` / `list-sales` | Filtered lists                                       |
-| `assign-item`                  | Set an item's business                               |
-| `reconcile-day`                | Recompute a day's reconciliation                     |
-| `build-digest`                 | Compute figures and commentary for a period          |
-| `send-digest`                  | Deliver a saved digest                               |
-| `get-digest` / `list-digests`  | Read reports                                         |
-| `update-settings`              | Thresholds, recipients, times                        |
-| `view-screen` / `navigate`     | Context and navigation                               |
+| Action                         | Purpose                                                          |
+| ------------------------------ | ---------------------------------------------------------------- |
+| `import-sales-export`          | Parse and upsert an inventory CSV                                |
+| `import-sales-from-whatsapp`   | Fetch a CSV sent on WhatsApp, detect which report, and import it |
+| `import-payment-method-report` | Load a payment method report                                     |
+| `import-item-report`           | Load categories and unit costs from Sales by item                |
+| `set-item-category`            | Confirm or change an item's category                             |
+| `set-category-business`        | Map a Moniebook category to a business                           |
+| `import-moniepoint-statement`  | Fallback: load Moniepoint transfers from a statement             |
+| `import-whatsapp-history`      | Load past receipts from a chat export                            |
+| `record-expense-from-receipt`  | Save an expense read from a receipt                              |
+| `record-expense`               | Save an expense from fields or a short text                      |
+| `update-expense`               | Change business, category, amount, status                        |
+| `list-expenses` / `list-sales` | Filtered lists                                                   |
+| `reconcile-day`                | Recompute a day's reconciliation                                 |
+| `build-digest`                 | Compute figures and commentary for a period                      |
+| `send-digest`                  | Deliver a saved digest                                           |
+| `get-digest` / `list-digests`  | Read reports                                                     |
+| `update-settings`              | Thresholds, recipients, times                                    |
+| `view-screen` / `navigate`     | Context and navigation                                           |
 
 ## Access
 
@@ -340,16 +462,21 @@ WhatsApp handler alike. Writes require the owner role.
    webhook subscription to Books' URL; signing secret.
 3. Email sender.
 4. Owner and partner phone numbers and emails.
-5. First import: recent export and, optionally, the old WhatsApp group.
+5. First import: a recent item report (categories and costs), then sales
+   summaries and payment method reports, and optionally the old WhatsApp
+   group.
 
 ## Testing
 
-- **Fixture**: the sample export with customer names, sender names and
-  account digits replaced by fakes, at `test/fixtures/sales-sample.csv`. The
-  raw export is never committed.
+- **Fixtures**: the 1–10 Nov sales summary with customer names, sender names
+  and account digits replaced by fakes (`test/fixtures/sales-sample.csv`),
+  and the 1–9 Nov payment method and item reports, which carry no personal
+  data (`payment-method-sample.csv`, `item-sample.csv`). Raw exports with
+  personal data are never committed.
 - **Checks** (`test/*.check.ts`): export parsing (quoted fields, split
-  payments, multi-item orders, cancellations, re-import upsert); item →
-  business rules; reconciliation (reference match, multi-transfer splits short and over, split cash, accepted
+  payments, multi-item orders, cancellations, re-import upsert, change);
+  report detection by header; date-range cross-checks; categories and unit
+  costs; gross profit; trends; reconciliation (reference match, multi-transfer splits short and over, split cash, accepted
   manually, unmatched in both directions); digest figures to the naira for
   the fixture's ten days; webhook signature and dedupe; role refusal for the
   partner.
@@ -359,7 +486,8 @@ WhatsApp handler alike. Writes require the owner role.
 
 ## Not in this version
 
-- Stock levels and cost of goods (the export has no cost prices).
+- Stock levels (Moniebook has inventory and stock-movement reports; not used
+  yet).
 - Opay feed.
 - More than one branch (the export has one; `branchName` is stored
   so a second can be added).
