@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { check, freshDatabase } from "./helpers.js";
+import { check, freshDatabase, finish } from "./helpers.js";
 
 freshDatabase("check-access");
 const { runWithRequestContext } = await import("@agent-native/core/server");
@@ -61,3 +61,4 @@ await check("setup seeds once", async () => {
   });
   assert.equal(Number((e.rows[0] as any).n), 8);
 });
+await finish();

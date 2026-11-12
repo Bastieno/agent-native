@@ -61,6 +61,7 @@ export const sales = table("sales", {
   paymentMode: text("payment_mode").notNull(), // REGULAR | SPLIT
   methods: text("methods").notNull(), // JSON string[]
   importId: text("import_id").notNull(),
+  fingerprint: text("fingerprint"),
   ...created,
   ...ownableColumns(),
 });

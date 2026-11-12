@@ -79,7 +79,6 @@ cd templates/books && pnpm action <name> [args]
 | ------------- | --------------------------------- | ------------------------------- |
 | `view-screen` |                                   | See current UI state            |
 | `navigate`    | `--view <name>` or `--path <url>` | Navigate the UI                 |
-| `hello`       | `[--name <name>]`                 | Example script                  |
 | `db-schema`   |                                   | Show all tables, columns, types |
 | `db-query`    | `--sql "SELECT ..."`              | Run a SELECT query              |
 | `db-exec`     | `--sql "INSERT ..."`              | Run INSERT/UPDATE/DELETE        |
