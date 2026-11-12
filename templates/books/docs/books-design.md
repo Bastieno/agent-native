@@ -160,16 +160,18 @@ changeset for `@agent-native/core`.
    and saves the expense as `needs_review` unless confident on all fields.
 3. A short text with an amount ("gateman 5000 cash") becomes an expense with
    no receipt.
-4. Books replies: _"Diesel ₦45,000 · Hub · Power. Reply to change."_ A reply
-   ("lounge", "that's salaries") is routed to the same expense by quoted
-   message id and updates it.
+4. Books replies: _"Power ₦45,000 · Hub · E-12. Reply to change."_ A reply
+   ("lounge", "that's salaries") is matched to the expense by its code from
+   the conversation, and updates it.
 5. Duplicate check before saving: same image hash, or same vendor + amount +
    date. On a match Books asks before adding.
 
 ### The inventory export
 
-Sent to the same number as a document, or dropped on the Sales page. Both
-call `import-sales-export`.
+Sent to the same number as a document, or dropped on the Sales page. The
+upload calls `import-sales-export`; on WhatsApp the agent calls
+`import-sales-from-whatsapp`, which fetches the file and takes the same path.
+The webhook only queues the message; nothing is imported inside it.
 
 - Parse with a CSV parser that handles quoted fields; split
   `paymentMethodNames`, `paymentDetails`, `itemNames` and `unitPrice` on
