@@ -284,6 +284,8 @@ export {
   telegramAdapter,
   whatsappAdapter,
   emailAdapter,
+  fetchIntegrationAttachment,
+  type IncomingAttachment,
   type PlatformAdapter,
   type IncomingMessage,
   type OutgoingMessage,

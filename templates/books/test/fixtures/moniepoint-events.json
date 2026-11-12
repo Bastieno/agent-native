@@ -1,0 +1,61 @@
+{
+  "purchase": {
+    "eventId": "7c1d2a10-5b1e-4c55-9d1e-2f0b7a8c9e01",
+    "eventType": "V1_POS_PURCHASE_TRANSACTION",
+    "subject": {
+      "domain": "POS",
+      "resource": "TRANSACTION",
+      "resourceId": "1001"
+    },
+    "data": {
+      "businessId": 1,
+      "businessOwnerId": 1,
+      "terminalSerial": "TEST0001",
+      "amount": 90000,
+      "transactionReference": "PUR|2026111002005594482742TMP9E7C00000000122590000",
+      "merchantReference": null,
+      "retrievalReferenceNumber": "000000001225",
+      "transactionTime": "2026-11-10T16:11:53.000+0100",
+      "transactionType": "PURCHASE",
+      "transactionStatus": "COMPLETED",
+      "responseCode": "00",
+      "responseMessage": "APPROVED",
+      "customFields": {},
+      "metaData": "{}",
+      "narration": ""
+    },
+    "createdAt": "2026-11-10T16:11:55.210365017"
+  },
+  "transfer": {
+    "eventId": "7c1d2a10-5b1e-4c55-9d1e-2f0b7a8c9e02",
+    "eventType": "V1_TRANSFER_TRANSACTION",
+    "subject": {
+      "domain": "POS",
+      "resource": "TRANSACTION",
+      "resourceId": "1002"
+    },
+    "data": {
+      "amount": 450000,
+      "transactionReference": "AP_TRSF|0000000000|2120251503250616320",
+      "retrievalReferenceNumber": "",
+      "transactionTime": "2026/11/10 22:01:28",
+      "transactionType": "TRANSFER",
+      "transactionStatus": "COMPLETED",
+      "responseCode": "00",
+      "responseMessage": "APPROVED",
+      "metaData": "{\"customerName\":\"Sender 1\"}"
+    },
+    "createdAt": "2026-11-10T22:01:30.000000000"
+  },
+  "pending": {
+    "eventId": "7c1d2a10-5b1e-4c55-9d1e-2f0b7a8c9e03",
+    "eventType": "V1_POS_PURCHASE_TRANSACTION",
+    "data": {
+      "amount": 10000,
+      "transactionReference": "PUR|X",
+      "retrievalReferenceNumber": "000000009999",
+      "transactionTime": "2026-11-10T10:00:00.000+0100",
+      "transactionStatus": "PENDING"
+    }
+  }
+}

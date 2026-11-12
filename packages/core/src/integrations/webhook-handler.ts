@@ -22,7 +22,10 @@ import {
   isLlmCredentialError,
 } from "../agent/engine/credential-errors.js";
 import type { AgentEngine } from "../agent/engine/types.js";
-import type { EngineMessage } from "../agent/engine/types.js";
+import type {
+  EngineContentPart,
+  EngineMessage,
+} from "../agent/engine/types.js";
 import { startRun, type ActiveRun } from "../agent/run-manager.js";
 import {
   buildAssistantMessage,
@@ -506,9 +509,21 @@ async function processIncomingMessage(
       ? `<integration-context>\n${identityLines.join("\n")}\n</integration-context>\n\n${incoming.text}`
       : incoming.text;
 
+  const attachmentContent = await buildAttachmentContent(incoming, adapter);
   const messages: EngineMessage[] = [
     ...existingMessages,
-    { role: "user", content: [{ type: "text", text: userText }] },
+    {
+      role: "user",
+      content: [
+        ...attachmentContent.parts,
+        {
+          type: "text",
+          text: attachmentContent.notes
+            ? `${userText}\n\n${attachmentContent.notes}`.trim()
+            : userText,
+        },
+      ],
+    },
   ];
 
   // Run agent loop via startRun, wrapped in a request context so that
@@ -788,4 +803,61 @@ async function persistThreadData(
   } catch {
     // Best-effort persistence
   }
+}
+
+const IMAGE_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/gif",
+  "image/webp",
+]);
+
+/**
+ * Turn a message's attachment references into agent content. Images and PDFs
+ * are fetched now (at processing time, never in the webhook request) and sent
+ * as content; any other file becomes a text line naming its media id, so an
+ * app action can fetch it with `fetchIntegrationAttachment`.
+ */
+async function buildAttachmentContent(
+  incoming: IncomingMessage,
+  adapter: PlatformAdapter,
+): Promise<{ parts: EngineContentPart[]; notes: string }> {
+  const parts: EngineContentPart[] = [];
+  const notes: string[] = [];
+  for (const ref of incoming.attachments ?? []) {
+    const name = ref.fileName ?? ref.kind;
+    const visual =
+      IMAGE_TYPES.has(ref.mimeType) || ref.mimeType === "application/pdf";
+    if (!visual || !adapter.fetchAttachment) {
+      notes.push(
+        `[Attached file: ${name} (${ref.mimeType}), mediaId ${ref.mediaId}]`,
+      );
+      continue;
+    }
+    try {
+      const file = await adapter.fetchAttachment(ref);
+      if (IMAGE_TYPES.has(file.mimeType)) {
+        parts.push({
+          type: "image",
+          data: file.dataBase64,
+          mediaType: file.mimeType as "image/jpeg",
+        });
+      } else {
+        parts.push({
+          type: "file",
+          data: file.dataBase64,
+          mediaType: file.mimeType,
+          filename: ref.fileName,
+        });
+      }
+      notes.push(
+        `[Attached ${ref.kind}: ${name} (${file.mimeType}), mediaId ${ref.mediaId}]`,
+      );
+    } catch (err) {
+      notes.push(
+        `[Attached ${ref.kind} could not be downloaded: ${(err as Error).message}. mediaId ${ref.mediaId}]`,
+      );
+    }
+  }
+  return { parts, notes: notes.join("\n") };
 }

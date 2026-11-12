@@ -1,0 +1,117 @@
+import { assertOwner } from "./access.js";
+
+/**
+ * Who may run each Books action.
+ *
+ * "owner"    — the owner (org owner or admin) only: anything that changes data.
+ * "everyone" — any member of the org, including the partner: reads.
+ *
+ * Every file in actions/ must appear here (test/action-policy.check.ts). An
+ * action missing from this list is refused at call time, so adding one forces
+ * a decision about its audience.
+ */
+export type Audience = "owner" | "everyone";
+
+export const ACTION_POLICY: Record<string, Audience> = {
+  "import-sales-export": "owner",
+  "import-payment-method-report": "owner",
+  "import-item-report": "owner",
+  "import-sales-from-whatsapp": "owner",
+  "import-moniebook-file": "owner",
+  "update-settings": "owner",
+  "get-today": "everyone",
+  "get-settings": "everyone",
+  "list-imports": "everyone",
+  "set-item-category": "owner",
+  "set-category-business": "owner",
+  "record-expense": "owner",
+  "record-expense-from-receipt": "owner",
+  "record-expenses-from-text": "owner",
+  "import-whatsapp-history": "owner",
+  "queue-history-receipts": "owner",
+  "list-pending-receipts": "everyone",
+  "update-expense": "owner",
+  "build-digest": "owner",
+  "save-digest-commentary": "owner",
+  "send-digest": "owner",
+  "due-digests": "owner",
+  "send-reminder": "owner",
+  "set-up-digests": "owner",
+  "get-digest": "everyone",
+  "list-digests": "everyone",
+  "list-sales": "everyone",
+  "list-expenses": "everyone",
+  "list-expense-categories": "everyone",
+  "list-items-needing-category": "everyone",
+  "reconcile-day": "everyone",
+  "view-screen": "everyone",
+  navigate: "everyone",
+};
+
+/** Not actions: the CLI entry point. */
+const NOT_ACTIONS = new Set(["run"]);
+
+export function assertPolicyCoversAllActions(names: string[]): void {
+  const missing = names.filter(
+    (n) => !NOT_ACTIONS.has(n) && !(n in ACTION_POLICY),
+  );
+  if (missing.length) {
+    throw new Error(
+      `Books actions with no policy entry: ${missing.join(", ")}. Add them to server/lib/action-policy.ts.`,
+    );
+  }
+}
+
+/** Wrap Books' actions with the role check. Covers the agent's tools and the HTTP endpoints alike. */
+export function guardActions<T extends Record<string, any>>(actions: T): T {
+  const guarded: Record<string, any> = {};
+  for (const [name, entry] of Object.entries(actions)) {
+    if (!entry || typeof entry.run !== "function") {
+      guarded[name] = entry;
+      continue;
+    }
+    guarded[name] = {
+      ...entry,
+      run: async (...args: unknown[]) => {
+        const audience = ACTION_POLICY[name];
+        if (!audience) throw new Error(`${name} is not available in Books.`);
+        if (audience === "owner") await assertOwner();
+        return entry.run(...args);
+      },
+    };
+  }
+  return guarded as T;
+}
+
+/**
+ * Framework routes a member (the partner) may call. Books' own actions are
+ * guarded above; these are the framework's extension routes, whose SQL and
+ * data endpoints write as the caller with only org scoping.
+ */
+export function memberMayCall(method: string, path: string): boolean {
+  if (!path.startsWith("/_agent-native/extensions")) return true;
+  if (method === "GET" || method === "HEAD") return true;
+  return path === "/_agent-native/extensions/sql/query";
+}
+
+const EXTENSION_READS = /^(list|get)-/;
+
+/** Wrap the framework's extension actions so the partner's agent can only read them. */
+export function guardExtensionActions<T extends Record<string, any>>(
+  entries: T,
+): T {
+  const out: Record<string, any> = {};
+  for (const [name, entry] of Object.entries(entries)) {
+    out[name] =
+      !entry || typeof entry.run !== "function" || EXTENSION_READS.test(name)
+        ? entry
+        : {
+            ...entry,
+            run: async (...args: unknown[]) => {
+              await assertOwner();
+              return entry.run(...args);
+            },
+          };
+  }
+  return out as T;
+}

@@ -21,6 +21,20 @@ export interface IncomingMessage {
   platformContext: Record<string, unknown>;
   /** Message timestamp (epoch ms) */
   timestamp: number;
+  /**
+   * Files sent with the message, as references only. Bytes are fetched with
+   * `PlatformAdapter.fetchAttachment` when the message is processed, never
+   * stored in the task queue.
+   */
+  attachments?: IncomingAttachment[];
+}
+
+export interface IncomingAttachment {
+  kind: "image" | "document";
+  /** The platform's id for the file (WhatsApp media id). */
+  mediaId: string;
+  mimeType: string;
+  fileName?: string;
 }
 
 /**
@@ -163,6 +177,14 @@ export interface PlatformAdapter {
 
   /** Return current connection/configuration status for the settings UI. */
   getStatus(baseUrl?: string): Promise<IntegrationStatus>;
+
+  /**
+   * Download a file a message referenced. Optional: adapters that never
+   * produce `IncomingMessage.attachments` leave it out.
+   */
+  fetchAttachment?(
+    ref: IncomingAttachment,
+  ): Promise<{ mimeType: string; dataBase64: string }>;
 }
 
 /**

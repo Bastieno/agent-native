@@ -1,5 +1,6 @@
 // Types
 export type {
+  IncomingAttachment,
   PlatformAdapter,
   IncomingMessage,
   OutgoingMessage,
@@ -42,6 +43,7 @@ export type {
 export { slackAdapter } from "./adapters/slack.js";
 export { telegramAdapter } from "./adapters/telegram.js";
 export { whatsappAdapter } from "./adapters/whatsapp.js";
+export { fetchIntegrationAttachment } from "./attachments.js";
 export { googleDocsAdapter } from "./adapters/google-docs.js";
 export { emailAdapter } from "./adapters/email.js";
 
