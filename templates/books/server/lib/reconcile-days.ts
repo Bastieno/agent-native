@@ -5,6 +5,9 @@ import { loadSales } from "./sales-lines.js";
 import { DEFAULT_THRESHOLDS, type Thresholds } from "./setup.js";
 import { num, rows, run } from "./sql.js";
 
+/** Days of expense history needed before a category can be said to spike. */
+const MIN_HISTORY_DAYS = 7;
+
 /** Everything reconcileDay needs for one day, read from the database. */
 export async function loadDayInput(
   orgId: string,
@@ -49,13 +52,29 @@ export async function loadDayInput(
     occurredOn: e.occurred_on,
     imageHash: e.image_hash ?? null,
   }));
+  // A category's usual daily spend: over the 4 weeks before, or since Books'
+  // first expense if that is later. Under a week of history, there is no usual
+  // level yet, so no spike can be called.
   const categoryHistory: Record<string, number> = {};
-  for (const r of await rows(
-    `SELECT category_id, SUM(amount) AS total FROM expenses
-      WHERE org_id = ? AND occurred_on >= ? AND occurred_on < ? AND category_id IS NOT NULL GROUP BY category_id`,
-    [orgId, addDays(day, -28), day],
-  )) {
-    categoryHistory[r.category_id] = Math.round(num(r.total) / 28);
+  const windowStart = addDays(day, -28);
+  const [first] = await rows(
+    `SELECT MIN(occurred_on) AS d FROM expenses WHERE org_id = ?`,
+    [orgId],
+  );
+  const from =
+    first?.d && first.d > windowStart ? (first.d as string) : windowStart;
+  const historyDays = Math.round(
+    (Date.parse(`${day}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) /
+      86_400_000,
+  );
+  if (historyDays >= MIN_HISTORY_DAYS) {
+    for (const r of await rows(
+      `SELECT category_id, SUM(amount) AS total FROM expenses
+        WHERE org_id = ? AND occurred_on >= ? AND occurred_on < ? AND category_id IS NOT NULL GROUP BY category_id`,
+      [orgId, from, day],
+    )) {
+      categoryHistory[r.category_id] = Math.round(num(r.total) / historyDays);
+    }
   }
   const report = await rows(
     `SELECT method, collected FROM payment_method_totals WHERE org_id = ? AND range_start = ? AND range_end_exclusive = ?`,

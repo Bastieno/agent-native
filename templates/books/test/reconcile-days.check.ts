@@ -90,4 +90,33 @@ await check("duplicate webhook stored once", async () => {
   );
 });
 
+await check("no cost spike without a week of history", async () => {
+  const record = (await import("../actions/record-expense.js")).default;
+  await asOwner(() =>
+    record.run({
+      occurredOn: "2026-11-01",
+      vendor: "Total",
+      amount: 20000,
+      business: "hub",
+      category: "Diesel / power",
+      paidWith: "cash",
+    }),
+  );
+  await asOwner(() =>
+    record.run({
+      occurredOn: "2026-11-02",
+      vendor: "Total",
+      amount: 25000,
+      business: "hub",
+      category: "Diesel / power",
+      paidWith: "cash",
+    }),
+  );
+  const r = await asOwner(() => reconcileDay.run({ day: "2026-11-02" }));
+  assert.ok(
+    !r.flags.some((f: any) => f.kind === "category_spike"),
+    "one day of history is not a usual level",
+  );
+});
+
 await finish();
