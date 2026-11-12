@@ -64,9 +64,13 @@ Two facts in the sample shape the design:
 
 1. **Payment method does not decide the business.** A Hub night subscription
    was paid by Bank Transfer to Moniepoint. The business comes from the item.
-2. **Split payments carry no per-method amounts.** `SPLIT` orders give the
-   order total and each transfer's reference, but not how much was transfer
-   and how much cash. The Moniepoint feed supplies the transfer amounts.
+2. **Split payments carry no per-leg amounts.** A `SPLIT` order is paid in
+   several parts: two or three bank transfers adding up to the sale, or
+   transfers plus cash. The export gives the order total and each
+   transfer's reference, but not how much each part was. The Moniepoint feed
+   supplies each transfer's amount. In the sample, 33 of 175 orders are
+   split: 14 by two or three transfers with no cash (₦109,400), 17 by one
+   transfer plus cash, and 2 by two transfers plus cash.
 
 ## Decisions taken
 
@@ -212,20 +216,32 @@ over the day's rows, so it is testable without a database.
 1. **Moniepoint match.** Every `sale_payments` row with a Moniepoint method
    and a reference is matched to a `moniepoint_events` row by reference.
    Matched split legs take the event's amount.
-2. **Accepted manually.** Each is matched to an unlinked Moniepoint event of
+2. **Split orders.** Once every transfer leg is matched, the legs are
+   summed:
+   - **Transfers only** (no Cash method): the legs should add up to the
+     order total. A shortfall is flagged as money short on that sale; an
+     excess is flagged as an overpayment (often change owed or a transfer
+     meant for another order).
+   - **Transfers plus cash**: cash is the total minus the matched legs. A
+     negative result is flagged the same way as an excess.
+   - **Any leg unmatched**: the order is flagged and its cash share or
+     shortfall is shown as unknown rather than guessed.
+   - **One reference on two orders**: allowed (one transfer paying for two
+     orders). The event's amount is shared across them, and flagged if their
+     unpaid amounts don't add up to it.
+3. **Accepted manually.** Each is matched to an unlinked Moniepoint event of
    the same amount within ±2 hours; ties pick the nearest time.
-3. **Cash.** Cash sales plus, for each split order, total minus matched
-   transfer legs. A split order with an unmatched leg is flagged and its
-   cash share is shown as unknown rather than guessed.
-4. **Expected cash in hand** = day's cash income − expenses with
+4. **Cash.** Cash sales plus the cash part of split orders from step 2.
+5. **Expected cash in hand** = day's cash income − expenses with
    `paidWith = cash`.
-5. **Not income.** The House, Subscription Perk and Leakages totals per
+6. **Not income.** The House, Subscription Perk and Leakages totals per
    business and per staff member. Perk value is added to Hub costs.
-6. **Flags.**
+7. **Flags.**
    - Moniepoint money with no sale against it (possible unrecorded sale).
    - A sale whose transfer reference never arrived (possible fake or failed
      transfer).
    - Accepted manually with no matching transfer.
+   - Split orders whose transfers fall short of, or exceed, the total.
    - Orders cancelled after completion, with who cancelled.
    - The House or Leakages above the daily threshold.
    - Any expense above the large-expense threshold.
@@ -330,7 +346,7 @@ WhatsApp handler alike. Writes require the owner role.
   raw export is never committed.
 - **Checks** (`test/*.check.ts`): export parsing (quoted fields, split
   payments, multi-item orders, cancellations, re-import upsert); item →
-  business rules; reconciliation (reference match, split cash, accepted
+  business rules; reconciliation (reference match, multi-transfer splits short and over, split cash, accepted
   manually, unmatched in both directions); digest figures to the naira for
   the fixture's ten days; webhook signature and dedupe; role refusal for the
   partner.
