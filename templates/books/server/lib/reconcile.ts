@@ -35,6 +35,8 @@ export interface DayInput {
   /** A payment method report covering exactly this day, if one was sent. */
   paymentReport: { method: string; collected: number }[] | null;
   thresholds: Thresholds;
+  /** Transfer and card references used by sales the day before and after. */
+  neighbourReferences?: string[];
 }
 
 export type Flag =
@@ -212,7 +214,10 @@ export function reconcileDay(input: DayInput): DayResult {
       });
   }
 
+  const neighbours = new Set(input.neighbourReferences ?? []);
   for (const e of input.events) {
+    // A transfer that lands just after midnight belongs to yesterday's sale.
+    if (e.reference && neighbours.has(e.reference)) continue;
     if (!matched.has(e.webhookId) && lagosDay(e.occurredAt) === day) {
       flags.push({
         kind: "moniepoint_without_sale",

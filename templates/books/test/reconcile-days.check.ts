@@ -119,4 +119,23 @@ await check("no cost spike without a week of history", async () => {
   );
 });
 
+await check(
+  "a transfer just after midnight isn't money without a sale",
+  async () => {
+    // 1-20261110220206 at 22:03 on 10 Nov paid by transfer 2120211878431797248; the event lands at 00:01 on 11 Nov.
+    await storeMoniepointEvent(
+      "org1",
+      ev("w-midnight", "2120211878431797248", 300000, "2026-11-10T23:01:00Z"),
+    );
+    const next = await asOwner(() => reconcileDay.run({ day: "2026-11-11" }));
+    assert.ok(
+      !next.flags.some(
+        (f: any) =>
+          f.kind === "moniepoint_without_sale" && f.webhookId === "w-midnight",
+      ),
+      JSON.stringify(next.flags),
+    );
+  },
+);
+
 await finish();

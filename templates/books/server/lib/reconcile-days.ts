@@ -14,6 +14,12 @@ export async function loadDayInput(
   day: string,
 ): Promise<DayInput> {
   const sales = await loadSales(orgId, day, day);
+  const neighbourReferences = [
+    ...(await loadSales(orgId, addDays(day, -1), addDays(day, -1))),
+    ...(await loadSales(orgId, addDays(day, 1), addDays(day, 1))),
+  ]
+    .filter((s) => s.status === "COMPLETED")
+    .flatMap((s) => s.legs.map((l) => l.reference).filter(Boolean) as string[]);
   const legRefs = new Set(
     sales.flatMap(
       (s) => s.legs.map((l) => l.reference).filter(Boolean) as string[],
@@ -98,6 +104,7 @@ export async function loadDayInput(
       ? report.map((r) => ({ method: r.method, collected: num(r.collected) }))
       : null,
     thresholds,
+    neighbourReferences,
   };
 }
 
