@@ -24,7 +24,10 @@ export interface ParsedLeg {
 export interface ParsedLine {
   name: string;
   quantity: number;
+  /** The item's listed price in the export: today's price, not always the price paid. */
   unitPrice: number; // kobo
+  /** This line's share of what the order actually cost; lines always add up to the total. */
+  lineTotal: number; // kobo
 }
 export interface ParsedOrder {
   orderNumber: string;
@@ -102,7 +105,34 @@ export function parseLeg(segment: string): ParsedLeg {
   return { method: s, ...empty };
 }
 
-function parseLines(itemNames: string, unitPrice: string): ParsedLine[] {
+/**
+ * Share an order's real total across its lines in proportion to their listed
+ * prices (by quantity when nothing has a price). The export lists today's
+ * prices, so an order rung up before a price change would otherwise not add up.
+ * Largest-remainder rounding keeps the shares summing to the total exactly.
+ */
+export function allocateTotal(total: number, weights: number[]): number[] {
+  const sum = weights.reduce((a, b) => a + b, 0);
+  if (!weights.length || sum <= 0) return weights.map(() => 0);
+  const exact = weights.map((w) => (total * w) / sum);
+  const out = exact.map(Math.floor);
+  let left = total - out.reduce((a, b) => a + b, 0);
+  const order = exact
+    .map((e, i) => [e - Math.floor(e), i] as const)
+    .sort((a, b) => b[0] - a[0]);
+  for (const [, i] of order) {
+    if (left <= 0) break;
+    out[i]++;
+    left--;
+  }
+  return out;
+}
+
+function parseLines(
+  itemNames: string,
+  unitPrice: string,
+  total: number,
+): ParsedLine[] {
   const prices = new Map<string, number>();
   for (const part of unitPrice.split(" | ")) {
     const at = part.lastIndexOf(" - ");
@@ -118,8 +148,16 @@ function parseLines(itemNames: string, unitPrice: string): ParsedLine[] {
       name,
       quantity: Number(m[1]),
       unitPrice: prices.get(name) ?? 0,
+      lineTotal: 0,
     });
   }
+  const listed = lines.map((l) => l.quantity * l.unitPrice);
+  const weights = listed.some((w) => w > 0)
+    ? listed
+    : lines.map((l) => l.quantity);
+  allocateTotal(total, weights).forEach((share, i) => {
+    lines[i].lineTotal = share;
+  });
   return lines;
 }
 
@@ -154,7 +192,7 @@ export function parseSalesExport(csv: string): {
       legs: r.paymentDetails.trim()
         ? r.paymentDetails.split(" || ").map(parseLeg)
         : [],
-      lines: parseLines(r.itemNames, r.unitPrice),
+      lines: parseLines(r.itemNames, r.unitPrice, amount(r.total)),
     };
   });
   return { orders, missingColumns };

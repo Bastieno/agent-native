@@ -122,7 +122,7 @@ export async function importParsedOrders(
           itemIds.get(l.name),
           l.quantity,
           l.unitPrice,
-          l.quantity * l.unitPrice,
+          l.lineTotal,
           at,
           orgId,
         ],

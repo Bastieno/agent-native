@@ -62,8 +62,13 @@ check("three-transfer split", () => {
 check("lines and prices", () => {
   const o = orders.find((o) => o.orderNumber === "1-20261110220008")!;
   assert.deepEqual(o.lines, [
-    { name: "ORIGIN BEER", quantity: 8, unitPrice: 150000 },
-    { name: "ORIGIN BITTER", quantity: 1, unitPrice: 150000 },
+    { name: "ORIGIN BEER", quantity: 8, unitPrice: 150000, lineTotal: 1200000 },
+    {
+      name: "ORIGIN BITTER",
+      quantity: 1,
+      unitPrice: 150000,
+      lineTotal: 150000,
+    },
   ]);
   assert.equal(o.day, "2026-11-10");
   assert.match(o.staffName, /^Staff \d+$/);
@@ -72,6 +77,37 @@ check("change", () => {
   const upTo9 = completed.filter((o) => o.day <= "2026-11-09");
   assert.equal(sum(upTo9.map((o) => o.change)), 520000);
   assert.equal(sum(upTo9.map((o) => o.collectedAmount)), 106810000);
+});
+check("lines add up to the order total when prices have since changed", () => {
+  const header =
+    "orderNumber,orderDate,branchName,staffName,customerName,total,collectedAmount,change,status,refundAmount,paymentMode,paymentMethodNames,paymentDetails,itemNames,unitPrice";
+  const row =
+    "1-x,2025-10-20 20:00:00,B,S,,2000.00,2000.00,0.00,COMPLETED,0.00,REGULAR,Cash,Cash Payment,1 x ORIGIN BEER | 1 x Fanta,ORIGIN BEER - 1500.00 | Fanta - 700.00";
+  const [o] = parseSalesExport(`${header}\n${row}\n`).orders;
+  assert.equal(
+    o.lines.reduce((a, l) => a + l.lineTotal, 0),
+    200000,
+  );
+  assert.deepEqual(
+    o.lines.map((l) => l.lineTotal),
+    [136364, 63636],
+  );
+  const free = parseSalesExport(
+    `${header}\n${row.replace("ORIGIN BEER - 1500.00 | Fanta - 700.00", "ORIGIN BEER - 0.00 | Fanta - 0.00")}\n`,
+  ).orders[0];
+  assert.deepEqual(
+    free.lines.map((l) => l.lineTotal),
+    [100000, 100000],
+    "no prices: split evenly",
+  );
+});
+check("every real order's lines add up to its total", () => {
+  for (const o of orders)
+    assert.equal(
+      o.lines.reduce((a, l) => a + l.lineTotal, 0),
+      o.total,
+      o.orderNumber,
+    );
 });
 check("missing column reported", () =>
   assert.equal(
