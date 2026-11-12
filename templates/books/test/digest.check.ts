@@ -69,6 +69,41 @@ await check("weekly 2–8 Nov", async () => {
   assert.equal(figures.combined.income, s.income);
   assert.ok(figures.sellers.lounge.best.length > 0);
 });
+await check("no trends against a partial week", async () => {
+  const { figures } = await asOwner(() =>
+    buildDigest.run({
+      period: "weekly",
+      start: "2026-11-02",
+      end: "2026-11-08",
+    }),
+  );
+  const kinds = figures.trends.map((t: any) => t.kind);
+  for (const k of [
+    "income",
+    "gross_profit",
+    "best_ever",
+    "category_margin",
+    "house_leakages",
+  ]) {
+    assert.ok(
+      !kinds.includes(k),
+      `compared with a week holding one day of sales: ${k}`,
+    );
+  }
+});
+await check("no new subscribers claimed without history", async () => {
+  const { figures } = await asOwner(() =>
+    buildDigest.run({
+      period: "weekly",
+      start: "2026-11-02",
+      end: "2026-11-08",
+    }),
+  );
+  assert.ok(
+    !figures.trends.some((t: any) => t.kind === "new_subscribers"),
+    "no sales before 1 Nov to tell new from returning",
+  );
+});
 let rangeId = "";
 await check("gross profit 1–9 Nov", async () => {
   const r = await asOwner(() =>
@@ -84,6 +119,11 @@ await check("gross profit 1–9 Nov", async () => {
   assert.equal(r.figures.notIncome.atCost.house, 1925000);
   assert.equal(r.figures.notIncome.atCost.perk, 810000);
   assert.equal(r.figures.notIncome.atMenu.leakages, 100000);
+  const s = await asOwner(() =>
+    listSales.run({ start: "2026-11-01", end: "2026-11-09" }),
+  );
+  assert.equal(s.grossProfit.lounge, 22754120, "Sales page and digest agree");
+  assert.equal(s.grossProfit.hub, 20390000);
 });
 await check("whatsapp text has no customer or sender names", async () => {
   const { figures } = await asPartner(() =>

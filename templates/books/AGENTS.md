@@ -28,10 +28,10 @@ Resources are SQL-backed persistent files for storing notes, learnings, and cont
 
 Ephemeral UI state is stored in the SQL `application_state` table, accessed via `readAppState(key)` and `writeAppState(key, value)` from `@agent-native/core/application-state`.
 
-| State Key    | Purpose                                   | Direction                  |
-| ------------ | ----------------------------------------- | -------------------------- |
-| `navigation` | Current view (`home`, `extensions`, etc.) | UI -> Agent (read-only)    |
-| `navigate`   | Navigate command (one-shot, auto-deleted) | Agent -> UI (auto-deleted) |
+| State Key    | Purpose                                                                                                                     | Direction                  |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| `navigation` | Current view (`today`, `expenses`, `sales`, `reports`, `settings`), plus `expenseCode`, `digestId`, `start`, `end` when set | UI -> Agent (read-only)    |
+| `navigate`   | Navigate command (one-shot, auto-deleted)                                                                                   | Agent -> UI (auto-deleted) |
 
 ## What Books is
 
@@ -49,6 +49,20 @@ owner and their business partner. The design is in `docs/books-design.md`.
   figures; do not add, subtract or estimate.
 - **Never show customer names, sender names or account numbers** in a digest,
   a WhatsApp reply or an email.
+
+## Screens
+
+| View       | Path            | What it shows                                                             | Read with                    |
+| ---------- | --------------- | ------------------------------------------------------------------------- | ---------------------------- |
+| `today`    | `/`             | Latest day per business, checks, the review queue                         | `get-today`                  |
+| `expenses` | `/expenses`     | Expenses for a range; `?expense=E-12` opens one with its receipt          | `list-expenses`              |
+| `sales`    | `/sales`        | Income, cost of goods, given away and gross profit by business; uploads   | `list-sales`, `list-imports` |
+| `reports`  | `/reports/<id>` | Saved digests                                                             | `list-digests`, `get-digest` |
+| `settings` | `/settings`     | People (recipients and WhatsApp numbers), categories, limits, connections | `get-settings`               |
+
+Move the screen with `navigate --view <view>` or `--path`. When the owner
+asks to read old receipts, the Today screen sends them to you as images with
+their `pendingReceiptId`s; record each with `record-expense-from-receipt`.
 
 ## On WhatsApp
 

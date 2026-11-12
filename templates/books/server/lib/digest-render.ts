@@ -1,13 +1,12 @@
 import { renderEmail } from "@agent-native/core/server";
 import type { DigestFigures } from "./digest-figures.js";
-import type { Signal } from "./trends.js";
 import { formatNaira as n } from "./money.js";
+import {
+  BUSINESS_NAMES as NAMES,
+  FLAG_WORDS,
+  signalText,
+} from "../../shared/labels.js";
 
-const NAMES: Record<string, string> = {
-  lounge: "Lounge",
-  hub: "Hub",
-  unassigned: "Unassigned",
-};
 const TITLES = {
   daily: "Daily",
   weekly: "Weekly",
@@ -25,54 +24,6 @@ export const periodLabel = (f: DigestFigures) =>
   f.start === f.end
     ? dateLabel(f.start)
     : `${dateLabel(f.start)}–${dateLabel(f.end)}`;
-
-const FLAG_WORDS: Record<string, string> = {
-  moniepoint_without_sale: "Moniepoint money with no sale",
-  transfer_missing: "transfers not received",
-  manual_unmatched: "'Accepted manually' with no transfer",
-  split_short: "split payments short",
-  split_over: "split payments over",
-  split_unknown: "split payments not yet checked",
-  shared_reference_mismatch: "shared transfers that don't add up",
-  cancelled: "cancelled orders",
-  house_leakages_high: "The House and leakages above the limit",
-  large_expense: "large expenses",
-  category_spike: "costs above their usual level",
-  duplicate_receipt: "possible duplicate receipts",
-  needs_review: "receipts to review",
-  files_disagree: "files that don't agree",
-  unconfirmed_category: "item categories to confirm",
-  no_cost: "items with no cost",
-};
-
-export function signalText(s: Signal): string {
-  const subject = NAMES[s.subject] ?? s.subject;
-  const pctText = `${s.change > 0 ? "+" : ""}${s.change}%`;
-  switch (s.kind) {
-    case "income":
-      return `${subject} income ${n(s.now)} (${pctText})`;
-    case "gross_profit":
-      return `${subject} gross profit ${n(s.now)} (${pctText})`;
-    case "category_margin":
-      return `${subject} margin ${s.now}% (${s.change > 0 ? "+" : ""}${s.change} pts)`;
-    case "expense_category":
-      return `${subject} spend ${n(s.now)} (${pctText})`;
-    case "house_leakages":
-      return `The House and leakages ${n(s.now)} at cost (${pctText})`;
-    case "expenses_outpace_income":
-      return `Expenses growing faster than income`;
-    case "weakest_weekday":
-      return `${subject} is the slowest day (${n(s.now)})`;
-    case "item_margin_falling":
-      return `${subject} selling more at a lower margin (${s.now}%)`;
-    case "best_ever":
-      return `Best on record: ${n(s.now)}`;
-    case "new_subscribers":
-      return `${s.now} new Hub subscriber${s.now === 1 ? "" : "s"}`;
-    case "flag_free_run":
-      return `${s.now} days in a row with every check passing`;
-  }
-}
 
 function flagSummary(f: DigestFigures): string[] {
   return Object.entries(f.flagCounts)

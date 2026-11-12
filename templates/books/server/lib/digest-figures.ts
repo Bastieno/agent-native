@@ -66,6 +66,9 @@ interface Seller {
   grossProfit: number | null;
 }
 
+/** A comparison or record period needs sales on at least this share of its days. */
+const COVERAGE = 0.8;
+
 const SIGNIFICANT = (f: Flag) =>
   !["needs_review", "unconfirmed_category", "no_cost"].includes(f.kind);
 const add = (o: Record<string, number>, k: string, v: number) => {
@@ -259,12 +262,30 @@ async function trendHistory(
         : period === "monthly"
           ? day.slice(0, 7)
           : null;
+  // Only periods with sales on most of their days count: a week holding one
+  // day of sales is not a record to beat.
   let bestEver: number | null = null;
   if (period !== "range" && incomeByDay.size) {
-    const sums = new Map<string, number>();
-    for (const [d, v] of incomeByDay)
-      sums.set(bucket(d)!, (sums.get(bucket(d)!) ?? 0) + v);
-    bestEver = Math.max(...sums.values());
+    const sums = new Map<string, { income: number; days: number }>();
+    for (const [d, v] of incomeByDay) {
+      const b = sums.get(bucket(d)!) ?? { income: 0, days: 0 };
+      b.income += v;
+      if (v > 0) b.days++;
+      sums.set(bucket(d)!, b);
+    }
+    const expected = (key: string) =>
+      period === "daily"
+        ? 1
+        : period === "weekly"
+          ? 7
+          : daysBetween(
+              `${key}-01`,
+              addDays(`${addDays(`${key}-01`, 31).slice(0, 7)}-01`, -1),
+            ).length;
+    const full = [...sums.entries()]
+      .filter(([key, b]) => b.days >= COVERAGE * expected(key))
+      .map(([, b]) => b.income);
+    if (full.length) bestEver = Math.max(...full);
   }
   // Hub subscribers: counted, never named.
   const subscribersNow = new Set<string>();
@@ -284,10 +305,18 @@ async function trendHistory(
     const seen = new Set(earlier.map((r) => r.name));
     for (const n of subscribersNow) if (seen.has(n)) returning++;
   }
+  // "New" needs the 30 days before to have been recorded; otherwise everyone looks new.
+  const [history] = await rows(
+    `SELECT COUNT(DISTINCT day) AS n FROM sales WHERE org_id = ? AND day >= ? AND day < ?`,
+    [orgId, addDays(start, -30), start],
+  );
+  const known = Number(history?.n ?? 0) >= COVERAGE * 30;
   return {
     flagFreeRun,
     bestEver,
-    subscribers: { new: subscribersNow.size - returning, returning },
+    subscribers: known
+      ? { new: subscribersNow.size - returning, returning }
+      : { new: 0, returning },
   };
 }
 
@@ -405,12 +434,19 @@ export async function digestFigures(
       if (stored) cmpDays.push(JSON.parse(stored.figures));
       cmpSales = cmpSales.concat(paidCompleted(await loadSales(orgId, d, d)));
     }
-    if (cmpDays.length) {
+    // Compare only with a period that has sales on about as many days.
+    const cmpSalesDays = new Set(cmpSales.map((x) => x.day)).size;
+    const curSalesDays = new Set(sales.map((x) => x.day)).size;
+    const comparable =
+      period === "daily"
+        ? cmpSalesDays > 0
+        : cmpSalesDays > 0 && cmpSalesDays >= COVERAGE * curSalesDays;
+    if (comparable) {
       const cmpExpenses: Record<string, number> = {};
       for (const e of await expenseRows(orgId, cmp.start, cmp.end)) {
         add(cmpExpenses, e.category ?? "Uncategorised", e.amount);
       }
-      const scale = period === "daily" ? cmpDays.length : 1;
+      const scale = period === "daily" ? cmpSalesDays : 1;
       comparison = periodStats(cmpDays, cmpSales, cmpExpenses, scale);
       if (period !== "daily")
         previous = {

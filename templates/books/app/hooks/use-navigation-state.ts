@@ -11,6 +11,11 @@ import { TAB_ID } from "@/lib/tab-id";
 export interface NavigationState {
   view: string;
   path?: string;
+  /** Selected expense code (E-12) on the Expenses page, digest id on a report. */
+  expenseCode?: string;
+  digestId?: string;
+  start?: string;
+  end?: string;
 }
 
 export function useNavigationState() {
@@ -20,9 +25,15 @@ export function useNavigationState() {
 
   // Sync current route to application state
   useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const digestMatch = location.pathname.match(/^\/reports\/([^/]+)/);
     const state: NavigationState = {
       view: viewForPath(location.pathname),
       path: appPath(location.pathname),
+      ...(params.get("expense") ? { expenseCode: params.get("expense")! } : {}),
+      ...(digestMatch ? { digestId: digestMatch[1] } : {}),
+      ...(params.get("start") ? { start: params.get("start")! } : {}),
+      ...(params.get("end") ? { end: params.get("end")! } : {}),
     };
 
     fetch(agentNativePath("/_agent-native/application-state/navigation"), {
@@ -34,7 +45,7 @@ export function useNavigationState() {
       },
       body: JSON.stringify(state),
     }).catch(() => {});
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   // Listen for navigate commands from agent
   const { data: navCommand } = useQuery({
@@ -74,24 +85,26 @@ export function useNavigationState() {
   }, [navCommand, navigate, qc]);
 }
 
+const VIEWS: Record<string, string> = {
+  today: "/",
+  expenses: "/expenses",
+  sales: "/sales",
+  reports: "/reports",
+  settings: "/settings",
+  extensions: "/extensions",
+  observability: "/observability",
+  team: "/team",
+};
+
 function viewForPath(pathname: string): string {
-  if (pathname.startsWith("/extensions")) return "extensions";
-  if (pathname.startsWith("/observability")) return "observability";
-  if (pathname.startsWith("/team")) return "team";
-  return "home";
+  if (pathname === "/") return "today";
+  for (const [view, path] of Object.entries(VIEWS))
+    if (path !== "/" && pathname.startsWith(path)) return view;
+  return "today";
 }
 
 function pathForView(view?: string): string {
-  switch (view) {
-    case "extensions":
-      return "/extensions";
-    case "observability":
-      return "/observability";
-    case "team":
-      return "/team";
-    default:
-      return "/";
-  }
+  return (view && VIEWS[view]) || "/";
 }
 
 function routerPath(path: string): string {

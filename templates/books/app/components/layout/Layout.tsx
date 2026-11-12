@@ -53,11 +53,11 @@ export function Layout({ children }: LayoutProps) {
         <AgentSidebar
           position="right"
           defaultOpen
-          emptyStateText="What should this app become?"
+          emptyStateText="Ask about your sales, costs and checks"
           suggestions={[
-            "Turn this into a CRM",
-            "Add a dashboard for weekly metrics",
-            "Create a habit tracker",
+            "How did yesterday go?",
+            "Which costs went up this week?",
+            "What should I look at today?",
           ]}
         >
           <div className="flex h-full flex-1 flex-col overflow-hidden">

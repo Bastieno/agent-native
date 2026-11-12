@@ -22,6 +22,22 @@ export default defineAction({
 
     const screen: Record<string, unknown> = {};
     if (navigation) screen.navigation = navigation;
+    const nav = (navigation ?? {}) as {
+      view?: string;
+      expenseCode?: string;
+      digestId?: string;
+    };
+    if (nav.expenseCode)
+      screen.selected = {
+        expenseCode: nav.expenseCode,
+        hint: "update-expense works on this code",
+      };
+    if (nav.digestId)
+      screen.selected = {
+        digestId: nav.digestId,
+        hint: "get-digest returns its figures",
+      };
+    screen.views = "today, expenses, sales, reports, settings";
 
     if (Object.keys(screen).length === 0) {
       return "No application state found. Is the app running?";

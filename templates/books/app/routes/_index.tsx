@@ -1,145 +1,364 @@
 import { useState } from "react";
+import { Link } from "react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import {
-  IconArrowUpRight,
-  IconBolt,
-  IconBook2,
-  IconBrush,
+  IconCheck,
+  IconCircleCheck,
+  IconMessage,
+  IconUpload,
 } from "@tabler/icons-react";
-import { useTheme } from "next-themes";
 import {
-  PromptComposer,
-  openAgentSidebar,
   sendToAgentChat,
+  useActionMutation,
+  useActionQuery,
 } from "@agent-native/core/client";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Spinner } from "@/components/ui/spinner";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useSetPageTitle } from "@/components/layout/HeaderActions";
-import { APP_NAME, APP_TITLE } from "@/lib/app-config";
+import { dayLabel, flagText, naira, rangeLabel, receiptUrl } from "@/lib/books";
 
 export function meta() {
-  return [
-    { title: APP_TITLE },
-    {
-      name: "description",
-      content:
-        "Build an agent-native app where the AI agent and UI share state, actions, and context.",
-    },
-  ];
+  return [{ title: "Today · Books" }];
 }
 
-export function HydrateFallback() {
+function BusinessCard({
+  title,
+  income,
+  profit,
+  expenses,
+}: {
+  title: string;
+  income: number;
+  profit: number;
+  expenses: number;
+}) {
   return (
-    <div className="flex items-center justify-center h-screen w-full">
-      <Spinner className="size-8 text-foreground" />
-    </div>
+    <Card>
+      <CardHeader className="pb-1">
+        <CardTitle className="text-sm font-medium text-muted-foreground">
+          {title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        <div className="text-2xl font-semibold tabular-nums">
+          {naira(income)}
+        </div>
+        <div className="space-y-1 text-sm">
+          <div className="flex justify-between gap-2">
+            <span className="text-muted-foreground">Gross profit</span>
+            <span className="tabular-nums">{naira(profit)}</span>
+          </div>
+          <div className="flex justify-between gap-2">
+            <span className="text-muted-foreground">Expenses</span>
+            <span className="tabular-nums">{naira(expenses)}</span>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
-export default function IndexPage() {
-  useSetPageTitle("Home");
-  const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
-  const [startOpen, setStartOpen] = useState(false);
+async function asDataUrl(url: string): Promise<string> {
+  const blob = await (await fetch(url)).blob();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result));
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
 
-  function submit(text: string) {
-    const trimmed = text.trim();
-    if (!trimmed) return;
-    openAgentSidebar();
-    sendToAgentChat({
-      message: trimmed,
-      context: `The user is working in ${APP_TITLE} and wants this app customized directly. Edit this app's source; do not create a separate workspace app unless the user explicitly asks for a separate workspace app.`,
-      submit: true,
-      type: "code",
-    });
-    setStartOpen(false);
+export default function TodayPage() {
+  useSetPageTitle("Today");
+  const qc = useQueryClient();
+  const { data, isLoading } = useActionQuery("get-today", {});
+  const { data: categories } = useActionQuery("get-settings", {});
+  const setCategory = useActionMutation("set-item-category");
+  const [reading, setReading] = useState(false);
+
+  if (isLoading) {
+    return (
+      <div className="grid gap-4 p-6 md:grid-cols-3">
+        {[0, 1, 2].map((i) => (
+          <Skeleton key={i} className="h-28" />
+        ))}
+      </div>
+    );
+  }
+  if (!data?.day || !data.figures) {
+    return (
+      <div className="flex flex-1 flex-col items-center justify-center gap-3 p-10 text-center">
+        <h2 className="text-lg font-semibold">No sales yet</h2>
+        <p className="max-w-sm text-sm text-muted-foreground">
+          Send a Moniebook sales summary to the WhatsApp number, or upload one
+          here, and today's figures appear.
+        </p>
+        <Button asChild>
+          <Link to="/sales">
+            <IconUpload className="mr-2 h-4 w-4" /> Upload an export
+          </Link>
+        </Button>
+      </div>
+    );
+  }
+
+  const f = data.figures;
+  const review = data.review;
+  const checks = f.flags.filter(
+    (x) =>
+      !["needs_review", "unconfirmed_category", "no_cost"].includes(x.kind),
+  );
+  const reviewCount =
+    review.receipts.length +
+    review.categoryGuesses.length +
+    review.uncategorised.length +
+    review.unmappedCategories.length +
+    (review.pendingHistory ? 1 : 0);
+  const biz = (slug: string) => ({
+    income: f.incomeByBusiness[slug] ?? 0,
+    profit: f.grossProfitByBusiness[slug] ?? 0,
+    expenses: f.expensesByBusiness[slug] ?? 0,
+  });
+  const both = {
+    income: f.income,
+    profit: (Object.values(f.grossProfitByBusiness) as number[]).reduce(
+      (a, b) => a + b,
+      0,
+    ),
+    expenses: f.expenses,
+  };
+
+  function confirm(item: string, category: string) {
+    qc.setQueryData(["action", "get-today", {}], (old: typeof data) =>
+      old
+        ? {
+            ...old,
+            review: {
+              ...old.review,
+              categoryGuesses: old.review.categoryGuesses.filter(
+                (g) => g.item !== item,
+              ),
+            },
+          }
+        : old,
+    );
+    setCategory.mutate(
+      { itemName: item, category, confirmed: true },
+      { onError: () => toast.error(`Couldn't save ${item}`) },
+    );
+  }
+  function place(item: string, category: string) {
+    qc.setQueryData(["action", "get-today", {}], (old: typeof data) =>
+      old
+        ? {
+            ...old,
+            review: {
+              ...old.review,
+              uncategorised: old.review.uncategorised.filter((u) => u !== item),
+            },
+          }
+        : old,
+    );
+    setCategory.mutate(
+      { itemName: item, category, confirmed: true },
+      { onError: () => toast.error(`Couldn't save ${item}`) },
+    );
+  }
+
+  async function readOldReceipts() {
+    setReading(true);
+    try {
+      const res = await fetch(
+        `/_agent-native/actions/list-pending-receipts?limit=5`,
+      );
+      const { receipts } = (await res.json()) as {
+        receipts: {
+          id: string;
+          occurredOn: string;
+          mimeType: string;
+          receiptFileId: string;
+          note: string | null;
+        }[];
+      };
+      const images = receipts.filter((r) => r.mimeType.startsWith("image/"));
+      if (!images.length) {
+        toast("The old receipts left are PDFs; open them from Expenses.");
+        return;
+      }
+      const urls = await Promise.all(
+        images.map((r) => asDataUrl(receiptUrl(r.receiptFileId))),
+      );
+      sendToAgentChat({
+        message: `Read these ${images.length} old receipts and record them.`,
+        context: `These are old receipts from the WhatsApp group, in this order: ${images
+          .map(
+            (r, i) =>
+              `image ${i + 1} = pendingReceiptId ${r.id} (sent ${r.occurredOn}${r.note ? `, note "${r.note}"` : ""})`,
+          )
+          .join(
+            "; ",
+          )}. For each, call record-expense-from-receipt with its pendingReceiptId; use the date on the receipt if it shows one.`,
+        images: urls,
+        submit: true,
+      });
+    } finally {
+      setReading(false);
+    }
   }
 
   return (
-    <div className="flex flex-1 flex-col overflow-y-auto">
-      <div className="flex flex-1 flex-col items-center justify-start px-6 pt-12 pb-10 md:pt-16">
-        <div className="w-full max-w-2xl space-y-6">
-          <div className="space-y-4 text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-card shadow-sm">
-              <IconBolt className="h-5 w-5 text-muted-foreground" />
-            </div>
-            <div className="space-y-2">
-              <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-                {APP_TITLE}
-              </h1>
-              <p className="mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
-                This app is ready for your first route, workflow, data model, or
-                custom screen.
-              </p>
-            </div>
-          </div>
-
-          <Popover open={startOpen} onOpenChange={setStartOpen}>
-            <PopoverTrigger asChild>
-              <button className="group flex w-full items-center gap-4 rounded-xl border border-dashed border-border bg-card px-5 py-4 text-left shadow-sm transition-colors hover:border-foreground/20 hover:bg-accent/40">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground group-hover:text-foreground">
-                  <IconBrush className="h-5 w-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-medium text-foreground">
-                    Start building
-                  </span>
-                  <span className="mt-0.5 block text-xs text-muted-foreground">
-                    Tell the agent what this blank app should become.
-                  </span>
-                </span>
-                <IconArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
-              </button>
-            </PopoverTrigger>
-            <PopoverContent
-              align="center"
-              sideOffset={10}
-              className="w-[calc(100vw-2rem)] rounded-xl p-3 shadow-xl sm:w-[420px]"
-            >
-              <p className="px-1 pb-2 text-sm font-semibold text-foreground">
-                Start building
-              </p>
-              <PromptComposer
-                autoFocus
-                placeholder="Describe what you want to add or change..."
-                draftScope={`${APP_NAME}:start-building`}
-                onSubmit={(text) => submit(text)}
-              />
-            </PopoverContent>
-          </Popover>
-
-          <div className="h-px bg-border" />
-
-          <div className="grid gap-3 text-left sm:grid-cols-2">
-            <a
-              href="https://agent-native.com/docs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-lg border border-border/50 px-4 py-3 hover:bg-accent/50"
-            >
-              <p className="flex items-center gap-1.5 text-[13px] font-medium text-foreground">
-                <IconBook2 className="h-3.5 w-3.5" />
-                Documentation
-              </p>
-              <p className="text-[12px] text-muted-foreground mt-0.5">
-                Learn the framework
-              </p>
-            </a>
-            <button
-              onClick={() => setTheme(isDark ? "light" : "dark")}
-              className="rounded-lg border border-border/50 px-4 py-3 hover:bg-accent/50 text-left cursor-pointer"
-            >
-              <p className="text-[13px] font-medium text-foreground">Theme</p>
-              <p className="text-[12px] text-muted-foreground mt-0.5">
-                Toggle dark / light
-              </p>
-            </button>
-          </div>
-        </div>
+    <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-6">
+      <div className="text-sm text-muted-foreground">{dayLabel(data.day)}</div>
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <BusinessCard title="Lounge" {...biz("lounge")} />
+        <BusinessCard title="Hub" {...biz("hub")} />
+        <BusinessCard title="Both" {...both} />
       </div>
+
+      <div className="grid gap-4 xl:grid-cols-2">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">Checks</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2 text-sm">
+            {f.cashInTill != null && (
+              <div className="flex justify-between border-b border-border pb-2">
+                <span className="text-muted-foreground">Cash in the till</span>
+                <span className="font-medium tabular-nums">
+                  {naira(f.cashInTill)}
+                </span>
+              </div>
+            )}
+            {checks.length === 0 ? (
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <IconCircleCheck className="h-4 w-4" /> Every check passed
+              </div>
+            ) : (
+              <ul className="space-y-1.5">
+                {checks.slice(0, 8).map((c, i) => (
+                  <li key={i}>{flagText(c as never)}</li>
+                ))}
+                {checks.length > 8 && (
+                  <li className="text-muted-foreground">
+                    and {checks.length - 8} more
+                  </li>
+                )}
+              </ul>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">
+              To review{reviewCount ? ` · ${reviewCount}` : ""}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm">
+            {reviewCount === 0 && (
+              <div className="text-muted-foreground">Nothing waiting.</div>
+            )}
+            {review.receipts.map((r) => (
+              <Link
+                key={r.code}
+                to={`/expenses?expense=${r.code}`}
+                className="flex justify-between rounded-md px-2 py-1 hover:bg-accent"
+              >
+                <span>
+                  {r.code} · {r.vendor}
+                </span>
+                <span className="tabular-nums text-muted-foreground">
+                  {naira(r.amount)}
+                </span>
+              </Link>
+            ))}
+            {review.categoryGuesses.map((g) => (
+              <div
+                key={g.item}
+                className="flex items-center justify-between gap-2 px-2"
+              >
+                <span>
+                  {g.item} → {g.category}?
+                </span>
+                {data.canEdit && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => confirm(g.item, g.category)}
+                  >
+                    <IconCheck className="mr-1 h-3.5 w-3.5" /> Confirm
+                  </Button>
+                )}
+              </div>
+            ))}
+            {review.uncategorised.map((item) => (
+              <div
+                key={item}
+                className="flex items-center justify-between gap-2 px-2"
+              >
+                <span>{item}</span>
+                {data.canEdit && (
+                  <Select onValueChange={(c) => place(item, c)}>
+                    <SelectTrigger className="h-8 w-40">
+                      <SelectValue placeholder="Category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {(categories?.itemCategories ?? []).map((c) => (
+                        <SelectItem key={c.name} value={c.name}>
+                          {c.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
+              </div>
+            ))}
+            {review.unmappedCategories.length > 0 && (
+              <Link
+                to="/settings?tab=categories"
+                className="block px-2 text-muted-foreground hover:text-foreground"
+              >
+                Choose a business for: {review.unmappedCategories.join(", ")}
+              </Link>
+            )}
+            {review.pendingHistory > 0 && (
+              <div className="flex items-center justify-between gap-2 px-2">
+                <span>{review.pendingHistory} old receipts from WhatsApp</span>
+                {data.canEdit && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    disabled={reading}
+                    onClick={readOldReceipts}
+                  >
+                    <IconMessage className="mr-1 h-3.5 w-3.5" /> Read with
+                    assistant
+                  </Button>
+                )}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+
+      {data.digest && (
+        <Link
+          to={`/reports/${data.digest.digestId}`}
+          className="text-sm text-muted-foreground hover:text-foreground"
+        >
+          Latest {data.digest.period} digest ·{" "}
+          {rangeLabel(data.digest.start, data.digest.end)}
+        </Link>
+      )}
     </div>
   );
 }

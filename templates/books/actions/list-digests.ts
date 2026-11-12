@@ -5,7 +5,9 @@ import { num, rows } from "../server/lib/sql.js";
 
 export default defineAction({
   description: "Saved digests, newest first, with each one's headline figures.",
-  schema: z.object({ limit: z.number().int().min(1).max(200).default(60) }),
+  schema: z.object({
+    limit: z.coerce.number().int().min(1).max(200).default(60),
+  }),
   http: { method: "GET" },
   run: async ({ limit }) => {
     const orgId = await memberOrg();

@@ -38,7 +38,7 @@ export default defineAction({
         paidWith: e.paid_with,
         status: e.status,
         source: e.source,
-        hasReceipt: !!e.receipt_file_id,
+        receiptFileId: e.receipt_file_id ?? null,
       })),
     };
   },

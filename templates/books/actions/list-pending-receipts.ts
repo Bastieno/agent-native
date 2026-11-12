@@ -6,7 +6,9 @@ import { rows } from "../server/lib/sql.js";
 export default defineAction({
   description:
     "Old receipts from a chat export that haven't been read yet, oldest first.",
-  schema: z.object({ limit: z.number().int().min(1).max(200).default(50) }),
+  schema: z.object({
+    limit: z.coerce.number().int().min(1).max(200).default(50),
+  }),
   http: { method: "GET" },
   run: async ({ limit }) => {
     const orgId = await memberOrg();

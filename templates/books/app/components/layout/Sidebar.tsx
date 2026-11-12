@@ -1,5 +1,11 @@
 import { Link, useLocation } from "react-router";
-import { IconActivity, IconHome } from "@tabler/icons-react";
+import {
+  IconCash,
+  IconLayoutDashboard,
+  IconReceipt,
+  IconReportAnalytics,
+  IconSettings,
+} from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { ExtensionsSidebarSection } from "@agent-native/core/client/extensions";
 import { FeedbackButton, appPath } from "@agent-native/core/client";
@@ -7,8 +13,11 @@ import { OrgSwitcher } from "@agent-native/core/client/org";
 import { APP_TITLE } from "@/lib/app-config";
 
 const navItems = [
-  { icon: IconHome, label: "Home", href: "/" },
-  { icon: IconActivity, label: "Observability", href: "/observability" },
+  { icon: IconLayoutDashboard, label: "Today", href: "/" },
+  { icon: IconReceipt, label: "Expenses", href: "/expenses" },
+  { icon: IconCash, label: "Sales", href: "/sales" },
+  { icon: IconReportAnalytics, label: "Reports", href: "/reports" },
+  { icon: IconSettings, label: "Settings", href: "/settings" },
 ];
 
 export function Sidebar() {
