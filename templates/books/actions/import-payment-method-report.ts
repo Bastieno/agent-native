@@ -7,13 +7,7 @@ import {
 } from "../server/lib/moniebook-reports.js";
 import { importPaymentMethodReport } from "../server/lib/import-reports.js";
 import { reconcileDays } from "../server/lib/reconcile-days.js";
-
-export const rangeSchema = z.object({
-  start: z.string().describe("First day, YYYY-MM-DD"),
-  endExclusive: z
-    .string()
-    .describe("The day after the last day, YYYY-MM-DD (Moniebook's end date)"),
-});
+import { rangeSchema } from "../server/lib/action-fields.js";
 
 export default defineAction({
   description:

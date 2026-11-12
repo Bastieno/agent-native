@@ -7,7 +7,7 @@ import {
 } from "../server/lib/moniebook-reports.js";
 import { importItemReport } from "../server/lib/import-reports.js";
 import { reconcileDays } from "../server/lib/reconcile-days.js";
-import { rangeSchema } from "./import-payment-method-report.js";
+import { rangeSchema } from "../server/lib/action-fields.js";
 
 export default defineAction({
   description:
