@@ -309,6 +309,7 @@ WhatsApp handler alike. Writes require the owner role.
 | Action                         | Purpose                                              |
 | ------------------------------ | ---------------------------------------------------- |
 | `import-sales-export`          | Parse and upsert an inventory CSV                    |
+| `import-sales-from-whatsapp`   | Fetch a CSV sent on WhatsApp and import it           |
 | `import-moniepoint-statement`  | Fallback: load Moniepoint transfers from a statement |
 | `import-whatsapp-history`      | Load past receipts from a chat export                |
 | `record-expense-from-receipt`  | Save an expense read from a receipt                  |
