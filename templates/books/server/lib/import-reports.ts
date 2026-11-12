@@ -14,7 +14,7 @@ export interface RangeCheck {
   salesTotal: number;
 }
 
-async function completedTotals(orgId: string, range: Range) {
+export async function completedTotals(orgId: string, range: Range) {
   const [r] = await rows(
     `SELECT COALESCE(SUM(total), 0) AS total, COALESCE(SUM(collected_amount), 0) AS collected
        FROM sales WHERE org_id = ? AND status = 'COMPLETED' AND day >= ? AND day < ?`,

@@ -123,6 +123,24 @@ await check("short range flagged", async () => {
   assert.equal(r.check.reportTotal, 106810000);
   assert.ok(r.check.salesTotal < 106810000);
 });
+await check(
+  "a file name whose end date is included is read that way",
+  async () => {
+    // The same 1–9 Nov report, named the way Moniebook sometimes does: ending on its last day.
+    const r = await asOwner(() =>
+      importPayments.run({
+        csv: fixture("payment-method-sample.csv"),
+        fileName: "payment-method-report-2026-11-01-2026-11-09.csv",
+      }),
+    );
+    assert.equal(r.check.agrees, true);
+    assert.deepEqual(r.range, {
+      start: "2026-11-01",
+      endExclusive: "2026-11-10",
+    });
+    assert.equal(r.endDateIncluded, true);
+  },
+);
 await check("no range asks", async () => {
   await assert.rejects(
     () =>
