@@ -1882,6 +1882,18 @@ export interface AgentChatPluginOptions {
    */
   anonymousReadOnly?: boolean;
   /**
+   * Remove the generic SQL data tools (`db-query`, `db-exec`, `db-patch`) from
+   * the agent's tool registry, leaving only `db-schema`.
+   *
+   * The framework's SQL tools are scoped to the caller's org, which is the
+   * right default for single-tenant business apps. It is not enough when one
+   * org contains users who must not see each other's rows — a school, a
+   * clinic, a marketplace — because any signed-in user could read the whole
+   * org through raw SQL. With this set, the agent reaches data only through
+   * the app's actions, where role and ownership checks live.
+   */
+  disableDbDataTools?: boolean;
+  /**
    * Optional callback to append template-specific context to the system
    * prompt on each request. Runs after AGENTS.md / skills / memory are
    * loaded and before the schema block — use it to inject dynamic SQL
@@ -3155,7 +3167,18 @@ export function createAgentChatPlugin(
       // Resource, chat, docs, db, and cross-agent scripts are available in both prod and dev modes
       const resourceScripts = await createResourceScriptEntries();
       const docsScripts = await createDocsScriptEntries();
-      const dbScripts = await createDbScriptEntries();
+      const allDbScripts = await createDbScriptEntries();
+      // Apps holding regulated or minors' data can drop the generic SQL tools
+      // so the agent can only touch data through the app's own actions, where
+      // per-role and per-row rules live. `db-schema` is kept: it exposes table
+      // shapes, not rows.
+      const dbScripts = options?.disableDbDataTools
+        ? Object.fromEntries(
+            Object.entries(allDbScripts).filter(
+              ([name]) => name === "db-schema",
+            ),
+          )
+        : allDbScripts;
       const refreshScreenTool = createRefreshScreenEntry();
       const frameworkContextTool = createFrameworkContextEntry();
       const leanPrompt = options?.leanPrompt === true;
