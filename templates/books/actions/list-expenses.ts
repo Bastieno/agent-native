@@ -20,8 +20,12 @@ export default defineAction({
          LEFT JOIN businesses b ON b.id = e.business_id
          LEFT JOIN expense_categories c ON c.id = e.category_id
         WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ?${status ? " AND e.status = ?" : ""}
-        ORDER BY e.occurred_on DESC, e.created_at DESC`,
+        ORDER BY e.occurred_on DESC`,
       status ? [orgId, start, end, status] : [orgId, start, end],
+    );
+    const codeNo = (c: string) => Number(c.replace(/^E-/, "")) || 0;
+    found.sort((a, b) =>
+      a.occurred_on === b.occurred_on ? codeNo(b.code) - codeNo(a.code) : 0,
     );
     return {
       expenses: found.map((e) => ({
