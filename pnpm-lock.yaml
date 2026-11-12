@@ -1248,6 +1248,9 @@ importers:
       '@tabler/icons-react':
         specifier: ^3.40.0
         version: 3.44.0(react@19.2.6)
+      fflate:
+        specifier: ^0.8.2
+        version: 0.8.2
       h3:
         specifier: ^2.0.1-rc.20
         version: 2.0.1-rc.22(crossws@0.4.5(srvx@0.11.15))

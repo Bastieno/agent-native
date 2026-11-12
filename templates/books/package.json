@@ -22,7 +22,8 @@
     "h3": "^2.0.1-rc.20",
     "isbot": "^5",
     "node-pty": "^1.1.0",
-    "zod": "^4.4.3"
+    "zod": "^4.4.3",
+    "fflate": "^0.8.2"
   },
   "devDependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

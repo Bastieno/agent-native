@@ -308,4 +308,25 @@ export const BOOKS_MIGRATIONS: MigrationEntry[] = [
     version: 29,
     sql: `ALTER TABLE moniepoint_events ADD COLUMN alt_reference TEXT`,
   },
+  {
+    version: 30,
+    sql: `CREATE TABLE IF NOT EXISTS pending_receipts (
+    id TEXT PRIMARY KEY,
+    occurred_on TEXT NOT NULL,
+    sent_at TEXT NOT NULL,
+    receipt_file_id TEXT NOT NULL,
+    image_hash TEXT NOT NULL,
+    note TEXT,
+    status TEXT NOT NULL DEFAULT 'pending',
+    expense_code TEXT,
+    created_at TEXT NOT NULL,
+    owner_email TEXT NOT NULL DEFAULT 'local@localhost',
+    org_id TEXT,
+    visibility TEXT NOT NULL DEFAULT 'private'
+    )`,
+  },
+  {
+    version: 31,
+    sql: `CREATE INDEX IF NOT EXISTS ix_pending_receipts_hash ON pending_receipts (org_id, image_hash)`,
+  },
 ];

@@ -157,6 +157,20 @@ export const expenses = table("expenses", {
   ...ownableColumns(),
 });
 
+/** Old receipts from a WhatsApp chat export, waiting to be read. */
+export const pendingReceipts = table("pending_receipts", {
+  id: text("id").primaryKey(),
+  occurredOn: text("occurred_on").notNull(),
+  sentAt: text("sent_at").notNull(),
+  receiptFileId: text("receipt_file_id").notNull(),
+  imageHash: text("image_hash").notNull(),
+  note: text("note"),
+  status: text("status").notNull().default("pending"), // pending | recorded | dismissed
+  expenseCode: text("expense_code"),
+  ...created,
+  ...ownableColumns(),
+});
+
 export const imports = table("imports", {
   id: text("id").primaryKey(),
   kind: text("kind").notNull(), // sales-summary | payment-method | item-sales | moniepoint-statement

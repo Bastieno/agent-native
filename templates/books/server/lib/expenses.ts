@@ -67,17 +67,21 @@ export interface NewExpense {
   status: "confirmed" | "needs_review";
   source: "whatsapp" | "upload" | "history" | "app";
   receipt?: { mimeType: string; dataBase64: string };
+  /** A receipt file already stored (an old receipt from a chat export). */
+  existingFile?: { id: string; imageHash: string };
   lineItems?: { name: string; amount: number }[];
   messageId?: string;
   confirmDuplicate?: boolean;
 }
 
 export async function createExpense(orgId: string, e: NewExpense) {
-  const imageHash = e.receipt
-    ? createHash("sha256")
-        .update(Buffer.from(e.receipt.dataBase64, "base64"))
-        .digest("hex")
-    : null;
+  const imageHash = e.existingFile
+    ? e.existingFile.imageHash
+    : e.receipt
+      ? createHash("sha256")
+          .update(Buffer.from(e.receipt.dataBase64, "base64"))
+          .digest("hex")
+      : null;
   if (!e.confirmDuplicate) {
     const existing = (
       await rows(
@@ -109,8 +113,8 @@ export async function createExpense(orgId: string, e: NewExpense) {
     ? await expenseCategoryId(orgId, e.category)
     : null;
   const at = nowIso();
-  let receiptFileId: string | null = null;
-  if (e.receipt) {
+  let receiptFileId: string | null = e.existingFile?.id ?? null;
+  if (e.receipt && !e.existingFile) {
     receiptFileId = newId();
     await run(
       `INSERT INTO receipt_files (id, mime_type, data_base64, byte_size, created_at, org_id, visibility) VALUES (?, ?, ?, ?, ?, ?, 'org')`,
