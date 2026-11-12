@@ -13,6 +13,7 @@ export const isNotIncome = (methods: string[]) =>
 export interface LoadedLine {
   itemName: string;
   businessSlug: string | null;
+  categoryName: string | null;
   categoryConfirmed: boolean;
   quantity: number;
   lineTotal: number;
@@ -74,7 +75,7 @@ export async function loadSales(
   );
   if (!sales.length) return [];
   const lines = await rows(
-    `SELECT l.sale_id, l.item_id, l.quantity, l.line_total, i.name AS item_name, i.confirmed, b.slug AS business_slug
+    `SELECT l.sale_id, l.item_id, l.quantity, l.line_total, i.name AS item_name, i.confirmed, c.name AS category_name, b.slug AS business_slug
        FROM sale_lines l
        JOIN sales s ON s.id = l.sale_id
        JOIN items i ON i.id = l.item_id
@@ -113,6 +114,7 @@ export async function loadSales(
     sale.lines.push({
       itemName: l.item_name,
       businessSlug: l.business_slug ?? null,
+      categoryName: l.category_name ?? null,
       categoryConfirmed: num(l.confirmed) === 1,
       quantity: num(l.quantity),
       lineTotal: num(l.line_total),
