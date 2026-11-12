@@ -103,4 +103,77 @@ await check("unknown file rejected", async () => {
     },
   );
 });
+await check(
+  "a number mapped to someone outside the org is ignored",
+  async () => {
+    await exec.execute({
+      sql: `UPDATE books_settings SET allowed_numbers = ? WHERE org_id = ?`,
+      args: [
+        JSON.stringify({
+          "2348030000000": OWNER,
+          "2347000000000": "outsider@else.test",
+        }),
+        ORG,
+      ],
+    });
+    assert.deepEqual(await beforeBooksMessage(msg("2347000000000")), {
+      handled: true,
+    });
+    assert.deepEqual(await beforeBooksMessage(msg("2348030000000")), {
+      handled: false,
+    });
+  },
+);
+await check("a number claimed by two orgs is ignored", async () => {
+  await exec.execute({
+    sql: `INSERT INTO books_settings (org_id, thresholds, recipients, allowed_numbers, reminders, created_at) VALUES ('org2', '{}', '[]', ?, '{}', 'x')`,
+    args: [JSON.stringify({ "2348030000000": "intruder@org2.test" })],
+  });
+  await exec.execute({
+    sql: `INSERT INTO org_members (id, org_id, email, role, joined_at) VALUES ('m9', 'org2', 'intruder@org2.test', 'owner', 0)`,
+    args: [],
+  });
+  assert.deepEqual(await beforeBooksMessage(msg("2348030000000")), {
+    handled: true,
+  });
+});
+await check(
+  "settings refuse outsiders and numbers another org uses",
+  async () => {
+    const updateSettings = (await import("../actions/update-settings.js"))
+      .default;
+    await assert.rejects(
+      () =>
+        asOwner(() =>
+          updateSettings.run({
+            people: [
+              {
+                name: "X",
+                email: "outsider@else.test",
+                whatsapp: "07000000001",
+                role: "partner",
+              },
+            ],
+          }),
+        ),
+      /outsider@else\.test isn't a member of this Books workspace/,
+    );
+    await assert.rejects(
+      () =>
+        asOwner(() =>
+          updateSettings.run({
+            people: [
+              {
+                name: "Me",
+                email: OWNER,
+                whatsapp: "08030000000",
+                role: "owner",
+              },
+            ],
+          }),
+        ),
+      /2348030000000 is already used by another Books workspace/,
+    );
+  },
+);
 await finish();

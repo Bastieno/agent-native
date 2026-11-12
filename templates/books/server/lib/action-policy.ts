@@ -80,3 +80,36 @@ export function guardActions<T extends Record<string, any>>(actions: T): T {
   }
   return guarded as T;
 }
+
+/**
+ * Framework routes a member (the partner) may call. Books' own actions are
+ * guarded above; these are the framework's extension routes, whose SQL and
+ * data endpoints write as the caller with only org scoping.
+ */
+export function memberMayCall(method: string, path: string): boolean {
+  if (!path.startsWith("/_agent-native/extensions")) return true;
+  if (method === "GET" || method === "HEAD") return true;
+  return path === "/_agent-native/extensions/sql/query";
+}
+
+const EXTENSION_READS = /^(list|get)-/;
+
+/** Wrap the framework's extension actions so the partner's agent can only read them. */
+export function guardExtensionActions<T extends Record<string, any>>(
+  entries: T,
+): T {
+  const out: Record<string, any> = {};
+  for (const [name, entry] of Object.entries(entries)) {
+    out[name] =
+      !entry || typeof entry.run !== "function" || EXTENSION_READS.test(name)
+        ? entry
+        : {
+            ...entry,
+            run: async (...args: unknown[]) => {
+              await assertOwner();
+              return entry.run(...args);
+            },
+          };
+  }
+  return out as T;
+}

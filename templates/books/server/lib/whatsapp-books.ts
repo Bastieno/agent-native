@@ -8,20 +8,48 @@ export function normaliseNumber(n: string): string {
   return d;
 }
 
-/** The email an allowed number acts as, across every org's Books settings. */
+export async function isOrgMember(
+  orgId: string,
+  email: string,
+): Promise<boolean> {
+  const found = await rows(
+    `SELECT id FROM org_members WHERE org_id = ? AND LOWER(email) = LOWER(?)`,
+    [orgId, email],
+  );
+  return found.length > 0;
+}
+
+/** Which orgs list this number, and for whom. */
+export async function claimsOnNumber(
+  senderId: string,
+): Promise<{ orgId: string; email: string }[]> {
+  const number = normaliseNumber(senderId);
+  const pinned = process.env.BOOKS_ORG_ID;
+  const claims: { orgId: string; email: string }[] = [];
+  for (const s of await rows<{ org_id: string; allowed_numbers: string }>(
+    `SELECT org_id, allowed_numbers FROM books_settings`,
+  )) {
+    if (pinned && s.org_id !== pinned) continue;
+    const map = JSON.parse(s.allowed_numbers || "{}") as Record<string, string>;
+    for (const [n, email] of Object.entries(map))
+      if (normaliseNumber(n) === number)
+        claims.push({ orgId: s.org_id, email });
+  }
+  return claims;
+}
+
+/**
+ * The email a number acts as. It must be listed by exactly one org, for a
+ * member of that org; anything else is ignored rather than guessed.
+ */
 async function emailForNumber(
   senderId: string | undefined,
 ): Promise<string | null> {
   if (!senderId) return null;
-  const number = normaliseNumber(senderId);
-  for (const s of await rows<{ allowed_numbers: string }>(
-    `SELECT allowed_numbers FROM books_settings`,
-  )) {
-    const map = JSON.parse(s.allowed_numbers || "{}") as Record<string, string>;
-    for (const [n, email] of Object.entries(map))
-      if (normaliseNumber(n) === number) return email;
-  }
-  return null;
+  const claims = await claimsOnNumber(senderId);
+  if (new Set(claims.map((c) => c.orgId)).size !== 1) return null;
+  const { orgId, email } = claims[0];
+  return (await isOrgMember(orgId, email)) ? email : null;
 }
 
 /**

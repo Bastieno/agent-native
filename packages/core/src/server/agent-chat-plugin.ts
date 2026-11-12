@@ -1894,6 +1894,16 @@ export interface AgentChatPluginOptions {
    */
   disableDbDataTools?: boolean;
   /**
+   * Adjust the framework's extension actions (`create-extension`,
+   * `update-extension`, `list-extensions`, ...) before they are registered for
+   * the agent. A template can wrap `run` with its own role check: these
+   * actions are not template actions, so a template's action guard never
+   * sees them.
+   */
+  transformExtensionActions?: (
+    entries: Record<string, ActionEntry>,
+  ) => Record<string, ActionEntry>;
+  /**
    * Optional callback to append template-specific context to the system
    * prompt on each request. Runs after AGENTS.md / skills / memory are
    * loaded and before the schema block — use it to inject dynamic SQL
@@ -3434,6 +3444,9 @@ export function createAgentChatPlugin(
           await import("../extensions/actions.js");
         toolActions = createExtensionActionEntries();
       } catch {}
+      if (options?.transformExtensionActions) {
+        toolActions = options.transformExtensionActions(toolActions);
+      }
       let browserSessionTools: Record<string, ActionEntry> = {};
       try {
         const { createBrowserSessionActionEntries } =

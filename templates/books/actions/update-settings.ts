@@ -4,7 +4,11 @@ import { ownerOrg } from "../server/lib/access.js";
 import { toKobo } from "../server/lib/money.js";
 import { DEFAULT_THRESHOLDS } from "../server/lib/setup.js";
 import { rows, run } from "../server/lib/sql.js";
-import { normaliseNumber } from "../server/lib/whatsapp-books.js";
+import {
+  claimsOnNumber,
+  isOrgMember,
+  normaliseNumber,
+} from "../server/lib/whatsapp-books.js";
 
 const person = z.object({
   name: z.string(),
@@ -60,8 +64,20 @@ export default defineAction({
         whatsapp: p.whatsapp ? normaliseNumber(p.whatsapp) : undefined,
       }));
       const allowed: Record<string, string> = {};
-      for (const p of recipients)
-        if (p.whatsapp && p.email) allowed[p.whatsapp] = p.email;
+      for (const p of recipients) {
+        if (!p.whatsapp || !p.email) continue;
+        if (!(await isOrgMember(orgId, p.email))) {
+          throw new Error(
+            `${p.email} isn't a member of this Books workspace. Invite them first.`,
+          );
+        }
+        if ((await claimsOnNumber(p.whatsapp)).some((c) => c.orgId !== orgId)) {
+          throw new Error(
+            `${p.whatsapp} is already used by another Books workspace.`,
+          );
+        }
+        allowed[p.whatsapp] = p.email;
+      }
       await run(
         `UPDATE books_settings SET recipients = ?, allowed_numbers = ? WHERE org_id = ?`,
         [JSON.stringify(recipients), JSON.stringify(allowed), orgId],

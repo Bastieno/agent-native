@@ -4,7 +4,7 @@ import {
 } from "@agent-native/core/server";
 import { getOrgContext } from "@agent-native/core/org";
 import actionsRegistry from "../../.generated/actions-registry.js";
-import { guardActions } from "../lib/action-policy.js";
+import { guardActions, guardExtensionActions } from "../lib/action-policy.js";
 
 export default createAgentChatPlugin({
   appId: "books",
@@ -14,5 +14,7 @@ export default createAgentChatPlugin({
   // Org-scoped raw SQL would let the partner's assistant write around the role
   // check. Books' data is reached only through its actions.
   disableDbDataTools: true,
+  // The framework's extension tools aren't Books actions, so guard them here too.
+  transformExtensionActions: guardExtensionActions,
   resolveOrgId: async (event) => (await getOrgContext(event)).orgId,
 });
