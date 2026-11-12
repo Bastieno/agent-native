@@ -1,12 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { ownerOrg } from "../server/lib/access.js";
-import {
-  parsePaymentMethodReport,
-  rangeFromFileName,
-} from "../server/lib/moniebook-reports.js";
-import { importPaymentMethodReport } from "../server/lib/import-reports.js";
-import { reconcileDays } from "../server/lib/reconcile-days.js";
+import { importMoniebookFile } from "../server/lib/import-file.js";
 import { rangeSchema } from "../server/lib/action-fields.js";
 
 export default defineAction({
@@ -20,16 +15,11 @@ export default defineAction({
   }),
   run: async ({ csv, fileName, range, receivedVia }) => {
     const orgId = await ownerOrg();
-    const dates = range ?? rangeFromFileName(fileName);
-    if (!dates) throw new Error("Which dates does this file cover?");
-    const { rows, missingColumns } = parsePaymentMethodReport(csv);
-    if (missingColumns.length)
-      throw new Error(`This file is missing: ${missingColumns.join(", ")}`);
-    const result = await importPaymentMethodReport(orgId, rows, dates, {
+    return importMoniebookFile(orgId, csv, {
       fileName,
+      range,
       receivedVia,
+      kind: "payment-method",
     });
-    await reconcileDays(orgId, result.days);
-    return { ...result, range: dates };
   },
 });

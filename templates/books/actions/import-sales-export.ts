@@ -1,9 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { ownerOrg } from "../server/lib/access.js";
-import { parseSalesExport } from "../server/lib/sales-export.js";
-import { importParsedOrders } from "../server/lib/import-sales.js";
-import { reconcileDays } from "../server/lib/reconcile-days.js";
+import { importMoniebookFile } from "../server/lib/import-file.js";
 
 export default defineAction({
   description:
@@ -15,14 +13,10 @@ export default defineAction({
   }),
   run: async ({ csv, fileName, receivedVia }) => {
     const orgId = await ownerOrg();
-    const { orders, missingColumns } = parseSalesExport(csv);
-    if (missingColumns.length)
-      throw new Error(`This file is missing: ${missingColumns.join(", ")}`);
-    const result = await importParsedOrders(orgId, orders, {
+    return importMoniebookFile(orgId, csv, {
       fileName,
       receivedVia,
+      kind: "sales-summary",
     });
-    await reconcileDays(orgId, result.days);
-    return { ...result, missingColumns };
   },
 });

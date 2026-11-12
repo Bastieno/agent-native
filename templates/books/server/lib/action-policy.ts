@@ -16,6 +16,7 @@ export const ACTION_POLICY: Record<string, Audience> = {
   "import-sales-export": "owner",
   "import-payment-method-report": "owner",
   "import-item-report": "owner",
+  "import-sales-from-whatsapp": "owner",
   "set-item-category": "owner",
   "set-category-business": "owner",
   "record-expense": "owner",

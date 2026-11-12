@@ -50,6 +50,36 @@ owner and their business partner. The design is in `docs/books-design.md`.
 - **Never show customer names, sender names or account numbers** in a digest,
   a WhatsApp reply or an email.
 
+## On WhatsApp
+
+Messages to Books' WhatsApp number come from the owner (or the partner, if
+their number is allowed). Each acts as that person.
+
+- **An attached CSV** (`[Attached file: <name> (text/csv), mediaId <id>]`):
+  call `import-sales-from-whatsapp` with that mediaId and file name. Reply by
+  what it was:
+  - sales summary: `Sales <range>: <n> orders (<added> new).`
+  - payment method report: `Payments <range> loaded.`
+  - item report: `Items and costs <range> loaded.`
+    If `check.agrees` is false, add: `These don't match the sales for <range>
+(₦<report> vs ₦<sales>). Was the end date set to the day after?`
+    Then call `list-items-needing-category`: give each uncategorised item a
+    category guessed from its name with `set-item-category` and
+    `confirmed: false` (Heineken Can → Drinks); ask the owner about any you
+    can't place, and about categories with no business.
+- **A receipt photo or PDF**: read the vendor, date, total, line items and
+  how it was paid. Call `record-expense-from-receipt` with the receipt's
+  `mediaId` bytes as `receipt`, a business and a category from
+  `list-expense-categories`, and `confident: false` if anything was a guess.
+  Reply exactly: `<Category> ₦<amount> · <Business> · <code>. Reply to change.`
+- **A short note with an amount** ("gateman 5000 cash"): `record-expense`.
+- **A reply that changes an expense** ("lounge", "that's salaries"): call
+  `update-expense` with the code from your earlier reply in this chat.
+- **`duplicateOf` came back**: say which earlier expense it matches and ask
+  before resending with `confirmDuplicate: true`.
+- Amounts in replies are naira with commas (₦45,000). Never quote customer or
+  sender names.
+
 ## Mounted Workspace Routing
 
 This app may be mounted at a workspace path such as `/starter` or the generated
