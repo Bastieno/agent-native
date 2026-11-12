@@ -102,8 +102,9 @@ through `accessFilter` / `resolveAccess`, and written through
 - **`items`** — every item name ever seen: `name` (as in the export),
   `businessId` (null until known), `source` (`rule` / `agent` / `owner`).
   Seeded rules: names containing _subscription_, _hub_, _hour_, _full day_,
-  _weekend plan_, _weekly plan_ → Hub; everything else is unassigned until
-  the owner or agent decides.
+  _weekend plan_, _weekly plan_ → Hub. Any other new name goes to the agent,
+  which assigns obvious food and drink to the Lounge (`source = agent`) and
+  leaves the rest unassigned for the owner.
 - **`sales`** — one row per order: `orderNumber` (unique), `orderedAt`, `branchName`,
   `status`, `refundAmount`, `staffName`, `customerName`, `total`,
   `paymentMode`, `importId`. Cancelled orders are kept but excluded from
@@ -174,9 +175,10 @@ call `import-sales-export`.
 - Single-method orders get one `sale_payments` row with `amount = total`.
   Split orders get one row per leg with the reference where present and
   `amount` null.
-- Unknown item names are created unassigned. Books messages the owner once
-  per import listing them ("New items: _Use of Hub Space for 26th Nov_ — Hub
-  or Lounge?"); the reply assigns them.
+- New item names are assigned by rule or by the agent. Any it cannot place
+  stay unassigned, and Books messages the owner once per import listing them
+  ("New items: _More_ — Hub or Lounge?"); the reply assigns them. Sales with
+  unassigned items count under "Unassigned" until then.
 - A file whose headers don't match is rejected with a message naming the
   missing columns.
 
