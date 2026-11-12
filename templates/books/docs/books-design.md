@@ -186,7 +186,7 @@ through `accessFilter` / `resolveAccess`, and written through
   `status` (`needs_review` / `confirmed`), `receiptMediaId`, `imageHash`,
   `rawText`, `lineItems` (JSON), `source` (`whatsapp` / `upload` /
   `history`), `messageId`.
-- **`categories`** — editable list, seeded: Food & drink stock, Diesel /
+- **`expense_categories`** — editable list, seeded: Food & drink stock, Diesel /
   power, Salaries, Rent, Repairs, Internet, Supplies, Other.
 - **`imports`** — each export or statement file: `kind`, `fileName`,
   `rangeStart`, `rangeEnd`, `rowsAdded`, `rowsUpdated`, `receivedVia`.

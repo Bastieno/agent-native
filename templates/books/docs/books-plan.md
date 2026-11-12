@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build `templates/books/`, an agent-native app that imports Moniepoint inventory exports, Moniepoint payment events and WhatsApp receipts, reconciles them per day, and sends daily, weekly and monthly digests to the owner and a read-only partner.
+**Goal:** Build `templates/books/`, an agent-native app that imports Moniebook exports (sales summary, payment method, sales by item), Moniepoint payment events and WhatsApp receipts, reconciles them per day with cost and gross profit, and sends daily, weekly and monthly digests with trends to the owner and a read-only partner.
 
 **Architecture:** A template scaffolded from `templates/starter` and laid out like `templates/school`: Drizzle tables with additive `runMigrations`, `defineAction` operations shared by UI, agent and WhatsApp, pure calculation modules in `server/lib/` checked by `test/*.check.ts`, and a simulation in `test/sim/`. Receipts reach the agent through the framework WhatsApp integration, extended in `packages/core` to carry images and documents. Figures are computed in code; the agent only writes commentary.
 
@@ -20,7 +20,11 @@
 - No LLM calls from server or UI code. Receipt reading and commentary happen in the agent loop.
 - UI uses shadcn/ui from `app/components/ui/`, Tabler icons, no emojis, no `window.confirm`. Mutations are optimistic.
 - Customer names, sender names and account digits never appear in digests, WhatsApp or email.
-- The raw export in `~/Downloads` is never committed. Tests use the anonymised fixture from Task 3.
+- The raw sales summary in `~/Downloads` is never committed. Tests use the anonymised fixture from Task 3. The payment method and item reports carry no personal data and are copied as fixtures unchanged.
+- Moniebook range files: the end date in the file name is **exclusive** (`…-2026-11-01-2026-11-10.csv` covers 1–9 Nov). The sales summary is dated by its rows, not its name.
+- Category → business seed: `Subscription` → `hub`; `Drinks`, `Shawarma`, `Meals`, `Water` → `lounge`.
+- Unit cost = cost of items × 100 ÷ units sold, rounded to the nearest kobo; line cost = quantity × unit cost.
+- Trend thresholds: income/gross profit/expense category ±10%; category margin ±2 points; flag-free run ≥ 3 days; at most 3 "going well" and 3 "to watch" lines per digest.
 - `packages/core` changes ship with `.changeset/books-whatsapp-media.md` (`"@agent-native/core": minor`).
 - Template is private: do not add `books` to `packages/shared-app-config/templates.ts`, `templates-meta.ts`, docs or the homepage.
 - Digest times (Lagos): daily 08:00 for the previous day; weekly Monday 08:00 for Mon–Sun just ended; monthly 1st 08:00 for the previous month.
@@ -30,7 +34,7 @@
 
 1. **The same export sent twice, or overlapping ranges** — totals must not change; a status that changed to `CANCELLED` must drop the order from totals. (Task 4 `reimport is idempotent`, `later cancellation updates`.)
 2. **A Moniepoint event arriving before the export that names it**, or days later — the day must re-reconcile and the flag must clear. (Task 6 `late event clears flag`.)
-3. **A split order where one transfer reference is missing from the feed** — cash share shown as unknown, not as the whole remainder. (Task 5 `unmatched leg is unknown`.)
+3. **A payment method or item report exported with the end date set one day short** — totals must not be silently counted against the wrong days; a "files don't agree" flag names both figures. (Task 4 `short range flagged`, Task 5 `daily files disagree`.)
 4. **A WhatsApp message from a number not on the allow-list** — ignored, nothing written, no reply. (Task 10 `stranger ignored`.)
 5. **A digest run when the export hasn't arrived** — reminder sent, no digest saved for that day, digest sent once the export lands. (Task 12 `missing export reminds`.)
 
@@ -44,7 +48,7 @@ templates/books/
   server/
     db/schema.ts, db/index.ts            # tables, getDb, shareable registration
     plugins/db.ts                        # runMigrations (additive)
-    plugins/integrations.ts              # WhatsApp: owner resolution, CSV pre-processing
+    plugins/integrations.ts              # WhatsApp: allow-list, owner resolution
     plugins/onboarding.ts                # secrets + setup steps
     routes/api/moniepoint/webhook.post.ts
     routes/api/books/cron/tick.get.ts    # CRON_SECRET safety net
@@ -53,13 +57,15 @@ templates/books/
       money.ts            # kobo helpers, ₦ formatting
       lagos-time.ts       # day/week/month boundaries
       access.ts           # requireOrg(), assertOwner()
-      sales-export.ts     # CSV → ParsedOrder[]
-      item-business.ts    # item name → business rules
+      sales-export.ts     # sales summary CSV → ParsedOrder[]
+      moniebook-reports.ts # detectReport, payment method + item report parsers, file-name ranges
       import-sales.ts     # upsert parsed orders into SQL
+      import-reports.ts   # payment method totals, item categories and unit costs
       moniepoint.ts       # signature check + event parsing
       reconcile.ts        # pure day reconciliation
       expense-dupes.ts    # duplicate detection
       digest-figures.ts   # pure figures per period
+      trends.ts           # going well / to watch signals
       digest-render.ts    # WhatsApp text + email HTML from figures
       whatsapp-send.ts    # template + text sends via Graph API
       chat-export.ts      # WhatsApp chat-export zip reader
@@ -69,7 +75,7 @@ templates/books/
   jobs/                   # books-daily-digest.md, books-weekly-digest.md, books-monthly-digest.md
   ops/anonymise-export.ts # makes the committed fixture from a real export
   test/
-    fixtures/sales-sample.csv, fixtures/moniepoint-events.json
+    fixtures/sales-sample.csv, payment-method-sample.csv, item-sample.csv, moniepoint-events.json
     *.check.ts
     sim/run.ts
 packages/core/src/integrations/
@@ -103,22 +109,25 @@ packages/core/src/integrations/
 
 - Produces tables (all with `id TEXT PRIMARY KEY`, `created_at`, `...ownableColumns()`; amounts `INTEGER` kobo):
   - `businesses(name, slug)`
-  - `items(name UNIQUE per org, business_id NULL, source 'rule'|'agent'|'owner')`
-  - `sales(order_number UNIQUE per org, ordered_at, branch_name, status, refund_amount, staff_name, customer_name, total, payment_mode, import_id)`
-  - `sale_lines(sale_id, item_id, quantity, unit_price, line_total, business_id NULL)`
+  - `item_categories(name UNIQUE per org, business_id NULL)`
+  - `items(name UNIQUE per org, category_id NULL, category_source 'moniebook'|'agent'|'owner' NULL, confirmed BOOLEAN)`
+  - `item_costs(item_id, unit_cost, effective_from, import_id)`
+  - `sales(order_number UNIQUE per org, ordered_at, day, branch_name, status, refund_amount, staff_name, customer_name, total, collected_amount, change_amount, payment_mode, import_id)`
+  - `sale_lines(sale_id, item_id, quantity, unit_price, line_total)`
+  - `payment_method_totals(range_start, range_end_exclusive, method, payments, collected, refunded, net, import_id)`
   - `sale_payments(sale_id, leg_index, method, reference NULL, amount NULL, bank, sender_name, sender_account_masked)`
   - `moniepoint_events(webhook_id UNIQUE, received_at, type, reference, amount, occurred_at, payload)`
   - `expenses(code, occurred_on, vendor, amount, business_id, category_id, paid_with, status, receipt_file_id NULL, image_hash NULL, raw_text, line_items, source, message_id)`
   - `receipt_files(mime_type, data_base64, byte_size)`
-  - `categories(name, sort)`
-  - `imports(kind, file_name, range_start, range_end, rows_added, rows_updated, received_via)`
+  - `expense_categories(name, sort)`
+  - `imports(kind, file_name, range_start, range_end, rows_added, rows_updated, received_via, check_result NULL)`
   - `reconciliations(day UNIQUE per org, figures, flags, computed_at)`
   - `digests(period, start_day, end_day, figures, commentary NULL, status 'draft'|'sent'|'failed', sent_at, delivery)`
   - `books_settings(org_id PRIMARY KEY, thresholds JSON, recipients JSON, allowed_numbers JSON)`
 - `toKobo(naira: string | number): number`, `formatNaira(kobo: number): string` (`₦45,000`; kobo shown only when non-zero)
 - `lagosDay(iso: string): string` (`YYYY-MM-DD`), `periodBounds(period: 'daily'|'weekly'|'monthly', now: Date): { start: string; end: string }` — the period that just ended
 - `requireOrg(): string`, `assertOwner(): void` — owner = org role `owner`/`admin`; partner = org `member`. Throws `"Only the owner can change Books."`
-- `ensureBooksSetup(orgId: string): Promise<void>` — idempotent; seeds businesses `Restaurant & Lounge`/`lounge`, `Hub`/`hub` and the eight categories in the spec's order, and default settings from Global Constraints.
+- `ensureBooksSetup(orgId: string): Promise<void>` — idempotent; seeds businesses `Restaurant & Lounge`/`lounge`, `Hub`/`hub`, the item categories from Global Constraints, the eight expense categories in the spec's order, and default settings from Global Constraints.
 
 - [ ] **Step 1: Write the failing checks** (school `check()` helper style):
 
@@ -151,12 +160,48 @@ check("monthly bounds", () =>
 - [ ] **Step 4:** Both checks PASS; `pnpm --filter books dev` boots and creates the tables.
 - [ ] **Step 5:** Commit `feat(books): tables, setup and owner role`.
 
-### Task 3: Export parser and anonymised fixture
+### Task 3: Moniebook parsers and fixtures
 
 **Files:**
 
-- Create: `server/lib/sales-export.ts`, `ops/anonymise-export.ts`, `test/fixtures/sales-sample.csv`
-- Test: `test/sales-export.check.ts`
+- Create: `server/lib/sales-export.ts`, `server/lib/moniebook-reports.ts`, `ops/anonymise-export.ts`, `test/fixtures/sales-sample.csv`, `test/fixtures/payment-method-sample.csv` (copy of `~/Downloads/payment-method-report-2026-11-01-2026-11-10.csv`), `test/fixtures/item-sample.csv` (copy of `~/Downloads/item-sales-report-2026-11-01-2026-11-10.csv`)
+- Test: `test/sales-export.check.ts`, `test/moniebook-reports.check.ts`
+
+**Interfaces (reports):**
+
+```ts
+export type ReportKind = "sales-summary" | "payment-method" | "item-sales";
+export function detectReport(csv: string): ReportKind | null; // by header row
+export function rangeFromFileName(
+  name: string,
+): { start: string; endExclusive: string } | null; // two YYYY-MM-DD dates, sorted
+export interface PaymentMethodRow {
+  method: string;
+  payments: number;
+  refundedCount: number;
+  collected: number;
+  refunded: number;
+  net: number;
+} // kobo
+export function parsePaymentMethodReport(csv: string): {
+  rows: PaymentMethodRow[];
+  missingColumns: string[];
+};
+export interface ItemRow {
+  name: string;
+  category: string | null;
+  totalSold: number;
+  gross: number;
+  costOfItems: number;
+  unitCost: number | null;
+} // kobo; unitCost null when totalSold = 0
+export function parseItemReport(csv: string): {
+  rows: ItemRow[];
+  missingColumns: string[];
+};
+```
+
+Item names are trimmed. An empty `Category` is `null`.
 
 **Interfaces:**
 
@@ -193,6 +238,8 @@ export interface ParsedOrder {
   staffName: string;
   customerName: string | null;
   total: number;
+  collectedAmount: number;
+  change: number;
   paymentMode: "REGULAR" | "SPLIT";
   methods: PaymentMethod[];
   legs: ParsedLeg[];
@@ -261,53 +308,109 @@ check("missing column reported", () =>
 
 (`totalsByMethodSet` is a test-local helper keyed by `methods.join(", ")`.)
 
-- [ ] **Step 3:** Implement `parseSalesExport` and the anonymiser; regenerate the fixture.
-- [ ] **Step 4:** `npx tsx test/sales-export.check.ts` → all PASS.
-- [ ] **Step 5:** Commit `feat(books): read the inventory export` (fixture included, raw file not).
-
-### Task 4: Item → business rules and the import action
-
-**Files:**
-
-- Create: `server/lib/item-business.ts`, `server/lib/import-sales.ts`, `actions/import-sales-export.ts`, `actions/assign-item.ts`, `actions/list-sales.ts`, `actions/list-unassigned-items.ts`
-- Test: `test/item-business.check.ts`, `test/import-sales.check.ts`
-
-**Interfaces:**
-
-- `ruleBusiness(name: string): 'hub' | null` — case-insensitive match on `subscription`, `hub`, `hour`, `full day`, `weekend plan`, `weekly plan`.
-- `importParsedOrders(orgId: string, orders: ParsedOrder[], meta: { fileName: string; receivedVia: 'whatsapp'|'upload' }): Promise<{ importId: string; added: number; updated: number; unchanged: number; newItems: string[]; days: string[] }>` — upsert by `order_number`; on update replace that sale's lines and legs; single-method orders get `amount = total` on their one leg, split legs `amount = null`. New item names insert with `ruleBusiness` (source `rule`) or null.
-- `import-sales-export` action: `{ csv: string; fileName: string; receivedVia?: 'whatsapp'|'upload' }` → the result above plus `missingColumns`; `assertOwner()`; rejects when `missingColumns` is non-empty with `"This file is missing: <cols>"`. Afterwards calls `reconcileDays(orgId, days)` (Task 6; until then a no-op stub exported from `server/lib/reconcile-days.ts`).
-- `assign-item`: `{ itemName: string; business: 'lounge'|'hub' }`, source `owner`, re-resolves `sale_lines.business_id` for that item, re-reconciles affected days.
-- `list-unassigned-items`: `{}` → `{ items: string[] }` — the agent uses this to assign obvious food/drink to `lounge` with `assign-item` and ask the owner about the rest (instruction in AGENTS.md).
-- `list-sales`: `{ start: string; end: string }` → totals by business and by method, excluding `CANCELLED`.
-
-- [ ] **Step 1: Failing checks:**
+Also in `test/sales-export.check.ts`:
 
 ```ts
-check("hub rules", () => {
-  for (const n of [
-    "NIGHT SUBSCRIPTION",
-    "Extra Hour",
-    "Full day",
-    "Weekend Plan",
-    "Use of Hub Space for 26th Nov 2026",
-  ])
-    assert.equal(ruleBusiness(n), "hub");
-  assert.equal(ruleBusiness("Chicken and Chips (Bundled)"), null);
+check("change", () => {
+  const upTo9 = orders.filter(
+    (o) => o.status === "COMPLETED" && o.day <= "2026-11-09",
+  );
+  assert.equal(sum(upTo9.map((o) => o.change)), 520000);
+  assert.equal(sum(upTo9.map((o) => o.collectedAmount)), 106810000);
 });
 ```
 
-`test/import-sales.check.ts` against a fresh SQLite file (`DATABASE_URL=file:./data/check.db`, deleted first):
+`test/moniebook-reports.check.ts`:
+
+```ts
+check("detect", () => {
+  assert.equal(detectReport(salesFixture), "sales-summary");
+  assert.equal(detectReport(paymentFixture), "payment-method");
+  assert.equal(detectReport(itemFixture), "item-sales");
+  assert.equal(detectReport("a,b\n1,2\n"), null);
+});
+check("range is end-exclusive", () =>
+  assert.deepEqual(
+    rangeFromFileName("payment-method-report-2026-11-01-2026-11-10.csv"),
+    { start: "2026-11-01", endExclusive: "2026-11-10" },
+  ),
+);
+check("reversed name", () =>
+  assert.deepEqual(
+    rangeFromFileName("sales-summary2026-11-10-2026-11-01.csv"),
+    { start: "2026-11-01", endExclusive: "2026-11-10" },
+  ),
+);
+check("payment method rows", () => {
+  const { rows } = parsePaymentMethodReport(paymentFixture);
+  const by = Object.fromEntries(rows.map((r) => [r.method, r]));
+  assert.equal(rows.length, 8);
+  assert.equal(by["Bank Transfer"].payments, 105);
+  assert.equal(by["Bank Transfer"].collected, 52430000);
+  assert.equal(by["Cash"].collected, 3450000);
+  assert.equal(sum(rows.map((r) => r.collected)), 106810000);
+});
+check("item rows", () => {
+  const { rows } = parseItemReport(itemFixture);
+  const by = Object.fromEntries(rows.map((r) => [r.name, r]));
+  assert.equal(rows.length, 52);
+  assert.equal(by["WATER"].unitCost, 13000);
+  assert.equal(by["BUDWEISER"].unitCost, 82895);
+  assert.equal(by["Heineken Can"].category, null);
+  assert.equal(by["HUB MONTHLY SUBSCRIPTION PREMIUM"].category, "Subscription");
+  assert.equal(sum(rows.map((r) => r.gross)), 106290000);
+});
+```
+
+- [ ] **Step 3:** Implement `parseSalesExport`, the report parsers and the anonymiser; regenerate the sales fixture; copy the two report fixtures.
+- [ ] **Step 4:** `npx tsx test/sales-export.check.ts` and `npx tsx test/moniebook-reports.check.ts` → all PASS.
+- [ ] **Step 5:** Commit `feat(books): read Moniebook exports` (fixtures included, raw sales summary not).
+
+### Task 4: Imports, categories and costs
+
+**Files:**
+
+- Create: `server/lib/import-sales.ts`, `server/lib/import-reports.ts`, `actions/import-sales-export.ts`, `actions/import-payment-method-report.ts`, `actions/import-item-report.ts`, `actions/set-item-category.ts`, `actions/set-category-business.ts`, `actions/list-items-needing-category.ts`, `actions/list-sales.ts`
+- Test: `test/import-sales.check.ts`, `test/import-reports.check.ts`
+
+**Interfaces:**
+
+- `importParsedOrders(orgId: string, orders: ParsedOrder[], meta: { fileName: string; receivedVia: 'whatsapp'|'upload' }): Promise<{ importId: string; added: number; updated: number; unchanged: number; newItems: string[]; days: string[] }>` — upsert by `order_number`; on update replace that sale's lines and legs; single-method orders get `amount = total` on their one leg, split legs `amount = null`. New item names insert with `category_id = null`.
+- `importPaymentMethodReport(orgId, rows: PaymentMethodRow[], range: { start; endExclusive }, meta)` → `{ importId; days: string[]; check: RangeCheck }` — replaces any earlier rows for the identical range.
+- `type RangeCheck = { agrees: boolean; reportTotal: number; salesTotal: number }` — payment method: sum of `collected` vs completed `collectedAmount` in the range; item report: sum of `gross` vs completed `total` in the range. Stored on the `imports` row (`check_result` JSON); when `agrees` is false the action's reply says so with both figures, and the agent tells the owner the dates are probably off.
+- `importItemReport(orgId, rows: ItemRow[], range, meta)` → `{ importId; categorised: number; needingCategory: string[]; costsAdded: number; days: string[]; check: RangeCheck }` — a non-null category sets the item's category (`moniebook`, `confirmed = true`), creating the `item_categories` row if new (business null); `unitCost` non-null adds an `item_costs` row with `effective_from = range.start`, replacing one with the same item and day. `days` = every day that has sales from `range.start` onward (re-priced).
+- Action `import-sales-export`: `{ csv; fileName; receivedVia? }` → the import result plus `missingColumns`; rejects non-empty `missingColumns` with `"This file is missing: <cols>"`.
+- Actions `import-payment-method-report` / `import-item-report`: `{ csv; fileName; range?: { start; endExclusive }; receivedVia? }`; range from `rangeFromFileName` unless given; rejects with `"Which dates does this file cover?"` when neither exists.
+- All imports `assertOwner()`, then `reconcileDays(orgId, days)` (Task 6; until then a no-op stub in `server/lib/reconcile-days.ts`).
+- `set-item-category`: `{ itemName; category; confirmed?: boolean }` (agent guesses pass `confirmed: false`, source `agent`; owner calls default `true`, source `owner`); re-reconciles days with that item.
+- `set-category-business`: `{ category; business: 'lounge'|'hub' }`; re-reconciles all days with that category.
+- `list-items-needing-category`: `{}` → `{ uncategorised: string[]; unconfirmed: string[]; unmappedCategories: string[] }`. AGENTS.md: after any import, call this; give each uncategorised item a category guessed from its name with `confirmed: false`; ask the owner only about names you can't place.
+- `list-sales`: `{ start; end }` (inclusive days) → completed totals by business (from category; `unassigned` when none) and by method, plus cost of goods per business (`null` parts reported as `uncostedRevenue`).
+
+- [ ] **Step 1: Failing checks** against a fresh SQLite file (`DATABASE_URL=file:./data/check.db`, deleted first):
+
+`test/import-sales.check.ts`:
 
 - `first import` → `added 175, updated 0`
-- `reimport is idempotent` → importing the fixture again gives `added 0, updated 0, unchanged 175`, and `list-sales` for 1–10 Nov is unchanged
-- `later cancellation updates` → fixture with one COMPLETED row flipped to CANCELLED gives `updated 1` and that order's total leaves `list-sales`
+- `reimport is idempotent` → importing again gives `added 0, updated 0, unchanged 175`; `list-sales` 1–10 Nov unchanged
+- `later cancellation updates` → one COMPLETED row flipped to CANCELLED gives `updated 1` and that total leaves `list-sales`
 - `completed income` → `list-sales` 1–10 Nov total excluding The House, Subscription Perk and Leakages equals `108290000`
+- `before item report everything is unassigned` → `list-sales` 1–9 Nov `byBusiness.unassigned` equals `101540000`
+
+`test/import-reports.check.ts` (sales fixture imported first):
+
+- `item report sets categories` → after `import-item-report` with the item fixture: `needingCategory` is `["Heineken Can"]`; `list-sales` 1–9 Nov `byBusiness.hub = 40200000`, `byBusiness.lounge = 61220000`, `byBusiness.unassigned = 120000`
+- `costs` → `list-sales` 1–9 Nov `costOfGoods.hub = 19000000`, `costOfGoods.lounge = 36585880`, and `uncostedRevenue = 0` once `set-item-category {itemName: "Heineken Can", category: "Drinks", confirmed: false}` runs, after which `byBusiness.lounge = 61340000`, `costOfGoods.lounge = 36660880`
+- `guess stays unconfirmed` → `list-items-needing-category().unconfirmed` is `["Heineken Can"]`
+- `payment method range` → `import-payment-method-report` with the fixture and name `payment-method-report-2026-11-01-2026-11-10.csv` stores 8 rows with `range_end_exclusive = '2026-11-10'`
+- `full range agrees` → payment fixture with 1–9 Nov: `check.agrees` true, both totals `106810000`; item fixture with 1–9 Nov: `check.agrees` true, both `106290000`
+- `short range flagged` → the payment fixture imported with `endExclusive: '2026-11-09'` (1–8 Nov): `check.agrees` false, `reportTotal 106810000`, `salesTotal` lower
+- `no range asks` → name `report.csv`, no `range` → rejects with the exact message
 
 - [ ] **Step 2:** Run both → FAIL.
 - [ ] **Step 3:** Implement.
 - [ ] **Step 4:** Run both → PASS.
-- [ ] **Step 5:** Commit `feat(books): import sales and assign items to businesses`.
+- [ ] **Step 5:** Commit `feat(books): import reports, categories and costs`.
 
 ### Task 5: Reconciliation (pure)
 
@@ -327,6 +430,8 @@ export interface DayInput {
     orderedAt: string;
     status: string;
     total: number;
+    collectedAmount: number;
+    change: number;
     staffName: string;
     methods: string[];
     legs: {
@@ -335,8 +440,16 @@ export interface DayInput {
       reference: string | null;
       amount: number | null;
     }[];
-    lines: { businessSlug: string | null; lineTotal: number }[];
+    lines: {
+      itemName: string;
+      businessSlug: string | null;
+      categoryConfirmed: boolean;
+      quantity: number;
+      lineTotal: number;
+      unitCost: number | null;
+    }[];
   }[];
+  paymentReport: { method: string; collected: number }[] | null; // only a report covering exactly this day
   events: {
     webhookId: string;
     reference: string | null;
@@ -387,19 +500,27 @@ export type Flag =
       average: number;
     }
   | { kind: "duplicate_receipt"; expenseIds: [string, string] }
-  | { kind: "needs_review"; count: number };
+  | { kind: "needs_review"; count: number }
+  | { kind: "files_disagree"; reportTotal: number; salesTotal: number }
+  | { kind: "unconfirmed_category"; items: string[] }
+  | { kind: "no_cost"; items: string[]; revenue: number };
 export interface DayResult {
   incomeByMethod: Record<"moniepoint" | "opay" | "cash", number>;
   incomeByBusiness: Record<string, number>; // 'lounge' | 'hub' | 'unassigned'
+  costOfGoodsByBusiness: Record<string, number>; // paid lines only
+  grossProfitByBusiness: Record<string, number>; // income − cost of goods − not-income cost charged to it
+  uncostedRevenue: number;
   notIncome: {
-    house: number;
-    perk: number;
-    leakages: number;
-    byStaff: Record<string, number>;
+    atCost: { house: number; perk: number; leakages: number };
+    atMenu: { house: number; perk: number; leakages: number };
+    byStaff: Record<string, number>; // at cost
   };
-  hubPerkCost: number;
-  cash: { known: number; unknownOrders: number };
-  expectedCashInHand: number | null;
+  cash: {
+    collected: number | null;
+    source: "payment-report" | "orders";
+    change: number;
+  };
+  cashInTill: number | null;
   expensesByBusiness: Record<string, number>;
   expensesByCategory: Record<string, number>;
   matchedEventIds: string[];
@@ -408,20 +529,30 @@ export interface DayResult {
 export function reconcileDay(input: DayInput): DayResult;
 ```
 
-Matching order: (1) legs with references to events by reference; one event may serve several legs, its amount allocated to them in order of each order's remaining balance, and `shared_reference_mismatch` when the sum differs. (2) For each `Accepted manually` sale, the nearest unmatched event with equal amount within the window. (3) Split orders per the spec's four rules. Moniepoint methods: Bank Transfer, Card, Accepted manually. `expectedCashInHand = cash.known − cash expenses`, or `null` when `unknownOrders > 0`. A line with a null business counts under `unassigned`. Perk value is added to `hubPerkCost`, not to income.
+Matching order: (1) legs with references to events by reference; one event may serve several legs, its amount allocated to them in order of each order's remaining balance, and `shared_reference_mismatch` when the sum differs. (2) For each `Accepted manually` sale, the nearest unmatched event with equal amount within the window. (3) Split orders per the spec's four rules, comparing matched transfers with **`collectedAmount`** (total + change), so an overpayment returned as change is not a flag. Moniepoint methods: Bank Transfer, Card, Accepted manually.
+
+Cash: `collected` = the payment report's Cash row when `paymentReport` is set, else cash sales + cash parts of splits (`null` if any part unknown). `cashInTill = collected − change − cash expenses`, `null` when `collected` is null. With a payment report, `files_disagree` when the sum of its `collected` ≠ the completed orders' `collectedAmount`.
+
+Cost: line cost = `quantity × unitCost`; lines with `unitCost` null add their `lineTotal` to `uncostedRevenue` and their names to `no_cost`. Not-income lines (The House, Subscription Perk, Leakages) are costed the same way; Perk cost is charged to `hub` gross profit whatever the item's business, The House and Leakages to the item's business. A line with a null business counts under `unassigned`; lines with `categoryConfirmed = false` produce one `unconfirmed_category` flag listing the names.
 
 - [ ] **Step 1: Failing checks** — one hand-built `DayInput` per case, each asserting `flags` and figures exactly:
   - `reference match` (Bank Transfer ₦4,500 + event 450000 → no flag, moniepoint 450000)
   - `two-transfer split exact` (total 600 = 300 + 300, no Cash method → no flag)
   - `two-transfer split short` (total 4500, events 2000 + 2000 → `split_short` difference 50000)
-  - `transfer plus cash` (total 13500, event 6000 → cash.known 750000)
-  - `transfer plus cash over` (total 4000, event 4500 → `split_over` 50000)
-  - `unmatched leg is unknown` (two legs, one event missing → `transfer_missing` + `split_unknown`, `expectedCashInHand` null)
+  - `transfer plus cash` (total 13500, collected 13500, event 6000, no payment report → `cash.collected` 750000)
+  - `overpaid with change` (total 53700, collected 58600, change 4900, events summing 58600 → no flag)
+  - `transfer plus cash over` (total 4000, collected 4000, event 4500 → `split_over` 50000)
+  - `unmatched leg is unknown` (two legs, one event missing → `transfer_missing` + `split_unknown`, `cashInTill` null)
+  - `cash from payment report` (report Cash 3450000, change 520000, cash expenses 100000 → `cashInTill` 2830000, `source` "payment-report")
+  - `daily files disagree` (report collected sum 106810000, orders 106700000 → `files_disagree`)
+  - `gross profit` (hub line 4000000 cost 2000000; lounge line 450000 cost 280000; Perk line menu 450000 cost 270000 on a lounge item → hub GP 1730000, lounge GP 170000, `atMenu.perk` 450000)
+  - `no cost` (line unitCost null, 120000 → `uncostedRevenue` 120000, `no_cost` flag)
+  - `unconfirmed category` (one line `categoryConfirmed: false` → flag with its name)
   - `one reference two orders` (two orders 1000 + 2000, one event 3000 → no flag; event 2500 → `shared_reference_mismatch`)
   - `accepted manually matched` (300 at 22:38, event 300 at 22:10 → matched) and `…unmatched` (event at 19:00 → `manual_unmatched`)
   - `money without sale` (event with unknown reference → `moniepoint_without_sale`)
   - `cancelled excluded` (CANCELLED order → not in income, `cancelled` flag)
-  - `house above threshold`, `perk is hub cost`, `large expense`, `category spike` (today 130 vs average 100 → flag; 129 → none), `needs review`
+  - `house above threshold` (at cost), `large expense`, `category spike` (today 130 vs average 100 → flag; 129 → none), `needs review`
 - [ ] **Step 2:** Run → FAIL.
 - [ ] **Step 3:** Implement `reconcileDay`.
 - [ ] **Step 4:** Run → PASS.
@@ -510,15 +641,15 @@ Matching order: (1) legs with references to events by reference; one event may s
 - Plugin uses `createIntegrationsPlugin({ resolveOwner, beforeProcess, actions })`.
 - `beforeProcess(incoming)`: runs inside the webhook request, so it only does one indexed read. Normalise `senderId` to E.164; if not in `books_settings.allowed_numbers` return `{ handled: true }` with no `responseText` (nothing queued, no reply). Otherwise `{ handled: false }`.
 - `resolveOwner(incoming)`: the email mapped to that number.
-- `import-sales-from-whatsapp` action: `{ mediaId: string; fileName: string }` → fetches with `fetchIntegrationAttachment('whatsapp', mediaId)`, then the same path as `import-sales-export` (`receivedVia: 'whatsapp'`), returning its result.
+- `import-sales-from-whatsapp` action: `{ mediaId: string; fileName: string; range?: { start; endExclusive } }` → fetches with `fetchIntegrationAttachment('whatsapp', mediaId)`, runs `detectReport`, and takes the matching import path (`receivedVia: 'whatsapp'`), returning `{ kind, ...result }`; an unrecognised file returns `"This doesn't look like a Moniebook sales summary, payment method or item report."`
 - AGENTS.md instructions:
-  - Attached CSV → `import-sales-from-whatsapp`; then `list-unassigned-items`, `assign-item` obvious food and drink to `lounge`; reply `"Sales <range> imported: <n> orders (<added> new)."` plus `" Which business are these: <items>?"` for any left.
+  - Attached CSV → `import-sales-from-whatsapp`. Reply by kind: sales summary `"Sales <range>: <n> orders (<added> new)."`; payment method `"Payments <range> loaded."`; item report `"Items and costs <range> loaded."`. If `check.agrees` is false, add `"These don't match the sales for <range> (₦<report> vs ₦<sales>). Was the end date set to the day after?"`. Then `list-items-needing-category`: guess categories with `confirmed: false`, ask about any you can't place.
   - Image/PDF → read vendor, date, total, line items, payment method; `record-expense-from-receipt`; reply exactly `"<Category> ₦<amount> · <Business> · <code>. Reply to change."`.
   - A reply changing something → `update-expense` with the code from the thread (the thread keeps history, so no quoted-message lookup is needed).
   - `duplicateOf` returned → ask before resending with `confirmDuplicate`.
 - `sendWhatsAppText(to: string, text: string)`, `sendWhatsAppTemplate(to: string, template: 'books_digest', params: string[])`.
 
-- [ ] **Step 1: Failing checks** (adapter and fetch mocked): `stranger ignored` (`beforeProcess` handled, no rows, no send), `allowed number passes to agent as owner`, `import from whatsapp media` (fixture bytes → `added 175`), `bad csv returns missing columns`.
+- [ ] **Step 1: Failing checks** (adapter and fetch mocked): `stranger ignored` (`beforeProcess` handled, no rows, no send), `allowed number passes to agent as owner`, `import from whatsapp media` (sales fixture bytes → kind `sales-summary`, `added 175`; payment fixture → kind `payment-method`), `unknown file rejected`, `bad csv returns missing columns`.
 - [ ] **Step 2–4:** FAIL → implement → PASS.
 - [ ] **Step 5:** Commit `feat(books): receipts and sales files over WhatsApp`.
 
@@ -526,18 +657,36 @@ Matching order: (1) legs with references to events by reference; one event may s
 
 **Files:**
 
-- Create: `server/lib/digest-figures.ts`, `server/lib/digest-render.ts`, `actions/build-digest.ts`, `actions/save-digest-commentary.ts`, `actions/send-digest.ts`, `actions/get-digest.ts`, `actions/list-digests.ts`
-- Test: `test/digest.check.ts`
+- Create: `server/lib/digest-figures.ts`, `server/lib/trends.ts`, `server/lib/digest-render.ts`, `actions/build-digest.ts`, `actions/save-digest-commentary.ts`, `actions/send-digest.ts`, `actions/get-digest.ts`, `actions/list-digests.ts`
+- Test: `test/digest.check.ts`, `test/trends.check.ts`
 
 **Interfaces:**
 
-- `digestFigures(period, days: DayResult[], previous: DayResult[] | null, extras: { topExpenses; sellers; subscriptionsByPlan; categoryMonths }): DigestFigures` — daily: net per business and combined, income by method, top 5 expenses, flags, review count; weekly adds change vs previous, best/worst 3 sellers per business by revenue, not-income by staff, rising categories; monthly adds P&L per business, 3-month category trend, Hub subscription income by plan name, margin = (income − expenses − perk cost) / income.
+- `digestFigures(period, days: DayResult[], previous: DayResult[] | null, extras: { topExpenses; sellers; subscriptionsByPlan; categoryMonths; marginByCategory }): DigestFigures` — daily: income, gross profit and net (gross profit − expenses) per business and combined, income by method, cash in till, top 5 expenses, flags, review count; weekly adds change vs previous, best/worst 3 sellers per business **by gross profit**, not-income by staff (at cost), rising expense categories; monthly adds P&L per business (income, cost of goods, gross profit, expenses, net), margin by Moniebook category, 3-month expense category trend, Hub subscription income by plan name, margin = gross profit ÷ income. Any figure resting on uncosted revenue carries `uncostedRevenue` so the render can say so.
+- `type Signal = { direction: 'good' | 'watch'; kind: string; subject: string; now: number; before: number; change: number }` and `trendSignals(current: PeriodStats, comparison: PeriodStats, history: { flagFreeRun: number; bestEver: { day: number; week: number; month: number }; subscribers: { new: number; returning: number } }): Signal[]` — implements the spec's "Going well" / "To watch" list with Global Constraints thresholds; sorted by `|change|` descending; at most 3 of each. `PeriodStats` holds income and gross profit per business, margin per category, expense per category, The House + Leakages at cost, income per weekday, and units + margin per item. Subscriber counts use `customerName` on Subscription items and expose counts only.
+- `DigestFigures.trends: Signal[]`; the job prompt (Task 12) asks the agent to word these, never to add its own.
 - `renderWhatsApp(f: DigestFigures, link: string): string` (≤ 1,000 chars, no customer data); `renderEmail(f, commentary: string | null): string` (HTML via core `renderEmail`).
 - `build-digest`: `{ period; start?; end? }` → `{ digestId; figures }`, saves `status 'draft'`; refuses daily when no import covers `end` with `"No sales file for <day> yet."`.
 - `save-digest-commentary`: `{ digestId; commentary }` (markdown, ≤ 1,500 chars).
 - `send-digest`: `{ digestId }` → sends WhatsApp template to each recipient and email; records per-recipient result; `status 'sent'` if any channel succeeded else `'failed'`.
 
-- [ ] **Step 1: Failing checks:** fixture imported, no expenses: `daily 10 Nov figures` (income equals that day's completed non-gift totals from `list-sales`), `weekly 3–9 Nov` (Mon–Sun), `monthly margin with no expenses is 100%`, `whatsapp text has no customer or sender names` (regex over fixture names `Customer \d+|Sender \d+` finds none), `whatsapp under 1000 chars`, `daily refused without export`.
+- [ ] **Step 1: Failing checks.** `test/digest.check.ts`, all three fixtures imported, Heineken Can set to Drinks, no expenses:
+  - `daily 9 Nov figures` (income per business equals `list-sales` for 9 Nov)
+  - `weekly 2–8 Nov` (Mon–Sun bounds, compared with nothing earlier → no change figures)
+  - `gross profit 1–9 Nov` (range build: hub `20390000`, lounge `22754120` — The House cost `1925000` charged to lounge, Perk cost `810000` to hub, Leakages "More" uncosted `100000` noted)
+  - `whatsapp text has no customer or sender names` (regex `Customer \d+|Sender \d+` finds none)
+  - `whatsapp under 1000 chars`
+  - `daily refused without export`
+
+  `test/trends.check.ts`, hand-built `PeriodStats`:
+  - `margin up is good` (Shawarma margin 34.35 vs 32.61 → `good`, change 1.74 → **no** signal under the 2-point threshold; 35.0 vs 32.61 → signal)
+  - `income up 10% is good`, `9% is nothing`
+  - `house up is watch`
+  - `expenses faster than income is watch`
+  - `flag-free run of 3`
+  - `new subscribers counted, names absent` (JSON of the result contains no customer name)
+  - `three of each at most`
+
 - [ ] **Step 2–4:** FAIL → implement → PASS.
 - [ ] **Step 5:** Commit `feat(books): digest figures and delivery`.
 
@@ -548,7 +697,7 @@ Matching order: (1) legs with references to events by reference; one event may s
 - Create: `jobs/books-daily-digest.md` (`schedule: "0 7 * * *"` UTC = 08:00 Lagos), `jobs/books-weekly-digest.md` (`"0 7 * * 1"`), `jobs/books-monthly-digest.md` (`"0 7 1 * *"`), `server/routes/api/books/cron/tick.get.ts`, `vercel.json` crons `{"path": "/api/books/cron/tick", "schedule": "30 7 * * *"}`
 - Test: `test/schedule.check.ts`
 
-Job body (agent): call `build-digest` for the period; if it refuses for a missing file, call `send-reminder` and stop; read the figures; write 3–6 sentences on what changed and what to look at, quoting only figures from the result; `save-digest-commentary`; `send-digest`.
+Job body (agent): call `build-digest` for the period; if it refuses for a missing file, call `send-reminder` and stop; read the figures; write 3–6 sentences on what changed, then "Going well" and "To watch" from `figures.trends` only (none → leave the list out), quoting only figures from the result; `save-digest-commentary`; `send-digest`.
 
 `tick.get.ts`: `CRON_SECRET` bearer exactly as school's `daily.get.ts`; for each due period whose digest is not `sent` by 08:30 Lagos, build and send without commentary; if no export, send the reminder once per day (`reminders` key in `books_settings`). Also re-sends a pending daily digest when the export has since arrived. Add `actions/send-reminder.ts` (`"No sales file for <day> yet. Send it to this number and I'll send the report."`).
 
@@ -574,10 +723,10 @@ Job body (agent): call `build-digest` for the period; if it refuses for a missin
 
 - Create: `app/routes/_app.tsx` (pathless layout with sidebar), `app/routes/_app._index.tsx` (Today), `_app.expenses.tsx`, `_app.sales.tsx`, `_app.reports.tsx`, `_app.reports.$id.tsx`, `_app.settings.tsx`, `app/components/expense-sheet.tsx`, `app/hooks/use-navigation-state.ts`, `actions/view-screen.ts`, `actions/navigate.ts`, `actions/update-settings.ts`
 
-Screens per the spec's "Screens" section. Today: latest digest, flags, review queue (receipts `needs_review`, unassigned items). Expenses: table, filters in a `Popover`, row opens `Sheet` with the receipt image and editable fields (optimistic `update-expense`). Sales: period picker, totals by business and method, file drop calls `import-sales-export`; import history in a `DropdownMenu`. Reports: list, detail renders the email HTML. Settings: `Tabs` for businesses, categories, items, thresholds, recipients, connections. Partner sees no edit controls. Navigation state written to `application_state` (`page`, `period`, `expenseCode`, `digestId`); `view-screen` returns it.
+Screens per the spec's "Screens" section. Today: latest digest with its trends, flags, review queue (receipts `needs_review`, category guesses to confirm via `set-item-category`, items with no cost, categories with no business). Expenses: table, filters in a `Popover`, row opens `Sheet` with the receipt image and editable fields (optimistic `update-expense`). Sales: period picker, income, cost of goods and gross profit by business and method; a file drop runs `detectReport` client-side and calls the matching import action; import history (with each file's range check) in a `DropdownMenu`. Reports: list, detail renders the email HTML. Settings: `Tabs` for businesses, item categories (category → business), items (category, latest unit cost), expense categories, thresholds, recipients, connections. Partner sees no edit controls. Navigation state written to `application_state` (`page`, `period`, `expenseCode`, `digestId`); `view-screen` returns it.
 
 - [ ] **Step 1:** Implement screens; `pnpm --filter books typecheck` clean.
-- [ ] **Step 2:** With the dev server and the fixture imported, verify in the browser pane: Today shows 10 Nov flags; editing an expense's business in the sheet updates the row without a spinner; signed in as a member, no edit controls render and `update-expense` returns the owner message.
+- [ ] **Step 2:** With the dev server and the fixture imported, verify in the browser pane: Today shows 10 Nov flags and the Heineken Can category guess; editing an expense's business in the sheet updates the row without a spinner; signed in as a member, no edit controls render and `update-expense` returns the owner message.
 - [ ] **Step 3:** Commit `feat(books): screens`.
 
 ### Task 15: Onboarding and secrets
@@ -586,7 +735,7 @@ Screens per the spec's "Screens" section. Today: latest digest, flags, review qu
 
 - Create: `server/plugins/onboarding.ts`
 
-Register secrets (`registerRequiredSecret`): `WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_VERIFY_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_APP_SECRET`, `MONIEPOINT_WEBHOOK_SECRET`, `CRON_SECRET`. Onboarding steps (`registerOnboardingStep`), in the spec's order: WhatsApp number + `books_digest` template, Moniepoint webhook, email sender, owner/partner numbers and emails (writes `books_settings` via `update-settings`), first import.
+Register secrets (`registerRequiredSecret`): `WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_VERIFY_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_APP_SECRET`, `MONIEPOINT_WEBHOOK_SECRET`, `CRON_SECRET`. Onboarding steps (`registerOnboardingStep`), in the spec's order: WhatsApp number + `books_digest` template, Moniepoint webhook, email sender, owner/partner numbers and emails (writes `books_settings` via `update-settings`), first import (item report first, then sales summaries and payment method reports).
 
 - [ ] **Step 1:** Implement; dev server shows the five steps in the setup checklist; completing "numbers" persists to `books_settings`.
 - [ ] **Step 2:** Commit `feat(books): setup checklist`.
@@ -597,7 +746,7 @@ Register secrets (`registerRequiredSecret`): `WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_
 
 - Create: `test/sim/run.ts`, `test/sim/week.ts`, `test/README.md`
 
-A fresh SQLite DB; imports the fixture day by day through the HTTP actions as the owner; posts signed Moniepoint events for every transfer and card reference except three chosen gaps (one plain transfer, one split leg, one accepted-manually); records 12 synthetic expenses (two duplicates, one over ₦100,000, one diesel spike); builds daily digests for 1–10 Nov and the weekly digest for 3–9 Nov; asserts each digest's figures against totals computed independently in the sim from the fixture; asserts exactly the three gaps and the planted expense issues appear as flags; writes `test-runs/<run>/report.md`.
+A fresh SQLite DB; imports the item fixture, then the sales fixture, then a one-day payment method report per day built from the fixture's orders (cash and transfer parts from the planted events), through the HTTP actions as the owner; posts signed Moniepoint events for every transfer and card reference except three chosen gaps (one plain transfer, one split leg, one accepted-manually); records 12 synthetic expenses (two duplicates, one over ₦100,000, one diesel spike); builds daily digests for 1–10 Nov and the weekly digest for 3–9 Nov; asserts each digest's figures against totals computed independently in the sim from the fixture; asserts exactly the three gaps and the planted expense issues appear as flags; asserts the 1–9 Nov gross profit figures from Task 11; asserts the weekly digest has at least one trend signal; writes `test-runs/<run>/report.md`.
 
 - [ ] **Step 1:** `pnpm --filter books sim` → report written, exit 0, all assertions PASS.
 - [ ] **Step 2:** Commit `test(books): a simulated ten days`.
