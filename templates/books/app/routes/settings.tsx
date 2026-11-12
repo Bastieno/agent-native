@@ -289,6 +289,8 @@ export default function SettingsPage() {
           )}
           <p className="text-xs text-muted-foreground">
             Keys for WhatsApp and Moniepoint are added in the setup checklist.
+            Books organisation id:{" "}
+            <code className="select-all">{data.orgId}</code>
           </p>
         </TabsContent>
       </Tabs>

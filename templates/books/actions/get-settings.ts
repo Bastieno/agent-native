@@ -28,6 +28,7 @@ export default defineAction({
     ).catch(() => []);
     const role = await currentRole();
     return {
+      orgId,
       canEdit: role === "owner" || role === "admin",
       thresholds: {
         ...DEFAULT_THRESHOLDS,
