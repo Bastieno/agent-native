@@ -62,8 +62,21 @@ export async function bootBooks(name: string) {
   return { exec, query, asOwner: as(OWNER), asPartner: as(PARTNER) };
 }
 
-export const fixture = (name: string) =>
-  readFileSync(`test/fixtures/${name}`, "utf8");
+/**
+ * The real-data fixtures (sales summary, payment method and item reports) are
+ * kept out of git because the repo is public. Put copies in test/fixtures/ to
+ * run the checks that use them.
+ */
+export const fixture = (name: string) => {
+  try {
+    return readFileSync(`test/fixtures/${name}`, "utf8");
+  } catch {
+    console.error(
+      `Missing test/fixtures/${name}. Real business data is kept out of git; copy it in to run this check.`,
+    );
+    process.exit(1);
+  }
+};
 
 /** Exit once every check has settled; the database client keeps the process alive otherwise. */
 export async function finish(): Promise<never> {

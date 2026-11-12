@@ -1,14 +1,13 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
-import { check, sum } from "./helpers.js";
+import { check, fixture, sum } from "./helpers.js";
 import { parseCsv } from "../server/lib/csv.js";
 import {
   parseSalesExport,
   type ParsedOrder,
 } from "../server/lib/sales-export.js";
 
-const fixture = readFileSync("test/fixtures/sales-sample.csv", "utf8");
-const { orders, missingColumns } = parseSalesExport(fixture);
+const salesCsv = fixture("sales-sample.csv");
+const { orders, missingColumns } = parseSalesExport(salesCsv);
 const completed = orders.filter((o) => o.status === "COMPLETED");
 
 function totalsByMethodSet(os: ParsedOrder[]) {

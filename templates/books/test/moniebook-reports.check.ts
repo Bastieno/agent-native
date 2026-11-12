@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
-import { check, sum } from "./helpers.js";
+import { check, fixture, sum } from "./helpers.js";
 import {
   detectReport,
   rangeFromFileName,
@@ -8,12 +7,9 @@ import {
   parseItemReport,
 } from "../server/lib/moniebook-reports.js";
 
-const salesFixture = readFileSync("test/fixtures/sales-sample.csv", "utf8");
-const paymentFixture = readFileSync(
-  "test/fixtures/payment-method-sample.csv",
-  "utf8",
-);
-const itemFixture = readFileSync("test/fixtures/item-sample.csv", "utf8");
+const salesFixture = fixture("sales-sample.csv");
+const paymentFixture = fixture("payment-method-sample.csv");
+const itemFixture = fixture("item-sample.csv");
 
 check("detect", () => {
   assert.equal(detectReport(salesFixture), "sales-summary");

@@ -44,3 +44,9 @@ learnings.md
 
 # Simulation output
 test-runs/
+
+# Real business data: kept on this machine only (the repo is public)
+test/fixtures/sales-sample.csv
+test/fixtures/payment-method-sample.csv
+test/fixtures/item-sample.csv
+docs/*.pdf
