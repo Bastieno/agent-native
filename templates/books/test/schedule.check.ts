@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import { bootBooks, check, finish, fixture, ORG, OWNER } from "./helpers.js";
 
-const { query } = await bootBooks("check-schedule");
+const { query, asOwner: ownerRun } = await bootBooks("check-schedule");
+const { readFileSync: fixtureFileRead } = await import("node:fs");
+const fixtureFile = (p: string) => fixtureFileRead(p, "utf8");
 const { importMoniebookFile } = await import("../server/lib/import-file.js");
 const { dueDigests, digestTick, cronAuthorised, digestJobContent } =
   await import("../server/lib/schedule.js");
@@ -36,10 +38,12 @@ await importMoniebookFile(ORG, fixture("sales-sample.csv"), {
 });
 await check("export arrives later sends digest", async () => {
   const r = await digestTick(ORG, lagos("2026-11-11T10:00:00"), deps);
-  assert.equal(r.sent.length, 1);
-  const [d] = await query(`SELECT period, start_day FROM digests`);
-  assert.equal(d.period, "daily");
-  assert.equal(d.start_day, "2026-11-10");
+  const built = await query(`SELECT period, start_day FROM digests`);
+  assert.ok(r.sent.length >= 1);
+  assert.ok(
+    built.some((d) => d.period === "daily" && d.start_day === "2026-11-10"),
+    "yesterday's daily",
+  );
 });
 await check("already sent is not resent", async () => {
   await query(`UPDATE digests SET status = 'sent'`);
@@ -48,11 +52,11 @@ await check("already sent is not resent", async () => {
   assert.equal(sent.length, before);
 });
 await check("monday sends weekly too", async () => {
+  await query(`DELETE FROM digests WHERE org_id = ?`, [ORG]);
   const due = await dueDigests(ORG, lagos("2026-11-09T08:30:00"));
-  assert.deepEqual(
-    due.map((d) => `${d.period} ${d.start} ${d.end}`),
-    ["daily 2026-11-08 2026-11-08", "weekly 2026-11-02 2026-11-08"],
-  );
+  const keys = due.map((d) => `${d.period} ${d.start} ${d.end}`);
+  assert.ok(keys.includes("daily 2026-11-08 2026-11-08"), keys.join("; "));
+  assert.ok(keys.includes("weekly 2026-11-02 2026-11-08"), keys.join("; "));
 });
 await check("first of the month sends monthly", async () => {
   const due = await dueDigests(ORG, lagos("2026-12-01T08:30:00"));
@@ -82,5 +86,58 @@ await check("job file", () => {
   assert.match(c, /^---\nschedule: "0 \* \* \* \*"\nenabled: true\n/);
   assert.match(c, /due-digests/);
   assert.match(c, /figures\.trends/);
+});
+await check("a late file still gets its weekly and daily", async () => {
+  // Tuesday 10 Nov: last week's weekly (2–8 Nov) and Sunday's daily were never sent.
+  await query(`DELETE FROM digests WHERE org_id = ?`, [ORG]);
+  const due = (await dueDigests(ORG, lagos("2026-11-10T09:00:00"))).map(
+    (d) => `${d.period} ${d.start}`,
+  );
+  assert.ok(due.includes("weekly 2026-11-02"), `weekly missing from ${due}`);
+  assert.ok(
+    due.includes("daily 2026-11-08"),
+    `Sunday's daily missing from ${due}`,
+  );
+});
+await check("send-reminder reminds once a day", async () => {
+  const action = (await import("../actions/send-reminder.js")).default;
+  const a = await ownerRun(() => action.run({ day: "2026-11-11" }));
+  const b = await ownerRun(() => action.run({ day: "2026-11-11" }));
+  assert.equal(a.sent, true);
+  assert.equal(b.sent, false);
+});
+await check("a digest is only sent once", async () => {
+  const { buildDigest, sendDigest } = await import("../server/lib/digests.js");
+  process.env.WHATSAPP_ACCESS_TOKEN = "t";
+  process.env.WHATSAPP_PHONE_NUMBER_ID = "p";
+  await query(`UPDATE books_settings SET recipients = ? WHERE org_id = ?`, [
+    JSON.stringify([{ name: "Owner", whatsapp: "2348030000000" }]),
+    ORG,
+  ]);
+  let calls = 0;
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = (async () => {
+    calls++;
+    return new Response("{}", { status: 200 });
+  }) as typeof fetch;
+  try {
+    await query(`DELETE FROM digests WHERE org_id = ?`, [ORG]);
+    const { digestId } = await buildDigest(
+      ORG,
+      "daily",
+      "2026-11-09",
+      "2026-11-09",
+    );
+    const first = await sendDigest(ORG, digestId);
+    const second = await sendDigest(ORG, digestId);
+    assert.equal(first.status, "sent");
+    assert.equal(second.skipped, true);
+    assert.equal(calls, 1);
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+});
+await check("the safety-net cron runs hourly", () => {
+  assert.match(fixtureFile("vercel.json"), /"schedule": "0 \* \* \* \*"/);
 });
 await finish();

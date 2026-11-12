@@ -53,9 +53,13 @@ export async function buildDigest(
     `SELECT id, status FROM digests WHERE org_id = ? AND period = ? AND start_day = ? AND end_day = ?`,
     [orgId, period, start, end],
   );
-  if (existing && existing.status !== "sent") {
+  if (
+    existing &&
+    (existing.status === "draft" || existing.status === "failed")
+  ) {
+    // Fresh figures; any commentary the agent has already written is kept.
     await run(
-      `UPDATE digests SET figures = ?, commentary = NULL, status = 'draft' WHERE org_id = ? AND id = ?`,
+      `UPDATE digests SET figures = ?, status = 'draft' WHERE org_id = ? AND id = ?`,
       [JSON.stringify(figures), orgId, existing.id],
     );
     return { digestId: existing.id as string, figures };
@@ -100,6 +104,26 @@ export async function recipients(orgId: string): Promise<Recipient[]> {
 
 /** Deliver a saved digest. The digest is already stored, so a failed send never loses it. */
 export async function sendDigest(orgId: string, id: string) {
+  // Claim the digest so it goes out once, however many callers race to send it.
+  const token = JSON.stringify({ claim: newId() });
+  await run(
+    `UPDATE digests SET status = 'sending', delivery = ? WHERE org_id = ? AND id = ? AND status IN ('draft', 'failed')`,
+    [token, orgId, id],
+  );
+  const [claimed] = await rows(
+    `SELECT status, delivery FROM digests WHERE org_id = ? AND id = ?`,
+    [orgId, id],
+  );
+  if (!claimed) throw new Error("No such digest.");
+  if (claimed.delivery !== token) {
+    return {
+      digestId: id,
+      status: claimed.status as string,
+      skipped: true as const,
+      results: [],
+      whatsappText: "",
+    };
+  }
   const d = await loadDigest(orgId, id);
   const people = await recipients(orgId);
   const results: {
@@ -112,11 +136,20 @@ export async function sendDigest(orgId: string, id: string) {
   const subject = `Books ${d.period === "range" ? "report" : `${d.period} digest`}: ${summaryLine(d.figures)}`;
   for (const p of people) {
     if (p.whatsapp) {
-      const r = await sendWhatsAppTemplate(p.whatsapp, "books_digest", [
-        summaryLine(d.figures),
-        d.link,
-      ]);
-      results.push({ name: p.name, channel: "whatsapp", ...r });
+      try {
+        const r = await sendWhatsAppTemplate(p.whatsapp, "books_digest", [
+          summaryLine(d.figures),
+          d.link,
+        ]);
+        results.push({ name: p.name, channel: "whatsapp", ...r });
+      } catch (err) {
+        results.push({
+          name: p.name,
+          channel: "whatsapp",
+          ok: false,
+          error: (err as Error).message,
+        });
+      }
     }
     if (p.email) {
       if (!isEmailConfigured()) {

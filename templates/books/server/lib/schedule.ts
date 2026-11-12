@@ -26,22 +26,47 @@ export interface DueDigest {
   waitingForExport: boolean;
 }
 
-/** Which digests are due at `now` (Lagos time) and not yet sent or attempted. */
+/** How far back a digest that never went out is still sent. */
+const LOOKBACK = { daily: 3, weekly: 2, monthly: 1 } as const;
+
+/** Periods that have ended by `now`, most recent first, within the lookback. */
+function recentPeriods(now: Date): Omit<DueDigest, "waitingForExport">[] {
+  const out: Omit<DueDigest, "waitingForExport">[] = [];
+  for (let i = 0; i < LOOKBACK.daily; i++) {
+    const { start, end } = periodBounds(
+      "daily",
+      new Date(now.getTime() - i * 86_400_000),
+    );
+    out.push({ period: "daily", start, end });
+  }
+  for (let i = 0; i < LOOKBACK.weekly; i++) {
+    const { start, end } = periodBounds(
+      "weekly",
+      new Date(now.getTime() - i * 7 * 86_400_000),
+    );
+    out.push({ period: "weekly", start, end });
+  }
+  out.push({ period: "monthly", ...periodBounds("monthly", now) });
+  return out;
+}
+
+/**
+ * Which digests are due at `now` (Lagos time) and not yet sent, being sent or
+ * attempted. A file that arrives late still gets its digest, within the lookback.
+ */
 export async function dueDigests(
   orgId: string,
   now: Date,
 ): Promise<DueDigest[]> {
   if (lagosHour(now) < DIGEST_HOUR) return [];
-  const today = lagosDay(now);
-  const weekday = (new Date(`${today}T00:00:00Z`).getUTCDay() + 6) % 7;
-  const periods: DueDigest["period"][] = ["daily"];
-  if (weekday === 0) periods.push("weekly");
-  if (today.endsWith("-01")) periods.push("monthly");
   const due: DueDigest[] = [];
-  for (const period of periods) {
-    const { start, end } = periodBounds(period, now);
+  const seen = new Set<string>();
+  for (const { period, start, end } of recentPeriods(now)) {
+    const key = `${period}:${start}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
     const done = await rows(
-      `SELECT id FROM digests WHERE org_id = ? AND period = ? AND start_day = ? AND end_day = ? AND status IN ('sent', 'failed')`,
+      `SELECT id FROM digests WHERE org_id = ? AND period = ? AND start_day = ? AND end_day = ? AND status IN ('sent', 'sending', 'failed')`,
       [orgId, period, start, end],
     );
     if (done.length) continue;
@@ -52,7 +77,9 @@ export async function dueDigests(
       waitingForExport: !(await salesFileCovers(orgId, end)),
     });
   }
-  return due;
+  // Older digests still waiting for their file are dropped, not chased: only yesterday is reminded.
+  const yesterday = periodBounds("daily", now).end;
+  return due.filter((d) => !d.waitingForExport || d.end === yesterday);
 }
 
 export const reminderText = (day: string) =>
@@ -71,7 +98,7 @@ export async function sendReminder(orgId: string, day: string): Promise<void> {
     ]);
 }
 
-async function remindOnce(
+export async function remindOnce(
   orgId: string,
   day: string,
   remind: (orgId: string, day: string) => Promise<void>,
