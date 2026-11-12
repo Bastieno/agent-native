@@ -13,7 +13,8 @@
     "script": "agent-native script",
     "check": "for f in test/*.check.ts; do tsx $f || exit 1; done",
     "sim": "tsx test/sim/run.ts",
-    "anonymise": "tsx ops/anonymise-export.ts"
+    "anonymise": "tsx ops/anonymise-export.ts",
+    "read-receipts": "tsx ops/read-pending-receipts.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",

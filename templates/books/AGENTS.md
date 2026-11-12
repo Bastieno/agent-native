@@ -64,6 +64,14 @@ Move the screen with `navigate --view <view>` or `--path`. When the owner
 asks to read old receipts, the Today screen sends them to you as images with
 their `pendingReceiptId`s; record each with `record-expense-from-receipt`.
 
+Old Moniepoint and Opay transfer slips can also be read without the assistant:
+`pnpm read-receipts` (a Mac only) reads every pending receipt with macOS text
+recognition and records the readable ones as `needs_review` expenses with a
+guessed category and business; `record-expenses-from-text` does the same from
+text you already have. Loans, profit payouts and commissions stay pending (they
+are not running costs), as do slips it can't read (Providus, photos). Read
+those with `record-expense-from-receipt`.
+
 ## On WhatsApp
 
 Messages to Books' WhatsApp number come from the owner (or the partner, if

@@ -26,6 +26,7 @@ export const ACTION_POLICY: Record<string, Audience> = {
   "set-category-business": "owner",
   "record-expense": "owner",
   "record-expense-from-receipt": "owner",
+  "record-expenses-from-text": "owner",
   "import-whatsapp-history": "owner",
   "queue-history-receipts": "owner",
   "list-pending-receipts": "everyone",
