@@ -91,7 +91,7 @@ export function renderEmailDigest(
   );
   const given = f.notIncome.atCost;
   paragraphs.push(
-    `Given away at cost: The House ${n(given.house)}, subscriber meals ${n(given.perk)}, leakages ${n(given.leakages)}.`,
+    `Given away at cost: The House ${n(given.house)}, subscriber meals ${n(given.perk)}, leakages and missing stock ${n(given.leakages)}.`,
   );
   const good = f.trends.filter((s) => s.direction === "good").map(signalText);
   const watch = f.trends.filter((s) => s.direction === "watch").map(signalText);

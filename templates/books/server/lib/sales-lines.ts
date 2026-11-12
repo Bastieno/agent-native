@@ -5,6 +5,7 @@ export const NOT_INCOME_METHODS = [
   "The House",
   "Subscription Perk",
   "Leakages",
+  "Missing Items",
 ] as const;
 export const isNotIncome = (methods: string[]) =>
   methods.length > 0 &&

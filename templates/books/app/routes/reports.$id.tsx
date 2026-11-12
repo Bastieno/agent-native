@@ -120,7 +120,7 @@ export default function ReportPage() {
               value={f.notIncome.atCost.perk}
             />
             <Row
-              label="Leakages (at cost)"
+              label="Leakages and missing stock (at cost)"
               value={f.notIncome.atCost.leakages}
             />
           </CardContent>

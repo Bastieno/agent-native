@@ -433,3 +433,25 @@ check("duplicate receipt", () => {
     { kind: "duplicate_receipt", expenseIds: ["e1", "e2"] },
   ]);
 });
+check("missing items are a loss, not income", () => {
+  const s = sale({
+    total: 300000,
+    methods: ["Missing Items"],
+    legs: legs(["Missing Items", null, 300000]),
+    lines: [
+      {
+        itemName: "Coke",
+        businessSlug: "lounge",
+        categoryConfirmed: true,
+        quantity: 1,
+        lineTotal: 300000,
+        unitPrice: 300000,
+        unitCost: 200000,
+      } as any,
+    ],
+  });
+  const r = reconcileDay(day({ sales: [s] }));
+  assert.equal(r.income, 0);
+  assert.equal(r.notIncome.atCost.leakages, 200000);
+  assert.equal(r.grossProfitByBusiness.lounge, -200000);
+});

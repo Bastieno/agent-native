@@ -105,6 +105,8 @@ const GIFT: Record<string, GiftKind> = {
   "The House": "house",
   "Subscription Perk": "perk",
   Leakages: "leakages",
+  // Stock that went missing: a loss, counted with leakages.
+  "Missing Items": "leakages",
 };
 
 const add = (o: Record<string, number>, k: string, v: number) => {
