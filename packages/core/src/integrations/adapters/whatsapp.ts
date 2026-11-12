@@ -3,6 +3,7 @@ import { getQuery, getHeader, readRawBody as h3ReadRawBody } from "h3";
 import type {
   PlatformAdapter,
   IncomingMessage,
+  IncomingAttachment,
   OutgoingMessage,
   IntegrationStatus,
 } from "../types.js";
@@ -10,6 +11,10 @@ import type { EnvKeyConfig } from "../../server/create-server.js";
 
 /** WhatsApp's max message length */
 const WHATSAPP_MAX_LENGTH = 4096;
+
+/** Largest file fetched for the agent. WhatsApp itself allows 100 MB documents. */
+const WHATSAPP_MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024;
+const GRAPH = "https://graph.facebook.com/v21.0";
 
 /**
  * One-shot warning flag — log once per process when accepting unverified
@@ -193,10 +198,38 @@ export function whatsappAdapter(): PlatformAdapter {
       const message = value?.messages?.[0];
       if (!message) return null;
 
-      // Only handle text messages
-      if (message.type !== "text") return null;
-      const text = message.text?.body?.trim();
-      if (!text) return null;
+      // Text, and images or documents (as references; bytes are fetched later)
+      let text: string;
+      let attachments: IncomingAttachment[] | undefined;
+      if (message.type === "text") {
+        text = message.text?.body?.trim() ?? "";
+        if (!text) return null;
+      } else if (message.type === "image" && message.image?.id) {
+        text = (message.image.caption ?? "").trim();
+        attachments = [
+          {
+            kind: "image",
+            mediaId: String(message.image.id),
+            mimeType: String(message.image.mime_type ?? "image/jpeg"),
+          },
+        ];
+      } else if (message.type === "document" && message.document?.id) {
+        text = (message.document.caption ?? "").trim();
+        attachments = [
+          {
+            kind: "document",
+            mediaId: String(message.document.id),
+            mimeType: String(
+              message.document.mime_type ?? "application/octet-stream",
+            ),
+            ...(message.document.filename
+              ? { fileName: String(message.document.filename) }
+              : {}),
+          },
+        ];
+      } else {
+        return null;
+      }
 
       const contact = value.contacts?.[0];
       const from = message.from; // Phone number
@@ -215,6 +248,39 @@ export function whatsappAdapter(): PlatformAdapter {
           timestamp: message.timestamp,
         },
         timestamp: parseInt(message.timestamp, 10) * 1000,
+        ...(attachments ? { attachments } : {}),
+      };
+    },
+
+    async fetchAttachment(ref: IncomingAttachment) {
+      const accessToken = process.env.WHATSAPP_ACCESS_TOKEN;
+      if (!accessToken) throw new Error("WHATSAPP_ACCESS_TOKEN not configured");
+      const auth = { Authorization: `Bearer ${accessToken}` };
+      const metaRes = await fetch(
+        `${GRAPH}/${encodeURIComponent(ref.mediaId)}`,
+        { headers: auth },
+      );
+      if (!metaRes.ok)
+        throw new Error(`WhatsApp media lookup failed (${metaRes.status})`);
+      const meta = (await metaRes.json()) as {
+        url?: string;
+        mime_type?: string;
+        file_size?: number;
+      };
+      if (!meta.url) throw new Error("WhatsApp media has no download url");
+      if ((meta.file_size ?? 0) > WHATSAPP_MAX_ATTACHMENT_BYTES) {
+        throw new Error("WhatsApp attachment is too large (over 10 MB)");
+      }
+      const fileRes = await fetch(meta.url, { headers: auth });
+      if (!fileRes.ok)
+        throw new Error(`WhatsApp media download failed (${fileRes.status})`);
+      const bytes = Buffer.from(await fileRes.arrayBuffer());
+      if (bytes.length > WHATSAPP_MAX_ATTACHMENT_BYTES) {
+        throw new Error("WhatsApp attachment is too large (over 10 MB)");
+      }
+      return {
+        mimeType: meta.mime_type ?? ref.mimeType,
+        dataBase64: bytes.toString("base64"),
       };
     },
 

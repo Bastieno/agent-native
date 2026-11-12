@@ -307,6 +307,98 @@ describe("integration webhook handler engine resolution", () => {
     },
   );
 
+  it(
+    "passes an image attachment to the agent as image content",
+    { timeout: 15000 },
+    async () => {
+      const { processIntegrationTask } = await import("./webhook-handler.js");
+      const adapter = createAdapter();
+      adapter.fetchAttachment = vi.fn(async () => ({
+        mimeType: "image/jpeg",
+        dataBase64: "AAAA",
+      }));
+      const task = pendingTask({
+        payload: JSON.stringify({
+          incoming: {
+            platform: "fake",
+            externalThreadId: "thread-qa",
+            text: "diesel",
+            senderName: "QA User",
+            platformContext: {},
+            timestamp: 1001,
+            attachments: [
+              { kind: "image", mediaId: "M1", mimeType: "image/jpeg" },
+            ],
+          },
+        }),
+      });
+      await processIntegrationTask(task, {
+        adapter,
+        systemPrompt: "system",
+        actions: {},
+        model: "claude-sonnet-4-6",
+        apiKey: "",
+        ownerEmail: task.ownerEmail,
+      });
+      const { messages } = runAgentLoopMock.mock.calls[0][0];
+      const last = messages[messages.length - 1];
+      expect(last.content).toEqual(
+        expect.arrayContaining([
+          { type: "image", data: "AAAA", mediaType: "image/jpeg" },
+          expect.objectContaining({
+            type: "text",
+            text: expect.stringContaining("diesel"),
+          }),
+        ]),
+      );
+    },
+  );
+
+  it(
+    "turns a CSV attachment into a text reference without fetching it",
+    { timeout: 15000 },
+    async () => {
+      const { processIntegrationTask } = await import("./webhook-handler.js");
+      const adapter = createAdapter();
+      adapter.fetchAttachment = vi.fn();
+      const task = pendingTask({
+        payload: JSON.stringify({
+          incoming: {
+            platform: "fake",
+            externalThreadId: "thread-qa",
+            text: "",
+            platformContext: {},
+            timestamp: 1001,
+            attachments: [
+              {
+                kind: "document",
+                mediaId: "M2",
+                mimeType: "text/csv",
+                fileName: "sales.csv",
+              },
+            ],
+          },
+        }),
+      });
+      await processIntegrationTask(task, {
+        adapter,
+        systemPrompt: "system",
+        actions: {},
+        model: "claude-sonnet-4-6",
+        apiKey: "",
+        ownerEmail: task.ownerEmail,
+      });
+      expect(adapter.fetchAttachment).not.toHaveBeenCalled();
+      const { messages } = runAgentLoopMock.mock.calls[0][0];
+      const text = messages[messages.length - 1].content
+        .map((p: any) => p.text ?? "")
+        .join("");
+      expect(text).toContain(
+        "[Attached file: sales.csv (text/csv), mediaId M2]",
+      );
+    },
+  );
+
   it("sanitizes missing LLM credential text before sending platform replies", async () => {
     const { processIntegrationTask } = await import("./webhook-handler.js");
     const sendResponse = vi.fn();
