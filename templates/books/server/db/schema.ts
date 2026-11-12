@@ -111,6 +111,7 @@ export const moniepointEvents = table("moniepoint_events", {
   receivedAt: text("received_at").notNull(),
   type: text("type").notNull(),
   reference: text("reference"),
+  altReference: text("alt_reference"),
   amount: integer("amount").notNull(),
   occurredAt: text("occurred_at").notNull(),
   day: text("day").notNull(),

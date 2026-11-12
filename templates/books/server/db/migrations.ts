@@ -304,4 +304,8 @@ export const BOOKS_MIGRATIONS: MigrationEntry[] = [
     sql: `CREATE INDEX IF NOT EXISTS ix_item_costs_item ON item_costs (item_id, effective_from)`,
   },
   { version: 28, sql: `ALTER TABLE sales ADD COLUMN fingerprint TEXT` },
+  {
+    version: 29,
+    sql: `ALTER TABLE moniepoint_events ADD COLUMN alt_reference TEXT`,
+  },
 ];
