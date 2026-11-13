@@ -6,7 +6,7 @@ export const timetable: Demo = {
   slug: "timetable",
   title: "A timetable with zero clashes",
   signInAs: "principal@crestfield.test",
-  voice: "bm_george",
+  voice: "bf_emma",
   steps: [
     {
       line: "Building a school timetable usually eats a whole week of someone's holiday.",
