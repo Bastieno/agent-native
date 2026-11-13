@@ -1,0 +1,67 @@
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { restoreSnapshot } from "./db.js";
+import { record } from "./record.js";
+import { startDemoServer } from "./server.js";
+import type { Demo } from "./types.js";
+
+const dir = fs.mkdtempSync(path.join(os.tmpdir(), "demo-rec-"));
+const signInAs = "principal@crestfield.test";
+restoreSnapshot();
+const server = await startDemoServer();
+try {
+  const ok: Demo = {
+    slug: "t",
+    title: "t",
+    signInAs,
+    steps: [
+      { line: "a", actions: [{ do: "goto", path: "/admin/timetable" }] },
+      { line: "b", actions: [{ do: "hold", ms: 500 }] },
+    ],
+  };
+  const { videoPath, timeline } = await record(ok, server.url, dir);
+  assert.equal(timeline.steps.length, 2);
+  assert.ok(timeline.steps[1].startMs > timeline.steps[0].startMs);
+  assert.ok(
+    timeline.steps.every((s) => s.endMs >= s.startMs && s.startMs >= 0),
+  );
+  assert.ok(fs.existsSync(path.join(dir, "timeline.json")));
+  const secs = Number(
+    execFileSync("ffprobe", [
+      "-v",
+      "error",
+      "-show_entries",
+      "format=duration",
+      "-of",
+      "csv=p=0",
+      videoPath,
+    ]).toString(),
+  );
+  assert.ok(secs > 1, `video ${secs}s`);
+  assert.ok(
+    timeline.steps[1].endMs <= secs * 1000 + 100,
+    "step times are in video time",
+  );
+
+  const bad: Demo = {
+    ...ok,
+    steps: [
+      {
+        line: "c",
+        actions: [{ do: "click", selector: '[data-demo="does-not-exist"]' }],
+      },
+    ],
+  };
+  await assert.rejects(() => record(bad, server.url, dir), /does-not-exist/);
+  assert.ok(fs.existsSync(path.join(dir, "fail-0.png")));
+
+  // Never the pilot.
+  await assert.rejects(() => record(ok, "http://localhost:8130", dir), /pilot/);
+} finally {
+  await server.stop();
+}
+fs.rmSync(dir, { recursive: true });
+console.log("record: ok");
