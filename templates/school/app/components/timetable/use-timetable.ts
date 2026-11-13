@@ -19,6 +19,8 @@ export interface TimetableReply {
   periods: ResolvedPeriod[];
   clashes: Clash[];
   fromUntermedRows: boolean;
+  /** The term's year has ended: shown as it was, read-only. */
+  ended?: boolean;
   termEmpty: boolean;
   previousTerm: { id: string; name: string } | null;
   message: string;

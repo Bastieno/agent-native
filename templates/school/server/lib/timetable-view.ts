@@ -84,6 +84,11 @@ export async function timetableView(orgId: string, args: TimetableFilter) {
       ? `${term ? term.name : "This timetable"} has no periods placed.`
       : `${periods.length} period(s) placed${term ? ` in ${term.name}` : ""}.`,
   );
+  if (loaded.ended) {
+    parts.push(
+      "This term's year has ended, so its timetable is shown as it was and cannot be changed.",
+    );
+  }
   if (fromUntermedRows && periods.length > 0) {
     parts.push(
       "None of these were set for this term in particular; they are the school's earlier timetable, which applies until this term has its own.",
@@ -98,7 +103,8 @@ export async function timetableView(orgId: string, args: TimetableFilter) {
   // Nothing of its own and no earlier timetable standing in: the term before,
   // when it has a timetable with classes of this term's year, is what the
   // page offers to copy (last year's classes never carry over). Read-only.
-  const termEmpty = !!term && !fromUntermedRows && loaded.periods.length === 0;
+  const termEmpty =
+    !!term && !fromUntermedRows && !loaded.ended && loaded.periods.length === 0;
   let before: { id: string; name: string } | null = null;
   if (termEmpty) {
     const prev = await previousTerm(orgId, found!.id);
@@ -120,6 +126,8 @@ export async function timetableView(orgId: string, args: TimetableFilter) {
     periods,
     clashes,
     fromUntermedRows,
+    /** The term's year has ended: a record to read, not a timetable to edit. */
+    ended: loaded.ended,
     /** The term has no periods of its own and none from an earlier timetable. */
     termEmpty,
     /** The term before, when this one is empty and that one has a timetable. */

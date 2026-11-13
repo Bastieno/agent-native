@@ -183,6 +183,8 @@ export async function loadTimetable(
   periods: ResolvedPeriod[];
   fromUntermedRows: boolean;
   armNames: Record<string, string>;
+  /** The term belongs to a year that has ended: shown as it was, not edited. */
+  ended: boolean;
 }> {
   const db = getDb();
   const config = await loadSchoolConfig(orgId);
@@ -190,12 +192,27 @@ export async function loadTimetable(
   const locale = schoolLocale(config);
 
   const S = schema.classSchedules;
+  // A year that has ended keeps its timetable as a record. Its classes were
+  // archived with it, so the rule that hides archived classes' rows would
+  // leave the term empty; read its own rows as they stand instead.
+  const ended = termId ? await termYearEnded(orgId, termId) : false;
   let fromUntermedRows = false;
   let rows: any[] = [];
   if (termId) {
-    rows = await ownRowsOfActiveClasses(orgId, termId);
+    rows = ended
+      ? await db
+          .select()
+          .from(S)
+          .where(
+            and(
+              eq(S.orgId, orgId),
+              eq(S.schoolId, orgId),
+              eq(S.termId, termId),
+            ),
+          )
+      : await ownRowsOfActiveClasses(orgId, termId);
   }
-  if (rows.length === 0) {
+  if (rows.length === 0 && !ended) {
     rows = await earlierRowsFor(orgId, termId);
     fromUntermedRows = !!termId && rows.length > 0;
   }
@@ -212,7 +229,7 @@ export async function loadTimetable(
   }
 
   if (rows.length === 0) {
-    return { week, locale, periods: [], fromUntermedRows, armNames };
+    return { week, locale, periods: [], fromUntermedRows, armNames, ended };
   }
 
   const classIds = [...new Set(rows.map((r) => r.classId as string))];
@@ -222,14 +239,14 @@ export async function loadTimetable(
     .where(
       and(
         eq(schema.classes.orgId, orgId),
-        eq(schema.classes.status, "active"),
+        ended ? undefined : eq(schema.classes.status, "active"),
         inArray(schema.classes.id, classIds),
       ),
     )) as any[];
   const classById = new Map(classRows.map((c) => [c.id as string, c]));
   const liveIds = classRows.map((c) => c.id as string);
   if (liveIds.length === 0) {
-    return { week, locale, periods: [], fromUntermedRows, armNames };
+    return { week, locale, periods: [], fromUntermedRows, armNames, ended };
   }
 
   const subjectIds = [...new Set(classRows.map((c) => c.subjectId as string))];
@@ -262,7 +279,10 @@ export async function loadTimetable(
       .where(
         and(
           inArray(schema.classEnrollments.classId, liveIds),
-          eq(schema.classEnrollments.status, "active"),
+          // An ended year's learners finished its classes ("completed").
+          ended
+            ? inArray(schema.classEnrollments.status, ["active", "completed"])
+            : eq(schema.classEnrollments.status, "active"),
         ),
       ),
   ]);
@@ -344,7 +364,7 @@ export async function loadTimetable(
       lessonLabel: r.lessonLabel ?? null,
     });
   }
-  return { week, locale, periods, fromUntermedRows, armNames };
+  return { week, locale, periods, fromUntermedRows, armNames, ended };
 }
 
 /** A term of this school, or null when the id is not one of its terms. */
@@ -367,6 +387,20 @@ export async function findTerm(
   return term
     ? { id: term.id, name: term.name, academicYearId: term.academicYearId }
     : null;
+}
+
+/** Whether a term's academic year is no longer current or upcoming. */
+async function termYearEnded(orgId: string, termId: string): Promise<boolean> {
+  const [row] = (await getDb()
+    .select({ status: schema.academicYears.status })
+    .from(schema.terms)
+    .innerJoin(
+      schema.academicYears,
+      eq(schema.academicYears.id, schema.terms.academicYearId),
+    )
+    .where(and(eq(schema.terms.orgId, orgId), eq(schema.terms.id, termId)))
+    .limit(1)) as { status: string }[];
+  return row?.status === "archived";
 }
 
 /**

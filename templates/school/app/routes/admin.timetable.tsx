@@ -14,7 +14,9 @@ import {
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -75,12 +77,35 @@ export default function AdminTimetable() {
     queryKey: ["timetable-current-term"],
     queryFn: () => getAction("get-current-term", {}),
   });
-  const { data: terms = [] } = useQuery<{ id: string; name: string }[]>({
-    queryKey: ["timetable-terms", current?.session?.id ?? null],
-    queryFn: () =>
-      getAction("list-terms", { academicYearId: current?.session?.id }),
-    enabled: !termLoading,
+  // Every year's terms, so an ended year's timetable can still be looked at;
+  // the current year's come first.
+  const { data: allTerms = [] } = useQuery<
+    { id: string; name: string; academicYearId: string }[]
+  >({
+    queryKey: ["timetable-terms"],
+    queryFn: () => getAction("list-terms", {}),
   });
+  const { data: years = [] } = useQuery<{ id: string; name: string }[]>({
+    queryKey: ["timetable-years"],
+    queryFn: () => getAction("list-academic-years", {}),
+  });
+  const currentYearId = current?.session?.id ?? null;
+  const termGroups = useMemo(() => {
+    const groups = years
+      .map((y) => ({
+        year: y,
+        terms: allTerms.filter((t) => t.academicYearId === y.id),
+      }))
+      .filter((g) => g.terms.length);
+    groups.sort(
+      (a, b) =>
+        Number(b.year.id === currentYearId) -
+          Number(a.year.id === currentYearId) ||
+        b.year.name.localeCompare(a.year.name),
+    );
+    return groups;
+  }, [years, allTerms, currentYearId]);
+  const terms = useMemo(() => termGroups.flatMap((g) => g.terms), [termGroups]);
   const { data: arms = [] } = useArms();
   const { data: staff } = useQuery<{ active: any[] }>({
     queryKey: ["admin-staff"],
@@ -248,7 +273,10 @@ export default function AdminTimetable() {
   }, [classes, view, armId, teacherUserId, tt]);
 
   const termName = tt?.term?.name ?? terms.find((t) => t.id === termId)?.name;
-  const readOnly = !!tt?.fromUntermedRows;
+  const ended = !!tt?.ended;
+  const readOnly = !!tt?.fromUntermedRows || ended;
+  const endedYear = termGroups.find((g) => g.terms.some((t) => t.id === termId))
+    ?.year.name;
   const clashes = tt?.clashes ?? [];
 
   // ── Header ────────────────────────────────────────────────────────────────
@@ -274,11 +302,22 @@ export default function AdminTimetable() {
           <SelectValue placeholder={Term} />
         </SelectTrigger>
         <SelectContent>
-          {terms.map((t) => (
-            <SelectItem key={t.id} value={t.id}>
-              {t.name}
-            </SelectItem>
-          ))}
+          {termGroups.length > 1
+            ? termGroups.map((g) => (
+                <SelectGroup key={g.year.id}>
+                  <SelectLabel>{g.year.name}</SelectLabel>
+                  {g.terms.map((t) => (
+                    <SelectItem key={t.id} value={t.id}>
+                      {t.name}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              ))
+            : terms.map((t) => (
+                <SelectItem key={t.id} value={t.id}>
+                  {t.name}
+                </SelectItem>
+              ))}
         </SelectContent>
       </Select>
       <Select
@@ -448,7 +487,12 @@ export default function AdminTimetable() {
       } as ClassOption);
     body = (
       <div className="space-y-3">
-        {readOnly ? (
+        {ended ? (
+          <p className="rounded-lg border bg-muted/30 px-4 py-3 text-sm text-muted-foreground">
+            {endedYear ?? "This year"} has ended, so this is its timetable as it
+            was taught. It can't be changed.
+          </p>
+        ) : readOnly ? (
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-muted/30 px-4 py-3">
             <p className="text-sm text-muted-foreground">
               This is the school's earlier timetable. Copy it into {termName} to

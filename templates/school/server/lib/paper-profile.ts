@@ -62,7 +62,10 @@ export async function paperProfileFor(assessmentId: string, orgId: string) {
     .where(
       and(
         eq(schema.classEnrollments.classId, paper.classId),
-        eq(schema.classEnrollments.status, "active"),
+        // A paper from a year that has ended is still read back: its class
+        // finished with the year ("completed"), and counting only "active"
+        // showed every hand-in out of nought.
+        inArray(schema.classEnrollments.status, ["active", "completed"]),
       ),
     );
   const students = enrolled.length
