@@ -1,5 +1,10 @@
 # Deployment plan
 
+> **Superseded 2026-11-11.** Production runs on the Hetzner VPS (app and
+> Postgres on one server). Deploy with `docs/vps-plan.md` → "Deploying an
+> update". The Vercel, Netlify and Neon steps below are history: Vercel no
+> longer accepts deploys and the Neon database is frozen at the move.
+
 Status: strategy confirmed 2026-10-22 (VPS + Neon + Resend; core changes stay on
 the owner's fork, not upstreamed). Code steps done; provisioning is the
 owner's, since it needs their accounts and payment. Nothing has been deployed.
