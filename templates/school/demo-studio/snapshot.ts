@@ -5,7 +5,7 @@ import { DEMO_DB } from "./guard.js";
 import { startDemoServer } from "./server.js";
 
 /**
- * Build Crestfield on the demo database up to (not including) its timetable,
+ * Build Crestfield on the demo database up to the moment before its timetable is generated (lesson counts set),
  * and save that as the snapshot every take starts from. `pnpm demo:snapshot`.
  */
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -22,7 +22,7 @@ try {
         ...process.env,
         SCHOOL_URL: server.url,
         SHOWCASE_DATABASE_URL: `file:${DEMO_DB}`,
-        SHOWCASE_STOP_AFTER: "curriculum",
+        SHOWCASE_STOP_AFTER: "lesson-counts",
       },
     }).status ?? 1;
 } finally {

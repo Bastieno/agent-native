@@ -56,6 +56,14 @@ const V = (spoken: number) => spoken + PAD_MS;
   assert.equal(p.segments[0].frames, f(3000));
 }
 
+// Cut step that's already quicker than its line: never slow-motion, hold instead.
+{
+  const p = fitSteps(timeline([[0, 800]]), voice([3000 - PAD_MS]), [true]);
+  assert.equal(p.segments[0].playbackRate, 1);
+  assert.equal(p.segments[0].frames, f(3000));
+  assert.ok(p.segments[0].holdFrames > 0);
+}
+
 // Segments back to back; total = intro + segments + outro.
 {
   const p = fitSteps(

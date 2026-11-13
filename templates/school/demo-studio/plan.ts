@@ -64,7 +64,8 @@ export function fitSteps(
     if (!line) throw new Error(`Step ${i} has no voice line.`);
     const A = Math.max(1, step.endMs - step.startMs);
     const V = line.durationMs + PAD_MS;
-    const rate = cuts[i] ? A / V : clamp(A / V, 1, MAX_RATE);
+    // Never slower than real time; a cut step may go as fast as it needs.
+    const rate = cuts[i] ? Math.max(1, A / V) : clamp(A / V, 1, MAX_RATE);
     const footage = toFrames(A / rate);
     const frames = Math.max(toFrames(V), footage);
     segments.push({

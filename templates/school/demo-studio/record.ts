@@ -80,6 +80,8 @@ async function perform(
       return;
     case "hold":
       return page.waitForTimeout(a.ms);
+    case "move":
+      return page.mouse.move(a.x, a.y, { steps: 20 });
     case "waitFor":
       return page
         .locator(a.selector)
@@ -139,7 +141,20 @@ export async function record(
     clicks: { atMs: number; x: number; y: number }[];
   }[] = [];
   let failure: Error | null = null;
-  for (const [i, step] of demo.steps.entries()) {
+  for (const a of demo.start ?? []) {
+    try {
+      await perform(page, baseUrl, a, []);
+    } catch (e) {
+      await page
+        .screenshot({ path: path.join(workDir, "fail-start.png") })
+        .catch(() => {});
+      failure = new Error(
+        `Setup failed at ${a.do} ${describe(a)}: ${(e as Error).message.split("\n")[0]}`,
+      );
+      break;
+    }
+  }
+  for (const [i, step] of failure ? [] : demo.steps.entries()) {
     const clicks: { atMs: number; x: number; y: number }[] = [];
     const startMs = Date.now();
     for (const a of step.actions) {

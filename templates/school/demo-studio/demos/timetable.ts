@@ -7,13 +7,18 @@ export const timetable: Demo = {
   title: "A timetable with zero clashes",
   signInAs: "principal@crestfield.test",
   voice: "bf_emma",
+  start: [
+    { do: "goto", path: "/admin/timetable" },
+    { do: "waitFor", selector: 'role=button[name="Generate"]' },
+    { do: "move", x: 900, y: 1040 },
+  ],
   steps: [
     {
       line: "Building a school timetable usually eats a whole week of someone's holiday.",
       actions: [
-        { do: "goto", path: "/admin/timetable" },
-        { do: "waitFor", selector: 'role=button[name="Generate"]' },
-        { do: "hold", ms: 1500 },
+        { do: "hold", ms: 600 },
+        { do: "move", x: 760, y: 420 },
+        { do: "hold", ms: 1200 },
       ],
     },
     {
@@ -37,6 +42,8 @@ export const timetable: Demo = {
           selector: 'role=alertdialog >> role=button[name="Accept"]',
         },
         { do: "waitFor", selector: proposal, timeoutMs: 30_000, gone: true },
+        // Off the grid, so no lesson's tooltip covers the closing shot.
+        { do: "move", x: 900, y: 1040 },
         { do: "hold", ms: 1500 },
       ],
     },

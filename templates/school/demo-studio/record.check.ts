@@ -46,6 +46,33 @@ try {
     "step times are in video time",
   );
 
+  // Setup runs before the first line, so page loads aren't in any step.
+  const setUp: Demo = {
+    ...ok,
+    start: [{ do: "goto", path: "/admin/timetable" }],
+    steps: [
+      {
+        line: "a",
+        actions: [
+          // Only on the page if `start` ran.
+          {
+            do: "waitFor",
+            selector: 'role=button[name="Generate"]',
+            timeoutMs: 2000,
+          },
+          { do: "move", x: 1700, y: 1000 },
+        ],
+      },
+    ],
+  };
+  const s2 = await record(setUp, server.url, dir);
+  const only = s2.timeline.steps[0];
+  assert.ok(
+    only.endMs - only.startMs < 2500,
+    `step took ${only.endMs - only.startMs}ms`,
+  );
+  assert.equal(only.clicks.length, 0);
+
   const bad: Demo = {
     ...ok,
     steps: [

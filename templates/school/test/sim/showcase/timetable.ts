@@ -99,6 +99,12 @@ export async function buildTimetable(run: ShowcaseRun): Promise<void> {
     scenario.decisionText.lessonCountTotals,
   );
 
+  // The demo studio's snapshot stops here: everything ready, nothing generated.
+  if (process.env.SHOWCASE_STOP_AFTER === "lesson-counts") {
+    console.log("\nstopped after lesson-counts");
+    process.exit(0);
+  }
+
   // ── Generate, read, accept ─────────────────────────────────────────────
   console.log("· generating the timetable");
   let drafted: any = await client.as(admin, "generate-timetable", {

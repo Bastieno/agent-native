@@ -4,7 +4,9 @@ export type Action =
   | { do: "click"; selector: string }
   | { do: "type"; selector: string; text: string }
   | { do: "waitFor"; selector: string; timeoutMs?: number; gone?: boolean }
-  | { do: "hold"; ms: number };
+  | { do: "hold"; ms: number }
+  /** Move the pointer without clicking (e.g. off the content before the last shot). */
+  | { do: "move"; x: number; y: number };
 
 /** A voiceover line and what happens on screen while it is spoken. */
 export interface Step {
@@ -21,6 +23,8 @@ export interface Demo {
   signInAs: string;
   /** Kokoro voice id; British voices only (bf_ / bm_). */
   voice?: string;
+  /** Done before the first line and left out of the edit: page loads, setup. */
+  start?: Action[];
   steps: Step[];
 }
 
