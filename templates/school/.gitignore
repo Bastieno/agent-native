@@ -8,3 +8,8 @@ docs/showcase-yellowview/
 .vercel
 .env
 .env.local
+
+# Demo studio: renders, takes and the demo database
+demo-studio/out/
+demo-studio/work/
+data/demo*.db*
