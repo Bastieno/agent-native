@@ -393,7 +393,11 @@ export function McpAddress() {
       <div className="space-y-1">
         <Label className="text-xs">Or paste this address</Label>
         <div className="flex gap-2">
-          <Input readOnly value={address} className="font-mono text-xs" />
+          <Input
+            readOnly
+            value={address}
+            className="min-w-0 font-mono text-xs"
+          />
           <Button
             variant="outline"
             size="icon"

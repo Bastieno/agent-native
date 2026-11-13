@@ -45,7 +45,9 @@ export function ConnectAiAppDialog({ trigger }: { trigger: ReactNode }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="max-w-lg">
+      {/* One column that can shrink: a long app name or the address would
+          otherwise widen the dialog past its own edge. */}
+      <DialogContent className="max-h-[90vh] max-w-lg grid-cols-[minmax(0,1fr)] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Use your own AI app</DialogTitle>
           <DialogDescription>

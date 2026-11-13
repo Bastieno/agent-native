@@ -129,3 +129,59 @@ export function parsePrimary(input: string): Colour {
     ...(note ? { note } : {}),
   };
 }
+
+/** The dark theme's page background (`.dark --background` in global.css). */
+const DARK_BACKGROUND_LUM = luminance(hslToRgb(222, 20, 7));
+
+/**
+ * The school's colour as dark mode should paint it.
+ *
+ * A deep colour that reads well on white (a dark plum, a navy) all but
+ * disappears on a near-black page: links, outlines and tinted icons go
+ * missing. So in dark mode the same hue is lightened until it stands out from
+ * the background (a contrast of 4.5 to 1, the bar for text), and its text
+ * colour is chosen again for the lighter shade. A colour that already stands
+ * out is left as it is.
+ */
+export function darkModeColour(
+  primary: string,
+): { primary: string; primaryForeground: string } | null {
+  const m = /^(\d+(?:\.\d+)?) (\d+(?:\.\d+)?)% (\d+(?:\.\d+)?)%$/.exec(
+    primary.trim(),
+  );
+  if (!m) return null;
+  const h = Number(m[1]);
+  const s = Number(m[2]);
+  let l = Number(m[3]);
+  const contrast = (light: number) =>
+    (luminance(hslToRgb(h, s, light)) + 0.05) / (DARK_BACKGROUND_LUM + 0.05);
+  if (contrast(l) >= 4.5) return null;
+  while (l < 90 && contrast(l) < 4.5) l += 1;
+  const lum = luminance(hslToRgb(h, s, l));
+  return {
+    primary: `${h} ${s}% ${l}%`,
+    primaryForeground: 1.05 / (lum + 0.05) >= 3.5 ? WHITE : INK,
+  };
+}
+
+/** The CSS that paints a school's colour, in light mode and in dark. */
+export function schoolColourCss(
+  primary: string | undefined,
+  primaryForeground: string | undefined,
+): string {
+  const vars = (p?: string, f?: string) =>
+    [
+      p && `--primary: ${p};`,
+      p && `--sidebar-primary: ${p};`,
+      p && `--ring: ${p};`,
+      f && `--primary-foreground: ${f};`,
+      f && `--sidebar-primary-foreground: ${f};`,
+    ]
+      .filter(Boolean)
+      .join("\n  ");
+  const light = `:root {\n  ${vars(primary, primaryForeground)}\n}`;
+  const dark = primary ? darkModeColour(primary) : null;
+  return dark
+    ? `${light}\n.dark {\n  ${vars(dark.primary, dark.primaryForeground)}\n}`
+    : light;
+}

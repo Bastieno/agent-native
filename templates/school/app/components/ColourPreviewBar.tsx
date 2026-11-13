@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { httpError } from "@/lib/http-error";
 import { pollDelay } from "@/lib/poll-pace";
-import { parsePrimary } from "@shared/theme-colour";
+import { parsePrimary, schoolColourCss } from "@shared/theme-colour";
 
 type Preview = {
   primary: string;
@@ -101,13 +101,10 @@ export function ColourPreviewBar() {
     if (!preview) return;
     const style = document.createElement("style");
     style.setAttribute("data-colour-preview", "");
-    style.textContent = `:root {
-  --primary: ${preview.primary};
-  --sidebar-primary: ${preview.primary};
-  --ring: ${preview.primary};
-  --primary-foreground: ${preview.primaryForeground};
-  --sidebar-primary-foreground: ${preview.primaryForeground};
-}`;
+    style.textContent = schoolColourCss(
+      preview.primary,
+      preview.primaryForeground,
+    );
     document.head.appendChild(style);
     return () => style.remove();
   }, [preview?.primary, preview?.primaryForeground]);

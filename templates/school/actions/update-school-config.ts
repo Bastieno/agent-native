@@ -16,7 +16,10 @@ import { schoolLocale } from "../shared/dates.js";
 import { reservedWeeksForTerm, termWeekCount } from "../shared/term-weeks.js";
 import { AGENT_AUDIENCES } from "../shared/agent-settings.js";
 import { parsePrimary } from "../shared/theme-colour.js";
-import { deleteAppState } from "@agent-native/core/application-state";
+import {
+  deleteAppState,
+  readAppState,
+} from "@agent-native/core/application-state";
 import { ensureAgentSettings } from "../server/lib/agent-settings-store.js";
 import {
   agentModelChoices,
@@ -34,7 +37,7 @@ const perAudience = <T extends z.ZodTypeAny>(v: T) =>
 
 export default defineAction({
   description:
-    "Update the school's configuration: reply-to address for its emails, grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, custom label overrides, or the assistant's settings (`agent`: learners on/off school-wide and per year group, model and daily message limit per role). Pass only the fields you want to change — others are merged.",
+    "Update the school's configuration: reply-to address for its emails, grading scale, term structure, grade prefix, pass mark, assessment terminology, timezone, locale, custom label overrides, the school's colour (`theme.primary`: always show it first with preview-school-colour; a colour that was not previewed is refused), or the assistant's settings (`agent`: learners on/off school-wide and per year group, model and daily message limit per role). Pass only the fields you want to change — others are merged.",
   schema: z.object({
     gradingScale: jsonish(
       z.object({
@@ -225,7 +228,7 @@ export default defineAction({
           .string()
           .optional()
           .describe(
-            'The school\'s colour: a hex code ("#1d6b3a") or three numbers ("142 71% 35%"). The text colour on it is chosen for you. An empty string puts the app\'s own colour back.',
+            'The school\'s colour: a hex code ("#1d6b3a") or three numbers ("142 71% 35%"). The text colour on it is chosen for you. Show it first with preview-school-colour and save only once the person says to keep it; an unpreviewed colour is refused. An empty string puts the app\'s own colour back.',
           ),
         primaryForeground: z.string().optional(),
         logoUrl: z.string().optional().describe("Shown in the portal header"),
@@ -380,6 +383,20 @@ export default defineAction({
           const colour = parsePrimary(args.theme.primary);
           if (colour.ok === false)
             throw new Error(`Nothing was saved. ${colour.message}`);
+          // A new colour is seen before it is saved. The preview bar's Keep
+          // saves the colour it is showing, so it always passes; an assistant
+          // that skipped the preview is sent back to show it first.
+          const current = (existing.theme as any)?.primary;
+          if (colour.primary !== current) {
+            const preview = (await readAppState("colour-preview").catch(
+              () => null,
+            )) as { primary?: string } | null;
+            if (preview?.primary !== colour.primary) {
+              throw new Error(
+                "Nothing was saved. Show the colour first: call preview-school-colour with it, so the person sees the school in that colour, then ask whether to keep it. Save it only once they say yes, or they can press Keep on the preview bar themselves.",
+              );
+            }
+          }
           theme.primary = colour.primary;
           theme.primaryForeground = colour.primaryForeground;
           colourNote = colour.note;

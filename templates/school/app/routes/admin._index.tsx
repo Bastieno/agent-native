@@ -161,9 +161,10 @@ export default function AdminOverview() {
     <div className="h-full overflow-auto p-6 space-y-6">
       <div>
         <h1 className="text-xl font-semibold">
+          {/* Greet everyone; by name only when we have a real one. */}
           {realNameOrNull(user?.name, user?.email)
             ? `Welcome back, ${realNameOrNull(user?.name, user?.email)}`
-            : "School Overview"}
+            : "Welcome back"}
         </h1>
         <p className="text-sm text-muted-foreground mt-1">
           Manage your school, staff, students, and curriculum.
