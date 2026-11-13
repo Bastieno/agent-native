@@ -23,3 +23,24 @@ export interface Demo {
   voice?: string;
   steps: Step[];
 }
+
+/** What the recorder saw: when each step ran and where it clicked, in video time. */
+export interface StepTiming {
+  index: number;
+  startMs: number;
+  endMs: number;
+  clicks: { atMs: number; x: number; y: number }[];
+}
+export interface Timeline {
+  width: 1920;
+  height: 1080;
+  videoOffsetMs: number;
+  steps: StepTiming[];
+}
+
+/** One spoken line on disk. */
+export interface VoiceLine {
+  index: number;
+  file: string;
+  durationMs: number;
+}
