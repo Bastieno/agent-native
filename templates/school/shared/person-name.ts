@@ -16,8 +16,10 @@ export function realNameOrNull(
 ): string | null {
   const trimmed = name?.trim();
   if (!trimmed) return null;
-  const local = email?.split("@")[0]?.trim().toLowerCase();
-  if (local && trimmed.toLowerCase() === local) return null;
+  // Exactly, capitals included: the derived name is the local part as typed,
+  // so "Judges" chosen for judges@… is a real name, and "judges" is not.
+  const local = email?.split("@")[0]?.trim();
+  if (local && trimmed === local) return null;
   return trimmed;
 }
 
