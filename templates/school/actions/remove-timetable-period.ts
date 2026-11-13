@@ -5,7 +5,11 @@ import { z } from "zod";
 import { getDb, schema } from "../server/db/index.js";
 import { schoolWeekdayName } from "../shared/school-week.js";
 import { doubleWords } from "../server/lib/arm-enrolment.js";
-import { loadSchoolConfig } from "../server/lib/timetable.js";
+import {
+  assertTermNotEnded,
+  findTerm,
+  loadSchoolConfig,
+} from "../server/lib/timetable.js";
 import { schoolLocale } from "../shared/dates.js";
 
 export default defineAction({
@@ -26,6 +30,10 @@ export default defineAction({
       .where(and(eq(S.id, args.scheduleId), eq(S.schoolId, orgId)))
       .limit(1);
     if (!row) throw new Error("That placement is not in this school.");
+    if (row.termId) {
+      const term = await findTerm(orgId, row.termId);
+      if (term) await assertTermNotEnded(orgId, term);
+    }
 
     const [cls] = await db
       .select()

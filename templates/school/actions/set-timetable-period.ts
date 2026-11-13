@@ -13,6 +13,7 @@ import {
 } from "../shared/school-week.js";
 import {
   assertTermCanTakeRow,
+  assertTermNotEnded,
   clashesForTerm,
   findTerm,
   loadSchoolConfig,
@@ -61,6 +62,7 @@ export default defineAction({
 
     const term = await findTerm(orgId, args.termId);
     if (!term) throw new Error("That term is not in this school.");
+    await assertTermNotEnded(orgId, term);
 
     const [cls] = await db
       .select()

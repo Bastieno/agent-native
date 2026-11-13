@@ -17,6 +17,7 @@ import {
 } from "../server/lib/timetable-generator.js";
 import {
   assertTermCanTakeRow,
+  assertTermNotEnded,
   findTerm,
   loadSchoolConfig,
 } from "../server/lib/timetable.js";
@@ -45,6 +46,7 @@ export default defineAction({
 
     const term = await findTerm(orgId, args.termId);
     if (!term) throw new Error("That term is not in this school.");
+    await assertTermNotEnded(orgId, term);
     const config = await loadSchoolConfig(orgId);
     if (!config.schoolWeek) {
       throw new Error(

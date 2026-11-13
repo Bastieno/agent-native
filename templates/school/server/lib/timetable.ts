@@ -389,6 +389,26 @@ export async function findTerm(
     : null;
 }
 
+/**
+ * Refuse any change to an ended year's timetable. Its classes were archived
+ * with the year and its timetable is kept as the record of what was taught,
+ * so placing, moving, removing or copying into it would rewrite history.
+ * Shared by every action that writes a term's timetable.
+ */
+export async function assertTermNotEnded(
+  orgId: string,
+  term: { id: string; name: string },
+): Promise<void> {
+  if (await termYearEnded(orgId, term.id)) {
+    throw Object.assign(
+      new Error(
+        `${term.name} belongs to a year that has ended, so its timetable is kept as it was taught and can't be changed. Choose a term of the current or coming year.`,
+      ),
+      { code: "year-ended" },
+    );
+  }
+}
+
 /** Whether a term's academic year is no longer current or upcoming. */
 async function termYearEnded(orgId: string, termId: string): Promise<boolean> {
   const [row] = (await getDb()
@@ -455,6 +475,7 @@ export async function assertTermCanTakeRow(
   orgId: string,
   term: { id: string; name: string },
 ): Promise<void> {
+  await assertTermNotEnded(orgId, term);
   if (await termHasOwnRows(orgId, term.id)) return;
   if ((await earlierRowsFor(orgId, term.id)).length > 0) {
     throw Object.assign(

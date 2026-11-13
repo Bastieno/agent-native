@@ -9,6 +9,7 @@ import { withArticle } from "../shared/words.js";
 import { findPeriod } from "../shared/school-week.js";
 import {
   assertTermCanTakeRow,
+  assertTermNotEnded,
   clashesForTerm,
   findTerm,
   loadSchoolConfig,
@@ -41,6 +42,7 @@ export default defineAction({
     }
     const term = await findTerm(orgId, row.termId);
     if (!term) throw new Error("That term is not in this school.");
+    await assertTermNotEnded(orgId, term);
 
     // Claim it first, so two accepts at once cannot both add the lessons.
     const claimed = await db

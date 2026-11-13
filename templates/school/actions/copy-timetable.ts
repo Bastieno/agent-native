@@ -11,6 +11,7 @@ import {
   previousTerm,
   splitByAcademicYear,
   termHasOwnRows,
+  assertTermNotEnded,
 } from "../server/lib/timetable.js";
 import { findClashes } from "../server/lib/timetable-clashes.js";
 
@@ -42,6 +43,7 @@ export default defineAction({
 
     const to = await findTerm(orgId, args.toTermId);
     if (!to) throw new Error("That term is not in this school.");
+    await assertTermNotEnded(orgId, to);
     if (args.fromEarlier && args.fromTermId) {
       throw new Error(
         "Choose one source: either a term (fromTermId) or the school's earlier timetable (fromEarlier), not both.",
