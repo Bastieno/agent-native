@@ -24,6 +24,8 @@ export interface Segment {
   videoStartMs: number;
   playbackRate: number;
   holdFrames: number;
+  /** Frames after the line ends where footage plays with no voice (long, uncut steps). */
+  silentFrames: number;
   voiceFile: string;
 }
 export interface Zoom {
@@ -75,6 +77,7 @@ export function fitSteps(
       videoStartMs: step.startMs,
       playbackRate: rate,
       holdFrames: frames - footage,
+      silentFrames: frames - toFrames(V),
       voiceFile: line.file,
     });
     for (const c of step.clicks) {

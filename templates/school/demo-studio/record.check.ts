@@ -24,6 +24,13 @@ try {
   };
   const { videoPath, timeline } = await record(ok, server.url, dir);
   assert.equal(timeline.steps.length, 2);
+  // Step 0 starts after the flash has shown for its 600 ms plus Playwright's 300 ms
+  // slow-motion pause; a clock read late makes every step (and zoom) land early.
+  const gap = timeline.steps[0].startMs - timeline.flashAtMs;
+  assert.ok(
+    gap >= 800 && gap <= 1200,
+    `step 0 starts ${gap}ms after the flash`,
+  );
   assert.ok(timeline.steps[1].startMs > timeline.steps[0].startMs);
   assert.ok(
     timeline.steps.every((s) => s.endMs >= s.startMs && s.startMs >= 0),

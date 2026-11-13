@@ -39,6 +39,8 @@ export interface Timeline {
   width: 1920;
   height: 1080;
   videoOffsetMs: number;
+  /** Video time of the calibration flash. */
+  flashAtMs: number;
   steps: StepTiming[];
 }
 

@@ -1,14 +1,20 @@
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { clearDemoDb, takeSnapshot, waitForDbClosed } from "./db.js";
-import { DEMO_DB } from "./guard.js";
-import { startDemoServer } from "./server.js";
+import { DEMO_DB, DEMO_PORT } from "./guard.js";
+import { portTaken, startDemoServer } from "./server.js";
 
 /**
  * Build Crestfield on the demo database up to the moment before its timetable is generated (lesson counts set),
  * and save that as the snapshot every take starts from. `pnpm demo:snapshot`.
  */
 const ROOT = path.resolve(import.meta.dirname, "..");
+if (await portTaken(DEMO_PORT)) {
+  console.error(
+    `Port ${DEMO_PORT} is already in use (a demo server left running?). Stop it, then try again.`,
+  );
+  process.exit(1);
+}
 clearDemoDb();
 const server = await startDemoServer();
 let status = 1;

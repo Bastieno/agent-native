@@ -132,7 +132,15 @@ export async function record(
   await page.goto(
     "data:text/html,<body style='margin:0;background:%23f00;height:100vh'></body>",
   );
-  const redAt = Date.now();
+  // Read the clock in the page once red has painted: Playwright's slow-motion
+  // pause after goto would make a reading here ~300 ms late.
+  const redAt: number = await page.evaluate(() => {
+    const paint = performance.getEntriesByType("paint")[0];
+    const nav = performance.getEntriesByType("navigation")[0] as
+      | PerformanceNavigationTiming
+      | undefined;
+    return performance.timeOrigin + (paint?.startTime ?? nav?.responseEnd ?? 0);
+  });
   await page.waitForTimeout(600);
 
   const steps: {
@@ -188,12 +196,14 @@ export async function record(
   fs.rmSync(rawDir, { recursive: true, force: true });
 
   // Clock time → video time.
-  const shift = Math.round(firstRedFrame(videoPath) * 1000) - redAt;
+  const flashAtMs = Math.round(firstRedFrame(videoPath) * 1000);
+  const shift = flashAtMs - redAt;
   const toVideo = (ms: number) => ms + shift;
   const timeline: Timeline = {
     width: W,
     height: H,
     videoOffsetMs: shift,
+    flashAtMs,
     steps: steps.map(
       (s, index): StepTiming => ({
         index,

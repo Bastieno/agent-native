@@ -5,7 +5,7 @@ import { DEMO_DB, DEMO_PORT } from "./guard.js";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
-function portTaken(port: number): Promise<boolean> {
+export function portTaken(port: number): Promise<boolean> {
   return new Promise((resolve) => {
     const s = net.connect(port, "127.0.0.1");
     s.once("connect", () => (s.destroy(), resolve(true)));
@@ -51,23 +51,39 @@ export async function startDemoServer(): Promise<{
   child.stderr?.on("data", (d) => (stderr = (stderr + d).slice(-4000)));
   const exited = new Promise<void>((r) => child.once("exit", () => r()));
 
-  const stop = async () => {
-    if (child.exitCode !== null) return;
+  const killGroup = (signal: NodeJS.Signals) => {
     try {
-      process.kill(-child.pid!, "SIGTERM");
+      process.kill(-child.pid!, signal);
     } catch {}
-    const killer = setTimeout(() => {
-      try {
-        process.kill(-child.pid!, "SIGKILL");
-      } catch {}
-    }, 10_000);
-    await exited;
-    clearTimeout(killer);
+  };
+  // The server runs in its own process group, so Ctrl+C in the terminal never
+  // reaches it. Take it down with us.
+  const onSignal = (signal: NodeJS.Signals) => {
+    killGroup("SIGTERM");
+    setTimeout(() => {
+      killGroup("SIGKILL");
+      process.exit(signal === "SIGINT" ? 130 : 143);
+    }, 3_000);
+  };
+  process.once("SIGINT", onSignal);
+  process.once("SIGTERM", onSignal);
+
+  let stopped = false;
+  const stop = async () => {
+    if (stopped) return;
+    stopped = true;
+    process.off("SIGINT", onSignal);
+    process.off("SIGTERM", onSignal);
+    killGroup("SIGTERM");
+    await Promise.race([exited, new Promise((r) => setTimeout(r, 10_000))]);
+    // pnpm leading the group can exit before the server under it; finish them all.
+    await new Promise((r) => setTimeout(r, 1_000));
+    killGroup("SIGKILL");
   };
 
   const deadline = Date.now() + 180_000;
   while (Date.now() < deadline) {
-    if (child.exitCode !== null) {
+    if (child.exitCode !== null || child.signalCode !== null) {
       throw new Error(`The demo server exited on start:\n${stderr}`);
     }
     try {

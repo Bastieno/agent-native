@@ -19,6 +19,7 @@ const timeline = (
   width: 1920,
   height: 1080,
   videoOffsetMs: 0,
+  flashAtMs: 0,
   steps: steps.map(([startMs, endMs], index) => ({
     index,
     startMs,
@@ -42,11 +43,17 @@ const V = (spoken: number) => spoken + PAD_MS;
   assert.equal(s.fromFrame, INTRO_FRAMES);
 }
 
-// Long action, not cut: at most 2x, and never truncated.
+// Long action, not cut: at most 2x, never truncated, and the silence it leaves is reported.
 {
   const p = fitSteps(timeline([[0, 9000]]), voice([3000 - PAD_MS]), [false]);
   assert.equal(p.segments[0].playbackRate, 2);
   assert.equal(p.segments[0].frames, f(4500));
+  assert.equal(p.segments[0].silentFrames, f(1500));
+}
+// A step that fits its line is not silent.
+{
+  const p = fitSteps(timeline([[0, 1000]]), voice([3000 - PAD_MS]), [false]);
+  assert.equal(p.segments[0].silentFrames, 0);
 }
 
 // Cut step: footage squeezed to the line.

@@ -5,7 +5,8 @@ import { demos } from "./demos/index.js";
 import { fitSteps } from "./plan.js";
 import { record } from "./record.js";
 import { render } from "./render.js";
-import { startDemoServer } from "./server.js";
+import { portTaken, startDemoServer } from "./server.js";
+import { DEMO_PORT } from "./guard.js";
 import { speak } from "./voice.js";
 
 /** `pnpm demo <slug>`: record, voice, edit and render one demo video. */
@@ -23,6 +24,12 @@ const work = path.join(here, "work", demo.slug);
 const out = path.join(here, "out", demo.slug);
 fs.mkdirSync(work, { recursive: true });
 
+if (await portTaken(DEMO_PORT)) {
+  console.error(
+    `Port ${DEMO_PORT} is already in use (a demo server left running?). Stop it, then try again.`,
+  );
+  process.exit(1);
+}
 console.log("· restoring the demo school");
 restoreSnapshot();
 const server = await startDemoServer();
@@ -43,6 +50,13 @@ const plan = fitSteps(
   lines,
 );
 fs.writeFileSync(path.join(work, "plan.json"), JSON.stringify(plan, null, 2));
+for (const s of plan.segments) {
+  if (s.silentFrames > 15) {
+    console.warn(
+      `  ! step ${s.index} plays ${(s.silentFrames / 30).toFixed(1)}s with no voice after its line ("${demo.steps[s.index].line}"). Mark it cut: true or give it a longer line.`,
+    );
+  }
+}
 console.log("· rendering");
 const { wide, tall } = await render(plan, demo, work, out);
 console.log(

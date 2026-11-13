@@ -29,6 +29,10 @@ assert.equal(fs.readFileSync(snap, "utf8"), "base");
 fs.writeFileSync(db, "after a take");
 fs.writeFileSync(`${db}-wal`, "x");
 fs.writeFileSync(`${db}-shm`, "x");
+// A live write-ahead log means a server still has it open: never overwrite that.
+assert.throws(() => restoreSnapshot(dir), /still open/);
+assert.equal(fs.readFileSync(db, "utf8"), "after a take");
+fs.writeFileSync(`${db}-wal`, "");
 restoreSnapshot(dir);
 assert.equal(fs.readFileSync(db, "utf8"), "base");
 assert.ok(!fs.existsSync(`${db}-wal`));

@@ -34,6 +34,7 @@ export function restoreSnapshot(dir: string = DATA_DIR): void {
     );
   }
   const db = path.join(dir, DB);
+  assertDbClosed(db);
   for (const leftover of [`${db}-wal`, `${db}-shm`])
     fs.rmSync(leftover, { force: true });
   fs.copyFileSync(snap, db);
@@ -42,6 +43,7 @@ export function restoreSnapshot(dir: string = DATA_DIR): void {
 /** Remove the demo database and its logs (not the snapshot). */
 export function clearDemoDb(dir: string = DATA_DIR): void {
   const db = path.join(dir, DB);
+  assertDbClosed(db);
   for (const f of [db, `${db}-wal`, `${db}-shm`]) fs.rmSync(f, { force: true });
 }
 

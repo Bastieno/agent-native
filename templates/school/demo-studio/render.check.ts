@@ -41,6 +41,7 @@ const plan: EditPlan = {
       videoStartMs: 0,
       playbackRate: 1,
       holdFrames: 15,
+      silentFrames: 0,
       voiceFile: path.join(work, "voice-0.wav"),
     },
   ],
