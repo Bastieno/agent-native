@@ -1,3 +1,5 @@
+import type { SchoolId } from "./schools.js";
+
 /** One thing the recorder does on screen. Selectors are Playwright selectors. */
 export type Action =
   | { do: "goto"; path: string }
@@ -16,14 +18,48 @@ export interface Step {
   cut?: boolean;
 }
 
-export interface Demo {
+export interface DemoBase {
   slug: string;
   title: string;
-  /** Showcase account to sign in as. */
-  signInAs: string;
-  /** Kokoro voice id; British voices only (bf_ / bm_). */
+  /** Kokoro voice id; British voices only (bf_ / bm_). Used when there is no recording of your own voice. */
   voice?: string;
+}
+
+/** Recorded in one school, one person signed in. */
+export interface RecordedScene {
+  school: SchoolId;
+  /** Account to sign in as. */
+  signInAs: string;
   /** Done before the first line and left out of the edit: page loads, setup. */
+  start?: Action[];
+  steps: Step[];
+}
+/** A screen recording the user made themselves, spoken over by one line. */
+export interface ClipScene {
+  /** Path to the video, absolute or relative to demo-studio/. */
+  clip: string;
+  step: Step;
+}
+export type Scene = RecordedScene | ClipScene;
+
+/** One school, one person: `signInAs`, `start` and `steps` at the top level. */
+export interface SingleDemo extends DemoBase {
+  signInAs: string;
+  start?: Action[];
+  steps: Step[];
+  scenes?: undefined;
+}
+/** Several scenes, in different schools and with different people. */
+export interface SceneDemo extends DemoBase {
+  scenes: Scene[];
+}
+export type Demo = SingleDemo | SceneDemo;
+
+/** What the recorder needs for one scene. */
+export interface RecordInput {
+  slug: string;
+  title: string;
+  signInAs: string;
   start?: Action[];
   steps: Step[];
 }

@@ -5,7 +5,7 @@ import path from "node:path";
 import { chromium, type Page } from "playwright";
 import { TEST_PASSWORD } from "../test/sim/client.js";
 import { assertDemoUrl } from "./guard.js";
-import type { Action, Demo, StepTiming, Timeline } from "./types.js";
+import type { Action, RecordInput, StepTiming, Timeline } from "./types.js";
 
 const W = 1920;
 const H = 1080;
@@ -110,7 +110,7 @@ const describe = (a: Action) =>
   "selector" in a ? a.selector : "path" in a ? a.path : a.do;
 
 export async function record(
-  demo: Demo,
+  demo: RecordInput,
   baseUrl: string,
   workDir: string,
 ): Promise<{ videoPath: string; timeline: Timeline }> {

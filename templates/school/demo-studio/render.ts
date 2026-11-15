@@ -3,7 +3,7 @@ import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
 import type { EditPlan } from "./plan.js";
-import type { Demo } from "./types.js";
+import type { DemoBase } from "./types.js";
 
 /**
  * Render the edit twice: 16:9 for YouTube, 9:16 for Shorts, TikTok and Reels.
@@ -11,7 +11,7 @@ import type { Demo } from "./types.js";
  */
 export async function render(
   plan: EditPlan,
-  demo: Demo,
+  demo: Pick<DemoBase, "slug" | "title">,
   workDir: string,
   outDir: string,
 ): Promise<{ wide: string; tall: string }> {
