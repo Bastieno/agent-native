@@ -138,37 +138,33 @@ It asked. It didn't publish on its own. That call is the teacher's.
 
 ## 9. The learner
 
-[NOT YET CHECKED against the app: the learner screens.]
+[Switch to Ebiere, a JSS1 learner. Her home page, then Grades.]
 
-[Switch to a learner. Their week.]
+The learners have their own Ellai. A JSS1 learner opens it and sees where the term is, what's next on her timetable, and anything her teachers are waiting for.
 
-The learners have their own Ellai. A JSS2 learner sees her week: lessons, homework, and what's due.
-
-[The revise page for one subject.]
-
-When it's time to revise, every week of the term is on one page, with her marks beside each piece of work, and the papers that went badly gathered at the top.
+Her grades page shows her term average, whether she has handed everything in, and every subject with the marks behind it.
 
 ## 10. Report cards, in two countries
 
-[NOT YET CHECKED against the app: the report cards.]
+[Principal: Usman Adesina's First Term report card.]
 
-[A Crestfield First Term report card: WAEC grades, positions, comments.]
+End of term. A report card lists every subject with its score and grade, his position in the year group, and a comment from his form teacher and from the principal. Once it's issued, it can't be changed.
 
-End of term. Report cards, with WAEC grades, positions in class, and comments the teacher signs off.
+[Switch to Yellow View: Chidi Wallace's Quarter 1 report card, with AP and Honors courses and the GPA.]
 
-[Switch to Yellow View, Ohio. A Quarter 1 report card: GPA, Honors, AP.]
-
-And this is Yellow View, a high school in Ohio, on exactly the same code. Quarters instead of terms, GPA, Honors and AP.
+And this is Yellow View, a high school in Ohio, on exactly the same code. Quarters instead of terms, a GPA, and Honors and AP courses counted for more.
 
 Grading, terms, even the words a school uses, are settings. It's one product, not two.
 
 ## 11. Safe in a school
 
-[NOT YET CHECKED against the app: what the assistant refuses.]
+[Back to Ebiere, the learner. Type, live: "What marks did the other learners in my class get on the Week 10 quiz?"]
 
-[Back in Crestfield: the assistant refusing, or a teacher's view without admin pages.]
+A school is full of children, so the rules are strict. The assistant only has the permissions of the person using it. So I'm a learner, and I ask for the other learners' marks.
 
-A school is full of children, so the rules are strict. The assistant only has the permissions of the person using it. A teacher's assistant can't see the principal's pages, and a learner's can't see anyone else's marks.
+[The answer, live: it refuses, and offers her own result instead.]
+
+It says no. Each learner's marks are private to them, and it offers me my own instead.
 
 Anything that changes the school starts as a draft. A person accepts it.
 
