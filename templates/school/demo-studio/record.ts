@@ -80,12 +80,14 @@ async function perform(
       return;
     case "hold":
       return page.waitForTimeout(a.ms);
+    case "press":
+      return page.keyboard.press(a.key);
     case "move":
       return page.mouse.move(a.x, a.y, { steps: 20 });
     case "waitFor":
       return page
         .locator(a.selector)
-        .first()
+        .nth((a.nth ?? 1) - 1)
         .waitFor({
           state: a.gone ? "hidden" : "visible",
           timeout: a.timeoutMs ?? 15_000,
@@ -107,7 +109,13 @@ async function perform(
 }
 
 const describe = (a: Action) =>
-  "selector" in a ? a.selector : "path" in a ? a.path : a.do;
+  "selector" in a
+    ? a.selector
+    : "path" in a
+      ? a.path
+      : "key" in a
+        ? a.key
+        : a.do;
 
 export async function record(
   demo: RecordInput,

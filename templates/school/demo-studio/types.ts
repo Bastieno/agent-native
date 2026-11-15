@@ -5,7 +5,16 @@ export type Action =
   | { do: "goto"; path: string }
   | { do: "click"; selector: string }
   | { do: "type"; selector: string; text: string }
-  | { do: "waitFor"; selector: string; timeoutMs?: number; gone?: boolean }
+  | {
+      do: "waitFor";
+      selector: string;
+      timeoutMs?: number;
+      gone?: boolean;
+      /** Wait for the Nth match (1-based) instead of the first. */
+      nth?: number;
+    }
+  /** Press a key, e.g. "Enter". */
+  | { do: "press"; key: string }
   | { do: "hold"; ms: number }
   /** Move the pointer without clicking (e.g. off the content before the last shot). */
   | { do: "move"; x: number; y: number };
