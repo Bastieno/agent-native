@@ -18,7 +18,7 @@ A teacher in Nigeria spends her Sunday evening writing lesson notes by hand, bec
 
 Then she marks forty-five exercise books. Then she does it again next week.
 
-I'm Francis, and this is Ellai. You run a school by asking it, and it does the paperwork.
+I'm Francis, and this is Ellai. You tell it what the school needs, and it does the work.
 
 ## 2. A new school, by asking
 
