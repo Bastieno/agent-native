@@ -102,7 +102,8 @@ async function perform(
       await page.mouse.move(x, y, { steps: 20 });
       clicks.push({ atMs: Date.now(), x, y });
       await page.mouse.click(x, y);
-      if (a.do === "type") await page.keyboard.type(a.text, { delay: 60 });
+      if (a.do === "type")
+        await page.keyboard.type(a.text, { delay: a.delayMs ?? 60 });
       return;
     }
   }

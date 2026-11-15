@@ -4,7 +4,7 @@ import type { SchoolId } from "./schools.js";
 export type Action =
   | { do: "goto"; path: string }
   | { do: "click"; selector: string }
-  | { do: "type"; selector: string; text: string }
+  | { do: "type"; selector: string; text: string; delayMs?: number }
   | {
       do: "waitFor";
       selector: string;

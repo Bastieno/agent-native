@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { restoreSnapshot } from "./db.js";
@@ -28,6 +29,9 @@ const out = path.join(here, "out", demo.slug);
 fs.mkdirSync(work, { recursive: true });
 
 const reuse = process.argv.includes("--reuse");
+// --only=1,3 records just those scenes (0-based) and stops: for fixing one scene at a time.
+const onlyArg = process.argv.find((a) => a.startsWith("--only="));
+const only = onlyArg ? onlyArg.slice(7).split(",").map(Number) : null;
 const scenes = scenesOf(demo);
 // Every school this demo visits must have its snapshot, and its port must be free.
 for (const sc of scenes.filter(isRecorded)) {
@@ -41,9 +45,30 @@ for (const sc of scenes.filter(isRecorded)) {
 }
 const parts: Part[] = [];
 for (const [i, sc] of scenes.entries()) {
+  if (only && !only.includes(i)) continue;
   if (isClip(sc)) {
     console.log(`· scene ${i + 1}/${scenes.length}: your clip`);
-    parts.push(await clipPart(clipPath(sc)));
+    let clip = clipPath(sc);
+    if (!fs.existsSync(clip)) {
+      // A stand-in so a rough cut can be watched; the real clip must replace it.
+      console.warn(
+        `  ! ${path.relative(process.cwd(), clip)} is missing: using a blank stand-in. Record your clip and save it there before the final cut.`,
+      );
+      clip = path.join(work, "clip-standin.webm");
+      execFileSync("ffmpeg", [
+        "-v",
+        "error",
+        "-y",
+        "-f",
+        "lavfi",
+        "-i",
+        "color=c=0x16161d:s=1920x1080:r=30:d=8",
+        "-c:v",
+        "libvpx-vp9",
+        clip,
+      ]);
+    }
+    parts.push(await clipPart(clip));
     continue;
   }
   console.log(
@@ -76,6 +101,12 @@ for (const [i, sc] of scenes.entries()) {
   } finally {
     await server.stop();
   }
+}
+if (only) {
+  console.log(
+    `\nRecorded scene(s) ${only.join(", ")} into ${path.relative(process.cwd(), work)}/scene-N/. Stopping (--only).`,
+  );
+  process.exit(0);
 }
 let timeline = parts[0].timeline;
 if (scenes.length > 1) {
