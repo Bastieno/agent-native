@@ -161,3 +161,9 @@ Anything that changes the school starts as a draft. A person accepts it.
 [Francis's own Claude, connected over MCP, asking about a class. The link opens the page in Ellai.]
 
 Staff don't even need to open the app. This is my own Claude, connected to the school. It asks with my permissions, and links straight back to the page.
+
+## 13. Sign-off
+
+[ellai.dev]
+
+I'm Francis. This is Ellai. Thanks for watching.
