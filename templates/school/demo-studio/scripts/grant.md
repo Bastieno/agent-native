@@ -18,7 +18,7 @@ A teacher in Nigeria spends her Sunday evening writing lesson notes by hand, bec
 
 Then she marks forty-five exercise books. Then she does it again next week.
 
-I'm Francis, and this is Ellai. It runs a school by asking, so that evening goes back to her.
+I'm Francis, and this is Ellai. You run a school by asking it, and it does the paperwork.
 
 ## 2. A new school, by asking
 
@@ -60,7 +60,7 @@ But plenty of schools teach their own scheme. They hand Ellai the documents, it 
 
 [Switch to Crestfield, principal signed in. The home page.]
 
-Now a school that has run a whole term. Crestfield is a demo school in Ibadan, with simulated staff and learners, nine hundred of them. [CHECK the number.]
+Now a school that has run a whole term. Crestfield is a demo school in Ibadan, with simulated staff and learners, one hundred and eighty of them.
 
 [Ask: "What needs my attention this week?"]
 
@@ -161,13 +161,3 @@ Anything that changes the school starts as a draft. A person accepts it.
 [Francis's own Claude, connected over MCP, asking about a class. The link opens the page in Ellai.]
 
 Staff don't even need to open the app. This is my own Claude, connected to the school. It asks with my permissions, and links straight back to the page.
-
-## 13. Where we are
-
-[ellai.dev]
-
-Ellai is built and running as two complete demo schools, one in Ibadan, one in Ohio. [CHECK]
-
-We're starting with secondary schools in Nigeria. Our first pilot begins in [CHECK: month]. [CHECK: one line on what the grant pays for, e.g. "This grant pays for the first ten schools."]
-
-I'm Francis. This is Ellai. Thanks for watching.
