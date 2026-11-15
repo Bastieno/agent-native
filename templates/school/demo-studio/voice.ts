@@ -23,7 +23,7 @@ function model() {
   return tts;
 }
 
-function durationMs(file: string): number {
+export function durationMs(file: string): number {
   const out = execFileSync("ffprobe", [
     "-v",
     "error",

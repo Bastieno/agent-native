@@ -8,6 +8,7 @@ import { render } from "./render.js";
 import { portTaken, startDemoServer } from "./server.js";
 import { DEMO_PORT } from "./guard.js";
 import { speak } from "./voice.js";
+import { findVoiceFile, voiceFromFile } from "./voice-file.js";
 
 /** `pnpm demo <slug>`: record, voice, edit and render one demo video. */
 const slug = process.argv[2];
@@ -40,9 +41,16 @@ try {
 } finally {
   await server.stop();
 }
-console.log("· voice");
 const lines = demo.steps.map((s) => s.line);
-const voice = await speak(lines, demo.voice ?? "bf_emma", work);
+const voiceFile = findVoiceFile(demo.slug);
+console.log(
+  voiceFile
+    ? `· voice: your recording (${path.basename(voiceFile)})`
+    : "· voice: the built-in British voice (put your recording in demo-studio/voice/ to use it)",
+);
+const voice = voiceFile
+  ? await voiceFromFile(voiceFile, lines, work)
+  : await speak(lines, demo.voice ?? "bf_emma", work);
 const plan = fitSteps(
   timeline,
   voice,

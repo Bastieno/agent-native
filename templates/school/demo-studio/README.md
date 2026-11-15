@@ -24,6 +24,18 @@ pnpm demo timetable
 Output: `demo-studio/out/timetable/timetable-16x9.mp4` and `-9x16.mp4`.
 Every take starts from the same snapshot, so re-running gives the same video.
 
+## Use your own voice
+
+1. Write the script in `scripts/<name>.md` (see `scripts/grant.md`): spoken paragraphs, with
+   `[brackets]` for what is on screen.
+2. Make one audio file of the whole script in ElevenLabs (or record it yourself).
+3. Save it as `demo-studio/voice/<slug>.mp3` (or `.wav`, `.m4a`) and run `pnpm demo <slug>`.
+
+The audio is transcribed on your Mac (Whisper, free, no key). Each script line is found in it; pauses
+over 0.7 s are shortened, a line said twice keeps its last take, and filler between lines is cut. If a
+line can't be found, the run stops and says which line and what the audio says. Without an audio file
+the built-in British voice is used.
+
 ## Write a new demo
 
 Add `demos/<slug>.ts` and list it in `demos/index.ts`. A demo has:
