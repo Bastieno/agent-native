@@ -18,12 +18,17 @@ import {
   type EditPlan,
 } from "../plan";
 import { Captions } from "./Captions";
+import { Marks } from "./Marks";
 import { Intro, Outro } from "./Cards";
 import { BRAND } from "./theme";
 
 export interface DemoVideoProps {
   plan: EditPlan;
   title: string;
+  /** Background music file in the public dir; none when left out. */
+  music?: string;
+  /** Burn the spoken words onto the picture. Off by default. */
+  captions?: boolean;
   [key: string]: unknown;
 }
 
@@ -93,7 +98,7 @@ function Screen({ plan }: { plan: EditPlan }) {
   );
 }
 
-export function DemoVideo({ plan, title }: DemoVideoProps) {
+export function DemoVideo({ plan, title, music, captions }: DemoVideoProps) {
   const { width, height } = useVideoConfig();
   const tall = height > width;
   return (
@@ -104,7 +109,9 @@ export function DemoVideo({ plan, title }: DemoVideoProps) {
           <Audio src={staticFile(basename(s.voiceFile))} />
         </Sequence>
       ))}
-      <Captions captions={plan.captions} tall={tall} />
+      {music && <Audio src={staticFile(music)} volume={0.11} loop />}
+      {captions && <Captions captions={plan.captions} tall={tall} />}
+      <Marks marks={plan.marks ?? []} total={plan.totalFrames} tall={tall} />
       <Sequence durationInFrames={INTRO_FRAMES}>
         <Intro title={title} frames={INTRO_FRAMES} tall={tall} />
       </Sequence>

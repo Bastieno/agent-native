@@ -81,6 +81,7 @@ const setup: RecordedScene = {
 
 /** 10-17: Crestfield as the principal. */
 const crestfield: RecordedScene = {
+  title: "A school after a term",
   school: "crestfield-term",
   signInAs: principal,
   start: [{ do: "goto", path: "/admin/curriculum/library" }, park],
@@ -108,6 +109,7 @@ const crestfield: RecordedScene = {
 
 /** 18-29: a maths teacher, a worksheet, and marking. */
 const teacher: RecordedScene = {
+  title: "A teacher's week",
   school: "crestfield-term",
   signInAs: "emmanuel.okafor@crestfield.test",
   start: [
@@ -157,6 +159,7 @@ const teacher: RecordedScene = {
 
 /** 30-31: a learner. */
 const learner: RecordedScene = {
+  title: "The learner's view",
   school: "crestfield-term",
   signInAs: "ebiere.olaniyan@crestfield.test",
   start: [
@@ -176,6 +179,7 @@ const learner: RecordedScene = {
 };
 
 const reportCrestfield: RecordedScene = {
+  title: "Report cards",
   school: "crestfield-term",
   signInAs: principal,
   start: [{ do: "goto", path: "/print/report/wV1_-fxkOlipqrK819fVs" }, park],
@@ -183,6 +187,7 @@ const reportCrestfield: RecordedScene = {
 };
 
 const reportYellowView: RecordedScene = {
+  title: "Same code, another country",
   school: "yellowview",
   signInAs: "principal@yellowview.test",
   start: [{ do: "goto", path: "/print/report/J66TzZxaeWGAMsLtOxhdK" }, park],
@@ -191,6 +196,7 @@ const reportYellowView: RecordedScene = {
 
 /** 35-37: the learner's assistant says no. */
 const safety: RecordedScene = {
+  title: "Safe in a school",
   school: "crestfield-term",
   signInAs: "ebiere.olaniyan@crestfield.test",
   start: [
@@ -221,6 +227,7 @@ const signOff: RecordedScene = {
 export const grant: Demo = {
   slug: "grant",
   title: "Ellai: a school that runs by asking",
+  voice: "bm_george",
   scenes: [
     setup,
     crestfield,
@@ -230,7 +237,7 @@ export const grant: Demo = {
     reportYellowView,
     safety,
     // Your own Claude over MCP, recorded by you (see scripts/grant.md, scene 12).
-    { clip: "clips/claude.mp4", step: s(38, []) },
+    { title: "Your own AI", clip: "clips/claude.mp4", step: s(38, []) },
     signOff,
   ],
 };

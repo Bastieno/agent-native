@@ -36,6 +36,8 @@ export interface DemoBase {
 
 /** Recorded in one school, one person signed in. */
 export interface RecordedScene {
+  /** Shown on screen as a title when the scene begins. */
+  title?: string;
   school: SchoolId;
   /** Account to sign in as. */
   signInAs: string;
@@ -45,6 +47,8 @@ export interface RecordedScene {
 }
 /** A screen recording the user made themselves, spoken over by one line. */
 export interface ClipScene {
+  /** Shown on screen as a title when the scene begins. */
+  title?: string;
   /** Path to the video, absolute or relative to demo-studio/. */
   clip: string;
   step: Step;

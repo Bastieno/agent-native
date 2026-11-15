@@ -38,6 +38,13 @@ export interface Caption {
   toFrame: number;
   text: string;
 }
+/** A scene title shown when the scene begins. */
+export interface Mark {
+  fromFrame: number;
+  title: string;
+  number: number;
+}
+
 export interface EditPlan {
   totalFrames: number;
   width: number;
@@ -45,6 +52,8 @@ export interface EditPlan {
   segments: Segment[];
   zooms: Zoom[];
   captions: Caption[];
+  /** Scene titles; left out, there are none. */
+  marks?: Mark[];
 }
 
 const toFrames = (ms: number) => Math.round((ms / 1000) * FPS);

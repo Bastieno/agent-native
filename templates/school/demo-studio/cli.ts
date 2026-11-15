@@ -8,7 +8,14 @@ import { record } from "./record.js";
 import { render } from "./render.js";
 import { portTaken, startDemoServer } from "./server.js";
 import { SCHOOLS } from "./schools.js";
-import { isClip, isRecorded, clipPath, scenesOf, stepsOf } from "./scenes.js";
+import {
+  isClip,
+  isRecorded,
+  clipPath,
+  sceneMarks,
+  scenesOf,
+  stepsOf,
+} from "./scenes.js";
 import { clipPart, mergeScenes, type Part } from "./merge.js";
 import { speak } from "./voice.js";
 import { findVoiceFiles, joinVoiceParts, voiceFromFile } from "./voice-file.js";
@@ -133,6 +140,7 @@ const plan = fitSteps(
   allSteps.map((s) => !!s.cut),
   lines,
 );
+plan.marks = sceneMarks(scenes, plan.segments);
 fs.writeFileSync(path.join(work, "plan.json"), JSON.stringify(plan, null, 2));
 for (const s of plan.segments) {
   if (s.silentFrames > 15) {
@@ -142,7 +150,9 @@ for (const s of plan.segments) {
   }
 }
 console.log("· rendering");
-const { wide, tall } = await render(plan, demo, work, out);
+const { wide, tall } = await render(plan, demo, work, out, {
+  music: !process.argv.includes("--no-music"),
+});
 console.log(
   `\nDone in ${Math.round((Date.now() - started) / 1000)}s (${(plan.totalFrames / 30).toFixed(1)}s of video)\n  ${wide}\n  ${tall}`,
 );

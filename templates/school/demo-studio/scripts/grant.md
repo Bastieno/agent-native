@@ -32,7 +32,7 @@ So I tell it what we are, in one sentence.
 
 [The answer, live: the year groups, the WAEC grading table A1 to F9, and a list of what it still needs.]
 
-It answers with the setup written out: six year groups, the WAEC grades from A1 down to F9, and a list of what it still needs from me.
+It answers with the setup written out: six year groups, the school's grading scale, and a list of what it still needs from me.
 
 [Type, live: the school's name, the three term dates, and the school week.]
 
@@ -64,7 +64,7 @@ But plenty of schools teach their own scheme. They hand Ellai the documents, it 
 
 [Switch to Crestfield, principal signed in. The home page.]
 
-Now a school that has run a whole term. Crestfield is a demo school in Ibadan, with simulated staff and learners, one hundred and eighty of them.
+Now a school that has run a whole term. Crestfield is a demo school in Nigeria, with simulated staff and learners, one hundred and eighty of them.
 
 [Type, live: "What needs my attention this week?"]
 
@@ -140,7 +140,7 @@ It asked. It didn't publish on its own. That call is the teacher's.
 
 [Switch to Ebiere, a JSS1 learner. Her home page, then Grades.]
 
-The learners have their own Ellai. A JSS1 learner opens it and sees where the term is, what's next on her timetable, and anything her teachers are waiting for.
+The learners have their own Ellai. A first-year learner opens it and sees where the term is, what's next on her timetable, and anything her teachers are waiting for.
 
 Her grades page shows her term average, whether she has handed everything in, and every subject with the marks behind it.
 
@@ -152,7 +152,7 @@ End of term. A report card lists every subject with its score and grade, his pos
 
 [Switch to Yellow View: Chidi Wallace's Quarter 1 report card, with AP and Honors courses and the GPA.]
 
-And this is Yellow View, a high school in Ohio, on exactly the same code. Quarters instead of terms, a GPA, and Honors and AP courses counted for more.
+And this is Yellow View, a high school in Ohio, on exactly the same code. Quarters instead of terms, a grade point average, and advanced courses counted for more.
 
 Grading, terms, even the words a school uses, are settings. It's one product, not two.
 

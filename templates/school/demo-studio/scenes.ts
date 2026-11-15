@@ -1,4 +1,5 @@
 import path from "node:path";
+import type { Mark } from "./plan.js";
 import type { ClipScene, Demo, RecordedScene, Scene, Step } from "./types.js";
 
 /** Every demo as a list of scenes; a one-school demo is a single Crestfield scene. */
@@ -24,3 +25,23 @@ export function stepsOf(scenes: Scene[]): Step[] {
 
 export const clipPath = (s: ClipScene) =>
   path.resolve(import.meta.dirname, s.clip);
+
+/** Where each titled scene begins in the edit, given the planned segments (one per step, in order). */
+export function sceneMarks(
+  scenes: Scene[],
+  segments: { fromFrame: number }[],
+): Mark[] {
+  const marks: Mark[] = [];
+  let step = 0;
+  for (const sc of scenes) {
+    if (sc.title) {
+      marks.push({
+        fromFrame: segments[step].fromFrame,
+        title: sc.title,
+        number: marks.length + 1,
+      });
+    }
+    step += isClip(sc) ? 1 : sc.steps.length;
+  }
+  return marks;
+}
