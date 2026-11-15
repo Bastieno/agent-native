@@ -41,11 +41,16 @@ function copyOf(source: string): void {
     console.error(`${source} does not exist, so there is nothing to copy.`);
     process.exit(1);
   }
-  execFileSync("sqlite3", [
-    "-readonly",
-    from,
-    `.backup '${snapshotPath(undefined, id)}'`,
-  ]);
+  if (fs.existsSync(`${from}-wal`)) {
+    // A server has it open: ask SQLite for a consistent copy.
+    execFileSync("sqlite3", [
+      "-readonly",
+      from,
+      `.backup '${snapshotPath(undefined, id)}'`,
+    ]);
+  } else {
+    fs.copyFileSync(from, snapshotPath(undefined, id));
+  }
 }
 
 /**
@@ -80,7 +85,7 @@ function run(cmd: string[], env: Record<string, string>): number {
 if (id === "yellowview") {
   copyOf("data/yellowview.db");
   useDemoPassword();
-} else if (id === "crestfield-term") copyOf("data/showcase.db");
+} else if (id === "crestfield-term") copyOf("data/showcase.pre-promotion.db");
 else {
   clearDemoDb(undefined, id);
   const server = await startDemoServer(id);

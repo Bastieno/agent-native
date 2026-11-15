@@ -22,29 +22,33 @@ I'm Francis, and this is Ellai. You tell it what the school needs, and it does t
 
 ## 2. A new school, by asking
 
-[Empty school, the head signed in.]
+[Empty school, the head signed in. The home page shows four setup steps, none ticked.]
 
 This school was created two minutes ago. Nothing is set up. No classes, no terms, no grading.
 
-[Type: "We're a secondary school in Lagos, JSS1 to SS3, three terms, WAEC grading, pass mark 40."]
+[Type, live: "We're a secondary school in Lagos, JSS1 to SS3, three terms, WAEC grading, pass mark 40."]
 
 So I tell it what we are, in one sentence.
 
-[The setup sheet comes back.]
+[The answer, live: the year groups, the WAEC grading table A1 to F9, and a list of what it still needs.]
 
-It comes back with a sheet I can read: the year groups, the three terms with their dates, the WAEC grades from A1 down to F9, and the curriculum it will plan from.
+It answers with the setup written out: six year groups, the WAEC grades from A1 down to F9, and a list of what it still needs from me.
 
-[Ask it to change one thing, e.g. the term dates.]
+[Type, live: the school's name, the three term dates, and the school week.]
 
-Something's wrong? I say so, in plain words. I don't go looking for the right settings page.
+Nothing is saved yet. It wants the school's name, the term dates and the school week, so I give it those.
 
-[Ask: "What's still missing?"]
+[The school's name appears top left; the first two setup steps are ticked.]
 
-And it tells me what's left before anyone can teach.
+Now it's saved. The school has its name, its three terms, and the first two steps are ticked.
 
-[Cut to Settings: year groups, terms and grading filled in.]
+[Type, live: "What is still missing?"]
 
-Everything it did is on the normal screens, where anyone can check it or change it by hand. The assistant never works anywhere you can't see.
+I can ask what's left, and it tells me, in order.
+
+[Cut to Settings: the grading scale, A1 to F9, pass mark 40.]
+
+Everything it did is on the normal screens, like this grading scale. Anyone can check it or change it by hand. The assistant never works anywhere you can't see.
 
 ## 3. The curriculum
 
@@ -62,71 +66,79 @@ But plenty of schools teach their own scheme. They hand Ellai the documents, it 
 
 Now a school that has run a whole term. Crestfield is a demo school in Ibadan, with simulated staff and learners, one hundred and eighty of them.
 
-[Ask: "What needs my attention this week?"]
+[Type, live: "What needs my attention this week?"]
 
 A principal can't open every class every week. So she asks.
 
-[The answer: classes behind, unmarked work, missing lesson notes.]
+[The answer, live: lesson notes written but not marked ready, and nothing blocking.]
 
-It points at the classes falling behind, the work no one has marked, and the teachers whose notes are missing. Each one links to the page where it can be fixed.
+It says one thing needs attention: twenty-one classes have lesson notes written that nobody has marked ready. And nothing is blocking. Every class has a teacher, and every learner has a year group.
 
 ## 5. The timetable
 
-[The timetable grid. Filter to one teacher, then to the Physics Lab.]
+[The timetable grid for JSS1A, then another class.]
 
 The timetable was built from this school's own day: assembly, eight periods, two breaks, and a short Friday.
 
-Every class gets its lessons, no teacher is in two rooms at once, and the lab is never double booked.
+Every class gets its lessons, and no teacher is in two rooms at once.
 
 And it didn't go live until a person pressed Accept.
 
 ## 6. A teacher's week
 
-[Switch to Emmanuel Okafor, maths teacher. His week.]
+[Switch to Emmanuel Okafor, maths teacher. The home page, then My Week.]
 
-Now I'm a maths teacher. This is my week: what I'm teaching, to whom, and what's waiting to be marked.
+Now I'm a maths teacher. The home page tells me what needs me: marks ready to publish, and a lesson note that isn't ready.
 
-[Lesson notes for the term.]
+[My Week: each lesson with its note status.]
 
-My lesson notes for the whole term were drafted from the curriculum, one for each week. I edit them, and I finalise them. The principal sees which ones are done without chasing me.
+Every lesson in my week shows whether its note is ready, so I can see what I still owe before Monday.
 
 ## 7. A worksheet in three levels
 
-[Type: "Make a three-level worksheet on fractions for JSS1A Mathematics."]
+[Type, live: "Make a three-level worksheet on fractions for JSS1A Mathematics."]
 
 Here's the part teachers ask about first.
 
-[The preview.]
+[Cut the wait. The worksheet opens: Level 1 Foundational, Level 2 Developing, Level 3 Advanced.]
 
-Before it makes anything, it shows me what it plans. [Accept.]
+A minute later it's there: foundational, developing and advanced, twenty marks each, with a mark scheme and model answers.
 
-[Open the three versions.]
+[Point at the draft banner and the Share with class button.]
 
-Three versions of the same worksheet. Each learner gets the one that fits their marks so far, and no learner ever sees which level they were given.
+It's a draft. Learners can't see it until I press Share with class.
+
+[Back to the chat: its two open questions, the closing date and who takes which level.]
+
+And it asks what it doesn't know: when the worksheet closes, and who takes which level. It can use the class's recent marks, or I can choose.
 
 That used to be one worksheet for forty-five children, and the ones at either end got nothing from it.
 
 ## 8. Marking
 
-[JSS2A Mathematics, week 10: handed in, not marked.]
+[JSS2A Mathematics: a Week 10 quiz, handed in and not yet marked.]
 
-This class handed in work this week. None of it is marked.
+This class handed in a quiz this week. None of it is marked.
 
-[Ask the assistant to mark it. Cut the wait.]
+[Type, live: "Mark the handed-in Week 10 quiz for JSS2A Mathematics." Cut the wait.]
 
-[Open one answer.]
+I ask it to mark the quiz.
 
-Every mark says why. It quotes the learner's own words against the mark scheme, so I can check a mark in seconds instead of marking it again.
+[The answer: a table of five learners with scores and grades, and who didn't hand in.]
 
-[Point at a flagged mark.]
+It marks the five papers, with each learner's score and grade, and lists by name the learners who didn't hand in.
 
-When it isn't sure, it says so, and flags it for me.
+[Point at the sentence "Not published".]
 
-[Point at Publish.]
+The marks are saved, but learners can't see them yet. It asks me whether to publish now or wait for the due date.
 
-And it never publishes. That button is mine. Learners and parents see nothing until the teacher decides.
+[Do not click publish.]
+
+It asked. It didn't publish on its own. That call is the teacher's.
 
 ## 9. The learner
+
+[NOT YET CHECKED against the app: the learner screens.]
 
 [Switch to a learner. Their week.]
 
@@ -137,6 +149,8 @@ The learners have their own Ellai. A JSS2 learner sees her week: lessons, homewo
 When it's time to revise, every week of the term is on one page, with her marks beside each piece of work, and the papers that went badly gathered at the top.
 
 ## 10. Report cards, in two countries
+
+[NOT YET CHECKED against the app: the report cards.]
 
 [A Crestfield First Term report card: WAEC grades, positions, comments.]
 
@@ -149,6 +163,8 @@ And this is Yellow View, a high school in Ohio, on exactly the same code. Quarte
 Grading, terms, even the words a school uses, are settings. It's one product, not two.
 
 ## 11. Safe in a school
+
+[NOT YET CHECKED against the app: what the assistant refuses.]
 
 [Back in Crestfield: the assistant refusing, or a teacher's view without admin pages.]
 

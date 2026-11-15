@@ -41,7 +41,8 @@ export const SCHOOLS: Record<SchoolId, School> = {
     id: "crestfield-term",
     port: 8137,
     db: "./data/demo-term.db",
-    about: "Crestfield after a full term, with week 10 still unmarked",
+    about:
+      "Crestfield in week 10 of its first term, with that week's quiz still unmarked (the owner's pre-promotion showcase)",
   },
 };
 
