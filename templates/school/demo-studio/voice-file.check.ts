@@ -4,7 +4,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { demos } from "./demos/index.js";
-import { findVoiceFile, voiceFromFile } from "./voice-file.js";
+import { findVoiceFiles, voiceFromFile } from "./voice-file.js";
 import { durationMs, speak } from "./voice.js";
 
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "demo-vf-"));
@@ -86,6 +86,6 @@ got.forEach((v, i) => {
   );
 }
 
-assert.equal(findVoiceFile("no-such-demo"), undefined);
+assert.deepEqual(findVoiceFiles("no-such-demo"), []);
 fs.rmSync(dir, { recursive: true });
 console.log("voice-file: ok");

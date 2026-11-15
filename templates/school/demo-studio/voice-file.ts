@@ -9,12 +9,51 @@ import { durationMs } from "./voice.js";
 /** Where a demo's recorded voice goes: `demo-studio/voice/<slug>.(mp3|wav|m4a)`. */
 export const VOICE_DIR = path.join(import.meta.dirname, "voice");
 
-export function findVoiceFile(slug: string): string | undefined {
-  for (const ext of ["mp3", "wav", "m4a"]) {
-    const f = path.join(VOICE_DIR, `${slug}.${ext}`);
-    if (fs.existsSync(f)) return f;
-  }
-  return undefined;
+const EXTS = /\.(mp3|wav|m4a)$/;
+
+/**
+ * Your recording of a demo: `<slug>.mp3`, or several parts in name order
+ * (`<slug>-01.mp3`, `<slug>-02.mp3`) when the voice tool caps how much it will
+ * read at once. Nothing found gives an empty list.
+ */
+export function findVoiceFiles(
+  slug: string,
+  dir: string = VOICE_DIR,
+): string[] {
+  if (!fs.existsSync(dir)) return [];
+  const names = fs.readdirSync(dir).filter((n) => EXTS.test(n));
+  const whole = names.filter((n) => n.replace(EXTS, "") === slug);
+  if (whole.length) return [path.join(dir, whole[0])];
+  return names
+    .filter((n) => new RegExp(`^${slug}-\\d+$`).test(n.replace(EXTS, "")))
+    .sort((x, y) => x.localeCompare(y, undefined, { numeric: true }))
+    .map((n) => path.join(dir, n));
+}
+
+/** One audio file for the pipeline: the only part as it is, or all parts joined end to end. */
+export function joinVoiceParts(files: string[], workDir: string): string {
+  if (files.length === 1) return files[0];
+  fs.mkdirSync(workDir, { recursive: true });
+  const list = path.join(workDir, "voice-parts.txt");
+  fs.writeFileSync(list, files.map((f) => `file '${f}'`).join("\n"));
+  const out = path.join(workDir, "voice-joined.wav");
+  execFileSync("ffmpeg", [
+    "-v",
+    "error",
+    "-y",
+    "-f",
+    "concat",
+    "-safe",
+    "0",
+    "-i",
+    list,
+    "-ar",
+    "24000",
+    "-ac",
+    "1",
+    out,
+  ]);
+  return out;
 }
 
 /**

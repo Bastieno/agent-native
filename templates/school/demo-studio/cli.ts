@@ -10,7 +10,7 @@ import { SCHOOLS } from "./schools.js";
 import { isClip, isRecorded, clipPath, scenesOf, stepsOf } from "./scenes.js";
 import { clipPart, mergeScenes, type Part } from "./merge.js";
 import { speak } from "./voice.js";
-import { findVoiceFile, voiceFromFile } from "./voice-file.js";
+import { findVoiceFiles, joinVoiceParts, voiceFromFile } from "./voice-file.js";
 
 /** `pnpm demo <slug>`: record, voice, edit and render one demo video. */
 const slug = process.argv[2];
@@ -84,10 +84,13 @@ if (scenes.length > 1) {
 }
 const allSteps = stepsOf(scenes);
 const lines = allSteps.map((s) => s.line);
-const voiceFile = findVoiceFile(demo.slug);
+const voiceParts = findVoiceFiles(demo.slug);
+const voiceFile = voiceParts.length
+  ? joinVoiceParts(voiceParts, work)
+  : undefined;
 console.log(
   voiceFile
-    ? `· voice: your recording (${path.basename(voiceFile)})`
+    ? `· voice: your recording (${voiceParts.map((f) => path.basename(f)).join(", ")})`
     : "· voice: the built-in British voice (put your recording in demo-studio/voice/ to use it)",
 );
 const voice = voiceFile
