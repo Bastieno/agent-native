@@ -14,7 +14,7 @@ fluff a line, just say it again: the last take is kept.
 
 [Black, then the empty school's home page.]
 
-A teacher in Nigeria spends her Sunday evening writing lesson notes by hand, because the principal checks them on Monday. [CHECK: swap in your own story if you have one.]
+A teacher in Nigeria spends her Sunday evening writing lesson notes by hand, because the principal checks them on Monday.
 
 Then she marks forty-five exercise books. Then she does it again next week.
 
