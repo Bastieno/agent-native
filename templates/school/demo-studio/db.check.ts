@@ -51,3 +51,25 @@ await assert.rejects(() => waitForDbClosed(db, 500), /still open/);
 
 fs.rmSync(dir, { recursive: true });
 console.log("db: ok");
+
+// Each school has its own database and snapshot; one never touches another's.
+{
+  const d2 = fs.mkdtempSync(path.join(os.tmpdir(), "demo-db2-"));
+  fs.writeFileSync(path.join(d2, "demo.db"), "crestfield");
+  fs.writeFileSync(path.join(d2, "demo-yellowview.db"), "yellow view");
+  takeSnapshot(d2, "yellowview");
+  assert.equal(
+    fs.readFileSync(path.join(d2, "demo-yellowview.snapshot.db"), "utf8"),
+    "yellow view",
+  );
+  assert.ok(!fs.existsSync(path.join(d2, "demo-base.snapshot.db")));
+  fs.writeFileSync(path.join(d2, "demo-yellowview.db"), "dirty");
+  restoreSnapshot(d2, "yellowview");
+  assert.equal(
+    fs.readFileSync(path.join(d2, "demo-yellowview.db"), "utf8"),
+    "yellow view",
+  );
+  assert.equal(fs.readFileSync(path.join(d2, "demo.db"), "utf8"), "crestfield");
+  assert.throws(() => restoreSnapshot(d2, "empty"), /demo:snapshot empty/);
+  fs.rmSync(d2, { recursive: true });
+}

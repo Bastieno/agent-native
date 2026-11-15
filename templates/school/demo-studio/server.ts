@@ -1,7 +1,7 @@
 import { spawn } from "node:child_process";
 import net from "node:net";
 import path from "node:path";
-import { DEMO_DB, DEMO_PORT } from "./guard.js";
+import { SCHOOLS, type SchoolId } from "./schools.js";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
@@ -14,10 +14,13 @@ export function portTaken(port: number): Promise<boolean> {
 }
 
 /** Start the school on the demo port and database, and wait until it answers. */
-export async function startDemoServer(): Promise<{
+export async function startDemoServer(
+  school: SchoolId = "crestfield",
+): Promise<{
   url: string;
   stop(): Promise<void>;
 }> {
+  const { port: DEMO_PORT, db: DEMO_DB } = SCHOOLS[school];
   const url = `http://localhost:${DEMO_PORT}`;
   if (await portTaken(DEMO_PORT)) {
     throw new Error(
