@@ -66,12 +66,13 @@ function framesToVideo(
   frames: { file: string; t: number }[],
   dir: string,
   out: string,
+  endT: number,
 ): void {
   if (!frames.length)
     throw new Error("The phone screencast captured no frames.");
   const lines: string[] = [];
   frames.forEach((f, i) => {
-    const next = frames[i + 1]?.t ?? f.t + 0.3;
+    const next = frames[i + 1]?.t ?? Math.max(f.t + 0.3, endT);
     lines.push(
       `file '${f.file}'`,
       `duration ${Math.max(0.001, next - f.t).toFixed(4)}`,
@@ -293,6 +294,7 @@ export async function record(
   }
   await page.waitForTimeout(300);
   const video = phone ? null : page.video()!;
+  const stoppedAt = Date.now() / 1000;
   if (cdp) await cdp.send("Page.stopScreencast").catch(() => {});
   await context.close();
   await browser.close();
@@ -304,7 +306,7 @@ export async function record(
 
   const videoPath = path.join(workDir, "screen.webm");
   if (video) fs.renameSync(raw, videoPath);
-  else framesToVideo(phoneFrames, rawDir, videoPath);
+  else framesToVideo(phoneFrames, rawDir, videoPath, stoppedAt);
   fs.rmSync(rawDir, { recursive: true, force: true });
 
   // Clock time → video time.
