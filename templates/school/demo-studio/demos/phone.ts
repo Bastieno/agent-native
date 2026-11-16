@@ -91,13 +91,13 @@ const NOTES: Record<number, Note[]> = {
       atMs: 900,
     },
   ],
-  // The teacher's list: the quiz with papers waiting (the list is on screen for the first ~4 seconds).
+  // The teacher's list: the quiz with papers waiting (the list is on screen for the first ~2 seconds, while "a quiz was handed in this week" is said).
   3: [
     {
       rect: { x: 24, y: 660, w: 342, h: 58 },
       kind: "box",
-      atMs: 2200,
-      forMs: 2000,
+      atMs: 600,
+      forMs: 1500,
     },
   ],
   // The marking answer: the marks, then who has not handed in.
