@@ -36,8 +36,10 @@ export interface DemoBase {
 
 /** Recorded in one school, one person signed in. */
 export interface RecordedScene {
-  /** Shown on screen as a title when the scene begins. */
+  /** Shown on screen as a title, by default when the scene begins. */
   title?: string;
+  /** The step (0-based, within this scene) the title appears at. */
+  titleStep?: number;
   school: SchoolId;
   /** Account to sign in as. */
   signInAs: string;

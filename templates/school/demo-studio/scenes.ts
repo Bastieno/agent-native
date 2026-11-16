@@ -36,7 +36,8 @@ export function sceneMarks(
   for (const sc of scenes) {
     if (sc.title) {
       marks.push({
-        fromFrame: segments[step].fromFrame,
+        fromFrame:
+          segments[step + (isClip(sc) ? 0 : (sc.titleStep ?? 0))].fromFrame,
         title: sc.title,
         number: marks.length + 1,
       });

@@ -43,12 +43,20 @@ const titled: Demo = {
       steps: [step("a"), step("b")],
     },
     { school: "empty", signInAs: "h@x.test", steps: [step("c")] },
+    {
+      title: "Later",
+      titleStep: 1,
+      school: "empty",
+      signInAs: "h@x.test",
+      steps: [step("x"), step("y")],
+    },
     { title: "Clip", clip: "x.mp4", step: step("d") },
   ],
 };
-const segs = [100, 200, 300, 400].map((fromFrame) => ({ fromFrame }));
+const segs = [100, 200, 300, 400, 500, 600].map((fromFrame) => ({ fromFrame }));
 assert.deepEqual(sceneMarks(scenesOf(titled), segs), [
   { fromFrame: 100, title: "First", number: 1 },
-  { fromFrame: 400, title: "Clip", number: 2 },
+  { fromFrame: 500, title: "Later", number: 2 },
+  { fromFrame: 600, title: "Clip", number: 3 },
 ]);
 console.log("scenes: ok");

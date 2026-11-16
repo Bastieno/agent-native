@@ -82,6 +82,8 @@ const setup: RecordedScene = {
 /** 10-17: Crestfield as the principal. */
 const crestfield: RecordedScene = {
   title: "A school after a term",
+  // The first two lines are about the curriculum; the title comes with "a school that has run a whole term".
+  titleStep: 2,
   school: "crestfield-term",
   signInAs: principal,
   start: [{ do: "goto", path: "/admin/curriculum/library" }, park],
