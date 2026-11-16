@@ -1,6 +1,6 @@
 import path from "node:path";
 import { readScript } from "../script.js";
-import type { Action, Demo, RecordedScene, Step } from "../types.js";
+import type { Action, Demo, Note, RecordedScene, Step } from "../types.js";
 
 /** The short phone video. Spoken lines are the paragraphs of scripts/phone.md, in order. */
 const L = readScript(
@@ -77,6 +77,42 @@ const teacher: RecordedScene = {
     s(6, [hold(2000)]),
   ],
 };
+
+/**
+ * Marks that direct the eye, by the line they go with. Areas are the phone's
+ * own CSS pixels (390x844), read off the recording.
+ */
+const NOTES: Record<number, Note[]> = {
+  // The answer: the one thing that needs attention.
+  1: [{ rect: { x: 76, y: 366, w: 284, h: 68 }, kind: "highlight", atMs: 900 }],
+  // The teacher's list: the quiz with papers waiting.
+  3: [
+    {
+      rect: { x: 24, y: 660, w: 342, h: 58 },
+      kind: "box",
+      atMs: 2300,
+      forMs: 2600,
+    },
+  ],
+  // The marking answer: the marks, then who has not handed in.
+  4: [
+    {
+      rect: { x: 74, y: 165, w: 268, h: 182 },
+      kind: "box",
+      atMs: 600,
+      forMs: 2600,
+    },
+    { rect: { x: 74, y: 355, w: 292, h: 130 }, kind: "highlight", atMs: 3500 },
+  ],
+  // The assistant asks before it publishes.
+  5: [{ rect: { x: 76, y: 610, w: 262, h: 48 }, kind: "box", atMs: 300 }],
+};
+for (const sc of [principal, teacher]) {
+  for (const st of sc.steps) {
+    const n = NOTES[L.indexOf(st.line)];
+    if (n) st.notes = n;
+  }
+}
 
 export const phone: Demo = {
   slug: "phone",

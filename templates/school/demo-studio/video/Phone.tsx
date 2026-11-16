@@ -8,6 +8,7 @@ import {
 } from "remotion";
 import { FPS, type EditPlan } from "../plan";
 import { BRAND } from "./theme";
+import { Notes } from "./Notes";
 
 /** The phone, in video pixels. The footage is 390x844 CSS pixels shown at 1.9x. */
 const SCALE = 1.9;
@@ -135,6 +136,20 @@ function Screen({ plan }: { plan: EditPlan }) {
           </Sequence>
         );
       })}
+      {/* Marks are placed in the phone's own CSS pixels (390x844) and scaled up with it. */}
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          width: 390,
+          height: 844,
+          transformOrigin: "0 0",
+          transform: `scale(${SCALE})`,
+        }}
+      >
+        <Notes notes={plan.notes ?? []} unit={SCALE} />
+      </div>
     </div>
   );
 }

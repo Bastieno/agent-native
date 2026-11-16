@@ -7,7 +7,16 @@ import { BRAND } from "./theme";
 const MARK = "#e8590c"; // an orange that shows on white and on the app's blue
 const MARKER = "rgba(255, 214, 10, 0.55)";
 
-function Mark({ n, frames }: { n: PlanNote; frames: number }) {
+function Mark({
+  n,
+  frames,
+  unit,
+}: {
+  n: PlanNote;
+  frames: number;
+  /** How many video pixels one drawing pixel is; strokes and labels are drawn thinner by this much. */
+  unit: number;
+}) {
   const f = useCurrentFrame();
   const progress = interpolate(f, [0, 22], [0, 1], {
     easing: Easing.bezier(0.22, 1, 0.36, 1),
@@ -28,7 +37,7 @@ function Mark({ n, frames }: { n: PlanNote; frames: number }) {
       <Box
         {...common}
         color={MARK}
-        strokeWidth={5}
+        strokeWidth={5 / unit}
         iterations={1}
         roughness={0.9}
         padding={{ left: 6, right: 6, top: 4, bottom: 4 }}
@@ -41,7 +50,7 @@ function Mark({ n, frames }: { n: PlanNote; frames: number }) {
       <Circle
         {...common}
         color={MARK}
-        strokeWidth={6}
+        strokeWidth={6 / unit}
         roughness={1.4}
         padding={{ left: 14, right: 14, top: 10, bottom: 10 }}
       >
@@ -50,7 +59,7 @@ function Mark({ n, frames }: { n: PlanNote; frames: number }) {
     );
   else if (n.kind === "underline")
     drawn = (
-      <Underline {...common} color={MARK} strokeWidth={6} iterations={2}>
+      <Underline {...common} color={MARK} strokeWidth={6 / unit} iterations={2}>
         {area}
       </Underline>
     );
@@ -86,13 +95,13 @@ function Mark({ n, frames }: { n: PlanNote; frames: number }) {
           style={{
             position: "absolute",
             left: 0,
-            top: h + 14,
-            padding: "8px 16px",
+            top: h + 14 / unit,
+            padding: `${8 / unit}px ${16 / unit}px`,
             borderRadius: 6,
             background: BRAND.ink,
             color: BRAND.paper,
             fontFamily: BRAND.font,
-            fontSize: 26,
+            fontSize: 26 / unit,
             fontWeight: 500,
             whiteSpace: "nowrap",
             opacity: tag,
@@ -107,7 +116,13 @@ function Mark({ n, frames }: { n: PlanNote; frames: number }) {
 }
 
 /** Hand-drawn marks on the screen footage. Drawn in screen pixels, inside the camera, so they follow any zoom. */
-export function Notes({ notes }: { notes: PlanNote[] }) {
+export function Notes({
+  notes,
+  unit = 1,
+}: {
+  notes: PlanNote[];
+  unit?: number;
+}) {
   return (
     <>
       {notes.map((n, i) => (
@@ -117,7 +132,7 @@ export function Notes({ notes }: { notes: PlanNote[] }) {
           durationInFrames={n.toFrame - n.fromFrame}
           layout="none"
         >
-          <Mark n={n} frames={n.toFrame - n.fromFrame} />
+          <Mark n={n} frames={n.toFrame - n.fromFrame} unit={unit} />
         </Sequence>
       ))}
     </>
