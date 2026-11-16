@@ -8,4 +8,5 @@ export const demos: Record<string, Demo> = {
   timetable,
   grant,
   "phone-rough": phoneRough,
+  phone,
 };
