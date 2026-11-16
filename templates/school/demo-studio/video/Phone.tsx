@@ -143,12 +143,28 @@ function Screen({ plan }: { plan: EditPlan }) {
  * A phone on a soft background: bezel, rounded screen, Dynamic Island, side
  * buttons, a status bar. Drawn here rather than copied from a device template.
  */
-export function PhoneStage({ plan }: { plan: EditPlan }) {
+/** What the phone sits on. */
+export const PHONE_BACKGROUNDS = {
+  /** Deep ink with a soft blue glow behind the phone: matches the intro and closing cards. */
+  ink: "radial-gradient(60% 42% at 50% 46%, #1f3a8a 0%, #0f1a3d 45%, #0b0b0f 100%)",
+  /** Ellai's blue, a little lighter at the top. */
+  blue: "linear-gradient(180deg, #4a82ff 0%, #2459e6 100%)",
+  /** Plain light grey. */
+  light: "linear-gradient(180deg, #f7f8fa 0%, #e9ecf1 100%)",
+} as const;
+export type PhoneBackground = keyof typeof PHONE_BACKGROUNDS;
+
+export function PhoneStage({
+  plan,
+  background = "ink",
+}: {
+  plan: EditPlan;
+  background?: PhoneBackground;
+}) {
   return (
     <AbsoluteFill
       style={{
-        background:
-          "radial-gradient(120% 90% at 30% 10%, #e9eeff 0%, #cfd9ff 55%, #b9c7fb 100%)",
+        background: PHONE_BACKGROUNDS[background],
         alignItems: "center",
         justifyContent: "center",
       }}
@@ -161,7 +177,7 @@ export function PhoneStage({ plan }: { plan: EditPlan }) {
           borderRadius: 118,
           background: "#0b0b0f",
           boxShadow:
-            "0 60px 120px rgba(23,37,84,0.35), 0 12px 30px rgba(23,37,84,0.25), inset 0 0 0 3px #2b2b33",
+            "0 60px 120px rgba(0,0,0,0.35), 0 12px 30px rgba(0,0,0,0.25), 0 0 0 2px rgba(255,255,255,0.18), inset 0 0 0 3px #3a3a44",
         }}
       >
         {/* side buttons */}
