@@ -150,6 +150,10 @@ export function fitSteps(
       });
       frames = Math.max(Vf, footage);
     }
+    // Remotion refuses a zero-length sequence: drop empty pieces, keep at least one frame.
+    const nonEmpty = pieces.filter((q) => q.frames >= 1);
+    if (!nonEmpty.length) nonEmpty.push({ ...pieces[0], frames: 1 });
+    pieces.splice(0, pieces.length, ...nonEmpty);
     const last = pieces.at(-1)!;
     segments.push({
       index: i,

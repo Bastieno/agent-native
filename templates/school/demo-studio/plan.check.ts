@@ -194,4 +194,21 @@ const V = (spoken: number) => spoken + PAD_MS;
   const kept = fitSteps(t, voice([6000 - PAD_MS]), [false]);
   assert.equal(kept.zooms.length, 2);
 }
+
+// No piece of footage is ever empty (Remotion refuses a zero-length sequence), whatever the mix of times.
+{
+  for (const A of [400, 1200, 3000, 9000, 40000])
+    for (const tail of [0, 10, 500, A - 1, A + 500])
+      for (const v of [200, 1000, 6000])
+        for (const cut of [false, true]) {
+          const t = timeline([[0, A]]);
+          t.steps[0].tailHoldMs = tail;
+          const sg = fitSteps(t, voice([v]), [cut]).segments[0];
+          assert.ok(
+            sg.pieces.every((p) => p.frames >= 1),
+            `A=${A} tail=${tail} v=${v} cut=${cut}`,
+          );
+          assert.ok(sg.holdFrames >= 0 && sg.frames - sg.voiceDelayFrames >= 1);
+        }
+}
 console.log("plan: ok");
