@@ -29,6 +29,8 @@ export interface DemoVideoProps {
   music?: string;
   /** Burn the spoken words onto the picture. Off by default. */
   captions?: boolean;
+  /** Sound effect files in the public dir; each is left out when missing. */
+  sfx?: { whoosh?: string; click?: string };
   [key: string]: unknown;
 }
 
@@ -61,16 +63,23 @@ function Screen({ plan }: { plan: EditPlan }) {
         }}
       >
         {plan.segments.map((s) => {
-          const footage = s.frames - s.holdFrames;
-          const trimBefore = Math.round((s.videoStartMs / 1000) * FPS);
-          const video = (
+          const pieces = s.pieces ?? [
+            {
+              offset: 0,
+              frames: s.frames - s.holdFrames,
+              videoStartMs: s.videoStartMs,
+              rate: s.playbackRate,
+            },
+          ];
+          const video = (p: (typeof pieces)[number]) => (
             <OffthreadVideo
               src={src}
-              trimBefore={trimBefore}
-              playbackRate={s.playbackRate}
+              trimBefore={Math.round((p.videoStartMs / 1000) * FPS)}
+              playbackRate={p.rate}
               muted
             />
           );
+          const last = pieces[pieces.length - 1];
           return (
             <Sequence
               key={s.index}
@@ -78,16 +87,25 @@ function Screen({ plan }: { plan: EditPlan }) {
               durationInFrames={s.frames}
               layout="none"
             >
-              <Sequence durationInFrames={footage} layout="none">
-                {video}
-              </Sequence>
+              {pieces.map((p, k) => (
+                <Sequence
+                  key={k}
+                  from={p.offset}
+                  durationInFrames={p.frames}
+                  layout="none"
+                >
+                  {video(p)}
+                </Sequence>
+              ))}
               {s.holdFrames > 0 && (
                 <Sequence
-                  from={footage}
+                  from={last.offset + last.frames}
                   durationInFrames={s.holdFrames}
                   layout="none"
                 >
-                  <Freeze frame={Math.max(0, footage - 1)}>{video}</Freeze>
+                  <Freeze frame={Math.max(0, last.frames - 1)}>
+                    {video(last)}
+                  </Freeze>
                 </Sequence>
               )}
             </Sequence>
@@ -98,20 +116,46 @@ function Screen({ plan }: { plan: EditPlan }) {
   );
 }
 
-export function DemoVideo({ plan, title, music, captions }: DemoVideoProps) {
+export function DemoVideo({
+  plan,
+  title,
+  music,
+  captions,
+  sfx,
+}: DemoVideoProps) {
   const { width, height } = useVideoConfig();
   const tall = height > width;
   return (
     <AbsoluteFill style={{ background: BRAND.ink }}>
       <Screen plan={plan} />
       {plan.segments.map((s) => (
-        <Sequence key={s.index} from={s.fromFrame} durationInFrames={s.frames}>
+        <Sequence
+          key={s.index}
+          from={s.fromFrame + (s.voiceDelayFrames ?? 0)}
+          durationInFrames={s.frames - (s.voiceDelayFrames ?? 0)}
+        >
           <Audio src={staticFile(basename(s.voiceFile))} />
         </Sequence>
       ))}
       {music && <Audio src={staticFile(music)} volume={0.11} loop />}
       {captions && <Captions captions={plan.captions} tall={tall} />}
-      <Marks marks={plan.marks ?? []} total={plan.totalFrames} tall={tall} />
+      <Marks marks={plan.marks ?? []} tall={tall} />
+      {sfx?.whoosh &&
+        (plan.marks ?? []).map((m) => (
+          <Sequence
+            key={`w${m.number}`}
+            from={m.fromFrame}
+            durationInFrames={40}
+          >
+            <Audio src={staticFile(sfx.whoosh!)} volume={0.28} />
+          </Sequence>
+        ))}
+      {sfx?.click &&
+        plan.zooms.map((z, i) => (
+          <Sequence key={`c${i}`} from={z.atFrame} durationInFrames={20}>
+            <Audio src={staticFile(sfx.click!)} volume={0.2} />
+          </Sequence>
+        ))}
       <Sequence durationInFrames={INTRO_FRAMES}>
         <Intro title={title} frames={INTRO_FRAMES} tall={tall} />
       </Sequence>

@@ -77,10 +77,14 @@ export async function voiceFromFile(
       `${(e as Error).message}\nThe audio says: ${words.map((w) => w.text).join(" ")}`,
     );
   }
-  return spans.map((s) => {
+  return spans.map((s, i) => {
     const file = path.join(workDir, `voice-${s.index}.wav`);
-    const from = Math.max(0, s.startMs - 80) / 1000;
-    const to = (s.endMs + 120) / 1000;
+    // Whisper's word ends run early, so give each line room to finish, but never into the next.
+    const prev = spans[i - 1];
+    const next = spans[i + 1];
+    const from = Math.max(prev ? prev.endMs : 0, s.startMs - 120) / 1000;
+    const to =
+      Math.min(s.endMs + 350, next ? next.startMs - 60 : Infinity) / 1000;
     execFileSync("ffmpeg", [
       "-v",
       "error",
@@ -92,7 +96,7 @@ export async function voiceFromFile(
       "-i",
       audioPath,
       "-af",
-      "silenceremove=stop_periods=-1:stop_duration=0.7:stop_threshold=-40dB:stop_silence=0.3",
+      "silenceremove=stop_periods=-1:stop_duration=0.7:stop_threshold=-40dB:stop_silence=0.3,afade=t=in:d=0.01,areverse,afade=t=in:d=0.05,areverse",
       "-ar",
       "24000",
       "-ac",

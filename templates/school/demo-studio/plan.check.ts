@@ -56,11 +56,14 @@ const V = (spoken: number) => spoken + PAD_MS;
   assert.equal(p.segments[0].silentFrames, 0);
 }
 
-// Cut step: footage squeezed to the line.
+// Cut step with a long wait: fast-forwarded first (never past 16x), then the voice speaks over the result.
 {
   const p = fitSteps(timeline([[0, 30000]]), voice([3000 - PAD_MS]), [true]);
-  assert.equal(p.segments[0].playbackRate, 10);
-  assert.equal(p.segments[0].frames, f(3000));
+  const s = p.segments[0];
+  assert.ok(s.playbackRate > 10 && s.playbackRate <= 16, `${s.playbackRate}x`);
+  assert.equal(s.voiceDelayFrames, s.pieces[0].frames);
+  assert.equal(s.frames, s.voiceDelayFrames + f(3000));
+  assert.equal(s.silentFrames, 0);
 }
 
 // Cut step that's already quicker than its line: never slow-motion, hold instead.
@@ -153,5 +156,42 @@ const V = (spoken: number) => spoken + PAD_MS;
     ["Hello there."],
   );
   assert.equal(p.captions[0].text, "Hello there.");
+}
+
+// A still tail is trimmed, not sped up: the action plays in real time, then only as much stillness as the line needs.
+{
+  const t = timeline([[0, 3000]]);
+  t.steps[0].tailHoldMs = 2000;
+  const p = fitSteps(t, voice([6000 - PAD_MS]), [false]);
+  const s = p.segments[0];
+  assert.equal(s.pieces.length, 2);
+  assert.equal(s.pieces[0].rate, 1);
+  assert.equal(s.pieces[1].videoStartMs, 1000);
+  assert.equal(s.frames, f(6000));
+  assert.ok(s.holdFrames > 0);
+}
+// A long action with a long still tail: the tail is dropped, the action runs at most 2x.
+{
+  const t = timeline([[0, 9500]]);
+  t.steps[0].tailHoldMs = 3500;
+  const s = fitSteps(t, voice([4000 - PAD_MS]), [false]).segments[0];
+  assert.equal(s.pieces.length, 1);
+  assert.ok(Math.abs(s.pieces[0].rate - 1.5) < 0.01);
+  assert.equal(s.silentFrames, 0);
+}
+// A click in trimmed time gets no zoom; one in kept footage does.
+{
+  const t = timeline(
+    [[0, 3000]],
+    [
+      { step: 0, atMs: 500, x: 100, y: 100 },
+      { step: 0, atMs: 2900, x: 200, y: 200 },
+    ],
+  );
+  t.steps[0].tailHoldMs = 2000;
+  const p = fitSteps(t, voice([1000 - PAD_MS]), [false]);
+  assert.equal(p.zooms.length, 1);
+  const kept = fitSteps(t, voice([6000 - PAD_MS]), [false]);
+  assert.equal(kept.zooms.length, 2);
 }
 console.log("plan: ok");

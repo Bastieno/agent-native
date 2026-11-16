@@ -16,13 +16,31 @@ const ZOOM_IN = 12;
 const ZOOM_HOLD = 30;
 const ZOOM_OUT = 15;
 const MAX_CAPTION_WORDS = 6;
+/** A wait shorter than this is not worth hiding; longer is fast-forwarded before the line is spoken. */
+const FF_MIN_WAIT_MS = 1500;
+const FF_MIN_MS = 1000;
+const MAX_FF_RATE = 16;
+
+/** A stretch of source footage inside a segment, played at one speed. */
+export interface Piece {
+  /** Frames from the start of the segment. */
+  offset: number;
+  frames: number;
+  videoStartMs: number;
+  rate: number;
+}
 
 export interface Segment {
   index: number;
   fromFrame: number;
   frames: number;
+  /** First piece's start and speed, kept for simple readers. */
   videoStartMs: number;
   playbackRate: number;
+  /** The footage, in order; after the last piece its final frame is held to the end. */
+  pieces: Piece[];
+  /** Frames the voice waits before it starts (a fast-forward plays first). */
+  voiceDelayFrames: number;
   holdFrames: number;
   /** Frames after the line ends where footage plays with no voice (long, uncut steps). */
   silentFrames: number;
@@ -74,30 +92,95 @@ export function fitSteps(
     const line = voice[i];
     if (!line) throw new Error(`Step ${i} has no voice line.`);
     const A = Math.max(1, step.endMs - step.startMs);
+    const tail = clamp(step.tailHoldMs ?? 0, 0, A - 1);
+    const pre = A - tail; // the part where something happens
     const V = line.durationMs + PAD_MS;
-    // Never slower than real time; a cut step may go as fast as it needs.
-    const rate = cuts[i] ? Math.max(1, A / V) : clamp(A / V, 1, MAX_RATE);
-    const footage = toFrames(A / rate);
-    const frames = Math.max(toFrames(V), footage);
+    const Vf = toFrames(V);
+    const pieces: Piece[] = [];
+    let voiceDelay = 0;
+    let frames: number;
+    if (cuts[i] && pre > FF_MIN_WAIT_MS) {
+      // Fast-forward the work first, then let the voice describe the result.
+      const ff = Math.max(
+        toFrames(FF_MIN_MS),
+        Math.ceil(toFrames(pre) / MAX_FF_RATE),
+      );
+      pieces.push({
+        offset: 0,
+        frames: ff,
+        videoStartMs: step.startMs,
+        rate: pre / ((ff / FPS) * 1000),
+      });
+      if (tail > 0)
+        pieces.push({
+          offset: ff,
+          frames: toFrames(Math.min(tail, V)),
+          videoStartMs: step.startMs + pre,
+          rate: 1,
+        });
+      voiceDelay = ff;
+      frames = ff + Vf;
+    } else if (!cuts[i] && tail > 0 && pre < V) {
+      // The action fits inside the line: play it, then only as much of the
+      // still screen after it as the line needs.
+      pieces.push({
+        offset: 0,
+        frames: toFrames(pre),
+        videoStartMs: step.startMs,
+        rate: 1,
+      });
+      pieces.push({
+        offset: toFrames(pre),
+        frames: toFrames(Math.min(tail, V - pre)),
+        videoStartMs: step.startMs + pre,
+        rate: 1,
+      });
+      frames = Vf;
+    } else {
+      // Never slower than real time. A step with a still tail drops the tail
+      // rather than speeding the action up to fit it.
+      const span = !cuts[i] && tail > 0 ? pre : A;
+      const rate = cuts[i] ? Math.max(1, A / V) : clamp(span / V, 1, MAX_RATE);
+      const footage = toFrames(span / rate);
+      pieces.push({
+        offset: 0,
+        frames: footage,
+        videoStartMs: step.startMs,
+        rate,
+      });
+      frames = Math.max(Vf, footage);
+    }
+    const last = pieces.at(-1)!;
     segments.push({
       index: i,
       fromFrame: at,
       frames,
-      videoStartMs: step.startMs,
-      playbackRate: rate,
-      holdFrames: frames - footage,
-      silentFrames: frames - toFrames(V),
+      videoStartMs: pieces[0].videoStartMs,
+      playbackRate: pieces[0].rate,
+      pieces,
+      voiceDelayFrames: voiceDelay,
+      holdFrames: frames - (last.offset + last.frames),
+      silentFrames: Math.max(0, frames - voiceDelay - Vf),
       voiceFile: line.file,
     });
     for (const c of step.clicks) {
-      zooms.push({
-        atFrame: at + toFrames((c.atMs - step.startMs) / rate),
-        x: c.x,
-        y: c.y,
-      });
+      // A click inside a piece of footage that was kept; one in trimmed time is dropped.
+      const p = pieces.find(
+        (q) =>
+          c.atMs >= q.videoStartMs &&
+          c.atMs <= q.videoStartMs + (q.frames / FPS) * 1000 * q.rate,
+      );
+      if (p)
+        zooms.push({
+          atFrame: at + p.offset + toFrames((c.atMs - p.videoStartMs) / p.rate),
+          x: c.x,
+          y: c.y,
+        });
     }
     if (lines[i])
-      captions.push(...chunkCaption(lines[i], at, at + toFrames(V)));
+      captions.push(
+        ...chunkCaption(lines[i], at + voiceDelay, at + voiceDelay + Vf),
+      );
     at += frames;
   });
   return {

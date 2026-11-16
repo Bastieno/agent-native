@@ -134,6 +134,14 @@ console.log(
 const voice = voiceFile
   ? await voiceFromFile(voiceFile, lines, work)
   : await speak(lines, demo.voice ?? "bf_emma", work);
+// How much of each step's end is only holding still, from the demo's own hold actions.
+timeline.steps.forEach((st, i) => {
+  let ms = 0;
+  const acts = allSteps[i]?.actions ?? [];
+  for (let k = acts.length - 1; k >= 0 && acts[k].do === "hold"; k--)
+    ms += (acts[k] as { ms: number }).ms;
+  st.tailHoldMs = ms;
+});
 const plan = fitSteps(
   timeline,
   voice,
@@ -152,6 +160,7 @@ for (const s of plan.segments) {
 console.log("· rendering");
 const { wide, tall } = await render(plan, demo, work, out, {
   music: !process.argv.includes("--no-music"),
+  sfx: !process.argv.includes("--no-sfx"),
 });
 console.log(
   `\nDone in ${Math.round((Date.now() - started) / 1000)}s (${(plan.totalFrames / 30).toFixed(1)}s of video)\n  ${wide}\n  ${tall}`,

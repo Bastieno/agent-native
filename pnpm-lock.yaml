@@ -4555,6 +4555,9 @@ importers:
       '@remotion/renderer':
         specifier: 4.0.543
         version: 4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@remotion/sfx':
+        specifier: 4.0.543
+        version: 4.0.543
       '@swc/core':
         specifier: ^1.13.3
         version: 1.15.21
@@ -10634,6 +10637,9 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
+
+  '@remotion/sfx@4.0.543':
+    resolution: {integrity: sha512-px0cF9EalNC+j6AdqR9xLJ6uUs/NL7fmKb8qB1fFLG2bAhd7UIKsQoZZgprLULVzCkMOOMYdOVPcrH7qd1zwKw==}
 
   '@remotion/shapes@4.0.443':
     resolution: {integrity: sha512-s1nHTE3GDyrDm/Jq5j2NyDKKcuxTeshXW0uDOxvjvDccdvX7Orh+F0FV13X6hU83QAkl1mh3+nwFPRyIJlMmuQ==}
@@ -26773,6 +26779,8 @@ snapshots:
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
       remotion: 4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+
+  '@remotion/sfx@4.0.543': {}
 
   '@remotion/shapes@4.0.443(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:

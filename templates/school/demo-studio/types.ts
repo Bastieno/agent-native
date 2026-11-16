@@ -85,6 +85,8 @@ export interface StepTiming {
   startMs: number;
   endMs: number;
   clicks: { atMs: number; x: number; y: number }[];
+  /** How much of the step's end was only holding still (known from the demo's own hold actions). */
+  tailHoldMs?: number;
 }
 export interface Timeline {
   width: 1920;
