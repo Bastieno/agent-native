@@ -1,6 +1,13 @@
 import path from "node:path";
 import { readScript } from "../script.js";
-import type { Action, Demo, RecordedScene, Scene, Step } from "../types.js";
+import type {
+  Action,
+  Demo,
+  Note,
+  RecordedScene,
+  Scene,
+  Step,
+} from "../types.js";
 
 /**
  * The 6-8 minute grant demo. The spoken lines are the paragraphs of
@@ -238,6 +245,123 @@ const scenes: Scene[] = [
   { title: "Your own AI", clip: "clips/claude.mp4", step: s(38, []) },
   signOff,
 ];
+
+/**
+ * Marks drawn on the picture, by the line they go with. Areas are screen
+ * pixels in the 1920x1080 recording, measured on the live pages (or, for the
+ * assistant's chat, read off the recording). Times count from the start of the
+ * spoken line.
+ */
+const row1 = { x: 248, y: 444, w: 1264, h: 60 }; // first item under "Needs your attention"
+const row2 = { x: 248, y: 505, w: 1264, h: 60 };
+const NOTES: Record<number, Note[]> = {
+  // A new school, saved: its name, and the first two steps ticked.
+  7: [
+    {
+      rect: { x: 8, y: 6, w: 190, h: 48 },
+      kind: "box",
+      atMs: 400,
+      forMs: 2600,
+    },
+    { rect: { x: 268, y: 180, w: 400, h: 92 }, kind: "box", atMs: 3200 },
+  ],
+  // Settings: the grading scale and the pass mark.
+  9: [
+    {
+      rect: { x: 250, y: 150, w: 1152, h: 305 },
+      kind: "box",
+      atMs: 700,
+      forMs: 4000,
+    },
+    { rect: { x: 262, y: 520, w: 70, h: 40 }, kind: "underline", atMs: 5200 },
+  ],
+  // The principal's home: the one thing needing attention.
+  14: [
+    { rect: { x: 262, y: 338, w: 450, h: 34 }, kind: "highlight", atMs: 1800 },
+  ],
+  // The teacher's home: marks, and a lesson note that is not ready.
+  18: [
+    { rect: row1, kind: "highlight", atMs: 2200, forMs: 2400 },
+    { rect: row2, kind: "highlight", atMs: 4800 },
+  ],
+  // A draft the learners cannot see until it is shared.
+  22: [
+    {
+      rect: { x: 458, y: 112, w: 570, h: 34 },
+      kind: "highlight",
+      atMs: 300,
+      forMs: 2200,
+    },
+    { rect: { x: 618, y: 135, w: 132, h: 36 }, kind: "circle", atMs: 2900 },
+  ],
+  // Before marking: five papers waiting.
+  25: [{ rect: row1, kind: "box", atMs: 500, label: "5 papers to mark" }],
+  // After marking: who handed in, and who did not.
+  27: [
+    {
+      rect: { x: 1556, y: 208, w: 240, h: 210 },
+      kind: "box",
+      atMs: 700,
+      forMs: 3400,
+    },
+    { rect: { x: 1556, y: 422, w: 260, h: 206 }, kind: "box", atMs: 4400 },
+  ],
+  // The same list now says the marks are ready to publish.
+  28: [
+    {
+      rect: row1,
+      kind: "box",
+      atMs: 300,
+      label: "Now: marks ready to publish",
+    },
+  ],
+  // The learner's grades.
+  31: [
+    {
+      rect: { x: 345, y: 164, w: 275, h: 105 },
+      kind: "box",
+      atMs: 1600,
+      forMs: 2400,
+    },
+    { rect: { x: 633, y: 164, w: 275, h: 105 }, kind: "box", atMs: 4200 },
+  ],
+  // A report card: position in the year, and the two comments.
+  32: [
+    {
+      rect: { x: 608, y: 566, w: 240, h: 32 },
+      kind: "box",
+      atMs: 5500,
+      forMs: 2600,
+    },
+    {
+      rect: { x: 608, y: 598, w: 700, h: 140 },
+      kind: "highlight",
+      atMs: 8400,
+      forMs: 3000,
+    },
+  ],
+  // Yellow View: the grade point average, and the AP and Honors courses.
+  33: [
+    {
+      rect: { x: 598, y: 503, w: 185, h: 30 },
+      kind: "box",
+      atMs: 6800,
+      forMs: 2600,
+    },
+    { rect: { x: 605, y: 272, w: 420, h: 143 }, kind: "highlight", atMs: 9600 },
+  ],
+  // The assistant says no.
+  36: [
+    { rect: { x: 1550, y: 196, w: 340, h: 66 }, kind: "highlight", atMs: 400 },
+  ],
+};
+for (const sc of scenes) {
+  const steps = "clip" in sc ? [sc.step] : sc.steps;
+  for (const st of steps) {
+    const n = NOTES[L.indexOf(st.line)];
+    if (n) st.notes = n;
+  }
+}
 
 // A step that opens a page: fast-forward the loading, then speak over the finished page.
 for (const sc of scenes) {

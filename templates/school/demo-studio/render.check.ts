@@ -46,6 +46,21 @@ const plan: EditPlan = {
     },
   ],
   zooms: [{ atFrame: INTRO_FRAMES + 30, x: 1800, y: 100 }],
+  notes: [
+    {
+      fromFrame: INTRO_FRAMES + 10,
+      toFrame: INTRO_FRAMES + 70,
+      rect: { x: 300, y: 300, w: 400, h: 150 },
+      kind: "box",
+      label: "Look here",
+    },
+    {
+      fromFrame: INTRO_FRAMES + 20,
+      toFrame: INTRO_FRAMES + 80,
+      rect: { x: 900, y: 500, w: 500, h: 60 },
+      kind: "highlight",
+    },
+  ],
   captions: [
     {
       fromFrame: INTRO_FRAMES,

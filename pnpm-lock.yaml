@@ -4555,6 +4555,9 @@ importers:
       '@remotion/renderer':
         specifier: 4.0.543
         version: 4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@remotion/rough-notation':
+        specifier: 4.0.543
+        version: 4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@remotion/sfx':
         specifier: 4.0.543
         version: 4.0.543
@@ -10628,6 +10631,12 @@ packages:
 
   '@remotion/renderer@4.0.543':
     resolution: {integrity: sha512-/Q0O0X5Tu9Vycka1iK0YeG7WwszHtErCcMdEp2LYKCn7JONoXmh5MG+WD91RI3NIwkM+OdXsqPY04e27bAYhLw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@remotion/rough-notation@4.0.543':
+    resolution: {integrity: sha512-JvAyYFvMWf5AFOeb49fGMC1W+DwnXglPgCYeC1ULs9cxNTmDGEGVAKJXobvU/RQdwDoJtSdFIpzjzaEde7ajsQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -26771,6 +26780,14 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+
+  '@remotion/rough-notation@4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@remotion/paths': 4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      remotion: 4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      roughjs: 4.6.6
 
   '@remotion/sdk@4.0.543(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:

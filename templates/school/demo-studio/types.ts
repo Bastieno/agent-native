@@ -19,12 +19,28 @@ export type Action =
   /** Move the pointer without clicking (e.g. off the content before the last shot). */
   | { do: "move"; x: number; y: number };
 
+/** Something to point at on screen while a line is spoken. */
+export interface Note {
+  /** The area to draw around, in screen pixels (the 1920x1080 recording). */
+  rect: { x: number; y: number; w: number; h: number };
+  /** How it is drawn. Default "highlight" (a marker stroke). */
+  kind?: "highlight" | "box" | "underline" | "circle";
+  /** Milliseconds after the line starts to be spoken. Default 400. */
+  atMs?: number;
+  /** How long it stays. Default: until the line is nearly over. */
+  forMs?: number;
+  /** A short tag beside it, e.g. "Now ready to publish". */
+  label?: string;
+}
+
 /** A voiceover line and what happens on screen while it is spoken. */
 export interface Step {
   line: string;
   actions: Action[];
   /** Compress this step's footage to the length of its line (skip a slow wait). */
   cut?: boolean;
+  /** Marks drawn on the picture to direct the eye while this line is spoken. */
+  notes?: Note[];
 }
 
 export interface DemoBase {

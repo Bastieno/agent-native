@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {
+  planNotes,
   chunkCaption,
   cropFor,
   fitSteps,
@@ -219,5 +220,34 @@ const V = (spoken: number) => spoken + PAD_MS;
   const p = fitSteps(t, voice([4000 - PAD_MS]), [true]);
   assert.ok(p.segments[0].pieces[0].rate > 2);
   assert.equal(p.zooms.length, 0);
+}
+
+// Notes land with the words: counted from when the voice starts, never before the step or past its end.
+{
+  const seg = { fromFrame: 100, frames: 200, voiceDelayFrames: 30 };
+  const [a, b, c] = planNotes(
+    [
+      [
+        { rect: { x: 1, y: 2, w: 3, h: 4 } },
+        {
+          rect: { x: 1, y: 2, w: 3, h: 4 },
+          atMs: 1000,
+          forMs: 2000,
+          kind: "box",
+          label: "x",
+        },
+        { rect: { x: 1, y: 2, w: 3, h: 4 }, atMs: 99999 },
+      ],
+    ],
+    [seg],
+  );
+  assert.equal(a.fromFrame, 130 + f(400));
+  assert.equal(a.toFrame, 300 - 10);
+  assert.equal(a.kind, "highlight");
+  assert.equal(b.fromFrame, 130 + f(1000));
+  assert.equal(b.toFrame, b.fromFrame + f(2000));
+  assert.equal(b.label, "x");
+  assert.ok(c.fromFrame <= 300 - 12 && c.toFrame > c.fromFrame);
+  assert.deepEqual(planNotes([undefined], [seg]), []);
 }
 console.log("plan: ok");

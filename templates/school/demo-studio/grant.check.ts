@@ -19,4 +19,19 @@ assert.ok(
   opens.length > 5 && opens.every((st) => st.cut),
   "page-opening steps are cut",
 );
+
+// Every annotation stays on the 1920x1080 screen.
+for (const st of steps)
+  for (const n of st.notes ?? [])
+    assert.ok(
+      n.rect.x >= 0 &&
+        n.rect.y >= 0 &&
+        n.rect.x + n.rect.w <= 1920 &&
+        n.rect.y + n.rect.h <= 1080,
+      `note off screen on "${st.line.slice(0, 30)}"`,
+    );
+assert.ok(
+  steps.filter((st) => st.notes?.length).length >= 12,
+  "the planned marks are attached",
+);
 console.log("grant: ok");

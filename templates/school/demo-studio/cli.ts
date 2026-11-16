@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { restoreSnapshot } from "./db.js";
 import { demos } from "./demos/index.js";
-import { fitSteps } from "./plan.js";
+import { fitSteps, planNotes } from "./plan.js";
 import { record } from "./record.js";
 import { render } from "./render.js";
 import { portTaken, startDemoServer } from "./server.js";
@@ -149,6 +149,10 @@ const plan = fitSteps(
   lines,
 );
 plan.marks = sceneMarks(scenes, plan.segments);
+plan.notes = planNotes(
+  allSteps.map((st) => st.notes),
+  plan.segments,
+);
 fs.writeFileSync(path.join(work, "plan.json"), JSON.stringify(plan, null, 2));
 for (const s of plan.segments) {
   if (s.silentFrames > 15) {

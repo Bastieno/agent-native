@@ -19,6 +19,7 @@ import {
 } from "../plan";
 import { Captions } from "./Captions";
 import { Marks } from "./Marks";
+import { Notes } from "./Notes";
 import { Intro, Outro } from "./Cards";
 import { BRAND } from "./theme";
 
@@ -111,6 +112,7 @@ function Screen({ plan }: { plan: EditPlan }) {
             </Sequence>
           );
         })}
+        <Notes notes={plan.notes ?? []} />
       </div>
     </AbsoluteFill>
   );

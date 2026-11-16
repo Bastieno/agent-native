@@ -1,4 +1,4 @@
-import type { Timeline, VoiceLine } from "./types.js";
+import type { Note, Timeline, VoiceLine } from "./types.js";
 
 /**
  * The edit, as numbers: where each step's footage sits in the finished video,
@@ -63,6 +63,15 @@ export interface Mark {
   number: number;
 }
 
+/** A mark on the picture, placed in the finished video. */
+export interface PlanNote {
+  fromFrame: number;
+  toFrame: number;
+  rect: { x: number; y: number; w: number; h: number };
+  kind: NonNullable<Note["kind"]>;
+  label?: string;
+}
+
 export interface EditPlan {
   totalFrames: number;
   width: number;
@@ -72,6 +81,8 @@ export interface EditPlan {
   captions: Caption[];
   /** Scene titles; left out, there are none. */
   marks?: Mark[];
+  /** Marks drawn on the footage; left out, there are none. */
+  notes?: PlanNote[];
 }
 
 const toFrames = (ms: number) => Math.round((ms / 1000) * FPS);
@@ -197,6 +208,39 @@ export function fitSteps(
     zooms,
     captions,
   };
+}
+
+/**
+ * Put each step's notes in the finished video. Times count from when the voice
+ * starts (after any fast-forward), so a mark lands with the words it goes with.
+ */
+export function planNotes(
+  stepNotes: (Note[] | undefined)[],
+  segments: Pick<Segment, "fromFrame" | "frames" | "voiceDelayFrames">[],
+): PlanNote[] {
+  const out: PlanNote[] = [];
+  stepNotes.forEach((notes, i) => {
+    const seg = segments[i];
+    if (!notes || !seg) return;
+    const voiceFrom = seg.fromFrame + seg.voiceDelayFrames;
+    const end = seg.fromFrame + seg.frames;
+    for (const n of notes) {
+      const fromFrame = Math.min(end - 12, voiceFrom + toFrames(n.atMs ?? 400));
+      const toFrame = clamp(
+        n.forMs ? fromFrame + toFrames(n.forMs) : end - 10,
+        fromFrame + 12,
+        end,
+      );
+      out.push({
+        fromFrame,
+        toFrame,
+        rect: n.rect,
+        kind: n.kind ?? "highlight",
+        label: n.label,
+      });
+    }
+  });
+  return out;
 }
 
 const ease = (t: number) => t * t * (3 - 2 * t);
