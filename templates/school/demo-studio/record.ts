@@ -9,6 +9,22 @@ import type { Action, RecordInput, StepTiming, Timeline } from "./types.js";
 
 const W = 1920;
 const H = 1080;
+/** A phone: 390x844 CSS pixels, recorded at double resolution. */
+const PHONE = { width: 390, height: 844, scale: 2 };
+
+/** On a phone there is no pointer, only a finger: a soft ring where each tap lands. */
+const TOUCH = `
+addEventListener("DOMContentLoaded", () => {
+  const st = document.createElement("style");
+  st.textContent = "@keyframes tap{from{transform:translate(-50%,-50%) scale(.4);opacity:.9}to{transform:translate(-50%,-50%) scale(1.5);opacity:0}}";
+  document.head.appendChild(st);
+  addEventListener("click", (e) => {
+    const r = document.createElement("div");
+    r.style.cssText = "position:fixed;left:" + e.clientX + "px;top:" + e.clientY + "px;width:54px;height:54px;border-radius:50%;background:rgba(40,40,48,.28);border:2px solid rgba(255,255,255,.9);z-index:2147483647;pointer-events:none;animation:tap .5s ease-out forwards";
+    document.body.appendChild(r);
+    setTimeout(() => r.remove(), 600);
+  }, true);
+});`;
 
 /**
  * Playwright's video has no mouse pointer, so the page draws one: a dot that
@@ -45,6 +61,55 @@ async function signInCookies(baseUrl: string, email: string) {
 }
 
 /** Seconds into the video of the first frame of the red calibration flash. */
+/** Turn timed screencast frames (they come only when the screen changes) into a steady 30 fps video. */
+function framesToVideo(
+  frames: { file: string; t: number }[],
+  dir: string,
+  out: string,
+): void {
+  if (!frames.length)
+    throw new Error("The phone screencast captured no frames.");
+  const lines: string[] = [];
+  frames.forEach((f, i) => {
+    const next = frames[i + 1]?.t ?? f.t + 0.3;
+    lines.push(
+      `file '${f.file}'`,
+      `duration ${Math.max(0.001, next - f.t).toFixed(4)}`,
+    );
+  });
+  lines.push(`file '${frames.at(-1)!.file}'`);
+  const list = path.join(dir, "frames.txt");
+  fs.writeFileSync(list, lines.join("\n"));
+  execFileSync("ffmpeg", [
+    "-v",
+    "error",
+    "-y",
+    "-f",
+    "concat",
+    "-safe",
+    "0",
+    "-i",
+    list,
+    "-vf",
+    `fps=30,scale=${PHONE.width * PHONE.scale}:${PHONE.height * PHONE.scale}`,
+    "-c:v",
+    "libvpx-vp9",
+    "-b:v",
+    "0",
+    "-crf",
+    "28",
+    "-deadline",
+    "realtime",
+    "-cpu-used",
+    "6",
+    "-row-mt",
+    "1",
+    "-pix_fmt",
+    "yuv420p",
+    out,
+  ]);
+}
+
 function firstRedFrame(video: string): number {
   const out = execFileSync("ffprobe", [
     "-v",
@@ -70,6 +135,7 @@ async function perform(
   baseUrl: string,
   a: Action,
   clicks: { atMs: number; x: number; y: number }[],
+  phone = false,
 ) {
   switch (a.do) {
     case "goto":
@@ -99,7 +165,7 @@ async function perform(
       const box = (await el.boundingBox())!;
       const x = box.x + box.width / 2;
       const y = box.y + box.height / 2;
-      await page.mouse.move(x, y, { steps: 20 });
+      if (!phone) await page.mouse.move(x, y, { steps: 20 });
       clicks.push({ atMs: Date.now(), x, y });
       await page.mouse.click(x, y);
       if (a.do === "type")
@@ -127,15 +193,50 @@ export async function record(
   fs.mkdirSync(workDir, { recursive: true });
   const cookies = await signInCookies(baseUrl, demo.signInAs);
   const rawDir = fs.mkdtempSync(path.join(os.tmpdir(), "demo-raw-"));
+  const phone = demo.device === "phone";
   const browser = await chromium.launch({ slowMo: 300 });
   const context = await browser.newContext({
-    viewport: { width: W, height: H },
-    deviceScaleFactor: 1,
-    recordVideo: { dir: rawDir, size: { width: W, height: H } },
+    viewport: phone
+      ? { width: PHONE.width, height: PHONE.height }
+      : { width: W, height: H },
+    deviceScaleFactor: phone ? PHONE.scale : 1,
+    ...(phone
+      ? {
+          isMobile: true,
+          hasTouch: true,
+          userAgent:
+            "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
+        }
+      : {}),
+    ...(phone
+      ? {}
+      : { recordVideo: { dir: rawDir, size: { width: W, height: H } } }),
   });
   await context.addCookies(cookies);
-  await context.addInitScript(CURSOR);
+  await context.addInitScript(phone ? TOUCH : CURSOR);
   const page = await context.newPage();
+  // Playwright's own video is captured in CSS pixels, which is too soft on a
+  // phone. Take the browser's screencast at device pixels instead.
+  const phoneFrames: { file: string; t: number }[] = [];
+  let cdp: Awaited<ReturnType<typeof context.newCDPSession>> | null = null;
+  if (phone) {
+    cdp = await context.newCDPSession(page);
+    cdp.on("Page.screencastFrame", (f: any) => {
+      const file = path.join(rawDir, `f${phoneFrames.length}.jpg`);
+      fs.writeFileSync(file, Buffer.from(f.data, "base64"));
+      phoneFrames.push({ file, t: f.metadata.timestamp });
+      cdp!
+        .send("Page.screencastFrameAck", { sessionId: f.sessionId })
+        .catch(() => {});
+    });
+    await cdp.send("Page.startScreencast", {
+      format: "jpeg",
+      quality: 90,
+      maxWidth: PHONE.width * PHONE.scale,
+      maxHeight: PHONE.height * PHONE.scale,
+      everyNthFrame: 1,
+    });
+  }
 
   // Calibration: a red frame whose clock time we know, so we can find it in the video.
   await page.goto(
@@ -160,7 +261,7 @@ export async function record(
   let failure: Error | null = null;
   for (const a of demo.start ?? []) {
     try {
-      await perform(page, baseUrl, a, []);
+      await perform(page, baseUrl, a, [], phone);
     } catch (e) {
       await page
         .screenshot({ path: path.join(workDir, "fail-start.png") })
@@ -176,7 +277,7 @@ export async function record(
     const startMs = Date.now();
     for (const a of step.actions) {
       try {
-        await perform(page, baseUrl, a, clicks);
+        await perform(page, baseUrl, a, clicks, phone);
       } catch (e) {
         await page
           .screenshot({ path: path.join(workDir, `fail-${i}.png`) })
@@ -191,17 +292,19 @@ export async function record(
     steps.push({ startMs, endMs: Date.now(), clicks });
   }
   await page.waitForTimeout(300);
-  const video = page.video()!;
+  const video = phone ? null : page.video()!;
+  if (cdp) await cdp.send("Page.stopScreencast").catch(() => {});
   await context.close();
   await browser.close();
-  const raw = await video.path();
+  const raw = video ? await video.path() : "";
   if (failure) {
     fs.rmSync(rawDir, { recursive: true, force: true });
     throw failure;
   }
 
   const videoPath = path.join(workDir, "screen.webm");
-  fs.renameSync(raw, videoPath);
+  if (video) fs.renameSync(raw, videoPath);
+  else framesToVideo(phoneFrames, rawDir, videoPath);
   fs.rmSync(rawDir, { recursive: true, force: true });
 
   // Clock time → video time.
@@ -209,8 +312,8 @@ export async function record(
   const shift = flashAtMs - redAt;
   const toVideo = (ms: number) => ms + shift;
   const timeline: Timeline = {
-    width: W,
-    height: H,
+    width: phone ? PHONE.width * PHONE.scale : W,
+    height: phone ? PHONE.height * PHONE.scale : H,
     videoOffsetMs: shift,
     flashAtMs,
     steps: steps.map(

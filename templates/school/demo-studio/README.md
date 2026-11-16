@@ -36,6 +36,21 @@ over 0.7 s are shortened, a line said twice keeps its last take, and filler betw
 line can't be found, the run stops and says which line and what the audio says. Without an audio file
 the built-in British voice is used.
 
+## Direction tags for the voice
+
+ElevenLabs reads tags like `[excited]`, `[softly]`, `[pause]`, `[chuckling]` or `[applause]` as
+direction, not as words. In a script, write them in **curly braces** (`{excited} Here it is.`):
+square brackets already mean "what is on screen". `readScript` drops the `{tags}` so the lines still
+match your audio, and `voiceoverText` turns them into `[tags]` for pasting into the voice tool.
+
+The tags the voice tool offers: emotion (weak, angry, bored, menacing, playful, tired, excited),
+vocalizations (clears throat, coughing, chuckling, sighing, sniffling, yawning, laughing, sharp
+exhale, scoffing, humming, panting, gasping), delivery (whispering, singing, slowly, softly, pause,
+voice breaking), character (sleepy drowsy voice, witch voice, drunk voice) and sound effects
+(keyboard typing, echoing, knocking on door, bell ringing, phone ringing, dog barking, crowd
+cheering, applause, rain falling, drum roll, heartbeat, engine starting). Use them sparingly:
+`{pause}` between ideas, `{softly}` or `{excited}` where the sentence earns it.
+
 ## Write a new demo
 
 Add `demos/<slug>.ts` and list it in `demos/index.ts`. A demo has:

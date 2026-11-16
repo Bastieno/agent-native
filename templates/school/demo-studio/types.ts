@@ -44,6 +44,8 @@ export interface Step {
 }
 
 export interface DemoBase {
+  /** Recorded in a phone-sized browser and shown inside a phone frame. Default: a desktop screen. */
+  device?: "phone";
   slug: string;
   title: string;
   /** Kokoro voice id; British voices only (bf_ / bm_). Used when there is no recording of your own voice. */
@@ -88,6 +90,7 @@ export type Demo = SingleDemo | SceneDemo;
 
 /** What the recorder needs for one scene. */
 export interface RecordInput {
+  device?: "phone";
   slug: string;
   title: string;
   signInAs: string;
@@ -105,8 +108,8 @@ export interface StepTiming {
   tailHoldMs?: number;
 }
 export interface Timeline {
-  width: 1920;
-  height: 1080;
+  width: number;
+  height: number;
   videoOffsetMs: number;
   /** Video time of the calibration flash. */
   flashAtMs: number;

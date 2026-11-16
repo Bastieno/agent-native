@@ -100,7 +100,7 @@ for (const [i, sc] of scenes.entries()) {
   const server = await startDemoServer(sc.school);
   try {
     const { videoPath, timeline } = await record(
-      { ...sc, slug: demo.slug, title: demo.title },
+      { ...sc, slug: demo.slug, title: demo.title, device: demo.device },
       server.url,
       dir,
     );
@@ -162,10 +162,11 @@ for (const s of plan.segments) {
   }
 }
 console.log("· rendering");
-const { wide, tall } = await render(plan, demo, work, out, {
+const files = await render(plan, demo, work, out, {
   music: !process.argv.includes("--no-music"),
   sfx: !process.argv.includes("--no-sfx"),
+  phone: demo.device === "phone",
 });
 console.log(
-  `\nDone in ${Math.round((Date.now() - started) / 1000)}s (${(plan.totalFrames / 30).toFixed(1)}s of video)\n  ${wide}\n  ${tall}`,
+  `\nDone in ${Math.round((Date.now() - started) / 1000)}s (${(plan.totalFrames / 30).toFixed(1)}s of video)\n  ${Object.values(files).join("\n  ")}`,
 );

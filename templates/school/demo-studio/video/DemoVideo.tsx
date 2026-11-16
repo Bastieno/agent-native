@@ -20,6 +20,7 @@ import {
 import { Captions } from "./Captions";
 import { Marks } from "./Marks";
 import { Notes } from "./Notes";
+import { PhoneStage } from "./Phone";
 import { Intro, Outro } from "./Cards";
 import { BRAND } from "./theme";
 
@@ -28,6 +29,8 @@ export interface DemoVideoProps {
   title: string;
   /** Background music file in the public dir; none when left out. */
   music?: string;
+  /** The footage is a phone recording: show it inside a phone. */
+  phone?: boolean;
   /** Burn the spoken words onto the picture. Off by default. */
   captions?: boolean;
   /** Sound effect files in the public dir; each is left out when missing. */
@@ -124,12 +127,13 @@ export function DemoVideo({
   music,
   captions,
   sfx,
+  phone,
 }: DemoVideoProps) {
   const { width, height } = useVideoConfig();
   const tall = height > width;
   return (
     <AbsoluteFill style={{ background: BRAND.ink }}>
-      <Screen plan={plan} />
+      {phone ? <PhoneStage plan={plan} /> : <Screen plan={plan} />}
       {plan.segments.map((s) => (
         <Sequence
           key={s.index}

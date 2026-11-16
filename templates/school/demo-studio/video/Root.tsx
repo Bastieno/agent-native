@@ -41,6 +41,16 @@ export function Root() {
         defaultProps={empty}
         calculateMetadata={metadata}
       />
+      <Composition
+        id="Phone"
+        component={DemoVideo}
+        width={1080}
+        height={1920}
+        fps={FPS}
+        durationInFrames={1}
+        defaultProps={{ ...empty, phone: true }}
+        calculateMetadata={metadata}
+      />
     </>
   );
 }

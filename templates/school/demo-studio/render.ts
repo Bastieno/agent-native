@@ -34,8 +34,8 @@ export async function render(
   demo: Pick<DemoBase, "slug" | "title">,
   workDir: string,
   outDir: string,
-  options: { music?: boolean; sfx?: boolean } = {},
-): Promise<{ wide: string; tall: string }> {
+  options: { music?: boolean; sfx?: boolean; phone?: boolean } = {},
+): Promise<{ wide?: string; tall?: string; phone?: string }> {
   fs.mkdirSync(outDir, { recursive: true });
   const music =
     options.music === false
@@ -52,7 +52,30 @@ export async function render(
     entryPoint: path.resolve(import.meta.dirname, "video", "index.ts"),
     publicDir: workDir,
   });
-  const inputProps = { plan, title: demo.title, music, sfx };
+  const inputProps = {
+    plan,
+    title: demo.title,
+    music,
+    sfx,
+    phone: options.phone,
+  };
+  if (options.phone) {
+    const file = path.join(outDir, `${demo.slug}-phone.mp4`);
+    const composition = await selectComposition({
+      serveUrl,
+      id: "Phone",
+      inputProps,
+    });
+    await renderMedia({
+      composition,
+      serveUrl,
+      codec: "h264",
+      audioCodec: "aac",
+      outputLocation: file,
+      inputProps,
+    });
+    return { phone: file };
+  }
   const out = {
     wide: path.join(outDir, `${demo.slug}-16x9.mp4`),
     tall: path.join(outDir, `${demo.slug}-9x16.mp4`),
