@@ -211,4 +211,13 @@ const V = (spoken: number) => spoken + PAD_MS;
           assert.ok(sg.holdFrames >= 0 && sg.frames - sg.voiceDelayFrames >= 1);
         }
 }
+
+// A click in fast-forwarded footage gets no zoom (it would linger over the page the voice then describes).
+{
+  const t = timeline([[0, 30000]], [{ step: 0, atMs: 20000, x: 500, y: 500 }]);
+  t.steps[0].tailHoldMs = 3000;
+  const p = fitSteps(t, voice([4000 - PAD_MS]), [true]);
+  assert.ok(p.segments[0].pieces[0].rate > 2);
+  assert.equal(p.zooms.length, 0);
+}
 console.log("plan: ok");

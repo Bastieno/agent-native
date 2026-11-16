@@ -174,7 +174,9 @@ export function fitSteps(
           c.atMs >= q.videoStartMs &&
           c.atMs <= q.videoStartMs + (q.frames / FPS) * 1000 * q.rate,
       );
-      if (p)
+      // No zoom on a click inside fast-forwarded footage: it would still be
+      // zoomed in when the voice starts over the finished page.
+      if (p && p.rate <= MAX_RATE)
         zooms.push({
           atFrame: at + p.offset + toFrames((c.atMs - p.videoStartMs) / p.rate),
           x: c.x,
