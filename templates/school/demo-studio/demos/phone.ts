@@ -84,28 +84,38 @@ const teacher: RecordedScene = {
  */
 const NOTES: Record<number, Note[]> = {
   // The answer: the one thing that needs attention.
-  1: [{ rect: { x: 76, y: 366, w: 284, h: 68 }, kind: "highlight", atMs: 900 }],
-  // The teacher's list: the quiz with papers waiting.
+  1: [
+    {
+      rect: { x: 76, y: 366, w: 284, h: 68 },
+      kind: "highlight",
+      atMs: 900,
+    },
+  ],
+  // The teacher's list: the quiz with papers waiting (the list is on screen for the first ~4 seconds).
   3: [
     {
       rect: { x: 24, y: 660, w: 342, h: 58 },
       kind: "box",
-      atMs: 2300,
-      forMs: 2600,
+      atMs: 2200,
+      forMs: 2000,
     },
   ],
   // The marking answer: the marks, then who has not handed in.
   4: [
     {
-      rect: { x: 74, y: 165, w: 268, h: 182 },
+      rect: { x: 74, y: 138, w: 286, h: 182 },
       kind: "box",
       atMs: 600,
       forMs: 2600,
     },
-    { rect: { x: 74, y: 355, w: 292, h: 130 }, kind: "highlight", atMs: 3500 },
+    {
+      rect: { x: 74, y: 378, w: 288, h: 132 },
+      kind: "highlight",
+      atMs: 3500,
+    },
   ],
-  // The assistant asks before it publishes.
-  5: [{ rect: { x: 76, y: 610, w: 262, h: 48 }, kind: "box", atMs: 300 }],
+  // The assistant waits to be told before it publishes.
+  5: [{ rect: { x: 74, y: 594, w: 288, h: 62 }, kind: "box", atMs: 300 }],
 };
 for (const sc of [principal, teacher]) {
   for (const st of sc.steps) {
