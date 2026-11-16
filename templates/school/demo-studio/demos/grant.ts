@@ -92,7 +92,7 @@ const crestfield: RecordedScene = {
     s(11, [{ do: "goto", path: "/admin/curriculum/import" }, park, hold(3500)]),
     s(12, [{ do: "goto", path: "/admin" }, park, hold(3000)]),
     s(13, ask("What needs my attention this week?", 50)),
-    s(14, [answered(1), hold(4000)]),
+    s(14, [answered(1), hold(4000)], true),
     s(15, [
       { do: "goto", path: "/admin/timetable" },
       { do: "waitFor", selector: 'role=button[name="Generate"]' },
@@ -214,7 +214,7 @@ const safety: RecordedScene = {
         40,
       ),
     ),
-    s(36, [answered(1), hold(3000)]),
+    s(36, [answered(1), hold(3000)], true),
     s(37, [hold(3000)]),
   ],
 };

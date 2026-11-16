@@ -1,8 +1,8 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { alignLines } from "./align.js";
-import { transcribe } from "./transcribe.js";
+import { alignLines, type LineSpan } from "./align.js";
+import { speechSegments, transcribe } from "./transcribe.js";
 import type { VoiceLine } from "./types.js";
 import { durationMs } from "./voice.js";
 
@@ -57,6 +57,35 @@ export function joinVoiceParts(files: string[], workDir: string): string {
 }
 
 /**
+ * Where to cut a line out of the recording, in seconds. The transcript's word
+ * times are rough (a misheard first word, an end that comes early), so the cut
+ * snaps to the stretch of speech the line sits in, as long as that stretch holds
+ * no neighbouring line.
+ */
+export function cutWindow(
+  s: LineSpan,
+  prev: LineSpan | undefined,
+  next: LineSpan | undefined,
+  segs: { startS: number; endS: number }[],
+): { fromS: number; toS: number } {
+  const at = (ms: number) =>
+    segs.find(
+      (g) => ms / 1000 >= g.startS - 0.05 && ms / 1000 <= g.endS + 0.05,
+    );
+  const prevEndS = prev ? prev.endMs / 1000 : 0;
+  const nextStartS = next ? next.startMs / 1000 : Infinity;
+  let fromS = Math.max(prevEndS, (s.startMs - 120) / 1000);
+  let toS = Math.min((s.endMs + 350) / 1000, nextStartS - 0.06);
+  const a = at(s.startMs);
+  if (a && s.startMs / 1000 - a.startS < 1.5 && prevEndS <= a.startS + 0.05)
+    fromS = Math.max(a.startS - 0.05, prevEndS);
+  const b = at(s.endMs);
+  if (b && b.endS - s.endMs / 1000 < 1.5 && nextStartS >= b.endS - 0.05)
+    toS = Math.min(b.endS + 0.12, nextStartS - 0.03);
+  return { fromS, toS };
+}
+
+/**
  * One audio file of the whole script in, one clean clip per line out, in the
  * shape the video plan already takes from the synthetic voice. Pauses longer
  * than 0.7 s inside a line are cut down to 0.3 s; the gaps between lines,
@@ -77,14 +106,15 @@ export async function voiceFromFile(
       `${(e as Error).message}\nThe audio says: ${words.map((w) => w.text).join(" ")}`,
     );
   }
+  const segs = speechSegments(audioPath);
   return spans.map((s, i) => {
     const file = path.join(workDir, `voice-${s.index}.wav`);
-    // Whisper's word ends run early, so give each line room to finish, but never into the next.
-    const prev = spans[i - 1];
-    const next = spans[i + 1];
-    const from = Math.max(prev ? prev.endMs : 0, s.startMs - 120) / 1000;
-    const to =
-      Math.min(s.endMs + 350, next ? next.startMs - 60 : Infinity) / 1000;
+    const { fromS: from, toS: to } = cutWindow(
+      s,
+      spans[i - 1],
+      spans[i + 1],
+      segs,
+    );
     execFileSync("ffmpeg", [
       "-v",
       "error",
