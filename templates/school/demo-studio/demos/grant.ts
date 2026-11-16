@@ -1,6 +1,6 @@
 import path from "node:path";
 import { readScript } from "../script.js";
-import type { Action, Demo, RecordedScene, Step } from "../types.js";
+import type { Action, Demo, RecordedScene, Scene, Step } from "../types.js";
 
 /**
  * The 6-8 minute grant demo. The spoken lines are the paragraphs of
@@ -226,20 +226,37 @@ const signOff: RecordedScene = {
   steps: [s(39, [hold(4000)])],
 };
 
+const scenes: Scene[] = [
+  setup,
+  crestfield,
+  teacher,
+  learner,
+  reportCrestfield,
+  reportYellowView,
+  safety,
+  // Your own Claude over MCP, recorded by you (see scripts/grant.md, scene 12).
+  { title: "Your own AI", clip: "clips/claude.mp4", step: s(38, []) },
+  signOff,
+];
+
+// A step that opens a page: fast-forward the loading, then speak over the finished page.
+for (const sc of scenes) {
+  if ("clip" in sc) continue;
+  for (const st of sc.steps) {
+    if (
+      st.actions.some(
+        (a) =>
+          a.do === "goto" ||
+          (a.do === "click" && a.selector.startsWith("role=link")),
+      )
+    )
+      st.cut = true;
+  }
+}
+
 export const grant: Demo = {
   slug: "grant",
   title: "Ellai: a school that runs by asking",
   voice: "bm_george",
-  scenes: [
-    setup,
-    crestfield,
-    teacher,
-    learner,
-    reportCrestfield,
-    reportYellowView,
-    safety,
-    // Your own Claude over MCP, recorded by you (see scripts/grant.md, scene 12).
-    { title: "Your own AI", clip: "clips/claude.mp4", step: s(38, []) },
-    signOff,
-  ],
+  scenes,
 };

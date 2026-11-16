@@ -12,4 +12,11 @@ assert.deepEqual(
   steps.map((s) => s.line),
   lines,
 );
+
+// Steps that open a page fast-forward the loading and speak over the finished page.
+const opens = steps.filter((st) => st.actions.some((a) => a.do === "goto"));
+assert.ok(
+  opens.length > 5 && opens.every((st) => st.cut),
+  "page-opening steps are cut",
+);
 console.log("grant: ok");
