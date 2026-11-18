@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
+import { normaliseLoudness } from "./loudness.js";
 import { makeMusic } from "./music.js";
 import { whoosh, mouseClick } from "@remotion/sfx";
 import type { EditPlan } from "./plan.js";
@@ -58,6 +59,7 @@ export async function render(
     music,
     sfx,
     phone: options.phone,
+    captions: options.phone,
   };
   if (options.phone) {
     const file = path.join(outDir, `${demo.slug}-phone.mp4`);
@@ -74,6 +76,7 @@ export async function render(
       outputLocation: file,
       inputProps,
     });
+    normaliseLoudness(file);
     return { phone: file };
   }
   const out = {
@@ -94,5 +97,7 @@ export async function render(
       inputProps,
     });
   }
+  normaliseLoudness(out.wide);
+  normaliseLoudness(out.tall);
   return out;
 }

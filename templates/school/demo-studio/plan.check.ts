@@ -8,6 +8,8 @@ import {
   INTRO_FRAMES,
   OUTRO_FRAMES,
   PAD_MS,
+  slideAt,
+  wordCaptions,
   zoomAt,
 } from "./plan.js";
 import type { Timeline } from "./types.js";
@@ -251,3 +253,44 @@ const V = (spoken: number) => spoken + PAD_MS;
   assert.deepEqual(planNotes([undefined], [seg]), []);
 }
 console.log("plan: ok");
+
+// Word captions: every word has a time inside the line, groups are short, and the last one ends with the line.
+{
+  const cs = wordCaptions(
+    "Five papers marked, with each score and grade.",
+    100,
+    220,
+  );
+  const words = cs.flatMap((c) => c.words!);
+  assert.equal(
+    words.map((w) => w.text).join(" "),
+    "Five papers marked, with each score and grade.",
+  );
+  assert.equal(words[0].fromFrame, 100);
+  assert.equal(cs.at(-1)!.toFrame, 220);
+  for (const c of cs)
+    assert.ok(c.words!.length <= 4 && c.toFrame > c.fromFrame);
+  for (let i = 1; i < cs.length; i++)
+    assert.equal(cs[i].fromFrame, cs[i - 1].toFrame);
+  assert.deepEqual(wordCaptions("   ", 0, 10), []);
+}
+
+// No intro card: the first step starts at frame 0, so the video opens on the point.
+{
+  const p = fitSteps(timeline([[0, 1000]]), voice([2000]), [false], [], {
+    introFrames: 0,
+  });
+  assert.equal(p.segments[0].fromFrame, 0);
+  assert.equal(p.introFrames, 0);
+}
+
+// Scene change: the picture slides off, the next slides in from the other side, blur follows speed, rest is still.
+{
+  const T = [100];
+  assert.deepEqual(slideAt(50, T), { x: 0, blur: 0 });
+  assert.ok(slideAt(95, T).x < 0 && slideAt(95, T).blur > 0);
+  assert.ok(slideAt(100, T).x > 1000);
+  assert.ok(slideAt(104, T).x > 0);
+  assert.equal(slideAt(120, T).x, 0);
+}
+console.log("plan (polish): ok");

@@ -87,7 +87,7 @@ const NOTES: Record<number, Note[]> = {
   1: [
     {
       rect: { x: 76, y: 366, w: 284, h: 68 },
-      kind: "highlight",
+      kind: "spot",
       atMs: 900,
     },
   ],
@@ -110,7 +110,7 @@ const NOTES: Record<number, Note[]> = {
     },
     {
       rect: { x: 74, y: 378, w: 288, h: 132 },
-      kind: "highlight",
+      kind: "spot",
       atMs: 3500,
     },
   ],

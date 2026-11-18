@@ -55,6 +55,8 @@ export interface Caption {
   fromFrame: number;
   toFrame: number;
   text: string;
+  /** Each word with its own time, for captions that light up word by word. */
+  words?: { text: string; fromFrame: number; toFrame: number }[];
 }
 /** A scene title shown when the scene begins. */
 export interface Mark {
@@ -83,6 +85,10 @@ export interface EditPlan {
   marks?: Mark[];
   /** Marks drawn on the footage; left out, there are none. */
   notes?: PlanNote[];
+  /** Frames before the first step; the intro card is left out when 0. Default INTRO_FRAMES. */
+  introFrames?: number;
+  /** Frames where a new scene begins; the picture slides over (see slideAt). */
+  transitions?: number[];
 }
 
 const toFrames = (ms: number) => Math.round((ms / 1000) * FPS);
@@ -94,11 +100,13 @@ export function fitSteps(
   voice: VoiceLine[],
   cuts: boolean[],
   lines: string[] = [],
+  options: { introFrames?: number; wordCaptions?: boolean } = {},
 ): EditPlan {
+  const intro = options.introFrames ?? INTRO_FRAMES;
   const segments: Segment[] = [];
   const zooms: Zoom[] = [];
   const captions: Caption[] = [];
-  let at = INTRO_FRAMES;
+  let at = intro;
   timeline.steps.forEach((step, i) => {
     const line = voice[i];
     if (!line) throw new Error(`Step ${i} has no voice line.`);
@@ -196,7 +204,13 @@ export function fitSteps(
     }
     if (lines[i])
       captions.push(
-        ...chunkCaption(lines[i], at + voiceDelay, at + voiceDelay + Vf),
+        ...(options.wordCaptions
+          ? wordCaptions(
+              lines[i],
+              at + voiceDelay,
+              at + voiceDelay + Vf - toFrames(PAD_MS),
+            )
+          : chunkCaption(lines[i], at + voiceDelay, at + voiceDelay + Vf)),
       );
     at += frames;
   });
@@ -207,6 +221,7 @@ export function fitSteps(
     segments,
     zooms,
     captions,
+    introFrames: intro,
   };
 }
 
@@ -332,4 +347,86 @@ export function chunkCaption(
     at = end;
     return c;
   });
+}
+
+const WORDS_PER_CAPTION = 3;
+
+/**
+ * Captions that light up word by word: a few words at a time, each with its
+ * own time inside the line. Time is shared out by word length (plus a little
+ * for each word), which tracks speech closely enough to read along.
+ */
+export function wordCaptions(
+  line: string,
+  fromFrame: number,
+  toFrame: number,
+): Caption[] {
+  const words = line.trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  const weight = (w: string) => w.replace(/[^\p{L}\p{N}]/gu, "").length + 2;
+  const total = words.reduce((n, w) => n + weight(w), 0);
+  const span = Math.max(words.length, toFrame - fromFrame);
+  let acc = 0;
+  const timed = words.map((text) => {
+    const from = fromFrame + Math.round((span * acc) / total);
+    acc += weight(text);
+    return {
+      text,
+      fromFrame: from,
+      toFrame: fromFrame + Math.round((span * acc) / total),
+    };
+  });
+  const groups: (typeof timed)[] = [];
+  let cur: typeof timed = [];
+  for (const w of timed) {
+    cur.push(w);
+    if (cur.length >= WORDS_PER_CAPTION || /[.!?;:]$/.test(w.text)) {
+      groups.push(cur);
+      cur = [];
+    }
+  }
+  if (cur.length) {
+    // A lone last word joins the group before it rather than standing alone.
+    if (cur.length < 2 && groups.length && groups.at(-1)!.length < 4)
+      groups.at(-1)!.push(...cur);
+    else groups.push(cur);
+  }
+  return groups.map((g, i) => ({
+    // A group stays up until the next one starts, so there is no flicker between them.
+    fromFrame: g[0].fromFrame,
+    toFrame: i === groups.length - 1 ? toFrame : groups[i + 1][0].fromFrame,
+    text: g.map((w) => w.text).join(" "),
+    words: g,
+  }));
+}
+
+const SLIDE_OUT = 9;
+const SLIDE_IN = 10;
+const SLIDE_DISTANCE = 1300;
+
+/**
+ * Where the picture sits at a frame when scenes change: it slides off, and the
+ * next scene slides in from the other side. `x` is the offset in video pixels;
+ * `blur` is how much horizontal motion blur that speed deserves.
+ */
+export function slideAt(
+  frame: number,
+  transitions: number[] = [],
+): { x: number; blur: number } {
+  const pos = (f: number) => {
+    for (const t of transitions) {
+      if (f >= t - SLIDE_OUT && f < t) {
+        const k = (f - (t - SLIDE_OUT)) / SLIDE_OUT;
+        return -(k ** 2.2) * SLIDE_DISTANCE;
+      }
+      if (f >= t && f <= t + SLIDE_IN) {
+        const k = (f - t) / SLIDE_IN;
+        return (1 - k) ** 3 * SLIDE_DISTANCE;
+      }
+    }
+    return 0;
+  };
+  const x = pos(frame);
+  const speed = Math.abs(x - pos(frame - 1));
+  return { x, blur: x === 0 ? 0 : Math.min(60, speed * 0.3) };
 }

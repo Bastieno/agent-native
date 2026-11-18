@@ -24,7 +24,7 @@ export interface Note {
   /** The area to draw around, in screen pixels (the 1920x1080 recording). */
   rect: { x: number; y: number; w: number; h: number };
   /** How it is drawn. Default "highlight" (a marker stroke). */
-  kind?: "highlight" | "box" | "underline" | "circle";
+  kind?: "highlight" | "spot" | "box" | "underline" | "circle";
   /** Milliseconds after the line starts to be spoken. Default 400. */
   atMs?: number;
   /** How long it stays. Default: until the line is nearly over. */

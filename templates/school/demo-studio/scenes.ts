@@ -46,3 +46,17 @@ export function sceneMarks(
   }
   return marks;
 }
+
+/** Where each scene after the first begins in the edit: the frames the picture slides over. */
+export function sceneStarts(
+  scenes: Scene[],
+  segments: { fromFrame: number }[],
+): number[] {
+  const out: number[] = [];
+  let step = 0;
+  scenes.forEach((sc, i) => {
+    if (i > 0) out.push(segments[step].fromFrame);
+    step += isClip(sc) ? 1 : sc.steps.length;
+  });
+  return out;
+}

@@ -13,6 +13,7 @@ import {
   isRecorded,
   clipPath,
   sceneMarks,
+  sceneStarts,
   scenesOf,
   stepsOf,
 } from "./scenes.js";
@@ -142,12 +143,15 @@ timeline.steps.forEach((st, i) => {
     ms += (acts[k] as { ms: number }).ms;
   st.tailHoldMs = ms;
 });
+const isPhone = demo.device === "phone";
 const plan = fitSteps(
   timeline,
   voice,
   allSteps.map((s) => !!s.cut),
   lines,
+  isPhone ? { introFrames: 0, wordCaptions: true } : {},
 );
+plan.transitions = sceneStarts(scenes, plan.segments);
 plan.marks = sceneMarks(scenes, plan.segments);
 plan.notes = planNotes(
   allSteps.map((st) => st.notes),
@@ -165,7 +169,7 @@ console.log("· rendering");
 const files = await render(plan, demo, work, out, {
   music: !process.argv.includes("--no-music"),
   sfx: !process.argv.includes("--no-sfx"),
-  phone: demo.device === "phone",
+  phone: isPhone,
 });
 console.log(
   `\nDone in ${Math.round((Date.now() - started) / 1000)}s (${(plan.totalFrames / 30).toFixed(1)}s of video)\n  ${Object.values(files).join("\n  ")}`,

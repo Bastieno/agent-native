@@ -7,6 +7,38 @@ import { BRAND } from "./theme";
 const MARK = "#e8590c"; // an orange that shows on white and on the app's blue
 const MARKER = "rgba(255, 214, 10, 0.55)";
 
+/** The rest of the screen dims while the area stays bright: a spotlight. */
+function Spot({ n, frames }: { n: PlanNote; frames: number }) {
+  const f = useCurrentFrame();
+  const inn = interpolate(f, [0, 14], [0, 1], {
+    easing: Easing.bezier(0.22, 1, 0.36, 1),
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const out = interpolate(f, [frames - 12, frames], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const p = inn * out;
+  const { x, y, w, h } = n.rect;
+  // The opening eases in from a little larger, so the light seems to close on the area.
+  const grow = (1 - inn) * 18;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x - 8 - grow,
+        top: y - 6 - grow,
+        width: w + 16 + grow * 2,
+        height: h + 12 + grow * 2,
+        borderRadius: 12,
+        boxShadow: `0 0 0 4000px rgba(7, 10, 24, ${0.62 * p}), 0 0 0 2px rgba(255,255,255,${0.85 * p}), 0 0 28px 6px rgba(255,255,255,${0.18 * p})`,
+        pointerEvents: "none",
+      }}
+    />
+  );
+}
+
 function Mark({
   n,
   frames,
@@ -27,6 +59,8 @@ function Mark({
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+  if (n.kind === "spot" || n.kind === "highlight")
+    return <Spot n={n} frames={frames} />;
   const { x, y, w, h } = n.rect;
   // The annotation is drawn around an empty block the size of the area.
   const area = <div style={{ width: w, height: h }} />;

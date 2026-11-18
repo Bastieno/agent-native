@@ -17,7 +17,7 @@ import {
   zoomAt,
   type EditPlan,
 } from "../plan";
-import { Captions } from "./Captions";
+import { Captions, WordCaptions } from "./Captions";
 import { Marks } from "./Marks";
 import { Notes } from "./Notes";
 import { PhoneStage, type PhoneBackground } from "./Phone";
@@ -151,7 +151,12 @@ export function DemoVideo({
         </Sequence>
       ))}
       {music && <Audio src={staticFile(music)} volume={0.11} loop />}
-      {captions && <Captions captions={plan.captions} tall={tall} />}
+      {captions &&
+        (phone ? (
+          <WordCaptions captions={plan.captions} />
+        ) : (
+          <Captions captions={plan.captions} tall={tall} />
+        ))}
       <Marks marks={plan.marks ?? []} tall={tall} />
       {sfx?.whoosh &&
         (plan.marks ?? []).map((m) => (
@@ -169,9 +174,22 @@ export function DemoVideo({
             <Audio src={staticFile(sfx.click!)} volume={0.2} />
           </Sequence>
         ))}
-      <Sequence durationInFrames={INTRO_FRAMES}>
-        <Intro title={title} frames={INTRO_FRAMES} tall={tall} />
-      </Sequence>
+      {(plan.transitions ?? []).map((t) =>
+        sfx?.whoosh ? (
+          <Sequence key={`t${t}`} from={t - 9} durationInFrames={40}>
+            <Audio src={staticFile(sfx.whoosh)} volume={0.3} />
+          </Sequence>
+        ) : null,
+      )}
+      {(plan.introFrames ?? INTRO_FRAMES) > 0 && (
+        <Sequence durationInFrames={plan.introFrames ?? INTRO_FRAMES}>
+          <Intro
+            title={title}
+            frames={plan.introFrames ?? INTRO_FRAMES}
+            tall={tall}
+          />
+        </Sequence>
+      )}
       <Sequence
         from={plan.totalFrames - OUTRO_FRAMES}
         durationInFrames={OUTRO_FRAMES}

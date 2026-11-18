@@ -5,8 +5,9 @@ import {
   OffthreadVideo,
   Sequence,
   staticFile,
+  useCurrentFrame,
 } from "remotion";
-import { FPS, type EditPlan } from "../plan";
+import { FPS, slideAt, type EditPlan } from "../plan";
 import { BRAND } from "./theme";
 import { Notes } from "./Notes";
 
@@ -136,20 +137,6 @@ function Screen({ plan }: { plan: EditPlan }) {
           </Sequence>
         );
       })}
-      {/* Marks are placed in the phone's own CSS pixels (390x844) and scaled up with it. */}
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          width: 390,
-          height: 844,
-          transformOrigin: "0 0",
-          transform: `scale(${SCALE})`,
-        }}
-      >
-        <Notes notes={plan.notes ?? []} unit={SCALE} />
-      </div>
     </div>
   );
 }
@@ -169,6 +156,10 @@ export const PHONE_BACKGROUNDS = {
 } as const;
 export type PhoneBackground = keyof typeof PHONE_BACKGROUNDS;
 
+/** The phone is shown a little smaller so captions have room beneath it. */
+const STAGE_SCALE = 0.84;
+const STAGE_LIFT = 118;
+
 export function PhoneStage({
   plan,
   background = "ink",
@@ -176,6 +167,8 @@ export function PhoneStage({
   plan: EditPlan;
   background?: PhoneBackground;
 }) {
+  const frame = useCurrentFrame();
+  const slide = slideAt(frame, plan.transitions);
   return (
     <AbsoluteFill
       style={{
@@ -184,11 +177,36 @@ export function PhoneStage({
         justifyContent: "center",
       }}
     >
+      {slide.blur > 0 && (
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <filter id="slide-blur" x="-30%" y="-5%" width="160%" height="110%">
+            <feGaussianBlur stdDeviation={`${slide.blur} 0`} />
+          </filter>
+        </svg>
+      )}
+      <div
+        style={{
+          position: "absolute",
+          top: 36,
+          width: "100%",
+          textAlign: "center",
+          color: "#fff",
+          opacity: 0.9,
+          fontFamily: BRAND.font,
+          fontWeight: 600,
+          fontSize: 54,
+          letterSpacing: "-0.03em",
+        }}
+      >
+        Ellai<span style={{ color: BRAND.primary }}>.</span>
+      </div>
       <div
         style={{
           position: "relative",
           width: PHONE_W,
           height: PHONE_H,
+          transform: `translate(${slide.x}px, ${-STAGE_LIFT}px) scale(${STAGE_SCALE})`,
+          filter: slide.blur > 0 ? "url(#slide-blur)" : undefined,
           borderRadius: 118,
           background: "#0b0b0f",
           boxShadow:
@@ -266,6 +284,21 @@ export function PhoneStage({
               background: "#000",
             }}
           />
+          {/* Marks sit above the status bar so a spotlight dims the whole screen.
+              They are placed in the phone's own CSS pixels (390x844), scaled up with it. */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              top: STATUS,
+              width: 390,
+              height: 844,
+              transformOrigin: "0 0",
+              transform: `scale(${SCALE})`,
+            }}
+          >
+            <Notes notes={plan.notes ?? []} unit={SCALE} />
+          </div>
         </div>
       </div>
     </AbsoluteFill>
