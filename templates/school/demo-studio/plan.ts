@@ -6,7 +6,7 @@ import type { Note, Timeline, VoiceLine } from "./types.js";
  * Pure, so every rule here has a check (plan.check.ts).
  */
 export const FPS = 30;
-export const INTRO_FRAMES = 60;
+export const INTRO_FRAMES = 75;
 export const OUTRO_FRAMES = 60;
 /** Breathing room after each spoken line. */
 export const PAD_MS = 300;

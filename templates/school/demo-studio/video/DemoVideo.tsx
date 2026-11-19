@@ -176,15 +176,23 @@ export function DemoVideo({
         ))}
       <Marks marks={plan.marks ?? []} tall={tall} />
       {sfx?.whoosh &&
-        (plan.marks ?? []).map((m) => (
-          <Sequence
-            key={`w${m.number}`}
-            from={m.fromFrame}
-            durationInFrames={40}
-          >
-            <Audio src={staticFile(sfx.whoosh!)} volume={0.28} />
-          </Sequence>
-        ))}
+        (plan.marks ?? [])
+          // A title that arrives with a scene change shares the slide's whoosh: one sound, not two.
+          .filter(
+            (m) =>
+              !(plan.transitions ?? []).some(
+                (t) => m.fromFrame - t >= -9 && m.fromFrame - t <= 30,
+              ),
+          )
+          .map((m) => (
+            <Sequence
+              key={`w${m.number}`}
+              from={m.fromFrame}
+              durationInFrames={40}
+            >
+              <Audio src={staticFile(sfx.whoosh!)} volume={0.28} />
+            </Sequence>
+          ))}
       {sfx?.click &&
         plan.zooms.map((z, i) => (
           <Sequence key={`c${i}`} from={z.atFrame} durationInFrames={20}>
