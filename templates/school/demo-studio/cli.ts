@@ -149,7 +149,7 @@ const plan = fitSteps(
   voice,
   allSteps.map((s) => !!s.cut),
   lines,
-  isPhone ? { introFrames: 0, wordCaptions: true } : {},
+  isPhone ? { introFrames: 0, wordCaptions: true } : { introFrames: 0 },
 );
 plan.transitions = sceneStarts(scenes, plan.segments);
 plan.marks = sceneMarks(scenes, plan.segments);

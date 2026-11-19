@@ -9,6 +9,7 @@ import {
 } from "remotion";
 import { FPS, slideAt, type EditPlan } from "../plan";
 import { BRAND } from "./theme";
+import { Logo } from "./Logo";
 import { Notes } from "./Notes";
 
 /** The phone, in video pixels. The footage is 390x844 CSS pixels shown at 1.9x. */
@@ -187,18 +188,13 @@ export function PhoneStage({
       <div
         style={{
           position: "absolute",
-          top: 36,
+          top: 22,
           width: "100%",
-          textAlign: "center",
-          color: "#fff",
-          opacity: 0.9,
-          fontFamily: BRAND.font,
-          fontWeight: 600,
-          fontSize: 54,
-          letterSpacing: "-0.03em",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        Ellai<span style={{ color: BRAND.primary }}>.</span>
+        <Logo height={78} />
       </div>
       <div
         style={{

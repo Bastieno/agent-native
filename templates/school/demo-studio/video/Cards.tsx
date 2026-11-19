@@ -1,5 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { Logo } from "./Logo";
 import { BRAND } from "./theme";
 
 function Card({
@@ -31,11 +32,7 @@ function Card({
   );
 }
 
-const Wordmark = ({ size }: { size: number }) => (
-  <div style={{ fontSize: size, fontWeight: 600, letterSpacing: "-0.03em" }}>
-    Ellai<span style={{ color: BRAND.primary }}>.</span>
-  </div>
-);
+const Wordmark = ({ size }: { size: number }) => <Logo height={size * 0.9} />;
 
 export const Intro = ({
   title,

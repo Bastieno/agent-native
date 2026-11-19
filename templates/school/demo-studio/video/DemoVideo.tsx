@@ -12,6 +12,7 @@ import {
 import {
   cropFor,
   FPS,
+  slideAt,
   INTRO_FRAMES,
   OUTRO_FRAMES,
   zoomAt,
@@ -57,8 +58,24 @@ function Screen({ plan }: { plan: EditPlan }) {
   const cx = crop.left + crop.width / 2;
   const cy = Math.min(H - visibleH / 2, Math.max(visibleH / 2, z.y));
   const src = staticFile("screen.webm");
+  // At a scene change the picture slides away and the next one slides in, with a sideways blur.
+  const slide = slideAt(frame, plan.transitions, VW * 0.8);
   return (
-    <AbsoluteFill style={{ background: BRAND.ink, overflow: "hidden" }}>
+    <AbsoluteFill
+      style={{
+        background: BRAND.ink,
+        overflow: "hidden",
+        transform: `translateX(${slide.x}px)`,
+        filter: slide.blur > 0 ? "url(#screen-blur)" : undefined,
+      }}
+    >
+      {slide.blur > 0 && (
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <filter id="screen-blur" x="-30%" y="-5%" width="160%" height="110%">
+            <feGaussianBlur stdDeviation={`${slide.blur} 0`} />
+          </filter>
+        </svg>
+      )}
       <div
         style={{
           position: "absolute",

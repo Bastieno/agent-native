@@ -412,16 +412,17 @@ const SLIDE_DISTANCE = 1300;
 export function slideAt(
   frame: number,
   transitions: number[] = [],
+  distance: number = SLIDE_DISTANCE,
 ): { x: number; blur: number } {
   const pos = (f: number) => {
     for (const t of transitions) {
       if (f >= t - SLIDE_OUT && f < t) {
         const k = (f - (t - SLIDE_OUT)) / SLIDE_OUT;
-        return -(k ** 2.2) * SLIDE_DISTANCE;
+        return -(k ** 2.2) * distance;
       }
       if (f >= t && f <= t + SLIDE_IN) {
         const k = (f - t) / SLIDE_IN;
-        return (1 - k) ** 3 * SLIDE_DISTANCE;
+        return (1 - k) ** 3 * distance;
       }
     }
     return 0;

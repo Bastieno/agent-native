@@ -36,7 +36,7 @@ export async function render(
   workDir: string,
   outDir: string,
   options: { music?: boolean; sfx?: boolean; phone?: boolean } = {},
-): Promise<{ wide?: string; tall?: string; phone?: string }> {
+): Promise<{ wide?: string; phone?: string }> {
   fs.mkdirSync(outDir, { recursive: true });
   const music =
     options.music === false
@@ -81,12 +81,9 @@ export async function render(
   }
   const out = {
     wide: path.join(outDir, `${demo.slug}-16x9.mp4`),
-    tall: path.join(outDir, `${demo.slug}-9x16.mp4`),
   };
-  for (const [id, file] of [
-    ["Wide", out.wide],
-    ["Tall", out.tall],
-  ] as const) {
+  // The tall version was a crop of the desktop picture and not usable; the phone video replaces it.
+  for (const [id, file] of [["Wide", out.wide]] as const) {
     const composition = await selectComposition({ serveUrl, id, inputProps });
     await renderMedia({
       composition,
@@ -98,6 +95,5 @@ export async function render(
     });
   }
   normaliseLoudness(out.wide);
-  normaliseLoudness(out.tall);
   return out;
 }
