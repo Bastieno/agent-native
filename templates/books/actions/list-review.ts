@@ -51,7 +51,9 @@ export default defineAction({
       if ((e.occurred_on as string) < g.first)
         g.first = e.occurred_on as string;
       if ((e.occurred_on as string) > g.last) g.last = e.occurred_on as string;
-      const note = expenseNote(e.raw_text as string);
+      const note = expenseNote(e.raw_text as string)
+        ?.split("\n")
+        .join(", ");
       if (note && g.examples.length < 3 && !g.examples.includes(note))
         g.examples.push(note);
       groups.set(key, g);

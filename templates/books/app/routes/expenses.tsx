@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -64,6 +65,8 @@ type Expense = {
 /** What the expense was for: the slip's note, else who was paid (app entries name the vendor). */
 const whatFor = (e: Expense) =>
   e.note ?? (e.source === "history" ? (e.category ?? "Transfer") : e.vendor);
+/** On one line, for a list row or a title: the note's lines joined. */
+const whatForLine = (e: Expense) => whatFor(e).split("\n").join(" · ");
 
 function HistoryUpload() {
   const input = useRef<HTMLInputElement>(null);
@@ -164,7 +167,9 @@ function ExpenseSheet({
     <Sheet open onOpenChange={(open) => !open && onClose()}>
       <SheetContent className="w-full overflow-y-auto sm:max-w-md">
         <SheetHeader>
-          <SheetTitle>{whatFor(expense)}</SheetTitle>
+          <SheetTitle className="line-clamp-2">
+            {whatForLine(expense)}
+          </SheetTitle>
           <p className="text-sm text-muted-foreground">
             {expense.code} · {naira(expense.amount)}
           </p>
@@ -191,11 +196,15 @@ function ExpenseSheet({
           )}
           <div className="space-y-1.5">
             <Label htmlFor="note">What for</Label>
-            <Input
+            <Textarea
               id="note"
               disabled={!canEdit}
               defaultValue={expense.note ?? ""}
               placeholder="e.g. 5 packs sausages"
+              rows={Math.min(
+                8,
+                Math.max(2, (expense.note ?? "").split("\n").length),
+              )}
               onBlur={(e) => {
                 const v = e.target.value.trim();
                 if (v && v !== (expense.note ?? "")) onSave({ note: v });
@@ -508,7 +517,7 @@ export default function ExpensesPage() {
                         aria-label="To review"
                       />
                     )}
-                    <span className="truncate text-sm">{whatFor(e)}</span>
+                    <span className="truncate text-sm">{whatForLine(e)}</span>
                   </span>
                   <span
                     className={`shrink-0 text-sm tabular-nums ${e.isCost === false ? "text-muted-foreground italic" : ""}`}
@@ -557,7 +566,7 @@ export default function ExpensesPage() {
                           aria-label="To review"
                         />
                       )}
-                      <span className="truncate">{whatFor(e)}</span>
+                      <span className="truncate">{whatForLine(e)}</span>
                     </div>
                   </TableCell>
                   <TableCell className="text-muted-foreground">

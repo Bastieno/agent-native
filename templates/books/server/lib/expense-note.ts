@@ -1,36 +1,41 @@
+import { correctNote } from "../../shared/note-words.js";
+
 /**
- * What an expense was for, from the text kept with it: the slip's narration
- * ("5 packs of chicken"), without the bank's reference tail or the account
- * it was paid from.
+ * What an expense was for, from the text kept with it (raw_text):
+ *
+ *   <the slip's narration, line breaks kept> · Paid from <account>[ · …]
+ *
+ * The narration is stored as it was read off the slip and corrected only when
+ * shown, so the reading is never lost and corrections can improve. A note the
+ * owner wrote or corrected carries OWNER_MARK and is shown exactly as written.
  */
-const COUNT_WORDS =
-  "packs?|pcs|pieces?|crates?|bags?|kg|kilos?|litres?|liters?|bottles?|cartons?|cans?|rolls?|tubers?|bundles?|boxes|box|dozens?|cylinders?|tins?|sachets?|loaves|plates?";
-const S_FOR_5 = new RegExp(`(^|[\\s,(])S(?=\\s+(?:${COUNT_WORDS})\\b)`, "gi");
+export const OWNER_MARK = " · written by the owner";
 
-/** Undo text-recognition slips in a note: a 5 before a count word read as S ("S packs"). */
-export function fixMisreads(note: string): string {
-  return note.replace(S_FOR_5, "$15");
-}
-
-/** The note and the "· Paid from …" tail kept with an expense, with the note replaced. */
+/** The text kept with an expense, with its note replaced by the owner's words. */
 export function withNote(
   rawText: string | null | undefined,
   note: string,
 ): string {
-  const text = (rawText ?? "").trim();
+  const text = (rawText ?? "").replace(OWNER_MARK, "").trim();
   const tail = /^Paid from\b/i.test(text)
     ? ` · ${text}`
-    : (text.match(/ · Paid from.*$/)?.[0] ?? "");
-  return `${note.trim()}${tail}`;
+    : (text.match(/ · Paid from[\s\S]*$/)?.[0] ?? "");
+  return `${note.trim()}${tail}${OWNER_MARK}`;
 }
 
 export function expenseNote(rawText: string | null | undefined): string | null {
   if (!rawText) return null;
   if (/^Paid from\b/i.test(rawText.trim())) return null;
+  const owners = rawText.includes(OWNER_MARK);
   const note = rawText
     .split(" · Paid from")[0]
-    .replace(/\s*Provider\s+Re\S*\s*\S*.*$/i, "")
+    .replace(OWNER_MARK, "")
+    .replace(/\s*Provider\s+Re\S*[\s\S]*$/i, "")
     .replace(/^[ГT]or\b/, "For")
-    .trim();
-  return note ? fixMisreads(note) : null;
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .join("\n");
+  if (!note) return null;
+  return owners ? note : correctNote(note);
 }

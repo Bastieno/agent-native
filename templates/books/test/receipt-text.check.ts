@@ -117,7 +117,7 @@ await check(
   },
 );
 
-await check("a narration can wrap over several lines", () => {
+await check("a narration over several lines keeps its line breaks", () => {
   const r = readReceiptText(
     moniepoint({
       date: "Sunday, July 26th, 2026 | 3:23 PM",
@@ -127,7 +127,10 @@ await check("a narration can wrap over several lines", () => {
   );
   assert.ok(r.ok);
   if (r.ok)
-    assert.equal(r.receipt.note, "28k ketchup, 25k Bama, 6k foil, 1k delivery");
+    assert.equal(
+      r.receipt.note,
+      "28k ketchup, 25k Bama, 6k foil,\n1k delivery",
+    );
 });
 
 await check("reads an airtime slip", () => {

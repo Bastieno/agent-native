@@ -138,7 +138,7 @@ await check(
     // The account it was paid from is kept.
     assert.equal(
       row.raw_text,
-      "Gateman November salary · Paid from Moniepoint (lounge)",
+      "Gateman November salary · Paid from Moniepoint (lounge) · written by the owner",
     );
     assert.equal(row.vendor, "Gateman");
     const after = await asOwner(() =>
@@ -163,8 +163,25 @@ await check("a note can be added to a slip that had none", async () => {
   const [row] = await query(`SELECT raw_text FROM expenses WHERE code = ?`, [
     code,
   ]);
-  assert.equal(row.raw_text, "Overtime · Paid from Opay");
+  assert.equal(
+    row.raw_text,
+    "Overtime · Paid from Opay · written by the owner",
+  );
 });
+
+await check(
+  "the owner's words are shown as written, a slip's reading corrected",
+  async () => {
+    assert.equal(
+      expenseNote("10 packs waler\n2 packs coke · Paid from Opay"),
+      "10 packs water\n2 packs coke",
+    );
+    assert.equal(
+      expenseNote("Gift for Waler · Paid from Opay · written by the owner"),
+      "Gift for Waler",
+    );
+  },
+);
 
 await check("the partner can't change a note", async () => {
   const [{ code }] = await query(

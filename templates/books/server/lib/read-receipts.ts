@@ -1,3 +1,4 @@
+import { correctNote } from "../../shared/note-words.js";
 import { guessExpense } from "./expense-guess.js";
 import { createExpense } from "./expenses.js";
 import { readReceiptText } from "./receipt-text.js";
@@ -60,7 +61,7 @@ export async function recordReceiptsFromText(
       continue;
     }
     const r = read.receipt;
-    const guessed = guessExpense(r.note, r.kind);
+    const guessed = guessExpense(r.note ? correctNote(r.note) : null, r.kind);
     // A note that says commission or settlement waits for the owner, even from a known payee.
     // A note in the transfer-note format says what it was; a payee rule doesn't override it.
     const rule =

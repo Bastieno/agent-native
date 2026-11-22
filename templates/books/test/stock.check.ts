@@ -21,9 +21,27 @@ await asOwner(async () => {
     receivedVia: "upload",
   });
   const day = { occurredOn: "2026-11-05", paidWith: "transfer" as const };
-  await record.run({ ...day, vendor: "Market", amount: 100000, category: "Food & drink stock", business: "lounge" });
-  await record.run({ ...day, vendor: "Buyer", amount: 20000, category: "Manager float (not itemised)", business: "lounge" });
-  await record.run({ ...day, vendor: "Fuel", amount: 40000, category: "Diesel / power", business: "lounge" });
+  await record.run({
+    ...day,
+    vendor: "Market",
+    amount: 100000,
+    category: "Food & drink stock",
+    business: "lounge",
+  });
+  await record.run({
+    ...day,
+    vendor: "Buyer",
+    amount: 20000,
+    category: "Manager float (not itemised)",
+    business: "lounge",
+  });
+  await record.run({
+    ...day,
+    vendor: "Fuel",
+    amount: 40000,
+    category: "Diesel / power",
+    business: "lounge",
+  });
 });
 
 await check("a day's expenses leave out stock bought", async () => {
@@ -35,15 +53,19 @@ await check("a day's expenses leave out stock bought", async () => {
 
 await check("net takes off operating expenses, not stock", async () => {
   const { figures } = await asOwner(() =>
-    buildDigest.run({ period: "weekly", start: "2026-11-02", end: "2026-11-08" }),
+    buildDigest.run({
+      period: "weekly",
+      start: "2026-11-02",
+      end: "2026-11-08",
+    }),
   );
   assert.equal(figures.combined.expenses, 4000000);
-  assert.equal(
-    figures.combined.net,
-    figures.combined.grossProfit - 4000000,
-  );
+  assert.equal(figures.combined.net, figures.combined.grossProfit - 4000000);
   assert.equal(figures.stockBought, 12000000);
-  assert.match(renderWhatsApp(figures, "https://books.test/r"), /stock bought/i);
+  assert.match(
+    renderWhatsApp(figures, "https://books.test/r"),
+    /stock bought/i,
+  );
 });
 
 await finish();
