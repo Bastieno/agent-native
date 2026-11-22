@@ -266,6 +266,20 @@ await check("costs go to the Lounge unless the note says Hub", () => {
   assert.equal(guessExpense("zzz").business, null); // no category, no guess
 });
 
+await check("everyday notes find a category", () => {
+  const c = (n: string) => guessExpense(n).category;
+  assert.equal(c("For sewage emptying"), "Repairs");
+  assert.equal(c("For light token"), "Diesel / power");
+  assert.equal(c("Payment for 2 goats"), "Food & drink stock");
+  assert.equal(c("1 maxi standing fan"), "Equipment & furniture");
+  assert.equal(c("1 ups: 45k, 1 surge protector"), "Equipment & furniture");
+  assert.equal(c("Taxpayer id: 9950338754"), "Taxes & levies");
+  assert.equal(c("For clothings"), "Supplies");
+  assert.equal(c("Completion for celling work"), "Repairs");
+  assert.equal(c("Aare Lalosa Igr colleclion"), "Taxes & levies");
+  assert.equal(c("2 lamp holders and 2 light bulbs"), "Repairs");
+});
+
 await check("commission is a cost of its own", () => {
   assert.equal(guessExpense("For commission").category, "Commissions");
   assert.equal(guessExpense("For commission").notAnExpense, false);
