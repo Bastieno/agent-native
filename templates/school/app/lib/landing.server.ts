@@ -1,4 +1,5 @@
 import { orgForHost } from "../../server/lib/school-host";
+import { visitorInNigeria } from "../../server/lib/visitor-country";
 import { pickEdition, type Edition } from "@shared/landing-content";
 
 export type IndexData =
@@ -38,7 +39,7 @@ export async function indexData(
     mode: "landing",
     edition: pickEdition(
       url.searchParams.get("edition"),
-      request.headers.get("x-vercel-ip-country"),
+      (await visitorInNigeria(request)) ? "NG" : null,
     ),
     calLink: process.env.CAL_LINK?.trim() || null,
   };

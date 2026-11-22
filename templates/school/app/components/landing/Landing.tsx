@@ -98,6 +98,10 @@ export function SiteFooter() {
           <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-foreground">
             {CONTACT_EMAIL}
           </a>
+          {/* DB-IP's free database, used to pick the edition, asks for this credit. */}
+          <a href="https://db-ip.com" className="hover:text-foreground">
+            IP location by DB-IP
+          </a>
         </nav>
       </div>
     </footer>

@@ -63,6 +63,7 @@ Names and what they do. Never paste the file; it holds secrets.
 | `RESEND_API_KEY`, `EMAIL_FROM`                            | Email. `EMAIL_FROM` is `Ellai <noreply@ellai.dev>`; the school name replaces `Ellai` per school                                                                                  |
 | `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT`  | Phone push. Do not change the keys once people have subscribed                                                                                                                   |
 | `CAL_LINK`, `CAL_WEBHOOK_SECRET`                          | The pilot booking link and its webhook                                                                                                                                           |
+| `NIGERIA_RANGES_FILE`                                     | `/srv/school/geo/nigeria.txt`: Nigeria's IP ranges, so visitors there get the Nigerian landing page. Without it everyone gets the US one                                         |
 
 Add or change a secret without it passing through a chat or shell history:
 
@@ -207,6 +208,11 @@ restore over the live one. The one thing a dump does not hold is
   needs a reboot: `reboot`, about a minute, and every service starts by itself.
   Check all three schools afterwards.
 - Do not upgrade the Ubuntu release; this was built and tested on 24.04.
+- Nigeria's IP ranges refresh on the 3rd and 15th of each month at 04:00
+  (`/etc/cron.d/nigeria-ranges` runs `/usr/local/bin/refresh-nigeria-ranges`,
+  from DB-IP's free country database). A failed download keeps the old file;
+  `journalctl -t nigeria-ranges` shows each run. The app picks up a new file
+  within ten minutes, with no restart.
 - Disk and memory: `df -h /`, `free -m`. About 6% of the disk and 18% of the
   memory were in use at launch.
 
