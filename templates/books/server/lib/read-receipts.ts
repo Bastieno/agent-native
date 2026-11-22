@@ -62,9 +62,11 @@ export async function recordReceiptsFromText(
     const r = read.receipt;
     const guessed = guessExpense(r.note, r.kind);
     // A note that says commission or settlement waits for the owner, even from a known payee.
-    const rule = guessed.notAnExpense
-      ? null
-      : matchPayeeRule(rules, r.payee ?? "", r.amount * 100);
+    // A note in the transfer-note format says what it was; a payee rule doesn't override it.
+    const rule =
+      guessed.notAnExpense || guessed.tagged
+        ? null
+        : matchPayeeRule(rules, r.payee ?? "", r.amount * 100);
     const guess = rule
       ? {
           category: rule.category as string | null,
@@ -95,7 +97,8 @@ export async function recordReceiptsFromText(
       ]
         .filter(Boolean)
         .join(" · "),
-      status: "needs_review",
+      // Tagged notes are the payer saying what it was: nothing left to review.
+      status: guessed.tagged ? "confirmed" : "needs_review",
       source: "history",
       existingFile: { id: p.receipt_file_id, imageHash: p.image_hash },
     });

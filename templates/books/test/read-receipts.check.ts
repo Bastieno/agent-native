@@ -135,6 +135,41 @@ await check("an already-recorded receipt is refused", async () => {
   assert.equal(r.outcomes[0].result, "unreadable");
 });
 
+await check(
+  "a note in the transfer-note format is recorded as said, confirmed",
+  async () => {
+    await asOwner(() => queue.run({ receipts: [receipt(6)] }));
+    const known = new Set(
+      (
+        await query(`SELECT id FROM pending_receipts WHERE status <> 'pending'`)
+      ).map((r: any) => r.id),
+    );
+    const fresh = (await asOwner(() => listPending.run({}))).receipts.find(
+      (r: any) => !ids.includes(r.id) && !known.has(r.id),
+    );
+    const r = await asOwner(() =>
+      fromText.run({
+        receipts: [
+          {
+            pendingReceiptId: fresh.id,
+            lines: slip("N7,500.00", "HUB REPAIR door hinge", "Wednesday"),
+          },
+        ],
+      }),
+    );
+    assert.equal(r.recorded, 1);
+    const [e] = await query(
+      `SELECT e.status, c.name AS category, b.slug AS business FROM expenses e
+       JOIN expense_categories c ON c.id = e.category_id JOIN businesses b ON b.id = e.business_id
+      WHERE e.amount = 750000`,
+    );
+    assert.deepEqual(
+      [e.status, e.category, e.business],
+      ["confirmed", "Repairs", "hub"],
+    );
+  },
+);
+
 await check("the partner can't record from text", async () => {
   const { guardActions } = await import("../server/lib/action-policy.js");
   const guarded = guardActions({

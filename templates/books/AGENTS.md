@@ -75,6 +75,16 @@ confirm a group when the owner asks; describe it first (count, total, dates).
 When the owner asks to read old receipts, the Review screen sends them to you as images with
 their `pendingReceiptId`s; record each with `record-expense-from-receipt`.
 
+**Transfer notes.** Owners are asked to write each transfer's narration as
+`[LOUNGE|HUB] TAG what it was for`, the tag in capitals ("LOUNGE STOCK 5 packs
+chicken", "HUB REPAIR door lock"). The tags and their categories are in
+`shared/narration.ts` and shown on Settings, Transfer notes. A slip whose note
+follows the format is filed as said: `pnpm read-receipts` and
+`record-expenses-from-text` record it as confirmed, not needs_review, and a
+payee rule does not override it. When you read a receipt on WhatsApp whose
+narration follows the format, use its category and business and pass
+`confident: true`. A note without the format is guessed as before.
+
 Old Moniepoint and Opay transfer slips can also be read without the assistant:
 `pnpm read-receipts` (a Mac only) reads every pending receipt with macOS text
 recognition and records the readable ones as `needs_review` expenses with a

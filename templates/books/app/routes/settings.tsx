@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
-import { IconPlus, IconTrash } from "@tabler/icons-react";
+import { IconCopy, IconPlus, IconTrash } from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,86 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSetPageTitle } from "@/components/layout/HeaderActions";
+import { NARRATION_TAGS, narrationGuide } from "@shared/narration";
+
+/** How to write the note on a transfer so Books files it without guessing. */
+function TransferNotes() {
+  const running = NARRATION_TAGS.filter((t) => t.business !== null);
+  const notCosts = NARRATION_TAGS.filter((t) => t.business === null);
+  const table = (rows: typeof NARRATION_TAGS) => (
+    <div className="divide-y divide-border rounded-lg border border-border">
+      {rows.map((t) => (
+        <div
+          key={t.tag}
+          className="grid gap-1 px-3 py-2 text-sm sm:grid-cols-[7rem_1fr]"
+        >
+          <span className="font-mono text-xs font-semibold">{t.tag}</span>
+          <span className="min-w-0">
+            {t.category}
+            <span className="block truncate font-mono text-xs text-muted-foreground">
+              {t.example}
+            </span>
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+  return (
+    <div className="space-y-5">
+      <div className="space-y-3">
+        <p className="text-sm text-muted-foreground">
+          Write the narration on every transfer like this, and Books files the
+          expense under the right category and business by itself. Nothing is
+          left to review.
+        </p>
+        <div className="rounded-lg border border-border bg-muted/40 px-4 py-3">
+          <div className="font-mono text-sm">
+            <span className="font-semibold">HUB</span>{" "}
+            <span className="font-semibold">REPAIR</span> door lock and hinges
+          </div>
+          <div className="mt-2 grid gap-1 text-xs text-muted-foreground sm:grid-cols-3">
+            <span>
+              <span className="font-medium text-foreground">1. Business</span>{" "}
+              LOUNGE or HUB. Leave it out for the Lounge.
+            </span>
+            <span>
+              <span className="font-medium text-foreground">2. Tag</span> one
+              word from the list, in CAPITALS.
+            </span>
+            <span>
+              <span className="font-medium text-foreground">3. What for</span> a
+              few words. Keep it short.
+            </span>
+          </div>
+        </div>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() =>
+            navigator.clipboard
+              .writeText(narrationGuide())
+              .then(() => toast.success("Copied. Paste it into WhatsApp."))
+              .catch(() => toast.error("Couldn't copy"))
+          }
+        >
+          <IconCopy className="mr-2 h-4 w-4" /> Copy the guide for WhatsApp
+        </Button>
+      </div>
+      <div className="space-y-2">
+        <h3 className="text-sm font-medium">Running costs</h3>
+        {table(running)}
+      </div>
+      <div className="space-y-2">
+        <h3 className="text-sm font-medium">Money that isn't a running cost</h3>
+        <p className="text-xs text-muted-foreground">
+          Kept in the list but left out of expenses and profit. No business
+          needed.
+        </p>
+        {table(notCosts)}
+      </div>
+    </div>
+  );
+}
 
 export function meta() {
   return [{ title: "Settings · Books" }];
@@ -68,6 +148,7 @@ export default function SettingsPage() {
       >
         <TabsList>
           <TabsTrigger value="people">People</TabsTrigger>
+          <TabsTrigger value="notes">Transfer notes</TabsTrigger>
           <TabsTrigger value="categories">Categories</TabsTrigger>
           <TabsTrigger value="limits">Limits</TabsTrigger>
           <TabsTrigger value="connections">Connections</TabsTrigger>
@@ -167,6 +248,10 @@ export default function SettingsPage() {
               </Button>
             </div>
           )}
+        </TabsContent>
+
+        <TabsContent value="notes" className="max-w-2xl pt-4">
+          <TransferNotes />
         </TabsContent>
 
         <TabsContent value="categories" className="max-w-md space-y-2 pt-4">

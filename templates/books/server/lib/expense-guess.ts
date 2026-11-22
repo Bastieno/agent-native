@@ -1,3 +1,4 @@
+import { parseNarration } from "../../shared/narration.js";
 import { DIVIDENDS, LOANS } from "./setup.js";
 
 /**
@@ -12,6 +13,8 @@ export interface Guess {
   business: "lounge" | "hub" | null;
   notAnExpense: boolean;
   because: string | null;
+  /** The note was written in the transfer-note format: taken as said, not guessed. */
+  tagged: boolean;
 }
 
 type Rule = {
@@ -304,7 +307,17 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     business: null,
     notAnExpense: false,
     because: null,
+    tagged: false,
   };
+  const said = parseNarration(note);
+  if (said)
+    return {
+      category: said.category,
+      business: said.business,
+      notAnExpense: false,
+      because: `tagged ${said.tag}`,
+      tagged: true,
+    };
   if (kind === "AIRTIME")
     return {
       ...none,
@@ -314,18 +327,11 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     };
   if (!note) return none;
   const text = ` ${note.toLowerCase()} `;
-  if (LOAN.test(text))
-    return {
-      category: LOANS,
-      business: null,
-      notAnExpense: false,
-      because: "loan",
-    };
+  if (LOAN.test(text)) return { ...none, category: LOANS, because: "loan" };
   if (DIVIDEND.test(text))
     return {
+      ...none,
       category: DIVIDENDS,
-      business: null,
-      notAnExpense: false,
       because: "dividend or profit share",
     };
   if (NOT_EXPENSE.test(text))
@@ -338,9 +344,9 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     for (const word of rule.words)
       if (hit(text, word))
         return {
+          ...none,
           category: rule.category,
           business: rule.business ?? "lounge",
-          notAnExpense: false,
           because: word,
         };
   return none;
