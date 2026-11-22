@@ -118,9 +118,9 @@ const addDays = (day: string, n: number) => {
 const weekdayOf = (day: string) =>
   WEEKDAYS[(new Date(`${day}T00:00:00Z`).getUTCDay() + 6) % 7];
 
-/** The slip's day: posted that day or within the 3 days before, on the weekday printed. */
+/** The slip's day: posted that day or within the 5 days before, on the weekday printed. */
 function dateFromWeekday(posted: string, weekday: string): string | null {
-  for (let i = 0; i <= 3; i++) {
+  for (let i = 0; i <= 5; i++) {
     const d = addDays(posted, -i);
     if (weekdayOf(d) === weekday) return d;
   }
