@@ -19,6 +19,11 @@ export function check(name: string, fn: () => void | Promise<void>) {
 
 /** Point the app at a fresh SQLite file. Call before importing server code. */
 export function freshDatabase(name: string): string {
+  // BOOKS_TEST_PG_URL runs the checks on Postgres; the caller gives each check file an empty database.
+  if (process.env.BOOKS_TEST_PG_URL) {
+    process.env.DATABASE_URL = process.env.BOOKS_TEST_PG_URL;
+    return process.env.BOOKS_TEST_PG_URL;
+  }
   const file = `./data/${name}.db`;
   for (const suffix of ["", "-wal", "-shm"])
     rmSync(file + suffix, { force: true });

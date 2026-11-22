@@ -5,6 +5,8 @@ const appTitle =
   rawAppTitle === "{" + "{APP_TITLE}}" ? "Blank app" : rawAppTitle;
 
 export default createAuthPlugin({
+  // Machine callers with no session; each checks its own secret or signature.
+  publicPaths: ["/api/books/cron/tick", "/api/moniepoint/webhook"],
   marketing: {
     appName: appTitle,
     tagline: "Your lounge and hub accounts, reconciled every day.",
