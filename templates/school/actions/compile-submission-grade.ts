@@ -6,6 +6,8 @@ import { and, eq, inArray } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 
+const HANDED_IN = new Set(["submitted", "graded"]);
+
 /**
  * Add up what a paper earned, question by question, into one grade.
  *
@@ -19,7 +21,7 @@ import { z } from "zod";
  */
 export default defineAction({
   description:
-    "Add up a student's per-question marks into a single grade for the activity. Always saved unpublished — the teacher reviews and publishes separately. Refuses while answers are unmarked, and reports anything flagged for review.",
+    "Add up a student's per-question marks into a single grade for the activity. Always saved unpublished — the teacher reviews and publishes separately. Only handed-in papers are compiled; drafts are skipped. Refuses while answers are unmarked, and reports anything flagged for review.",
   schema: z.object({
     assessmentId: z.string(),
     studentId: z
@@ -103,6 +105,12 @@ export default defineAction({
     const skipped: any[] = [];
 
     for (const submission of submissions) {
+      // A draft's few saved answers are not its grade, and grading it would
+      // close it before the learner hands in.
+      if (!HANDED_IN.has(submission.status)) {
+        skipped.push({ submissionId: submission.id, reason: "not handed in" });
+        continue;
+      }
       const mine = responses.filter(
         (r: any) => r.submissionId === submission.id,
       );
