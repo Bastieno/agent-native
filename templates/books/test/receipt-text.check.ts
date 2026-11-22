@@ -101,6 +101,22 @@ await check("a garbled label can't hide the date", () => {
   assert.ok(r.ok && r.receipt.date === "2025-09-08");
 });
 
+await check(
+  "a Moniepoint slip with an unreadable date uses the day it was posted",
+  () => {
+    const lines = moniepoint({
+      date: "Finay, Septembe 26:h 2025 | 4:5 PN",
+      narration: ["For business"],
+    });
+    const r = readReceiptText(lines, "2025-09-26");
+    assert.ok(r.ok);
+    if (r.ok) {
+      assert.equal(r.receipt.date, "2025-09-26");
+      assert.equal(r.receipt.dateGuessed, true);
+    }
+  },
+);
+
 await check("a narration can wrap over several lines", () => {
   const r = readReceiptText(
     moniepoint({

@@ -15,6 +15,8 @@ export interface ReadReceipt {
   /** YYYY-MM-DD */
   date: string;
   time: string | null;
+  /** The date couldn't be read off the slip; this is the day it was posted. */
+  dateGuessed?: boolean;
 }
 
 export type ReadResult =
@@ -149,8 +151,8 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
     WEEKDAYS,
     0.7,
   );
-  if (!weekday) return { ok: false, reason: "no date on the slip" };
-  const date = dateFromWeekday(posted, weekday);
+  // An unreadable date is taken from the day the slip was posted, and said so.
+  const date = weekday ? dateFromWeekday(posted, weekday) : posted;
   if (!date)
     return { ok: false, reason: "slip date doesn't match the day posted" };
   const names = `${get("business name") ?? ""} ${get("sender name") ?? ""}`;
@@ -167,6 +169,7 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
         ? "Moniepoint (lounge)"
         : "Moniepoint (main)",
       date,
+      dateGuessed: weekday ? undefined : true,
       time: dateText.match(/(\d{1,2}:\d\d\s*[AP]M)/i)?.[1] ?? null,
     },
   };
@@ -264,7 +267,7 @@ function readProvidus(lines: string[], posted: string): ReadResult {
 export function readReceiptText(lines: string[], postedOn: string): ReadResult {
   const clean = lines.map((l) => l.trim()).filter(Boolean);
   const text = clean.join(" ");
-  if (/providus/i.test(text)) return readProvidus(clean, postedOn);
+  if (/providus/i.test(clean[0] ?? "")) return readProvidus(clean, postedOn);
   if (clean[0] === "OPay" || /opay-inc/i.test(text))
     return readOpay(clean, postedOn);
   if (/Moni\w*point/i.test(text)) return readMoniepoint(clean, postedOn);

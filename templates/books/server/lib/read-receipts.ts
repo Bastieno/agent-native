@@ -88,7 +88,13 @@ export async function recordReceiptsFromText(
       business: guess.business ?? undefined,
       category: guess.category ?? undefined,
       paidWith: "transfer",
-      note: [r.note, `Paid from ${r.account}`].filter(Boolean).join(" · "),
+      note: [
+        r.note,
+        `Paid from ${r.account}`,
+        r.dateGuessed ? "date taken from when it was sent" : null,
+      ]
+        .filter(Boolean)
+        .join(" · "),
       status: "needs_review",
       source: "history",
       existingFile: { id: p.receipt_file_id, imageHash: p.image_hash },
