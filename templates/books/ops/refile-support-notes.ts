@@ -1,0 +1,58 @@
+/**
+ * Files expenses whose note is just "For support" or "For snacks" (or a misreading)
+ * under Owner's pay, with no business, and recalculates those days. Only
+ * expenses still waiting for review are changed.
+ *
+ * Usage: pnpm tsx ops/refile-support-notes.ts [--dry]
+ * Uses DATABASE_URL, or ./data/app.db when unset.
+ */
+process.env.DATABASE_URL ??= "file:./data/app.db";
+const dry = process.argv.includes("--dry");
+
+const { rows, run } = await import("../server/lib/sql.js");
+const { expenseNote } = await import("../server/lib/expense-note.js");
+const { guessExpense } = await import("../server/lib/expense-guess.js");
+const { OWNERS_PAY } = await import("../server/lib/setup.js");
+const { reconcileDays } = await import("../server/lib/reconcile-days.js");
+
+const waiting = await rows<{
+  id: string;
+  org_id: string;
+  occurred_on: string;
+  raw_text: string;
+  amount: number;
+  category: string | null;
+  business_id: string | null;
+}>(
+  `SELECT e.id, e.org_id, e.occurred_on, e.raw_text, e.amount, c.name AS category, e.business_id
+     FROM expenses e LEFT JOIN expense_categories c ON c.id = e.category_id
+    WHERE e.status = 'needs_review'`,
+);
+const move = waiting.filter((e) => {
+  const g = guessExpense(expenseNote(e.raw_text));
+  return (
+    g.category === OWNERS_PAY &&
+    g.because === "owner's own" &&
+    (e.category !== OWNERS_PAY || e.business_id !== null)
+  );
+});
+const total = move.reduce((a, e) => a + Number(e.amount), 0);
+console.log(
+  `${move.length} expenses to file under ${OWNERS_PAY}, ₦${(total / 100).toLocaleString()}`,
+);
+if (!dry) {
+  for (const e of move)
+    await run(
+      `UPDATE expenses SET category_id = (SELECT id FROM expense_categories WHERE org_id = ? AND name = ?), business_id = NULL
+        WHERE id = ? AND status = 'needs_review'`,
+      [e.org_id, OWNERS_PAY, e.id],
+    );
+  const byOrg = new Map<string, Set<string>>();
+  for (const e of move)
+    byOrg.set(e.org_id, (byOrg.get(e.org_id) ?? new Set()).add(e.occurred_on));
+  for (const [org, days] of byOrg) await reconcileDays(org, [...days]);
+  console.log(
+    `done; ${[...byOrg.values()].reduce((a, d) => a + d.size, 0)} days recalculated`,
+  );
+}
+process.exit(0);

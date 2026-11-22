@@ -283,6 +283,32 @@ await check("everyday notes find a category", () => {
   assert.equal(c("2 lamp holders and 2 light bulbs"), "Repairs");
 });
 
+await check(
+  "a note that is just support or snacks is the owner's pay, for no business",
+  () => {
+    for (const note of [
+      "For support",
+      "For supoort",
+      "For Supporl",
+      "Support",
+      "For\nSupport",
+    ]) {
+      const g = guessExpense(note);
+      assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
+    }
+    for (const note of ["For snacks", "Snacks", "For snack"]) {
+      const g = guessExpense(note);
+      assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
+    }
+    // Support of a particular kind is left to the owner, not taken as their pay.
+    assert.notEqual(guessExpense("Family support").category, "Owner's pay");
+    assert.notEqual(
+      guessExpense("10k sand, 5k support").category,
+      "Owner's pay",
+    );
+  },
+);
+
 await check("commission is a cost of its own", () => {
   assert.equal(guessExpense("For commission").category, "Commissions");
   assert.equal(guessExpense("For commission").notAnExpense, false);

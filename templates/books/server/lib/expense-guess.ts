@@ -1,5 +1,6 @@
 import { parseNarration } from "../../shared/narration.js";
-import { DIVIDENDS, LOANS } from "./setup.js";
+import { correctNote } from "../../shared/note-words.js";
+import { DIVIDENDS, LOANS, OWNERS_PAY } from "./setup.js";
 
 /**
  * Guesses an expense's category and business from the note on a transfer
@@ -318,6 +319,14 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
       because: `tagged ${said.tag}`,
       tagged: true,
     };
+  // "For support" or "For snacks" on its own is money to the owner, not a Lounge cost.
+  if (
+    note &&
+    /^(for\s+)?(support|snacks?)$/i.test(
+      correctNote(note).replace(/\s+/g, " ").trim(),
+    )
+  )
+    return { ...none, category: OWNERS_PAY, because: "owner's own" };
   if (kind === "AIRTIME")
     return {
       ...none,
