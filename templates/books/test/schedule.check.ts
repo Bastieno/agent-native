@@ -110,6 +110,7 @@ await check("a digest is only sent once", async () => {
   const { buildDigest, sendDigest } = await import("../server/lib/digests.js");
   process.env.WHATSAPP_ACCESS_TOKEN = "t";
   process.env.WHATSAPP_PHONE_NUMBER_ID = "p";
+  process.env.BOOKS_DIGEST_WHATSAPP = "1"; // WhatsApp digests are opt-in
   await query(`UPDATE books_settings SET recipients = ? WHERE org_id = ?`, [
     JSON.stringify([{ name: "Owner", whatsapp: "2348030000000" }]),
     ORG,
@@ -133,6 +134,13 @@ await check("a digest is only sent once", async () => {
     assert.equal(first.status, "sent");
     assert.equal(second.skipped, true);
     assert.equal(calls, 1);
+    // Without the opt-in, nothing goes to WhatsApp.
+    delete process.env.BOOKS_DIGEST_WHATSAPP;
+    calls = 0;
+    await query(`DELETE FROM digests WHERE org_id = ?`, [ORG]);
+    const again = await buildDigest(ORG, "daily", "2026-11-09", "2026-11-09");
+    await sendDigest(ORG, again.digestId);
+    assert.equal(calls, 0);
   } finally {
     globalThis.fetch = realFetch;
   }

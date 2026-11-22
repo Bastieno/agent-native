@@ -9,6 +9,7 @@ import {
   renderWhatsApp,
   summaryLine,
 } from "./digest-render.js";
+import { digestPdfName, renderDigestPdf } from "./digest-pdf.js";
 import { newId, nowIso } from "./ids.js";
 import { rows, run } from "./sql.js";
 import { sendWhatsAppTemplate } from "./whatsapp-send.js";
@@ -133,9 +134,11 @@ export async function sendDigest(orgId: string, id: string) {
     error?: string;
   }[] = [];
   const email = renderEmailDigest(d.figures, d.commentary, d.link);
+  const pdf = await renderDigestPdf(d.figures, d.commentary, d.link);
   const subject = `Books ${d.period === "range" ? "report" : `${d.period} digest`}: ${summaryLine(d.figures)}`;
   for (const p of people) {
-    if (p.whatsapp) {
+    // Digests go by email; WhatsApp ones cost per message, so they are opt-in.
+    if (p.whatsapp && process.env.BOOKS_DIGEST_WHATSAPP === "1") {
       try {
         const r = await sendWhatsAppTemplate(p.whatsapp, "books_digest", [
           summaryLine(d.figures),
@@ -166,6 +169,13 @@ export async function sendDigest(orgId: string, id: string) {
             subject,
             html: email.html,
             text: email.text,
+            attachments: [
+              {
+                filename: digestPdfName(d.figures),
+                content: pdf,
+                contentType: "application/pdf",
+              },
+            ],
           });
           results.push({ name: p.name, channel: "email", ok: true });
         } catch (err) {
