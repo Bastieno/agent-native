@@ -319,14 +319,19 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
       because: `tagged ${said.tag}`,
       tagged: true,
     };
-  // "For support" or "For snacks" on its own is money to the owner, not a Lounge cost.
-  if (
-    note &&
-    /^(for\s+)?(support|snacks?)$/i.test(
-      correctNote(note).replace(/\s+/g, " ").trim(),
+  // Support of any kind (family, church, school fees…) and "For snacks" are the
+  // owner's own money, not Lounge costs. A list of several things with amounts,
+  // or a salary, is left to the other rules.
+  if (note) {
+    const text = correctNote(note).replace(/\s+/g, " ").trim();
+    const support = /\bsupport\b/i.test(text);
+    const list = /\d+(\.\d+)?k\b|\d{3,}|,/i.test(text);
+    if (
+      (support && !list && !/salar/i.test(text)) ||
+      /^(for\s+)?snacks?$/i.test(text)
     )
-  )
-    return { ...none, category: OWNERS_PAY, because: "owner's own" };
+      return { ...none, category: OWNERS_PAY, because: "owner's own" };
+  }
   if (kind === "AIRTIME")
     return {
       ...none,

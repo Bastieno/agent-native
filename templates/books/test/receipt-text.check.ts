@@ -300,8 +300,20 @@ await check(
       const g = guessExpense(note);
       assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
     }
-    // Support of a particular kind is left to the owner, not taken as their pay.
-    assert.notEqual(guessExpense("Family support").category, "Owner's pay");
+    // Any kind of support is the owner's too.
+    for (const note of [
+      "Family support",
+      "From Chibuikem - Family Support",
+      "Church support",
+      "For Sab's Support",
+      "For seminar support",
+      "Support fer schocl fees",
+    ]) {
+      const g = guessExpense(note);
+      assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
+    }
+    // A list of several things, or a salary, is not taken as the owner's pay.
+    assert.notEqual(guessExpense("Salary|Support").category, "Owner's pay");
     assert.notEqual(
       guessExpense("10k sand, 5k support").category,
       "Owner's pay",
