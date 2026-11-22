@@ -5,6 +5,7 @@
  */
 export function expenseNote(rawText: string | null | undefined): string | null {
   if (!rawText) return null;
+  if (/^Paid from\b/i.test(rawText.trim())) return null;
   const note = rawText
     .split(" · Paid from")[0]
     .replace(/\s*Provider\s+Re\S*\s*\S*.*$/i, "")

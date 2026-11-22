@@ -36,8 +36,37 @@ export default function ReportsPage() {
     );
   }
   return (
-    <div className="flex-1 overflow-y-auto p-6">
-      <Table>
+    <div className="@container flex-1 overflow-y-auto p-4 sm:p-6">
+      <div className="divide-y divide-border @xl:hidden">
+        {digests.map((d) => (
+          <Link
+            key={d.digestId}
+            to={`/reports/${d.digestId}`}
+            className="flex items-center justify-between gap-3 py-3"
+          >
+            <span className="min-w-0">
+              <span className="block text-sm">
+                {rangeLabel(d.start, d.end)}
+              </span>
+              <span className="block text-xs text-muted-foreground">
+                {PERIOD[d.period] ?? d.period}
+                {d.status !== "sent"
+                  ? ` · ${d.status === "failed" ? "Not delivered" : "Not sent"}`
+                  : ""}
+              </span>
+            </span>
+            <span className="shrink-0 text-right text-sm tabular-nums">
+              <span className="block">{naira(d.income)}</span>
+              <span
+                className={`block text-xs ${d.net < 0 ? "text-red-600 dark:text-red-400" : "text-muted-foreground"}`}
+              >
+                net {naira(d.net)}
+              </span>
+            </span>
+          </Link>
+        ))}
+      </div>
+      <Table className="hidden @xl:table">
         <TableHeader>
           <TableRow>
             <TableHead>Period</TableHead>

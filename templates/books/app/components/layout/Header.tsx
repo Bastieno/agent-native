@@ -27,28 +27,40 @@ export function Header({ onOpenMobileSidebar }: HeaderProps) {
   const actions = useHeaderActions();
 
   return (
-    <header className="flex h-12 items-center gap-3 border-b border-border bg-background px-4 lg:px-6 shrink-0">
-      {onOpenMobileSidebar && (
-        <button
-          type="button"
-          onClick={onOpenMobileSidebar}
-          aria-label="Open navigation"
-          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-accent md:hidden"
-        >
-          <IconMenu2 className="h-4 w-4" />
-        </button>
-      )}
-      <div className="flex items-center gap-3 flex-1 min-w-0">
-        {title ?? (
-          <h1 className="text-lg font-semibold tracking-tight truncate">
-            {resolveTitle(location.pathname)}
-          </h1>
+    <>
+      <header className="flex h-12 items-center gap-3 border-b border-border bg-background px-4 lg:px-6 shrink-0">
+        {onOpenMobileSidebar && (
+          <button
+            type="button"
+            onClick={onOpenMobileSidebar}
+            aria-label="Open navigation"
+            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-accent md:hidden"
+          >
+            <IconMenu2 className="h-4 w-4" />
+          </button>
         )}
-      </div>
-      <div className="flex items-center gap-2 shrink-0">
-        {actions}
-        <AgentToggleButton />
-      </div>
-    </header>
+        <div className="flex items-center gap-3 flex-1 min-w-0">
+          {typeof title === "string" || title == null ? (
+            <h1 className="truncate whitespace-nowrap text-lg font-semibold tracking-tight">
+              {title ?? resolveTitle(location.pathname)}
+            </h1>
+          ) : (
+            title
+          )}
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          {actions && (
+            <div className="hidden items-center gap-2 sm:flex">{actions}</div>
+          )}
+          <AgentToggleButton />
+        </div>
+      </header>
+      {actions && (
+        // On a phone the page's controls get their own row under the title.
+        <div className="flex shrink-0 items-center justify-end gap-2 overflow-x-auto border-b border-border px-4 py-2 sm:hidden">
+          {actions}
+        </div>
+      )}
+    </>
   );
 }

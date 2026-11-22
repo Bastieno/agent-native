@@ -167,7 +167,7 @@ export default function ReviewPage() {
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
+    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6">
       {data.expensesWaiting > 0 && (
         <Card>
           <CardHeader className="pb-2">

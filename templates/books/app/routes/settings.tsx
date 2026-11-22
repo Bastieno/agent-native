@@ -32,7 +32,7 @@ function TransferNotes() {
           <span className="font-mono text-xs font-semibold">{t.tag}</span>
           <span className="min-w-0">
             {t.category}
-            <span className="block truncate font-mono text-xs text-muted-foreground">
+            <span className="block break-words font-mono text-xs text-muted-foreground sm:truncate">
               {t.example}
             </span>
           </span>
@@ -141,12 +141,12 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto p-6">
+    <div className="flex-1 overflow-y-auto p-4 sm:p-6">
       <Tabs
         value={params.get("tab") ?? "people"}
         onValueChange={(tab) => setParams({ tab }, { replace: true })}
       >
-        <TabsList>
+        <TabsList className="max-w-full justify-start overflow-x-auto">
           <TabsTrigger value="people">People</TabsTrigger>
           <TabsTrigger value="notes">Transfer notes</TabsTrigger>
           <TabsTrigger value="categories">Categories</TabsTrigger>

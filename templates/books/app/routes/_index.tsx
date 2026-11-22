@@ -22,17 +22,10 @@ import {
 } from "@/components/ui/chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   useSetHeaderActions,
   useSetPageTitle,
 } from "@/components/layout/HeaderActions";
+import { FiguresTable } from "@/components/FiguresTable";
 import { PeriodPicker, usePeriod, withPeriod } from "@/components/PeriodPicker";
 import {
   BUSINESS_NAMES,
@@ -186,7 +179,7 @@ export default function OverviewPage() {
   ];
 
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
+    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6">
       {data.staleDays != null && data.staleDays > 1 && (
         <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-sm">
           <span className="flex items-center gap-2">
@@ -228,69 +221,56 @@ export default function OverviewPage() {
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium">By business</CardTitle>
         </CardHeader>
-        <CardContent className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead />
-                <TableHead className="text-right">Money in</TableHead>
-                <TableHead className="text-right">Cost of goods</TableHead>
-                <TableHead className="text-right">Gross profit</TableHead>
-                <TableHead className="text-right">Expenses</TableHead>
-                <TableHead className="text-right">Net</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data.businesses.map((b) => (
-                <TableRow key={b.slug}>
-                  <TableCell>{BUSINESS_NAMES[b.slug] ?? b.slug}</TableCell>
-                  <TableCell className="text-right tabular-nums">
-                    {naira(b.income)}
-                  </TableCell>
-                  <TableCell className="text-right tabular-nums text-muted-foreground">
-                    {naira(b.costOfGoods)}
-                  </TableCell>
-                  <TableCell className="text-right tabular-nums">
-                    {naira(b.grossProfit)}
-                  </TableCell>
-                  <TableCell className="text-right tabular-nums text-muted-foreground">
-                    {naira(b.expenses)}
-                  </TableCell>
-                  <TableCell
-                    className={cn(
-                      "text-right font-medium tabular-nums",
+        <CardContent>
+          <FiguresTable
+            columns={[
+              "Money in",
+              "Cost of goods",
+              "Gross profit",
+              "Expenses",
+              "Net",
+            ]}
+            rows={[
+              ...data.businesses.map((b) => ({
+                name: BUSINESS_NAMES[b.slug] ?? b.slug,
+                cells: [
+                  { value: naira(b.income) },
+                  {
+                    value: naira(b.costOfGoods),
+                    className: "text-muted-foreground",
+                  },
+                  { value: naira(b.grossProfit) },
+                  {
+                    value: naira(b.expenses),
+                    className: "text-muted-foreground",
+                  },
+                  {
+                    value: naira(b.net),
+                    className: cn(
+                      "font-medium",
                       b.net < 0 && "text-red-600 dark:text-red-400",
-                    )}
-                  >
-                    {naira(b.net)}
-                  </TableCell>
-                </TableRow>
-              ))}
-              <TableRow className="font-medium">
-                <TableCell>Both</TableCell>
-                <TableCell className="text-right tabular-nums">
-                  {naira(c.income)}
-                </TableCell>
-                <TableCell className="text-right tabular-nums">
-                  {naira(c.costOfGoods)}
-                </TableCell>
-                <TableCell className="text-right tabular-nums">
-                  {naira(c.grossProfit)}
-                </TableCell>
-                <TableCell className="text-right tabular-nums">
-                  {naira(c.expenses)}
-                </TableCell>
-                <TableCell
-                  className={cn(
-                    "text-right tabular-nums",
-                    c.net < 0 && "text-red-600 dark:text-red-400",
-                  )}
-                >
-                  {naira(c.net)}
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+                    ),
+                  },
+                ],
+              })),
+              {
+                name: "Both",
+                strong: true,
+                cells: [
+                  { value: naira(c.income) },
+                  { value: naira(c.costOfGoods) },
+                  { value: naira(c.grossProfit) },
+                  { value: naira(c.expenses) },
+                  {
+                    value: naira(c.net),
+                    className: cn(
+                      c.net < 0 && "text-red-600 dark:text-red-400",
+                    ),
+                  },
+                ],
+              },
+            ]}
+          />
           <p className="mt-2 text-xs text-muted-foreground">
             Changes compare {comparedLabel} with {prevLabel}. Expenses include
             owner's pay of {naira(data.ownersPay)}
@@ -362,7 +342,7 @@ export default function OverviewPage() {
         </CardContent>
       </Card>
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">

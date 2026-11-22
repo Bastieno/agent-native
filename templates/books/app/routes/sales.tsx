@@ -20,17 +20,10 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   useSetHeaderActions,
   useSetPageTitle,
 } from "@/components/layout/HeaderActions";
+import { FiguresTable } from "@/components/FiguresTable";
 import { PeriodPicker, usePeriod } from "@/components/PeriodPicker";
 import {
   BUSINESS_NAMES,
@@ -162,7 +155,7 @@ export default function SalesPage() {
     : [];
 
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
+    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6">
       {!data ? null : data.orders === 0 ? (
         <div className="py-16 text-center text-sm text-muted-foreground">
           No sales in this period. Pick another period, or upload a Moniebook
@@ -220,37 +213,30 @@ export default function SalesPage() {
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium">By business</CardTitle>
             </CardHeader>
-            <CardContent className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead />
-                    <TableHead className="text-right">Money in</TableHead>
-                    <TableHead className="text-right">Cost of goods</TableHead>
-                    <TableHead className="text-right">Given away</TableHead>
-                    <TableHead className="text-right">Gross profit</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {businesses.map((b) => (
-                    <TableRow key={b}>
-                      <TableCell>{BUSINESS_NAMES[b] ?? b}</TableCell>
-                      <TableCell className="text-right tabular-nums">
-                        {naira(data.byBusiness[b])}
-                      </TableCell>
-                      <TableCell className="text-right tabular-nums text-muted-foreground">
-                        {naira(data.costOfGoods[b] ?? 0)}
-                      </TableCell>
-                      <TableCell className="text-right tabular-nums text-muted-foreground">
-                        {naira(data.givenAwayAtCost[b] ?? 0)}
-                      </TableCell>
-                      <TableCell className="text-right tabular-nums">
-                        {naira(data.grossProfit[b] ?? 0)}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+            <CardContent>
+              <FiguresTable
+                columns={[
+                  "Money in",
+                  "Cost of goods",
+                  "Given away",
+                  "Gross profit",
+                ]}
+                rows={businesses.map((b) => ({
+                  name: BUSINESS_NAMES[b] ?? b,
+                  cells: [
+                    { value: naira(data.byBusiness[b]) },
+                    {
+                      value: naira(data.costOfGoods[b] ?? 0),
+                      className: "text-muted-foreground",
+                    },
+                    {
+                      value: naira(data.givenAwayAtCost[b] ?? 0),
+                      className: "text-muted-foreground",
+                    },
+                    { value: naira(data.grossProfit[b] ?? 0) },
+                  ],
+                }))}
+              />
               {data.uncostedRevenue > 0 && (
                 <p className="mt-2 text-xs text-muted-foreground">
                   {naira(data.uncostedRevenue)} of sales have no cost yet, so
@@ -260,7 +246,7 @@ export default function SalesPage() {
             </CardContent>
           </Card>
 
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium">

@@ -41,6 +41,8 @@ await check("the note is what the slip says it was for", () => {
     "5 packs of chicken",
   );
   assert.equal(expenseNote(null), null);
+  // A slip with no note keeps only where it was paid from: there is no note.
+  assert.equal(expenseNote("Paid from Moniepoint (main)"), null);
 });
 
 await check(

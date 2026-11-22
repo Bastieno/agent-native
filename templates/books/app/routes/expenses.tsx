@@ -382,7 +382,7 @@ export default function ExpensesPage() {
 
   const filtered = !!(category || business || status);
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
+    <div className="@container flex flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
           <Select
@@ -464,53 +464,91 @@ export default function ExpensesPage() {
             : "No expenses in this period. Send a receipt to the WhatsApp number and it appears here."}
         </div>
       ) : (
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-20">Date</TableHead>
-              <TableHead>What for</TableHead>
-              <TableHead>Category</TableHead>
-              <TableHead>Business</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
+        <>
+          <div className="divide-y divide-border @3xl:hidden">
             {expenses.map((e) => (
-              <TableRow
+              <button
                 key={e.code}
-                className="cursor-pointer"
+                type="button"
                 onClick={() => select(e.code)}
+                className="flex w-full flex-col gap-0.5 py-3 text-left"
               >
-                <TableCell className="whitespace-nowrap text-muted-foreground">
-                  {shortDay(e.occurredOn)}
-                </TableCell>
-                <TableCell className="max-w-[22rem]">
-                  <div className="flex items-center gap-2">
+                <span className="flex items-center justify-between gap-3">
+                  <span className="flex min-w-0 items-center gap-2">
                     {e.status === "needs_review" && (
                       <span
                         className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"
-                        title="To review"
                         aria-label="To review"
                       />
                     )}
-                    <span className="truncate">{whatFor(e)}</span>
-                  </div>
-                </TableCell>
-                <TableCell className="text-muted-foreground">
-                  {e.category ?? "—"}
-                </TableCell>
-                <TableCell className="text-muted-foreground">
-                  {e.business ? BUSINESS_NAMES[e.business] : "—"}
-                </TableCell>
-                <TableCell
-                  className={`text-right tabular-nums ${e.isCost === false ? "text-muted-foreground italic" : ""}`}
-                >
-                  {naira(e.amount)}
-                </TableCell>
-              </TableRow>
+                    <span className="truncate text-sm">{whatFor(e)}</span>
+                  </span>
+                  <span
+                    className={`shrink-0 text-sm tabular-nums ${e.isCost === false ? "text-muted-foreground italic" : ""}`}
+                  >
+                    {naira(e.amount)}
+                  </span>
+                </span>
+                <span className="truncate text-xs text-muted-foreground">
+                  {[
+                    shortDay(e.occurredOn),
+                    e.category ?? "No category",
+                    e.business ? BUSINESS_NAMES[e.business] : null,
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </span>
+              </button>
             ))}
-          </TableBody>
-        </Table>
+          </div>
+          <Table className="hidden @3xl:table">
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-20">Date</TableHead>
+                <TableHead>What for</TableHead>
+                <TableHead>Category</TableHead>
+                <TableHead>Business</TableHead>
+                <TableHead className="text-right">Amount</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {expenses.map((e) => (
+                <TableRow
+                  key={e.code}
+                  className="cursor-pointer"
+                  onClick={() => select(e.code)}
+                >
+                  <TableCell className="whitespace-nowrap text-muted-foreground">
+                    {shortDay(e.occurredOn)}
+                  </TableCell>
+                  <TableCell className="max-w-[22rem]">
+                    <div className="flex items-center gap-2">
+                      {e.status === "needs_review" && (
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"
+                          title="To review"
+                          aria-label="To review"
+                        />
+                      )}
+                      <span className="truncate">{whatFor(e)}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-muted-foreground">
+                    {e.category ?? "—"}
+                  </TableCell>
+                  <TableCell className="text-muted-foreground">
+                    {e.business ? BUSINESS_NAMES[e.business] : "—"}
+                  </TableCell>
+                  <TableCell
+                    className={`text-right tabular-nums ${e.isCost === false ? "text-muted-foreground italic" : ""}`}
+                  >
+                    {naira(e.amount)}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </>
       )}
       {selected && (
         <ExpenseSheet
