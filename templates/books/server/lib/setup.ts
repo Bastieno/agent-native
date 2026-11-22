@@ -20,6 +20,12 @@ export const OWNERS_PAY = "Owner's pay";
 /** Money sent to a manager to buy stock, with no breakdown of what was bought. */
 export const MANAGER_FLOAT = "Manager float (not itemised)";
 
+/**
+ * Stock bought is already counted once, as cost of goods in gross profit, so it
+ * is shown apart and not taken off again as an expense.
+ */
+export const STOCK_CATEGORIES = ["Food & drink stock", MANAGER_FLOAT];
+
 export const LOANS = "Loans & repayments";
 export const MOVED = "Moved between accounts";
 export const CLIENT = "Paid for a client (repaid)";

@@ -176,7 +176,7 @@ export default function SalesPage() {
           />
         </div>
       </div>
-      {!data || data.orders === 0 ? (
+      {!data ? null : data.orders === 0 ? (
         <div className="py-16 text-center text-sm text-muted-foreground">
           No sales in these dates.
         </div>

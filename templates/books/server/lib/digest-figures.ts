@@ -56,6 +56,8 @@ export interface DigestFigures {
   expenseByCategory: Record<string, number>;
   /** Paid to the owner as their own pay; included in expenses, shown apart. */
   ownersPay: number;
+  /** Stock bought in the period: already in cost of goods, so not in expenses or net. */
+  stockBought: number;
   /** Money moved (loans, transfers between accounts, client purchases), not counted in expenses. */
   notCosts: Record<string, number>;
   /** Sent to a manager to buy stock with no breakdown; included in expenses, shown apart. */
@@ -523,6 +525,7 @@ export async function digestFigures(
     marginByCategory: current.marginByCategory,
     expenseByCategory,
     ownersPay: expenseByCategory[OWNERS_PAY] ?? 0,
+    stockBought: days.reduce((a, d) => a + (d.stockBought ?? 0), 0),
     notCosts: await movedRows(orgId, start, end),
     unitemised: expenseByCategory[MANAGER_FLOAT] ?? 0,
     subscriptionsByPlan,

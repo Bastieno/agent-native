@@ -88,8 +88,10 @@ await check("update and reconcile", async () => {
     }),
   );
   const r = await asOwner(() => reconcileDay.run({ day: "2026-11-09" }));
-  assert.equal(r.expensesByBusiness.lounge, 1200000);
-  assert.equal(r.expenses, 4500000 + 500000 + 4500000 + 1200000);
+  // Food & drink stock is already in cost of goods: shown apart, not an expense.
+  assert.equal(r.expensesByBusiness.lounge, undefined);
+  assert.equal(r.stockBought, 1200000);
+  assert.equal(r.expenses, 4500000 + 500000 + 4500000);
 });
 await check("list for a range", async () => {
   const r = await asPartner(() =>

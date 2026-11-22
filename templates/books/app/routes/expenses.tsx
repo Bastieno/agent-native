@@ -404,7 +404,7 @@ export default function ExpensesPage() {
           )}
         </div>
       </div>
-      {expenses.length === 0 ? (
+      {!data ? null : expenses.length === 0 ? (
         <div className="py-16 text-center text-sm text-muted-foreground">
           No expenses in these dates. Send a receipt to the WhatsApp number and
           it appears here.

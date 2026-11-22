@@ -55,6 +55,10 @@ export function renderWhatsApp(f: DigestFigures, link: string): string {
         .filter(Boolean)
         .join(" · "),
     );
+  if (f.stockBought > 0)
+    lines.push(
+      `Stock bought ${n(f.stockBought)} (cost of goods sold ${n(f.combined.costOfGoods)})`,
+    );
   const moved = Object.entries(f.notCosts ?? {});
   if (moved.length)
     lines.push(
@@ -108,6 +112,10 @@ export function renderEmailDigest(
   if (f.ownersPay > 0 || f.unitemised > 0)
     paragraphs.push(
       `Included in expenses: owner's pay ${n(f.ownersPay)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
+    );
+  if (f.stockBought > 0)
+    paragraphs.push(
+      `Stock bought ${n(f.stockBought)}, against cost of goods sold ${n(f.combined.costOfGoods)}. Stock is not taken off again as an expense.`,
     );
   const moved = Object.entries(f.notCosts ?? {});
   if (moved.length)

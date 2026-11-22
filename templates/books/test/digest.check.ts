@@ -170,7 +170,8 @@ await check(
       figures.combined.net,
       figures.combined.grossProfit - figures.combined.expenses,
     );
-    assert.ok(figures.combined.expenses >= 15000000);
+    assert.ok(figures.combined.expenses >= 10000000);
+    assert.equal(figures.stockBought, 5000000);
     const text = renderWhatsApp(figures, "https://books.test/reports/x");
     assert.match(text, /owner's pay/i);
   },

@@ -31,6 +31,8 @@ export interface DayInput {
     imageHash: string | null;
     /** false for money moved (loans, transfers, client purchases): not a running cost */
     isCost?: boolean;
+    /** stock bought: already in cost of goods, so not an operating expense */
+    isStock?: boolean;
   }[];
   /** categoryId → average daily spend over the previous 4 weeks (kobo). */
   categoryHistory: Record<string, number>;
@@ -98,6 +100,8 @@ export interface DayResult {
   expenses: number;
   /** Money moved that day (loans, transfers between accounts, client purchases): not in expenses. */
   notCosts: number;
+  /** Stock bought that day (food and drink for resale): in cost of goods, not in expenses. */
+  stockBought: number;
   expensesByBusiness: Record<string, number>;
   expensesByCategory: Record<string, number>;
   matchedEventIds: string[];
@@ -408,8 +412,10 @@ export function reconcileDay(input: DayInput): DayResult {
   const expensesByBusiness: Record<string, number> = {};
   const expensesByCategory: Record<string, number> = {};
   const costs = input.expenses.filter((e) => e.isCost !== false);
+  const operating = costs.filter((e) => !e.isStock);
   for (const e of costs) {
-    add(expensesByBusiness, e.businessSlug ?? "unassigned", e.amount);
+    if (!e.isStock)
+      add(expensesByBusiness, e.businessSlug ?? "unassigned", e.amount);
     add(expensesByCategory, e.categoryId ?? "uncategorised", e.amount);
     if (e.amount > thresholds.largeExpense)
       flags.push({ kind: "large_expense", expenseId: e.id, amount: e.amount });
@@ -447,7 +453,10 @@ export function reconcileDay(input: DayInput): DayResult {
     notIncome: { atCost, atMenu, byStaff },
     cash,
     cashInTill,
-    expenses: costs.reduce((a, e) => a + e.amount, 0),
+    expenses: operating.reduce((a, e) => a + e.amount, 0),
+    stockBought: costs
+      .filter((e) => e.isStock)
+      .reduce((a, e) => a + e.amount, 0),
     notCosts: input.expenses
       .filter((e) => e.isCost === false)
       .reduce((a, e) => a + e.amount, 0),
