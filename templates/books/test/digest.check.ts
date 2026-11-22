@@ -135,6 +135,46 @@ await check("whatsapp text has no customer or sender names", async () => {
   assert.match(text, /Hub/);
   assert.match(text, /₦/);
 });
+await check(
+  "owner's pay and the unitemised float are shown apart",
+  async () => {
+    const record = (await import("../actions/record-expense.js")).default;
+    const base = { occurredOn: "2026-11-05", paidWith: "transfer" as const };
+    await asOwner(() =>
+      record.run({
+        ...base,
+        vendor: "Owner",
+        amount: 100000,
+        category: "Owner's pay",
+      }),
+    );
+    await asOwner(() =>
+      record.run({
+        ...base,
+        vendor: "Manager",
+        amount: 50000,
+        business: "lounge",
+        category: "Manager float (not itemised)",
+      }),
+    );
+    const { figures } = await asOwner(() =>
+      buildDigest.run({
+        period: "weekly",
+        start: "2026-11-02",
+        end: "2026-11-08",
+      }),
+    );
+    assert.equal(figures.ownersPay, 10000000);
+    assert.equal(figures.unitemised, 5000000);
+    assert.equal(
+      figures.combined.net,
+      figures.combined.grossProfit - figures.combined.expenses,
+    );
+    assert.ok(figures.combined.expenses >= 15000000);
+    const text = renderWhatsApp(figures, "https://books.test/reports/x");
+    assert.match(text, /owner's pay/i);
+  },
+);
 await check("partner cannot build", async () => {
   await assert.rejects(
     () =>

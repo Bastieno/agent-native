@@ -15,6 +15,11 @@ export const CATEGORY_BUSINESS: Record<string, "lounge" | "hub"> = {
   Water: "lounge",
 };
 
+/** Money to the owner for their own pay, kept out of the running costs. */
+export const OWNERS_PAY = "Owner's pay";
+/** Money sent to a manager to buy stock, with no breakdown of what was bought. */
+export const MANAGER_FLOAT = "Manager float (not itemised)";
+
 export const EXPENSE_CATEGORIES = [
   "Food & drink stock",
   "Diesel / power",
@@ -23,6 +28,8 @@ export const EXPENSE_CATEGORIES = [
   "Repairs",
   "Internet",
   "Supplies",
+  OWNERS_PAY,
+  MANAGER_FLOAT,
   "Other",
 ];
 
@@ -41,6 +48,31 @@ export const DEFAULT_THRESHOLDS: Thresholds = {
 };
 
 const seeded = new Set<string>();
+
+/** Adds any default expense category the org doesn't have yet; never touches existing ones. */
+export async function ensureExpenseCategories(orgId: string): Promise<void> {
+  const exec = getDbExec();
+  const have = new Set(
+    (
+      await exec.execute({
+        sql: `SELECT name FROM expense_categories WHERE org_id = ?`,
+        args: [orgId],
+      })
+    ).rows.map((r) => String((r as { name: string }).name)),
+  );
+  const top = await exec.execute({
+    sql: `SELECT COALESCE(MAX(sort), -1) AS top FROM expense_categories WHERE org_id = ?`,
+    args: [orgId],
+  });
+  let sort = Number((top.rows[0] as { top: number }).top) + 1;
+  for (const name of EXPENSE_CATEGORIES) {
+    if (have.has(name)) continue;
+    await exec.execute({
+      sql: `INSERT INTO expense_categories (id, name, sort, created_at, org_id, visibility) VALUES (?, ?, ?, ?, ?, 'org')`,
+      args: [newId(), name, sort++, nowIso(), orgId],
+    });
+  }
+}
 
 /** Idempotent: businesses, item categories, expense categories and settings for an org. */
 export async function ensureBooksSetup(orgId: string): Promise<void> {
@@ -75,19 +107,7 @@ export async function ensureBooksSetup(orgId: string): Promise<void> {
       });
     }
   }
-  const expenseCount = await exec.execute({
-    sql: `SELECT COUNT(*) AS n FROM expense_categories WHERE org_id = ?`,
-    args: [orgId],
-  });
-  if (Number((expenseCount.rows[0] as { n: number }).n) === 0) {
-    let sort = 0;
-    for (const name of EXPENSE_CATEGORIES) {
-      await exec.execute({
-        sql: `INSERT INTO expense_categories (id, name, sort, created_at, org_id, visibility) VALUES (?, ?, ?, ?, ?, 'org')`,
-        args: [newId(), name, sort++, at, orgId],
-      });
-    }
-  }
+  await ensureExpenseCategories(orgId);
   const settings = await exec.execute({
     sql: `SELECT org_id FROM books_settings WHERE org_id = ?`,
     args: [orgId],

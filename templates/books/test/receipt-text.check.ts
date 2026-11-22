@@ -230,6 +230,13 @@ await check("guesses a category and business from the note", () => {
   assert.equal(g(null).category, null);
 });
 
+await check("costs go to the Lounge unless the note says Hub", () => {
+  assert.equal(guessExpense("June Salary").business, "lounge");
+  assert.equal(guessExpense("For welding work").business, "lounge");
+  assert.equal(guessExpense("For starlink").business, "hub");
+  assert.equal(guessExpense("zzz").business, null); // no category, no guess
+});
+
 await check("loans, profit and commission are not expenses", () => {
   for (const note of [
     "Part payment for loan",

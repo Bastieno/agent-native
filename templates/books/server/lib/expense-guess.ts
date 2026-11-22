@@ -226,7 +226,12 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     because: null,
   };
   if (kind === "AIRTIME")
-    return { ...none, category: "Other", because: "airtime" };
+    return {
+      ...none,
+      category: "Other",
+      business: "lounge",
+      because: "airtime",
+    };
   if (!note) return none;
   const text = ` ${note.toLowerCase()} `;
   if (NOT_EXPENSE.test(text))
@@ -240,7 +245,7 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
       if (hit(text, word))
         return {
           category: rule.category,
-          business: rule.business,
+          business: rule.business ?? "lounge",
           notAnExpense: false,
           because: word,
         };

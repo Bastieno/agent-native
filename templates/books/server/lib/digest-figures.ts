@@ -2,6 +2,7 @@
  * Everything a digest says, computed in code. The agent only words it.
  * Money is kobo; days are Lagos `YYYY-MM-DD`.
  */
+import { MANAGER_FLOAT, OWNERS_PAY } from "./setup.js";
 import { addDays, daysBetween, weekdayIndex } from "./lagos-time.js";
 import type { DayResult, Flag } from "./reconcile.js";
 import { reconcileOne } from "./reconcile-days.js";
@@ -53,6 +54,10 @@ export interface DigestFigures {
   };
   marginByCategory: Record<string, number>;
   expenseByCategory: Record<string, number>;
+  /** Paid to the owner as their own pay; included in expenses, shown apart. */
+  ownersPay: number;
+  /** Sent to a manager to buy stock with no breakdown; included in expenses, shown apart. */
+  unitemised: number;
   subscriptionsByPlan: Record<string, number>;
   categoryMonths: { month: string; byCategory: Record<string, number> }[];
   trends: Signal[];
@@ -502,6 +507,8 @@ export async function digestFigures(
     byStaff: { sales: salesByStaff, givenAwayAtCost: notIncome.byStaff },
     marginByCategory: current.marginByCategory,
     expenseByCategory,
+    ownersPay: expenseByCategory[OWNERS_PAY] ?? 0,
+    unitemised: expenseByCategory[MANAGER_FLOAT] ?? 0,
     subscriptionsByPlan,
     categoryMonths,
     trends,

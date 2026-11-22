@@ -72,6 +72,12 @@ text you already have. Loans, profit payouts and commissions stay pending (they
 are not running costs), as do slips it can't read (Providus, photos). Read
 those with `record-expense-from-receipt`.
 
+Two expense categories are kept apart in digests: **Owner's pay** (money to the
+owner for their own pay) and **Manager float (not itemised)** (money sent to
+someone to buy stock, with no breakdown). Both count in expenses; digests show
+them as their own line, with net before owner's pay. Costs default to the
+Lounge; only internet (Starlink, network) goes to the Hub unless told otherwise.
+
 ## On WhatsApp
 
 Messages to Books' WhatsApp number come from the owner (or the partner, if

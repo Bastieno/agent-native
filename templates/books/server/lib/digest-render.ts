@@ -44,6 +44,17 @@ export function renderWhatsApp(f: DigestFigures, link: string): string {
   lines.push(
     `Net ${n(f.combined.net)}${f.cashInTill != null && f.period === "daily" ? ` · cash in till ${n(f.cashInTill)}` : ""}`,
   );
+  if (f.ownersPay > 0 || f.unitemised > 0)
+    lines.push(
+      [
+        f.ownersPay > 0 ? `of which owner's pay ${n(f.ownersPay)}` : null,
+        f.unitemised > 0
+          ? `sent for stock, not itemised ${n(f.unitemised)}`
+          : null,
+      ]
+        .filter(Boolean)
+        .join(" · "),
+    );
   const good = f.trends
     .filter((s) => s.direction === "good")
     .slice(0, 2)
@@ -89,6 +100,10 @@ export function renderEmailDigest(
   paragraphs.push(
     `Both: income ${n(f.combined.income)}, net ${n(f.combined.net)}${f.combined.margin != null ? `, margin ${f.combined.margin}%` : ""}.`,
   );
+  if (f.ownersPay > 0 || f.unitemised > 0)
+    paragraphs.push(
+      `Included in expenses: owner's pay ${n(f.ownersPay)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
+    );
   const given = f.notIncome.atCost;
   paragraphs.push(
     `Given away at cost: The House ${n(given.house)}, subscriber meals ${n(given.perk)}, leakages and missing stock ${n(given.leakages)}.`,
