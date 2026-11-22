@@ -80,6 +80,12 @@
 }
 
 @theme inline {
+  --color-principal: hsl(var(--principal));
+  --color-teacher: hsl(var(--teacher));
+  --color-learner: hsl(var(--learner));
+  --color-principal-ink: hsl(var(--principal-ink));
+  --color-teacher-ink: hsl(var(--teacher-ink));
+  --color-learner-ink: hsl(var(--learner-ink));
   --color-alert: hsl(var(--alert));
   --color-attention: hsl(var(--attention));
   --color-success: hsl(var(--success));
@@ -111,9 +117,23 @@
   --color-muted-foreground: hsl(var(--muted-foreground));
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
+
+  /* The logo's three bars, one for each person in a school. The -ink shades
+     are for text on the page background, where the bar colours are too light
+     to read. */
+  --principal: 337 76% 59%;
+  --teacher: 33 100% 47%;
+  --learner: 228 69% 55%;
+  --principal-ink: 338 68% 45%;
+  --teacher-ink: 30 100% 33%;
+  --learner-ink: 228 62% 47%;
 }
 
 .dark .landing {
+  --principal-ink: 337 85% 72%;
+  --teacher-ink: 36 95% 62%;
+  --learner-ink: 228 90% 76%;
+
   --background: 30 8% 7%;
   --foreground: 40 20% 92%;
   --card: 30 7% 10%;

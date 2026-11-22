@@ -13,6 +13,8 @@ export type Action =
       /** Wait for the Nth match (1-based) instead of the first. */
       nth?: number;
     }
+  /** Scroll smoothly until the element's top is at the top of its scroll area. */
+  | { do: "scrollTo"; selector: string }
   /** Press a key, e.g. "Enter". */
   | { do: "press"; key: string }
   | { do: "hold"; ms: number }
@@ -91,6 +93,8 @@ export type Demo = SingleDemo | SceneDemo;
 /** What the recorder needs for one scene. */
 export interface RecordInput {
   device?: "phone";
+  /** A desktop window of this size in CSS pixels, recorded at double resolution. Default 1920x1080 at 1x. */
+  viewport?: { width: number; height: number };
   slug: string;
   title: string;
   signInAs: string;

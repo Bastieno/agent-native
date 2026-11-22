@@ -67,6 +67,7 @@ function framesToVideo(
   dir: string,
   out: string,
   endT: number,
+  size: { width: number; height: number },
 ): void {
   if (!frames.length)
     throw new Error("The phone screencast captured no frames.");
@@ -92,7 +93,7 @@ function framesToVideo(
     "-i",
     list,
     "-vf",
-    `fps=30,scale=${PHONE.width * PHONE.scale}:${PHONE.height * PHONE.scale}`,
+    `fps=30,scale=${size.width}:${size.height}`,
     "-c:v",
     "libvpx-vp9",
     "-b:v",
@@ -149,6 +150,14 @@ async function perform(
       return page.waitForTimeout(a.ms);
     case "press":
       return page.keyboard.press(a.key);
+    case "scrollTo":
+      await page
+        .locator(a.selector)
+        .last()
+        .evaluate((el) =>
+          el.scrollIntoView({ block: "start", behavior: "smooth" }),
+        );
+      return page.waitForTimeout(900);
     case "move":
       return page.mouse.move(a.x, a.y, { steps: 20 });
     case "waitFor":
@@ -195,12 +204,19 @@ export async function record(
   const cookies = await signInCookies(baseUrl, demo.signInAs);
   const rawDir = fs.mkdtempSync(path.join(os.tmpdir(), "demo-raw-"));
   const phone = demo.device === "phone";
+  // A phone, or a desktop window of a chosen size, is taken from the browser's
+  // screencast at double resolution; the default 1920x1080 uses Playwright's video.
+  const sharp = phone
+    ? PHONE
+    : demo.viewport
+      ? { ...demo.viewport, scale: 2 }
+      : null;
   const browser = await chromium.launch({ slowMo: 300 });
   const context = await browser.newContext({
-    viewport: phone
-      ? { width: PHONE.width, height: PHONE.height }
+    viewport: sharp
+      ? { width: sharp.width, height: sharp.height }
       : { width: W, height: H },
-    deviceScaleFactor: phone ? PHONE.scale : 1,
+    deviceScaleFactor: sharp ? sharp.scale : 1,
     ...(phone
       ? {
           isMobile: true,
@@ -209,7 +225,7 @@ export async function record(
             "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
         }
       : {}),
-    ...(phone
+    ...(sharp
       ? {}
       : { recordVideo: { dir: rawDir, size: { width: W, height: H } } }),
   });
@@ -217,15 +233,15 @@ export async function record(
   await context.addInitScript(phone ? TOUCH : CURSOR);
   const page = await context.newPage();
   // Playwright's own video is captured in CSS pixels, which is too soft on a
-  // phone. Take the browser's screencast at device pixels instead.
-  const phoneFrames: { file: string; t: number }[] = [];
+  // phone or a sharp desktop. Take the browser's screencast at device pixels instead.
+  const screenFrames: { file: string; t: number }[] = [];
   let cdp: Awaited<ReturnType<typeof context.newCDPSession>> | null = null;
-  if (phone) {
+  if (sharp) {
     cdp = await context.newCDPSession(page);
     cdp.on("Page.screencastFrame", (f: any) => {
-      const file = path.join(rawDir, `f${phoneFrames.length}.jpg`);
+      const file = path.join(rawDir, `f${screenFrames.length}.jpg`);
       fs.writeFileSync(file, Buffer.from(f.data, "base64"));
-      phoneFrames.push({ file, t: f.metadata.timestamp });
+      screenFrames.push({ file, t: f.metadata.timestamp });
       cdp!
         .send("Page.screencastFrameAck", { sessionId: f.sessionId })
         .catch(() => {});
@@ -233,8 +249,8 @@ export async function record(
     await cdp.send("Page.startScreencast", {
       format: "jpeg",
       quality: 90,
-      maxWidth: PHONE.width * PHONE.scale,
-      maxHeight: PHONE.height * PHONE.scale,
+      maxWidth: sharp.width * sharp.scale,
+      maxHeight: sharp.height * sharp.scale,
       everyNthFrame: 1,
     });
   }
@@ -293,7 +309,7 @@ export async function record(
     steps.push({ startMs, endMs: Date.now(), clicks });
   }
   await page.waitForTimeout(300);
-  const video = phone ? null : page.video()!;
+  const video = sharp ? null : page.video()!;
   const stoppedAt = Date.now() / 1000;
   if (cdp) await cdp.send("Page.stopScreencast").catch(() => {});
   await context.close();
@@ -306,7 +322,11 @@ export async function record(
 
   const videoPath = path.join(workDir, "screen.webm");
   if (video) fs.renameSync(raw, videoPath);
-  else framesToVideo(phoneFrames, rawDir, videoPath, stoppedAt);
+  else
+    framesToVideo(screenFrames, rawDir, videoPath, stoppedAt, {
+      width: sharp!.width * sharp!.scale,
+      height: sharp!.height * sharp!.scale,
+    });
   fs.rmSync(rawDir, { recursive: true, force: true });
 
   // Clock time → video time.
@@ -314,18 +334,16 @@ export async function record(
   const shift = flashAtMs - redAt;
   const toVideo = (ms: number) => ms + shift;
   const timeline: Timeline = {
-    width: phone ? PHONE.width * PHONE.scale : W,
-    height: phone ? PHONE.height * PHONE.scale : H,
+    width: sharp ? sharp.width * sharp.scale : W,
+    height: sharp ? sharp.height * sharp.scale : H,
     videoOffsetMs: shift,
     flashAtMs,
-    steps: steps.map(
-      (s, index): StepTiming => ({
-        index,
-        startMs: toVideo(s.startMs),
-        endMs: toVideo(s.endMs),
-        clicks: s.clicks.map((c) => ({ ...c, atMs: toVideo(c.atMs) })),
-      }),
-    ),
+    steps: steps.map((s, index): StepTiming => ({
+      index,
+      startMs: toVideo(s.startMs),
+      endMs: toVideo(s.endMs),
+      clicks: s.clicks.map((c) => ({ ...c, atMs: toVideo(c.atMs) })),
+    })),
   };
   fs.writeFileSync(
     path.join(workDir, "timeline.json"),

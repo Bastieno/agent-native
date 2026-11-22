@@ -54,7 +54,8 @@
     "report:pilot-bookings": "tsx ops/pilot-bookings.ts",
     "demo": "tsx demo-studio/cli.ts",
     "demo:snapshot": "tsx demo-studio/snapshot.ts",
-    "demo:check": "for f in demo-studio/*.check.ts; do tsx $f || exit 1; done"
+    "demo:check": "for f in demo-studio/*.check.ts; do tsx $f || exit 1; done",
+    "demo:landing": "tsx demo-studio/landing.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",
