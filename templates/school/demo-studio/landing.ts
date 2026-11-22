@@ -48,6 +48,8 @@ interface Clip {
   signInAs: (e: Edition) => string;
   start: (d: Device) => Action[];
   parts: (e: Edition, d: Device) => Part[];
+  /** Recorded in another school than the edition's usual one. */
+  school?: (e: Edition) => SchoolId;
 }
 
 const people: Record<
@@ -82,12 +84,7 @@ const asking = (text: string, d: Device): Part[] => [
     actions: [{ do: "waitFor", selector: idle, timeoutMs: 300_000 }],
     speed: 8,
   },
-  {
-    actions: [
-      { do: "scrollTo", selector: `text=${JSON.stringify(text)}` },
-      hold(4000),
-    ],
-  },
+  { actions: [hold(4000)] },
 ];
 
 const CLIPS: Clip[] = [
@@ -99,9 +96,14 @@ const CLIPS: Clip[] = [
       { do: "goto", path: "/admin" },
       { do: "waitFor", selector: "text=Needs attention" },
     ],
-    parts: (_e, d) => [
+    parts: (e, d) => [
       { actions: [hold(900)] },
-      ...asking("What needs my attention this week?", d),
+      ...asking(
+        e === "ng"
+          ? "Which learners are struggling this term, and why?"
+          : "Which students are struggling this quarter, and why?",
+        d,
+      ),
     ],
   },
   {
@@ -112,58 +114,14 @@ const CLIPS: Clip[] = [
       { do: "goto", path: "/admin/timetable" },
       { do: "waitFor", selector: 'role=button[name="Generate"]' },
     ],
-    // Crestfield already has its term's timetable, so a new one is refused and
-    // the clip walks through the one there. Yellow View's quarter has none:
-    // its desktop clip generates one and accepts it, which is also what gives
-    // its learner a week to show in the clips after it.
-    parts: (e, d) => {
-      if (e === "us" && d === "desktop") {
-        return [
-          {
-            actions: [
-              hold(1500),
-              { do: "click", selector: 'role=button[name="Generate"]' },
-            ],
-          },
-          {
-            actions: [
-              {
-                do: "waitFor",
-                selector: 'role=button[name="Accept"]',
-                timeoutMs: 180_000,
-              },
-            ],
-            speed: 4,
-          },
-          {
-            actions: [
-              hold(3000),
-              { do: "click", selector: 'role=button[name="Accept"]' },
-              hold(700),
-              {
-                do: "click",
-                selector: 'role=alertdialog >> role=button[name="Accept"]',
-              },
-              {
-                do: "waitFor",
-                selector: "text=/^Proposal/",
-                gone: true,
-                timeoutMs: 60_000,
-              },
-              hold(2500),
-            ],
-          },
-        ];
-      }
-      const [first, second, third] =
-        e === "ng" ? ["JSS1A", "SS2A", "SS3B"] : ["9A", "11A", "12B"];
-      const arm = (from: string, to: string): Action[] => [
-        { do: "click", selector: `role=combobox >> text=/^${from}$/` },
-        hold(500),
-        { do: "click", selector: `role=option[name="${to}"]` },
-        hold(2200),
-      ];
-      return d === "phone"
+    // A timetable being made is the story, so Crestfield's is recorded in
+    // its copy from before the timetable (the one after a term already has
+    // one, and asking for another is refused). Yellow View's quarter has none.
+    // The desktop clip generates and accepts it, which also gives the phone
+    // clip, and Yellow View's learner, a week to show.
+    school: (e) => (e === "ng" ? "crestfield" : people[e].school),
+    parts: (_e, d) =>
+      d === "phone"
         ? [
             {
               actions: [
@@ -179,12 +137,38 @@ const CLIPS: Clip[] = [
             {
               actions: [
                 hold(1500),
-                ...arm(first, second),
-                ...arm(second, third),
+                { do: "click", selector: 'role=button[name="Generate"]' },
               ],
             },
-          ];
-    },
+            {
+              actions: [
+                {
+                  do: "waitFor",
+                  selector: 'role=button[name="Accept"]',
+                  timeoutMs: 180_000,
+                },
+              ],
+              speed: 4,
+            },
+            {
+              actions: [
+                hold(3000),
+                { do: "click", selector: 'role=button[name="Accept"]' },
+                hold(700),
+                {
+                  do: "click",
+                  selector: 'role=alertdialog >> role=button[name="Accept"]',
+                },
+                {
+                  do: "waitFor",
+                  selector: "text=/^Proposal/",
+                  gone: true,
+                  timeoutMs: 60_000,
+                },
+                hold(2500),
+              ],
+            },
+          ],
   },
   {
     name: "teacher-mark",
@@ -314,50 +298,54 @@ if (names.some((n) => !CLIPS.find((c) => c.name === n))) {
   );
 }
 
+// Each school starts once from its snapshot and records its clips in order,
+// so a clip can rely on what an earlier one in the same school did.
 for (const edition of editions) {
-  const { school } = people[edition];
-  restoreSnapshot(undefined, school);
-  const server = await startDemoServer(school);
-  try {
-    for (const clip of clips) {
-      for (const device of clip.devices) {
-        const label = `${edition}/${clip.name}-${device}`;
-        console.log(`· ${label}`);
-        const parts = clip.parts(edition, device);
-        const steps: Step[] = parts.map((p, i) => ({
-          line: `${clip.name} part ${i + 1}`,
-          actions: p.actions,
-        }));
-        const work = path.join(WORK, edition, `${clip.name}-${device}`);
-        const { videoPath, timeline } = await record(
-          {
-            slug: clip.name,
-            title: clip.name,
-            signInAs: clip.signInAs(edition),
-            start: clip.start(device),
-            steps,
-            ...(device === "phone"
-              ? { device: "phone" as const }
-              : { viewport: DESKTOP }),
-          },
-          server.url,
-          work,
-        );
-        const dir = path.join(OUT, edition);
-        fs.mkdirSync(dir, { recursive: true });
-        const out = path.join(dir, `${clip.name}-${device}.mp4`);
-        encode(
-          videoPath,
-          parts,
-          timeline.steps,
-          out,
-          device === "phone" ? 780 : 1920,
-        );
-        const kb = Math.round(fs.statSync(out).size / 1024);
-        console.log(`  ${path.relative(ROOT, out)} (${kb} KB)`);
+  const schoolOf = (c: Clip) => c.school?.(edition) ?? people[edition].school;
+  for (const school of [...new Set(clips.map(schoolOf))]) {
+    restoreSnapshot(undefined, school);
+    const server = await startDemoServer(school);
+    try {
+      for (const clip of clips.filter((c) => schoolOf(c) === school)) {
+        for (const device of clip.devices) {
+          const label = `${edition}/${clip.name}-${device}`;
+          console.log(`· ${label}`);
+          const parts = clip.parts(edition, device);
+          const steps: Step[] = parts.map((p, i) => ({
+            line: `${clip.name} part ${i + 1}`,
+            actions: p.actions,
+          }));
+          const work = path.join(WORK, edition, `${clip.name}-${device}`);
+          const { videoPath, timeline } = await record(
+            {
+              slug: clip.name,
+              title: clip.name,
+              signInAs: clip.signInAs(edition),
+              start: clip.start(device),
+              steps,
+              ...(device === "phone"
+                ? { device: "phone" as const }
+                : { viewport: DESKTOP }),
+            },
+            server.url,
+            work,
+          );
+          const dir = path.join(OUT, edition);
+          fs.mkdirSync(dir, { recursive: true });
+          const out = path.join(dir, `${clip.name}-${device}.mp4`);
+          encode(
+            videoPath,
+            parts,
+            timeline.steps,
+            out,
+            device === "phone" ? 780 : 1920,
+          );
+          const kb = Math.round(fs.statSync(out).size / 1024);
+          console.log(`  ${path.relative(ROOT, out)} (${kb} KB)`);
+        }
       }
+    } finally {
+      await server.stop();
     }
-  } finally {
-    await server.stop();
   }
 }

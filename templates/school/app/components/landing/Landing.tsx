@@ -300,7 +300,7 @@ export function Landing({
             </Feature>
             <Feature
               title="A timetable that knows your day."
-              body={`${c.dayLine} Ask for one and accept the proposal when it looks right.`}
+              body={`${c.dayLine} Generate one and accept the proposal when it looks right.`}
             >
               <Screen
                 edition={edition}

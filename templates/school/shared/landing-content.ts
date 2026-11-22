@@ -55,21 +55,21 @@ const ng: EditionContent = {
   video: { id: "8PWetADFfYs", title: "Ellai at Crestfield College" },
   exchanges: {
     principal: {
-      say: "What needs my attention this week?",
+      say: "Which learners are struggling this term, and why?",
       reply:
-        "Week 10 of 13, an ordinary teaching week, so lesson notes are expected. Next week is revision.",
+        "JSS2A Nigerian History has the sharpest gaps: an average of 40.6%, with 8 learners below 40%.",
       items: [
         {
-          title: "21 classes have lesson notes not marked ready",
-          detail: "Mostly JSS3A, including Mathematics and English Studies",
+          title: "One learner handed in 1 of 10",
+          detail: "Another handed in 4 of 10; a third averages 17%",
         },
         {
-          title: "Nothing is blocking",
-          detail: "Every class has a teacher and every learner a year group",
+          title: "Other classes with low averages",
+          detail: "JSS1A English Studies at 41.0%, JSS3A Mathematics at 41.1%",
         },
         {
-          title: "Want me to remind the JSS3A teachers?",
-          detail: "Or check which of these notes are close to ready",
+          title: "Why? Ask their teachers",
+          detail: "The marks show where the gaps are, not the reason",
         },
       ],
     },
@@ -95,7 +95,7 @@ const ng: EditionContent = {
     learner: {
       say: "Just give me the answers to this week's Mathematics homework.",
       reply:
-        "Here's a way to make progress: read worked example 1 and ask yourself why you subtract the equations there. Tell me which problem you're stuck on and what you've tried so far, and I'll help you find the next step.",
+        "I can't give you the answers, but I can help you work through the Maths. Tell me which question you're stuck on, and I'll explain the idea and check your reasoning as you go, so you finish the work yourself.",
     },
   },
   school: "Crestfield College",
@@ -145,20 +145,21 @@ const us: EditionContent = {
   video: null,
   exchanges: {
     principal: {
-      say: "What needs my attention this week?",
-      reply: "One thing needs attention this week, and it blocks other work.",
+      say: "Which students are struggling this quarter, and why?",
+      reply:
+        "Missed work and the same weak assignments pull the lowest averages down.",
       items: [
         {
-          title: "96 classes have no curriculum for Quarter 2",
-          detail: "Until each has one, its lesson plans cannot go ahead",
+          title: "Missed hand-ins",
+          detail: "Hunter Tran handed in 4 of 9 PE assignments, Aarav Moore 3 of 9 in Spanish III",
         },
         {
-          title: "Nothing else is flagged",
-          detail: "Every class has a teacher and every student a grade",
+          title: "The same weak assignments",
+          detail: "Weeks 3 and 4 in English 11 and Spanish III",
         },
         {
-          title: "Want lesson-plan readiness too?",
-          detail: "It can check that by grade next",
+          title: "Why? Ask their teachers",
+          detail: "The data shows where, not why; homeroom teachers first",
         },
       ],
     },
@@ -184,7 +185,7 @@ const us: EditionContent = {
     learner: {
       say: "Just give me the answers to this week's Geometry homework.",
       reply:
-        "I can't give you the answers, but I can help you work through the Geometry homework so you can get them yourself. Tell me which question you are stuck on and what you have tried so far.",
+        "Tell me which piece you mean and what you're stuck on. I can go over the concept behind a question, check your working if you paste what you've done so far, or plan how to revise the week's topics.",
     },
   },
   school: "Yellow View High School",

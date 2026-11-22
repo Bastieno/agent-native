@@ -150,14 +150,6 @@ async function perform(
       return page.waitForTimeout(a.ms);
     case "press":
       return page.keyboard.press(a.key);
-    case "scrollTo":
-      await page
-        .locator(a.selector)
-        .last()
-        .evaluate((el) =>
-          el.scrollIntoView({ block: "start", behavior: "smooth" }),
-        );
-      return page.waitForTimeout(900);
     case "move":
       return page.mouse.move(a.x, a.y, { steps: 20 });
     case "waitFor":

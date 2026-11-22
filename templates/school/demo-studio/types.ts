@@ -13,8 +13,6 @@ export type Action =
       /** Wait for the Nth match (1-based) instead of the first. */
       nth?: number;
     }
-  /** Scroll smoothly until the element's top is at the top of its scroll area. */
-  | { do: "scrollTo"; selector: string }
   /** Press a key, e.g. "Enter". */
   | { do: "press"; key: string }
   | { do: "hold"; ms: number }
