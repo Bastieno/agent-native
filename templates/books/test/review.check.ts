@@ -43,6 +43,16 @@ await check("the note is what the slip says it was for", () => {
   assert.equal(expenseNote(null), null);
   // A slip with no note keeps only where it was paid from: there is no note.
   assert.equal(expenseNote("Paid from Moniepoint (main)"), null);
+  // Text recognition reads a 5 before a count word as S.
+  assert.equal(
+    expenseNote("S packs sausages · Paid from Moniepoint (lounge)"),
+    "5 packs sausages",
+  );
+  assert.equal(
+    expenseNote("2 crates, S bottles of water"),
+    "2 crates, 5 bottles of water",
+  );
+  assert.equal(expenseNote("Pay S Ade for cleaning"), "Pay S Ade for cleaning");
 });
 
 await check(
@@ -106,5 +116,61 @@ await check(
     assert.equal(r.latestDay, null);
   },
 );
+
+await check(
+  "the owner can correct what an expense was for and who was paid",
+  async () => {
+    const { expenses } = await asOwner(() =>
+      listExpenses.run({
+        start: "2026-11-01",
+        end: "2026-11-30",
+        category: "Salaries",
+      }),
+    );
+    const code = expenses[0].code;
+    await asOwner(() =>
+      update.run({ code, note: "Gateman November salary", vendor: "Gateman" }),
+    );
+    const [row] = await query(
+      `SELECT raw_text, vendor FROM expenses WHERE code = ?`,
+      [code],
+    );
+    // The account it was paid from is kept.
+    assert.equal(
+      row.raw_text,
+      "Gateman November salary · Paid from Moniepoint (lounge)",
+    );
+    assert.equal(row.vendor, "Gateman");
+    const after = await asOwner(() =>
+      listExpenses.run({
+        start: "2026-11-01",
+        end: "2026-11-30",
+        category: "Salaries",
+      }),
+    );
+    assert.equal(after.expenses[0].note, "Gateman November salary");
+  },
+);
+
+await check("a note can be added to a slip that had none", async () => {
+  await query(
+    `UPDATE expenses SET raw_text = 'Paid from Opay' WHERE vendor = 'Gateman'`,
+  );
+  const [{ code }] = await query(
+    `SELECT code FROM expenses WHERE vendor = 'Gateman'`,
+  );
+  await asOwner(() => update.run({ code, note: "Overtime" }));
+  const [row] = await query(`SELECT raw_text FROM expenses WHERE code = ?`, [
+    code,
+  ]);
+  assert.equal(row.raw_text, "Overtime · Paid from Opay");
+});
+
+await check("the partner can't change a note", async () => {
+  const [{ code }] = await query(
+    `SELECT code FROM expenses WHERE vendor = 'Gateman'`,
+  );
+  await assert.rejects(() => asPartner(() => update.run({ code, note: "x" })));
+});
 
 await finish();

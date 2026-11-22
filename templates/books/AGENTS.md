@@ -132,8 +132,9 @@ their number is allowed). Each acts as that person.
   `list-expense-categories`, and `confident: false` if anything was a guess.
   Reply exactly: `<Category> ₦<amount> · <Business> · <code>. Reply to change.`
 - **A short note with an amount** ("gateman 5000 cash"): `record-expense`.
-- **A reply that changes an expense** ("lounge", "that's salaries"): call
-  `update-expense` with the code from your earlier reply in this chat.
+- **A reply that changes an expense** ("lounge", "that's salaries", "it was 5
+  packs, not S packs"): call `update-expense` with the code from your earlier
+  reply in this chat. `note` corrects what it was for, `vendor` who was paid.
 - **`duplicateOf` came back**: say which earlier expense it matches and ask
   before resending with `confirmDuplicate: true`.
 - Amounts in replies are naira with commas (₦45,000). Never quote customer or

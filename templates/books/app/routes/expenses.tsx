@@ -166,7 +166,7 @@ function ExpenseSheet({
         <SheetHeader>
           <SheetTitle>{whatFor(expense)}</SheetTitle>
           <p className="text-sm text-muted-foreground">
-            {expense.code} · {naira(expense.amount)} · paid to {expense.vendor}
+            {expense.code} · {naira(expense.amount)}
           </p>
         </SheetHeader>
         <div className="space-y-4 px-4 pb-6">
@@ -189,6 +189,31 @@ function ExpenseSheet({
               )}
             </a>
           )}
+          <div className="space-y-1.5">
+            <Label htmlFor="note">What for</Label>
+            <Input
+              id="note"
+              disabled={!canEdit}
+              defaultValue={expense.note ?? ""}
+              placeholder="e.g. 5 packs sausages"
+              onBlur={(e) => {
+                const v = e.target.value.trim();
+                if (v && v !== (expense.note ?? "")) onSave({ note: v });
+              }}
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="vendor">Paid to</Label>
+            <Input
+              id="vendor"
+              disabled={!canEdit}
+              defaultValue={expense.vendor}
+              onBlur={(e) => {
+                const v = e.target.value.trim();
+                if (v && v !== expense.vendor) onSave({ vendor: v });
+              }}
+            />
+          </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
               <Label>Business</Label>
@@ -369,6 +394,8 @@ export default function ExpensesPage() {
         ...(patch.occurredOn ? { occurredOn: patch.occurredOn } : {}),
         ...(patch.paidWith ? { paidWith: patch.paidWith as "cash" } : {}),
         ...(patch.status ? { status: patch.status as "confirmed" } : {}),
+        ...(patch.note ? { note: patch.note } : {}),
+        ...(patch.vendor ? { vendor: patch.vendor } : {}),
       },
       {
         onError: (err) => {

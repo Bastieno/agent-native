@@ -1,3 +1,4 @@
+import { fixMisreads } from "./expense-note.js";
 /**
  * Reads the text recognised from a bank transfer slip (Moniepoint or Opay)
  * into an expense. Text recognition garbles letters ("Stalus", "Dale") and
@@ -164,7 +165,10 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
         (fields.get("transaction type")?.[0] ?? null)?.toUpperCase() ?? null,
       amount,
       payee: get("beneficiary") ?? get("phone number"),
-      note: get("narration"),
+      note: (() => {
+        const n = get("narration");
+        return n ? fixMisreads(n) : null;
+      })(),
       account: /tech|work|lounge|kunge|restau/i.test(names)
         ? "Moniepoint (lounge)"
         : "Moniepoint (main)",
