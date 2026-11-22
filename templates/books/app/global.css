@@ -6,6 +6,8 @@
 @source "./**/*.{ts,tsx}";
 
 :root {
+  --money-in: #2a78d6;
+  --money-out: #eb6834;
   --background: 0 0% 100%;
   --foreground: 220 10% 10%;
   --card: 0 0% 100%;
@@ -37,6 +39,8 @@
 }
 
 .dark {
+  --money-in: #3987e5;
+  --money-out: #d95926;
   --background: 220 6% 6%;
   --foreground: 0 0% 90%;
   --card: 220 5% 6%;

@@ -37,7 +37,8 @@ export default defineAction({
         digestId: nav.digestId,
         hint: "get-digest returns its figures",
       };
-    screen.views = "today, expenses, sales, reports, settings";
+    screen.views =
+      "overview (/), review, sales (Money in), expenses (Money out), reports, settings";
 
     if (Object.keys(screen).length === 0) {
       return "No application state found. Is the app running?";

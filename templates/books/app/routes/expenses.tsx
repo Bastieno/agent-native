@@ -4,7 +4,6 @@ import { useQueryClient } from "@tanstack/react-query";
 import { IconDotsVertical, IconFileZip } from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
 import { toast } from "sonner";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -39,18 +38,12 @@ import {
   useSetHeaderActions,
   useSetPageTitle,
 } from "@/components/layout/HeaderActions";
-import {
-  BUSINESS_NAMES,
-  lagosToday,
-  monthStart,
-  naira,
-  receiptUrl,
-  shortDay,
-} from "@/lib/books";
+import { PeriodPicker, usePeriod } from "@/components/PeriodPicker";
+import { BUSINESS_NAMES, naira, receiptUrl, shortDay } from "@/lib/books";
 import { readChatExport } from "@shared/chat-export";
 
 export function meta() {
-  return [{ title: "Expenses · Books" }];
+  return [{ title: "Money out · Books" }];
 }
 
 type Expense = {
@@ -65,7 +58,12 @@ type Expense = {
   source: string;
   receiptFileId: string | null;
   isCost?: boolean;
+  note?: string | null;
 };
+
+/** What the expense was for: the slip's note, else who was paid (app entries name the vendor). */
+const whatFor = (e: Expense) =>
+  e.note ?? (e.source === "history" ? (e.category ?? "Transfer") : e.vendor);
 
 function HistoryUpload() {
   const input = useRef<HTMLInputElement>(null);
@@ -113,7 +111,7 @@ function HistoryUpload() {
         already += r.alreadyQueued;
       }
       toast.success(
-        `${queued} old receipts ready to read${already ? ` (${already} already in)` : ""}. Read them from Today.`,
+        `${queued} old receipts ready to read${already ? ` (${already} already in)` : ""}. Read them from Review.`,
         { id },
       );
       qc.invalidateQueries({ queryKey: ["action"] });
@@ -166,9 +164,10 @@ function ExpenseSheet({
     <Sheet open onOpenChange={(open) => !open && onClose()}>
       <SheetContent className="w-full overflow-y-auto sm:max-w-md">
         <SheetHeader>
-          <SheetTitle>
-            {expense.code} · {expense.vendor}
-          </SheetTitle>
+          <SheetTitle>{whatFor(expense)}</SheetTitle>
+          <p className="text-sm text-muted-foreground">
+            {expense.code} · {naira(expense.amount)} · paid to {expense.vendor}
+          </p>
         </SheetHeader>
         <div className="space-y-4 px-4 pb-6">
           {expense.receiptFileId && (
@@ -290,13 +289,31 @@ function ExpenseSheet({
 }
 
 export default function ExpensesPage() {
-  useSetPageTitle("Expenses");
-  useSetHeaderActions(<HistoryUpload />);
+  useSetPageTitle("Money out");
+  useSetHeaderActions(
+    <div className="flex items-center gap-1">
+      <PeriodPicker />
+      <HistoryUpload />
+    </div>,
+  );
   const [params, setParams] = useSearchParams();
-  const today = lagosToday();
-  const start = params.get("start") ?? monthStart(today);
-  const end = params.get("end") ?? today;
-  const query = { start, end };
+  const { start, end } = usePeriod();
+  const category = params.get("category") ?? undefined;
+  const business = (params.get("business") ?? undefined) as
+    | "lounge"
+    | "hub"
+    | undefined;
+  const status = (params.get("status") ?? undefined) as
+    | "confirmed"
+    | "needs_review"
+    | undefined;
+  const query = {
+    start,
+    end,
+    ...(category ? { category } : {}),
+    ...(business ? { business } : {}),
+    ...(status ? { status } : {}),
+  };
   const qc = useQueryClient();
   const { data } = useActionQuery("list-expenses", query);
   const { data: settings } = useActionQuery("get-settings", {});
@@ -307,19 +324,15 @@ export default function ExpensesPage() {
     () => expenses.find((e) => e.code === selectedCode),
     [expenses, selectedCode],
   );
-  const total = expenses
-    .filter((e) => e.isCost !== false)
-    .reduce((a, e) => a + e.amount, 0);
-  const moved = expenses
-    .filter((e) => e.isCost === false)
-    .reduce((a, e) => a + e.amount, 0);
+  const categories: string[] = settings?.expenseCategories ?? [];
 
-  function select(code: string | null) {
+  function setParam(key: string, value: string | null) {
     const next = new URLSearchParams(params);
-    if (code) next.set("expense", code);
-    else next.delete("expense");
+    if (value) next.set(key, value);
+    else next.delete(key);
     setParams(next, { replace: true });
   }
+  const select = (code: string | null) => setParam("expense", code);
 
   function save(
     code: string,
@@ -330,6 +343,7 @@ export default function ExpensesPage() {
     qc.setQueryData(key, (old: { expenses: Expense[] } | undefined) =>
       old
         ? {
+            ...old,
             expenses: old.expenses.map((e) =>
               e.code === code
                 ? {
@@ -361,62 +375,102 @@ export default function ExpensesPage() {
           qc.setQueryData(key, previous);
           toast.error(err.message);
         },
+        onSuccess: () => qc.invalidateQueries({ queryKey: ["action"] }),
       },
     );
   }
 
+  const filtered = !!(category || business || status);
   return (
     <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div className="flex items-end gap-2">
-          <div className="space-y-1">
-            <Label htmlFor="from" className="text-xs text-muted-foreground">
-              From
-            </Label>
-            <Input
-              id="from"
-              type="date"
-              className="h-8 w-40"
-              value={start}
-              onChange={(e) => setParams({ start: e.target.value, end })}
-            />
-          </div>
-          <div className="space-y-1">
-            <Label htmlFor="to" className="text-xs text-muted-foreground">
-              To
-            </Label>
-            <Input
-              id="to"
-              type="date"
-              className="h-8 w-40"
-              value={end}
-              onChange={(e) => setParams({ start, end: e.target.value })}
-            />
-          </div>
-        </div>
-        <div className="text-sm text-muted-foreground">
-          {expenses.length} expenses ·{" "}
-          <span className="font-medium text-foreground tabular-nums">
-            {naira(total)}
-          </span>
-          {moved > 0 && (
-            <span className="ml-2">+ {naira(moved)} moved, not a cost</span>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <Select
+            value={category ?? "all"}
+            onValueChange={(v) => setParam("category", v === "all" ? null : v)}
+          >
+            <SelectTrigger className="h-8 w-48" aria-label="Category">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All categories</SelectItem>
+              <SelectItem value="Uncategorised">No category</SelectItem>
+              {categories.map((c) => (
+                <SelectItem key={c} value={c}>
+                  {c}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select
+            value={business ?? "all"}
+            onValueChange={(v) => setParam("business", v === "all" ? null : v)}
+          >
+            <SelectTrigger className="h-8 w-32" aria-label="Business">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Both</SelectItem>
+              <SelectItem value="lounge">Lounge</SelectItem>
+              <SelectItem value="hub">Hub</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select
+            value={status ?? "all"}
+            onValueChange={(v) => setParam("status", v === "all" ? null : v)}
+          >
+            <SelectTrigger className="h-8 w-36" aria-label="Status">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Any status</SelectItem>
+              <SelectItem value="needs_review">To review</SelectItem>
+              <SelectItem value="confirmed">Confirmed</SelectItem>
+            </SelectContent>
+          </Select>
+          {filtered && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                const next = new URLSearchParams(params);
+                for (const k of ["category", "business", "status"])
+                  next.delete(k);
+                setParams(next, { replace: true });
+              }}
+            >
+              Clear
+            </Button>
           )}
         </div>
+        {data && (
+          <div className="text-sm text-muted-foreground">
+            {expenses.length.toLocaleString("en-NG")} expenses ·{" "}
+            <span className="font-medium text-foreground tabular-nums">
+              {naira(data.total)}
+            </span>
+            {data.moved > 0 && (
+              <span className="ml-1">
+                (+ {naira(data.moved)} moved, not a cost)
+              </span>
+            )}
+          </div>
+        )}
       </div>
       {!data ? null : expenses.length === 0 ? (
         <div className="py-16 text-center text-sm text-muted-foreground">
-          No expenses in these dates. Send a receipt to the WhatsApp number and
-          it appears here.
+          {filtered
+            ? "Nothing matches these filters in this period."
+            : "No expenses in this period. Send a receipt to the WhatsApp number and it appears here."}
         </div>
       ) : (
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Date</TableHead>
-              <TableHead>Vendor</TableHead>
-              <TableHead>Business</TableHead>
+              <TableHead className="w-20">Date</TableHead>
+              <TableHead>What for</TableHead>
               <TableHead>Category</TableHead>
+              <TableHead>Business</TableHead>
               <TableHead className="text-right">Amount</TableHead>
             </TableRow>
           </TableHeader>
@@ -430,19 +484,23 @@ export default function ExpensesPage() {
                 <TableCell className="whitespace-nowrap text-muted-foreground">
                   {shortDay(e.occurredOn)}
                 </TableCell>
-                <TableCell>
-                  {e.vendor}
-                  {e.status === "needs_review" && (
-                    <Badge variant="secondary" className="ml-2">
-                      Review
-                    </Badge>
-                  )}
-                </TableCell>
-                <TableCell>
-                  {e.business ? BUSINESS_NAMES[e.business] : "—"}
+                <TableCell className="max-w-[22rem]">
+                  <div className="flex items-center gap-2">
+                    {e.status === "needs_review" && (
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500"
+                        title="To review"
+                        aria-label="To review"
+                      />
+                    )}
+                    <span className="truncate">{whatFor(e)}</span>
+                  </div>
                 </TableCell>
                 <TableCell className="text-muted-foreground">
                   {e.category ?? "—"}
+                </TableCell>
+                <TableCell className="text-muted-foreground">
+                  {e.business ? BUSINESS_NAMES[e.business] : "—"}
                 </TableCell>
                 <TableCell
                   className={`text-right tabular-nums ${e.isCost === false ? "text-muted-foreground italic" : ""}`}
@@ -458,7 +516,7 @@ export default function ExpensesPage() {
         <ExpenseSheet
           key={selected.code}
           expense={selected}
-          categories={settings?.expenseCategories ?? []}
+          categories={categories}
           canEdit={!!settings?.canEdit}
           onClose={() => select(null)}
           onSave={(patch) => save(selected.code, patch)}

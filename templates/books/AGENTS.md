@@ -28,10 +28,10 @@ Resources are SQL-backed persistent files for storing notes, learnings, and cont
 
 Ephemeral UI state is stored in the SQL `application_state` table, accessed via `readAppState(key)` and `writeAppState(key, value)` from `@agent-native/core/application-state`.
 
-| State Key    | Purpose                                                                                                                     | Direction                  |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| `navigation` | Current view (`today`, `expenses`, `sales`, `reports`, `settings`), plus `expenseCode`, `digestId`, `start`, `end` when set | UI -> Agent (read-only)    |
-| `navigate`   | Navigate command (one-shot, auto-deleted)                                                                                   | Agent -> UI (auto-deleted) |
+| State Key    | Purpose                                                                                                                                      | Direction                  |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| `navigation` | Current view (`overview`, `review`, `money-in`, `money-out`, `reports`, `settings`), plus `expenseCode`, `digestId`, `start`, `end` when set | UI -> Agent (read-only)    |
+| `navigate`   | Navigate command (one-shot, auto-deleted)                                                                                                    | Agent -> UI (auto-deleted) |
 
 ## What Books is
 
@@ -52,16 +52,27 @@ owner and their business partner. The design is in `docs/books-design.md`.
 
 ## Screens
 
-| View       | Path            | What it shows                                                             | Read with                    |
-| ---------- | --------------- | ------------------------------------------------------------------------- | ---------------------------- |
-| `today`    | `/`             | Latest day per business, checks, the review queue                         | `get-today`                  |
-| `expenses` | `/expenses`     | Expenses for a range; `?expense=E-12` opens one with its receipt          | `list-expenses`              |
-| `sales`    | `/sales`        | Income, cost of goods, given away and gross profit by business; uploads   | `list-sales`, `list-imports` |
-| `reports`  | `/reports/<id>` | Saved digests                                                             | `list-digests`, `get-digest` |
-| `settings` | `/settings`     | People (recipients and WhatsApp numbers), categories, limits, connections | `get-settings`               |
+| View        | Path            | What it shows                                                                                                                                                                                           | Read with                         |
+| ----------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| `overview`  | `/`             | Profit and loss for a period (default this month) by business, change from the period before (days with sales only), money in and out by day, where the money went, things to watch, stale-data warning | `get-overview`                    |
+| `review`    | `/review`       | Expenses waiting for review grouped by guessed category and business (confirm a group), items without a category, old receipts to read                                                                  | `list-review`, `confirm-expenses` |
+| `money-in`  | `/sales`        | Sales for a period: by day, by business (cost of goods, given away, gross profit), best sellers, payment methods; uploads                                                                               | `list-sales`, `list-imports`      |
+| `money-out` | `/expenses`     | Expenses for a period with what each was for; filter `?category=&business=&status=`; `?expense=E-12` opens one with its receipt                                                                         | `list-expenses`                   |
+| `reports`   | `/reports/<id>` | Saved digests                                                                                                                                                                                           | `list-digests`, `get-digest`      |
+| `settings`  | `/settings`     | People (recipients and WhatsApp numbers), categories, limits, connections                                                                                                                               | `get-settings`                    |
 
-Move the screen with `navigate --view <view>` or `--path`. When the owner
-asks to read old receipts, the Today screen sends them to you as images with
+Every money screen shares one period in the URL (`?start=&end=`; presets this
+month, last month, this week, last 7 or 30 days, or custom). Move the screen
+with `navigate --view <view>` or `--path` (for example
+`--path "/expenses?category=Salaries&start=2026-11-01&end=2026-11-30"`). The
+old view names `today`, `expenses` and `sales` still work. Screens show whole
+naira; actions return kobo.
+
+Confirming many expenses at once: `confirm-expenses` with a `group` from
+`list-review` (its `category` and `business`) or a list of `codes`. Only
+confirm a group when the owner asks; describe it first (count, total, dates).
+
+When the owner asks to read old receipts, the Review screen sends them to you as images with
 their `pendingReceiptId`s; record each with `record-expense-from-receipt`.
 
 Old Moniepoint and Opay transfer slips can also be read without the assistant:

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useActionQuery } from "@agent-native/core/client";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -25,6 +25,7 @@ const PERIOD = {
 
 export default function ReportsPage() {
   useSetPageTitle("Reports");
+  const navigate = useNavigate();
   const { data } = useActionQuery("list-digests", { limit: 90 });
   const digests = data?.digests ?? [];
   if (!digests.length) {
@@ -41,13 +42,17 @@ export default function ReportsPage() {
           <TableRow>
             <TableHead>Period</TableHead>
             <TableHead />
-            <TableHead className="text-right">Income</TableHead>
+            <TableHead className="text-right">Money in</TableHead>
             <TableHead className="text-right">Net</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {digests.map((d) => (
-            <TableRow key={d.digestId}>
+            <TableRow
+              key={d.digestId}
+              className="cursor-pointer"
+              onClick={() => navigate(`/reports/${d.digestId}`)}
+            >
               <TableCell>
                 <Link to={`/reports/${d.digestId}`} className="hover:underline">
                   {rangeLabel(d.start, d.end)}
@@ -57,14 +62,16 @@ export default function ReportsPage() {
                 <Badge variant="outline">{PERIOD[d.period] ?? d.period}</Badge>
                 {d.status !== "sent" && (
                   <Badge variant="secondary" className="ml-2">
-                    {d.status === "failed" ? "Not delivered" : "Draft"}
+                    {d.status === "failed" ? "Not delivered" : "Not sent"}
                   </Badge>
                 )}
               </TableCell>
               <TableCell className="text-right tabular-nums">
                 {naira(d.income)}
               </TableCell>
-              <TableCell className="text-right tabular-nums">
+              <TableCell
+                className={`text-right tabular-nums ${d.net < 0 ? "text-red-600 dark:text-red-400" : ""}`}
+              >
                 {naira(d.net)}
               </TableCell>
             </TableRow>

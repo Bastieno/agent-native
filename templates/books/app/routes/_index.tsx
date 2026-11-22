@@ -1,106 +1,157 @@
-import { useState } from "react";
 import { Link } from "react-router";
-import { useQueryClient } from "@tanstack/react-query";
 import {
-  IconCheck,
-  IconCircleCheck,
-  IconMessage,
+  IconAlertTriangle,
+  IconArrowDownRight,
+  IconArrowUpRight,
+  IconChevronRight,
+  IconClockExclamation,
+  IconTrendingUp,
   IconUpload,
 } from "@tabler/icons-react";
-import {
-  sendToAgentChat,
-  useActionMutation,
-  useActionQuery,
-} from "@agent-native/core/client";
-import { toast } from "sonner";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { useActionQuery } from "@agent-native/core/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useSetPageTitle } from "@/components/layout/HeaderActions";
-import { dayLabel, flagText, naira, rangeLabel, receiptUrl } from "@/lib/books";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  useSetHeaderActions,
+  useSetPageTitle,
+} from "@/components/layout/HeaderActions";
+import { PeriodPicker, usePeriod, withPeriod } from "@/components/PeriodPicker";
+import {
+  BUSINESS_NAMES,
+  dayLabel,
+  naira,
+  nairaShort,
+  rangeLabel,
+  shortDay,
+  signalLine,
+} from "@/lib/books";
+import { cn } from "@/lib/utils";
 
 export function meta() {
-  return [{ title: "Today · Books" }];
+  return [{ title: "Overview · Books" }];
 }
 
-function BusinessCard({
-  title,
-  income,
-  profit,
-  expenses,
+/** Change from the period before; for costs, going up is the bad direction. */
+function Change({
+  pct,
+  upIsGood = true,
+  before,
 }: {
-  title: string;
-  income: number;
-  profit: number;
-  expenses: number;
+  pct: number | null;
+  upIsGood?: boolean;
+  /** The earlier figure, shown in place of a percentage that would mislead. */
+  before?: number;
+}) {
+  if (before != null && (pct == null || Math.abs(pct) >= 100))
+    return (
+      <span className="text-xs text-muted-foreground">
+        was {naira(before)} in the period before
+      </span>
+    );
+  if (pct == null)
+    return (
+      <span className="text-xs text-muted-foreground">No earlier figures</span>
+    );
+  const up = pct > 0;
+  const good = pct === 0 ? null : up === upIsGood;
+  const Icon = up ? IconArrowUpRight : IconArrowDownRight;
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center gap-0.5 text-xs",
+        good == null
+          ? "text-muted-foreground"
+          : good
+            ? "text-emerald-600 dark:text-emerald-400"
+            : "text-red-600 dark:text-red-400",
+      )}
+    >
+      {pct !== 0 && <Icon className="h-3.5 w-3.5" aria-hidden />}
+      {Math.abs(pct)}% vs period before
+    </span>
+  );
+}
+
+function Stat({
+  label,
+  value,
+  sub,
+  change,
+  negative,
+}: {
+  label: string;
+  value: string;
+  sub?: string;
+  change: React.ReactNode;
+  negative?: boolean;
 }) {
   return (
     <Card>
-      <CardHeader className="pb-1">
-        <CardTitle className="text-sm font-medium text-muted-foreground">
-          {title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-2">
-        <div className="text-2xl font-semibold tabular-nums">
-          {naira(income)}
+      <CardContent className="space-y-1 p-4">
+        <div className="text-xs text-muted-foreground">{label}</div>
+        <div
+          className={cn(
+            "text-xl font-semibold tabular-nums tracking-tight sm:text-2xl",
+            negative && "text-red-600 dark:text-red-400",
+          )}
+        >
+          {value}
         </div>
-        <div className="space-y-1 text-sm">
-          <div className="flex justify-between gap-2">
-            <span className="text-muted-foreground">Gross profit</span>
-            <span className="tabular-nums">{naira(profit)}</span>
-          </div>
-          <div className="flex justify-between gap-2">
-            <span className="text-muted-foreground">Expenses</span>
-            <span className="tabular-nums">{naira(expenses)}</span>
-          </div>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+          {sub && <span className="text-xs text-muted-foreground">{sub}</span>}
+          {change}
         </div>
       </CardContent>
     </Card>
   );
 }
 
-async function asDataUrl(url: string): Promise<string> {
-  const blob = await (await fetch(url)).blob();
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(String(reader.result));
-    reader.onerror = reject;
-    reader.readAsDataURL(blob);
-  });
-}
+const chartConfig = {
+  moneyIn: { label: "Money in", color: "var(--money-in)" },
+  moneyOut: { label: "Money out", color: "var(--money-out)" },
+} satisfies ChartConfig;
 
-export default function TodayPage() {
-  useSetPageTitle("Today");
-  const qc = useQueryClient();
-  const { data, isLoading } = useActionQuery("get-today", {});
-  const { data: categories } = useActionQuery("get-settings", {});
-  const setCategory = useActionMutation("set-item-category");
-  const [reading, setReading] = useState(false);
+export default function OverviewPage() {
+  useSetPageTitle("Overview");
+  useSetHeaderActions(<PeriodPicker />);
+  const { start, end } = usePeriod();
+  const { data, isLoading } = useActionQuery("get-overview", { start, end });
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return (
-      <div className="grid gap-4 p-6 md:grid-cols-3">
-        {[0, 1, 2].map((i) => (
-          <Skeleton key={i} className="h-28" />
+      <div className="grid gap-4 p-6 md:grid-cols-4">
+        {[0, 1, 2, 3].map((i) => (
+          <Skeleton key={i} className="h-24" />
         ))}
+        <Skeleton className="h-64 md:col-span-4" />
       </div>
     );
   }
-  if (!data?.day || !data.figures) {
+  if (!data.latestDay) {
     return (
       <div className="flex flex-1 flex-col items-center justify-center gap-3 p-10 text-center">
         <h2 className="text-lg font-semibold">No sales yet</h2>
         <p className="max-w-sm text-sm text-muted-foreground">
-          Send a Moniebook sales summary to the WhatsApp number, or upload one
-          here, and today's figures appear.
+          Send a Moniebook sales summary to the WhatsApp number, or upload one,
+          and your figures appear here.
         </p>
         <Button asChild>
           <Link to="/sales">
@@ -111,252 +162,304 @@ export default function TodayPage() {
     );
   }
 
-  const f = data.figures;
-  const review = data.review;
-  const checks = f.flags.filter(
-    (x) =>
-      !["needs_review", "unconfirmed_category", "no_cost"].includes(x.kind),
-  );
-  const reviewCount =
-    review.receipts.length +
-    review.categoryGuesses.length +
-    review.uncategorised.length +
-    review.unmappedCategories.length +
-    (review.pendingHistory ? 1 : 0);
-  const biz = (slug: string) => ({
-    income: f.incomeByBusiness[slug] ?? 0,
-    profit: f.grossProfitByBusiness[slug] ?? 0,
-    expenses: f.expensesByBusiness[slug] ?? 0,
-  });
-  const both = {
-    income: f.income,
-    profit: (Object.values(f.grossProfitByBusiness) as number[]).reduce(
-      (a, b) => a + b,
-      0,
-    ),
-    expenses: f.expenses,
-  };
-
-  function confirm(item: string, category: string) {
-    qc.setQueryData(["action", "get-today", {}], (old: typeof data) =>
-      old
-        ? {
-            ...old,
-            review: {
-              ...old.review,
-              categoryGuesses: old.review.categoryGuesses.filter(
-                (g) => g.item !== item,
-              ),
-            },
-          }
-        : old,
-    );
-    setCategory.mutate(
-      { itemName: item, category, confirmed: true },
-      { onError: () => toast.error(`Couldn't save ${item}`) },
-    );
-  }
-  function place(item: string, category: string) {
-    qc.setQueryData(["action", "get-today", {}], (old: typeof data) =>
-      old
-        ? {
-            ...old,
-            review: {
-              ...old.review,
-              uncategorised: old.review.uncategorised.filter((u) => u !== item),
-            },
-          }
-        : old,
-    );
-    setCategory.mutate(
-      { itemName: item, category, confirmed: true },
-      { onError: () => toast.error(`Couldn't save ${item}`) },
-    );
-  }
-
-  async function readOldReceipts() {
-    setReading(true);
-    try {
-      const res = await fetch(
-        `/_agent-native/actions/list-pending-receipts?limit=5`,
-      );
-      const { receipts } = (await res.json()) as {
-        receipts: {
-          id: string;
-          occurredOn: string;
-          mimeType: string;
-          receiptFileId: string;
-          note: string | null;
-        }[];
-      };
-      const images = receipts.filter((r) => r.mimeType.startsWith("image/"));
-      if (!images.length) {
-        toast("The old receipts left are PDFs; open them from Expenses.");
-        return;
-      }
-      const urls = await Promise.all(
-        images.map((r) => asDataUrl(receiptUrl(r.receiptFileId))),
-      );
-      sendToAgentChat({
-        message: `Read these ${images.length} old receipts and record them.`,
-        context: `These are old receipts from the WhatsApp group, in this order: ${images
-          .map(
-            (r, i) =>
-              `image ${i + 1} = pendingReceiptId ${r.id} (sent ${r.occurredOn}${r.note ? `, note "${r.note}"` : ""})`,
-          )
-          .join(
-            "; ",
-          )}. For each, call record-expense-from-receipt with its pendingReceiptId; use the date on the receipt if it shows one.`,
-        images: urls,
-        submit: true,
-      });
-    } finally {
-      setReading(false);
-    }
-  }
+  const c = data.combined;
+  const prevLabel = rangeLabel(data.previous.start, data.previous.end);
+  const comparedLabel = rangeLabel(data.compared.start, data.compared.end);
+  const chartData = data.daily.map((d) => ({
+    ...d,
+    label: shortDay(d.day),
+    moneyIn: d.moneyIn / 100,
+    moneyOut: d.moneyOut / 100,
+  }));
+  const maxSpend = data.spendByCategory[0]?.amount ?? 0;
+  const notes: {
+    icon: typeof IconTrendingUp;
+    text: string;
+    watch?: boolean;
+  }[] = [
+    ...data.watch.map((s) => ({
+      icon: IconAlertTriangle,
+      text: signalLine(s),
+      watch: true,
+    })),
+    ...data.good.map((s) => ({ icon: IconTrendingUp, text: signalLine(s) })),
+  ];
 
   return (
-    <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-6">
-      <div className="text-sm text-muted-foreground">{dayLabel(data.day)}</div>
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        <BusinessCard title="Lounge" {...biz("lounge")} />
-        <BusinessCard title="Hub" {...biz("hub")} />
-        <BusinessCard title="Both" {...both} />
+    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
+      {data.staleDays != null && data.staleDays > 1 && (
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-sm">
+          <span className="flex items-center gap-2">
+            <IconClockExclamation className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
+            Latest sales are from {dayLabel(data.latestDay)}, {data.staleDays}{" "}
+            days ago. Figures after that are missing.
+          </span>
+          <Link
+            to="/sales"
+            className="font-medium underline-offset-4 hover:underline"
+          >
+            Upload sales
+          </Link>
+        </div>
+      )}
+
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+        <Stat
+          label="Money in"
+          value={naira(c.income)}
+          change={<Change pct={c.incomeChange} />}
+        />
+        <Stat
+          label="Gross profit"
+          value={naira(c.grossProfit)}
+          sub={c.margin != null ? `${Math.round(c.margin)}% margin` : undefined}
+          change={null}
+        />
+        <Stat label="Expenses" value={naira(c.expenses)} change={null} />
+        <Stat
+          label="Net"
+          value={naira(c.net)}
+          negative={c.net < 0}
+          change={<Change pct={c.netChange} before={data.previous.net} />}
+        />
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-2">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium">Checks</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2 text-sm">
-            {f.cashInTill != null && (
-              <div className="flex justify-between border-b border-border pb-2">
-                <span className="text-muted-foreground">Cash in the till</span>
-                <span className="font-medium tabular-nums">
-                  {naira(f.cashInTill)}
-                </span>
-              </div>
-            )}
-            {checks.length === 0 ? (
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <IconCircleCheck className="h-4 w-4" /> Every check passed
-              </div>
-            ) : (
-              <ul className="space-y-1.5">
-                {checks.slice(0, 8).map((c, i) => (
-                  <li key={i}>{flagText(c as never)}</li>
-                ))}
-                {checks.length > 8 && (
-                  <li className="text-muted-foreground">
-                    and {checks.length - 8} more
-                  </li>
-                )}
-              </ul>
-            )}
-          </CardContent>
-        </Card>
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm font-medium">By business</CardTitle>
+        </CardHeader>
+        <CardContent className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead />
+                <TableHead className="text-right">Money in</TableHead>
+                <TableHead className="text-right">Cost of goods</TableHead>
+                <TableHead className="text-right">Gross profit</TableHead>
+                <TableHead className="text-right">Expenses</TableHead>
+                <TableHead className="text-right">Net</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {data.businesses.map((b) => (
+                <TableRow key={b.slug}>
+                  <TableCell>{BUSINESS_NAMES[b.slug] ?? b.slug}</TableCell>
+                  <TableCell className="text-right tabular-nums">
+                    {naira(b.income)}
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums text-muted-foreground">
+                    {naira(b.costOfGoods)}
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums">
+                    {naira(b.grossProfit)}
+                  </TableCell>
+                  <TableCell className="text-right tabular-nums text-muted-foreground">
+                    {naira(b.expenses)}
+                  </TableCell>
+                  <TableCell
+                    className={cn(
+                      "text-right font-medium tabular-nums",
+                      b.net < 0 && "text-red-600 dark:text-red-400",
+                    )}
+                  >
+                    {naira(b.net)}
+                  </TableCell>
+                </TableRow>
+              ))}
+              <TableRow className="font-medium">
+                <TableCell>Both</TableCell>
+                <TableCell className="text-right tabular-nums">
+                  {naira(c.income)}
+                </TableCell>
+                <TableCell className="text-right tabular-nums">
+                  {naira(c.costOfGoods)}
+                </TableCell>
+                <TableCell className="text-right tabular-nums">
+                  {naira(c.grossProfit)}
+                </TableCell>
+                <TableCell className="text-right tabular-nums">
+                  {naira(c.expenses)}
+                </TableCell>
+                <TableCell
+                  className={cn(
+                    "text-right tabular-nums",
+                    c.net < 0 && "text-red-600 dark:text-red-400",
+                  )}
+                >
+                  {naira(c.net)}
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Changes compare {comparedLabel} with {prevLabel}. Expenses include
+            owner's pay of {naira(data.ownersPay)}
+            {data.notCosts > 0
+              ? `; ${naira(data.notCosts)} of money moved (loans, transfers) is left out`
+              : ""}
+            .
+          </p>
+        </CardContent>
+      </Card>
 
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm font-medium">
+            Money in and out, by day
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ChartContainer config={chartConfig} className="h-64 w-full">
+            <BarChart
+              data={chartData}
+              barGap={2}
+              margin={{ left: 4, right: 4 }}
+            >
+              <CartesianGrid vertical={false} strokeOpacity={0.4} />
+              <XAxis
+                dataKey="label"
+                tickLine={false}
+                axisLine={false}
+                minTickGap={16}
+                fontSize={11}
+              />
+              <YAxis
+                tickLine={false}
+                axisLine={false}
+                width={56}
+                fontSize={11}
+                tickFormatter={(v: number) => nairaShort(v * 100)}
+              />
+              <ChartTooltip
+                content={
+                  <ChartTooltipContent
+                    formatter={(value, name) => (
+                      <div className="flex w-full justify-between gap-4">
+                        <span className="text-muted-foreground">
+                          {chartConfig[name as keyof typeof chartConfig]?.label}
+                        </span>
+                        <span className="tabular-nums">
+                          {naira(Number(value) * 100)}
+                        </span>
+                      </div>
+                    )}
+                  />
+                }
+              />
+              <ChartLegend content={<ChartLegendContent />} />
+              <Bar
+                dataKey="moneyIn"
+                fill="var(--color-moneyIn)"
+                radius={[4, 4, 0, 0]}
+              />
+              <Bar
+                dataKey="moneyOut"
+                fill="var(--color-moneyOut)"
+                radius={[4, 4, 0, 0]}
+              />
+            </BarChart>
+          </ChartContainer>
+        </CardContent>
+      </Card>
+
+      <div className="grid gap-4 lg:grid-cols-2">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium">
-              To review{reviewCount ? ` · ${reviewCount}` : ""}
+              Where the money went
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm">
-            {reviewCount === 0 && (
-              <div className="text-muted-foreground">Nothing waiting.</div>
+          <CardContent className="space-y-1">
+            {data.spendByCategory.length === 0 && (
+              <p className="text-sm text-muted-foreground">
+                No expenses in this period.
+              </p>
             )}
-            {review.receipts.map((r) => (
+            {data.spendByCategory.map((s) => (
               <Link
-                key={r.code}
-                to={`/expenses?expense=${r.code}`}
-                className="flex justify-between rounded-md px-2 py-1 hover:bg-accent"
+                key={s.category}
+                to={withPeriod(
+                  `/expenses?category=${encodeURIComponent(s.category)}`,
+                  start,
+                  end,
+                )}
+                className="group block rounded-md px-2 py-1.5 hover:bg-accent"
               >
-                <span>
-                  {r.code} · {r.vendor}
-                </span>
-                <span className="tabular-nums text-muted-foreground">
-                  {naira(r.amount)}
-                </span>
+                <div className="flex justify-between gap-2 text-sm">
+                  <span>{s.category}</span>
+                  <span className="tabular-nums">{naira(s.amount)}</span>
+                </div>
+                <div className="mt-1 h-1.5 rounded-full bg-muted">
+                  <div
+                    className="h-1.5 rounded-full"
+                    style={{
+                      width: `${maxSpend ? Math.max(2, (s.amount / maxSpend) * 100) : 0}%`,
+                      background: "var(--money-out)",
+                    }}
+                  />
+                </div>
               </Link>
             ))}
-            {review.categoryGuesses.map((g) => (
-              <div
-                key={g.item}
-                className="flex items-center justify-between gap-2 px-2"
-              >
-                <span>
-                  {g.item} → {g.category}?
-                </span>
-                {data.canEdit && (
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => confirm(g.item, g.category)}
-                  >
-                    <IconCheck className="mr-1 h-3.5 w-3.5" /> Confirm
-                  </Button>
-                )}
-              </div>
-            ))}
-            {review.uncategorised.map((item) => (
-              <div
-                key={item}
-                className="flex items-center justify-between gap-2 px-2"
-              >
-                <span>{item}</span>
-                {data.canEdit && (
-                  <Select onValueChange={(c) => place(item, c)}>
-                    <SelectTrigger className="h-8 w-40">
-                      <SelectValue placeholder="Category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {(categories?.itemCategories ?? []).map((c) => (
-                        <SelectItem key={c.name} value={c.name}>
-                          {c.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                )}
-              </div>
-            ))}
-            {review.unmappedCategories.length > 0 && (
-              <Link
-                to="/settings?tab=categories"
-                className="block px-2 text-muted-foreground hover:text-foreground"
-              >
-                Choose a business for: {review.unmappedCategories.join(", ")}
-              </Link>
+            <Link
+              to={withPeriod("/expenses", start, end)}
+              className="flex items-center gap-1 px-2 pt-2 text-xs text-muted-foreground hover:text-foreground"
+            >
+              All expenses <IconChevronRight className="h-3 w-3" />
+            </Link>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">Worth knowing</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2.5 text-sm">
+            {notes.length === 0 && data.uncostedRevenue === 0 && (
+              <p className="text-muted-foreground">
+                Nothing unusual in this period.
+              </p>
             )}
-            {review.pendingHistory > 0 && (
-              <div className="flex items-center justify-between gap-2 px-2">
-                <span>{review.pendingHistory} old receipts from WhatsApp</span>
-                {data.canEdit && (
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    disabled={reading}
-                    onClick={readOldReceipts}
-                  >
-                    <IconMessage className="mr-1 h-3.5 w-3.5" /> Read with
-                    assistant
-                  </Button>
-                )}
+            {notes.map((n, i) => (
+              <div key={i} className="flex gap-2">
+                <n.icon
+                  className={cn(
+                    "mt-0.5 h-4 w-4 shrink-0",
+                    n.watch
+                      ? "text-amber-600 dark:text-amber-400"
+                      : "text-emerald-600 dark:text-emerald-400",
+                  )}
+                />
+                <span>{n.text}</span>
+              </div>
+            ))}
+            {data.uncostedRevenue > 0 && (
+              <div className="flex gap-2 text-muted-foreground">
+                <IconAlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  {naira(data.uncostedRevenue)} of sales have no cost yet, so
+                  gross profit is overstated. Upload a Sales by item report.
+                </span>
               </div>
             )}
           </CardContent>
         </Card>
       </div>
 
-      {data.digest && (
+      {data.reviewCount > 0 && (
         <Link
-          to={`/reports/${data.digest.digestId}`}
-          className="text-sm text-muted-foreground hover:text-foreground"
+          to="/review"
+          className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm hover:bg-accent"
         >
-          Latest {data.digest.period} digest ·{" "}
-          {rangeLabel(data.digest.start, data.digest.end)}
+          <span>
+            <span className="font-medium">
+              {data.reviewCount.toLocaleString("en-NG")} things to review
+            </span>
+            <span className="text-muted-foreground">
+              {" "}
+              · expenses to confirm and items without a category
+            </span>
+          </span>
+          <IconChevronRight className="h-4 w-4 text-muted-foreground" />
         </Link>
       )}
     </div>

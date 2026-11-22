@@ -86,6 +86,10 @@ export function useNavigationState() {
 }
 
 const VIEWS: Record<string, string> = {
+  overview: "/",
+  review: "/review",
+  "money-in": "/sales",
+  "money-out": "/expenses",
   today: "/",
   expenses: "/expenses",
   sales: "/sales",
@@ -97,10 +101,10 @@ const VIEWS: Record<string, string> = {
 };
 
 function viewForPath(pathname: string): string {
-  if (pathname === "/") return "today";
+  if (pathname === "/") return "overview";
   for (const [view, path] of Object.entries(VIEWS))
     if (path !== "/" && pathname.startsWith(path)) return view;
-  return "today";
+  return "overview";
 }
 
 function pathForView(view?: string): string {

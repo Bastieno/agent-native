@@ -20,6 +20,11 @@ export async function salesSummary(orgId: string, start: string, end: string) {
   const costOfGoods: Record<string, number> = {};
   const givenAwayAtCost: Record<string, number> = {};
   const notIncome: Record<string, number> = {};
+  const byDay: Record<string, number> = {};
+  const items = new Map<
+    string,
+    { item: string; units: number; revenue: number }
+  >();
   for (const s of sales) {
     const key = s.methods.join(", ");
     if (isNotIncome(s.methods)) {
@@ -37,7 +42,16 @@ export async function salesSummary(orgId: string, start: string, end: string) {
     }
     income += s.total;
     add(byMethod, key, s.total);
+    add(byDay, s.day, s.total);
     for (const l of s.lines) {
+      const it = items.get(l.itemName) ?? {
+        item: l.itemName,
+        units: 0,
+        revenue: 0,
+      };
+      it.units += l.quantity;
+      it.revenue += l.lineTotal;
+      items.set(l.itemName, it);
       const biz = l.businessSlug ?? "unassigned";
       add(byBusiness, biz, l.lineTotal);
       if (l.unitCost == null) uncostedRevenue += l.lineTotal;
@@ -66,5 +80,9 @@ export async function salesSummary(orgId: string, start: string, end: string) {
     uncostedRevenue,
     notIncome,
     orders: sales.length,
+    byDay,
+    topItems: [...items.values()]
+      .sort((a, b) => b.revenue - a.revenue)
+      .slice(0, 8),
   };
 }

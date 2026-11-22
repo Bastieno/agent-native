@@ -167,6 +167,11 @@ function totals(days: DayResult[]) {
   return { businesses, combined };
 }
 
+/** Income, cost of goods, gross profit, expenses and net by business for any range. */
+export async function rangeTotals(orgId: string, start: string, end: string) {
+  return totals(await dayResults(orgId, start, end));
+}
+
 /** The inputs trends compare: one period's shape. `scale` averages several comparison days into one. */
 function periodStats(
   days: DayResult[],
