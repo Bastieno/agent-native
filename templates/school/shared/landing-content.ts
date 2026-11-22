@@ -24,8 +24,11 @@ export interface Exchange {
 
 export interface EditionContent {
   edition: Edition;
-  /** The YouTube demo, recorded in this edition's school; none yet for the US. */
-  video: { id: string; title: string } | null;
+  /**
+   * The YouTube demo, recorded in this edition's school; none yet for the US.
+   * The poster is a frame of the video itself, not YouTube's thumbnail.
+   */
+  video: { id: string; title: string; poster: string } | null;
   /** What each person asks in the hero, and what the demo school's assistant answered. */
   exchanges: { principal: Exchange; teacher: Exchange; learner: Exchange };
   school: string;
@@ -52,7 +55,11 @@ export interface EditionContent {
 
 const ng: EditionContent = {
   edition: "ng",
-  video: { id: "8PWetADFfYs", title: "Ellai at Crestfield College" },
+  video: {
+    id: "8PWetADFfYs",
+    title: "Ellai at Crestfield College",
+    poster: "/landing/ng/demo-video.jpg",
+  },
   exchanges: {
     principal: {
       say: "Which learners are struggling this term, and why?",
@@ -114,12 +121,12 @@ const ng: EditionContent = {
     learner: "Oghenekaro Oyebode",
     group: "SS1A",
     rows: [
-      { subject: "Mathematics", score: "84", grade: "A1" },
-      { subject: "English Language", score: "71", grade: "B2" },
-      { subject: "Physics", score: "82", grade: "A1" },
-      { subject: "Chemistry", score: "66", grade: "B3" },
+      { subject: "English Language", score: "87", grade: "A1" },
+      { subject: "Mathematics", score: "78", grade: "A1" },
+      { subject: "Chemistry", score: "77", grade: "A1" },
+      { subject: "Biology", score: "59", grade: "C5" },
     ],
-    summary: ["Average 75.8", "2nd of 45"],
+    summary: ["Average 78", "8th of 45"],
   },
   idCards: true,
   learnerExtra: {
@@ -202,15 +209,15 @@ const us: EditionContent = {
     "Letter grades, GPA weighted for Honors and AP, credits, and each teacher's comment, printed on Letter.",
   report: {
     title: "Quarter 1 Report Card · 2026-2027",
-    learner: "Xavier Mitchell",
+    learner: "Lily Hughes",
     group: "Grade 10",
     rows: [
-      { subject: "Honors English 10", score: "94", grade: "A", extra: "1.0" },
-      { subject: "Geometry", score: "91", grade: "A-", extra: "1.0" },
-      { subject: "Chemistry", score: "93", grade: "A", extra: "1.0" },
-      { subject: "Spanish II", score: "88", grade: "B+", extra: "1.0" },
+      { subject: "Honors Geometry", score: "98", grade: "A", extra: "1.0" },
+      { subject: "Honors English 10", score: "89", grade: "B+", extra: "1.0" },
+      { subject: "Honors Chemistry", score: "88", grade: "B+", extra: "1.0" },
+      { subject: "Spanish II", score: "100", grade: "A", extra: "1.0" },
     ],
-    summary: ["GPA 3.75", "Weighted 3.88"],
+    summary: ["GPA 3.52", "Weighted 3.82"],
   },
   idCards: false,
   learnerExtra: {

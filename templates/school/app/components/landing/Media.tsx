@@ -160,10 +160,18 @@ export function Phone({
 }
 
 /**
- * The YouTube demo, as its thumbnail until someone presses play. YouTube's
- * player, and any cookie it sets, loads only then, from the no-cookie domain.
+ * The YouTube demo, as a poster until someone presses play. YouTube's player,
+ * and any cookie it sets, loads only then, from the no-cookie domain.
  */
-export function DemoVideo({ id, title }: { id: string; title: string }) {
+export function DemoVideo({
+  id,
+  title,
+  poster,
+}: {
+  id: string;
+  title: string;
+  poster: string;
+}) {
   const [playing, setPlaying] = useState(false);
   return (
     <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-foreground shadow-[0_24px_48px_-24px_rgba(0,0,0,0.35)]">
@@ -183,11 +191,12 @@ export function DemoVideo({ id, title }: { id: string; title: string }) {
           aria-label={`Play: ${title}`}
         >
           <img
-            src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+            src={poster}
             alt=""
             loading="lazy"
-            className="size-full object-cover"
+            className="size-full object-cover object-left-top"
           />
+          <span className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/15" />
           <span className="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-background/95 text-foreground shadow-lg transition-transform group-hover:scale-105 sm:size-20">
             <IconPlayerPlayFilled size={28} className="translate-x-0.5" />
           </span>

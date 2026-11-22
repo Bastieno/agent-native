@@ -28,17 +28,14 @@ import { DemoVideo, EllaiMark, Phone, Screen } from "./Media";
 const ROLE = {
   principal: {
     bar: "bg-principal",
-    border: "border-principal",
     ink: "text-principal-ink",
   },
   teacher: {
     bar: "bg-teacher",
-    border: "border-teacher",
     ink: "text-teacher-ink",
   },
   learner: {
     bar: "bg-learner",
-    border: "border-learner",
     ink: "text-learner-ink",
   },
 } as const;
@@ -204,7 +201,6 @@ export function Landing({
   calLink: string | null;
 }) {
   const c = EDITIONS[edition];
-  const Person = capital(c.person.singular);
 
   return (
     <div className="landing min-h-screen bg-background text-foreground antialiased">
@@ -235,49 +231,12 @@ export function Landing({
 
         {c.video ? (
           <div className="mx-auto max-w-5xl px-4 pb-8 sm:px-6">
-            <DemoVideo id={c.video.id} title={c.video.title} />
+            <DemoVideo {...c.video} />
           </div>
         ) : null}
 
-        {/* One assistant, three people */}
-        <div className="mx-auto mt-12 max-w-6xl px-4 sm:px-6">
-          <div className="grid overflow-hidden rounded-xl border border-border md:grid-cols-3">
-            {(
-              [
-                [
-                  "principal",
-                  "Principal",
-                  c.exchanges.principal.say,
-                  "#principal",
-                ],
-                ["teacher", "Teacher", c.exchanges.teacher.say, "#teacher"],
-                ["learner", Person, c.exchanges.learner.say, "#learner"],
-              ] as const
-            ).map(([role, who, say, href], i) => (
-              <a
-                key={role}
-                href={href}
-                className={cn(
-                  "group border-t-4 bg-card p-6 transition-colors hover:bg-muted/60 sm:p-7",
-                  ROLE[role].border,
-                  i > 0 && "border-l-0 md:border-l md:border-l-border",
-                )}
-              >
-                <span
-                  className={cn(
-                    "text-xs font-semibold uppercase tracking-[0.08em]",
-                    ROLE[role].ink,
-                  )}
-                >
-                  {who}
-                </span>
-                <span className="mt-3 block text-balance text-lg font-medium leading-snug tracking-[-0.01em]">
-                  &ldquo;{say}&rdquo;
-                </span>
-              </a>
-            ))}
-          </div>
-          <p className="mt-5 max-w-2xl text-sm text-muted-foreground">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="max-w-2xl text-sm text-muted-foreground">
             {c.standardsLine}
           </p>
         </div>
@@ -411,7 +370,7 @@ export function Landing({
                 body: "Whatever the assistant does appears at once, and anyone can check it or change it by hand.",
               },
             ].map(({ icon: Icon, title, body }) => (
-              <div key={title} className="border-t border-foreground/80 pt-5">
+              <div key={title}>
                 <Icon size={20} />
                 <h3 className="mt-4 text-lg font-semibold tracking-tight">
                   {title}
@@ -428,17 +387,17 @@ export function Landing({
         <Section className="border-t border-border/70">
           <Heading>Fast, but never unsupervised.</Heading>
           <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
-            <Point title="Same person, same permissions." rule>
+            <Point title="Same person, same permissions.">
               The assistant, or a connected Claude or ChatGPT, acts as the
               person signed in. A teacher asking for another teacher&rsquo;s
               class is refused.
             </Point>
-            <Point title="Drafts first." rule>
+            <Point title="Drafts first.">
               Notes, resources and {c.mark}s are saved for a person to review.
               Ellai does not publish {c.mark}s, and it asks before anything that
               cannot be undone.
             </Point>
-            <Point title="The data stays with the school." rule>
+            <Point title="The data stays with the school.">
               Names and {c.mark}s stay on the school&rsquo;s server. A connected
               AI app calls the school&rsquo;s tools; it does not copy the data
               out.
@@ -607,14 +566,12 @@ function capital(s: string) {
 function Point({
   title,
   children,
-  rule = false,
 }: {
   title: string;
   children: React.ReactNode;
-  rule?: boolean;
 }) {
   return (
-    <div className={cn(rule && "border-t border-foreground/80 pt-5")}>
+    <div>
       <dt className="font-semibold tracking-tight">{title}</dt>
       <dd className="mt-1.5 leading-relaxed text-muted-foreground">
         {children}
