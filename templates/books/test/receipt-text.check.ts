@@ -250,8 +250,13 @@ await check("costs go to the Lounge unless the note says Hub", () => {
   assert.equal(guessExpense("zzz").business, null); // no category, no guess
 });
 
+await check("commission is a cost of its own", () => {
+  assert.equal(guessExpense("For commission").category, "Commissions");
+  assert.equal(guessExpense("For commission").notAnExpense, false);
+});
+
 await check("loans, profit and commission are not expenses", () => {
-  for (const note of ["For commission", "Selllement"])
+  for (const note of ["Selllement"])
     assert.equal(guessExpense(note).notAnExpense, true, note);
   assert.equal(guessExpense("5k for cleaning").notAnExpense, false);
 });

@@ -38,6 +38,7 @@ export const EXPENSE_CATEGORIES = [
   "Supplies",
   "Equipment & furniture",
   "Taxes & levies",
+  "Commissions",
   OWNERS_PAY,
   MANAGER_FLOAT,
   ...NOT_COSTS,

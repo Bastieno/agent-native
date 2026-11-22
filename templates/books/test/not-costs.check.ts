@@ -198,7 +198,7 @@ await check(
         receipts: [
           {
             pendingReceiptId: ids[3],
-            lines: slip("N80,000.00", "ZED ADE 0987654321", "For commission"),
+            lines: slip("N80,000.00", "ZED ADE 0987654321", "Settlement"),
           },
         ],
       }),

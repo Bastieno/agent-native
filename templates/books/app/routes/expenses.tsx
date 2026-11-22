@@ -64,6 +64,7 @@ type Expense = {
   status: string;
   source: string;
   receiptFileId: string | null;
+  isCost?: boolean;
 };
 
 function HistoryUpload() {
@@ -306,7 +307,12 @@ export default function ExpensesPage() {
     () => expenses.find((e) => e.code === selectedCode),
     [expenses, selectedCode],
   );
-  const total = expenses.reduce((a, e) => a + e.amount, 0);
+  const total = expenses
+    .filter((e) => e.isCost !== false)
+    .reduce((a, e) => a + e.amount, 0);
+  const moved = expenses
+    .filter((e) => e.isCost === false)
+    .reduce((a, e) => a + e.amount, 0);
 
   function select(code: string | null) {
     const next = new URLSearchParams(params);
@@ -393,6 +399,9 @@ export default function ExpensesPage() {
           <span className="font-medium text-foreground tabular-nums">
             {naira(total)}
           </span>
+          {moved > 0 && (
+            <span className="ml-2">+ {naira(moved)} moved, not a cost</span>
+          )}
         </div>
       </div>
       {expenses.length === 0 ? (
@@ -435,7 +444,9 @@ export default function ExpensesPage() {
                 <TableCell className="text-muted-foreground">
                   {e.category ?? "—"}
                 </TableCell>
-                <TableCell className="text-right tabular-nums">
+                <TableCell
+                  className={`text-right tabular-nums ${e.isCost === false ? "text-muted-foreground italic" : ""}`}
+                >
                   {naira(e.amount)}
                 </TableCell>
               </TableRow>

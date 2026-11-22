@@ -48,7 +48,7 @@ await check("records readable slips as needs_review with a guess", async () => {
         },
         {
           pendingReceiptId: ids[1],
-          lines: slip("N500,000.00", "For commission", "Wednesday"),
+          lines: slip("N500,000.00", "Settlement", "Wednesday"),
         },
         { pendingReceiptId: ids[2], lines: ["a photo of a plate of rice"] },
       ],

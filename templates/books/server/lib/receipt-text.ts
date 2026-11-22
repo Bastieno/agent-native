@@ -141,8 +141,7 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
   const amount = findAmount(lines);
   if (!amount) return { ok: false, reason: "no amount" };
   // A garbled label can steal a neighbour's value, so look for the date line itself.
-  const isDate = (l: string) =>
-    /[A-Za-z]{3,}.*\d{1,2}:\d\d\s*[AP]M/i.test(l);
+  const isDate = (l: string) => /[A-Za-z]{3,}.*\d{1,2}:\d\d\s*[AP]M/i.test(l);
   const dateText =
     fields.get("transaction date")?.find(isDate) ?? clean.find(isDate) ?? "";
   const weekday = closest(

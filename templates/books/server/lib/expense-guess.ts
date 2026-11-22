@@ -59,6 +59,11 @@ const RULES: Rule[] = [
   },
   { category: "Rent", business: null, words: ["rent", "lease"] },
   {
+    category: "Commissions",
+    business: null,
+    words: ["commission"],
+  },
+  {
     category: "Taxes & levies",
     business: null,
     words: ["land use", "levy", "levies", "tax", "refuse", "lasepa", "firs"],
@@ -217,7 +222,7 @@ const RULES: Rule[] = [
 
 const LOAN = /\bloans?\b/i;
 const DIVIDEND = /\bdividends?\b|\bprofi[lt]s?\b/i;
-const NOT_EXPENSE = /commission|se[tl]+ement|confab|drawing/i;
+const NOT_EXPENSE = /se[tl]+ement|confab|drawing/i;
 
 /** OCR often turns "t" into "l", "d" into "c" and so on; compare on a folded form. */
 const fold = (s: string) =>
