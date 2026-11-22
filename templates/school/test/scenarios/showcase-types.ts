@@ -178,7 +178,17 @@ export type Showcase = {
   lessonNoteHistoryWeek: number;
   /** A lesson note a teacher reopens after it was marked ready. */
   reopenedNote: { arm: string; subject: string; week: number };
-  leftOpen: { arm: string; subject: string; week: number };
+  /**
+   * The class whose last piece is left handed in but unmarked. `kind` sets
+   * the piece whatever the rotation gives that week; a worksheet has a
+   * written answer, so marking it can flag one for the teacher.
+   */
+  leftOpen: {
+    arm: string;
+    subject: string;
+    week: number;
+    kind?: "worksheet" | "problem set";
+  };
   examDays: string[];
 
   /** Exam sittings: start times, length and shape of the papers. */

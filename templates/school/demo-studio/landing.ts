@@ -12,9 +12,10 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { restoreSnapshot } from "./db.js";
+
+import { restoreSnapshot, waitForDbClosed } from "./db.js";
 import { record } from "./record.js";
-import type { SchoolId } from "./schools.js";
+import { SCHOOLS, type SchoolId } from "./schools.js";
 import { startDemoServer } from "./server.js";
 import type { Action, Step } from "./types.js";
 
@@ -50,6 +51,11 @@ interface Clip {
   parts: (e: Edition, d: Device) => Part[];
   /** Recorded in another school than the edition's usual one. */
   school?: (e: Edition) => SchoolId;
+  /**
+   * The take changes what it shows (marking), so each device starts from the
+   * snapshot; otherwise the second take finds the work already done.
+   */
+  fresh?: boolean;
 }
 
 const people: Record<
@@ -173,6 +179,7 @@ const CLIPS: Clip[] = [
   {
     name: "teacher-mark",
     devices: ["desktop", "phone"],
+    fresh: true,
     signInAs: (e) => people[e].teacher,
     start: () => [
       { do: "goto", path: "/teacher" },
@@ -182,8 +189,8 @@ const CLIPS: Clip[] = [
       { actions: [hold(900)] },
       ...asking(
         e === "ng"
-          ? "Mark the handed-in Week 10 quiz for JSS2A Mathematics."
-          : "Grade the handed-in Week 8 quiz for 10A Geometry.",
+          ? "Mark the handed-in Week 10 worksheet for JSS2A Mathematics."
+          : "Grade the handed-in Week 8 worksheet for 10A Geometry.",
         d,
       ),
     ],
@@ -298,54 +305,75 @@ if (names.some((n) => !CLIPS.find((c) => c.name === n))) {
   );
 }
 
+/** Record one clip on one device, and encode it into public/landing. */
+async function take(edition: Edition, clip: Clip, device: Device, url: string) {
+  const label = `${edition}/${clip.name}-${device}`;
+  console.log(`· ${label}`);
+  const parts = clip.parts(edition, device);
+  const steps: Step[] = parts.map((p, i) => ({
+    line: `${clip.name} part ${i + 1}`,
+    actions: p.actions,
+  }));
+  const work = path.join(WORK, edition, `${clip.name}-${device}`);
+  const { videoPath, timeline } = await record(
+    {
+      slug: clip.name,
+      title: clip.name,
+      signInAs: clip.signInAs(edition),
+      start: clip.start(device),
+      steps,
+      ...(device === "phone"
+        ? { device: "phone" as const }
+        : { viewport: DESKTOP }),
+    },
+    url,
+    work,
+  );
+  const dir = path.join(OUT, edition);
+  fs.mkdirSync(dir, { recursive: true });
+  const out = path.join(dir, `${clip.name}-${device}.mp4`);
+  encode(
+    videoPath,
+    parts,
+    timeline.steps,
+    out,
+    device === "phone" ? 780 : 1920,
+  );
+  const kb = Math.round(fs.statSync(out).size / 1024);
+  console.log(`  ${path.relative(ROOT, out)} (${kb} KB)`);
+}
+
+/** Restore the school's snapshot, start it, run `work`, and stop it. */
+async function inSchool(
+  school: SchoolId,
+  work: (url: string) => Promise<void>,
+) {
+  restoreSnapshot(undefined, school);
+  const server = await startDemoServer(school);
+  try {
+    await work(server.url);
+  } finally {
+    await server.stop();
+  }
+  await waitForDbClosed(path.join(ROOT, SCHOOLS[school].db));
+}
+
 // Each school starts once from its snapshot and records its clips in order,
-// so a clip can rely on what an earlier one in the same school did.
+// so a clip can rely on what an earlier one in the same school did. A fresh
+// clip records each device in a school of its own, after the others.
 for (const edition of editions) {
   const schoolOf = (c: Clip) => c.school?.(edition) ?? people[edition].school;
   for (const school of [...new Set(clips.map(schoolOf))]) {
-    restoreSnapshot(undefined, school);
-    const server = await startDemoServer(school);
-    try {
-      for (const clip of clips.filter((c) => schoolOf(c) === school)) {
-        for (const device of clip.devices) {
-          const label = `${edition}/${clip.name}-${device}`;
-          console.log(`· ${label}`);
-          const parts = clip.parts(edition, device);
-          const steps: Step[] = parts.map((p, i) => ({
-            line: `${clip.name} part ${i + 1}`,
-            actions: p.actions,
-          }));
-          const work = path.join(WORK, edition, `${clip.name}-${device}`);
-          const { videoPath, timeline } = await record(
-            {
-              slug: clip.name,
-              title: clip.name,
-              signInAs: clip.signInAs(edition),
-              start: clip.start(device),
-              steps,
-              ...(device === "phone"
-                ? { device: "phone" as const }
-                : { viewport: DESKTOP }),
-            },
-            server.url,
-            work,
-          );
-          const dir = path.join(OUT, edition);
-          fs.mkdirSync(dir, { recursive: true });
-          const out = path.join(dir, `${clip.name}-${device}.mp4`);
-          encode(
-            videoPath,
-            parts,
-            timeline.steps,
-            out,
-            device === "phone" ? 780 : 1920,
-          );
-          const kb = Math.round(fs.statSync(out).size / 1024);
-          console.log(`  ${path.relative(ROOT, out)} (${kb} KB)`);
-        }
-      }
-    } finally {
-      await server.stop();
-    }
+    const here = clips.filter((c) => schoolOf(c) === school);
+    const shared = here.filter((c) => !c.fresh);
+    if (shared.length)
+      await inSchool(school, async (url) => {
+        for (const clip of shared)
+          for (const device of clip.devices)
+            await take(edition, clip, device, url);
+      });
+    for (const clip of here.filter((c) => c.fresh))
+      for (const device of clip.devices)
+        await inSchool(school, (url) => take(edition, clip, device, url));
   }
 }

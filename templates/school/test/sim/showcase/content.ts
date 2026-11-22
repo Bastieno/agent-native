@@ -217,13 +217,22 @@ const writeUpsByText = new Map<string, WriteUp>();
 
 const key = (prompt: string, text: string) => `${prompt}\u0000${text.trim()}`;
 
+/** Which answer a learner of this ability would write, without writing it. */
+export function answerOf(
+  q: OpenQuestion,
+  ability: number,
+  seed: number,
+): WrittenAnswer | undefined {
+  return pick(q.answers, tierFor(ability, seed), seed);
+}
+
 /** The answer a learner of this ability writes to an open question. */
 export function writtenAnswer(
   q: OpenQuestion,
   ability: number,
   seed: number,
 ): WrittenAnswer | undefined {
-  const chosen = pick(q.answers, tierFor(ability, seed), seed);
+  const chosen = answerOf(q, ability, seed);
   if (chosen) byText.set(key(q.prompt, chosen.text), chosen);
   return chosen;
 }

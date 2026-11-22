@@ -780,7 +780,7 @@ export const showcase: Showcase = {
    * learners' status words and the teacher's waiting work have something to
    * show.
    */
-  leftOpen: { arm: "JSS2A", subject: "Mathematics", week: 10 },
+  leftOpen: { arm: "JSS2A", subject: "Mathematics", week: 10, kind: "worksheet" },
   pdfHandoutWeeks: [],
   lessonNoteHistoryWeek: 8,
   reopenedNote: { arm: "SS1A", subject: "Chemistry", week: 3 },

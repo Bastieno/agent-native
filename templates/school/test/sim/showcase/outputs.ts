@@ -365,14 +365,23 @@ export async function checklist(
         handedIn: number;
         started: number;
         notStarted: number;
+        kind: string;
+        unsureHandedIn: boolean;
       }
     | undefined;
+  const wantsUnsure = !!run.scenario.leftOpen.kind;
   row(
     "Work left open",
-    "One class's last piece handed in by some, started by some, not opened by others, unmarked",
-    !!open && open.handedIn > 0 && open.started > 0 && open.notStarted > 0,
+    wantsUnsure
+      ? "One class's last piece handed in by some, started by some, not opened by others, unmarked, with an answer to flag among those handed in"
+      : "One class's last piece handed in by some, started by some, not opened by others, unmarked",
+    !!open &&
+      open.handedIn > 0 &&
+      open.started > 0 &&
+      open.notStarted > 0 &&
+      (!wantsUnsure || open.unsureHandedIn),
     open
-      ? `${open.className}: ${open.handedIn} handed in, ${open.started} started, ${open.notStarted} not started`
+      ? `${open.className} ${open.kind}: ${open.handedIn} handed in, ${open.started} started, ${open.notStarted} not started${wantsUnsure ? (open.unsureHandedIn ? ", the unsure answer among them" : ", none of them the unsure answer") : ""}`
       : "none",
   );
 
@@ -814,7 +823,11 @@ export async function writeOutputs(
     JSON.stringify(run.record, null, 2),
   );
 
-  // The owner's copy, beside the spec.
+  // The owner's copy, beside the spec. A build on another server (a demo
+  // school's) describes that school, not the owner's showcase, so it stays in
+  // test-runs.
+  if (new URL(run.client.baseUrl).port !== String(run.scenario.port))
+    return dir;
   const out = join("docs", run.scenario.outputDir);
   await mkdir(out, { recursive: true });
   for (const name of [

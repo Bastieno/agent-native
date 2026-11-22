@@ -19,6 +19,7 @@ import {
 } from "./questions.js";
 import {
   markFor,
+  answerOf,
   openByPrompt,
   paperFrom,
   schemeText,
@@ -255,6 +256,32 @@ async function setPiece(
 
 // ── Sitting it ───────────────────────────────────────────────────────────
 
+/** How able a learner is in a given week, and the seed their answers come from. */
+function sitting(learner: Learner, week: number, difficulty = 1) {
+  return {
+    ability: Math.min(
+      0.98,
+      Math.max(0.03, abilityInWeek(learner.profile, week) + (1 - difficulty)),
+    ),
+    seed: learner.profile.index * 9973 + week * 101,
+  };
+}
+
+/** Whether this learner, sitting it, writes an answer the content marks as unsure. */
+function writesUnsure(
+  learner: Learner,
+  week: number,
+  questions: Question[],
+  written: WeekContent | null,
+): boolean {
+  const open = openByPrompt([written]);
+  const { ability, seed } = sitting(learner, week);
+  return questions.some((q, i) => {
+    const fromContent = !q.options && open.get(q.prompt);
+    return !!fromContent && !!answerOf(fromContent, ability, seed + i)?.unsure;
+  });
+}
+
 export async function sit(
   run: ShowcaseRun,
   learner: Learner,
@@ -268,11 +295,7 @@ export async function sit(
   written: WeekContent | (WeekContent | null)[] | null = null,
 ): Promise<void> {
   const { client } = run;
-  const ability = Math.min(
-    0.98,
-    Math.max(0.03, abilityInWeek(learner.profile, week) + (1 - difficulty)),
-  );
-  const seed = learner.profile.index * 9973 + week * 101;
+  const { ability, seed } = sitting(learner, week, difficulty);
   await client.as(learner, "start-activity", { assessmentId });
 
   if (kind === "practical" && !Array.isArray(written) && written?.practical) {
@@ -563,7 +586,12 @@ export async function teachClassWeek(
   if (differentiate)
     return differentiatedWeek(run, cls, week, objectives, all, seed, written);
 
-  const kind = kindFor(run, cls, week);
+  const leftOpen = run.scenario.leftOpen;
+  const isLeftOpen =
+    cls.arm?.name === leftOpen.arm &&
+    cls.subject.name === leftOpen.subject &&
+    week === leftOpen.week;
+  const kind = (isLeftOpen && leftOpen.kind) || kindFor(run, cls, week);
   const questions = written
     ? kind === "practical"
       ? []
@@ -590,12 +618,7 @@ export async function teachClassWeek(
   );
 
   const learners = learnersOf(run, cls);
-  const leftOpen = run.scenario.leftOpen;
-  if (
-    cls.arm?.name === leftOpen.arm &&
-    cls.subject.name === leftOpen.subject &&
-    week === leftOpen.week
-  )
+  if (isLeftOpen)
     return leaveOpen(run, cls, week, kind, questions, assessmentId, written);
   const sat = await inPool(learners, 6, async (learner) => {
     if (
@@ -651,7 +674,9 @@ export async function teachClassWeek(
 /**
  * The term's last piece in one class, left as a real class leaves it on the
  * day it is due: a third have handed it in, a third have started, a third
- * have not opened it, and the teacher has marked none of it yet.
+ * have not opened it, and the teacher has marked none of it yet. When the
+ * piece has a written question, the learner whose answer the content marks
+ * as unsure is among those who handed in, so marking it has one to flag.
  */
 async function leaveOpen(
   run: ShowcaseRun,
@@ -663,8 +688,17 @@ async function leaveOpen(
   written: WeekContent | null,
 ): Promise<PieceResult> {
   const learners = learnersOf(run, cls);
+  const handsInFirst = learners.findIndex((l, i) =>
+    i % 3 === 0 ? false : writesUnsure(l, week, questions, written),
+  );
+  const handingIn = (i: number) =>
+    i % 3 === 0 ||
+    (i === handsInFirst &&
+      !learners.some(
+        (l, j) => j % 3 === 0 && writesUnsure(l, week, questions, written),
+      ));
   const states = await inPool(learners, 6, async (learner, i) => {
-    if (i % 3 === 0) {
+    if (handingIn(i)) {
       await sit(
         run,
         learner,
@@ -696,6 +730,10 @@ async function leaveOpen(
     className: cls.name,
     week,
     assessmentId,
+    kind,
+    unsureHandedIn: learners.some(
+      (l, i) => handingIn(i) && writesUnsure(l, week, questions, written),
+    ),
     handedIn: states.filter((s) => s === "handed in").length,
     started: states.filter((s) => s === "started").length,
     notStarted: states.filter((s) => s === "not started").length,

@@ -1071,7 +1071,7 @@ export const showcase: Showcase = {
   pdfHandoutWeeks: [2, 5],
   lessonNoteHistoryWeek: 6,
   reopenedNote: { arm: "9A", subject: "Biology", week: 3 },
-  leftOpen: { arm: "10A", subject: "Geometry", week: 8 },
+  leftOpen: { arm: "10A", subject: "Geometry", week: 8, kind: "worksheet" },
   /** Exam week 10: Monday 10/19 to Friday 10/23/2026. */
   examDays: [
     "2026-10-19",

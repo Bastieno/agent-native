@@ -74,21 +74,21 @@ const ng: EditionContent = {
       ],
     },
     teacher: {
-      say: "Mark the handed-in Week 10 quiz for JSS2A Mathematics.",
+      say: "Mark the handed-in Week 10 worksheet for JSS2A Mathematics.",
       reply:
-        "Five papers marked, with each learner's total. Nothing was flagged for your review.",
+        "Five papers marked. The written question was marked against your scheme, with feedback for each learner.",
       items: [
         {
+          title: "Two answers word for word the same",
+          detail: "Both earned nothing; worth asking them about it",
+        },
+        {
+          title: "Five only started",
+          detail: "Named, and left unmarked",
+        },
+        {
           title: "Not published",
-          detail: "The marks are saved, but learners cannot see them yet",
-        },
-        {
-          title: "Five learners did not hand in",
-          detail: "Named, and their papers left unmarked",
-        },
-        {
-          title: "Publish now, or wait?",
-          detail: "Publishing closes the quiz for the five still out",
+          detail: "Publishing closes the worksheet for the five still out",
         },
       ],
     },
@@ -151,7 +151,8 @@ const us: EditionContent = {
       items: [
         {
           title: "Missed hand-ins",
-          detail: "Hunter Tran handed in 4 of 9 PE assignments, Aarav Moore 3 of 9 in Spanish III",
+          detail:
+            "Hunter Tran handed in 4 of 9 PE assignments, Aarav Moore 3 of 9 in Spanish III",
         },
         {
           title: "The same weak assignments",
@@ -164,21 +165,21 @@ const us: EditionContent = {
       ],
     },
     teacher: {
-      say: "Grade the handed-in Week 8 quiz for 10A Geometry.",
+      say: "Grade the handed-in Week 8 worksheet for 10A Geometry.",
       reply:
-        "Five papers graded. The questions mark themselves, so none needed grading by hand.",
+        "Five papers graded. The written question was graded against your scheme, quoting each student's own words.",
       items: [
         {
+          title: "Flagged for you",
+          detail: "A borderline mark, and two answers word for word the same",
+        },
+        {
+          title: "Five only started",
+          detail: "Named, and left ungraded",
+        },
+        {
           title: "Not published",
-          detail: "The grades are saved, but students cannot see them yet",
-        },
-        {
-          title: "Five students still in progress",
-          detail: "Named, each with one question answered",
-        },
-        {
-          title: "Publish now, or wait?",
-          detail: "Publishing closes the quiz for the five still out",
+          detail: "Publishing closes the worksheet for the five still out",
         },
       ],
     },

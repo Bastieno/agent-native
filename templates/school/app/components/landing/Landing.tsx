@@ -324,7 +324,7 @@ export function Landing({
               <Screen
                 edition={edition}
                 name="teacher-mark"
-                label={`A teacher asks the assistant to ${c.mark} a quiz`}
+                label={`A teacher asks the assistant to ${c.mark} a worksheet`}
               />
             </Feature>
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">

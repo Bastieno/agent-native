@@ -42,7 +42,7 @@ export const SCHOOLS: Record<SchoolId, School> = {
     port: 8137,
     db: "./data/demo-term.db",
     about:
-      "Crestfield in week 10 of its first term, with that week's quiz still unmarked (the owner's pre-promotion showcase)",
+      "Crestfield in week 10 of its first term, with that week's quiz still unmarked (built fresh by the showcase seed)",
   },
 };
 
