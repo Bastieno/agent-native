@@ -83,6 +83,24 @@ await check("a full stop after the weekday doesn't hide the date", () => {
   assert.ok(r.ok && r.receipt.date === "2025-08-12");
 });
 
+await check("finds the date even when its label is unreadable", () => {
+  const lines = moniepoint({
+    date: "Monday, September 8th, 2025 | 3:10 PM",
+    narration: ["For business"],
+  }).map((l) => (l === "Transaction Dale" ? "M" : l));
+  const r = readReceiptText(lines, "2025-09-08");
+  assert.ok(r.ok && r.receipt.date === "2025-09-08");
+});
+
+await check("a garbled label can't hide the date", () => {
+  const lines = moniepoint({
+    date: "Monday, September 8th, 2025 | 3:10 PM",
+    narration: ["For business"],
+  }).map((l) => (l === "Transaction Type" ? "Transaction Турa" : l));
+  const r = readReceiptText(lines, "2025-09-08");
+  assert.ok(r.ok && r.receipt.date === "2025-09-08");
+});
+
 await check("a narration can wrap over several lines", () => {
   const r = readReceiptText(
     moniepoint({
@@ -197,13 +215,8 @@ await check(
 );
 
 await check("slips it can't read say why", () => {
-  assert.deepEqual(
-    readReceiptText(["Providus Bank", "N1,000.00"], "2026-07-01"),
-    {
-      ok: false,
-      reason: "Providus slip",
-    },
-  );
+  const noProvidusAmount = readReceiptText(["Providus Bank"], "2026-07-01");
+  assert.ok(!noProvidusAmount.ok);
   const noAmount = readReceiptText(
     ["Moniepoint", "Transaction Date"],
     "2026-07-01",

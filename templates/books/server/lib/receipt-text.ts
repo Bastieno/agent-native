@@ -6,7 +6,7 @@
  */
 
 export interface ReadReceipt {
-  layout: "moniepoint" | "opay";
+  layout: "moniepoint" | "opay" | "providus";
   kind: string | null; // TRANSFER | AIRTIME …
   amount: number; // naira
   payee: string | null;
@@ -126,6 +126,7 @@ function dateFromWeekday(posted: string, weekday: string): string | null {
 }
 
 function readMoniepoint(lines: string[], posted: string): ReadResult {
+  const clean = lines;
   const fields = new Map<string, string[]>();
   let current: string | null = null;
   for (const l of lines) {
@@ -139,7 +140,11 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
   const get = (k: string) => fields.get(k)?.join(" ") || null;
   const amount = findAmount(lines);
   if (!amount) return { ok: false, reason: "no amount" };
-  const dateText = get("transaction date") ?? "";
+  // A garbled label can steal a neighbour's value, so look for the date line itself.
+  const isDate = (l: string) =>
+    /[A-Za-z]{3,}.*\d{1,2}:\d\d\s*[AP]M/i.test(l);
+  const dateText =
+    fields.get("transaction date")?.find(isDate) ?? clean.find(isDate) ?? "";
   const weekday = closest(
     letters(dateText.split(/[^A-Za-z]+/)[0] ?? ""),
     WEEKDAYS,
@@ -216,10 +221,51 @@ function readOpay(lines: string[], posted: string): ReadResult {
   };
 }
 
+const labelled = (lines: string[], label: string) =>
+  lines
+    .find((l) => new RegExp(`^${label}\\s*:`, "i").test(l))
+    ?.replace(/^[^:]*:\s*/, "")
+    .trim() || null;
+
+/** Providus slips print "Label: value" lines; a long narration wraps above its label. */
+function readProvidus(lines: string[], posted: string): ReadResult {
+  const amountText = labelled(lines, "Amount");
+  const amount = amountText
+    ? findAmount([amountText.replace(/^NGN\s*/i, "")])
+    : null;
+  if (!amount) return { ok: false, reason: "no amount" };
+  const dateText = labelled(lines, "Transaction Date") ?? "";
+  const d = dateText.match(/([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})\s+(\d\d:\d\d)/);
+  const month = d ? MONTHS.indexOf(d[1].toLowerCase()) : -1;
+  if (!d || month < 0) return { ok: false, reason: "no date on the slip" };
+  const date = `${d[3]}-${String(month + 1).padStart(2, "0")}-${d[2].padStart(2, "0")}`;
+  if (date > posted || date < addDays(posted, -3))
+    return { ok: false, reason: "slip date doesn't match the day posted" };
+  const sessionAt = lines.findIndex((l) => /^Session ID\s*:/i.test(l));
+  const endAt = lines.findIndex((l) => /^DISCLAIMER/i.test(l));
+  const wrapped = lines
+    .slice(sessionAt + 1, endAt < 0 ? undefined : endAt)
+    .map((l) => l.replace(/^Narration\s*:\s*/i, "").trim())
+    .filter(Boolean);
+  return {
+    ok: true,
+    receipt: {
+      layout: "providus",
+      kind: /TRANSFER/i.test(labelled(lines, "Type") ?? "") ? "TRANSFER" : null,
+      amount,
+      payee: labelled(lines, "Beneficiary Name"),
+      note: wrapped.length ? wrapped.join(" ") : null,
+      account: "Providus",
+      date,
+      time: d[4],
+    },
+  };
+}
+
 export function readReceiptText(lines: string[], postedOn: string): ReadResult {
   const clean = lines.map((l) => l.trim()).filter(Boolean);
   const text = clean.join(" ");
-  if (/providus/i.test(text)) return { ok: false, reason: "Providus slip" };
+  if (/providus/i.test(text)) return readProvidus(clean, postedOn);
   if (clean[0] === "OPay" || /opay-inc/i.test(text))
     return readOpay(clean, postedOn);
   if (/Moni\w*point/i.test(text)) return readMoniepoint(clean, postedOn);
