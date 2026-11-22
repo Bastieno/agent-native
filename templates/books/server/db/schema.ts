@@ -124,6 +124,19 @@ export const expenseCategories = table("expense_categories", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
   sort: integer("sort").notNull(),
+  /** 0 for money moved (loans, transfers between accounts, client purchases): not a running cost. */
+  isCost: integer("is_cost").notNull().default(1),
+  ...created,
+  ...ownableColumns(),
+});
+
+/** "Money to this payee is usually that": applied when old receipts are read. */
+export const payeeRules = table("payee_rules", {
+  id: text("id").primaryKey(),
+  matchKey: text("match_key").notNull(),
+  categoryId: text("category_id").notNull(),
+  businessId: text("business_id"),
+  minAmount: integer("min_amount"), // kobo; the rule applies at or above this
   ...created,
   ...ownableColumns(),
 });

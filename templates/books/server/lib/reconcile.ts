@@ -29,6 +29,8 @@ export interface DayInput {
     vendor: string;
     occurredOn: string;
     imageHash: string | null;
+    /** false for money moved (loans, transfers, client purchases): not a running cost */
+    isCost?: boolean;
   }[];
   /** categoryId → average daily spend over the previous 4 weeks (kobo). */
   categoryHistory: Record<string, number>;
@@ -94,6 +96,8 @@ export interface DayResult {
   };
   cashInTill: number | null;
   expenses: number;
+  /** Money moved that day (loans, transfers between accounts, client purchases): not in expenses. */
+  notCosts: number;
   expensesByBusiness: Record<string, number>;
   expensesByCategory: Record<string, number>;
   matchedEventIds: string[];
@@ -403,7 +407,8 @@ export function reconcileDay(input: DayInput): DayResult {
   // ── Expenses ──
   const expensesByBusiness: Record<string, number> = {};
   const expensesByCategory: Record<string, number> = {};
-  for (const e of input.expenses) {
+  const costs = input.expenses.filter((e) => e.isCost !== false);
+  for (const e of costs) {
     add(expensesByBusiness, e.businessSlug ?? "unassigned", e.amount);
     add(expensesByCategory, e.categoryId ?? "uncategorised", e.amount);
     if (e.amount > thresholds.largeExpense)
@@ -442,7 +447,10 @@ export function reconcileDay(input: DayInput): DayResult {
     notIncome: { atCost, atMenu, byStaff },
     cash,
     cashInTill,
-    expenses: input.expenses.reduce((a, e) => a + e.amount, 0),
+    expenses: costs.reduce((a, e) => a + e.amount, 0),
+    notCosts: input.expenses
+      .filter((e) => e.isCost === false)
+      .reduce((a, e) => a + e.amount, 0),
     expensesByBusiness,
     expensesByCategory,
     matchedEventIds: [...matched],

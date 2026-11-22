@@ -329,4 +329,22 @@ export const BOOKS_MIGRATIONS: MigrationEntry[] = [
     version: 31,
     sql: `CREATE INDEX IF NOT EXISTS ix_pending_receipts_hash ON pending_receipts (org_id, image_hash)`,
   },
+  {
+    version: 32,
+    sql: `ALTER TABLE expense_categories ADD COLUMN is_cost INTEGER NOT NULL DEFAULT 1`,
+  },
+  {
+    version: 33,
+    sql: `CREATE TABLE IF NOT EXISTS payee_rules (
+    id TEXT PRIMARY KEY,
+    match_key TEXT NOT NULL,
+    category_id TEXT NOT NULL,
+    business_id TEXT,
+    min_amount INTEGER,
+    created_at TEXT NOT NULL,
+    owner_email TEXT NOT NULL DEFAULT 'local@localhost',
+    org_id TEXT,
+    visibility TEXT NOT NULL DEFAULT 'private'
+    )`,
+  },
 ];

@@ -1,6 +1,7 @@
 import { guessExpense } from "./expense-guess.js";
 import { createExpense } from "./expenses.js";
 import { readReceiptText } from "./receipt-text.js";
+import { loadPayeeRules, matchPayeeRule } from "./payee-rules.js";
 import { rows, run } from "./sql.js";
 
 export interface ReceiptText {
@@ -34,6 +35,7 @@ export async function recordReceiptsFromText(
   items: ReceiptText[],
 ): Promise<ReceiptOutcome[]> {
   const out: ReceiptOutcome[] = [];
+  const rules = await loadPayeeRules(orgId);
   for (const item of items) {
     const id = item.pendingReceiptId;
     const [p] = await rows(
@@ -58,7 +60,18 @@ export async function recordReceiptsFromText(
       continue;
     }
     const r = read.receipt;
-    const guess = guessExpense(r.note, r.kind);
+    const guessed = guessExpense(r.note, r.kind);
+    // A note that says commission or settlement waits for the owner, even from a known payee.
+    const rule = guessed.notAnExpense
+      ? null
+      : matchPayeeRule(rules, r.payee ?? "", r.amount * 100);
+    const guess = rule
+      ? {
+          category: rule.category as string | null,
+          business: rule.businessSlug as "lounge" | "hub" | null,
+          notAnExpense: false,
+        }
+      : guessed;
     if (guess.notAnExpense) {
       out.push({
         pendingReceiptId: id,

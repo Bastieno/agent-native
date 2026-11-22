@@ -56,6 +56,8 @@ export interface DigestFigures {
   expenseByCategory: Record<string, number>;
   /** Paid to the owner as their own pay; included in expenses, shown apart. */
   ownersPay: number;
+  /** Money moved (loans, transfers between accounts, client purchases), not counted in expenses. */
+  notCosts: Record<string, number>;
   /** Sent to a manager to buy stock with no breakdown; included in expenses, shown apart. */
   unitemised: number;
   subscriptionsByPlan: Record<string, number>;
@@ -100,7 +102,8 @@ async function expenseRows(orgId: string, start: string, end: string) {
          FROM expenses e
          LEFT JOIN businesses b ON b.id = e.business_id
          LEFT JOIN expense_categories c ON c.id = e.category_id
-        WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ?`,
+        WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ?
+          AND COALESCE(c.is_cost, 1) = 1`,
       [orgId, start, end],
     )
   ).map((e) => ({
@@ -110,6 +113,18 @@ async function expenseRows(orgId: string, start: string, end: string) {
     business: (e.business as string) ?? null,
     category: (e.category as string) ?? null,
   }));
+}
+
+/** Money moved in the period (loans, transfers, client purchases), by category. Not in expenses. */
+async function movedRows(orgId: string, start: string, end: string) {
+  const out: Record<string, number> = {};
+  for (const r of await rows(
+    `SELECT c.name, SUM(e.amount) AS total FROM expenses e JOIN expense_categories c ON c.id = e.category_id
+      WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ? AND c.is_cost = 0 GROUP BY c.name`,
+    [orgId, start, end],
+  ))
+    out[r.name as string] = num(r.total);
+  return out;
 }
 
 function totals(days: DayResult[]) {
@@ -508,6 +523,7 @@ export async function digestFigures(
     marginByCategory: current.marginByCategory,
     expenseByCategory,
     ownersPay: expenseByCategory[OWNERS_PAY] ?? 0,
+    notCosts: await movedRows(orgId, start, end),
     unitemised: expenseByCategory[MANAGER_FLOAT] ?? 0,
     subscriptionsByPlan,
     categoryMonths,

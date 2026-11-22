@@ -1,3 +1,5 @@
+import { DIVIDENDS, LOANS } from "./setup.js";
+
 /**
  * Guesses an expense's category and business from the note on a transfer
  * ("5 packs of chicken" → Food & drink stock · Lounge). Always a guess: the
@@ -213,8 +215,9 @@ const RULES: Rule[] = [
   },
 ];
 
-const NOT_EXPENSE =
-  /\bloan\b|\bprofi[lt]s?\b|commission|se[tl]+ement|confab|\bdividend|\bdrawing/i;
+const LOAN = /\bloans?\b/i;
+const DIVIDEND = /\bdividends?\b|\bprofi[lt]s?\b/i;
+const NOT_EXPENSE = /commission|se[tl]+ement|confab|drawing/i;
 
 /** OCR often turns "t" into "l", "d" into "c" and so on; compare on a folded form. */
 const fold = (s: string) =>
@@ -256,6 +259,20 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     };
   if (!note) return none;
   const text = ` ${note.toLowerCase()} `;
+  if (LOAN.test(text))
+    return {
+      category: LOANS,
+      business: null,
+      notAnExpense: false,
+      because: "loan",
+    };
+  if (DIVIDEND.test(text))
+    return {
+      category: DIVIDENDS,
+      business: null,
+      notAnExpense: false,
+      because: "dividend or profit share",
+    };
   if (NOT_EXPENSE.test(text))
     return {
       ...none,

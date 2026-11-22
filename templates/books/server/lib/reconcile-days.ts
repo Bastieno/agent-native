@@ -42,8 +42,9 @@ export async function loadDayInput(
   }));
   const expenses = (
     await rows(
-      `SELECT e.id, e.amount, e.paid_with, e.category_id, e.status, e.vendor, e.occurred_on, e.image_hash, b.slug
+      `SELECT e.id, e.amount, e.paid_with, e.category_id, e.status, e.vendor, e.occurred_on, e.image_hash, b.slug, c.is_cost
          FROM expenses e LEFT JOIN businesses b ON b.id = e.business_id
+         LEFT JOIN expense_categories c ON c.id = e.category_id
         WHERE e.org_id = ? AND e.occurred_on = ?`,
       [orgId, day],
     )
@@ -57,6 +58,7 @@ export async function loadDayInput(
     vendor: e.vendor,
     occurredOn: e.occurred_on,
     imageHash: e.image_hash ?? null,
+    isCost: e.is_cost == null ? true : num(e.is_cost) !== 0,
   }));
   // A category's usual daily spend: over the 4 weeks before, or since Books'
   // first expense if that is later. Under a week of history, there is no usual
@@ -75,8 +77,8 @@ export async function loadDayInput(
   );
   if (historyDays >= MIN_HISTORY_DAYS) {
     for (const r of await rows(
-      `SELECT category_id, SUM(amount) AS total FROM expenses
-        WHERE org_id = ? AND occurred_on >= ? AND occurred_on < ? AND category_id IS NOT NULL GROUP BY category_id`,
+      `SELECT e.category_id, SUM(e.amount) AS total FROM expenses e JOIN expense_categories c ON c.id = e.category_id
+        WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on < ? AND c.is_cost = 1 GROUP BY e.category_id`,
       [orgId, from, day],
     )) {
       categoryHistory[r.category_id] = Math.round(num(r.total) / historyDays);

@@ -238,12 +238,7 @@ await check("costs go to the Lounge unless the note says Hub", () => {
 });
 
 await check("loans, profit and commission are not expenses", () => {
-  for (const note of [
-    "Part payment for loan",
-    "Profil from 20 July",
-    "For commission",
-    "Selllement",
-  ])
+  for (const note of ["For commission", "Selllement"])
     assert.equal(guessExpense(note).notAnExpense, true, note);
   assert.equal(guessExpense("5k for cleaning").notAnExpense, false);
 });

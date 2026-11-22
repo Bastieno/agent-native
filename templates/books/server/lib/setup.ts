@@ -20,6 +20,14 @@ export const OWNERS_PAY = "Owner's pay";
 /** Money sent to a manager to buy stock, with no breakdown of what was bought. */
 export const MANAGER_FLOAT = "Manager float (not itemised)";
 
+export const LOANS = "Loans & repayments";
+export const MOVED = "Moved between accounts";
+export const CLIENT = "Paid for a client (repaid)";
+export const DOLLARS = "Dollar purchases";
+/** Money that moved but is not a running cost: counted apart, never in expenses or profit. */
+export const DIVIDENDS = "Dividends & profit share";
+export const NOT_COSTS = [LOANS, MOVED, CLIENT, DOLLARS, DIVIDENDS];
+
 export const EXPENSE_CATEGORIES = [
   "Food & drink stock",
   "Diesel / power",
@@ -32,6 +40,7 @@ export const EXPENSE_CATEGORIES = [
   "Taxes & levies",
   OWNERS_PAY,
   MANAGER_FLOAT,
+  ...NOT_COSTS,
   "Other",
 ];
 
@@ -70,8 +79,15 @@ export async function ensureExpenseCategories(orgId: string): Promise<void> {
   for (const name of EXPENSE_CATEGORIES) {
     if (have.has(name)) continue;
     await exec.execute({
-      sql: `INSERT INTO expense_categories (id, name, sort, created_at, org_id, visibility) VALUES (?, ?, ?, ?, ?, 'org')`,
-      args: [newId(), name, sort++, nowIso(), orgId],
+      sql: `INSERT INTO expense_categories (id, name, sort, is_cost, created_at, org_id, visibility) VALUES (?, ?, ?, ?, ?, ?, 'org')`,
+      args: [
+        newId(),
+        name,
+        sort++,
+        NOT_COSTS.includes(name) ? 0 : 1,
+        nowIso(),
+        orgId,
+      ],
     });
   }
 }

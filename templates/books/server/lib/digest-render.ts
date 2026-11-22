@@ -55,6 +55,11 @@ export function renderWhatsApp(f: DigestFigures, link: string): string {
         .filter(Boolean)
         .join(" · "),
     );
+  const moved = Object.entries(f.notCosts ?? {});
+  if (moved.length)
+    lines.push(
+      `Moved, not counted as costs: ${moved.map(([c, v]) => `${c.toLowerCase()} ${n(v)}`).join(", ")}`,
+    );
   const good = f.trends
     .filter((s) => s.direction === "good")
     .slice(0, 2)
@@ -103,6 +108,11 @@ export function renderEmailDigest(
   if (f.ownersPay > 0 || f.unitemised > 0)
     paragraphs.push(
       `Included in expenses: owner's pay ${n(f.ownersPay)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
+    );
+  const moved = Object.entries(f.notCosts ?? {});
+  if (moved.length)
+    paragraphs.push(
+      `Money moved, not counted as costs: ${moved.map(([c, v]) => `${c.toLowerCase()} ${n(v)}`).join("; ")}.`,
     );
   const given = f.notIncome.atCost;
   paragraphs.push(

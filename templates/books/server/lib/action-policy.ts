@@ -27,6 +27,8 @@ export const ACTION_POLICY: Record<string, Audience> = {
   "record-expense": "owner",
   "record-expense-from-receipt": "owner",
   "record-expenses-from-text": "owner",
+  "set-payee-rule": "owner",
+  "list-payee-rules": "everyone",
   "import-whatsapp-history": "owner",
   "queue-history-receipts": "owner",
   "list-pending-receipts": "everyone",

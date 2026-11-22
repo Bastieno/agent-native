@@ -15,7 +15,7 @@ export default defineAction({
   run: async ({ start, end, status }) => {
     const orgId = await memberOrg();
     const found = await rows(
-      `SELECT e.code, e.occurred_on, e.vendor, e.amount, e.paid_with, e.status, e.source, e.receipt_file_id, b.slug AS business, c.name AS category
+      `SELECT e.code, e.occurred_on, e.vendor, e.amount, e.paid_with, e.status, e.source, e.receipt_file_id, b.slug AS business, c.name AS category, c.is_cost
          FROM expenses e
          LEFT JOIN businesses b ON b.id = e.business_id
          LEFT JOIN expense_categories c ON c.id = e.category_id
@@ -35,6 +35,7 @@ export default defineAction({
         amount: num(e.amount),
         business: e.business ?? null,
         category: e.category ?? null,
+        isCost: e.is_cost == null ? true : num(e.is_cost) !== 0,
         paidWith: e.paid_with,
         status: e.status,
         source: e.source,
