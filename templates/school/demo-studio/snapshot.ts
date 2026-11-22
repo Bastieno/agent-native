@@ -11,6 +11,7 @@ import {
 } from "./db.js";
 import { SCHOOLS, schoolIds, type SchoolId } from "./schools.js";
 import { portTaken, startDemoServer } from "./server.js";
+import { touchUp } from "./touch-up.js";
 
 /**
  * Build the snapshot a school's takes start from. `pnpm demo:snapshot [school]`
@@ -85,6 +86,7 @@ function run(cmd: string[], env: Record<string, string>): number {
 if (id === "yellowview") {
   copyOf("data/yellowview.db");
   useDemoPassword();
+  await touchUp(id);
 } else if (id === "crestfield-term") copyOf("data/showcase.pre-promotion.db");
 else {
   clearDemoDb(undefined, id);

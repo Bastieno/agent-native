@@ -465,6 +465,19 @@ export async function buildSchool(
     }
   }
 
+  // A class in a room the school does not have is a seed mistake (an option
+  // block with more courses than rooms gave "12undefined classroom"); stop
+  // the build rather than publish it.
+  const roomNames = new Set(rooms.map((r) => r.name));
+  const roomless = plans.filter((p) => p.room && !roomNames.has(p.room));
+  if (roomless.length) {
+    throw new Error(
+      `Classes in rooms the school does not have: ${roomless
+        .map((p) => `${p.name} (${p.room})`)
+        .join(", ")}`,
+    );
+  }
+
   const classes: ShowcaseClass[] = [];
   for (const plan of plans) {
     const reply = await client.as(admin, "create-class", {

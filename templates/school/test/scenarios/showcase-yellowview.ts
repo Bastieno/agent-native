@@ -587,6 +587,7 @@ export const SUBJECTS: SubjectPlan[] = [
     department: MATH_CS,
     library: lib(AP, "AP Statistics"),
     years: [G12],
+    room: "Math Lab",
     courseLevel: "AP",
     handwritten: true,
   }),
@@ -990,6 +991,7 @@ export const showcase: Showcase = {
     "Physics Lab",
     "Physics Lab 2",
     "Computer Lab",
+    "Math Lab",
     "Library",
     "Gym",
     "Fitness Room",
@@ -1014,7 +1016,13 @@ export const showcase: Showcase = {
     const plain = SUBJECTS.filter(
       (s) => s.option && !s.room && s.yearGroups.includes(yearGroup),
     );
-    return `${g(yearGroup)}${"ABC"[plain.indexOf(subject)]} classroom`;
+    const arm = "ABC"[plain.indexOf(subject)];
+    if (!arm) {
+      throw new Error(
+        `${yearGroup}'s option block has ${plain.length} courses without a room of their own, but only three homerooms; give ${subject.name} a room.`,
+      );
+    }
+    return `${g(yearGroup)}${arm} classroom`;
   },
   // Strong students are drawn to the AP courses; everyone else is seated by a
   // fixed shuffle, so each course in the block has a class and none is empty.
