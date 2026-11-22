@@ -31,4 +31,10 @@ await check(
   },
 );
 
+await check("equipment and taxes have their own categories", async () => {
+  const have = await names();
+  assert.ok(have.includes("Equipment & furniture"));
+  assert.ok(have.includes("Taxes & levies"));
+});
+
 await finish();

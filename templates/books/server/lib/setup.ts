@@ -28,6 +28,8 @@ export const EXPENSE_CATEGORIES = [
   "Repairs",
   "Internet",
   "Supplies",
+  "Equipment & furniture",
+  "Taxes & levies",
   OWNERS_PAY,
   MANAGER_FLOAT,
   "Other",

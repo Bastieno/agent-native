@@ -57,6 +57,29 @@ const RULES: Rule[] = [
   },
   { category: "Rent", business: null, words: ["rent", "lease"] },
   {
+    category: "Taxes & levies",
+    business: null,
+    words: ["land use", "levy", "levies", "tax", "refuse", "lasepa", "firs"],
+  },
+  {
+    category: "Equipment & furniture",
+    business: null,
+    words: [
+      "chair",
+      "table",
+      "freezer",
+      "fridge",
+      "television",
+      "inch",
+      "aircon",
+      "air condition",
+      "machine",
+      "furniture",
+      "signage",
+      "cladding",
+    ],
+  },
+  {
     category: "Repairs",
     business: null,
     words: [
@@ -174,7 +197,6 @@ const RULES: Rule[] = [
       "brush",
       "container",
       "serviette",
-      "refuse",
     ],
   },
   {
