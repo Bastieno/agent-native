@@ -141,6 +141,15 @@ export const payeeRules = table("payee_rules", {
   ...ownableColumns(),
 });
 
+/** Which business a person on the payroll works for: their salary goes there. */
+export const staffBusinesses = table("staff_businesses", {
+  id: text("id").primaryKey(),
+  matchKey: text("match_key").notNull(),
+  businessId: text("business_id").notNull(),
+  ...created,
+  ...ownableColumns(),
+});
+
 export const receiptFiles = table("receipt_files", {
   id: text("id").primaryKey(),
   mimeType: text("mime_type").notNull(),

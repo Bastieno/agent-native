@@ -35,8 +35,8 @@ export const NARRATION_TAGS: NarrationTag[] = [
   {
     tag: "DIESEL",
     category: "Diesel / power",
-    business: "lounge",
-    example: "LOUNGE DIESEL 40 litres for generator",
+    business: "hub",
+    example: "DIESEL 40 litres for generator",
   },
   {
     tag: "SALARY",
@@ -53,8 +53,8 @@ export const NARRATION_TAGS: NarrationTag[] = [
   {
     tag: "REPAIR",
     category: "Repairs",
-    business: "lounge",
-    example: "HUB REPAIR door lock and hinges",
+    business: "hub",
+    example: "REPAIR door lock and hinges",
   },
   {
     tag: "INTERNET",
@@ -229,7 +229,7 @@ export function narrationGuide(): string {
   return [
     "How to write the narration on every transfer:",
     "BUSINESS TAG what it was for",
-    "BUSINESS is LOUNGE or HUB (leave it out for the Lounge).",
+    "BUSINESS is LOUNGE or HUB. Leave it out for the usual one: Diesel, repairs and internet are the Hub's, the rest the Lounge's.",
     "",
     ...NARRATION_TAGS.map((t) => `${t.tag}: ${t.category}. e.g. ${t.example}`),
   ].join("\n");

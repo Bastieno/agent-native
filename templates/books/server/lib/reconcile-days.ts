@@ -1,4 +1,4 @@
-import { STOCK_CATEGORIES } from "./setup.js";
+import { REFUNDS, STOCK_CATEGORIES } from "./setup.js";
 import { newId, nowIso } from "./ids.js";
 import { addDays } from "./lagos-time.js";
 import { reconcileDay, type DayInput, type DayResult } from "./reconcile.js";
@@ -61,6 +61,7 @@ export async function loadDayInput(
     imageHash: e.image_hash ?? null,
     isCost: e.is_cost == null ? true : num(e.is_cost) !== 0,
     isStock: STOCK_CATEGORIES.includes(e.category_name),
+    isRefund: e.category_name === REFUNDS,
   }));
   // A category's usual daily spend: over the 4 weeks before, or since Books'
   // first expense if that is later. Under a week of history, there is no usual

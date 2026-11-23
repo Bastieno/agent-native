@@ -266,12 +266,15 @@ await check("guesses a category and business from the note", () => {
   assert.equal(g(null).category, null);
 });
 
-await check("costs go to the Lounge unless the note says Hub", () => {
-  assert.equal(guessExpense("June Salary").business, "lounge");
-  assert.equal(guessExpense("For welding work").business, "lounge");
-  assert.equal(guessExpense("For starlink").business, "hub");
-  assert.equal(guessExpense("zzz").business, null); // no category, no guess
-});
+await check(
+  "costs go to the Lounge, but internet, power and repairs to the Hub",
+  () => {
+    assert.equal(guessExpense("June Salary").business, "lounge");
+    assert.equal(guessExpense("For welding work").business, "hub");
+    assert.equal(guessExpense("For starlink").business, "hub");
+    assert.equal(guessExpense("zzz").business, null); // no category, no guess
+  },
+);
 
 await check("everyday notes find a category", () => {
   const c = (n: string) => guessExpense(n).category;

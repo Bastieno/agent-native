@@ -19,6 +19,59 @@ import { useSetPageTitle } from "@/components/layout/HeaderActions";
 import { NARRATION_TAGS, narrationGuide } from "@shared/narration";
 import { AssistantSettings } from "@/components/AssistantKey";
 
+/** Who on the payroll works for which business: their salaries go there. */
+function StaffList({ canEdit }: { canEdit: boolean }) {
+  const qc = useQueryClient();
+  const { data } = useActionQuery("list-staff", {});
+  const setStaff = useActionMutation("set-staff-business");
+  const staff = data?.staff ?? [];
+  if (!staff.length) return null;
+  const title = (s: string) =>
+    s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+  return (
+    <div className="space-y-2 pt-6">
+      <h3 className="text-sm font-medium">Staff</h3>
+      <p className="text-sm text-muted-foreground">
+        Each person&apos;s salary is filed under the business they work for.
+      </p>
+      {staff.map((p) => (
+        <div key={p.payee} className="flex items-center justify-between gap-3">
+          <span className="text-sm">{title(p.payee)}</span>
+          <Select
+            disabled={!canEdit}
+            value={p.business}
+            onValueChange={(business) => {
+              qc.setQueryData(
+                ["action", "list-staff", {}],
+                (old: typeof data) =>
+                  old
+                    ? {
+                        staff: old.staff.map((x) =>
+                          x.payee === p.payee ? { ...x, business } : x,
+                        ),
+                      }
+                    : old,
+              );
+              setStaff.mutate(
+                { payee: p.payee, business: business as "lounge" | "hub" },
+                { onError: (e) => toast.error(e.message) },
+              );
+            }}
+          >
+            <SelectTrigger className="w-44">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="lounge">Restaurant &amp; Lounge</SelectItem>
+              <SelectItem value="hub">Hub</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /** How to write the note on a transfer so Books files it without guessing. */
 function TransferNotes() {
   const running = NARRATION_TAGS.filter((t) => t.business !== null);
@@ -57,7 +110,8 @@ function TransferNotes() {
           <div className="mt-2 grid gap-1 text-xs text-muted-foreground sm:grid-cols-3">
             <span>
               <span className="font-medium text-foreground">1. Business</span>{" "}
-              LOUNGE or HUB. Leave it out for the Lounge.
+              LOUNGE or HUB. Leave it out for the usual one: diesel, repairs and
+              internet are the Hub&apos;s, the rest the Lounge&apos;s.
             </span>
             <span>
               <span className="font-medium text-foreground">2. Tag</span> one
@@ -303,6 +357,7 @@ export default function SettingsPage() {
               </Select>
             </div>
           ))}
+          <StaffList canEdit={canEdit} />
         </TabsContent>
 
         <TabsContent value="limits" className="max-w-md space-y-4 pt-4">

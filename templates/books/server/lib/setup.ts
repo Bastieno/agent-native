@@ -33,6 +33,8 @@ export const DOLLARS = "Dollar purchases";
 /** Money that moved but is not a running cost: counted apart, never in expenses or profit. */
 export const DIVIDENDS = "Dividends & profit share";
 export const NOT_COSTS = [LOANS, MOVED, CLIENT, DOLLARS, DIVIDENDS];
+/** Money given back to customers: taken off that business's income, not a cost. */
+export const REFUNDS = "Refunds to customers";
 /** Categories that belong to no business: the owner's own pay and money moved. */
 export const NO_BUSINESS = [OWNERS_PAY, ...NOT_COSTS];
 
@@ -50,6 +52,7 @@ export const EXPENSE_CATEGORIES = [
   OWNERS_PAY,
   MANAGER_FLOAT,
   ...NOT_COSTS,
+  REFUNDS,
   "Other",
 ];
 
@@ -93,7 +96,7 @@ export async function ensureExpenseCategories(orgId: string): Promise<void> {
         newId(),
         name,
         sort++,
-        NOT_COSTS.includes(name) ? 0 : 1,
+        NOT_COSTS.includes(name) || name === REFUNDS ? 0 : 1,
         nowIso(),
         orgId,
       ],

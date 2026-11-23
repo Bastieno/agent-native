@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { businessIdBySlug } from "./catalog.js";
 import { NO_BUSINESS } from "./setup.js";
+import { SALARIES, staffBusiness } from "./staff.js";
 import { newId, nowIso } from "./ids.js";
 import { reconcileDays } from "./reconcile-days.js";
 import { num, rows, run } from "./sql.js";
@@ -108,9 +109,13 @@ export async function createExpense(orgId: string, e: NewExpense) {
     if (twin) return { duplicateOf: twin } as const;
   }
   // Owner's pay and money moved belong to no business, whatever was guessed.
+  // A salary goes to the business its person works for, when Books knows.
+  const staff =
+    e.category === SALARIES ? await staffBusiness(orgId, e.vendor) : null;
+  const business = staff ?? e.business;
   const businessId =
-    e.business && !(e.category && NO_BUSINESS.includes(e.category))
-      ? await businessIdBySlug(orgId, e.business)
+    business && !(e.category && NO_BUSINESS.includes(e.category))
+      ? await businessIdBySlug(orgId, business)
       : null;
   const categoryId = e.category
     ? await expenseCategoryId(orgId, e.category)

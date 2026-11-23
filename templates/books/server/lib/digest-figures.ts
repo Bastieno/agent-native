@@ -2,7 +2,7 @@
  * Everything a digest says, computed in code. The agent only words it.
  * Money is kobo; days are Lagos `YYYY-MM-DD`.
  */
-import { MANAGER_FLOAT, OWNERS_PAY } from "./setup.js";
+import { MANAGER_FLOAT, OWNERS_PAY, REFUNDS } from "./setup.js";
 import { addDays, daysBetween, weekdayIndex } from "./lagos-time.js";
 import type { DayResult, Flag } from "./reconcile.js";
 import { reconcileOne } from "./reconcile-days.js";
@@ -122,8 +122,8 @@ async function movedRows(orgId: string, start: string, end: string) {
   const out: Record<string, number> = {};
   for (const r of await rows(
     `SELECT c.name, SUM(e.amount) AS total FROM expenses e JOIN expense_categories c ON c.id = e.category_id
-      WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ? AND c.is_cost = 0 GROUP BY c.name`,
-    [orgId, start, end],
+      WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ? AND c.is_cost = 0 AND c.name <> ? GROUP BY c.name`,
+    [orgId, start, end, REFUNDS],
   ))
     out[r.name as string] = num(r.total);
   return out;

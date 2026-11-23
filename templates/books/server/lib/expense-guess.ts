@@ -1,6 +1,6 @@
 import { parseNarration } from "../../shared/narration.js";
 import { correctNote } from "../../shared/note-words.js";
-import { DIVIDENDS, LOANS, OWNERS_PAY } from "./setup.js";
+import { DIVIDENDS, LOANS, OWNERS_PAY, REFUNDS } from "./setup.js";
 
 /**
  * Guesses an expense's category and business from the note on a transfer
@@ -47,7 +47,8 @@ const RULES: Rule[] = [
   },
   {
     category: "Diesel / power",
-    business: null,
+    // The owner's answer (2026-11-23): power and the generator are the Hub's.
+    business: "hub",
     words: [
       "token",
       "credit",
@@ -81,6 +82,7 @@ const RULES: Rule[] = [
       "levies",
       "tax",
       "refuse",
+      "waste",
       "lasepa",
       "firs",
     ],
@@ -114,7 +116,8 @@ const RULES: Rule[] = [
   },
   {
     category: "Repairs",
-    business: null,
+    // The owner's answer (2026-11-23): building work and repairs are the Hub's.
+    business: "hub",
     words: [
       "celling",
       "rooling",
@@ -319,6 +322,29 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
       because: `tagged ${said.tag}`,
       tagged: true,
     };
+  if (note) {
+    const text = correctNote(note).replace(/\s+/g, " ").trim();
+    // Money given back to a customer (a subscription, hub usage, part of what
+    // they paid): comes off income. Paying someone back for stock they bought
+    // ("refund for mayonnaise"), or money refunded to the business, is not one.
+    if (
+      /\brefund/i.test(text) &&
+      /\bhub\b|subscri|usage|\bpaid\b|customer/i.test(text) &&
+      !/expense|made for/i.test(text)
+    )
+      return {
+        ...none,
+        category: REFUNDS,
+        business: /\bhub\b|subscri/i.test(text) ? "hub" : null,
+        because: "refund",
+      };
+    // Gifts, condolences, data and training fees are the owner's own.
+    if (
+      /\b(gift|birthday|condolences?|data|delega\w*)\b/i.test(text) &&
+      !/\d+(\.\d+)?k\b|\d{3,}|,/.test(text)
+    )
+      return { ...none, category: OWNERS_PAY, because: "owner's own" };
+  }
   // Support of any kind (family, church, school fees…) and "For snacks" are the
   // owner's own money, not Lounge costs. A list of several things with amounts,
   // or a salary, is left to the other rules.

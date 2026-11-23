@@ -347,4 +347,17 @@ export const BOOKS_MIGRATIONS: MigrationEntry[] = [
     visibility TEXT NOT NULL DEFAULT 'private'
     )`,
   },
+  {
+    // Which business each person on the payroll works for (the owner's answers).
+    version: 34,
+    sql: `CREATE TABLE IF NOT EXISTS staff_businesses (
+    id TEXT PRIMARY KEY,
+    match_key TEXT NOT NULL,
+    business_id TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    owner_email TEXT NOT NULL DEFAULT 'local@localhost',
+    org_id TEXT,
+    visibility TEXT NOT NULL DEFAULT 'private'
+    )`,
+  },
 ];

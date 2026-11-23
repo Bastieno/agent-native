@@ -33,6 +33,8 @@ export interface DayInput {
     isCost?: boolean;
     /** stock bought: already in cost of goods, so not an operating expense */
     isStock?: boolean;
+    /** money given back to a customer: comes off that business's income */
+    isRefund?: boolean;
   }[];
   /** categoryId → average daily spend over the previous 4 weeks (kobo). */
   categoryHistory: Record<string, number>;
@@ -380,6 +382,12 @@ export function reconcileDay(input: DayInput): DayResult {
       );
     }
   }
+  // Refunds to customers come off the income of the business they were for.
+  let refunds = 0;
+  for (const e of input.expenses.filter((x) => x.isRefund)) {
+    add(incomeByBusiness, e.businessSlug ?? "unassigned", -e.amount);
+    refunds += e.amount;
+  }
   const grossProfitByBusiness: Record<string, number> = {};
   for (const biz of new Set([
     ...Object.keys(incomeByBusiness),
@@ -444,7 +452,7 @@ export function reconcileDay(input: DayInput): DayResult {
 
   return {
     day,
-    income: paid.reduce((a, s) => a + s.total, 0),
+    income: paid.reduce((a, s) => a + s.total, 0) - refunds,
     incomeByMethod,
     incomeByBusiness,
     costOfGoodsByBusiness,
@@ -458,7 +466,7 @@ export function reconcileDay(input: DayInput): DayResult {
       .filter((e) => e.isStock)
       .reduce((a, e) => a + e.amount, 0),
     notCosts: input.expenses
-      .filter((e) => e.isCost === false)
+      .filter((e) => e.isCost === false && !e.isRefund)
       .reduce((a, e) => a + e.amount, 0),
     expensesByBusiness,
     expensesByCategory,

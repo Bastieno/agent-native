@@ -33,6 +33,13 @@ Ephemeral UI state is stored in the SQL `application_state` table, accessed via 
 | `navigation` | Current view (`overview`, `review`, `money-in`, `money-out`, `reports`, `settings`), plus `expenseCode`, `digestId`, `start`, `end` when set | UI -> Agent (read-only)    |
 | `navigate`   | Navigate command (one-shot, auto-deleted)                                                                                                    | Agent -> UI (auto-deleted) |
 
+## Where money goes (the owner's answers)
+
+- Diesel / power and Repairs are the Hub's; Internet is the Hub's; other running costs are the Lounge's.
+- A salary goes to the business its person works for (`list-staff`, `set-staff-business`; Settings → Categories → Staff).
+- Refunds to customers (a subscription, hub usage, part of what they paid) are their own category and come off that business's income. Paying someone back for stock they bought is that stock, not a refund.
+- Gifts, condolences, data, airtime, training fees, support and "For snacks" are Owner's pay, with no business. Owner's pay and money moved never have a business.
+
 ## Tools
 
 Only the tools nearly every conversation uses are loaded (screen, navigation,
