@@ -266,8 +266,8 @@ function ExpenseSheet({
             <div className="space-y-1.5">
               <Label>Business</Label>
               {expense.category && noBusiness.includes(expense.category) ? (
-                <div className="flex h-9 items-center rounded-md border border-dashed border-border px-3 text-sm text-muted-foreground">
-                  Not a business cost
+                <div className="flex h-9 items-center truncate rounded-md border border-dashed border-border px-3 text-sm text-muted-foreground">
+                  {businessNote(expense.category)}
                 </div>
               ) : (
                 <Select
@@ -361,6 +361,17 @@ function ExpenseSheet({
       </SheetContent>
     </Sheet>
   );
+}
+
+/**
+ * What the Business box says for a category that belongs to neither
+ * business. Owner's pay is still counted in total expenses; profit shared is
+ * set against Net on Overview; the rest (loans, transfers) is not a cost.
+ */
+function businessNote(category: string | null) {
+  if (category === "Owner's pay") return "Neither business";
+  if (category === "Dividends & profit share") return "Paid from profit";
+  return "Not a business cost";
 }
 
 export default function ExpensesPage() {

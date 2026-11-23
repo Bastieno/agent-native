@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { currentRole, memberOrg } from "../server/lib/access.js";
 import { digestFigures, rangeTotals } from "../server/lib/digest-figures.js";
+import { DIVIDENDS } from "../server/lib/setup.js";
 import { addDays, daysBetween, lagosDay } from "../server/lib/lagos-time.js";
 import type { DayResult } from "../server/lib/reconcile.js";
 import { num, rows } from "../server/lib/sql.js";
@@ -16,7 +17,7 @@ const change = (now: number, before: number) =>
 
 export default defineAction({
   description:
-    "What the Overview screen shows for days start..end: profit and loss by business (income, cost of goods, gross profit, expenses, net) with the change from the period just before, money in and out by day, where the money went, up to three things to watch, how stale the data is and how many things wait for review. Amounts are kobo.",
+    "What the Overview screen shows for days start..end: profit and loss by business (income, cost of goods, gross profit, expenses, net) with the change from the period just before, money in and out by day, where the money went, up to three things to watch, the profit shared (dividends) and what is kept in the business after it, how stale the data is and how many things wait for review. Amounts are kobo.",
   schema: z.object({
     start: z.string().describe("YYYY-MM-DD"),
     end: z.string().describe("YYYY-MM-DD, included"),
@@ -76,6 +77,8 @@ export default defineAction({
       f.review.uncategorised +
       num(pending?.n);
 
+    const profitShared = f.notCosts[DIVIDENDS] ?? 0;
+
     const businesses = ["lounge", "hub"].map((slug) => {
       const now = f.businesses[slug];
       const compared = cur.businesses[slug];
@@ -110,7 +113,12 @@ export default defineAction({
         .map(([category, amount]) => ({ category, amount })),
       expensesTotal: f.combined.expenses,
       ownersPay: f.ownersPay,
-      notCosts: sum(f.notCosts),
+      /** Paid out of profit: kept out of Net, then set against it. */
+      profitShared,
+      /** Net less the profit shared; below zero, more was shared than made. */
+      keptInBusiness: f.combined.net - profitShared,
+      /** Loans, transfers and other money moved; profit shared is apart. */
+      notCosts: sum(f.notCosts) - profitShared,
       watch: f.trends.filter((s) => s.direction === "watch").slice(0, 3),
       good: f.trends.filter((s) => s.direction === "good").slice(0, 2),
       uncostedRevenue: f.uncostedRevenue,

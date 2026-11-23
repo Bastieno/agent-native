@@ -122,7 +122,7 @@ Money that moved but is not a running cost has its own categories (loans and
 repayments, moved between accounts, paid for a client and repaid, dollar
 purchases, dividends and profit share). They are marked `is_cost = 0`: kept in
 the expense list but left out of expenses, profit and spike checks, and shown in
-digests as "moved, not counted as costs". `set-payee-rule` remembers who money is
+digests as "moved, not counted as costs". Dividends and profit share are paid out of profit, so Overview (`get-overview`: `profitShared`, `keptInBusiness`) sets them against Net: "Kept in the business" below zero means more was shared than the businesses made. `set-payee-rule` remembers who money is
 usually sent to (for example a person used to move money between accounts, at or
 above an amount); old receipts to that payee are filed under the rule instead of
 guessed from the note. Notes that say commission or settlement still wait for

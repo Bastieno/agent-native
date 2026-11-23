@@ -286,6 +286,34 @@ export default function OverviewPage() {
               },
             ]}
           />
+          {data.profitShared > 0 && (
+            // Profit shared is not a cost, so it sits under Net: what is left
+            // shows whether more was paid out than the businesses made.
+            <dl className="mt-3 space-y-1 border-t border-border pt-3 text-sm">
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="text-muted-foreground">Profit shared</dt>
+                <dd className="tabular-nums text-muted-foreground">
+                  {naira(data.profitShared)}
+                </dd>
+              </div>
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="font-medium">Kept in the business</dt>
+                <dd
+                  className={cn(
+                    "font-medium tabular-nums",
+                    data.keptInBusiness < 0 && "text-red-600 dark:text-red-400",
+                  )}
+                >
+                  {naira(data.keptInBusiness)}
+                </dd>
+              </div>
+              {data.keptInBusiness < 0 && (
+                <p className="text-xs text-muted-foreground">
+                  More was shared than the businesses made in this period.
+                </p>
+              )}
+            </dl>
+          )}
           <p className="mt-2 text-xs text-muted-foreground">
             Changes compare {comparedLabel} with {prevLabel}. Expenses include
             owner's pay of {naira(data.ownersPay)}

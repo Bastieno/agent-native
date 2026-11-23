@@ -223,4 +223,26 @@ await check("the partner can't set rules", async () => {
   await asPartner(() => g["list-payee-rules"].run({}));
 });
 
+await check("profit shared is set against Net on Overview", async () => {
+  const overview = (await import("../actions/get-overview.js")).default;
+  await asOwner(() =>
+    record.run({
+      occurredOn: "2026-11-12",
+      paidWith: "transfer",
+      vendor: "Partner",
+      amount: 20000,
+      category: setup.DIVIDENDS,
+    }),
+  );
+  await asOwner(() => reconcileDay.run({ day: "2026-11-12" }));
+  const o = await asOwner(() =>
+    overview.run({ start: "2026-11-12", end: "2026-11-12" }),
+  );
+  assert.equal(o.profitShared, 2000000);
+  assert.equal(o.keptInBusiness, o.combined.net - 2000000);
+  // Profit shared is no longer lumped in with loans and transfers.
+  assert.equal(o.notCosts, 0);
+  assert.equal(o.combined.expenses, 0);
+});
+
 await finish();
