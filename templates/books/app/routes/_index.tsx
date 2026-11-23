@@ -185,18 +185,29 @@ export default function OverviewPage() {
   return (
     <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6">
       {data.staleDays != null && data.staleDays > 1 && (
-        <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-sm">
-          <span className="flex items-center gap-2">
-            <IconClockExclamation className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
-            Latest sales are from {dayLabel(data.latestDay)}, {data.staleDays}{" "}
-            days ago. Figures after that are missing.
+        // One line with the button at its end; a phone gets the short
+        // version of the sentence.
+        <div className="flex items-center gap-3 rounded-lg border border-amber-500/40 bg-amber-500/10 py-1.5 pl-3 pr-1.5 text-sm">
+          <IconClockExclamation className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
+          <span className="min-w-0 flex-1">
+            <span className="sm:hidden">
+              No sales for {data.staleDays} days
+            </span>
+            <span className="hidden sm:inline">
+              Latest sales are from {dayLabel(data.latestDay)}, {data.staleDays}{" "}
+              days ago. Figures after that are missing.
+            </span>
           </span>
-          <Link
-            to="/sales"
-            className="font-medium underline-offset-4 hover:underline"
+          <Button
+            asChild
+            size="sm"
+            variant="ghost"
+            className="h-8 shrink-0 gap-1"
           >
-            Upload sales
-          </Link>
+            <Link to="/sales">
+              Upload<span className="hidden sm:inline">sales</span>
+            </Link>
+          </Button>
         </div>
       )}
 
