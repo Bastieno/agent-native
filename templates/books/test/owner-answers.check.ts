@@ -59,6 +59,17 @@ await check("refunds to customers are their own category", () => {
   );
 });
 
+await check("DSTV is the Lounge's TV, and its repairs the Lounge's too", () => {
+  assert.deepEqual(g("DSTV subscription"), ["TV & subscriptions", "lounge"]);
+  assert.deepEqual(g("Dsiv subscriplion"), ["TV & subscriptions", "lounge"]);
+  assert.deepEqual(g("DSTV Compact Plus"), ["TV & subscriptions", "lounge"]);
+  assert.deepEqual(g("DSTV fix"), ["Repairs", "lounge"]);
+  assert.deepEqual(g("dsiv fix - 18k decoder, 7k workmanship"), [
+    "Repairs",
+    "lounge",
+  ]);
+});
+
 await check("Canal+ is the Hub's internet", () => {
   assert.deepEqual(g("For canal box subscription"), ["Internet", "hub"]);
 });

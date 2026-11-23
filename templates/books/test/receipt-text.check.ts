@@ -160,6 +160,38 @@ await check("reads an airtime slip", () => {
   }
 });
 
+await check("reads a Moniepoint bill payment slip", () => {
+  const r = readReceiptText(
+    [
+      "Moniepoint",
+      "DEBIT",
+      "N30,000.00",
+      "Transaction Type",
+      "Bill Payments",
+      "Biller",
+      "DSTV",
+      "Biller Product",
+      "DSTV Compact Plus",
+      "Beneficiary ID",
+      "9000000001",
+      "Transaction Dale",
+      "Friday, October 16th, 2026",
+      "Transaction Reference",
+      "BPT|2MPT6pjsm|2111179319938359296",
+      "Business Name",
+      "ACME LTD - Tech workslation, restaurant, lounge",
+    ],
+    "2026-10-16",
+  );
+  assert.ok(r.ok);
+  if (!r.ok) return;
+  assert.equal(r.receipt.payee, "DSTV");
+  assert.equal(r.receipt.note, "DSTV Compact Plus");
+  assert.equal(r.receipt.amount, 30000);
+  assert.equal(r.receipt.date, "2026-10-16");
+  assert.equal(guessExpense(r.receipt.note).category, "TV & subscriptions");
+});
+
 const opayOld = [
   "OPay",
   "Transaction Receipt",

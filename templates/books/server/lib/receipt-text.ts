@@ -34,6 +34,9 @@ const LABELS = [
   "narration",
   "session id",
   "transaction reference",
+  "biller",
+  "biller product",
+  "beneficiary id",
   "provider reference",
   "phone number",
   "account name",
@@ -128,6 +131,14 @@ function dateFromWeekday(posted: string, weekday: string): string | null {
   return null;
 }
 
+/** "DSTV Compact Plus" from biller DSTV, product DSTV Compact Plus. */
+function billNote(biller: string | null, product: string | null) {
+  if (!product) return biller;
+  if (!biller || product.toLowerCase().includes(biller.toLowerCase()))
+    return product;
+  return `${biller} ${product}`;
+}
+
 function readMoniepoint(lines: string[], posted: string): ReadResult {
   const clean = lines;
   const fields = new Map<string, string[]>();
@@ -144,7 +155,10 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
   const amount = findAmount(lines);
   if (!amount) return { ok: false, reason: "no amount" };
   // A garbled label can steal a neighbour's value, so look for the date line itself.
-  const isDate = (l: string) => /[A-Za-z]{3,}.*\d{1,2}:\d\d\s*[AP]M/i.test(l);
+  // With a time ("… | 9:48 PM"), or a weekday and a year (bill payments print no time).
+  const isDate = (l: string) =>
+    /[A-Za-z]{3,}.*\d{1,2}:\d\d\s*[AP]M/i.test(l) ||
+    /^[A-Za-z]{5,9},?\s+[A-Za-z]{3,}.*\b20\d\d\b/.test(l);
   const dateText =
     fields.get("transaction date")?.find(isDate) ?? clean.find(isDate) ?? "";
   const weekday = closest(
@@ -164,9 +178,12 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
       kind:
         (fields.get("transaction type")?.[0] ?? null)?.toUpperCase() ?? null,
       amount,
-      payee: get("beneficiary") ?? get("phone number"),
-      // Kept line by line, as written on the slip.
-      note: fields.get("narration")?.join("\n") || null,
+      payee: get("beneficiary") ?? get("biller") ?? get("phone number"),
+      // Kept line by line, as written on the slip. A bill payment has no
+      // narration: what was paid for is the biller's product.
+      note:
+        fields.get("narration")?.join("\n") ||
+        billNote(get("biller"), get("biller product")),
       account: /tech|work|lounge|kunge|restau/i.test(names)
         ? "Moniepoint (lounge)"
         : "Moniepoint (main)",

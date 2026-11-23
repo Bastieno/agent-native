@@ -33,6 +33,8 @@ export const DOLLARS = "Dollar purchases";
 /** Money that moved but is not a running cost: counted apart, never in expenses or profit. */
 export const DIVIDENDS = "Dividends & profit share";
 export const NOT_COSTS = [LOANS, MOVED, CLIENT, DOLLARS, DIVIDENDS];
+/** DSTV and other TV subscriptions: the Lounge's (the owner's answer, 2026-11-23). */
+export const TV = "TV & subscriptions";
 /** Money given back to customers: taken off that business's income, not a cost. */
 export const REFUNDS = "Refunds to customers";
 /** Categories that belong to no business: the owner's own pay and money moved. */
@@ -53,6 +55,7 @@ export const EXPENSE_CATEGORIES = [
   MANAGER_FLOAT,
   ...NOT_COSTS,
   REFUNDS,
+  TV,
   "Other",
 ];
 

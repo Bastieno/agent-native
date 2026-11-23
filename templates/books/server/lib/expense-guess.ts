@@ -1,6 +1,6 @@
 import { parseNarration } from "../../shared/narration.js";
 import { correctNote } from "../../shared/note-words.js";
-import { DIVIDENDS, LOANS, OWNERS_PAY, REFUNDS } from "./setup.js";
+import { DIVIDENDS, LOANS, OWNERS_PAY, REFUNDS, TV } from "./setup.js";
 
 /**
  * Guesses an expense's category and business from the note on a transfer
@@ -377,6 +377,19 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
       notAnExpense: true,
       because: "loan, profit or commission",
     };
+  // DSTV and other TV: the Lounge's. A fix or a decoder is a Lounge repair.
+  {
+    const tv = correctNote(note);
+    if (/\b(dstv|gotv|startimes|decoder)\b/i.test(tv))
+      return /\b(fix|fixing|repair|install\w*|workmanship|decoder)\b/i.test(tv)
+        ? {
+            ...none,
+            category: "Repairs",
+            business: "lounge",
+            because: "tv repair",
+          }
+        : { ...none, category: TV, business: "lounge", because: "tv" };
+  }
   for (const rule of RULES)
     for (const word of rule.words)
       if (hit(text, word))

@@ -59,6 +59,6 @@ await check("setup seeds once", async () => {
     sql: `SELECT COUNT(*) AS n FROM expense_categories WHERE org_id='org1'`,
     args: [],
   });
-  assert.equal(Number((e.rows[0] as any).n), 19);
+  assert.equal(Number((e.rows[0] as any).n), 20);
 });
 await finish();

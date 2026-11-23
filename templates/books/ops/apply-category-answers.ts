@@ -62,6 +62,19 @@ const BY_CODE: Record<string, { category: string; business: string | null }> = {
   "E-966": { category: "Repairs", business: "hub" },
   "E-401": { category: "Repairs", business: "hub" },
   "E-866": { category: "Equipment & furniture", business: "hub" }, // furniture delivery
+  // DSTV is the Lounge's TV: its subscriptions and its repairs.
+  "E-1071": { category: "TV & subscriptions", business: "lounge" },
+  "E-528": { category: "TV & subscriptions", business: "lounge" },
+  "E-610": { category: "TV & subscriptions", business: "lounge" },
+  "E-861": { category: "TV & subscriptions", business: "lounge" },
+  "E-196": { category: "Repairs", business: "lounge" },
+  "E-292": { category: "Repairs", business: "lounge" },
+  "E-501": { category: "Repairs", business: "lounge" },
+};
+
+/** A bill payment read before such slips were understood: its payee and note. */
+const SLIP_FIXES: Record<string, { vendor: string; note: string }> = {
+  "E-1071": { vendor: "DSTV", note: "DSTV Compact Plus" },
 };
 
 const orgs = await rows<{ org_id: string }>(
@@ -175,7 +188,11 @@ for (const { org_id: orgId } of orgs) {
         business = b;
         why ||= "salary";
       }
-    } else if (category === "Diesel / power" || category === "Repairs") {
+    } else if (
+      (category === "Diesel / power" || category === "Repairs") &&
+      !BY_CODE[e.code] &&
+      e.status !== "confirmed"
+    ) {
       business = "hub";
       why ||= "hub cost";
     }
@@ -206,6 +223,15 @@ for (const { org_id: orgId } of orgs) {
           c.e.id,
         ],
       );
+    for (const [code, fix] of Object.entries(SLIP_FIXES)) {
+      const e = all.find((x) => x.code === code);
+      if (!e || !/^[\d\s]+$/.test(e.vendor)) continue; // already fixed
+      await run(
+        `UPDATE expenses SET vendor = ?, raw_text = ? WHERE org_id = ? AND id = ?`,
+        [fix.vendor, `${fix.note} · ${e.raw_text ?? ""}`.trim(), orgId, e.id],
+      );
+      console.log(`${code}: payee ${fix.vendor}, note "${fix.note}"`);
+    }
     const days = [...new Set(changes.map((c) => c.e.occurred_on))];
     if (!skipReconcile) await reconcileDays(orgId, days);
     console.log(`done; ${days.length} days recalculated`);
