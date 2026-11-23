@@ -1,5 +1,7 @@
 import { correctNote } from "../../shared/note-words.js";
-import { guessExpense } from "./expense-guess.js";
+import { fuelOnly, guessExpense } from "./expense-guess.js";
+import { OWNERS_PAY } from "./setup.js";
+import { staffBusiness } from "./staff.js";
 import { createExpense } from "./expenses.js";
 import { readReceiptText } from "./receipt-text.js";
 import { loadPayeeRules, matchPayeeRule } from "./payee-rules.js";
@@ -68,13 +70,20 @@ export async function recordReceiptsFromText(
       guessed.notAnExpense || guessed.tagged
         ? null
         : matchPayeeRule(rules, r.payee ?? "", r.amount * 100);
-    const guess = rule
+    let guess = rule
       ? {
           category: rule.category as string | null,
           business: rule.businessSlug as "lounge" | "hub" | null,
           notAnExpense: false,
         }
       : guessed;
+    // "For fuel" paid to someone not on the staff list is the owner's car.
+    if (
+      !rule &&
+      fuelOnly(r.note) &&
+      !(await staffBusiness(orgId, r.payee ?? ""))
+    )
+      guess = { ...guess, category: OWNERS_PAY, business: null };
     if (guess.notAnExpense) {
       out.push({
         pendingReceiptId: id,

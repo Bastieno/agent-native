@@ -59,6 +59,10 @@ await check("refunds to customers are their own category", () => {
   );
 });
 
+await check("Canal+ is the Hub's internet", () => {
+  assert.deepEqual(g("For canal box subscription"), ["Internet", "hub"]);
+});
+
 await check("waste collection is a levy", () => {
   assert.equal(g("For refuse collection month of August")[0], "Taxes & levies");
   assert.equal(g("Waste collection bill")[0], "Taxes & levies");

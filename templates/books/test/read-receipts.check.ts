@@ -170,6 +170,50 @@ await check(
   },
 );
 
+await check(
+  "fuel bought by staff is the Hub's; fuel paid to anyone else is the owner's car",
+  async () => {
+    const { saveStaff } = await import("../server/lib/staff.js");
+    await asOwner(() => saveStaff("org1", "ADA OKORO", "hub"));
+    await asOwner(() => queue.run({ receipts: [receipt(7), receipt(8)] }));
+    const known = new Set(
+      (
+        await query(`SELECT id FROM pending_receipts WHERE status <> 'pending'`)
+      ).map((r: any) => r.id),
+    );
+    const fresh = (await asOwner(() => listPending.run({}))).receipts
+      .filter((r: any) => !ids.includes(r.id) && !known.has(r.id))
+      .map((r: any) => r.id);
+    // The slip's beneficiary is ADA OKORO, who is on the staff list.
+    const toStation = slip("N9,000.00", "For Fuel", "Wednesday").map((l) =>
+      l === "ADA OKORO 0123456789" ? "HYDROGEN OLAP" : l,
+    );
+    await asOwner(() =>
+      fromText.run({
+        receipts: [
+          {
+            pendingReceiptId: fresh[0],
+            lines: slip("N8,000.00", "For Fuel", "Wednesday"),
+          },
+          { pendingReceiptId: fresh[1], lines: toStation },
+        ],
+      }),
+    );
+    const got = await query(
+      `SELECT e.amount, c.name AS category, b.slug AS business FROM expenses e
+       JOIN expense_categories c ON c.id = e.category_id LEFT JOIN businesses b ON b.id = e.business_id
+      WHERE e.amount IN (800000, 900000) ORDER BY e.amount`,
+    );
+    assert.deepEqual(
+      got.map((r: any) => [Number(r.amount), r.category, r.business]),
+      [
+        [800000, "Diesel / power", "hub"],
+        [900000, "Owner's pay", null],
+      ],
+    );
+  },
+);
+
 await check("the partner can't record from text", async () => {
   const { guardActions } = await import("../server/lib/action-policy.js");
   const guarded = guardActions({

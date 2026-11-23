@@ -17,7 +17,9 @@ const { ensureExpenseCategories, OWNERS_PAY, REFUNDS, CLIENT } =
   await import("../server/lib/setup.js");
 const { expenseNote, OWNER_MARK } =
   await import("../server/lib/expense-note.js");
-const { guessExpense } = await import("../server/lib/expense-guess.js");
+const { guessExpense, fuelOnly } =
+  await import("../server/lib/expense-guess.js");
+const { savePayeeRule } = await import("../server/lib/payee-rules.js");
 const { saveStaff, SALARIES } = await import("../server/lib/staff.js");
 const { payeeKey } = await import("../server/lib/payee-rules.js");
 const { reconcileDays } = await import("../server/lib/reconcile-days.js");
@@ -44,6 +46,10 @@ const BY_CODE: Record<string, { category: string; business: string | null }> = {
   "E-929": { category: SALARIES, business: "lounge" }, // Kemi, August salary
   "E-1026": { category: "Supplies", business: "lounge" }, // Kemi, no note
   "E-1040": { category: "Supplies", business: "lounge" }, // Kemi, no note
+  "E-371": { category: "Repairs", business: "hub" }, // Paul, painting at the Hub
+  "E-973": { category: "Internet", business: "hub" }, // Canal+, an internet provider
+  "E-185": { category: OWNERS_PAY, business: null }, // home wifi
+  "E-626": { category: OWNERS_PAY, business: null }, // phone data
 };
 
 const orgs = await rows<{ org_id: string }>(
@@ -51,7 +57,15 @@ const orgs = await rows<{ org_id: string }>(
 );
 for (const { org_id: orgId } of orgs) {
   await ensureExpenseCategories(orgId);
-  if (!dry) for (const [name, biz] of STAFF) await saveStaff(orgId, name, biz);
+  if (!dry) {
+    for (const [name, biz] of STAFF) await saveStaff(orgId, name, biz);
+    // Paul Daniel is the painter: his payments are Hub repairs.
+    await savePayeeRule(orgId, {
+      payee: "PAUL DANIEL",
+      category: "Repairs",
+      business: "hub",
+    });
+  }
   const staff = new Map(STAFF);
   const ids = new Map(
     (
@@ -120,6 +134,13 @@ for (const { org_id: orgId } of orgs) {
       else if (/iftar|iflar/i.test(note)) set(CLIENT, null, "client job");
       else if (/purchase order/i.test(note) && /SAMUEL/i.test(e.vendor))
         set("Supplies", "lounge", "purchase order");
+      // "For fuel" paid to someone not on the staff list is the owner's car.
+      else if (
+        fuelOnly(note) &&
+        e.category === "Diesel / power" &&
+        !staff.has(payeeKey(e.vendor) as string)
+      )
+        set(OWNERS_PAY, null, "car fuel");
     }
     // Every salary goes to its person's business; diesel/power and repairs to the Hub.
     if (category === SALARIES) {

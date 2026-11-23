@@ -36,6 +36,7 @@ const RULES: Rule[] = [
     business: "hub",
     words: [
       "starlink",
+      "canal",
       "fiberx",
       "fibre",
       "fiber",
@@ -387,3 +388,13 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
         };
   return none;
 }
+
+/**
+ * A note that is only "For fuel" (or petrol). Paid to someone on the staff
+ * list it is generator fuel; paid to anyone else, the owner's car.
+ */
+export const fuelOnly = (note: string | null | undefined) =>
+  !!note &&
+  /^(for\s+)?(fuel|petrol)$/i.test(
+    correctNote(note).replace(/\s+/g, " ").trim(),
+  );

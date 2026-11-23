@@ -35,10 +35,11 @@ Ephemeral UI state is stored in the SQL `application_state` table, accessed via 
 
 ## Where money goes (the owner's answers)
 
-- Diesel / power and Repairs are the Hub's; Internet is the Hub's; other running costs are the Lounge's.
+- Diesel / power and Repairs are the Hub's; Internet (Starlink, Canal+) is the Hub's; other running costs are the Lounge's.
+- "For fuel" paid to someone on the staff list is generator fuel (Diesel / power, Hub); paid to anyone else (a filling station) it is the owner's car: Owner's pay.
 - A salary goes to the business its person works for (`list-staff`, `set-staff-business`; Settings → Categories → Staff).
 - Refunds to customers (a subscription, hub usage, part of what they paid) are their own category and come off that business's income. Paying someone back for stock they bought is that stock, not a refund.
-- Gifts, condolences, data, airtime, training fees, support and "For snacks" are Owner's pay, with no business. Owner's pay and money moved never have a business.
+- Gifts, condolences, data (home wifi, phone), airtime, training fees, support and "For snacks" are Owner's pay, with no business. Owner's pay and money moved never have a business.
 
 ## Tools
 
