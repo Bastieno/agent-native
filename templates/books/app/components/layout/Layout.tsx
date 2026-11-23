@@ -43,12 +43,15 @@ export function Layout({ children }: LayoutProps) {
           <Sidebar />
         </div>
         <Sheet open={mobileSidebarOpen} onOpenChange={setMobileSidebarOpen}>
-          <SheetContent side="left" className="p-0 w-[260px]">
+          <SheetContent
+            side="left"
+            className="w-72 max-w-[85vw] gap-0 bg-sidebar p-0 sm:max-w-72 [&>button]:top-3.5"
+          >
             <SheetTitle className="sr-only">Navigation</SheetTitle>
             <SheetDescription className="sr-only">
               App navigation links
             </SheetDescription>
-            <Sidebar />
+            <Sidebar inDrawer />
           </SheetContent>
         </Sheet>
         <AgentSidebar

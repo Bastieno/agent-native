@@ -38,12 +38,18 @@ function useReviewCount(): number {
   );
 }
 
-export function Sidebar() {
+/** `inDrawer`: fills the phone menu drawer, which has its own edge. */
+export function Sidebar({ inDrawer = false }: { inDrawer?: boolean }) {
   const location = useLocation();
   const reviewCount = useReviewCount();
 
   return (
-    <aside className="flex h-full w-56 min-w-0 shrink-0 flex-col overflow-hidden border-r border-border bg-sidebar text-sidebar-foreground">
+    <aside
+      className={cn(
+        "flex h-full min-w-0 shrink-0 flex-col overflow-hidden bg-sidebar text-sidebar-foreground",
+        inDrawer ? "w-full" : "w-56 border-r border-border",
+      )}
+    >
       <div className="flex h-12 shrink-0 items-center gap-2 px-4 border-b border-border">
         <img
           src={appPath("/agent-native-icon-light.svg")}
