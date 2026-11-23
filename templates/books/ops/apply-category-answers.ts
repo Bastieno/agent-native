@@ -50,6 +50,15 @@ const BY_CODE: Record<string, { category: string; business: string | null }> = {
   "E-973": { category: "Internet", business: "hub" }, // Canal+, an internet provider
   "E-185": { category: OWNERS_PAY, business: null }, // home wifi
   "E-626": { category: OWNERS_PAY, business: null }, // phone data
+  // Transport for this year's construction work at the Hub.
+  "E-447": { category: "Repairs", business: "hub" },
+  "E-375": { category: "Repairs", business: "hub" },
+  "E-1217": { category: "Repairs", business: "hub" },
+  "E-837": { category: "Repairs", business: "hub" },
+  "E-946": { category: "Repairs", business: "hub" },
+  "E-966": { category: "Repairs", business: "hub" },
+  "E-401": { category: "Repairs", business: "hub" },
+  "E-866": { category: "Equipment & furniture", business: "hub" }, // furniture delivery
 };
 
 const orgs = await rows<{ org_id: string }>(
@@ -65,6 +74,9 @@ for (const { org_id: orgId } of orgs) {
       category: "Repairs",
       business: "hub",
     });
+    // Weeldrop is a filling station: fuel there is the owner's car.
+    for (const payee of ["WEELDROP LOGISTICS", "WEELDRCP LOGISTICS"])
+      await savePayeeRule(orgId, { payee, category: OWNERS_PAY });
   }
   const staff = new Map(STAFF);
   const ids = new Map(
@@ -134,6 +146,9 @@ for (const { org_id: orgId } of orgs) {
       else if (/iftar|iflar/i.test(note)) set(CLIENT, null, "client job");
       else if (/purchase order/i.test(note) && /SAMUEL/i.test(e.vendor))
         set("Supplies", "lounge", "purchase order");
+      // Weeldrop is a filling station: what is paid there is the owner's car fuel.
+      else if (/^WEELDR/i.test(e.vendor.trim()))
+        set(OWNERS_PAY, null, "car fuel (Weeldrop)");
       // "For fuel" paid to someone not on the staff list is the owner's car.
       else if (
         fuelOnly(note) &&
