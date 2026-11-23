@@ -197,6 +197,66 @@ function readMoniepoint(lines: string[], posted: string): ReadResult {
 const OPAY_DATE = /^(\d\d)\/(\d\d)\/(\d{2}|\d{4})\s+(\d\d:\d\d)/;
 const MASKED_ACCOUNT = /\|?\d{4}\*{4}\d{2}$/;
 
+/** The labels on an Opay slip. */
+const OPAY_LABEL =
+  /^(date\/time|sender( details| account)?|bank name|recipient( details| account)?|remark|paid with|session ?id|transaction (no|number)\.?|customer copy)\b/i;
+/** The slip's footer: "SUPPORT" in capitals, not a remark that says Support. */
+const OPAY_FOOTER = /^(SUPPORT|CUSTOMER COPY.*)$/;
+
+/**
+ * An Opay slip's recipient and remark, read by their labels. Text recognition
+ * returns the label column and the value column in different orders from
+ * slip to slip, sometimes runs a label and its value into one line, and
+ * sometimes lists every label first; only the first two can be read this way.
+ */
+function opayByLabel(lines: string[]): {
+  payee?: string;
+  remark?: string;
+  /** The slip shows a Remark label with nothing after it. */
+  noRemark?: boolean;
+} {
+  const out: { payee?: string; remark?: string; noRemark?: boolean } = {};
+  const isValue = (l: string | undefined) =>
+    !!l &&
+    !OPAY_LABEL.test(l) &&
+    !OPAY_FOOTER.test(l) &&
+    !MASKED_ACCOUNT.test(l);
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    const recipient = /^Recipient( Details)?$/i.test(l)
+      ? null
+      : l.match(/^Recipient(?: Details)?\s+(.+)$/i);
+    if (recipient && !/^account\b/i.test(recipient[1])) {
+      // "Recipient Details ADA OKORO", then any wrapped part of the name.
+      const parts = [recipient[1]];
+      for (let j = i + 1; isValue(lines[j]) && !/^\d+$/.test(lines[j]); j++)
+        parts.push(lines[j]);
+      out.payee = parts.join(" ");
+    } else if (/^Recipient( Details)?$/i.test(l) && isValue(lines[i + 1])) {
+      const parts: string[] = [];
+      for (let j = i + 1; isValue(lines[j]); j++) parts.push(lines[j]);
+      // A wrapped name ends at the account; a number alone is not a name.
+      if (
+        lines[i + 1 + parts.length] &&
+        MASKED_ACCOUNT.test(lines[i + 1 + parts.length])
+      )
+        out.payee = parts.filter((x) => !/^\d+$/.test(x)).join(" ");
+    }
+    const remark = l.match(/^Remark\s+(.+)$/i);
+    if (remark) out.remark = remark[1];
+    else if (/^Remark$/i.test(l) && isValue(lines[i + 1]))
+      out.remark = lines[i + 1];
+  }
+  // Values interleaved with labels, but no Remark at all: there is no note.
+  if (
+    out.payee !== undefined &&
+    out.remark === undefined &&
+    !lines.some((l) => /^Remark\b/i.test(l))
+  )
+    out.noRemark = true;
+  return out;
+}
+
 function readOpay(lines: string[], posted: string): ReadResult {
   const amount = findAmount(lines);
   if (!amount) return { ok: false, reason: "no amount" };
@@ -207,25 +267,38 @@ function readOpay(lines: string[], posted: string): ReadResult {
   const date = `${year}-${m[2]}-${m[1]}`;
   if (date > posted || date < addDays(posted, -3))
     return { ok: false, reason: "slip date doesn't match the day posted" };
-  // After the date the values follow in label order. Two layouts:
+  const labelled = opayByLabel(lines);
+  // Where text recognition kept a value with (or right after) its label, read
+  // by label: the order of the lines then does not matter.
+  let payee: string | undefined = labelled.payee;
+  let remark: string | undefined = labelled.remark;
+  // Otherwise all the labels came first and the values follow the date in
+  // label order. Two layouts:
   //   "Sender Details / Recipient Details": sender, sender account, recipient
   //   (a name that can wrap onto two lines), recipient account, remark.
   //   "Sender / Sender Account / Bank name / Recipient / …": sender, account,
   //   bank, recipient, account, bank, remark.
-  const after = lines.slice(at + 1);
-  let payee: string | undefined;
-  let remark: string | undefined;
-  if (lines.includes("Recipient Details")) {
-    const rest = after.slice(2); // drop the sender and their account
-    const end = rest.findIndex((l) => MASKED_ACCOUNT.test(l));
-    if (end > 0) {
-      payee = rest.slice(0, end).join(" ");
-      remark = rest[end + 1];
+  if (payee === undefined || remark === undefined) {
+    const after = lines.slice(at + 1);
+    let p: string | undefined;
+    let r: string | undefined;
+    if (lines.includes("Recipient Details")) {
+      const rest = after.slice(2); // drop the sender and their account
+      const end = rest.findIndex((l) => MASKED_ACCOUNT.test(l));
+      if (end > 0) {
+        p = rest.slice(0, end).join(" ");
+        r = rest[end + 1];
+      }
+    } else {
+      p = after[3];
+      r = after[6];
     }
-  } else {
-    payee = after[3];
-    remark = after[6];
+    payee ??= p;
+    if (remark === undefined && !labelled.noRemark) remark = r;
   }
+  if (remark && OPAY_LABEL.test(remark)) remark = undefined;
+  if (payee && (OPAY_LABEL.test(payee) || MASKED_ACCOUNT.test(payee)))
+    payee = undefined;
   const note = remark && !/^\d+$/.test(remark) ? remark : null;
   return {
     ok: true,

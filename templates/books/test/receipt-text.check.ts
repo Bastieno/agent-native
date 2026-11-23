@@ -265,6 +265,100 @@ await check(
   },
 );
 
+await check(
+  "an Opay slip is read by its labels, whatever order the lines come in",
+  () => {
+    // As text recognition returned E-1041: labels and values interleaved, and
+    // "Recipient Details" run together with the name.
+    const r = readReceiptText(
+      [
+        "OPay",
+        "Transaction Receipt",
+        "TRANSFER TO BANK",
+        "N3,000.00",
+        "Successful",
+        "Date/Time",
+        "Sender Details",
+        "03/10/2026 14:27",
+        "NORTHWIND LTD",
+        "OPay|9552****16",
+        "Recipient Details First zillion Kapital Kitchen Gbaremu",
+        "OPay|6544****01",
+        "Remark",
+        "For snacks",
+        "SessionID",
+        "100004261003132752173149124882",
+        "Transaction No.",
+        "261003020200836276842315",
+        "CUSTOMER COPY REPRINT",
+      ],
+      "2026-10-03",
+    );
+    assert.ok(r.ok);
+    if (!r.ok) return;
+    assert.equal(r.receipt.payee, "First zillion Kapital Kitchen Gbaremu");
+    assert.equal(r.receipt.note, "For snacks");
+    assert.equal(r.receipt.date, "2026-10-03");
+  },
+);
+
+await check("the older Opay layout keeps a remark that says Support", () => {
+  const r = readReceiptText(
+    [
+      "OPay",
+      "Transaction Receipt",
+      "TRANSFER TO BANK",
+      "N9,000.00",
+      "Successful",
+      "Date/Time",
+      "Sender",
+      "Sender Account",
+      "Bank name",
+      "Recipient",
+      "Recipient Account",
+      "Paid with",
+      "Remark",
+      "SessionID",
+      "Transaction No",
+      "15/03/26 19:01",
+      "ACME LTD",
+      "1234567890",
+      "Guaranty Trust Bank",
+      "ADA OKORO",
+      "0110****66",
+      "Owealth",
+      "Support",
+      "100004",
+      "2610",
+      "CUSTOMER COPY REPRINT",
+      "SUPPORT",
+      "pos-service@opay-inc.com",
+    ],
+    "2026-03-15",
+  );
+  assert.ok(
+    r.ok && r.receipt.note === "Support" && r.receipt.payee === "ADA OKORO",
+  );
+});
+
+await check("an Opay slip with no remark has no note", () => {
+  const r = readReceiptText(
+    [
+      "OPay",
+      "TRANSFER TO BANK",
+      "N3,000.00",
+      "Date/Time",
+      "03/10/2026 14:27",
+      "Recipient Details ADA OKORO",
+      "OPay|6544****01",
+      "SessionID",
+      "100004261003132752173149124882",
+    ],
+    "2026-10-03",
+  );
+  assert.ok(r.ok && r.receipt.note === null && r.receipt.payee === "ADA OKORO");
+});
+
 await check("slips it can't read say why", () => {
   const noProvidusAmount = readReceiptText(["Providus Bank"], "2026-07-01");
   assert.ok(!noProvidusAmount.ok);
