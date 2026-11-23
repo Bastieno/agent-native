@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { IconDotsVertical, IconFileZip } from "@tabler/icons-react";
@@ -39,6 +39,7 @@ import {
   useSetHeaderActions,
   useSetPageTitle,
 } from "@/components/layout/HeaderActions";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { PeriodPicker, usePeriod } from "@/components/PeriodPicker";
 import { BUSINESS_NAMES, naira, receiptUrl, shortDay } from "@/lib/books";
 import { readChatExport } from "@shared/chat-export";
@@ -369,16 +370,30 @@ export default function ExpensesPage() {
   const update = useActionMutation("update-expense");
   const selectedCode = params.get("expense");
   const expenses = (data?.expenses ?? []) as Expense[];
-  const selected = useMemo(
+  const inList = useMemo(
     () => expenses.find((e) => e.code === selectedCode),
     [expenses, selectedCode],
   );
+  // The open expense stays open after a change moves it out of the list (a
+  // new category under a category filter, or confirmed under "To review"):
+  // the drawer keeps the last copy until it is closed.
+  const [held, setHeld] = useState<Expense | null>(null);
+  useEffect(() => {
+    if (inList) setHeld(inList);
+  }, [inList]);
+  const selected =
+    inList ?? (held && held.code === selectedCode ? held : undefined);
+  // One page at a time; the page is in the address, so a row opened and
+  // closed, or a reload, keeps the place.
+  const paged = usePagination(expenses);
   const categories: string[] = settings?.expenseCategories ?? [];
 
   function setParam(key: string, value: string | null) {
     const next = new URLSearchParams(params);
     if (value) next.set(key, value);
     else next.delete(key);
+    // A new filter starts from the first page; opening a row keeps the page.
+    if (key !== "expense") next.delete("page");
     setParams(next, { replace: true });
   }
   const select = (code: string | null) => setParam("expense", code);
@@ -387,6 +402,17 @@ export default function ExpensesPage() {
     code: string,
     patch: Partial<Expense> & { amountNaira?: number },
   ) {
+    setHeld((h) =>
+      h && h.code === code
+        ? {
+            ...h,
+            ...patch,
+            ...(patch.amountNaira
+              ? { amount: Math.round(patch.amountNaira * 100) }
+              : {}),
+          }
+        : h,
+    );
     const key = ["action", "list-expenses", query];
     const previous = qc.getQueryData(key);
     qc.setQueryData(key, (old: { expenses: Expense[] } | undefined) =>
@@ -485,7 +511,7 @@ export default function ExpensesPage() {
               size="sm"
               onClick={() => {
                 const next = new URLSearchParams(params);
-                for (const k of ["category", "business", "status"])
+                for (const k of ["category", "business", "status", "page"])
                   next.delete(k);
                 setParams(next, { replace: true });
               }}
@@ -517,7 +543,7 @@ export default function ExpensesPage() {
       ) : (
         <>
           <div className="divide-y divide-border @3xl:hidden">
-            {expenses.map((e) => (
+            {paged.items.map((e) => (
               <button
                 key={e.code}
                 type="button"
@@ -563,7 +589,7 @@ export default function ExpensesPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {expenses.map((e) => (
+              {paged.items.map((e) => (
                 <TableRow
                   key={e.code}
                   className="cursor-pointer"
@@ -601,6 +627,7 @@ export default function ExpensesPage() {
           </Table>
         </>
       )}
+      {data && <Pagination {...paged} noun="expenses" />}
       {selected && (
         <ExpenseSheet
           key={selected.code}

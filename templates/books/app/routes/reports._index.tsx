@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useSetPageTitle } from "@/components/layout/HeaderActions";
+import { Pagination, usePagination } from "@/components/Pagination";
 import { naira, rangeLabel } from "@/lib/books";
 
 export function meta() {
@@ -28,6 +29,7 @@ export default function ReportsPage() {
   const navigate = useNavigate();
   const { data } = useActionQuery("list-digests", { limit: 90 });
   const digests = data?.digests ?? [];
+  const paged = usePagination<(typeof digests)[number]>(digests);
   if (!digests.length) {
     return (
       <div className="flex flex-1 items-center justify-center p-10 text-sm text-muted-foreground">
@@ -38,7 +40,7 @@ export default function ReportsPage() {
   return (
     <div className="@container flex-1 overflow-y-auto p-4 sm:p-6">
       <div className="divide-y divide-border @xl:hidden">
-        {digests.map((d) => (
+        {paged.items.map((d) => (
           <Link
             key={d.digestId}
             to={`/reports/${d.digestId}`}
@@ -76,7 +78,7 @@ export default function ReportsPage() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {digests.map((d) => (
+          {paged.items.map((d) => (
             <TableRow
               key={d.digestId}
               className="cursor-pointer"
@@ -107,6 +109,7 @@ export default function ReportsPage() {
           ))}
         </TableBody>
       </Table>
+      <Pagination {...paged} noun="reports" />
     </div>
   );
 }
