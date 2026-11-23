@@ -19,6 +19,7 @@ import { getThemeInitScript } from "@agent-native/core/client";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
+import { useNewVersion } from "@/hooks/use-new-version";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout as AppLayout } from "@/components/layout/Layout";
 import { TAB_ID } from "@/lib/tab-id";
@@ -85,6 +86,8 @@ function DbSyncSetup() {
 }
 
 function AppContent() {
+  // Offers a refresh when a newer version of Books is deployed.
+  useNewVersion();
   const [cmdkOpen, setCmdkOpen] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
