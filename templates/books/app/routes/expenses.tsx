@@ -168,7 +168,7 @@ function ExpenseSheet({
   const [imageFailed, setImageFailed] = useState(false);
   return (
     <Sheet open onOpenChange={(open) => !open && onClose()}>
-      <SheetContent className="w-full overflow-y-auto sm:max-w-md">
+      <SheetContent className="w-full overflow-y-auto sm:max-w-md lg:max-w-lg xl:max-w-xl">
         <SheetHeader>
           <SheetTitle className="line-clamp-2">
             {whatForLine(expense)}
