@@ -119,7 +119,7 @@ not_a_loan, all) gives each loan's amount, repaid, balance, repayments and
 status (outstanding, part_paid, paid, not_a_loan); `record-loan-repayment`
 (amount in naira, or `full: true`; never more than the balance),
 `delete-loan-repayment` and `set-loan-status` (`notALoan` for the business
-paying back its own lender). Repayments are not sales: never Money in. The open
+paying back its own lender). The borrower is the entry's payee: correct a wrong name with `update-expense` `vendor`, which renames it in Money out too. Repayments are not sales: never Money in. The open
 loan is `loanCode` in navigation state.
 
 Owner's pay is broken down by what it went on, so the owner can track it:

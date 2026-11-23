@@ -119,6 +119,13 @@ await check(
   },
 );
 
+await check("renaming the borrower renames the loan", async () => {
+  await asOwner(() =>
+    update.run({ code: ada.code, vendor: "ADAEZE OKORO | 0123456789" }),
+  );
+  assert.equal((await loan(ada.code))?.borrower, "ADAEZE OKORO | 0123456789");
+});
+
 await check("the partner sees loans but cannot change them", async () => {
   const r = await asPartner(() => listLoans.run({}));
   assert.ok(r.loans.length >= 1);

@@ -139,6 +139,7 @@ function LoanDrawer({
   onRepay,
   onRemove,
   onNotALoan,
+  onRename,
 }: {
   loan: Loan;
   canEdit: boolean;
@@ -146,6 +147,7 @@ function LoanDrawer({
   onRepay: (amount: number | "full", paidOn: string) => void;
   onRemove: (id: string) => void;
   onNotALoan: (notALoan: boolean) => void;
+  onRename: (name: string) => void;
 }) {
   const [amount, setAmount] = useState("");
   const [paidOn, setPaidOn] = useState(lagosToday());
@@ -198,6 +200,23 @@ function LoanDrawer({
         </SheetHeader>
 
         <div className="mt-6 space-y-6">
+          {canEdit && (
+            <div className="space-y-1.5">
+              <Label htmlFor="borrower">Borrower</Label>
+              <Input
+                id="borrower"
+                defaultValue={borrowerName(loan.borrower)}
+                onBlur={(e) => {
+                  const name = e.target.value.trim();
+                  if (name && name !== borrowerName(loan.borrower))
+                    onRename(name);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") e.currentTarget.blur();
+                }}
+              />
+            </div>
+          )}
           <dl className="grid grid-cols-3 gap-3 text-sm">
             <div>
               <dt className="text-xs text-muted-foreground">Lent</dt>
@@ -382,6 +401,7 @@ export default function LoansPage() {
   const repay = useActionMutation("record-loan-repayment");
   const unrepay = useActionMutation("delete-loan-repayment");
   const setStatus = useActionMutation("set-loan-status");
+  const updateExpense = useActionMutation("update-expense");
 
   const loans = data?.loans ?? [];
   const paged = usePagination(loans);
@@ -449,6 +469,15 @@ export default function LoansPage() {
       ),
     );
     setStatus.mutate({ code: loan.code, notALoan }, done);
+  }
+
+  /** The borrower is the loan's Money out payee: renaming corrects both. */
+  function onRename(loan: Loan, name: string) {
+    // Keep the account number a slip gave ("NAME | 0123456789").
+    const account = loan.borrower.split(" | ")[1];
+    const vendor = account ? `${name} | ${account.trim()}` : name;
+    const done = change(loan.code, (l) => ({ ...l, borrower: vendor }));
+    updateExpense.mutate({ code: loan.code, vendor }, done);
   }
 
   const t = data?.totals;
@@ -562,6 +591,7 @@ export default function LoansPage() {
           onRepay={(amount, paidOn) => onRepay(selected, amount, paidOn)}
           onRemove={(id) => onRemove(selected, id)}
           onNotALoan={(v) => onNotALoan(selected, v)}
+          onRename={(name) => onRename(selected, name)}
         />
       )}
     </div>
