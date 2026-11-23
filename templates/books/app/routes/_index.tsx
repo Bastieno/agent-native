@@ -124,7 +124,11 @@ const chartConfig = {
 
 export default function OverviewPage() {
   useSetPageTitle("Overview");
-  useSetHeaderActions(<PeriodPicker />);
+  useSetHeaderActions(
+    <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:gap-1">
+      <PeriodPicker />
+    </div>,
+  );
   const { start, end } = usePeriod();
   const { data, isLoading } = useActionQuery("get-overview", { start, end });
 

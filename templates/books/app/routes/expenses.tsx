@@ -366,7 +366,7 @@ function ExpenseSheet({
 export default function ExpensesPage() {
   useSetPageTitle("Money out");
   useSetHeaderActions(
-    <div className="flex items-center gap-1">
+    <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:gap-1">
       <PeriodPicker />
       <HistoryUpload />
     </div>,

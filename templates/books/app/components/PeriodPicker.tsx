@@ -55,13 +55,16 @@ export function withPeriod(path: string, start: string, end: string) {
 export function PeriodPicker() {
   const { start, end, key, today, set } = usePeriod();
   return (
-    <div className="flex flex-wrap items-center justify-end gap-2">
+    // On a phone its parts join the page's row of controls (contents): the
+    // period first, the other buttons after it, the dates on a line of their
+    // own. From sm up it is one row: dates, then the period.
+    <div className="contents sm:flex sm:items-center sm:gap-2">
       {key === "custom" && (
-        <>
+        <div className="order-last grid w-full grid-cols-[1fr_auto_1fr] items-center gap-2 sm:order-none sm:flex sm:w-auto">
           <Input
             type="date"
             aria-label="From"
-            className="h-8 w-[8.5rem]"
+            className="h-8 w-full sm:w-[8.5rem]"
             value={start}
             max={end}
             onChange={(e) =>
@@ -72,14 +75,14 @@ export function PeriodPicker() {
           <Input
             type="date"
             aria-label="To"
-            className="h-8 w-[8.5rem]"
+            className="h-8 w-full sm:w-[8.5rem]"
             value={end}
             min={start}
             onChange={(e) =>
               e.target.value && set({ end: e.target.value, custom: "1" })
             }
           />
-        </>
+        </div>
       )}
       <Select
         value={key}
@@ -89,7 +92,10 @@ export function PeriodPicker() {
           set({ start: r.start, end: r.end, custom: null });
         }}
       >
-        <SelectTrigger className="h-8 w-36" aria-label="Period">
+        <SelectTrigger
+          className="h-8 min-w-0 flex-1 sm:w-36 sm:flex-none"
+          aria-label="Period"
+        >
           <SelectValue />
         </SelectTrigger>
         <SelectContent align="end">

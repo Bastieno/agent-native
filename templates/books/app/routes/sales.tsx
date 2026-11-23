@@ -137,7 +137,7 @@ const chartConfig = {
 export default function SalesPage() {
   useSetPageTitle("Money in");
   useSetHeaderActions(
-    <div className="flex items-center gap-1">
+    <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:gap-1">
       <PeriodPicker />
       <RecentFiles />
       <UploadButton />
