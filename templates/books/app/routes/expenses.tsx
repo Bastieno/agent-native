@@ -477,14 +477,9 @@ export default function ExpensesPage() {
           qc.setQueryData(key, previous);
           toast.error(err.message);
         },
-        onSuccess: () => {
-          // Every change saves on its own: say so, briefly.
-          toast.success(patch.status === "confirmed" ? "Confirmed" : "Saved", {
-            id: "expense-saved",
-            duration: 1500,
-          });
-          qc.invalidateQueries({ queryKey: ["action"] });
-        },
+        // The drawer itself shows where the expense stands; only a failure
+        // gets a message.
+        onSuccess: () => qc.invalidateQueries({ queryKey: ["action"] }),
       },
     );
   }
