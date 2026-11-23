@@ -162,6 +162,24 @@ const RULES: Rule[] = [
     ],
   },
   {
+    // Work someone did for a business that is not a repair or a salary.
+    category: "Services",
+    business: null,
+    words: [
+      "service rendered",
+      "services rendered",
+      "photograph",
+      "consultant",
+      "consultancy",
+      "accountant",
+      "accounting",
+      "designer",
+      "fumigat",
+      "security guard",
+      "cleaner",
+    ],
+  },
+  {
     category: "Food & drink stock",
     business: "lounge",
     words: [

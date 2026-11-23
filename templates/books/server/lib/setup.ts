@@ -56,6 +56,7 @@ export const EXPENSE_CATEGORIES = [
   ...NOT_COSTS,
   REFUNDS,
   TV,
+  "Services",
   "Other",
 ];
 

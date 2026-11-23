@@ -35,6 +35,7 @@ Ephemeral UI state is stored in the SQL `application_state` table, accessed via 
 
 ## Where money goes (the owner's answers)
 
+- Work someone did for a business that is not a repair or a salary (cleaners, security, a photographer, a consultant, an accountant) is Services, for that business.
 - DSTV (subscriptions: TV & subscriptions; fixes and decoders: Repairs) is the Lounge's.
 - Diesel / power and Repairs are the Hub's; Internet (Starlink, Canal+) is the Hub's; other running costs are the Lounge's.
 - "For fuel" paid to someone on the staff list is generator fuel (Diesel / power, Hub); paid to anyone else (a filling station) it is the owner's car: Owner's pay.

@@ -70,6 +70,25 @@ await check("DSTV is the Lounge's TV, and its repairs the Lounge's too", () => {
   ]);
 });
 
+await check("work someone did for a business is Services", () => {
+  for (const note of [
+    "Payment for photographer",
+    "For cleaner",
+    "Consultant fee",
+    "Accountant for October",
+    "Service rendered",
+  ])
+    assert.equal(g(note)[0], "Services", note);
+  // Cleaning products are still supplies; fixing things is still repairs.
+  assert.equal(g("5k for cleaning")[0], "Supplies");
+  assert.equal(g("For welding work")[0], "Repairs");
+  assert.deepEqual(
+    parseNarration("HUB SERVICE cleaning")?.category,
+    "Services",
+  );
+  assert.deepEqual(parseNarration("HUB SERVICE cleaning")?.business, "hub");
+});
+
 await check("Canal+ is the Hub's internet", () => {
   assert.deepEqual(g("For canal box subscription"), ["Internet", "hub"]);
 });

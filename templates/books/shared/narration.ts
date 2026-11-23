@@ -87,6 +87,12 @@ export const NARRATION_TAGS: NarrationTag[] = [
     example: "HUB COMMISSION agent for new member",
   },
   {
+    tag: "SERVICE",
+    category: "Services",
+    business: "lounge",
+    example: "HUB SERVICE cleaning",
+  },
+  {
     tag: "OTHER",
     category: "Other",
     business: "lounge",
