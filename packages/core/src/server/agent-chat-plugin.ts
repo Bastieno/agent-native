@@ -23,6 +23,13 @@ import {
   type ActionEntry,
 } from "../agent/production-agent.js";
 import { runAgentLoopDirectWithSoftTimeout } from "../agent/run-loop-with-resume.js";
+import { setAgentRunGate } from "../agent/run-gate.js";
+import {
+  A2A_USAGE_LABEL,
+  MCP_ASK_APP_USAGE_LABEL,
+  recordExternalAgentUsage,
+  resolveCallerAgentEngine,
+} from "./external-agent-run.js";
 import type { AgentEngine, EngineMessage } from "../agent/engine/types.js";
 import {
   resolveEngine,
@@ -133,7 +140,10 @@ import {
 } from "../a2a/artifact-response.js";
 import { updateTaskStatusMessage } from "../a2a/task-store.js";
 import { collectFinalResponseTextFromAgentEvents } from "../a2a/response-text.js";
-import { buildRuntimeContextPrompt } from "../agent/runtime-context.js";
+import {
+  buildRuntimeContextPrompt,
+  SYSTEM_PROMPT_VOLATILE_MARKER,
+} from "../agent/runtime-context.js";
 
 // Lazy fs — loaded via dynamic import() on first use.
 // This avoids require() which bundlers convert to createRequire(import.meta.url)
@@ -1894,15 +1904,13 @@ export interface AgentChatPluginOptions {
    */
   disableDbDataTools?: boolean;
   /**
-   * Adjust the framework's extension actions (`create-extension`,
-   * `update-extension`, `list-extensions`, ...) before they are registered for
-   * the agent. A template can wrap `run` with its own role check: these
-   * actions are not template actions, so a template's action guard never
-   * sees them.
+   * Gate for agent runs that are not chat messages — sub-agents, automations,
+   * scheduled jobs, integrations, agent-to-agent and MCP calls. Each asks it
+   * first, with the person and what started the run, and it may refuse with a
+   * reply, force the model or narrow the tools, as `prepareRequest` does for a
+   * chat message. Without it those runs skip whatever an app enforces there.
    */
-  transformExtensionActions?: (
-    entries: Record<string, ActionEntry>,
-  ) => Record<string, ActionEntry>;
+  runGate?: import("../agent/run-gate.js").AgentRunGate;
   /**
    * Optional callback to append template-specific context to the system
    * prompt on each request. Runs after AGENTS.md / skills / memory are
@@ -1932,6 +1940,14 @@ export interface AgentChatPluginOptions {
    * Optional per-template request normalizer. Runs after authentication and
    * before the model sees the message, so apps can translate chat attachments
    * into template-native file handles while preserving the user's visible text.
+   *
+   * It may also return `model` to run the turn on a model of the app's
+   * choosing — the client's model and engine picks are then ignored, which is
+   * how an app keeps a role on a cheaper model — or `reply` to answer with a
+   * fixed message without calling a model (a switched-off agent, a used-up
+   * allowance), or `toolFilter` to narrow the tools for this request (e.g. by
+   * role): a filtered-out tool is neither offered nor run, and tool-search
+   * cannot surface it.
    */
   prepareRequest?: (details: {
     event: any;
@@ -1949,11 +1965,20 @@ export interface AgentChatPluginOptions {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        /** Run this turn on this model, whatever the client picked. */
+        model?: string;
+        /** Answer with this text and do not run the model at all. */
+        reply?: string;
+        /** Only the tools this returns true for are offered or run. */
+        toolFilter?: (name: string) => boolean;
       }
     | Promise<void | {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        model?: string;
+        reply?: string;
+        toolFilter?: (name: string) => boolean;
       }>;
   /**
    * Use ONLY the template's `systemPrompt` and the actions list — skip the
@@ -2012,6 +2037,62 @@ export interface AgentChatPluginOptions {
    * Return a message to complete the A2A task without invoking the LLM, or
    * null/undefined to continue through the normal agent loop.
    */
+  /**
+   * Server instructions sent to MCP clients on `initialize` (see
+   * `MCPConfig.instructions`). A function is evaluated per MCP request inside
+   * the caller's request context.
+   */
+  mcpInstructions?: string | (() => string | Promise<string>);
+  /**
+   * Per-caller filter for the MCP `tools/list` (see
+   * `MCPConfig.isToolListedForCaller`). Runs inside the caller's request
+   * context, for the compact chat-app catalog and the full catalog alike,
+   * builtins included. It only hides tools from the listing; actions must
+   * still enforce their own permissions when called.
+   */
+  mcpToolFilter?: (
+    name: string,
+    entry: ActionEntry,
+  ) => boolean | Promise<boolean>;
+  /**
+   * Adjust the app's AGENTS.md before it goes into the assistant's
+   * instructions, for the person it is built for (`owner`, their email). The
+   * whole file is otherwise sent on every step to everyone, so an app whose
+   * guide has a section per role can send each person only theirs. Return the
+   * text to use; if it throws or returns nothing, the full file is used.
+   */
+  transformAgentsMd?: (
+    agentsMd: string,
+    owner: string,
+  ) => string | Promise<string>;
+  /**
+   * Whether the system prompt also lists every template action as text (name,
+   * parameters and description). Defaults to true. The same actions already
+   * reach the model as native tools, each with its own description and
+   * schema, so an app with many actions can turn this off and stop sending
+   * them twice on every step — tens of thousands of tokens for a large app,
+   * and the list is not narrowed to what the person may run.
+   */
+  actionsInPrompt?: boolean;
+  /**
+   * Adjust the framework's extension actions (`create-extension`,
+   * `update-extension`, `list-extensions`, ...) before they are registered for
+   * the agent and over MCP. A template can mark some as
+   * `mcpApp: { compactCatalog: true }` so chat apps list them as plain tools,
+   * and wrap `run` with its own role check: these actions are not template
+   * actions, so a template's action guard never sees them.
+   */
+  transformExtensionActions?: (
+    entries: Record<string, ActionEntry>,
+  ) => Record<string, ActionEntry>;
+  /**
+   * Refuse an MCP caller before anything is listed or run (see
+   * `MCPConfig.refuseCaller`). Return a message to refuse, null to allow.
+   * Runs inside the caller's request context.
+   */
+  mcpRefuseCaller?: () => string | null | Promise<string | null>;
+  /** The organization a connector request acts in (see `MCPConfig.resolveCallerOrg`). */
+  mcpResolveCallerOrg?: import("../mcp/build-server.js").MCPConfig["resolveCallerOrg"];
   a2aMessageFallback?: (details: {
     message: import("../a2a/types.js").Message;
     text: string;
@@ -2596,6 +2677,15 @@ const DEFAULT_SYSTEM_PROMPT = PROD_FRAMEWORK_PROMPT;
  * AGENTS.md and restarting the server is all it takes; Vite HMR invalidates
  * the bundle in dev so changes land instantly.
  */
+/**
+ * An app's own adjustment of its AGENTS.md before it goes into the prompt (see
+ * `AgentChatPluginOptions.transformAgentsMd`). Held at module level because
+ * the prompt is built from several places, in and outside this plugin.
+ */
+let agentsMdTransform:
+  | ((agentsMd: string, owner: string) => string | Promise<string>)
+  | undefined;
+
 export async function loadResourcesForPrompt(
   owner: string,
   compact = false,
@@ -2620,8 +2710,22 @@ export async function loadResourcesForPrompt(
 
     // 2. Template AGENTS.md — always included (critical template instructions).
     if (bundle.agentsMd.trim()) {
+      let templateAgentsMd = bundle.agentsMd.trim();
+      if (agentsMdTransform) {
+        try {
+          templateAgentsMd =
+            (await agentsMdTransform(templateAgentsMd, owner)).trim() ||
+            templateAgentsMd;
+        } catch (err) {
+          // A failing adjustment must not leave the assistant with no guide.
+          console.warn(
+            "[agent-chat] transformAgentsMd threw; using the full AGENTS.md:",
+            err instanceof Error ? err.message : err,
+          );
+        }
+      }
       sections.push(
-        `<resource name="AGENTS.md" scope="template">\n${bundle.agentsMd.trim()}\n</resource>`,
+        `<resource name="AGENTS.md" scope="template">\n${templateAgentsMd}\n</resource>`,
       );
     }
 
@@ -3025,6 +3129,7 @@ export function shouldBlockInProductCodeEditingSurface(input: {
 export function createAgentChatPlugin(
   options?: AgentChatPluginOptions,
 ): NitroPluginDef {
+  agentsMdTransform = options?.transformAgentsMd ?? agentsMdTransform;
   return (nitroApp: any) => {
     markDefaultPluginProvided(nitroApp, "agent-chat");
     // Nitro v3 calls plugins synchronously and doesn't await async return
@@ -3182,6 +3287,7 @@ export function createAgentChatPlugin(
       // so the agent can only touch data through the app's own actions, where
       // per-role and per-row rules live. `db-schema` is kept: it exposes table
       // shapes, not rows.
+      setAgentRunGate(options?.runGate ?? null);
       const dbScripts = options?.disableDbDataTools
         ? Object.fromEntries(
             Object.entries(allDbScripts).filter(
@@ -3731,8 +3837,18 @@ export function createAgentChatPlugin(
           const extra = await resolveExtraContext(context.event, owner);
           const runtimeContext = runtimeContextForEvent(context.event);
           const systemPrompt = devActive
-            ? devPrompt + runtimeContext + resources + schemaBlock + extra
-            : basePrompt + runtimeContext + resources + schemaBlock + extra;
+            ? devPrompt +
+              resources +
+              schemaBlock +
+              SYSTEM_PROMPT_VOLATILE_MARKER +
+              runtimeContext +
+              extra
+            : basePrompt +
+              resources +
+              schemaBlock +
+              SYSTEM_PROMPT_VOLATILE_MARKER +
+              runtimeContext +
+              extra;
 
           const model =
             options?.model ??
@@ -3790,8 +3906,9 @@ export function createAgentChatPlugin(
             `[A2A] Starting agent loop: ${a2aTools.length} tools, prompt ${systemPrompt.length} chars`,
           );
 
-          await runAgentLoopDirectWithSoftTimeout(
+          const a2aUsage = await runAgentLoopDirectWithSoftTimeout(
             {
+              runSource: "a2a",
               engine: a2aEngine,
               model,
               systemPrompt,
@@ -3843,6 +3960,12 @@ export function createAgentChatPlugin(
             options?.runSoftTimeoutMs,
           );
 
+          await recordExternalAgentUsage(a2aUsage, {
+            ownerEmail: userEmail,
+            label: A2A_USAGE_LABEL,
+            app: options?.appId,
+          });
+
           const { responseText, finalText } = assembleA2AFinalResponse(
             a2aEvents,
             a2aToolResults,
@@ -3873,7 +3996,10 @@ export function createAgentChatPlugin(
       // Dev: actions are invoked via bash — emit `pnpm action name --arg <type>`
       //      and include discoveredActions too, since those are also missing
       //      from the dev tool registry.
-      const prodActionsPrompt = generateActionsPrompt(templateScripts, "tool");
+      const prodActionsPrompt =
+        options?.actionsInPrompt === false
+          ? ""
+          : generateActionsPrompt(templateScripts, "tool");
       const devActionsPrompt = generateActionsPrompt(
         { ...discoveredActions, ...templateScripts },
         "cli",
@@ -3917,11 +4043,28 @@ export function createAgentChatPlugin(
         description: `Agent-native ${options?.appId ?? "app"} agent`,
         actions: allScripts,
         productionActions: mcpFullActions,
+        ...(options?.mcpInstructions !== undefined
+          ? { instructions: options.mcpInstructions }
+          : {}),
+        ...(options?.mcpToolFilter
+          ? { isToolListedForCaller: options.mcpToolFilter }
+          : {}),
+        ...(options?.mcpRefuseCaller
+          ? { refuseCaller: options.mcpRefuseCaller }
+          : {}),
+        ...(options?.mcpResolveCallerOrg
+          ? { resolveCallerOrg: options.mcpResolveCallerOrg }
+          : {}),
         askAgent: async (message: string) => {
-          const mcpEngine = await resolveEngine({
+          // Runs inside the MCP caller's request context (build-server wraps
+          // tools/call), so the caller's user/org key resolves here, exactly
+          // as it would for their web chat turn.
+          const callerEmail = getRequestUserEmail();
+          const mcpEngine = await resolveCallerAgentEngine({
             engineOption: options?.engine,
-            apiKey: options?.apiKey,
+            pluginApiKey: options?.apiKey,
             appId: options?.appId,
+            callerEmail,
           });
           const model =
             options?.model ??
@@ -3993,8 +4136,9 @@ export function createAgentChatPlugin(
           let accumulatedText = "";
           const controller = new AbortController();
 
-          await runAgentLoopDirectWithSoftTimeout(
+          const mcpUsage = await runAgentLoopDirectWithSoftTimeout(
             {
+              runSource: "mcp",
               engine: mcpEngine,
               model,
               systemPrompt,
@@ -4010,6 +4154,12 @@ export function createAgentChatPlugin(
             },
             options?.runSoftTimeoutMs,
           );
+
+          await recordExternalAgentUsage(mcpUsage, {
+            ownerEmail: callerEmail,
+            label: MCP_ASK_APP_USAGE_LABEL,
+            app: options?.appId,
+          });
 
           return accumulatedText || "(no response)";
         },
@@ -4584,8 +4734,9 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
           if (leanPrompt) {
             return setSystemPromptOnContext(
               leanBasePrompt +
-                runtimeContext +
                 codeEditingSurfaceRestriction +
+                SYSTEM_PROMPT_VOLATILE_MARKER +
+                runtimeContext +
                 extra,
             );
           }
@@ -4601,10 +4752,11 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
             : await buildSchemaBlock(owner, false);
           return setSystemPromptOnContext(
             basePrompt +
-              runtimeContext +
               resources +
               schemaBlock +
               codeEditingSurfaceRestriction +
+              SYSTEM_PROMPT_VOLATILE_MARKER +
+              runtimeContext +
               extra,
           );
         },
@@ -4648,6 +4800,7 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
                 const { extra } = await prepareRun(event);
                 return setSystemPromptOnContext(
                   anonymousReadOnlyPrompt +
+                    SYSTEM_PROMPT_VOLATILE_MARKER +
                     runtimeContextForEvent(event) +
                     extra,
                 );
@@ -4741,7 +4894,10 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
             const runtimeContext = runtimeContextForEvent(event);
             if (leanPrompt) {
               return setSystemPromptOnContext(
-                leanBasePrompt + runtimeContext + extra,
+                leanBasePrompt +
+                  SYSTEM_PROMPT_VOLATILE_MARKER +
+                  runtimeContext +
+                  extra,
               );
             }
             const resources = await loadResourcesForPrompt(
@@ -4753,7 +4909,12 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
               ? ""
               : await buildSchemaBlock(owner, true);
             return setSystemPromptOnContext(
-              devPrompt + runtimeContext + resources + schemaBlock + extra,
+              devPrompt +
+                resources +
+                schemaBlock +
+                SYSTEM_PROMPT_VOLATILE_MARKER +
+                runtimeContext +
+                extra,
             );
           },
           model: options?.model,
@@ -6346,6 +6507,10 @@ Non-code requests are still fine on this surface: read data, navigate the UI, su
         "/_agent-native/mcp",
       ],
     });
+    // Nitro ignores this, but an app that wraps the plugin can wait on it.
+    // Without it a wrapper sees no work and lets requests through before
+    // the actions and MCP routes exist.
+    return initPromise;
   };
 }
 

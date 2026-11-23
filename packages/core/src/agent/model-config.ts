@@ -52,8 +52,11 @@ export const AGENT_MODEL_CONFIG = {
   anthropic: {
     defaultModel: ANTHROPIC_DEFAULT_MODEL_ID,
     supportedModels: [
+      "claude-opus-5-5",
       "claude-opus-4-7",
+      "claude-sonnet-5-5",
       ANTHROPIC_DEFAULT_MODEL_ID,
+      "claude-haiku-5-5",
       "claude-haiku-4-5-20251001",
     ],
   },

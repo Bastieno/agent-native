@@ -58,6 +58,13 @@ export interface EngineTool {
    * E.g. `{ anthropic: { cacheControl: { type: "ephemeral" } } }`
    */
   providerOptions?: Record<string, unknown>;
+  /**
+   * Keep this tool's definition out of the prompt until the model finds it
+   * with `tool-search`. An engine that supports deferred loading (Anthropic)
+   * sends it as such; any other engine sends it like every other tool, so a
+   * deferred tool is always still callable.
+   */
+  deferLoading?: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -100,6 +107,12 @@ export interface EngineToolResultPart {
   toolInput: string;
   content: string;
   isError?: boolean;
+  /**
+   * Tools this result found (a `tool-search` result). An engine that supports
+   * deferred loading loads those of them that are deferred, so the model can
+   * call them next; other engines ignore it.
+   */
+  toolReferences?: string[];
 }
 
 export interface EngineThinkingPart {
@@ -204,6 +217,13 @@ export interface EngineStreamOptions {
   messages: EngineMessage[];
   tools: EngineTool[];
   abortSignal: AbortSignal;
+  /**
+   * Length of the leading part of `systemPrompt` that is the same on every
+   * request. An engine that caches prompts caches only that part, so what
+   * follows (the time, the current screen) can change without re-writing the
+   * cache. Undefined: cache the whole prompt, as before.
+   */
+  systemPromptCacheBoundary?: number;
   maxOutputTokens?: number;
   temperature?: number;
   reasoningEffort?: ReasoningEffort;

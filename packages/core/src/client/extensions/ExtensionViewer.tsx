@@ -95,8 +95,28 @@ interface Extension {
   canDelete?: boolean;
 }
 
+/** The viewer's header controls a host app may switch off. All default on. */
+export interface ExtensionViewerControls {
+  /** The pencil that asks the agent to change the extension. */
+  edit?: boolean;
+  /** Renaming from the title. */
+  rename?: boolean;
+  /** The Share dialog. */
+  share?: boolean;
+  /** The model picker in the edit box. Off when the host fixes the model. */
+  modelSelector?: boolean;
+  /** The ⋯ menu (widget areas, remove from my list, delete). */
+  more?: boolean;
+}
+
 export interface ExtensionViewerProps {
   extensionId: string;
+  /**
+   * Which header controls to show. An app that decides sharing and editing in
+   * its own way (by role, or in its own settings) turns the rest off rather
+   * than offering buttons that cannot work for the person looking.
+   */
+  controls?: ExtensionViewerControls;
 }
 
 function readExtensionTitleSuffix(): string | null {
@@ -178,9 +198,11 @@ function applyCanonicalLink(path: string): () => void {
 function EditToolPopover({
   extension,
   onOpenChange,
+  modelSelector = true,
 }: {
   extension: Extension;
   onOpenChange?: (open: boolean) => void;
+  modelSelector?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const setOpenAndNotify = (v: boolean) => {
@@ -246,6 +268,7 @@ function EditToolPopover({
           autoFocus
           placeholder="What would you like to change?"
           draftScope={`extensions:edit:${extension.id}`}
+          showModelSelector={modelSelector}
           onSubmit={handleSubmit}
         />
       </PopoverContent>
@@ -253,7 +276,17 @@ function EditToolPopover({
   );
 }
 
-export function ExtensionViewer({ extensionId }: ExtensionViewerProps) {
+export function ExtensionViewer({
+  extensionId,
+  controls,
+}: ExtensionViewerProps) {
+  const show = {
+    edit: controls?.edit !== false,
+    rename: controls?.rename !== false,
+    share: controls?.share !== false,
+    more: controls?.more !== false,
+    modelSelector: controls?.modelSelector !== false,
+  };
   const location = useLocation();
   const navigate = useNavigate();
   const [isDark, setIsDark] = useState(false);
@@ -697,18 +730,20 @@ export function ExtensionViewer({ extensionId }: ExtensionViewerProps) {
                   <span className="truncate text-sm font-medium">
                     {extension.name}
                   </span>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button
-                        type="button"
-                        onClick={startRename}
-                        className="shrink-0 cursor-pointer rounded p-0.5 text-muted-foreground/40 opacity-0 group-hover/name:opacity-100 hover:text-foreground"
-                      >
-                        <IconPencil className="h-3 w-3" />
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent>Rename</TooltipContent>
-                  </Tooltip>
+                  {show.rename && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          type="button"
+                          onClick={startRename}
+                          className="shrink-0 cursor-pointer rounded p-0.5 text-muted-foreground/40 opacity-0 group-hover/name:opacity-100 hover:text-foreground"
+                        >
+                          <IconPencil className="h-3 w-3" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent>Rename</TooltipContent>
+                    </Tooltip>
+                  )}
                 </>
               )}
             </nav>
@@ -726,29 +761,36 @@ export function ExtensionViewer({ extensionId }: ExtensionViewerProps) {
               </TooltipTrigger>
               <TooltipContent>Refresh</TooltipContent>
             </Tooltip>
-            <EditToolPopover
-              extension={extension}
-              onOpenChange={onPopoverOpenChange}
-            />
-            <ShareButton
-              resourceType="extension"
-              resourceId={extensionId}
-              resourceTitle={extension.name}
-              onOpenChange={onPopoverOpenChange}
-              accessNote={
-                <>
-                  Extensions can be shared inside your organization only — they
-                  run with the viewer's credentials, so cross-org access isn't
-                  supported.
-                </>
-              }
-            />
-            <ToolMoreMenu
-              extensionId={extensionId}
-              toolName={extension.name}
-              canDelete={extension.canDelete}
-              onOpenChange={onPopoverOpenChange}
-            />
+            {show.edit && (
+              <EditToolPopover
+                extension={extension}
+                onOpenChange={onPopoverOpenChange}
+                modelSelector={show.modelSelector}
+              />
+            )}
+            {show.share && (
+              <ShareButton
+                resourceType="extension"
+                resourceId={extensionId}
+                resourceTitle={extension.name}
+                onOpenChange={onPopoverOpenChange}
+                accessNote={
+                  <>
+                    Extensions can be shared inside your organization only —
+                    they run with the viewer's credentials, so cross-org access
+                    isn't supported.
+                  </>
+                }
+              />
+            )}
+            {show.more && (
+              <ToolMoreMenu
+                extensionId={extensionId}
+                toolName={extension.name}
+                canDelete={extension.canDelete}
+                onOpenChange={onPopoverOpenChange}
+              />
+            )}
             <NotificationsBell />
             <AgentToggleButton />
           </div>

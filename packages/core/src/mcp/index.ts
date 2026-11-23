@@ -7,6 +7,7 @@ export {
   verifyAuth,
   getAccessTokens,
   resolveOrgIdFromDomain,
+  resolveCallerOrgId,
   buildLinkArtifacts,
 } from "./build-server.js";
 export type { MCPCallerIdentity, MCPRequestMeta } from "./build-server.js";

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 const mockReadAppSecret = vi.fn();
 const mockWriteAppSecret = vi.fn();
@@ -40,6 +40,7 @@ import {
   resolveBuilderCredentials,
   resolveBuilderCredentialSource,
   resolveSecret,
+  setManagedCredentialResolver,
 } from "./credential-provider.js";
 
 const ORIGINAL_NODE_ENV = process.env.NODE_ENV;
@@ -723,5 +724,46 @@ describe("resolveSecret (generic)", () => {
     mockGetRequestUserEmail.mockReturnValue(undefined);
     expect(await resolveSecret("SOME_KEY")).toBe("v");
     delete process.env.SOME_KEY;
+  });
+});
+
+describe("managed credential resolver", () => {
+  beforeEach(() => {
+    process.env.NODE_ENV = "production";
+    mockIsLocalDatabase.mockReturnValue(false);
+    mockGetRequestUserEmail.mockReturnValue("a@b.com");
+    mockGetRequestOrgId.mockReturnValue("org-1");
+    mockReadAppSecret.mockResolvedValue(null);
+  });
+
+  afterEach(() => setManagedCredentialResolver(null));
+
+  it("supplies a key to a signed-in user in a shared database when their org has none", async () => {
+    setManagedCredentialResolver(async ({ key, orgId }) =>
+      key === "ANTHROPIC_API_KEY" && orgId === "org-1"
+        ? "sk-ant-managed"
+        : null,
+    );
+    expect(await resolveSecret("ANTHROPIC_API_KEY")).toBe("sk-ant-managed");
+    expect(await resolveSecret("OPENAI_API_KEY")).toBeNull();
+  });
+
+  it("never overrides a key the org saved itself", async () => {
+    setManagedCredentialResolver(async () => "sk-ant-managed");
+    mockReadAppSecret
+      .mockResolvedValueOnce(null)
+      .mockResolvedValueOnce({
+        value: "sk-ant-own",
+        last4: "-own",
+        updatedAt: 1,
+      });
+    expect(await resolveSecret("ANTHROPIC_API_KEY")).toBe("sk-ant-own");
+  });
+
+  it("treats a failing resolver as no key", async () => {
+    setManagedCredentialResolver(async () => {
+      throw new Error("db down");
+    });
+    expect(await resolveSecret("ANTHROPIC_API_KEY")).toBeNull();
   });
 });

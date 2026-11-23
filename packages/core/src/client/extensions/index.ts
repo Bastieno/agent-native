@@ -2,6 +2,7 @@ export { ExtensionsSidebarSection } from "./ExtensionsSidebarSection.js";
 export {
   ExtensionViewer,
   type ExtensionViewerProps,
+  type ExtensionViewerControls,
 } from "./ExtensionViewer.js";
 export {
   ExtensionEditor,

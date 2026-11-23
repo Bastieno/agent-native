@@ -1,3 +1,4 @@
+import { idlePollDelay } from "./idle-poll.js";
 import { useEffect, useSyncExternalStore } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { agentNativePath } from "./api-path.js";
@@ -114,7 +115,7 @@ export function useAppearanceSync(): void {
       if (!res.ok) return null;
       return (await res.json()) as { preset?: string } | null;
     },
-    refetchInterval: 4_000,
+    refetchInterval: () => idlePollDelay(4_000),
     staleTime: 2_000,
   });
   const serverPreset = data?.preset;

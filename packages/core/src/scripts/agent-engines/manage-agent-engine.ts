@@ -92,6 +92,23 @@ async function runGetAppDefault(args: Record<string, string>): Promise<string> {
   return JSON.stringify({ ok: true, ...settings, canUpdate }, null, 2);
 }
 
+/**
+ * The global engine is one setting for the whole deployment, so a signed-in
+ * caller must be an org owner or admin — otherwise any member (in a school,
+ * any learner) could switch or break the agent for everyone. With no signed-in
+ * user this is the CLI, run by whoever operates the server, and is allowed.
+ */
+async function runSetGlobal(args: Record<string, string>): Promise<string> {
+  const ctx = currentContext();
+  if (
+    ctx.userEmail &&
+    !(await canUpdateAgentAppModelDefaultSettings(ctx.userEmail, ctx.orgId))
+  ) {
+    return "Error: Only organization owners and admins can change the agent engine.";
+  }
+  return runSet(args);
+}
+
 async function runSetAppDefault(args: Record<string, string>): Promise<string> {
   registerBuiltinEngines();
   const appId = resolveAppId(args);
@@ -169,7 +186,7 @@ export async function run(args: Record<string, string>): Promise<string> {
     case "list":
       return runList(args);
     case "set":
-      return runSet(args);
+      return runSetGlobal(args);
     case "test":
       return runTest(args);
     case "get-app-default":

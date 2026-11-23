@@ -7,7 +7,9 @@ import {
 import {
   isDeployCredentialFallbackAllowed,
   readDeployCredentialEnv,
+  resolveManagedCredential,
 } from "../server/credential-provider.js";
+import { stepCostCenticents } from "../usage/store.js";
 import type { EventHandler as H3EventHandler } from "h3";
 import type {
   ActionTool,
@@ -59,8 +61,15 @@ import {
 import { isMcpToolAllowedForRequest } from "../mcp-client/visibility.js";
 import { isMcpActionResult } from "../mcp-client/app-result.js";
 import {
+  getAgentRunGate,
+  type AgentRunGateDecision,
+  type AgentRunSource,
+} from "./run-gate.js";
+import { splitSystemPrompt } from "./runtime-context.js";
+import {
   createToolSearchEntry,
   TOOL_SEARCH_ACTION_NAME,
+  toolReferencesFromSearchResult,
 } from "./tool-search.js";
 import {
   getDefaultMaxIterations,
@@ -176,12 +185,19 @@ export async function getOwnerApiKey(
       const legacy = await getSetting(`user-anthropic-api-key:${ownerEmail}`);
       const legacyKey =
         legacy && typeof legacy.key === "string" ? legacy.key.trim() : "";
-      return legacyKey || undefined;
+      if (legacyKey) return legacyKey;
     }
-    return undefined;
   } catch {
-    return undefined;
+    // Fall through to the operator's managed credential.
   }
+  // Nothing of the person's or their org's own: an operator may supply one.
+  return (
+    (await resolveManagedCredential(
+      secretKey,
+      ownerEmail,
+      getRequestOrgId(),
+    )) ?? undefined
+  );
 }
 
 /**
@@ -556,6 +572,16 @@ export interface ProductionAgentOptions {
    * Optional per-template request normalizer. Runs after owner resolution and
    * before system/context assembly so templates can materialize uploaded chat
    * attachments or append app-specific, non-visible instructions.
+   *
+   * It may also return `model` to run the turn on a model of the app's
+   * choosing — the client's model and engine picks are then ignored, which is
+   * how an app keeps a role on a cheaper model — or `reply` to answer with a
+   * fixed message without calling a model (a switched-off agent, a used-up
+   * allowance), or `toolFilter` to narrow the tools for this request (e.g. by
+   * role): a filtered-out tool is neither offered nor run, and tool-search
+   * cannot surface it. `deferTool` keeps the tools it returns true for out of
+   * the prompt until tool-search finds them (on engines that support it); they
+   * stay callable, so a long tool list costs only the tools a turn needs.
    */
   prepareRequest?: (details: {
     event: any;
@@ -573,11 +599,23 @@ export interface ProductionAgentOptions {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        /** Run this turn on this model, whatever the client picked. */
+        model?: string;
+        /** Answer with this text and do not run the model at all. */
+        reply?: string;
+        /** Only the tools this returns true for are offered or run. */
+        toolFilter?: (name: string) => boolean;
+        /** Tools sent for loading on demand, found through tool-search. */
+        deferTool?: (name: string) => boolean;
       }
     | Promise<void | {
         message?: string;
         displayMessage?: string;
         attachments?: AgentChatAttachment[];
+        model?: string;
+        reply?: string;
+        toolFilter?: (name: string) => boolean;
+        deferTool?: (name: string) => boolean;
       }>;
   /** Optional per-app agent run chunk budget in milliseconds. Defaults to
    *  AGENT_RUN_SOFT_TIMEOUT_MS when set, otherwise no framework-imposed
@@ -966,6 +1004,7 @@ export function structuredHistoryToEngineMessages(
           toolInput,
           content: wire.content,
           ...(part.isError ? { isError: true } : {}),
+          ...withSearchReferences(toolName, wire.content, part.isError),
         });
       }
     }
@@ -1047,6 +1086,12 @@ export interface AgentLoopUsage {
   cacheReadTokens: number;
   cacheWriteTokens: number;
   model: string;
+  /**
+   * What the run cost in centicents, added up per model step, because the
+   * price depends on each request's own prompt length. Pass it on to
+   * `recordUsage` as `costCentsX100`.
+   */
+  costCentsX100?: number;
 }
 
 export interface AgentLoopToolCallSummary {
@@ -1364,7 +1409,7 @@ function toolInputSchemaErrorResult(
  * Decoupled from HTTP transport so it can run in the background.
  * Returns accumulated token usage for cost tracking.
  */
-export async function runAgentLoop(opts: {
+export interface AgentLoopRunOptions {
   engine: AgentEngine;
   model: string;
   systemPrompt: string;
@@ -1380,7 +1425,93 @@ export async function runAgentLoop(opts: {
   executionMode?: AgentExecutionMode;
   maxIterations?: number;
   finalResponseGuard?: AgentLoopFinalResponseGuard;
-}): Promise<AgentLoopUsage> {
+  /** What started this run, for the app's run gate. */
+  runSource?: AgentRunSource;
+  /**
+   * The run was already gated — a chat message by `prepareRequest`, or a
+   * continuation of a run that was gated when it began.
+   */
+  skipRunGate?: boolean;
+}
+
+/**
+ * Ask the app's run gate about a run (see run-gate.ts). Returns the options
+ * to run with — model and tools as the gate decided, marked as gated — or the
+ * reply to give instead of running.
+ */
+export async function applyAgentRunGate(
+  opts: AgentLoopRunOptions,
+): Promise<{ opts: AgentLoopRunOptions; reply?: string }> {
+  const gate = getAgentRunGate();
+  if (!gate || opts.skipRunGate) return { opts };
+  const decision: AgentRunGateDecision =
+    (await gate({
+      ownerEmail: opts.ownerEmail ?? getRequestUserEmail() ?? null,
+      orgId: opts.orgId ?? getRequestOrgId() ?? null,
+      source: opts.runSource ?? "other",
+    })) || {};
+  if (typeof decision.reply === "string" && decision.reply) {
+    return { opts, reply: decision.reply };
+  }
+  const next: AgentLoopRunOptions = { ...opts, skipRunGate: true };
+  if (decision.model) next.model = decision.model;
+  const allow = decision.toolFilter;
+  if (allow) {
+    next.actions = filterRequestActions(opts.actions, allow);
+    next.tools = opts.tools.filter((t) => allow(t.name));
+  }
+  if (decision.deferTool) {
+    next.tools = deferEngineTools(next.tools, decision.deferTool);
+  }
+  return { opts: next };
+}
+
+/** Marks the tools `defer` returns true for as loaded on demand. */
+function deferEngineTools(
+  tools: EngineTool[],
+  defer: (name: string) => boolean,
+): EngineTool[] {
+  return tools.map((t) => (defer(t.name) ? { ...t, deferLoading: true } : t));
+}
+
+/** As Anthropic's own tool search: the five best matches are loaded. */
+const MAX_SEARCH_REFERENCES = 5;
+
+/** A tool-search result names the tools it found, for the engine to load. */
+function withSearchReferences(
+  toolName: string,
+  content: string,
+  isError?: boolean,
+): { toolReferences?: string[] } {
+  if (toolName !== TOOL_SEARCH_ACTION_NAME || isError) return {};
+  // The best few: each one found is loaded with its full definition.
+  const refs = toolReferencesFromSearchResult(content)?.slice(
+    0,
+    MAX_SEARCH_REFERENCES,
+  );
+  return refs ? { toolReferences: refs } : {};
+}
+
+function emptyUsage(model: string): AgentLoopUsage {
+  return {
+    inputTokens: 0,
+    outputTokens: 0,
+    cacheReadTokens: 0,
+    cacheWriteTokens: 0,
+    model,
+  };
+}
+
+export async function runAgentLoop(
+  rawOpts: AgentLoopRunOptions,
+): Promise<AgentLoopUsage> {
+  const gated = await applyAgentRunGate(rawOpts);
+  if (gated.reply !== undefined) {
+    rawOpts.send({ type: "text", text: gated.reply });
+    rawOpts.send({ type: "done" });
+    return emptyUsage(rawOpts.model);
+  }
+  const opts = gated.opts;
   const {
     engine,
     model,
@@ -1391,6 +1522,15 @@ export async function runAgentLoop(opts: {
     send,
     signal,
   } = opts;
+  // What the engine may cache, and what changes per request (see
+  // SYSTEM_PROMPT_VOLATILE_MARKER).
+  const split = splitSystemPrompt(systemPrompt);
+  const promptParts = {
+    systemPrompt: split.systemPrompt,
+    ...(split.cacheBoundary !== undefined
+      ? { systemPromptCacheBoundary: split.cacheBoundary }
+      : {}),
+  };
 
   const usage: AgentLoopUsage = {
     inputTokens: 0,
@@ -1440,7 +1580,7 @@ export async function runAgentLoop(opts: {
       try {
         const streamOpts = {
           model,
-          systemPrompt,
+          ...promptParts,
           messages,
           tools,
           abortSignal: signal,
@@ -1504,10 +1644,25 @@ export async function runAgentLoop(opts: {
           } else if (event.type === "assistant-content") {
             assistantContent = event.parts;
           } else if (event.type === "usage") {
+            // One line per model step, for measuring what a turn costs.
+            if (process.env.AGENT_USAGE_LOG) {
+              console.log(
+                `[agent-usage] ${model} step ${iterations} in=${event.inputTokens} cacheWrite=${event.cacheWriteTokens ?? 0} cacheRead=${event.cacheReadTokens ?? 0} out=${event.outputTokens}`,
+              );
+            }
             usage.inputTokens += event.inputTokens;
             usage.outputTokens += event.outputTokens;
             usage.cacheReadTokens += event.cacheReadTokens ?? 0;
             usage.cacheWriteTokens += event.cacheWriteTokens ?? 0;
+            usage.costCentsX100 =
+              (usage.costCentsX100 ?? 0) +
+              stepCostCenticents(
+                event.inputTokens,
+                event.outputTokens,
+                model,
+                event.cacheReadTokens ?? 0,
+                event.cacheWriteTokens ?? 0,
+              );
           } else if (event.type === "stop" && event.reason === "error") {
             throw new EngineError(event.error ?? "Engine stream error", {
               errorCode: event.errorCode,
@@ -1867,6 +2022,7 @@ export async function runAgentLoop(opts: {
         toolInput: wireToolInput,
         content: result,
         ...(isError ? { isError } : {}),
+        ...withSearchReferences(toolCall.name, result, isError),
       };
     };
 
@@ -1922,6 +2078,20 @@ export async function runAgentLoop(opts: {
   return usage;
 }
 
+export function filterRequestActions(
+  actions: Record<string, ActionEntry>,
+  allow: (name: string) => boolean,
+): Record<string, ActionEntry> {
+  const filtered: Record<string, ActionEntry> = {};
+  for (const [name, entry] of Object.entries(actions)) {
+    if (allow(name)) filtered[name] = entry;
+  }
+  if (filtered[TOOL_SEARCH_ACTION_NAME]) {
+    filtered[TOOL_SEARCH_ACTION_NAME] = createToolSearchEntry(() => filtered);
+  }
+  return filtered;
+}
+
 export function createProductionAgentHandler(
   options: ProductionAgentOptions,
 ): H3EventHandler {
@@ -1973,7 +2143,7 @@ export function createProductionAgentHandler(
       displayMessage,
       internalContinuation,
       model: requestModel,
-      engine: requestEngine,
+      engine: clientRequestEngine,
       effort: requestEffort,
       browserTabId,
       scope,
@@ -2027,6 +2197,43 @@ export function createProductionAgentHandler(
         requestAttachments = preparedRequest.attachments;
       }
     }
+    const preparedReply = preparedRequest ? preparedRequest.reply : undefined;
+    if (typeof preparedReply === "string" && preparedReply.trim().length > 0) {
+      const reply = preparedReply;
+      setResponseHeader(event, "Content-Type", "text/event-stream");
+      setResponseHeader(event, "Cache-Control", "no-cache");
+      setResponseHeader(event, "Connection", "keep-alive");
+      const encoder = new TextEncoder();
+      return new ReadableStream({
+        start(controller) {
+          controller.enqueue(
+            encoder.encode(
+              `data: ${JSON.stringify({ type: "text", text: reply })}\n\n`,
+            ),
+          );
+          controller.enqueue(
+            encoder.encode(`data: ${JSON.stringify({ type: "done" })}\n\n`),
+          );
+          controller.close();
+        },
+      });
+    }
+    // An app-forced model also pins the engine to the app's own, so a client
+    // cannot route around it by picking another provider.
+    const preparedModel = preparedRequest ? preparedRequest.model : undefined;
+    const preparedToolFilter =
+      preparedRequest && typeof preparedRequest.toolFilter === "function"
+        ? preparedRequest.toolFilter
+        : undefined;
+    const preparedDeferTool =
+      preparedRequest && typeof preparedRequest.deferTool === "function"
+        ? preparedRequest.deferTool
+        : undefined;
+    const forcedModel =
+      typeof preparedModel === "string" && preparedModel
+        ? preparedModel
+        : undefined;
+    const requestEngine = forcedModel ? undefined : clientRequestEngine;
 
     // Pre-upload chat image attachments through the framework file-upload
     // provider (Builder.io by default). The model still sees the base64
@@ -2091,7 +2298,7 @@ export function createProductionAgentHandler(
       engine = await resolveEngine({
         engineOption: requestEngine ?? options.engine,
         apiKey: effectiveApiKey,
-        model: configuredModel,
+        model: forcedModel ?? configuredModel,
         appId: options.appId,
       });
     } catch {
@@ -2107,6 +2314,7 @@ export function createProductionAgentHandler(
     // dropdown change in the UI takes effect without a server restart. Skip
     // the DB read entirely when a higher-precedence value is set.
     const model =
+      forcedModel ??
       requestModel ??
       configuredModel ??
       (await getStoredModelForEngine(engine, { appId: options.appId })) ??
@@ -2119,6 +2327,9 @@ export function createProductionAgentHandler(
     );
 
     options.onEngineResolved?.(engine, model);
+    // Which model this turn runs on, for whoever is checking that an app's
+    // model policy held (the client's pick may have been overridden).
+    setResponseHeader(event, "X-Agent-Model", model);
 
     // One-line per-turn resolution log so it's obvious in dev which engine
     // is actually handling the request. `requestEngine` is what the client
@@ -2382,11 +2593,19 @@ export function createProductionAgentHandler(
       });
     }
     const screenContext = screenBlock + urlBlock + selectionBlock;
-    const requestActions =
+    const modeActions =
       requestMode === "plan"
         ? createPlanModeActionRegistry(resolvedActions)
         : resolvedActions;
-    const requestTools = getEngineTools(requestActions);
+    // An app may narrow the tools for this request (e.g. by role). What is
+    // filtered out is neither offered to the model nor run if named, and
+    // tool-search is rebuilt over what remains so it cannot surface it.
+    const requestActions = preparedToolFilter
+      ? filterRequestActions(modeActions, preparedToolFilter)
+      : modeActions;
+    const requestTools = preparedDeferTool
+      ? deferEngineTools(getEngineTools(requestActions), preparedDeferTool)
+      : getEngineTools(requestActions);
     const requestSystemPrompt =
       requestMode === "plan"
         ? `${systemPrompt}\n\n${PLAN_MODE_SYSTEM_PROMPT}`
@@ -2490,7 +2709,10 @@ export function createProductionAgentHandler(
                 let responseText = "";
                 const subUsage = await runAgentLoop({
                   engine,
-                  model: profile.model ?? model,
+                  // An app-forced model holds for a custom agent too.
+                  model: forcedModel ?? profile.model ?? model,
+                  // Part of this chat message, which prepareRequest gated.
+                  skipRunGate: true,
                   systemPrompt: profilePrompt,
                   tools: requestTools,
                   messages: [
@@ -2536,6 +2758,7 @@ export function createProductionAgentHandler(
                     outputTokens: subUsage.outputTokens,
                     cacheReadTokens: subUsage.cacheReadTokens,
                     cacheWriteTokens: subUsage.cacheWriteTokens,
+                    costCentsX100: subUsage.costCentsX100,
                     model: subUsage.model,
                     label: `custom-agent:${ref.name}`,
                   });
@@ -2719,7 +2942,8 @@ export function createProductionAgentHandler(
           }
           const expConfig = await resolveActiveExperimentConfig(ownerEmail);
           if (expConfig) {
-            if (typeof expConfig.configs.model === "string") {
+            // An app-forced model is a policy, not a variant to test.
+            if (typeof expConfig.configs.model === "string" && !forcedModel) {
               effectiveModel = expConfig.configs.model;
             }
           }
@@ -2743,6 +2967,8 @@ export function createProductionAgentHandler(
           executionMode: requestMode,
           maxIterations: loopSettings.maxIterations,
           finalResponseGuard: options.finalResponseGuard,
+          // A chat message is gated by prepareRequest, before this point.
+          skipRunGate: true,
         };
 
         send({ type: "activity", label: "Contacting model" });
@@ -2793,6 +3019,7 @@ export function createProductionAgentHandler(
               outputTokens: loopUsage.outputTokens,
               cacheReadTokens: loopUsage.cacheReadTokens,
               cacheWriteTokens: loopUsage.cacheWriteTokens,
+              costCentsX100: loopUsage.costCentsX100,
               model: loopUsage.model,
               label: body.usageLabel || "chat",
             });

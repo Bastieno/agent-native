@@ -198,6 +198,17 @@ describe("handleMcpConnect", () => {
       );
     });
 
+    it("keeps the Open Claude button's label readable", async () => {
+      getSessionMock.mockResolvedValue({ email: "u@example.com" });
+      const res = await handleMcpConnect(ev({}), "/");
+      const body = await res.text();
+      // `.tab-panel a` sets light text; without this rule it also applies to
+      // the light button and the label disappears.
+      expect(body).toMatch(
+        /\.tab-panel a\.primary-link\s*\{[^}]*color:\s*var\(--accent-fg\)/,
+      );
+    });
+
     it("shows the device user_code when present and well-formed", async () => {
       getSessionMock.mockResolvedValue({ email: "u@example.com" });
       const res = await handleMcpConnect(

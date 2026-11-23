@@ -1,3 +1,4 @@
+import { idlePollDelay } from "./idle-poll.js";
 import { useEffect, useRef, useState } from "react";
 import { agentNativePath } from "./api-path.js";
 import { bumpChangeVersion } from "./use-change-version.js";
@@ -215,7 +216,7 @@ export function useDbSync(
           timer = null;
           void poll();
         },
-        sseConnected ? fallbackInterval : interval,
+        idlePollDelay(sseConnected ? fallbackInterval : interval),
       );
     }
 
@@ -488,7 +489,7 @@ export function useScreenRefreshKey(
           timer = null;
           void poll();
         },
-        sseConnected ? fallbackInterval : interval,
+        idlePollDelay(sseConnected ? fallbackInterval : interval),
       );
     }
 

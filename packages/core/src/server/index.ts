@@ -42,6 +42,7 @@ export {
   mountAuthMiddleware,
   autoMountAuth,
   getSession,
+  setRequestSessionOrg,
   COOKIE_NAME,
   addSession,
   removeSession,
@@ -93,9 +94,20 @@ export {
   getOwnerActiveApiKey,
   runAgentLoop,
 } from "../agent/production-agent.js";
+export type {
+  AgentRunGate,
+  AgentRunGateDecision,
+  AgentRunGateDetails,
+  AgentRunSource,
+} from "../agent/run-gate.js";
+export type { AllowSignUp, SignUpDetails } from "./signup-gate.js";
+export { SIGN_UP_REFUSED } from "./signup-gate.js";
 export {
   getStoredModelForEngine,
   resolveEngine,
+  BUILDER_DEFAULT_MODEL,
+  BUILDER_SUPPORTED_MODELS,
+  ANTHROPIC_SUPPORTED_MODELS,
 } from "../agent/engine/index.js";
 export { createDevScriptRegistry } from "../scripts/dev/index.js";
 
@@ -328,6 +340,8 @@ export {
   writeBuilderCredentials,
   deleteBuilderCredentials,
   resolveSecret,
+  setManagedCredentialResolver,
+  type ManagedCredentialResolver,
 } from "./credential-provider.js";
 export {
   getBuilderBranchProjectId,
@@ -344,7 +358,14 @@ export {
   getEmailProvider,
   type EmailProvider,
   type SendEmailArgs,
+  fromWithName,
 } from "./email.js";
+export {
+  setEmailBrandingResolver,
+  brandingForRequest,
+  type EmailBranding,
+  type EmailBrandingResolver,
+} from "./email-branding.js";
 export {
   renderEmail,
   emailStrong,
@@ -378,3 +399,5 @@ export type NitroPluginDef = (nitroApp: any) => void | Promise<void>;
 export function defineNitroPlugin(def: NitroPluginDef): NitroPluginDef {
   return def;
 }
+
+export { createPasswordUser, setUserPassword } from "./better-auth-instance.js";

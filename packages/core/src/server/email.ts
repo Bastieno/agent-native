@@ -18,6 +18,8 @@ export interface EmailAttachment {
   contentType?: string;
 }
 
+import { safeDisplayName } from "./email-branding.js";
+
 export interface SendEmailArgs {
   to: string;
   subject: string;
@@ -52,6 +54,19 @@ function getFromAddress(override?: string, provider?: EmailProvider): string {
     );
   }
   return "Agent Native <onboarding@resend.dev>";
+}
+
+/**
+ * The default sender with its display name replaced: `Crestfield <noreply@x>`
+ * when `EMAIL_FROM` is `Anything <noreply@x>` or a bare address. Returns
+ * undefined when there is no name to apply.
+ */
+export function fromWithName(name: string | undefined): string | undefined {
+  const display = name ? safeDisplayName(name) : "";
+  if (!display) return undefined;
+  const base = getFromAddress(undefined, getEmailProvider());
+  const address = base.match(/<([^>]+)>/)?.[1] ?? base;
+  return `${display} <${address.trim()}>`;
 }
 
 export async function sendEmail(args: SendEmailArgs): Promise<void> {
@@ -158,7 +173,9 @@ export async function sendEmail(args: SendEmailArgs): Promise<void> {
   console.log(
     `\n[agent-native:email] No email provider configured. ` +
       `Set RESEND_API_KEY or SENDGRID_API_KEY to send real emails.\n` +
-      `---\nTo: ${args.to}\nFrom: ${from}\nSubject: ${args.subject}\n\n` +
+      `---\nTo: ${args.to}\nFrom: ${from}\n` +
+      (args.replyTo ? `Reply-To: ${args.replyTo}\n` : "") +
+      `Subject: ${args.subject}\n\n` +
       `${args.text || stripHtml(args.html)}\n---\n`,
   );
 }

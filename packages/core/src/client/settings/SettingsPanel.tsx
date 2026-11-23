@@ -1848,6 +1848,8 @@ export interface SettingsPanelProps {
   devAppUrl?: string;
   initialSection?: string | null;
   sectionRequestKey?: number;
+  /** Section ids the app has chosen not to show. */
+  hiddenSections?: string[];
 }
 
 type SettingsSectionId =
@@ -2133,7 +2135,9 @@ export function SettingsPanel({
   devAppUrl,
   initialSection,
   sectionRequestKey,
+  hiddenSections,
 }: SettingsPanelProps) {
+  const shown = (id: SettingsSectionId) => !hiddenSections?.includes(id);
   const { status: builder, loading: builderLoading } = useBuilderStatus();
   const connected = builder?.configured ?? false;
   const connectUrl = builder?.cliAuthUrl ?? builder?.connectUrl;
@@ -2272,10 +2276,12 @@ export function SettingsPanel({
       />
 
       {/* App default model */}
-      <AppModelDefaultsSectionInner
-        open={openSection === "app-models"}
-        onToggle={() => toggle("app-models")}
-      />
+      {shown("app-models") && (
+        <AppModelDefaultsSectionInner
+          open={openSection === "app-models"}
+          onToggle={() => toggle("app-models")}
+        />
+      )}
 
       {/* Agent limits */}
       <AgentLimitsSectionInner

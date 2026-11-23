@@ -7,12 +7,19 @@
  */
 
 import crypto from "node:crypto";
+import {
+  CONNECT_ATTEMPTS,
+  connectRetryDelay,
+  isTransientConnectionError,
+} from "../db/transient-errors.js";
 import fs from "node:fs";
 import path from "node:path";
 import { betterAuth, type BetterAuthOptions } from "better-auth";
+import { APIError } from "better-auth/api";
 import { jwt } from "better-auth/plugins/jwt";
 import { bearer } from "better-auth/plugins/bearer";
-import { sendEmail, isEmailConfigured } from "./email.js";
+import { sendEmail, isEmailConfigured, fromWithName } from "./email.js";
+import { brandingForRequest } from "./email-branding.js";
 import {
   renderResetPasswordEmail,
   renderVerifySignupEmail,
@@ -21,6 +28,7 @@ import { getAppProductionUrl } from "./app-url.js";
 import { getDbExec, isPostgres } from "../db/client.js";
 import { acceptPendingInvitationsForEmail } from "../org/accept-pending.js";
 import { autoJoinDomainMatchingOrgs } from "../org/auto-join-domain.js";
+import { SIGN_UP_REFUSED, signUpRefusal } from "./signup-gate.js";
 import { saveOAuthTokens } from "../oauth-tokens/store.js";
 import { identify, track } from "../tracking/index.js";
 import { resolveAuthCookieNamespace } from "./cookie-namespace.js";
@@ -553,8 +561,33 @@ export async function getBetterAuth(
   if (_auth) return _auth;
   if (_initPromise) return _initPromise;
 
-  _initPromise = createBetterAuthInstance(config);
-  _auth = await _initPromise;
+  // A cold instance can reach the database before the connection will hold.
+  // Try again a few times, and do not remember a failure: a rejected promise
+  // kept in `_initPromise` is handed to every later caller, so the instance
+  // would stay without sign-in for as long as it lives, even once the
+  // database is reachable.
+  _initPromise = (async () => {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        return await createBetterAuthInstance(config);
+      } catch (err) {
+        if (attempt < CONNECT_ATTEMPTS && isTransientConnectionError(err)) {
+          console.warn(
+            `[agent-native] Sign-in could not reach the database (attempt ${attempt} of ${CONNECT_ATTEMPTS}); trying again`,
+          );
+          await connectRetryDelay(attempt);
+          continue;
+        }
+        throw err;
+      }
+    }
+  })();
+  try {
+    _auth = await _initPromise;
+  } catch (err) {
+    _initPromise = null;
+    throw err;
+  }
   return _auth;
 }
 
@@ -622,6 +655,86 @@ export async function getBetterAuthInternalAdapter(
     // Context resolution failed — caller falls back to the signup path.
   }
   return undefined;
+}
+
+interface PasswordContext {
+  password?: { hash: (password: string) => Promise<string> };
+  internalAdapter?: {
+    createUser: (u: {
+      email: string;
+      name: string;
+      emailVerified?: boolean;
+    }) => Promise<{ id: string }>;
+    linkAccount: (a: {
+      userId: string;
+      providerId: string;
+      accountId: string;
+      password?: string;
+    }) => Promise<unknown>;
+    updatePassword: (userId: string, hash: string) => Promise<unknown>;
+    findUserByEmail: (
+      email: string,
+    ) => Promise<{ user: { id: string } } | null>;
+  };
+}
+
+async function passwordContext(): Promise<Required<PasswordContext>> {
+  const auth = (await getBetterAuth()) as unknown as {
+    $context?: Promise<PasswordContext>;
+  };
+  const ctx = await auth.$context;
+  if (!ctx?.password?.hash || !ctx.internalAdapter?.updatePassword) {
+    throw new Error("This sign-in system cannot manage passwords directly.");
+  }
+  return ctx as Required<PasswordContext>;
+}
+
+/**
+ * Create an account with a password for someone who has no usable email —
+ * a school's learner signing in with an admission number. The address is one
+ * the app made up, so it is marked verified: there is nobody to send the
+ * confirmation to. The app's sign-up rule still runs, so only a person the
+ * app already expects can be created.
+ */
+export async function createPasswordUser(args: {
+  email: string;
+  name: string;
+  password: string;
+}): Promise<{ id: string }> {
+  if (args.password.length < 8) {
+    throw new Error("A password needs at least 8 characters.");
+  }
+  const ctx = await passwordContext();
+  if (await ctx.internalAdapter.findUserByEmail(args.email)) {
+    throw new Error("That sign-in name is already taken.");
+  }
+  const user = await ctx.internalAdapter.createUser({
+    email: args.email,
+    name: args.name,
+    emailVerified: true,
+  });
+  await ctx.internalAdapter.linkAccount({
+    userId: user.id,
+    providerId: "credential",
+    accountId: user.id,
+    password: await ctx.password.hash(args.password),
+  });
+  return { id: user.id };
+}
+
+/** Set a new password for an existing account, for an administrator who resets it. */
+export async function setUserPassword(
+  userId: string,
+  password: string,
+): Promise<void> {
+  if (password.length < 8) {
+    throw new Error("A password needs at least 8 characters.");
+  }
+  const ctx = await passwordContext();
+  await ctx.internalAdapter.updatePassword(
+    userId,
+    await ctx.password.hash(password),
+  );
 }
 
 /** Reset for testing */
@@ -698,6 +811,13 @@ async function createBetterAuthInstance(
   const auth = betterAuth({
     basePath,
     baseURL: appUrl,
+    // An organisation's own address is a trusted origin for requests made to
+    // it; without this, a browser holding cookies is refused with
+    // INVALID_ORIGIN on every auth call from that address.
+    trustedOrigins: async (request?: Request) => {
+      const branding = await brandingForRequest(request);
+      return branding?.origin ? [branding.origin] : [];
+    },
     database,
     secret,
     emailAndPassword: {
@@ -709,7 +829,8 @@ async function createBetterAuthInstance(
       // skip verification by default so +qa accounts can be created quickly;
       // hosted QA deployments can opt out with AUTH_SKIP_EMAIL_VERIFICATION=1.
       requireEmailVerification,
-      sendResetPassword: async ({ user, token }) => {
+      sendResetPassword: async ({ user, token }, request) => {
+        const branding = await brandingForRequest(request);
         // APP_BASE_PATH lets this app mount under a prefix (e.g. /mail). The
         // reset link must include that prefix so the page resolves correctly.
         const appBasePath = (
@@ -717,12 +838,20 @@ async function createBetterAuthInstance(
           process.env.APP_BASE_PATH ||
           ""
         ).replace(/\/$/, "");
-        const resetUrl = `${appUrl}${appBasePath}/_agent-native/auth/reset?token=${encodeURIComponent(token)}`;
+        const resetUrl = `${branding?.origin ?? appUrl}${appBasePath}/_agent-native/auth/reset?token=${encodeURIComponent(token)}`;
         const { subject, html, text } = renderResetPasswordEmail({
           email: user.email,
           resetUrl,
+          appName: branding?.name,
         });
-        await sendEmail({ to: user.email, subject, html, text });
+        await sendEmail({
+          to: user.email,
+          subject,
+          html,
+          text,
+          from: fromWithName(branding?.name),
+          replyTo: branding?.replyTo,
+        });
       },
     },
     emailVerification: {
@@ -734,7 +863,8 @@ async function createBetterAuthInstance(
       // verified users would have to go back and sign in manually, which is
       // a confusing dead-end on the verify screen.
       autoSignInAfterVerification: true,
-      sendVerificationEmail: async ({ user, url }) => {
+      sendVerificationEmail: async ({ user, url }, request) => {
+        const branding = await brandingForRequest(request);
         // APP_BASE_PATH lets this app mount under a prefix (e.g. /mail). The
         // verification link must include that prefix so the page resolves correctly.
         const verifyBasePath = (
@@ -742,14 +872,25 @@ async function createBetterAuthInstance(
           process.env.APP_BASE_PATH ||
           ""
         ).replace(/\/$/, "");
-        const verifyUrl = verifyBasePath
-          ? url.replace(/(\/\/[^/]+)(\/)/, `$1${verifyBasePath}$2`)
+        const onOwnOrigin = branding?.origin
+          ? url.replace(/^https?:\/\/[^/]+/, branding.origin)
           : url;
+        const verifyUrl = verifyBasePath
+          ? onOwnOrigin.replace(/(\/\/[^/]+)(\/)/, `$1${verifyBasePath}$2`)
+          : onOwnOrigin;
         const { subject, html, text } = renderVerifySignupEmail({
           email: user.email,
           verifyUrl,
+          appName: branding?.name,
         });
-        await sendEmail({ to: user.email, subject, html, text });
+        await sendEmail({
+          to: user.email,
+          subject,
+          html,
+          text,
+          from: fromWithName(branding?.name),
+          replyTo: branding?.replyTo,
+        });
       },
     },
     socialProviders,
@@ -768,6 +909,21 @@ async function createBetterAuthInstance(
     databaseHooks: {
       user: {
         create: {
+          // The app's sign-up rule (`createAuthPlugin({ allowSignUp })`).
+          // Every path that creates a Better Auth user passes here: the email
+          // form, Better Auth's social sign-in and identity SSO. Throwing an
+          // APIError keeps the message, so the person sees why.
+          before: async (user: { email?: string }) => {
+            const refusal = user?.email
+              ? await signUpRefusal(user.email)
+              : null;
+            if (refusal) {
+              throw new APIError("FORBIDDEN", {
+                message: refusal,
+                code: SIGN_UP_REFUSED,
+              });
+            }
+          },
           after: async (user: {
             id?: string;
             email?: string;

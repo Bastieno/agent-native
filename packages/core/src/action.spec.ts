@@ -91,8 +91,8 @@ describe("defineAction", () => {
       },
       run: async () => "ok",
     });
-    expect(action.mcpApp?.resource.title).toBe("Review draft");
-    expect(action.mcpApp?.resource.csp).toEqual({
+    expect(action.mcpApp?.resource?.title).toBe("Review draft");
+    expect(action.mcpApp?.resource?.csp).toEqual({
       connectDomains: ["https://mail.agent-native.com"],
     });
   });
@@ -105,5 +105,25 @@ describe("defineAction", () => {
       run: async () => "ok",
     } as any);
     expect(action.mcpApp).toBeUndefined();
+  });
+
+  it("keeps a compact-catalog opt-in that has no UI resource", () => {
+    const action = defineAction({
+      description: "plain chat-app tool",
+      parameters: {},
+      mcpApp: { compactCatalog: true },
+      run: async () => "ok",
+    });
+    expect(action.mcpApp).toEqual({ compactCatalog: true });
+  });
+
+  it("keeps a compact-catalog opt-in but drops its malformed resource", () => {
+    const action = defineAction({
+      description: "plain chat-app tool",
+      parameters: {},
+      mcpApp: { compactCatalog: true, resource: { title: "Missing html" } },
+      run: async () => "ok",
+    } as any);
+    expect(action.mcpApp).toEqual({ compactCatalog: true });
   });
 });

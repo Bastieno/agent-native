@@ -210,7 +210,12 @@ embed path instead of every action-specific MCP App resource. Use
 `open_app({ path, embed: true })` for first-class inline app previews. Keep
 action-specific MCP App resources for direct app connectors that disable the
 generic builtins, or mark an individual action with `mcpApp.compactCatalog: true`
-only when it truly needs to stay visible in chat-host discovery.
+only when it truly needs to stay visible in chat-host discovery. A
+`compactCatalog` action needs no UI `resource`; without one it is listed as a
+plain tool. An app that wants its people to call a short list of real tools
+from their own chat app can combine this with `mcpInstructions` and
+`mcpToolFilter` (see [MCP Protocol](/docs/mcp-protocol#curated-catalog)); the
+filter only hides tools, so actions still check roles themselves.
 
 That makes the same app surface available to every compatible host rather than building per-client shims. The current official MCP Apps client list includes Claude, Claude Desktop, VS Code GitHub Copilot, Goose, Postman, MCPJam, ChatGPT, and Cursor; host support still varies by plan, release channel, and client version, so check the [MCP extension support matrix](https://modelcontextprotocol.io/extensions/client-matrix). ChatGPT custom MCP apps are available through developer mode for Business and Enterprise/Edu workspaces on ChatGPT web; see OpenAI's [developer mode and MCP apps](https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-apps-in-chatgpt-beta) notes.
 

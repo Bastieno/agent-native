@@ -65,6 +65,49 @@ export class FeatureNotConfiguredError extends Error {
 }
 
 /**
+ * A platform operator's own credential, handed to organizations it has agreed
+ * to pay for (for example a school on prepaid credit). It is consulted only
+ * after the user's and the org's own secrets, so a key someone saved always
+ * wins, and it replaces the refusal to use a deployment key for a signed-in
+ * user: the resolver decides, per organization, whether this one may use it.
+ * Return null for "not this org" or "nothing to offer".
+ */
+export type ManagedCredentialResolver = (ctx: {
+  key: string;
+  email: string | null;
+  orgId: string | null;
+}) => Promise<string | null | undefined>;
+
+let managedCredentialResolver: ManagedCredentialResolver | null = null;
+
+/** Register (or, with null, remove) the app's managed-credential resolver. */
+export function setManagedCredentialResolver(
+  resolver: ManagedCredentialResolver | null,
+): void {
+  managedCredentialResolver = resolver;
+}
+
+/** Ask the registered resolver; any failure counts as "no credential". */
+export async function resolveManagedCredential(
+  key: string,
+  email: string | null | undefined,
+  orgId: string | null | undefined,
+): Promise<string | null> {
+  if (!managedCredentialResolver || !email) return null;
+  try {
+    return (
+      (await managedCredentialResolver({
+        key,
+        email,
+        orgId: orgId ?? null,
+      })) || null
+    );
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Deployment-level credential fallback for single-tenant/local operation.
  * Multi-tenant call sites must gate this explicitly before calling.
  */
@@ -779,6 +822,12 @@ export async function resolveSecret(key: string): Promise<string | null> {
       }
       // Secrets table not ready — treat as missing.
     }
+    const managed = await resolveManagedCredential(
+      key,
+      email,
+      getRequestOrgId(),
+    );
+    if (managed) return managed;
     // Authenticated multi-tenant context: never fall back to process.env.
     // The deploy-level value would silently impersonate the actual key
     // owner across every tenant. Local/single-tenant deployments keep the

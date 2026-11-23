@@ -2452,6 +2452,46 @@ describe("handleMcpRequest — web-standard runtime fallback (no Node req/res)",
     expect(res).toEqual({ error: "Unauthorized" });
   });
 
+  it("refuses a caller the app turns away, with its message and a 403", async () => {
+    const seen: Array<string | undefined> = [];
+    const { getRequestUserEmail } =
+      await import("../server/request-context.js");
+    const refusing = {
+      ...config,
+      refuseCaller: () => {
+        seen.push(getRequestUserEmail());
+        return "Learners use the school app, not an AI app.";
+      },
+    };
+    const event = makeWebEvent({
+      method: "POST",
+      body: { jsonrpc: "2.0", id: 12, method: "tools/list", params: {} },
+      headers: await mcpAppsAuthHeaders(),
+    });
+    const res = await handleMcpRequest(event, refusing as any);
+    expect(event._status).toBe(403);
+    expect(res).toEqual({
+      jsonrpc: "2.0",
+      id: 12,
+      error: {
+        code: -32001,
+        message: "Learners use the school app, not an AI app.",
+      },
+    });
+    expect(seen).toEqual(["oauth@example.com"]);
+  });
+
+  it("lets a caller through when the app does not refuse them", async () => {
+    const out = await callWeb(
+      { jsonrpc: "2.0", id: 13, method: "tools/list", params: {} },
+      {
+        headers: await mcpAppsAuthHeaders(),
+        config: { ...config, refuseCaller: () => null },
+      },
+    );
+    expect(Array.isArray(out.result.tools)).toBe(true);
+  });
+
   it("returns 204 for DELETE on the web runtime (stateless, unchanged)", async () => {
     process.env.ACCESS_TOKEN = "secret-token";
     const event = makeWebEvent({
@@ -2560,5 +2600,332 @@ describe("handleMcpRequest — Node fast-path still taken when event.node presen
     expect(webHandleSpy).not.toHaveBeenCalled();
 
     delete (globalThis as any).__nodeDelegation;
+  });
+});
+
+describe("handleMcpRequest — chat-app actions, instructions and per-caller listing", () => {
+  beforeEach(() => {
+    process.env.ACCESS_TOKEN = "test-access-token";
+    delete process.env.ACCESS_TOKENS;
+    delete process.env.A2A_SECRET;
+    delete process.env.BETTER_AUTH_SECRET;
+    mockOAuthClients.clear();
+    mockOAuthClients.set("claude-client", {
+      clientId: "claude-client",
+      clientName: "Claude",
+      redirectUris: ["https://claude.ai/api/mcp/auth_callback"],
+    });
+  });
+  afterEach(() => {
+    delete process.env.ACCESS_TOKEN;
+    delete process.env.BETTER_AUTH_SECRET;
+    mockOAuthClients.clear();
+    vi.clearAllMocks();
+  });
+
+  async function claudeHeaders() {
+    return mcpAppsAuthHeaders({
+      clientId: "claude-client",
+      scope: "mcp:read mcp:write",
+    });
+  }
+
+  const plainToolRun = vi.fn(async (args: Record<string, string>) => ({
+    greeting: `hello ${args.name}`,
+  }));
+
+  async function chatAppConfig(extra: Record<string, unknown> = {}) {
+    const { defineAction } = await import("../action.js");
+    return {
+      ...compactSurfaceDefaultConfig,
+      actions: {
+        ...compactSurfaceDefaultConfig.actions,
+        "say-hello": defineAction({
+          description: "Say hello to someone",
+          parameters: { name: { type: "string" } },
+          readOnly: true,
+          mcpApp: { compactCatalog: true },
+          run: (args) => plainToolRun(args as Record<string, string>),
+        }),
+      },
+      ...extra,
+    };
+  }
+
+  it("lists a compact-catalog action with no UI resource as a plain tool for a Claude client", async () => {
+    const out = await callWeb(
+      { jsonrpc: "2.0", id: 300, method: "tools/list", params: {} },
+      { headers: await claudeHeaders(), config: await chatAppConfig() },
+    );
+
+    expect(out.error).toBeUndefined();
+    const names = out.result.tools.map((t: any) => t.name);
+    expect(names).toContain("say-hello");
+    // Actions without the opt-in stay off the compact catalog.
+    expect(names).not.toContain("review-draft");
+    expect(names).not.toContain("internal-heavy");
+    const tool = out.result.tools.find((t: any) => t.name === "say-hello");
+    expect(tool._meta).toBeUndefined();
+    expect(tool.annotations.readOnlyHint).toBe(true);
+    // The existing resource-backed builtin keeps its MCP App metadata.
+    const openApp = out.result.tools.find((t: any) => t.name === "open_app");
+    expect(openApp._meta.ui.resourceUri).toBe("ui://mail/open_app/shell-v26");
+  });
+
+  it("calls a compact-catalog action with no UI resource and returns plain content", async () => {
+    const out = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 301,
+        method: "tools/call",
+        params: { name: "say-hello", arguments: { name: "Ada" } },
+      },
+      { headers: await claudeHeaders(), config: await chatAppConfig() },
+    );
+
+    expect(out.error).toBeUndefined();
+    expect(out.result.isError).toBeUndefined();
+    expect(plainToolRun).toHaveBeenCalledWith({ name: "Ada" });
+    expect(JSON.parse(out.result.content[0].text)).toEqual({
+      greeting: "hello Ada",
+    });
+    expect(out.result.structuredContent).toBeUndefined();
+    expect(out.result._meta).toBeUndefined();
+  });
+
+  it("advertises no UI resource for a compact-catalog action without one", async () => {
+    const config = await chatAppConfig();
+    const resourcesOut = await callWeb(
+      { jsonrpc: "2.0", id: 302, method: "resources/list", params: {} },
+      { headers: await claudeHeaders(), config },
+    );
+    expect(resourcesOut.error).toBeUndefined();
+    expect(resourcesOut.result.resources.map((r: any) => r.uri)).toEqual([
+      "ui://mail/open_app/shell-v26",
+    ]);
+
+    const readOut = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 303,
+        method: "resources/read",
+        params: { uri: "ui://mail/say-hello/shell-v26" },
+      },
+      { headers: await claudeHeaders(), config },
+    );
+    expect(readOut.error).toBeDefined();
+  });
+
+  it("does not turn on MCP App capabilities for a full-catalog client because of a resource-less opt-in", async () => {
+    const out = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 304,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-06-18",
+          capabilities: {},
+          clientInfo: { name: "agent-native-connect", version: "1.0.0" },
+        },
+      },
+      {
+        headers: { "x-agent-native-mcp-full-catalog": "1" },
+        config: {
+          ...config,
+          actions: {
+            "say-hello": (await chatAppConfig()).actions["say-hello"],
+          },
+        },
+      },
+    );
+    expect(out.error).toBeUndefined();
+    expect(out.result.capabilities.resources).toBeUndefined();
+    expect(out.result.capabilities.extensions).toBeUndefined();
+  });
+
+  it("sends static server instructions on initialize", async () => {
+    const out = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 310,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-06-18",
+          capabilities: {},
+          clientInfo: { name: "Claude", version: "1.0.0" },
+        },
+      },
+      {
+        headers: await claudeHeaders(),
+        config: await chatAppConfig({
+          instructions: "Read the guidance before acting.",
+        }),
+      },
+    );
+    expect(out.error).toBeUndefined();
+    expect(out.result.instructions).toBe("Read the guidance before acting.");
+  });
+
+  it("builds function instructions in the caller's request context", async () => {
+    const { getRequestUserEmail } =
+      await import("../server/request-context.js");
+    const out = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 311,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-06-18",
+          capabilities: {},
+          clientInfo: { name: "Claude", version: "1.0.0" },
+        },
+      },
+      {
+        headers: await claudeHeaders(),
+        config: await chatAppConfig({
+          instructions: async () => `Hello ${getRequestUserEmail()}.`,
+        }),
+      },
+    );
+    expect(out.error).toBeUndefined();
+    expect(out.result.instructions).toBe("Hello oauth@example.com.");
+  });
+
+  it("omits instructions when none are configured", async () => {
+    const out = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 312,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-06-18",
+          capabilities: {},
+          clientInfo: { name: "Claude", version: "1.0.0" },
+        },
+      },
+      { headers: await claudeHeaders(), config: await chatAppConfig() },
+    );
+    expect(out.error).toBeUndefined();
+    expect(out.result.instructions).toBeUndefined();
+  });
+
+  it("hides tools the per-caller filter rejects, builtins included, and sees the caller's email", async () => {
+    const { getRequestUserEmail } =
+      await import("../server/request-context.js");
+    const seen: Array<{ name: string; email: string | undefined }> = [];
+    const out = await callWeb(
+      { jsonrpc: "2.0", id: 320, method: "tools/list", params: {} },
+      {
+        headers: await claudeHeaders(),
+        config: await chatAppConfig({
+          isToolListedForCaller: (name: string) => {
+            seen.push({ name, email: getRequestUserEmail() });
+            return name !== "ask_app" && name !== "open_app";
+          },
+        }),
+      },
+    );
+
+    expect(out.error).toBeUndefined();
+    const names = out.result.tools.map((t: any) => t.name);
+    expect(names).toContain("say-hello");
+    expect(names).toContain("list_apps");
+    expect(names).not.toContain("ask_app");
+    expect(names).not.toContain("open_app");
+    expect(seen.map((s) => s.name)).toEqual(
+      expect.arrayContaining(["say-hello", "ask_app", "open_app"]),
+    );
+    expect(seen.every((s) => s.email === "oauth@example.com")).toBe(true);
+  });
+
+  it("does not advertise UI resources of tools the filter hides", async () => {
+    const out = await callWeb(
+      { jsonrpc: "2.0", id: 321, method: "resources/list", params: {} },
+      {
+        headers: await claudeHeaders(),
+        config: await chatAppConfig({
+          isToolListedForCaller: (name: string) => name !== "open_app",
+        }),
+      },
+    );
+    expect(out.error).toBeUndefined();
+    expect(out.result.resources).toEqual([]);
+  });
+
+  it("applies the filter to the full catalog, ask-agent included", async () => {
+    const filtered = await callWeb(
+      { jsonrpc: "2.0", id: 322, method: "tools/list", params: {} },
+      {
+        headers: await mcpAppsFullCatalogHeaders({
+          scope: "mcp:read mcp:write",
+        }),
+        config: await chatAppConfig({
+          isToolListedForCaller: async (name: string) =>
+            name !== "internal-heavy" && name !== "ask-agent",
+        }),
+      },
+    );
+    expect(filtered.error).toBeUndefined();
+    const names = filtered.result.tools.map((t: any) => t.name);
+    expect(names).toContain("echo-thing");
+    expect(names).toContain("say-hello");
+    expect(names).not.toContain("internal-heavy");
+    expect(names).not.toContain("ask-agent");
+
+    const unfiltered = await callWeb(
+      { jsonrpc: "2.0", id: 323, method: "tools/list", params: {} },
+      {
+        headers: await mcpAppsFullCatalogHeaders({
+          scope: "mcp:read mcp:write",
+        }),
+        config: await chatAppConfig(),
+      },
+    );
+    const allNames = unfiltered.result.tools.map((t: any) => t.name);
+    expect(allNames).toContain("internal-heavy");
+    expect(allNames).toContain("ask-agent");
+  });
+
+  it("hides a tool whose filter throws", async () => {
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const out = await callWeb(
+      { jsonrpc: "2.0", id: 324, method: "tools/list", params: {} },
+      {
+        headers: await claudeHeaders(),
+        config: await chatAppConfig({
+          isToolListedForCaller: (name: string) => {
+            if (name === "say-hello") throw new Error("boom");
+            return true;
+          },
+        }),
+      },
+    );
+    errorSpy.mockRestore();
+    expect(out.error).toBeUndefined();
+    const names = out.result.tools.map((t: any) => t.name);
+    expect(names).not.toContain("say-hello");
+    expect(names).toContain("ask_app");
+  });
+
+  it("only filters the listing: a hidden tool can still be called", async () => {
+    const out = await callWeb(
+      {
+        jsonrpc: "2.0",
+        id: 325,
+        method: "tools/call",
+        params: { name: "say-hello", arguments: { name: "Grace" } },
+      },
+      {
+        headers: await claudeHeaders(),
+        config: await chatAppConfig({
+          isToolListedForCaller: (name: string) => name !== "say-hello",
+        }),
+      },
+    );
+    expect(out.error).toBeUndefined();
+    expect(out.result.isError).toBeUndefined();
+    expect(JSON.parse(out.result.content[0].text)).toEqual({
+      greeting: "hello Grace",
+    });
   });
 });

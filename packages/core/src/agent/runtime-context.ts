@@ -1,3 +1,30 @@
+/**
+ * Separates the part of a system prompt that is the same on every request
+ * (instructions, AGENTS.md, skills) from the part that changes (the current
+ * time, what is on screen). Engines that cache prompts cache only what comes
+ * before it, so a clock in the prompt no longer makes every turn re-write the
+ * whole prompt to the cache. `splitSystemPrompt` removes it before sending.
+ */
+export const SYSTEM_PROMPT_VOLATILE_MARKER = "\n<!-- agent-native:volatile -->";
+
+/**
+ * The prompt to send, without the marker, and how long its stable leading
+ * part is (undefined when there is no marker).
+ */
+export function splitSystemPrompt(prompt: string): {
+  systemPrompt: string;
+  cacheBoundary?: number;
+} {
+  const at = prompt.indexOf(SYSTEM_PROMPT_VOLATILE_MARKER);
+  if (at < 0) return { systemPrompt: prompt };
+  const stable = prompt.slice(0, at);
+  const volatile = prompt
+    .slice(at + SYSTEM_PROMPT_VOLATILE_MARKER.length)
+    .split(SYSTEM_PROMPT_VOLATILE_MARKER)
+    .join("");
+  return { systemPrompt: stable + volatile, cacheBoundary: stable.length };
+}
+
 export interface RuntimeContextOptions {
   now?: Date;
   timezone?: string | null;

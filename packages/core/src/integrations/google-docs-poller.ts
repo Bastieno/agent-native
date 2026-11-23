@@ -454,6 +454,7 @@ async function processComment(
         { userEmail: options.ownerEmail, orgId, isIntegrationCaller: true },
         () =>
           runAgentLoop({
+            runSource: "integration",
             engine,
             model: options.model,
             systemPrompt: options.systemPrompt,

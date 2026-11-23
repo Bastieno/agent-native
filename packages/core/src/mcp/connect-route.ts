@@ -584,6 +584,11 @@ function renderConnectPage(params: {
     cursor: pointer; width: 100%; text-align: center;
     margin: 0.5rem 0 0.2rem;
   }
+  /* The .tab-panel a rule (light text, underlined) would otherwise win on
+   * specificity and leave this button's label light on light. */
+  .tab-panel a.primary-link {
+    color: var(--accent-fg); text-decoration: none;
+  }
   .primary-link:hover { background: #e4e4e7; border-color: #e4e4e7; }
   .primary-link.compact { width: auto; min-width: 0; }
   .copy-flash {

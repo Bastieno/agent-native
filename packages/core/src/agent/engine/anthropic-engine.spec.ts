@@ -99,6 +99,59 @@ describe("createAnthropicEngine", () => {
     vi.doUnmock("@anthropic-ai/sdk");
   });
 
+  it("stream fails, rather than finishing, when the stream is cut before a stop reason", async () => {
+    // A connection dropped mid-reply leaves partial text and no stop_reason.
+    const mockStream = {
+      [Symbol.asyncIterator]: async function* () {
+        yield {
+          type: "content_block_start",
+          index: 0,
+          content_block: { type: "text", text: "" },
+        };
+        yield {
+          type: "content_block_delta",
+          index: 0,
+          delta: { type: "text_delta", text: "My" },
+        };
+      },
+      finalMessage: vi.fn().mockResolvedValue({
+        content: [{ type: "text", text: "My" }],
+        stop_reason: null,
+        usage: { input_tokens: 20, output_tokens: 1 },
+      }),
+    };
+
+    vi.doMock("@anthropic-ai/sdk", () => ({
+      default: class MockAnthropic {
+        messages = { stream: vi.fn().mockReturnValue(mockStream) };
+      },
+    }));
+
+    vi.resetModules();
+    const { createAnthropicEngine: freshCreate } =
+      await import("./anthropic-engine.js");
+    const engine = freshCreate({ apiKey: "test" });
+
+    const events: any[] = [];
+    await expect(
+      (async () => {
+        for await (const e of engine.stream({
+          model: "claude-haiku-4-5-20251001",
+          systemPrompt: "You are helpful.",
+          messages: [{ role: "user", content: [{ type: "text", text: "Hi" }] }],
+          tools: [],
+          abortSignal: new AbortController().signal,
+        })) {
+          events.push(e);
+        }
+      })(),
+    ).rejects.toThrow(/stream closed early/);
+    expect(events.find((e) => e.type === "stop")?.reason).toBe("error");
+    expect(events.some((e) => e.type === "assistant-content")).toBe(false);
+
+    vi.doUnmock("@anthropic-ai/sdk");
+  });
+
   it("stream emits stop with error when API key is missing", async () => {
     const engine = createAnthropicEngine({});
     const opts: EngineStreamOptions = {

@@ -2,6 +2,7 @@ import type {
   ActionDeepLink,
   ActionLinkBuilder,
   ActionMcpAppConfig,
+  ActionMcpAppResourceConfig,
 } from "../action.js";
 import { embedApp, type EmbedAppOptions } from "./embed-app.js";
 
@@ -40,7 +41,7 @@ export interface EmbedRouteOptions<
 
 export interface EmbedRouteResult {
   link: ActionLinkBuilder;
-  mcpApp: ActionMcpAppConfig;
+  mcpApp: ActionMcpAppConfig & { resource: ActionMcpAppResourceConfig };
 }
 
 /**
