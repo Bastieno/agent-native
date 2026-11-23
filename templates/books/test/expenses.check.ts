@@ -160,4 +160,57 @@ await check("settings say which categories have no business", async () => {
   assert.ok(!s.noBusinessCategories.includes("Salaries"));
 });
 
+await check("an expense can't be confirmed before it is filed", async () => {
+  const { code } = await asOwner(() =>
+    record.run({ ...diesel, vendor: "Unfiled", amount: 3100 }),
+  );
+  // Back to waiting, with no category and no business.
+  await query(
+    `UPDATE expenses SET status = 'needs_review', category_id = NULL, business_id = NULL WHERE code = ?`,
+    [code],
+  );
+  await assert.rejects(
+    () => asOwner(() => update.run({ code, status: "confirmed" })),
+    /category/i,
+  );
+  // A category that needs a business, without one: still refused.
+  await asOwner(() => update.run({ code, category: "Supplies" }));
+  await assert.rejects(
+    () => asOwner(() => update.run({ code, status: "confirmed" })),
+    /Lounge or the Hub/,
+  );
+  // Filed in one go with the confirm: accepted.
+  await asOwner(() =>
+    update.run({ code, business: "lounge", status: "confirmed" }),
+  );
+  const [e] = await query(`SELECT status FROM expenses WHERE code = ?`, [code]);
+  assert.equal(e.status, "confirmed");
+});
+
+await check("owner's pay is confirmed without a business", async () => {
+  const { code } = await asOwner(() =>
+    record.run({ ...diesel, vendor: "Own", amount: 3200 }),
+  );
+  await query(`UPDATE expenses SET status = 'needs_review' WHERE code = ?`, [
+    code,
+  ]);
+  await asOwner(() =>
+    update.run({ code, category: "Owner's pay", status: "confirmed" }),
+  );
+  const [e] = await query(
+    `SELECT status, business_id FROM expenses WHERE code = ?`,
+    [code],
+  );
+  assert.deepEqual([e.status, e.business_id], ["confirmed", null]);
+});
+
+await check("a group with no category can't be confirmed", async () => {
+  const confirm = (await import("../actions/confirm-expenses.js")).default;
+  await assert.rejects(
+    () =>
+      asOwner(() => confirm.run({ group: { category: null, business: null } })),
+    /category/i,
+  );
+});
+
 await finish();

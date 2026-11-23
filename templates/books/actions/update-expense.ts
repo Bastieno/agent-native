@@ -37,8 +37,9 @@ export default defineAction({
   }) => {
     const orgId = await ownerOrg();
     const [e] = await rows(
-      `SELECT e.id, e.occurred_on, e.raw_text, e.vendor, c.name AS category FROM expenses e
+      `SELECT e.id, e.occurred_on, e.raw_text, e.vendor, c.name AS category, b.slug AS business FROM expenses e
          LEFT JOIN expense_categories c ON c.id = e.category_id
+         LEFT JOIN businesses b ON b.id = e.business_id
         WHERE e.org_id = ? AND e.code = ?`,
       [orgId, code],
     );
@@ -56,6 +57,17 @@ export default defineAction({
       category === SALARIES && !business
         ? await staffBusiness(orgId, vendor ?? (e.vendor as string))
         : null;
+    // Confirming says the expense is filed: it needs a category and, unless the
+    // category belongs to no business, the business it was for.
+    if (status === "confirmed") {
+      if (!finalCategory)
+        throw new Error("Choose a category before confirming this expense.");
+      const finalBusiness = business ?? staff ?? (e.business as string | null);
+      if (!NO_BUSINESS.includes(finalCategory) && !finalBusiness)
+        throw new Error(
+          "Choose the Lounge or the Hub before confirming this expense.",
+        );
+    }
     if (finalCategory && NO_BUSINESS.includes(finalCategory)) {
       if (category || business) set("business_id", null);
     } else if (business ?? staff)

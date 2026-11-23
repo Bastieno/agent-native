@@ -2,6 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { ownerOrg } from "../server/lib/access.js";
 import { reconcileDays } from "../server/lib/reconcile-days.js";
+import { NO_BUSINESS } from "../server/lib/setup.js";
 import { rows, run } from "../server/lib/sql.js";
 
 export default defineAction({
@@ -19,9 +20,20 @@ export default defineAction({
   run: async ({ codes, group }) => {
     if (!codes?.length && !group)
       throw new Error("Give the codes or a group to confirm.");
+    if (group && !group.category)
+      throw new Error(
+        "These expenses have no category yet: choose one for each before confirming.",
+      );
     const orgId = await ownerOrg();
-    const where: string[] = ["e.org_id = ?", "e.status = 'needs_review'"];
-    const args: unknown[] = [orgId];
+    // Only filed expenses are confirmed: a category, and a business unless the
+    // category belongs to none.
+    const where: string[] = [
+      "e.org_id = ?",
+      "e.status = 'needs_review'",
+      "e.category_id IS NOT NULL",
+      `(e.business_id IS NOT NULL OR c.name IN (${NO_BUSINESS.map(() => "?").join(",")}))`,
+    ];
+    const args: unknown[] = [orgId, ...NO_BUSINESS];
     if (codes?.length) {
       where.push(`e.code IN (${codes.map(() => "?").join(",")})`);
       args.push(...codes);

@@ -1,7 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
-import { IconDotsVertical, IconFileZip } from "@tabler/icons-react";
+import {
+  IconCircleCheck,
+  IconDotsVertical,
+  IconFileZip,
+} from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -165,6 +169,12 @@ function ExpenseSheet({
   onSave: (patch: Partial<Expense> & { amountNaira?: number }) => void;
 }) {
   const [amount, setAmount] = useState(String(expense.amount / 100));
+  // An expense is confirmed only once it is filed.
+  const missing = !expense.category
+    ? "Choose a category first."
+    : !expense.business && !noBusiness.includes(expense.category)
+      ? "Choose the Lounge or the Hub first."
+      : null;
   const [imageFailed, setImageFailed] = useState(false);
   return (
     <Sheet open onOpenChange={(open) => !open && onClose()}>
@@ -324,13 +334,28 @@ function ExpenseSheet({
               </SelectContent>
             </Select>
           </div>
-          {canEdit && expense.status === "needs_review" && (
-            <Button
-              className="w-full"
-              onClick={() => onSave({ status: "confirmed" })}
-            >
-              Confirm
-            </Button>
+          {expense.status === "confirmed" ? (
+            <div className="flex items-center justify-center gap-2 rounded-md border border-border py-2.5 text-sm text-muted-foreground">
+              <IconCircleCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+              Confirmed. Changes still save as you make them.
+            </div>
+          ) : (
+            canEdit && (
+              <div className="space-y-1.5">
+                <Button
+                  className="w-full"
+                  disabled={!!missing}
+                  onClick={() => onSave({ status: "confirmed" })}
+                >
+                  Confirm
+                </Button>
+                {missing && (
+                  <p className="text-center text-xs text-muted-foreground">
+                    {missing}
+                  </p>
+                )}
+              </div>
+            )
           )}
         </div>
       </SheetContent>
@@ -452,7 +477,14 @@ export default function ExpensesPage() {
           qc.setQueryData(key, previous);
           toast.error(err.message);
         },
-        onSuccess: () => qc.invalidateQueries({ queryKey: ["action"] }),
+        onSuccess: () => {
+          // Every change saves on its own: say so, briefly.
+          toast.success(patch.status === "confirmed" ? "Confirmed" : "Saved", {
+            id: "expense-saved",
+            duration: 1500,
+          });
+          qc.invalidateQueries({ queryKey: ["action"] });
+        },
       },
     );
   }
