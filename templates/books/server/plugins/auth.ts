@@ -9,6 +9,8 @@ export default createAuthPlugin({
   publicPaths: [
     "/api/books/cron/tick",
     "/api/books/cron/reconcile",
+    // Only two build ids: lets a tab (or a check after a deploy) see a new version.
+    "/api/books/version",
     "/api/moniepoint/webhook",
   ],
   marketing: {

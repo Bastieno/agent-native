@@ -1,13 +1,28 @@
+import { statSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { defineEventHandler, setResponseHeader } from "h3";
 
+/** When this build was made: this file is rewritten by every build. */
+let buildStamp: string | null = null;
+function stamp(): string {
+  if (buildStamp) return buildStamp;
+  try {
+    buildStamp = String(
+      Math.round(statSync(fileURLToPath(import.meta.url)).mtimeMs),
+    );
+  } catch {
+    buildStamp = "dev";
+  }
+  return buildStamp;
+}
+
 /**
- * Which build of Books is live. An open tab compares it with the build it
- * loaded and offers a refresh when they differ.
+ * Which build of Books is live, for open tabs to notice a deploy.
  *
- * The id is the version React Router stamps on a build's client manifest; the
- * browser holds the same value (`window.__reactRouterManifest.version`). It
- * changes only when the client code changes, so a server-only deploy asks
- * nobody to refresh. Behind sign-in like the rest of /api; it carries only an id.
+ * `id` is the version React Router stamps on the screens' code (the browser
+ * holds it as `window.__reactRouterManifest.version`); `build` changes with
+ * every build, server-only ones included. A tab offers a refresh when either
+ * differs from what it first saw. Public: it carries only these two ids.
  */
 export default defineEventHandler(async (event) => {
   setResponseHeader(event, "Cache-Control", "no-store");
@@ -17,7 +32,7 @@ export default defineEventHandler(async (event) => {
     const build: any = await import("virtual:react-router/server-build");
     version = build?.assets?.version;
   } catch {
-    // No build to read (development): one build, so it never changes.
+    // No build to read (development).
   }
-  return { id: version ?? "dev" };
+  return { id: version ?? "dev", build: stamp() };
 });
