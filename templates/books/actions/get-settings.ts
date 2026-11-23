@@ -1,3 +1,4 @@
+import { RETIRED_CATEGORIES } from "../server/lib/setup.js";
 import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { currentRole, memberOrg } from "../server/lib/access.js";
@@ -22,6 +23,9 @@ export default defineAction({
     const expenseCategories = await rows(
       `SELECT name FROM expense_categories WHERE org_id = ? ORDER BY sort`,
       [orgId],
+    ).then((found) =>
+      // Retired categories are kept for old data but not offered.
+      found.filter((c) => !(String(c.name) in RETIRED_CATEGORIES)),
     );
     const [job] = await rows(
       `SELECT id FROM resources WHERE path = 'jobs/books-digests.md' LIMIT 1`,

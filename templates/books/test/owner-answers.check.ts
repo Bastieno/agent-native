@@ -186,4 +186,17 @@ await check("a salary goes to the business its person works for", async () => {
   assert.equal(rb.slug, "lounge");
 });
 
+await check("dollar purchases are the owner's pay", async () => {
+  // The owner's answer (2026-11-23): dollars pay for the owner's own
+  // subscriptions and servers, and never come back to the business.
+  assert.equal(
+    parseNarration("DOLLAR 200 USD for software")?.category,
+    "Owner's pay",
+  );
+  assert.equal(parseNarration("DOLLAR 200 USD for software")?.business, null);
+  const list = (await import("../actions/list-expense-categories.js")).default;
+  const { categories } = await asOwner(() => list.run({}));
+  assert.equal(categories.includes("Dollar purchases"), false);
+});
+
 await finish();

@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { businessIdBySlug } from "./catalog.js";
-import { NO_BUSINESS } from "./setup.js";
+import { NO_BUSINESS, RETIRED_CATEGORIES } from "./setup.js";
 import { SALARIES, staffBusiness } from "./staff.js";
 import { newId, nowIso } from "./ids.js";
 import { reconcileDays } from "./reconcile-days.js";
@@ -38,9 +38,14 @@ export async function expenseCategoryId(
   orgId: string,
   name: string,
 ): Promise<string> {
+  // A retired category is filed under the one that replaced it.
+  const asked = name.trim();
+  const retired = Object.keys(RETIRED_CATEGORIES).find(
+    (old) => old.toLowerCase() === asked.toLowerCase(),
+  );
   const [c] = await rows(
     `SELECT id FROM expense_categories WHERE org_id = ? AND LOWER(name) = LOWER(?) ORDER BY created_at, id LIMIT 1`,
-    [orgId, name.trim()],
+    [orgId, retired ? RETIRED_CATEGORIES[retired] : asked],
   );
   if (!c) throw new Error(`Unknown expense category: ${name}`);
   return c.id;

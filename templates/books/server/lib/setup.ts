@@ -29,10 +29,19 @@ export const STOCK_CATEGORIES = ["Food & drink stock", MANAGER_FLOAT];
 export const LOANS = "Loans & repayments";
 export const MOVED = "Moved between accounts";
 export const CLIENT = "Paid for a client (repaid)";
+/**
+ * No longer offered (the owner's answer, 2026-11-23): dollars pay for the
+ * owner's own subscriptions and servers and never come back, so they are
+ * Owner's pay. The category row stays for old data; names asking for it are
+ * filed under Owner's pay instead.
+ */
 export const DOLLARS = "Dollar purchases";
+export const RETIRED_CATEGORIES: Record<string, string> = {
+  [DOLLARS]: "Owner's pay",
+};
 /** Money that moved but is not a running cost: counted apart, never in expenses or profit. */
 export const DIVIDENDS = "Dividends & profit share";
-export const NOT_COSTS = [LOANS, MOVED, CLIENT, DOLLARS, DIVIDENDS];
+export const NOT_COSTS = [LOANS, MOVED, CLIENT, DIVIDENDS];
 /** DSTV and other TV subscriptions: the Lounge's (the owner's answer, 2026-11-23). */
 export const TV = "TV & subscriptions";
 /** Money given back to customers: taken off that business's income, not a cost. */

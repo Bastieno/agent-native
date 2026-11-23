@@ -6,7 +6,7 @@ import { savePayeeRule } from "../server/lib/payee-rules.js";
 
 export default defineAction({
   description:
-    "Remember what money to a payee is for. When old receipts are read, a transfer to this payee (at or above minAmount, if given) is filed under this category instead of guessed from its note. Use it for people who move money for you, loan repayments, dollar purchases. Replaces any earlier rule for the same payee.",
+    "Remember what money to a payee is for. When old receipts are read, a transfer to this payee (at or above minAmount, if given) is filed under this category instead of guessed from its note. Use it for people who move money for you, loan repayments, the owner's dollar purchases (Owner's pay). Replaces any earlier rule for the same payee.",
   schema: z.object({
     payee: z.string().describe("The payee's name, as on the transfer"),
     category: z.string().describe("Expense category name"),
