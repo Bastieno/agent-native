@@ -257,7 +257,11 @@ await check("guesses a category and business from the note", () => {
   assert.equal(g("6k foil, 1k delivery").category, "Supplies"); // foil is not oil
   assert.equal(g("10k fuel, 5k oil").category, "Diesel / power");
   assert.equal(g("For welcing work").category, "Repairs");
-  assert.equal(g(null, "AIRTIME").category, "Other");
+  // Airtime is the owner's own, for no business.
+  assert.deepEqual(
+    [g(null, "AIRTIME").category, g(null, "AIRTIME").business],
+    ["Owner's pay", null],
+  );
   assert.equal(g("zzz").category, null);
   assert.equal(g(null).category, null);
 });

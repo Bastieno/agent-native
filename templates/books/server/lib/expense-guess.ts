@@ -332,13 +332,9 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     )
       return { ...none, category: OWNERS_PAY, because: "owner's own" };
   }
+  // Airtime is the owner's own, for no business.
   if (kind === "AIRTIME")
-    return {
-      ...none,
-      category: "Other",
-      business: "lounge",
-      because: "airtime",
-    };
+    return { ...none, category: OWNERS_PAY, because: "airtime" };
   if (!note) return none;
   const text = ` ${note.toLowerCase()} `;
   if (LOAN.test(text)) return { ...none, category: LOANS, because: "loan" };

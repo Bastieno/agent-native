@@ -1,5 +1,6 @@
 /**
- * Files expenses whose note is just "For support" or "For snacks" (or a misreading)
+ * Files expenses whose note is support or "For snacks" (or a misreading), and
+ * airtime bought from a slip (a phone number paid, no note),
  * under Owner's pay, with no business, and recalculates those days. Only
  * expenses still waiting for review are changed.
  *
@@ -23,16 +24,26 @@ const waiting = await rows<{
   amount: number;
   category: string | null;
   business_id: string | null;
+  vendor: string;
+  source: string;
 }>(
-  `SELECT e.id, e.org_id, e.occurred_on, e.raw_text, e.amount, c.name AS category, e.business_id
+  `SELECT e.id, e.org_id, e.occurred_on, e.raw_text, e.amount, e.vendor, e.source, c.name AS category, e.business_id
      FROM expenses e LEFT JOIN expense_categories c ON c.id = e.category_id
     WHERE e.status = 'needs_review'`,
 );
+/** Airtime from a slip: a Nigerian phone number paid, and no note. */
+const airtime = (e: { vendor: string; source: string; raw_text: string }) =>
+  e.source === "history" &&
+  /^0[789][01]\d{8}$/.test(e.vendor.trim()) &&
+  !expenseNote(e.raw_text);
 const move = waiting.filter((e) => {
-  const g = guessExpense(expenseNote(e.raw_text));
+  const g = guessExpense(
+    expenseNote(e.raw_text),
+    airtime(e) ? "AIRTIME" : null,
+  );
   return (
     g.category === OWNERS_PAY &&
-    g.because === "owner's own" &&
+    (g.because === "owner's own" || g.because === "airtime") &&
     (e.category !== OWNERS_PAY || e.business_id !== null)
   );
 });
