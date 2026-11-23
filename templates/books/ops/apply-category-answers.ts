@@ -16,7 +16,7 @@ const skipReconcile = process.argv.includes("--no-reconcile");
 
 const { migrateForChecks } = await import("../server/db/migrate.js");
 const { rows, run } = await import("../server/lib/sql.js");
-const { ensureExpenseCategories, OWNERS_PAY, REFUNDS, CLIENT } =
+const { ensureExpenseCategories, OWNERS_PAY, REFUNDS, CLIENT, NO_BUSINESS } =
   await import("../server/lib/setup.js");
 const { expenseNote, OWNER_MARK } =
   await import("../server/lib/expense-note.js");
@@ -160,8 +160,16 @@ for (const { org_id: orgId } of orgs) {
       )
         set(OWNERS_PAY, null, "car fuel");
     }
+    // Owner's pay and money moved never have a business (even one the owner
+    // set before that rule existed).
+    if (category && NO_BUSINESS.includes(category)) {
+      if (business !== null) {
+        business = null;
+        why ||= "no business";
+      }
+    }
     // Every salary goes to its person's business; diesel/power and repairs to the Hub.
-    if (category === SALARIES) {
+    else if (category === SALARIES) {
       const b = staff.get(payeeKey(e.vendor) as string);
       if (b) {
         business = b;
