@@ -5,6 +5,7 @@ import { Sidebar } from "./Sidebar";
 import { Header } from "./Header";
 import { HeaderActionsProvider } from "./HeaderActions";
 import { AgentSidebar } from "@agent-native/core/client";
+import { AssistantSetupCard } from "@/components/AssistantKey";
 import {
   Sheet,
   SheetContent,
@@ -52,7 +53,21 @@ export function Layout({ children }: LayoutProps) {
         </Sheet>
         <AgentSidebar
           position="right"
-          defaultOpen
+          // Books' own key card in place of the framework's hosting offer.
+          setupCard={<AssistantSetupCard />}
+          // The server picks the model by role (owner Sonnet, partner Haiku),
+          // so a picker would offer a choice it cannot honour.
+          showModelSelector={false}
+          // The workspace files and framework settings are not Books'; its own
+          // settings are on the Settings page.
+          showWorkspace={false}
+          showSettings={false}
+          // Side by side only on a wide screen; below that the panel slides
+          // over the page instead of squeezing the figures.
+          overlayBreakpointPx={1279}
+          defaultOpen={
+            typeof window !== "undefined" ? window.innerWidth >= 1280 : false
+          }
           emptyStateText="Ask about your sales, costs and checks"
           suggestions={[
             "How did yesterday go?",

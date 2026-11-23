@@ -4,12 +4,17 @@ import {
   IconArrowUpRight,
   IconChecklist,
   IconLayoutDashboard,
+  IconLogout,
   IconReportAnalytics,
   IconSettings,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
-import { appPath, useActionQuery } from "@agent-native/core/client";
-import { OrgSwitcher } from "@agent-native/core/client/org";
+import {
+  agentNativePath,
+  appPath,
+  useActionQuery,
+  useSession,
+} from "@agent-native/core/client";
 import { APP_TITLE } from "@/lib/app-config";
 
 const navItems = [
@@ -87,9 +92,34 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="border-t border-border px-3 py-2">
-        <OrgSwitcher />
-      </div>
+      <AccountFooter />
     </aside>
+  );
+}
+
+/** Who is signed in, and signing out. Nothing about organisations or apps. */
+function AccountFooter() {
+  const { session } = useSession();
+  return (
+    <div className="border-t border-border p-2">
+      {session?.email && (
+        <div className="truncate px-3 pb-1 pt-1.5 text-xs text-muted-foreground">
+          {session.email}
+        </div>
+      )}
+      <button
+        type="button"
+        onClick={async () => {
+          await fetch(agentNativePath("/_agent-native/auth/logout"), {
+            method: "POST",
+          }).catch(() => {});
+          window.location.href = appPath("/");
+        }}
+        className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-sidebar-accent/50 hover:text-foreground"
+      >
+        <IconLogout className="h-4 w-4 shrink-0" />
+        Sign out
+      </button>
+    </div>
   );
 }

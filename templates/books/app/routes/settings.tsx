@@ -17,6 +17,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSetPageTitle } from "@/components/layout/HeaderActions";
 import { NARRATION_TAGS, narrationGuide } from "@shared/narration";
+import { AssistantSettings } from "@/components/AssistantKey";
 
 /** How to write the note on a transfer so Books files it without guessing. */
 function TransferNotes() {
@@ -151,6 +152,7 @@ export default function SettingsPage() {
           <TabsTrigger value="notes">Transfer notes</TabsTrigger>
           <TabsTrigger value="categories">Categories</TabsTrigger>
           <TabsTrigger value="limits">Limits</TabsTrigger>
+          <TabsTrigger value="assistant">Assistant</TabsTrigger>
           <TabsTrigger value="connections">Connections</TabsTrigger>
         </TabsList>
 
@@ -346,6 +348,10 @@ export default function SettingsPage() {
               Save
             </Button>
           )}
+        </TabsContent>
+
+        <TabsContent value="assistant" className="max-w-md pt-4">
+          <AssistantSettings canEdit={canEdit} />
         </TabsContent>
 
         <TabsContent

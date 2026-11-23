@@ -23,6 +23,7 @@ export const ACTION_POLICY: Record<string, Audience> = {
   "get-overview": "everyone",
   "list-review": "everyone",
   "confirm-expenses": "owner",
+  "save-assistant-key": "owner",
   "get-settings": "everyone",
   "list-imports": "everyone",
   "set-item-category": "owner",

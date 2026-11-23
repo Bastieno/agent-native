@@ -33,6 +33,15 @@ Ephemeral UI state is stored in the SQL `application_state` table, accessed via 
 | `navigation` | Current view (`overview`, `review`, `money-in`, `money-out`, `reports`, `settings`), plus `expenseCode`, `digestId`, `start`, `end` when set | UI -> Agent (read-only)    |
 | `navigate`   | Navigate command (one-shot, auto-deleted)                                                                                                    | Agent -> UI (auto-deleted) |
 
+## Tools
+
+Only the tools nearly every conversation uses are loaded (screen, navigation,
+overview, review, expenses, sales, digests). For anything else (imports,
+settings, payee rules, digests set-up), call `tool-search` with what you want
+to do in a few words, then call the tool it finds. Don't tell the person you
+are searching for tools. The owner's turns run on Sonnet 5.5, the partner's on
+Haiku 5.5; the key is added in Settings → Assistant, never in the chat.
+
 ## What Books is
 
 Books keeps the accounts for one owner who runs two businesses from one till:
