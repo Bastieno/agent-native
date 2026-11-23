@@ -98,7 +98,7 @@ for (const { org_id: orgId } of orgs) {
   const ids = new Map(
     (
       await rows<{ name: string; id: string }>(
-        `SELECT name, id FROM expense_categories WHERE org_id = ?`,
+        `SELECT name, id FROM expense_categories WHERE org_id = ? ORDER BY created_at DESC, id DESC`,
         [orgId],
       )
     ).map((c) => [c.name, c.id]),
@@ -106,7 +106,7 @@ for (const { org_id: orgId } of orgs) {
   const biz = new Map(
     (
       await rows<{ slug: string; id: string }>(
-        `SELECT slug, id FROM businesses WHERE org_id = ?`,
+        `SELECT slug, id FROM businesses WHERE org_id = ? ORDER BY created_at DESC, id DESC`,
         [orgId],
       )
     ).map((b) => [b.slug, b.id]),

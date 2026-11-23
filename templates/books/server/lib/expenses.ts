@@ -39,7 +39,7 @@ export async function expenseCategoryId(
   name: string,
 ): Promise<string> {
   const [c] = await rows(
-    `SELECT id FROM expense_categories WHERE org_id = ? AND LOWER(name) = LOWER(?)`,
+    `SELECT id FROM expense_categories WHERE org_id = ? AND LOWER(name) = LOWER(?) ORDER BY created_at, id LIMIT 1`,
     [orgId, name.trim()],
   );
   if (!c) throw new Error(`Unknown expense category: ${name}`);

@@ -246,6 +246,20 @@ function opayByLabel(lines: string[]): {
     if (remark) out.remark = remark[1];
     else if (/^Remark$/i.test(l) && isValue(lines[i + 1]))
       out.remark = lines[i + 1];
+    else if (/^Remark$/i.test(l) && out.remark === undefined) {
+      // Labels in a run ("Remark", "SessionID", "Transaction No."), then
+      // their values in the same order: the Remark takes its place in it.
+      let from = i;
+      while (from > 0 && OPAY_LABEL.test(lines[from - 1])) from--;
+      let to = i;
+      while (to + 1 < lines.length && OPAY_LABEL.test(lines[to + 1])) to++;
+      const values = lines
+        .slice(to + 1)
+        .filter((v) => !OPAY_FOOTER.test(v) && !/opay-inc/i.test(v));
+      const v = values[i - from];
+      // A run that starts before the date is the older layout, read by order below.
+      if (from === i && v && isValue(v) && !/^\d+$/.test(v)) out.remark = v;
+    }
   }
   // Values interleaved with labels, but no Remark at all: there is no note.
   if (

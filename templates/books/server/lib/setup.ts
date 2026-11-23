@@ -107,15 +107,31 @@ export async function ensureExpenseCategories(orgId: string): Promise<void> {
   }
 }
 
-/** Idempotent: businesses, item categories, expense categories and settings for an org. */
-export async function ensureBooksSetup(orgId: string): Promise<void> {
+const running = new Map<string, Promise<void>>();
+
+/**
+ * Idempotent: businesses, item categories, expense categories and settings for
+ * an org. Requests that arrive together share one run: two runs at once each
+ * found nothing and both seeded, which left two Lounges and two Hubs.
+ */
+export function ensureBooksSetup(orgId: string): Promise<void> {
+  if (seeded.has(orgId)) return Promise.resolve();
+  let run = running.get(orgId);
+  if (!run) {
+    run = seedBooks(orgId).finally(() => running.delete(orgId));
+    running.set(orgId, run);
+  }
+  return run;
+}
+
+async function seedBooks(orgId: string): Promise<void> {
   if (seeded.has(orgId)) return;
   const exec = getDbExec();
   const at = nowIso();
   const businessIds: Record<string, string> = {};
   for (const b of BUSINESSES) {
     const found = await exec.execute({
-      sql: `SELECT id FROM businesses WHERE org_id = ? AND slug = ?`,
+      sql: `SELECT id FROM businesses WHERE org_id = ? AND slug = ? ORDER BY created_at, id LIMIT 1`,
       args: [orgId, b.slug],
     });
     let id = (found.rows[0] as { id?: string } | undefined)?.id;
@@ -130,7 +146,7 @@ export async function ensureBooksSetup(orgId: string): Promise<void> {
   }
   for (const [name, slug] of Object.entries(CATEGORY_BUSINESS)) {
     const found = await exec.execute({
-      sql: `SELECT id FROM item_categories WHERE org_id = ? AND name = ?`,
+      sql: `SELECT id FROM item_categories WHERE org_id = ? AND name = ? ORDER BY created_at, id LIMIT 1`,
       args: [orgId, name],
     });
     if (found.rows.length === 0) {

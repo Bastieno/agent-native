@@ -341,6 +341,42 @@ await check("the older Opay layout keeps a remark that says Support", () => {
   );
 });
 
+await check(
+  "Opay labels in a run take the values that follow, in order",
+  () => {
+    // As text recognition returned E-1037.
+    const r = readReceiptText(
+      [
+        "OPay",
+        "Transaction Receipt",
+        "TRANSFER TO BANK",
+        "N10,000.00",
+        "Successful",
+        "Date/Time",
+        "Sender Details",
+        "02/10/2026 10:27",
+        "NORTHWIND LTD",
+        "OPay|9552****16",
+        "Recipient Details CHIOMA ADA OBI",
+        "OPay|8069****38",
+        "Remark",
+        "SessionID",
+        "Transaction No.",
+        "Support for Mama Igbo",
+        "100004261002092701173018327576",
+        "261002020200780734012739",
+        "CUSTOMER COPY REPRINT",
+        "SUPPORT",
+      ],
+      "2026-10-02",
+    );
+    assert.ok(r.ok);
+    if (!r.ok) return;
+    assert.equal(r.receipt.note, "Support for Mama Igbo");
+    assert.equal(r.receipt.payee, "CHIOMA ADA OBI");
+  },
+);
+
 await check("an Opay slip with no remark has no note", () => {
   const r = readReceiptText(
     [

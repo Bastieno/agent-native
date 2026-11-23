@@ -57,7 +57,7 @@ console.log(
 if (!dry) {
   for (const e of move)
     await run(
-      `UPDATE expenses SET category_id = (SELECT id FROM expense_categories WHERE org_id = ? AND name = ?), business_id = NULL
+      `UPDATE expenses SET category_id = (SELECT id FROM expense_categories WHERE org_id = ? AND name = ? ORDER BY created_at, id LIMIT 1), business_id = NULL
         WHERE id = ? AND status = 'needs_review'`,
       [e.org_id, OWNERS_PAY, e.id],
     );

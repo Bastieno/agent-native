@@ -8,7 +8,7 @@ export async function businessIdBySlug(
   slug: string,
 ): Promise<string> {
   const [b] = await rows<{ id: string }>(
-    `SELECT id FROM businesses WHERE org_id = ? AND slug = ?`,
+    `SELECT id FROM businesses WHERE org_id = ? AND slug = ? ORDER BY created_at, id LIMIT 1`,
     [orgId, slug],
   );
   if (!b) throw new Error(`Unknown business: ${slug}`);
@@ -18,7 +18,7 @@ export async function businessIdBySlug(
 /** Find or create a category by name; a new one has no business until someone assigns it. */
 export async function categoryId(orgId: string, name: string): Promise<string> {
   const [c] = await rows<{ id: string }>(
-    `SELECT id FROM item_categories WHERE org_id = ? AND name = ?`,
+    `SELECT id FROM item_categories WHERE org_id = ? AND name = ? ORDER BY created_at, id LIMIT 1`,
     [orgId, name],
   );
   if (c) return c.id;

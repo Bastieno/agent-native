@@ -15,7 +15,8 @@
     "sim": "tsx test/sim/run.ts",
     "anonymise": "tsx ops/anonymise-export.ts",
     "read-receipts": "tsx ops/read-pending-receipts.ts",
-    "restore-note-lines": "tsx ops/restore-note-lines.ts"
+    "restore-note-lines": "tsx ops/restore-note-lines.ts",
+    "refresh-slips": "tsx ops/refresh-slips.ts"
   },
   "dependencies": {
     "@agent-native/core": "workspace:*",
