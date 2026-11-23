@@ -57,7 +57,7 @@ export function Header({ onOpenMobileSidebar }: HeaderProps) {
       </header>
       {actions && (
         // On a phone the page's controls get their own row under the title.
-        <div className="flex shrink-0 items-center justify-end gap-2 overflow-x-auto border-b border-border px-4 py-2 sm:hidden">
+        <div className="flex shrink-0 flex-wrap items-center justify-end gap-2 border-b border-border px-4 py-2 sm:hidden">
           {actions}
         </div>
       )}

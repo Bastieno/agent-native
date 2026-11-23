@@ -55,13 +55,13 @@ export function withPeriod(path: string, start: string, end: string) {
 export function PeriodPicker() {
   const { start, end, key, today, set } = usePeriod();
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center justify-end gap-2">
       {key === "custom" && (
         <>
           <Input
             type="date"
             aria-label="From"
-            className="h-8 w-36"
+            className="h-8 w-[8.5rem]"
             value={start}
             max={end}
             onChange={(e) =>
@@ -72,7 +72,7 @@ export function PeriodPicker() {
           <Input
             type="date"
             aria-label="To"
-            className="h-8 w-36"
+            className="h-8 w-[8.5rem]"
             value={end}
             min={start}
             onChange={(e) =>

@@ -486,7 +486,7 @@ export default function ExpensesPage() {
 
   const filtered = !!(category || business || status);
   return (
-    <div className="@container flex flex-1 flex-col gap-4 overflow-y-auto p-4 sm:p-6">
+    <div className="@container flex min-h-full flex-1 flex-col gap-4 p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
           <Select

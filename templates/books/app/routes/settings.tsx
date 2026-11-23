@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { IconCopy, IconPlus, IconTrash } from "@tabler/icons-react";
@@ -168,6 +168,14 @@ export default function SettingsPage() {
   const [params, setParams] = useSearchParams();
   const qc = useQueryClient();
   const { data } = useActionQuery("get-settings", {});
+  // On a phone the tabs scroll sideways: keep the open one in view.
+  const tabs = useRef<HTMLDivElement>(null);
+  const tab = params.get("tab") ?? "people";
+  useEffect(() => {
+    tabs.current
+      ?.querySelector<HTMLElement>('[role="tab"][data-state="active"]')
+      ?.scrollIntoView({ inline: "center", block: "nearest" });
+  }, [tab, !!data]);
   const save = useActionMutation("update-settings");
   const mapCategory = useActionMutation("set-category-business");
   const setUp = useActionMutation("set-up-digests");
@@ -201,7 +209,10 @@ export default function SettingsPage() {
         value={params.get("tab") ?? "people"}
         onValueChange={(tab) => setParams({ tab }, { replace: true })}
       >
-        <TabsList className="max-w-full justify-start overflow-x-auto">
+        <TabsList
+          ref={tabs}
+          className="max-w-full justify-start overflow-x-auto"
+        >
           <TabsTrigger value="people">People</TabsTrigger>
           <TabsTrigger value="notes">Transfer notes</TabsTrigger>
           <TabsTrigger value="categories">Categories</TabsTrigger>

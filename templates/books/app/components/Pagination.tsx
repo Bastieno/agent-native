@@ -100,9 +100,9 @@ export function Pagination({
   return (
     <nav
       aria-label="Pagination"
-      // The page is padded p-4 (p-6 from sm up); the negative margins cancel
-      // it so the bar runs edge to edge and leaves no strip below it.
-      className="sticky -bottom-4 z-10 -mx-4 -mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-border bg-background/95 px-4 py-2 text-xs text-muted-foreground backdrop-blur sm:-bottom-6 sm:-mx-6 sm:-mb-6 sm:px-6"
+      // Sticks to the bottom of the screen, which is what scrolls; the
+      // negative margins cancel the page's padding so it runs edge to edge.
+      className="sticky bottom-0 z-10 -mx-4 -mb-4 mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-border bg-background/95 px-4 py-2 text-xs text-muted-foreground backdrop-blur sm:-mx-6 sm:-mb-6 sm:px-6"
     >
       <Select
         value={String(pageSize)}
