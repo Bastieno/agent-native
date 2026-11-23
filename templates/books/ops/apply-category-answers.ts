@@ -10,6 +10,9 @@
  */
 process.env.DATABASE_URL ??= "file:./data/app.db";
 const dry = process.argv.includes("--dry");
+// --no-reconcile: change the expenses only; recalculate on the server after
+// (POST /api/books/cron/reconcile), which is much faster than over a tunnel.
+const skipReconcile = process.argv.includes("--no-reconcile");
 
 const { migrateForChecks } = await import("../server/db/migrate.js");
 const { rows, run } = await import("../server/lib/sql.js");
@@ -196,7 +199,7 @@ for (const { org_id: orgId } of orgs) {
         ],
       );
     const days = [...new Set(changes.map((c) => c.e.occurred_on))];
-    await reconcileDays(orgId, days);
+    if (!skipReconcile) await reconcileDays(orgId, days);
     console.log(`done; ${days.length} days recalculated`);
   }
 }

@@ -6,7 +6,11 @@ const appTitle =
 
 export default createAuthPlugin({
   // Machine callers with no session; each checks its own secret or signature.
-  publicPaths: ["/api/books/cron/tick", "/api/moniepoint/webhook"],
+  publicPaths: [
+    "/api/books/cron/tick",
+    "/api/books/cron/reconcile",
+    "/api/moniepoint/webhook",
+  ],
   marketing: {
     appName: appTitle,
     tagline: "Your lounge and hub accounts, reconciled every day.",
