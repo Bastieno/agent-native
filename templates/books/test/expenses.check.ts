@@ -119,4 +119,45 @@ await check("partner cannot record", async () => {
     /Only the owner can change Books\./,
   );
 });
+await check("owner's pay and money moved belong to no business", async () => {
+  const { code } = await asOwner(() =>
+    record.run({ ...diesel, vendor: "Owner", amount: 7000 }),
+  );
+  // Changing the category to Owner's pay takes the business away…
+  await asOwner(() => update.run({ code, category: "Owner's pay" }));
+  const [a] = await query(`SELECT business_id FROM expenses WHERE code = ?`, [
+    code,
+  ]);
+  assert.equal(a.business_id, null);
+  // …and a business sent with it is ignored.
+  await asOwner(() =>
+    update.run({ code, category: "Loans & repayments", business: "lounge" }),
+  );
+  const [b] = await query(`SELECT business_id FROM expenses WHERE code = ?`, [
+    code,
+  ]);
+  assert.equal(b.business_id, null);
+  // Recorded straight under Owner's pay, it has no business either.
+  const made = await asOwner(() =>
+    record.run({
+      ...diesel,
+      vendor: "Owner 2",
+      amount: 8000,
+      category: "Owner's pay",
+    }),
+  );
+  const [c] = await query(`SELECT business_id FROM expenses WHERE code = ?`, [
+    made.code,
+  ]);
+  assert.equal(c.business_id, null);
+});
+
+await check("settings say which categories have no business", async () => {
+  const settings = (await import("../actions/get-settings.js")).default;
+  const s = await asOwner(() => settings.run({}));
+  assert.ok(s.noBusinessCategories.includes("Owner's pay"));
+  assert.ok(s.noBusinessCategories.includes("Loans & repayments"));
+  assert.ok(!s.noBusinessCategories.includes("Salaries"));
+});
+
 await finish();

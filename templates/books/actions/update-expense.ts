@@ -6,6 +6,7 @@ import { withNote } from "../server/lib/expense-note.js";
 import { expenseCategoryId } from "../server/lib/expenses.js";
 import { toKobo } from "../server/lib/money.js";
 import { reconcileDays } from "../server/lib/reconcile-days.js";
+import { NO_BUSINESS } from "../server/lib/setup.js";
 import { rows, run } from "../server/lib/sql.js";
 
 export default defineAction({
@@ -35,7 +36,9 @@ export default defineAction({
   }) => {
     const orgId = await ownerOrg();
     const [e] = await rows(
-      `SELECT id, occurred_on, raw_text FROM expenses WHERE org_id = ? AND code = ?`,
+      `SELECT e.id, e.occurred_on, e.raw_text, c.name AS category FROM expenses e
+         LEFT JOIN expense_categories c ON c.id = e.category_id
+        WHERE e.org_id = ? AND e.code = ?`,
       [orgId, code],
     );
     if (!e) throw new Error(`No expense ${code}.`);
@@ -45,7 +48,12 @@ export default defineAction({
       sets.push(`${col} = ?`);
       args.push(v);
     };
-    if (business) set("business_id", await businessIdBySlug(orgId, business));
+    // Owner's pay and money moved belong to no business: the category wins.
+    const finalCategory = category ?? (e.category as string | null);
+    if (finalCategory && NO_BUSINESS.includes(finalCategory)) {
+      if (category || business) set("business_id", null);
+    } else if (business)
+      set("business_id", await businessIdBySlug(orgId, business));
     if (category) set("category_id", await expenseCategoryId(orgId, category));
     if (amount != null) set("amount", toKobo(amount));
     if (occurredOn) set("occurred_on", occurredOn);

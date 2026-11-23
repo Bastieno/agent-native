@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { businessIdBySlug } from "./catalog.js";
+import { NO_BUSINESS } from "./setup.js";
 import { newId, nowIso } from "./ids.js";
 import { reconcileDays } from "./reconcile-days.js";
 import { num, rows, run } from "./sql.js";
@@ -106,9 +107,11 @@ export async function createExpense(orgId: string, e: NewExpense) {
     );
     if (twin) return { duplicateOf: twin } as const;
   }
-  const businessId = e.business
-    ? await businessIdBySlug(orgId, e.business)
-    : null;
+  // Owner's pay and money moved belong to no business, whatever was guessed.
+  const businessId =
+    e.business && !(e.category && NO_BUSINESS.includes(e.category))
+      ? await businessIdBySlug(orgId, e.business)
+      : null;
   const categoryId = e.category
     ? await expenseCategoryId(orgId, e.category)
     : null;

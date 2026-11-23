@@ -1,7 +1,7 @@
 import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { currentRole, memberOrg } from "../server/lib/access.js";
-import { DEFAULT_THRESHOLDS } from "../server/lib/setup.js";
+import { DEFAULT_THRESHOLDS, NO_BUSINESS } from "../server/lib/setup.js";
 import { rows } from "../server/lib/sql.js";
 
 export default defineAction({
@@ -41,6 +41,8 @@ export default defineAction({
         business: (c.business as string) ?? null,
       })),
       expenseCategories: expenseCategories.map((c) => c.name as string),
+      /** Categories that belong to no business (owner's pay, money moved). */
+      noBusinessCategories: NO_BUSINESS,
       connections: {
         whatsapp: !!(
           process.env.WHATSAPP_ACCESS_TOKEN &&

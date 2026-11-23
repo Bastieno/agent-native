@@ -151,12 +151,14 @@ function HistoryUpload() {
 function ExpenseSheet({
   expense,
   categories,
+  noBusiness,
   canEdit,
   onClose,
   onSave,
 }: {
   expense: Expense;
   categories: string[];
+  noBusiness: string[];
   canEdit: boolean;
   onClose: () => void;
   onSave: (patch: Partial<Expense> & { amountNaira?: number }) => void;
@@ -225,27 +227,18 @@ function ExpenseSheet({
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label>Business</Label>
-              <Select
-                disabled={!canEdit}
-                value={expense.business ?? undefined}
-                onValueChange={(v) => onSave({ business: v })}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Choose" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="lounge">Lounge</SelectItem>
-                  <SelectItem value="hub">Hub</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="space-y-1.5">
               <Label>Category</Label>
               <Select
                 disabled={!canEdit}
                 value={expense.category ?? undefined}
-                onValueChange={(v) => onSave({ category: v })}
+                onValueChange={(v) =>
+                  // Owner's pay and money moved belong to no business.
+                  onSave(
+                    noBusiness.includes(v)
+                      ? { category: v, business: null }
+                      : { category: v },
+                  )
+                }
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Choose" />
@@ -258,6 +251,28 @@ function ExpenseSheet({
                   ))}
                 </SelectContent>
               </Select>
+            </div>
+            <div className="space-y-1.5">
+              <Label>Business</Label>
+              {expense.category && noBusiness.includes(expense.category) ? (
+                <div className="flex h-9 items-center rounded-md border border-dashed border-border px-3 text-sm text-muted-foreground">
+                  Not a business cost
+                </div>
+              ) : (
+                <Select
+                  disabled={!canEdit}
+                  value={expense.business ?? undefined}
+                  onValueChange={(v) => onSave({ business: v })}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Choose" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="lounge">Lounge</SelectItem>
+                    <SelectItem value="hub">Hub</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="amount">Amount (₦)</Label>
@@ -591,6 +606,7 @@ export default function ExpensesPage() {
           key={selected.code}
           expense={selected}
           categories={categories}
+          noBusiness={settings?.noBusinessCategories ?? []}
           canEdit={!!settings?.canEdit}
           onClose={() => select(null)}
           onSave={(patch) => save(selected.code, patch)}
