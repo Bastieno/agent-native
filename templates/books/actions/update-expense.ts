@@ -7,6 +7,7 @@ import { expenseCategoryId } from "../server/lib/expenses.js";
 import { toKobo } from "../server/lib/money.js";
 import { reconcileDays } from "../server/lib/reconcile-days.js";
 import { NO_BUSINESS } from "../server/lib/setup.js";
+import { SALARIES, staffBusiness } from "../server/lib/staff.js";
 import { rows, run } from "../server/lib/sql.js";
 
 export default defineAction({
@@ -36,7 +37,7 @@ export default defineAction({
   }) => {
     const orgId = await ownerOrg();
     const [e] = await rows(
-      `SELECT e.id, e.occurred_on, e.raw_text, c.name AS category FROM expenses e
+      `SELECT e.id, e.occurred_on, e.raw_text, e.vendor, c.name AS category FROM expenses e
          LEFT JOIN expense_categories c ON c.id = e.category_id
         WHERE e.org_id = ? AND e.code = ?`,
       [orgId, code],
@@ -50,10 +51,15 @@ export default defineAction({
     };
     // Owner's pay and money moved belong to no business: the category wins.
     const finalCategory = category ?? (e.category as string | null);
+    // A salary goes to the business its person works for, unless one is given.
+    const staff =
+      category === SALARIES && !business
+        ? await staffBusiness(orgId, vendor ?? (e.vendor as string))
+        : null;
     if (finalCategory && NO_BUSINESS.includes(finalCategory)) {
       if (category || business) set("business_id", null);
-    } else if (business)
-      set("business_id", await businessIdBySlug(orgId, business));
+    } else if (business ?? staff)
+      set("business_id", await businessIdBySlug(orgId, (business ?? staff)!));
     if (category) set("category_id", await expenseCategoryId(orgId, category));
     if (amount != null) set("amount", toKobo(amount));
     if (occurredOn) set("occurred_on", occurredOn);
