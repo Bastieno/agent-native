@@ -259,6 +259,20 @@ function comparisonDays(
   return null;
 }
 
+/**
+ * Days in a row, newest first, whose checks all passed. A day with no sales
+ * was not checked, so it neither counts nor ends the run; tidying flags
+ * (receipts or categories to confirm, items with no cost) never end it.
+ */
+export function flagFreeRun(days: Pick<DayResult, "income" | "flags">[]) {
+  let run = 0;
+  for (const d of days) {
+    if (d.flags.some(SIGNIFICANT)) break;
+    if (d.income > 0) run++;
+  }
+  return run;
+}
+
 async function trendHistory(
   orgId: string,
   period: DigestPeriod,
@@ -270,12 +284,9 @@ async function trendHistory(
     `SELECT day, figures FROM reconciliations WHERE org_id = ? AND day <= ? ORDER BY day DESC`,
     [orgId, end],
   );
-  let flagFreeRun = 0;
-  for (const r of stored) {
-    const f = JSON.parse(r.figures) as DayResult;
-    if (f.flags.some(SIGNIFICANT)) break;
-    flagFreeRun++;
-  }
+  const run = flagFreeRun(
+    stored.map((r) => JSON.parse(r.figures) as DayResult),
+  );
   // Best income of an earlier period of the same kind.
   const incomeByDay = new Map<string, number>();
   for (const r of stored)
@@ -339,7 +350,7 @@ async function trendHistory(
   );
   const known = Number(history?.n ?? 0) >= COVERAGE * 30;
   return {
-    flagFreeRun,
+    flagFreeRun: run,
     bestEver,
     subscribers: known
       ? { new: subscribersNow.size - returning, returning }

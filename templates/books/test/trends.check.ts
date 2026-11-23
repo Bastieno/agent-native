@@ -160,3 +160,28 @@ check("weakest weekday is watch", () => {
   );
   assert.equal(has(s, "watch", "weakest_weekday", "Tuesday"), true);
 });
+
+check("the flag-free run counts only days with sales", async () => {
+  const { flagFreeRun } = await import("../server/lib/digest-figures.js");
+  const day = (income: number, kinds: string[] = []) => ({
+    income,
+    flags: kinds.map((kind) => ({ kind })) as never,
+  });
+  // Newest first: empty days neither count nor end the run.
+  assert.equal(
+    flagFreeRun([day(0), day(0), day(0), day(5000, ["cancelled"])]),
+    0,
+  );
+  assert.equal(
+    flagFreeRun([
+      day(0),
+      day(5000),
+      day(0),
+      day(4000),
+      day(3000, ["split_short"]),
+    ]),
+    2,
+  );
+  // Tidying flags never end it.
+  assert.equal(flagFreeRun([day(5000, ["needs_review"]), day(4000)]), 2);
+});
