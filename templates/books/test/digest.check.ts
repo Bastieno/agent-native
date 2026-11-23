@@ -151,6 +151,14 @@ await check(
     await asOwner(() =>
       record.run({
         ...base,
+        vendor: "Weeldrop",
+        amount: 40000,
+        category: "Owner's pay · Car fuel",
+      }),
+    );
+    await asOwner(() =>
+      record.run({
+        ...base,
         vendor: "Manager",
         amount: 50000,
         business: "lounge",
@@ -164,7 +172,12 @@ await check(
         end: "2026-11-08",
       }),
     );
-    assert.equal(figures.ownersPay, 10000000);
+    // Every kind of owner's pay adds up, and each kind is shown.
+    assert.equal(figures.ownersPay, 14000000);
+    assert.deepEqual(figures.ownersPayByKind, {
+      "Car fuel": 4000000,
+      Other: 10000000,
+    });
     assert.equal(figures.unitemised, 5000000);
     assert.equal(
       figures.combined.net,

@@ -1,6 +1,6 @@
 import { correctNote } from "../../shared/note-words.js";
 import { fuelOnly, guessExpense } from "./expense-guess.js";
-import { OWNERS_PAY } from "./setup.js";
+import { OWNER_KINDS } from "./setup.js";
 import { staffBusiness } from "./staff.js";
 import { createExpense } from "./expenses.js";
 import { readReceiptText } from "./receipt-text.js";
@@ -83,7 +83,7 @@ export async function recordReceiptsFromText(
       fuelOnly(r.note) &&
       !(await staffBusiness(orgId, r.payee ?? ""))
     )
-      guess = { ...guess, category: OWNERS_PAY, business: null };
+      guess = { ...guess, category: OWNER_KINDS.fuel, business: null };
     if (guess.notAnExpense) {
       out.push({
         pendingReceiptId: id,

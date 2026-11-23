@@ -1,4 +1,4 @@
-import { RETIRED_CATEGORIES } from "../server/lib/setup.js";
+import { offeredCategories } from "../server/lib/setup.js";
 import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { memberOrg } from "../server/lib/access.js";
@@ -15,8 +15,11 @@ export default defineAction({
       `SELECT name FROM expense_categories WHERE org_id = ? ORDER BY sort`,
       [orgId],
     ).then((found) =>
-      // Retired categories are kept for old data but not offered.
-      found.filter((c) => !(String(c.name) in RETIRED_CATEGORIES)),
+      // Retired categories are kept for old data but not offered; the kinds
+      // of owner's pay follow Owner's pay.
+      offeredCategories(found.map((c) => String(c.name))).map((name) => ({
+        name,
+      })),
     );
     return { categories: found.map((c) => c.name) };
   },

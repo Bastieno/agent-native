@@ -45,7 +45,7 @@ const { guessExpense, fuelOnly } =
 const { loadPayeeRules, matchPayeeRule } =
   await import("../server/lib/payee-rules.js");
 const { staffBusiness } = await import("../server/lib/staff.js");
-const { OWNERS_PAY } = await import("../server/lib/setup.js");
+const { OWNER_KINDS } = await import("../server/lib/setup.js");
 const rulesByOrg = new Map<
   string,
   Awaited<ReturnType<typeof loadPayeeRules>>
@@ -164,7 +164,7 @@ try {
           category = g.category;
           business = g.business;
           if (fuelOnly(note) && !(await staffBusiness(e.org_id, vendor))) {
-            category = OWNERS_PAY;
+            category = OWNER_KINDS.fuel;
             business = null;
           }
         }

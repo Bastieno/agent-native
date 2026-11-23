@@ -1,6 +1,6 @@
 import PDFDocument from "pdfkit";
 import type { DigestFigures } from "./digest-figures.js";
-import { periodLabel } from "./digest-render.js";
+import { ownerKinds, periodLabel } from "./digest-render.js";
 import { NOTO_SERIF_BOLD, NOTO_SERIF_REGULAR } from "./pdf-fonts.js";
 import { formatNaira as n } from "./money.js";
 import {
@@ -206,7 +206,7 @@ export async function renderDigestPdf(
   const notes: string[] = [];
   if (f.ownersPay > 0 || f.unitemised > 0)
     notes.push(
-      `Included in expenses: owner's pay ${n(f.ownersPay)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
+      `Included in expenses: owner's pay ${n(f.ownersPay)}${ownerKinds(f)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
     );
   if (f.stockBought > 0)
     notes.push(

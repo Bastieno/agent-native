@@ -2,7 +2,7 @@ import { defineAction } from "@agent-native/core";
 import { z } from "zod";
 import { currentRole, memberOrg } from "../server/lib/access.js";
 import { digestFigures, rangeTotals } from "../server/lib/digest-figures.js";
-import { DIVIDENDS } from "../server/lib/setup.js";
+import { DIVIDENDS, OWNERS_PAY } from "../server/lib/setup.js";
 import { addDays, daysBetween, lagosDay } from "../server/lib/lagos-time.js";
 import type { DayResult } from "../server/lib/reconcile.js";
 import { num, rows } from "../server/lib/sql.js";
@@ -17,7 +17,7 @@ const change = (now: number, before: number) =>
 
 export default defineAction({
   description:
-    "What the Overview screen shows for days start..end: profit and loss by business (income, cost of goods, gross profit, expenses, net) with the change from the period just before, money in and out by day, where the money went, up to three things to watch, the profit shared (dividends) and what is kept in the business after it, how stale the data is and how many things wait for review. Amounts are kobo.",
+    "What the Overview screen shows for days start..end: profit and loss by business (income, cost of goods, gross profit, expenses, net) with the change from the period just before, money in and out by day, where the money went, up to three things to watch, what the owner's pay went on, the profit shared (dividends) and what is kept in the business after it, how stale the data is and how many things wait for review. Amounts are kobo.",
   schema: z.object({
     start: z.string().describe("YYYY-MM-DD"),
     end: z.string().describe("YYYY-MM-DD, included"),
@@ -113,6 +113,15 @@ export default defineAction({
         .map(([category, amount]) => ({ category, amount })),
       expensesTotal: f.combined.expenses,
       ownersPay: f.ownersPay,
+      /** What the owner's pay went on, biggest first, with the category to filter by. */
+      ownersPayByKind: Object.entries(f.ownersPayByKind)
+        .filter(([, v]) => v > 0)
+        .sort((a, b) => b[1] - a[1])
+        .map(([kind, amount]) => ({
+          kind,
+          category: kind === "Other" ? OWNERS_PAY : `${OWNERS_PAY} · ${kind}`,
+          amount,
+        })),
       /** Paid out of profit: kept out of Net, then set against it. */
       profitShared,
       /** Net less the profit shared; below zero, more was shared than made. */

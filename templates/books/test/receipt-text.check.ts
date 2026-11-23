@@ -422,7 +422,7 @@ await check("guesses a category and business from the note", () => {
   // Airtime is the owner's own, for no business.
   assert.deepEqual(
     [g(null, "AIRTIME").category, g(null, "AIRTIME").business],
-    ["Owner's pay", null],
+    ["Owner's pay · Phone & data", null],
   );
   assert.equal(g("zzz").category, null);
   assert.equal(g(null).category, null);
@@ -463,11 +463,19 @@ await check(
       "For\nSupport",
     ]) {
       const g = guessExpense(note);
-      assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
+      assert.deepEqual(
+        [g.category, g.business],
+        ["Owner's pay · Gifts & support", null],
+        note,
+      );
     }
     for (const note of ["For snacks", "Snacks", "For snack"]) {
       const g = guessExpense(note);
-      assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
+      assert.deepEqual(
+        [g.category, g.business],
+        ["Owner's pay · Snacks & food", null],
+        note,
+      );
     }
     // Any kind of support is the owner's too.
     for (const note of [
@@ -479,13 +487,18 @@ await check(
       "Support fer schocl fees",
     ]) {
       const g = guessExpense(note);
-      assert.deepEqual([g.category, g.business], ["Owner's pay", null], note);
+      assert.deepEqual(
+        [g.category, g.business],
+        ["Owner's pay · Gifts & support", null],
+        note,
+      );
     }
     // A list of several things, or a salary, is not taken as the owner's pay.
-    assert.notEqual(guessExpense("Salary|Support").category, "Owner's pay");
-    assert.notEqual(
-      guessExpense("10k sand, 5k support").category,
-      "Owner's pay",
+    assert.ok(
+      !guessExpense("Salary|Support").category?.startsWith("Owner's pay"),
+    );
+    assert.ok(
+      !guessExpense("10k sand, 5k support").category?.startsWith("Owner's pay"),
     );
   },
 );

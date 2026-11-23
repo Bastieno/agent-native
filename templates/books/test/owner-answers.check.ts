@@ -30,14 +30,22 @@ await check("diesel, power and repairs are the Hub's", () => {
 await check(
   "gifts, condolences, data and delegate fees are the owner's",
   () => {
-    for (const note of [
-      "Birthday gift for Henry",
-      "Gift to Lois",
-      "Condolences",
-      "For data",
-      "Delegale fee",
+    // Each is filed under the kind of owner's pay it is.
+    for (const [note, kind] of [
+      ["Birthday gift for Henry", "Owner's pay · Gifts & support"],
+      ["Gift to Lois", "Owner's pay · Gifts & support"],
+      ["Condolences", "Owner's pay · Gifts & support"],
+      ["For data", "Owner's pay · Phone & data"],
+      ["Delegale fee", "Owner's pay · Fees"],
+      ["Donation for Asun Night", "Owner's pay · Gifts & support"],
+      ["For Al subscriplion", "Owner's pay · Subscriptions & software"],
+      ["Nelflix subscriplion", "Owner's pay · Subscriptions & software"],
+      [
+        "Top up for Nelilix subscription",
+        "Owner's pay · Subscriptions & software",
+      ],
     ])
-      assert.deepEqual(g(note), ["Owner's pay", null], note);
+      assert.deepEqual(g(note), [kind, null], note);
   },
 );
 
@@ -191,12 +199,38 @@ await check("dollar purchases are the owner's pay", async () => {
   // subscriptions and servers, and never come back to the business.
   assert.equal(
     parseNarration("DOLLAR 200 USD for software")?.category,
-    "Owner's pay",
+    "Owner's pay · Subscriptions & software",
   );
   assert.equal(parseNarration("DOLLAR 200 USD for software")?.business, null);
   const list = (await import("../actions/list-expense-categories.js")).default;
   const { categories } = await asOwner(() => list.run({}));
   assert.equal(categories.includes("Dollar purchases"), false);
+  // The kinds of owner's pay follow Owner's pay itself in the list.
+  const at = categories.indexOf("Owner's pay");
+  assert.deepEqual(categories.slice(at, at + 7), [
+    "Owner's pay",
+    "Owner's pay · Car fuel",
+    "Owner's pay · Phone & data",
+    "Owner's pay · Subscriptions & software",
+    "Owner's pay · Gifts & support",
+    "Owner's pay · Snacks & food",
+    "Owner's pay · Fees",
+  ]);
+  // A name asking for the old category lands in subscriptions.
+  const e = await asOwner(() =>
+    record.run({
+      occurredOn: "2026-11-20",
+      paidWith: "transfer",
+      vendor: "Card",
+      amount: 30000,
+      category: "Dollar purchases",
+    }),
+  );
+  const [row] = await query(
+    `SELECT c.name FROM expenses e JOIN expense_categories c ON c.id = e.category_id WHERE e.code = ?`,
+    [(e as { code: string }).code],
+  );
+  assert.equal(row.name, "Owner's pay · Subscriptions & software");
 });
 
 await finish();

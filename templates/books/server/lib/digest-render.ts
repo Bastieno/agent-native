@@ -32,6 +32,21 @@ function flagSummary(f: DigestFigures): string[] {
 }
 
 /** The short WhatsApp message. Never names customers, senders or staff. */
+/** " (car fuel ₦40,000, phone & data ₦12,000)": the biggest kinds of owner's pay. */
+export function ownerKinds(f: DigestFigures, max = 3): string {
+  const kinds = Object.entries(f.ownersPayByKind ?? {})
+    .filter(([, v]) => v > 0)
+    .sort((a, b) => b[1] - a[1]);
+  // Only plain Owner's pay: nothing to break down.
+  if (!kinds.length || (kinds.length === 1 && kinds[0][0] === "Other"))
+    return "";
+  const shown = kinds
+    .slice(0, max)
+    .map(([k, v]) => `${k.toLowerCase()} ${n(v)}`);
+  if (kinds.length > max) shown.push("…");
+  return ` (${shown.join(", ")})`;
+}
+
 export function renderWhatsApp(f: DigestFigures, link: string): string {
   const lines = [`Books · ${TITLES[f.period]} · ${periodLabel(f)}`];
   for (const b of ["lounge", "hub"]) {
@@ -47,7 +62,9 @@ export function renderWhatsApp(f: DigestFigures, link: string): string {
   if (f.ownersPay > 0 || f.unitemised > 0)
     lines.push(
       [
-        f.ownersPay > 0 ? `of which owner's pay ${n(f.ownersPay)}` : null,
+        f.ownersPay > 0
+          ? `of which owner's pay ${n(f.ownersPay)}${ownerKinds(f)}`
+          : null,
         f.unitemised > 0
           ? `sent for stock, not itemised ${n(f.unitemised)}`
           : null,
@@ -111,7 +128,7 @@ export function renderEmailDigest(
   );
   if (f.ownersPay > 0 || f.unitemised > 0)
     paragraphs.push(
-      `Included in expenses: owner's pay ${n(f.ownersPay)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
+      `Included in expenses: owner's pay ${n(f.ownersPay)}${ownerKinds(f)}; sent to a manager for stock with no breakdown ${n(f.unitemised)}. Net before owner's pay: ${n(f.combined.net + f.ownersPay)}.`,
     );
   if (f.stockBought > 0)
     paragraphs.push(

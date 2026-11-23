@@ -208,7 +208,7 @@ await check(
       got.map((r: any) => [Number(r.amount), r.category, r.business]),
       [
         [800000, "Diesel / power", "hub"],
-        [900000, "Owner's pay", null],
+        [900000, "Owner's pay · Car fuel", null],
       ],
     );
   },

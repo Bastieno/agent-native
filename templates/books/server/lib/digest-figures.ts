@@ -2,7 +2,13 @@
  * Everything a digest says, computed in code. The agent only words it.
  * Money is kobo; days are Lagos `YYYY-MM-DD`.
  */
-import { MANAGER_FLOAT, OWNERS_PAY, REFUNDS } from "./setup.js";
+import {
+  MANAGER_FLOAT,
+  OWNERS_PAY,
+  OWNERS_PAY_ALL,
+  ownerKindLabel,
+  REFUNDS,
+} from "./setup.js";
 import { addDays, daysBetween, weekdayIndex } from "./lagos-time.js";
 import type { DayResult, Flag } from "./reconcile.js";
 import { reconcileOne } from "./reconcile-days.js";
@@ -56,6 +62,8 @@ export interface DigestFigures {
   expenseByCategory: Record<string, number>;
   /** Paid to the owner as their own pay; included in expenses, shown apart. */
   ownersPay: number;
+  /** What the owner's pay went on: "Car fuel", "Phone & data"… and "Other". */
+  ownersPayByKind: Record<string, number>;
   /** Stock bought in the period: already in cost of goods, so not in expenses or net. */
   stockBought: number;
   /** Money moved (loans, transfers between accounts, client purchases), not counted in expenses. */
@@ -402,9 +410,19 @@ export async function digestFigures(
   const allSales = await loadSales(orgId, start, end);
   const sales = paidCompleted(allSales);
   const expenses = await expenseRows(orgId, start, end);
+  // The kinds of owner's pay are one line, Owner's pay, with what it went on
+  // kept apart.
   const expenseByCategory: Record<string, number> = {};
-  for (const e of expenses)
-    add(expenseByCategory, e.category ?? "Uncategorised", e.amount);
+  const ownersPayByKind: Record<string, number> = {};
+  for (const e of expenses) {
+    const owner = e.category != null && OWNERS_PAY_ALL.includes(e.category);
+    if (owner) add(ownersPayByKind, ownerKindLabel(e.category!), e.amount);
+    add(
+      expenseByCategory,
+      owner ? OWNERS_PAY : (e.category ?? "Uncategorised"),
+      e.amount,
+    );
+  }
   const { businesses, combined } = totals(days);
 
   const incomeByMethod: Record<string, number> = {};
@@ -541,6 +559,7 @@ export async function digestFigures(
     marginByCategory: current.marginByCategory,
     expenseByCategory,
     ownersPay: expenseByCategory[OWNERS_PAY] ?? 0,
+    ownersPayByKind,
     stockBought: days.reduce((a, d) => a + (d.stockBought ?? 0), 0),
     notCosts: await movedRows(orgId, start, end),
     unitemised: expenseByCategory[MANAGER_FLOAT] ?? 0,

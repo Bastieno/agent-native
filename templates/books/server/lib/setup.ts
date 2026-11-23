@@ -17,6 +17,29 @@ export const CATEGORY_BUSINESS: Record<string, "lounge" | "hub"> = {
 
 /** Money to the owner for their own pay, kept out of the running costs. */
 export const OWNERS_PAY = "Owner's pay";
+/**
+ * What the owner's pay went on (the owner's answer, 2026-11-23), so it can
+ * be tracked. Each counts as Owner's pay; plain Owner's pay is "Other".
+ */
+export const OWNER_KINDS = {
+  fuel: "Owner's pay · Car fuel",
+  phone: "Owner's pay · Phone & data",
+  software: "Owner's pay · Subscriptions & software",
+  gifts: "Owner's pay · Gifts & support",
+  snacks: "Owner's pay · Snacks & food",
+  fees: "Owner's pay · Fees",
+} as const;
+/** Owner's pay and every kind of it. */
+export const OWNERS_PAY_ALL: string[] = [
+  OWNERS_PAY,
+  ...Object.values(OWNER_KINDS),
+];
+/** The short name of a kind of owner's pay ("Car fuel"); "Other" for plain Owner's pay. */
+export function ownerKindLabel(category: string): string {
+  return category === OWNERS_PAY
+    ? "Other"
+    : category.slice(OWNERS_PAY.length + 3);
+}
 /** Money sent to a manager to buy stock, with no breakdown of what was bought. */
 export const MANAGER_FLOAT = "Manager float (not itemised)";
 
@@ -37,7 +60,7 @@ export const CLIENT = "Paid for a client (repaid)";
  */
 export const DOLLARS = "Dollar purchases";
 export const RETIRED_CATEGORIES: Record<string, string> = {
-  [DOLLARS]: "Owner's pay",
+  [DOLLARS]: OWNER_KINDS.software,
 };
 /** Money that moved but is not a running cost: counted apart, never in expenses or profit. */
 export const DIVIDENDS = "Dividends & profit share";
@@ -47,7 +70,7 @@ export const TV = "TV & subscriptions";
 /** Money given back to customers: taken off that business's income, not a cost. */
 export const REFUNDS = "Refunds to customers";
 /** Categories that belong to no business: the owner's own pay and money moved. */
-export const NO_BUSINESS = [OWNERS_PAY, ...NOT_COSTS];
+export const NO_BUSINESS = [...OWNERS_PAY_ALL, ...NOT_COSTS];
 
 export const EXPENSE_CATEGORIES = [
   "Food & drink stock",
@@ -60,7 +83,7 @@ export const EXPENSE_CATEGORIES = [
   "Equipment & furniture",
   "Taxes & levies",
   "Commissions",
-  OWNERS_PAY,
+  ...OWNERS_PAY_ALL,
   MANAGER_FLOAT,
   ...NOT_COSTS,
   REFUNDS,
@@ -68,6 +91,23 @@ export const EXPENSE_CATEGORIES = [
   "Services",
   "Other",
 ];
+
+/**
+ * Categories in the order they are offered: as stored, but with the kinds of
+ * owner's pay straight after Owner's pay (an existing org gets them added at
+ * the end), and retired ones left out.
+ */
+export function offeredCategories(names: string[]): string[] {
+  const kinds = OWNERS_PAY_ALL.slice(1);
+  const out = names.filter(
+    (n) => !(n in RETIRED_CATEGORIES) && !kinds.includes(n),
+  );
+  const at = out.indexOf(OWNERS_PAY);
+  const have = kinds.filter((k) => names.includes(k));
+  if (at === -1) return [...out, ...have];
+  out.splice(at + 1, 0, ...have);
+  return out;
+}
 
 export interface Thresholds {
   houseLeakagesPerDay: number; // kobo, at cost

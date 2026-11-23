@@ -3,6 +3,7 @@ import {
   IconAlertTriangle,
   IconArrowDownRight,
   IconArrowUpRight,
+  IconChevronDown,
   IconChevronRight,
   IconClockExclamation,
   IconTrendingUp,
@@ -21,6 +22,11 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   useSetHeaderActions,
   useSetPageTitle,
@@ -398,31 +404,72 @@ export default function OverviewPage() {
                 No expenses in this period.
               </p>
             )}
-            {data.spendByCategory.map((s) => (
-              <Link
-                key={s.category}
-                to={withPeriod(
-                  `/expenses?category=${encodeURIComponent(s.category)}`,
-                  start,
-                  end,
-                )}
-                className="group block rounded-md px-2 py-1.5 hover:bg-accent"
-              >
-                <div className="flex justify-between gap-2 text-sm">
-                  <span>{s.category}</span>
-                  <span className="tabular-nums">{naira(s.amount)}</span>
-                </div>
-                <div className="mt-1 h-1.5 rounded-full bg-muted">
-                  <div
-                    className="h-1.5 rounded-full"
-                    style={{
-                      width: `${maxSpend ? Math.max(2, (s.amount / maxSpend) * 100) : 0}%`,
-                      background: "var(--money-out)",
-                    }}
-                  />
-                </div>
-              </Link>
-            ))}
+            {data.spendByCategory.map((s) =>
+              s.category === "Owner's pay" &&
+              data.ownersPayByKind.some((k) => k.kind !== "Other") ? (
+                // Owner's pay is one line; open it to see what it went on.
+                <Collapsible key={s.category}>
+                  <CollapsibleTrigger className="group block w-full rounded-md px-2 py-1.5 text-left hover:bg-accent">
+                    <div className="flex justify-between gap-2 text-sm">
+                      <span className="flex items-center gap-1">
+                        {s.category}
+                        <IconChevronDown className="h-3.5 w-3.5 text-muted-foreground transition-transform group-data-[state=open]:rotate-180" />
+                      </span>
+                      <span className="tabular-nums">{naira(s.amount)}</span>
+                    </div>
+                    <div className="mt-1 h-1.5 rounded-full bg-muted">
+                      <div
+                        className="h-1.5 rounded-full"
+                        style={{
+                          width: `${maxSpend ? Math.max(2, (s.amount / maxSpend) * 100) : 0}%`,
+                          background: "var(--money-out)",
+                        }}
+                      />
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="space-y-0.5 pb-1 pl-4">
+                    {data.ownersPayByKind.map((k) => (
+                      <Link
+                        key={k.kind}
+                        to={withPeriod(
+                          `/expenses?category=${encodeURIComponent(k.category)}`,
+                          start,
+                          end,
+                        )}
+                        className="flex justify-between gap-2 rounded-md px-2 py-1 text-xs text-muted-foreground hover:bg-accent hover:text-foreground"
+                      >
+                        <span>{k.kind}</span>
+                        <span className="tabular-nums">{naira(k.amount)}</span>
+                      </Link>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              ) : (
+                <Link
+                  key={s.category}
+                  to={withPeriod(
+                    `/expenses?category=${encodeURIComponent(s.category)}`,
+                    start,
+                    end,
+                  )}
+                  className="group block rounded-md px-2 py-1.5 hover:bg-accent"
+                >
+                  <div className="flex justify-between gap-2 text-sm">
+                    <span>{s.category}</span>
+                    <span className="tabular-nums">{naira(s.amount)}</span>
+                  </div>
+                  <div className="mt-1 h-1.5 rounded-full bg-muted">
+                    <div
+                      className="h-1.5 rounded-full"
+                      style={{
+                        width: `${maxSpend ? Math.max(2, (s.amount / maxSpend) * 100) : 0}%`,
+                        background: "var(--money-out)",
+                      }}
+                    />
+                  </div>
+                </Link>
+              ),
+            )}
             <Link
               to={withPeriod("/expenses", start, end)}
               className="flex items-center gap-1 px-2 pt-2 text-xs text-muted-foreground hover:text-foreground"

@@ -112,6 +112,14 @@ text you already have. Loans, profit payouts and commissions stay pending (they
 are not running costs), as do slips it can't read (Providus, photos). Read
 those with `record-expense-from-receipt`.
 
+Owner's pay is broken down by what it went on, so the owner can track it:
+`Owner's pay · Car fuel`, `· Phone & data` (data, airtime), `· Subscriptions &
+software` (dollar purchases), `· Gifts & support`, `· Snacks & food`, `· Fees`
+(delegate and training fees); plain `Owner's pay` is "Other". Every kind counts
+as Owner's pay (no business, in total expenses); Overview shows Owner's pay as
+one line that opens to the kinds, and digests name the biggest kinds. File new
+owner's pay under the kind it is.
+
 Two expense categories are kept apart in digests: **Owner's pay** (money to the
 owner for their own pay) and **Manager float (not itemised)** (money sent to
 someone to buy stock, with no breakdown). Both count in expenses; digests show
@@ -120,9 +128,10 @@ Lounge; only internet (Starlink, network) goes to the Hub unless told otherwise.
 
 Money that moved but is not a running cost has its own categories (loans and
 repayments, moved between accounts, paid for a client and repaid, dividends
-and profit share). Dollar purchases are Owner's pay (the owner's own
-subscriptions and servers); the old "Dollar purchases" category is no longer
-offered and a name asking for it is filed under Owner's pay. They are marked `is_cost = 0`: kept in
+and profit share). Dollar purchases are Owner's pay · Subscriptions &
+software (the owner's own subscriptions and servers); the old "Dollar
+purchases" category is no longer offered and a name asking for it is filed
+there. They are marked `is_cost = 0`: kept in
 the expense list but left out of expenses, profit and spike checks, and shown in
 digests as "moved, not counted as costs". Dividends and profit share are paid out of profit, so Overview (`get-overview`: `profitShared`, `keptInBusiness`) sets them against Net: "Kept in the business" below zero means more was shared than the businesses made. `set-payee-rule` remembers who money is
 usually sent to (for example a person used to move money between accounts, at or

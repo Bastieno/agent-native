@@ -1,6 +1,6 @@
 import { parseNarration } from "../../shared/narration.js";
 import { correctNote } from "../../shared/note-words.js";
-import { DIVIDENDS, LOANS, OWNERS_PAY, REFUNDS, TV } from "./setup.js";
+import { DIVIDENDS, LOANS, OWNER_KINDS, REFUNDS, TV } from "./setup.js";
 
 /**
  * Guesses an expense's category and business from the note on a transfer
@@ -357,12 +357,30 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
         business: /\bhub\b|subscri/i.test(text) ? "hub" : null,
         because: "refund",
       };
+    // The owner's own subscriptions (AI tools, Netflix; often misread as
+    // "Al", "Nelflix") and donations.
+    if (/\bne[tl][fi]?l?i[xl]+|\ba[il]\s+subscri/i.test(text))
+      return {
+        ...none,
+        category: OWNER_KINDS.software,
+        because: "owner's own",
+      };
+    if (/\bdonation/i.test(text))
+      return { ...none, category: OWNER_KINDS.gifts, because: "owner's own" };
     // Gifts, condolences, data and training fees are the owner's own.
     if (
       /\b(gift|birthday|condolences?|data|delega\w*)\b/i.test(text) &&
       !/\d+(\.\d+)?k\b|\d{3,}|,/.test(text)
     )
-      return { ...none, category: OWNERS_PAY, because: "owner's own" };
+      return {
+        ...none,
+        category: /\bdata\b/i.test(text)
+          ? OWNER_KINDS.phone
+          : /\bdelega/i.test(text)
+            ? OWNER_KINDS.fees
+            : OWNER_KINDS.gifts,
+        because: "owner's own",
+      };
   }
   // Support of any kind (family, church, school fees…) and "For snacks" are the
   // owner's own money, not Lounge costs. A list of several things with amounts,
@@ -371,15 +389,14 @@ export function guessExpense(note: string | null, kind?: string | null): Guess {
     const text = correctNote(note).replace(/\s+/g, " ").trim();
     const support = /\bsupport\b/i.test(text);
     const list = /\d+(\.\d+)?k\b|\d{3,}|,/i.test(text);
-    if (
-      (support && !list && !/salar/i.test(text)) ||
-      /^(for\s+)?snacks?$/i.test(text)
-    )
-      return { ...none, category: OWNERS_PAY, because: "owner's own" };
+    if (support && !list && !/salar/i.test(text))
+      return { ...none, category: OWNER_KINDS.gifts, because: "owner's own" };
+    if (/^(for\s+)?snacks?$/i.test(text))
+      return { ...none, category: OWNER_KINDS.snacks, because: "owner's own" };
   }
   // Airtime is the owner's own, for no business.
   if (kind === "AIRTIME")
-    return { ...none, category: OWNERS_PAY, because: "airtime" };
+    return { ...none, category: OWNER_KINDS.phone, because: "airtime" };
   if (!note) return none;
   const text = ` ${note.toLowerCase()} `;
   if (LOAN.test(text)) return { ...none, category: LOANS, because: "loan" };

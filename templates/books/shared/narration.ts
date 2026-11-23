@@ -125,7 +125,7 @@ export const NARRATION_TAGS: NarrationTag[] = [
   {
     tag: "DOLLAR",
     // Dollars pay for the owner's own subscriptions and servers.
-    category: "Owner's pay",
+    category: "Owner's pay · Subscriptions & software",
     business: null,
     example: "DOLLAR 200 USD for software",
   },

@@ -369,7 +369,7 @@ function ExpenseSheet({
  * set against Net on Overview; the rest (loans, transfers) is not a cost.
  */
 function businessNote(category: string | null) {
-  if (category === "Owner's pay") return "Neither business";
+  if (category?.startsWith("Owner's pay")) return "Neither business";
   if (category === "Dividends & profit share") return "Paid from profit";
   return "Not a business cost";
 }
