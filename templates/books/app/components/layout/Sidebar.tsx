@@ -3,6 +3,7 @@ import {
   IconArrowDownLeft,
   IconArrowUpRight,
   IconChecklist,
+  IconCoins,
   IconLayoutDashboard,
   IconLogout,
   IconReportAnalytics,
@@ -22,6 +23,7 @@ const navItems = [
   { icon: IconChecklist, label: "Review", href: "/review" },
   { icon: IconArrowDownLeft, label: "Money in", href: "/sales" },
   { icon: IconArrowUpRight, label: "Money out", href: "/expenses" },
+  { icon: IconCoins, label: "Loans", href: "/loans" },
   { icon: IconReportAnalytics, label: "Reports", href: "/reports" },
   { icon: IconSettings, label: "Settings", href: "/settings" },
 ];

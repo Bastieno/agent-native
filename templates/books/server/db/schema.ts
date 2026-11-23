@@ -150,6 +150,26 @@ export const staffBusinesses = table("staff_businesses", {
   ...ownableColumns(),
 });
 
+/** A Money out loan marked as not a loan given (the rest need no row). */
+export const loans = table("loans", {
+  id: text("id").primaryKey(),
+  expenseId: text("expense_id").notNull(),
+  notALoan: integer("not_a_loan").notNull().default(0),
+  ...created,
+  ...ownableColumns(),
+});
+
+/** Money paid back on a loan; the loan is its Money out entry. */
+export const loanRepayments = table("loan_repayments", {
+  id: text("id").primaryKey(),
+  expenseId: text("expense_id").notNull(),
+  amount: integer("amount").notNull(),
+  paidOn: text("paid_on").notNull(),
+  note: text("note"),
+  ...created,
+  ...ownableColumns(),
+});
+
 export const receiptFiles = table("receipt_files", {
   id: text("id").primaryKey(),
   mimeType: text("mime_type").notNull(),

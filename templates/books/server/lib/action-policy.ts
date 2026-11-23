@@ -54,6 +54,10 @@ export const ACTION_POLICY: Record<string, Audience> = {
   "reconcile-day": "everyone",
   "view-screen": "everyone",
   navigate: "everyone",
+  "list-loans": "everyone",
+  "record-loan-repayment": "owner",
+  "delete-loan-repayment": "owner",
+  "set-loan-status": "owner",
 };
 
 /** Not actions: the CLI entry point. */

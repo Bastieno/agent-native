@@ -112,6 +112,16 @@ text you already have. Loans, profit payouts and commissions stay pending (they
 are not running costs), as do slips it can't read (Providus, photos). Read
 those with `record-expense-from-receipt`.
 
+**Loans** (the Loans page, `/loans`): loans the owner gives out. Every Money out
+entry filed under Loans & repayments is a loan (payee = borrower), so filing one
+is how a loan is added. `list-loans` (status owed by default, or paid,
+not_a_loan, all) gives each loan's amount, repaid, balance, repayments and
+status (outstanding, part_paid, paid, not_a_loan); `record-loan-repayment`
+(amount in naira, or `full: true`; never more than the balance),
+`delete-loan-repayment` and `set-loan-status` (`notALoan` for the business
+paying back its own lender). Repayments are not sales: never Money in. The open
+loan is `loanCode` in navigation state.
+
 Owner's pay is broken down by what it went on, so the owner can track it:
 `Owner's pay · Car fuel`, `· Phone & data` (data, airtime), `· Subscriptions &
 software` (dollar purchases), `· Gifts & support`, `· Snacks & food`, `· Fees`

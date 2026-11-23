@@ -13,6 +13,8 @@ export interface NavigationState {
   path?: string;
   /** Selected expense code (E-12) on the Expenses page, digest id on a report. */
   expenseCode?: string;
+  /** The loan open on the Loans page: its Money out code. */
+  loanCode?: string;
   digestId?: string;
   start?: string;
   end?: string;
@@ -31,6 +33,7 @@ export function useNavigationState() {
       view: viewForPath(location.pathname),
       path: appPath(location.pathname),
       ...(params.get("expense") ? { expenseCode: params.get("expense")! } : {}),
+      ...(params.get("loan") ? { loanCode: params.get("loan")! } : {}),
       ...(digestMatch ? { digestId: digestMatch[1] } : {}),
       ...(params.get("start") ? { start: params.get("start")! } : {}),
       ...(params.get("end") ? { end: params.get("end")! } : {}),
@@ -90,6 +93,7 @@ const VIEWS: Record<string, string> = {
   review: "/review",
   "money-in": "/sales",
   "money-out": "/expenses",
+  loans: "/loans",
   today: "/",
   expenses: "/expenses",
   sales: "/sales",

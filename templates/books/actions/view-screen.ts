@@ -25,6 +25,7 @@ export default defineAction({
     const nav = (navigation ?? {}) as {
       view?: string;
       expenseCode?: string;
+      loanCode?: string;
       digestId?: string;
     };
     if (nav.expenseCode)
@@ -32,13 +33,18 @@ export default defineAction({
         expenseCode: nav.expenseCode,
         hint: "update-expense works on this code",
       };
+    if (nav.loanCode)
+      screen.selected = {
+        loanCode: nav.loanCode,
+        hint: "list-loans has it (status all); record-loan-repayment and set-loan-status work on this code",
+      };
     if (nav.digestId)
       screen.selected = {
         digestId: nav.digestId,
         hint: "get-digest returns its figures",
       };
     screen.views =
-      "overview (/), review, sales (Money in), expenses (Money out), reports, settings";
+      "overview (/), review, sales (Money in), expenses (Money out), loans, reports, settings";
 
     if (Object.keys(screen).length === 0) {
       return "No application state found. Is the app running?";

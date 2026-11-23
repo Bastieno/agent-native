@@ -360,4 +360,33 @@ export const BOOKS_MIGRATIONS: MigrationEntry[] = [
     visibility TEXT NOT NULL DEFAULT 'private'
     )`,
   },
+  {
+    // Loans the owner gives out: one row per Money out loan, only once it is
+    // marked as not a loan given (the rest needs no row).
+    version: 35,
+    sql: `CREATE TABLE IF NOT EXISTS loans (
+    id TEXT PRIMARY KEY,
+    expense_id TEXT NOT NULL,
+    not_a_loan INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL,
+    owner_email TEXT NOT NULL DEFAULT 'local@localhost',
+    org_id TEXT,
+    visibility TEXT NOT NULL DEFAULT 'private'
+    )`,
+  },
+  {
+    // Money paid back on a loan (the loan is its Money out entry).
+    version: 36,
+    sql: `CREATE TABLE IF NOT EXISTS loan_repayments (
+    id TEXT PRIMARY KEY,
+    expense_id TEXT NOT NULL,
+    amount INTEGER NOT NULL,
+    paid_on TEXT NOT NULL,
+    note TEXT,
+    created_at TEXT NOT NULL,
+    owner_email TEXT NOT NULL DEFAULT 'local@localhost',
+    org_id TEXT,
+    visibility TEXT NOT NULL DEFAULT 'private'
+    )`,
+  },
 ];
