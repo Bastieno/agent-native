@@ -177,7 +177,7 @@ await check("an expense can't be confirmed before it is filed", async () => {
   await asOwner(() => update.run({ code, category: "Supplies" }));
   await assert.rejects(
     () => asOwner(() => update.run({ code, status: "confirmed" })),
-    /Lounge or the Hub/,
+    /Lounge, the Hub or both/,
   );
   // Filed in one go with the confirm: accepted.
   await asOwner(() =>
