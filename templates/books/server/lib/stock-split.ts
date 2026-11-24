@@ -70,7 +70,7 @@ const RULES: [RegExp, Key][] = [
   ],
   [/\bwa[tl]er\b/g, "water"],
   [
-    /\bcoke\b|\bfanta\b|\bsprite\b|\bpepsi\b|\b7\s*up\b|\bfayrouz\b|\bholl?an[dc]ia\b|\bviju\b|\bex[ol]tic\b|\bexolic\b|\bchivita\b|\b(5|five)\s*alive\b|\bcoco\s*samba\b|\bsoft\s*drinks?\b|\byogh?urt\b|\bmilk\b|\bschweppes\b|\bjuice\b/g,
+    /\bcoke\b|\bfanta\b|\bsprite\b|\bpepsi\b|\b7\s*up\b|\bfayrouz\b|\bholl?an[dc]ia\b|\bviju\b|\bex[ol]tic\b|\bexolic\b|\bchivita\b|\bactive\b|^\W*\d+\s+more\b|\b(5|five)\s*alive\b|\bcoco\s*samba\b|\bsoft\s*drinks?\b|\byogh?urt\b|\bmilk\b|\bschweppes\b|\bjuice\b/g,
     "soft",
   ],
   // Shared: general items used across the menu
@@ -238,6 +238,8 @@ export interface StockSplit {
   parts: { group: StockKey; amount: number }[];
   /** The note's lines do not add up to what was paid. */
   mismatch: boolean;
+  /** Shared by Moniebook cost prices: the note gave no amounts. */
+  estimated?: boolean;
 }
 
 function finish(amounts: Map<StockKey, number>, mismatch: boolean): StockSplit {
@@ -257,7 +259,11 @@ const whole = (key: StockKey, amount: number, mismatch = false) =>
 export function splitStock(
   note: string | null | undefined,
   amount: number,
-  opts: { float?: boolean } = {},
+  opts: {
+    float?: boolean;
+    /** Each group's cost price per unit (kobo), from Moniebook. */
+    groupCosts?: Partial<Record<StockGroupId, number>>;
+  } = {},
 ): StockSplit {
   if (opts.float || !note?.trim() || amount <= 0)
     return whole(UNSORTED, amount);
@@ -304,6 +310,10 @@ export function splitStock(
     const groups = new Set(read.map((r) => r.group).filter(Boolean));
     const unknown = read.some((r) => !r.known);
     if (groups.size === 1 && !unknown) return whole([...groups][0]!, amount);
+    if (groups.size > 1 && !unknown && opts.groupCosts) {
+      const est = byCostPrice(lines, read, opts.groupCosts, amount);
+      if (est) return est;
+    }
     if (groups.size === 0 && !unknown) {
       if (read.some((r) => r.context === "gas")) return whole(UNSORTED, amount);
       if (read.some((r) => r.context === "pepper"))
@@ -347,6 +357,80 @@ export function splitStock(
   }
   if (biggest) scaled.set(biggest, scaled.get(biggest)! + amount - given);
   return finish(scaled, true);
+}
+
+const DRINK_GROUPS = new Set<string>([
+  "water",
+  "soft",
+  "energy",
+  "beer",
+  "bitters",
+  "liquor",
+]);
+const NUMBER_WORDS: Record<string, number> = {
+  half: 0.5,
+  a: 1,
+  an: 1,
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10,
+  twelve: 12,
+};
+/** How many a line bought: its leading number ("10 packs water"), else one. */
+function quantityOf(line: string): number {
+  const m = /^\W*(?:for\s+)?(\d+(?:\.\d+)?|[a-z]+)\b/i.exec(line);
+  if (!m) return 1;
+  const n = Number(m[1]);
+  if (Number.isFinite(n) && n > 0) return n;
+  return NUMBER_WORDS[m[1].toLowerCase()] ?? 1;
+}
+
+/**
+ * A list of drinks without amounts ("2 origin, 1 maltina, 10 packs water"),
+ * shared among its groups by quantity times each group's cost price (the
+ * owner's answer, 2026-11-24). An estimate: packs and crates are taken as
+ * alike. Ice in a drinks list is Smirnoff Ice; other general items are left
+ * out. Null when a line isn't a drink or a group has no cost price.
+ */
+function byCostPrice(
+  lines: string[],
+  read: ReturnType<typeof classify>[],
+  costs: Partial<Record<StockGroupId, number>>,
+  amount: number,
+): StockSplit | null {
+  const weight = new Map<StockGroupId, number>();
+  for (let i = 0; i < lines.length; i++) {
+    const r = read[i];
+    const g: StockGroupId | null =
+      r.group ?? (r.shared && /\bice\b/i.test(lines[i]) ? "beer" : null);
+    if (!g) {
+      if (r.shared) continue;
+      return null;
+    }
+    const cost = costs[g];
+    if (!DRINK_GROUPS.has(g) || !cost) return null;
+    weight.set(g, (weight.get(g) ?? 0) + quantityOf(lines[i]) * cost);
+  }
+  const total = [...weight.values()].reduce((a, b) => a + b, 0);
+  if (weight.size < 2 || total <= 0) return null;
+  const out = new Map<StockKey, number>();
+  let given = 0;
+  let biggest: StockGroupId | null = null;
+  for (const [g, w] of weight) {
+    const share = Math.round((w * amount) / total);
+    out.set(g, share);
+    given += share;
+    if (!biggest || w > weight.get(biggest)!) biggest = g;
+  }
+  out.set(biggest!, out.get(biggest!)! + amount - given);
+  return { ...finish(out, false), estimated: true };
 }
 
 /** The one place the items without an amount point to, or null. */

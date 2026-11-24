@@ -4,6 +4,7 @@ import {
   SHARED,
   UNSORTED,
   stockKeyName,
+  type StockGroupId,
   type StockKey,
 } from "../../shared/stock-groups.js";
 import { expenseNote } from "./expense-note.js";
@@ -33,6 +34,37 @@ interface StockRow {
 export const isStock = (category: string | null | undefined) =>
   !!category && STOCK_CATEGORIES.includes(category);
 
+/**
+ * Each menu group's cost price per unit (kobo): the average of its items'
+ * latest Moniebook costs. Used to share out a drinks list with no amounts.
+ */
+export async function groupUnitCosts(
+  orgId: string,
+): Promise<Partial<Record<StockGroupId, number>>> {
+  const found = await rows(
+    `SELECT i.id, i.name, c.name AS category, k.unit_cost, k.effective_from
+       FROM items i
+       LEFT JOIN item_categories c ON c.id = i.category_id
+       JOIN item_costs k ON k.item_id = i.id AND k.org_id = i.org_id
+      WHERE i.org_id = ? AND k.unit_cost > 0
+      ORDER BY k.effective_from`,
+    [orgId],
+  );
+  const latest = new Map<string, { group: StockGroupId; cost: number }>();
+  for (const r of found) {
+    const g = saleGroup(r.name as string, (r.category as string) ?? null);
+    if (g) latest.set(r.id as string, { group: g, cost: num(r.unit_cost) });
+  }
+  const sum = new Map<StockGroupId, { total: number; n: number }>();
+  for (const { group, cost } of latest.values()) {
+    const s = sum.get(group) ?? { total: 0, n: 0 };
+    sum.set(group, { total: s.total + cost, n: s.n + 1 });
+  }
+  return Object.fromEntries(
+    [...sum].map(([g, s]) => [g, Math.round(s.total / s.n)]),
+  );
+}
+
 /** The split of each stock purchase given; other expenses get null. */
 export async function purchaseSplits(
   orgId: string,
@@ -40,6 +72,7 @@ export async function purchaseSplits(
 ): Promise<Map<string, PurchaseSplit | null>> {
   const out = new Map<string, PurchaseSplit | null>();
   const stock = expenses.filter((e) => isStock(e.category));
+  const groupCosts = stock.length ? await groupUnitCosts(orgId) : {};
   const set = new Map<string, { group: StockKey; amount: number }[]>();
   if (stock.length) {
     for (const r of await rows(
@@ -72,6 +105,7 @@ export async function purchaseSplits(
         : {
             ...splitStock(expenseNote(e.raw_text), num(e.amount), {
               float: e.category === MANAGER_FLOAT,
+              groupCosts,
             }),
             byOwner: false,
           },

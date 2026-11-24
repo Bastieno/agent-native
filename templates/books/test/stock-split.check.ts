@@ -279,4 +279,73 @@ await check("an item said to be for a group goes there", () => {
   );
 });
 
+// Mixed drink lists without amounts (the owner's answer, 2026-11-24): shared
+// by quantity times each group's Moniebook cost price, as an estimate.
+const costs = { water: 20000, soft: 40000, beer: 100000, energy: 150000 };
+
+await check(
+  "a mixed drinks list is split by cost price, as an estimate",
+  () => {
+    const s = splitStock("10 packs water, 2 packs coke", k(28000), {
+      groupCosts: costs,
+    });
+    // water 10 x 200 = 2000, soft 2 x 400 = 800: 5/7 and 2/7 of the payment.
+    assert.deepEqual(asMap(s), { water: k(20000), soft: k(8000) });
+    assert.equal(s.estimated, true);
+    assert.equal(s.mismatch, false);
+  },
+);
+
+await check("quantities default to one and the parts add up", () => {
+  const s = splitStock("2 origin, 1 Heineken, 1 maltina, fayrouz", k(100285), {
+    groupCosts: costs,
+  });
+  const m = asMap(s);
+  assert.equal(m.beer + m.soft, k(100285));
+  assert.ok(m.beer > m.soft);
+  assert.equal(s.estimated, true);
+});
+
+await check("ice in a drinks list is Smirnoff Ice", () => {
+  const m = asMap(
+    splitStock("1 big ice, 2 trophy, 1 maltina", k(50000), {
+      groupCosts: costs,
+    }),
+  );
+  assert.deepEqual(Object.keys(m).sort(), ["beer", "soft"]);
+});
+
+await check(
+  "without a cost price, or with food in it, it stays not sorted",
+  () => {
+    assert.deepEqual(
+      asMap(splitStock("10 packs water, 2 packs coke", k(28000))),
+      { unsorted: k(28000) },
+    );
+    assert.deepEqual(
+      asMap(splitStock("1 bitter, 2 coke", k(10000), { groupCosts: costs })),
+      { unsorted: k(10000) },
+    );
+    assert.deepEqual(
+      asMap(
+        splitStock("Chicken, Chips, Cabbage", k(65000), { groupCosts: costs }),
+      ),
+      { unsorted: k(65000) },
+    );
+    assert.deepEqual(
+      asMap(splitStock("For drinks", k(65000), { groupCosts: costs })),
+      { unsorted: k(65000) },
+    );
+  },
+);
+
+await check("Chivita Active and More are soft drinks", () => {
+  const m = asMap(
+    splitStock("2 packs coke, 1 active, 1 More, 5 packs water", k(47450), {
+      groupCosts: costs,
+    }),
+  );
+  assert.deepEqual(Object.keys(m).sort(), ["soft", "water"]);
+});
+
 await finish();

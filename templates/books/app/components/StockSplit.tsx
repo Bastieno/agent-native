@@ -19,6 +19,8 @@ export interface StockSplitValue {
   parts: { group: StockKey; amount: number }[];
   mismatch: boolean;
   byOwner: boolean;
+  /** Shared by Moniebook cost prices: the note gave no amounts. */
+  estimated?: boolean;
 }
 
 const FROM_NOTE = "from-note";
@@ -107,7 +109,11 @@ export function StockSplitBox({
         </p>
       ) : (
         <p className="text-xs text-muted-foreground">
-          {shown.byOwner ? "Filed by you." : "Read from the note."}
+          {shown.byOwner
+            ? "Filed by you."
+            : shown.estimated
+              ? "No amounts in the note, so shared by Moniebook cost prices: an estimate."
+              : "Read from the note."}
         </p>
       )}
     </div>

@@ -146,6 +146,35 @@ await check("the owner can file a purchase under a group", async () => {
   assert.equal(r.unsorted.bought, 2000000);
 });
 
+await check(
+  "a mixed drinks list is split by Moniebook cost prices",
+  async () => {
+    const { code } = (await asOwner(() =>
+      record.run({
+        ...day,
+        occurredOn: "2026-11-07",
+        vendor: "Drinks depot",
+        amount: 50000,
+        category: "Food & drink stock",
+        note: "2 crates origin beer, 2 packs coke",
+      }),
+    )) as { code: string };
+    const r = await asOwner(() =>
+      listExpenses.run({ start: "2026-11-07", end: "2026-11-07" }),
+    );
+    const e = r.expenses.find((x) => x.code === code)!;
+    assert.equal(e.stockSplit?.estimated, true);
+    assert.deepEqual(
+      e.stockSplit?.parts.map((p) => p.group),
+      ["soft", "beer"],
+    );
+    assert.equal(
+      e.stockSplit!.parts.reduce((a, p) => a + p.amount, 0),
+      5000000,
+    );
+  },
+);
+
 await check("only stock purchases have a group", async () => {
   const hub = (
     await asOwner(() =>
