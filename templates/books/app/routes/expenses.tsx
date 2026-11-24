@@ -227,7 +227,7 @@ function ExpenseSheet({
   const missing = !expense.category
     ? "Choose a category first."
     : !expense.business && !noBusiness.includes(expense.category)
-      ? "Choose the Lounge or the Hub first."
+      ? "Choose the Lounge, the Hub or both first."
       : null;
   const [imageFailed, setImageFailed] = useState(false);
   return (
@@ -335,6 +335,7 @@ function ExpenseSheet({
                   <SelectContent>
                     <SelectItem value="lounge">Lounge</SelectItem>
                     <SelectItem value="hub">Hub</SelectItem>
+                    <SelectItem value="both">Both (half each)</SelectItem>
                   </SelectContent>
                 </Select>
               )}
@@ -450,6 +451,7 @@ export default function ExpensesPage() {
   const business = (params.get("business") ?? undefined) as
     | "lounge"
     | "hub"
+    | "both"
     | undefined;
   const status = (params.get("status") ?? undefined) as
     | "confirmed"
@@ -544,7 +546,7 @@ export default function ExpensesPage() {
       {
         code,
         ...(patch.business
-          ? { business: patch.business as "lounge" | "hub" }
+          ? { business: patch.business as "lounge" | "hub" | "both" }
           : {}),
         ...(patch.category ? { category: patch.category } : {}),
         ...(patch.amountNaira ? { amount: patch.amountNaira } : {}),
@@ -616,13 +618,14 @@ export default function ExpensesPage() {
             value={business ?? "all"}
             onValueChange={(v) => setParam("business", v === "all" ? null : v)}
           >
-            <SelectTrigger className="h-8 w-32" aria-label="Business">
+            <SelectTrigger className="h-8 w-36" aria-label="Business">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Both</SelectItem>
+              <SelectItem value="all">Any business</SelectItem>
               <SelectItem value="lounge">Lounge</SelectItem>
               <SelectItem value="hub">Hub</SelectItem>
+              <SelectItem value="both">Half each</SelectItem>
             </SelectContent>
           </Select>
           <Select

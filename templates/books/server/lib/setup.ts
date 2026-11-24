@@ -4,6 +4,8 @@ import { newId, nowIso } from "./ids.js";
 export const BUSINESSES = [
   { slug: "lounge", name: "Restaurant & Lounge" },
   { slug: "hub", name: "Hub" },
+  // A cost both share (taxes and levies, waste, electricity): half each.
+  { slug: "both", name: "Both (half each)" },
 ] as const;
 
 /** Moniebook category → business, seeded per org and editable afterwards. */

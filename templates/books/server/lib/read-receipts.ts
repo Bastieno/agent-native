@@ -73,7 +73,7 @@ export async function recordReceiptsFromText(
     let guess = rule
       ? {
           category: rule.category as string | null,
-          business: rule.businessSlug as "lounge" | "hub" | null,
+          business: rule.businessSlug as "lounge" | "hub" | "both" | null,
           notAnExpense: false,
         }
       : guessed;

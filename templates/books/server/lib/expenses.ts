@@ -67,7 +67,7 @@ export interface NewExpense {
   occurredOn: string;
   vendor: string;
   amount: number; // kobo
-  business?: "lounge" | "hub";
+  business?: "lounge" | "hub" | "both";
   category?: string;
   paidWith?: "cash" | "transfer" | "card" | "unknown";
   note?: string;

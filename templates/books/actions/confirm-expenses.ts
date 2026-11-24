@@ -13,7 +13,7 @@ export default defineAction({
     group: z
       .object({
         category: z.string().nullable(),
-        business: z.enum(["lounge", "hub"]).nullable(),
+        business: z.enum(["lounge", "hub", "both"]).nullable(),
       })
       .optional(),
   }),

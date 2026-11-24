@@ -38,6 +38,7 @@ Ephemeral UI state is stored in the SQL `application_state` table, accessed via 
 - Work someone did for a business that is not a repair or a salary (cleaners, security, a photographer, a consultant, an accountant) is Services, for that business.
 - DSTV (subscriptions: TV & subscriptions; fixes and decoders: Repairs) is the Lounge's.
 - Diesel / power and Repairs are the Hub's; Internet (Starlink, Canal+) is the Hub's; other running costs are the Lounge's.
+- Costs both businesses share are split half each (business `both`, "Both (half each)"; the odd kobo goes to the Lounge): taxes and levies (land use charge, IGR, refuse and waste collection) and electricity tokens. Diesel and the generator stay the Hub's. A narration can say `BOTH` (`BOTH SERVICE waste disposal`); `TAX` is both unless LOUNGE or HUB is written.
 - "For fuel" paid to someone on the staff list is generator fuel (Diesel / power, Hub); paid to anyone else (a filling station) it is the owner's car: Owner's pay.
 - A salary goes to the business its person works for (`list-staff`, `set-staff-business`; Settings → Categories → Staff).
 - Refunds to customers (a subscription, hub usage, part of what they paid) are their own category and come off that business's income. Paying someone back for stock they bought is that stock, not a refund.

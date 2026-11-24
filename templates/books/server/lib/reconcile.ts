@@ -422,8 +422,14 @@ export function reconcileDay(input: DayInput): DayResult {
   const costs = input.expenses.filter((e) => e.isCost !== false);
   const operating = costs.filter((e) => !e.isStock);
   for (const e of costs) {
-    if (!e.isStock)
-      add(expensesByBusiness, e.businessSlug ?? "unassigned", e.amount);
+    if (e.isStock) {
+      // stock is cost of goods, not an expense
+    } else if (e.businessSlug === "both") {
+      // Shared half each; the odd kobo goes to the Lounge.
+      const hub = Math.floor(e.amount / 2);
+      add(expensesByBusiness, "lounge", e.amount - hub);
+      add(expensesByBusiness, "hub", hub);
+    } else add(expensesByBusiness, e.businessSlug ?? "unassigned", e.amount);
     add(expensesByCategory, e.categoryId ?? "uncategorised", e.amount);
     if (e.amount > thresholds.largeExpense)
       flags.push({ kind: "large_expense", expenseId: e.id, amount: e.amount });

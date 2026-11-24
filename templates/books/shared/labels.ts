@@ -5,6 +5,7 @@ import { formatNaira as n } from "./money.js";
 export const BUSINESS_NAMES: Record<string, string> = {
   lounge: "Lounge",
   hub: "Hub",
+  both: "Both",
   unassigned: "Unassigned",
 };
 

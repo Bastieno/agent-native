@@ -59,7 +59,7 @@ export async function savePayeeRule(
   input: {
     payee: string;
     category: string;
-    business?: "lounge" | "hub";
+    business?: "lounge" | "hub" | "both";
     minAmount?: number; // kobo
   },
 ) {

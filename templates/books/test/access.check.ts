@@ -45,7 +45,8 @@ await check("setup seeds once", async () => {
   });
   assert.deepEqual(
     b.rows.map((r: any) => r.slug),
-    ["hub", "lounge"],
+    // "both": a cost the two share, half each.
+    ["both", "hub", "lounge"],
   );
   const c = await exec.execute({
     sql: `SELECT name, business_id FROM item_categories WHERE org_id='org1' ORDER BY name`,

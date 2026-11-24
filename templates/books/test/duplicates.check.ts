@@ -17,6 +17,7 @@ await check(
     assert.deepEqual(
       rows.map((r: any) => [r.slug, Number(r.n)]),
       [
+        ["both", 1],
         ["hub", 1],
         ["lounge", 1],
       ],

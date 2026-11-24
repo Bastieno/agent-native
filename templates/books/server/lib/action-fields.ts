@@ -6,9 +6,11 @@ export const expenseFields = {
   vendor: z.string().describe("Who was paid"),
   amount: z.number().positive().describe("Amount in naira"),
   business: z
-    .enum(["lounge", "hub"])
+    .enum(["lounge", "hub", "both"])
     .optional()
-    .describe("lounge = Restaurant & Lounge"),
+    .describe(
+      "lounge = Restaurant & Lounge; both = shared half each (taxes and levies, waste disposal, electricity tokens)",
+    ),
   category: z
     .string()
     .optional()

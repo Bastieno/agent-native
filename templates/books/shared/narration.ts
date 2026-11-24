@@ -20,7 +20,7 @@ export interface NarrationTag {
   tag: string;
   category: string;
   /** Business when none is written; null for money that is not a running cost. */
-  business: "lounge" | "hub" | null;
+  business: "lounge" | "hub" | "both" | null;
   /** A narration that uses this tag. */
   example: string;
   /** Lounge stock for one menu group (Water, Beer, Shawarma, …). */
@@ -94,8 +94,9 @@ export const NARRATION_TAGS: NarrationTag[] = [
   {
     tag: "TAX",
     category: "Taxes & levies",
-    business: "lounge",
-    example: "LOUNGE TAX land use charge 2026",
+    // Both businesses', half each, unless LOUNGE or HUB is written.
+    business: "both",
+    example: "TAX land use charge 2026",
   },
   {
     tag: "COMMISSION",
@@ -154,9 +155,11 @@ export const NARRATION_TAGS: NarrationTag[] = [
   },
 ];
 
-const BUSINESS_WORDS: Record<string, "lounge" | "hub"> = {
+const BUSINESS_WORDS: Record<string, "lounge" | "hub" | "both"> = {
   lounge: "lounge",
   hub: "hub",
+  // A cost both businesses share, half each.
+  both: "both",
 };
 
 /** Text recognition swaps look-alike characters; compare on a folded form. */
@@ -204,11 +207,12 @@ const businessOf = (word: string) =>
   Object.keys(BUSINESS_WORDS).find((b) => same(word, b)) as
     | "lounge"
     | "hub"
+    | "both"
     | undefined;
 
 export interface ParsedNarration {
   category: string;
-  business: "lounge" | "hub" | null;
+  business: "lounge" | "hub" | "both" | null;
   details: string;
   tag: string;
   stockGroup?: StockGroupId;
@@ -223,7 +227,7 @@ export function parseNarration(
     .split(/[\s:,.\-–]+/)
     .filter(Boolean);
   if (words.length < 1) return null;
-  let business: "lounge" | "hub" | undefined;
+  let business: "lounge" | "hub" | "both" | undefined;
   let tag: NarrationTag | undefined;
   let used = 0;
   for (let i = 0; i < Math.min(2, words.length); i++) {
@@ -255,7 +259,7 @@ export function narrationGuide(): string {
   return [
     "How to write the narration on every transfer:",
     "BUSINESS TAG what it was for",
-    "BUSINESS is LOUNGE or HUB. Leave it out for the usual one: Diesel, repairs and internet are the Hub's, the rest the Lounge's.",
+    "BUSINESS is LOUNGE, HUB or BOTH (half each). Leave it out for the usual one: diesel, repairs and internet are the Hub's; taxes, waste and electricity tokens are both; the rest the Lounge's.",
     "",
     "Lounge stock: one payment per menu group, with the amount on each line. Nylon, serviette and transport count as Shared; gas goes with the group it is written under.",
     ...NARRATION_TAGS.filter((t) => t.stockGroup).map(

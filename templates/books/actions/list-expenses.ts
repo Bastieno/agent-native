@@ -14,7 +14,7 @@ export default defineAction({
     end: z.string(),
     status: z.enum(["confirmed", "needs_review"]).optional(),
     category: z.string().optional(),
-    business: z.enum(["lounge", "hub"]).optional(),
+    business: z.enum(["lounge", "hub", "both"]).optional(),
     stockGroup: z.enum(STOCK_KEYS as [StockKey, ...StockKey[]]).optional(),
     q: z
       .string()

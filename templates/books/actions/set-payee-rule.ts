@@ -10,7 +10,7 @@ export default defineAction({
   schema: z.object({
     payee: z.string().describe("The payee's name, as on the transfer"),
     category: z.string().describe("Expense category name"),
-    business: z.enum(["lounge", "hub"]).optional(),
+    business: z.enum(["lounge", "hub", "both"]).optional(),
     minAmount: z
       .number()
       .positive()

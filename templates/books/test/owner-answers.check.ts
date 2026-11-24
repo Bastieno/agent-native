@@ -19,7 +19,8 @@ const g = (note: string) => {
 
 await check("diesel, power and repairs are the Hub's", () => {
   assert.deepEqual(g("For Fuel"), ["Diesel / power", "hub"]);
-  assert.deepEqual(g("For electricity token"), ["Diesel / power", "hub"]);
+  // Electricity tokens are now shared half each (the owner's answer, 2026-11-24).
+  assert.deepEqual(g("For electricity token"), ["Diesel / power", "both"]);
   assert.deepEqual(g("Balance for Car Fix"), ["Repairs", "hub"]);
   assert.deepEqual(parseNarration("DIESEL 40 litres")?.business, "hub");
   assert.deepEqual(parseNarration("REPAIR door lock")?.business, "hub");

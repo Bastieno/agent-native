@@ -11,7 +11,7 @@ import { DIVIDENDS, LOANS, OWNER_KINDS, REFUNDS, TV } from "./setup.js";
 
 export interface Guess {
   category: string | null;
-  business: "lounge" | "hub" | null;
+  business: "lounge" | "hub" | "both" | null;
   notAnExpense: boolean;
   because: string | null;
   /** The note was written in the transfer-note format: taken as said, not guessed. */
@@ -20,7 +20,7 @@ export interface Guess {
 
 type Rule = {
   category: string;
-  business: "lounge" | "hub" | null;
+  business: "lounge" | "hub" | "both" | null;
   words: string[];
 };
 
@@ -47,13 +47,18 @@ const RULES: Rule[] = [
     ],
   },
   {
+    // Electricity tokens power both businesses: half each (the owner's
+    // answer, 2026-11-24). Diesel and the generator stay the Hub's.
+    category: "Diesel / power",
+    business: "both",
+    words: ["token", "electricity", "nepa", "ikedc", "ibedc", "prepaid meter"],
+  },
+  {
     category: "Diesel / power",
     // The owner's answer (2026-11-23): power and the generator are the Hub's.
     business: "hub",
     words: [
-      "token",
       "credit",
-      "electricity",
       "diesel",
       "fuel",
       "petrol",
@@ -73,8 +78,9 @@ const RULES: Rule[] = [
     words: ["commission"],
   },
   {
+    // Taxes, levies and waste disposal are both businesses': half each.
     category: "Taxes & levies",
-    business: null,
+    business: "both",
     words: [
       "igr",
       "taxpayer",

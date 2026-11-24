@@ -114,8 +114,9 @@ function TransferNotes() {
           <div className="mt-2 grid gap-1 text-xs text-muted-foreground sm:grid-cols-3">
             <span>
               <span className="font-medium text-foreground">1. Business</span>{" "}
-              LOUNGE or HUB. Leave it out for the usual one: diesel, repairs and
-              internet are the Hub&apos;s, the rest the Lounge&apos;s.
+              LOUNGE, HUB or BOTH (half each). Leave it out for the usual one:
+              diesel, repairs and internet are the Hub&apos;s; taxes, waste and
+              electricity tokens are both; the rest the Lounge&apos;s.
             </span>
             <span>
               <span className="font-medium text-foreground">2. Tag</span> one

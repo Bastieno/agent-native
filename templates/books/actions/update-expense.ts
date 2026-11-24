@@ -15,7 +15,7 @@ export default defineAction({
     "Change an expense by its code (E-12): business, category, amount (naira), date, how it was paid, who was paid (vendor), what it was for (note, e.g. to correct a misread slip), or confirm it.",
   schema: z.object({
     code: z.string(),
-    business: z.enum(["lounge", "hub"]).optional(),
+    business: z.enum(["lounge", "hub", "both"]).optional(),
     category: z.string().optional(),
     amount: z.number().positive().optional(),
     occurredOn: z.string().optional(),
@@ -65,7 +65,7 @@ export default defineAction({
       const finalBusiness = business ?? staff ?? (e.business as string | null);
       if (!NO_BUSINESS.includes(finalCategory) && !finalBusiness)
         throw new Error(
-          "Choose the Lounge or the Hub before confirming this expense.",
+          "Choose the Lounge, the Hub or both before confirming this expense.",
         );
     }
     if (finalCategory && NO_BUSINESS.includes(finalCategory)) {

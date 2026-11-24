@@ -80,7 +80,7 @@ export default function ReviewPage() {
       {
         group: {
           category: g.category,
-          business: g.business as "lounge" | "hub" | null,
+          business: g.business as "lounge" | "hub" | "both" | null,
         },
       },
       {
