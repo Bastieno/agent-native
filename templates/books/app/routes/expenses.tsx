@@ -5,6 +5,7 @@ import {
   IconCircleCheck,
   IconDotsVertical,
   IconFileZip,
+  IconSearch,
   IconX,
 } from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
@@ -154,6 +155,55 @@ function HistoryUpload() {
         </DropdownMenuContent>
       </DropdownMenu>
     </>
+  );
+}
+
+/**
+ * Finds entries: a code (E-1190, or 1190) on any date, or words in who was
+ * paid or what it was for in the period showing. Typing settles before the
+ * address changes, so the list doesn't jump on every key; Enter opens the
+ * entry when only one is found.
+ */
+function SearchBox({
+  value,
+  onSearch,
+  onEnter,
+}: {
+  value: string;
+  onSearch: (v: string) => void;
+  /** Enter: search now, and open the entry if only one is found. */
+  onEnter: (v: string) => void;
+}) {
+  const [text, setText] = useState(value);
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const latest = useRef(value);
+  latest.current = value;
+  useEffect(() => setText(value), [value]);
+  useEffect(() => {
+    clearTimeout(timer.current);
+    if (text.trim() === latest.current) return;
+    timer.current = setTimeout(() => {
+      if (text.trim() !== latest.current) onSearch(text.trim());
+    }, 300);
+    return () => clearTimeout(timer.current);
+  }, [text]);
+  return (
+    <div className="relative w-full sm:w-52">
+      <IconSearch className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+      <Input
+        type="search"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key !== "Enter") return;
+          clearTimeout(timer.current);
+          onEnter(text.trim());
+        }}
+        placeholder="Search, or E-1190"
+        aria-label="Search Money out"
+        className="h-8 pl-8"
+      />
+    </div>
   );
 }
 
@@ -408,16 +458,21 @@ export default function ExpensesPage() {
   const stockGroup = (params.get("stockGroup") ?? undefined) as
     | StockKey
     | undefined;
+  const q = params.get("q")?.trim() || undefined;
   const query = {
     start,
     end,
+    ...(q ? { q } : {}),
     ...(category ? { category } : {}),
     ...(stockGroup ? { stockGroup } : {}),
     ...(business ? { business } : {}),
     ...(status ? { status } : {}),
   };
   const qc = useQueryClient();
-  const { data } = useActionQuery("list-expenses", query);
+  const { data, isPlaceholderData, isFetching } = useActionQuery(
+    "list-expenses",
+    query,
+  );
   const { data: settings } = useActionQuery("get-settings", {});
   const update = useActionMutation("update-expense");
   const selectedCode = params.get("expense");
@@ -511,11 +566,35 @@ export default function ExpensesPage() {
     );
   }
 
-  const filtered = !!(category || business || status || stockGroup);
+  // Enter in the search box opens the entry when one is found (opening it
+  // while typing would take the keyboard away mid-code).
+  const openOnFind = useRef<string | null>(null);
+  useEffect(() => {
+    // Wait for this search's own results, not the list still showing.
+    if (!q || openOnFind.current !== q || !data) return;
+    if (isPlaceholderData || isFetching) return;
+    openOnFind.current = null;
+    if (expenses.length === 1) select(expenses[0].code);
+  }, [q, data, expenses, isPlaceholderData, isFetching]);
+
+  const filtered = !!(category || business || status || stockGroup || q);
   return (
     <div className="@container flex min-h-full flex-1 flex-col gap-4 p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
+          <SearchBox
+            value={q ?? ""}
+            onSearch={(v) => setParam("q", v || null)}
+            onEnter={(v) => {
+              // Already searched: open what was found now.
+              if (v && v === q && data && !isPlaceholderData && !isFetching) {
+                if (expenses.length === 1) select(expenses[0].code);
+                return;
+              }
+              openOnFind.current = v || null;
+              setParam("q", v || null);
+            }}
+          />
           <Select
             value={category ?? "all"}
             onValueChange={(v) => setParam("category", v === "all" ? null : v)}
@@ -582,6 +661,7 @@ export default function ExpensesPage() {
                   "business",
                   "status",
                   "stockGroup",
+                  "q",
                   "page",
                 ])
                   next.delete(k);

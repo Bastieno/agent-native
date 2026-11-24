@@ -8,7 +8,7 @@ import { purchaseSplits } from "../server/lib/stock-groups.js";
 
 export default defineAction({
   description:
-    "Expenses for days start..end (inclusive), newest first, optionally only those awaiting review, in one category ('Uncategorised' for none) for one business, or with some of it in one Lounge menu group (`stockGroup`: water, soft, energy, beer, bitters, liquor, meals, shawarma, shared, unsorted). Each has `note`, what it was for, and a stock purchase its `stockSplit` among the groups (byOwner when the owner set it, mismatch when its note lines don't add up). Amounts are kobo.",
+    "Expenses for days start..end (inclusive), newest first, optionally only those awaiting review, in one category ('Uncategorised' for none) for one business, or with some of it in one Lounge menu group (`stockGroup`: water, soft, energy, beer, bitters, liquor, meals, shawarma, shared, unsorted). Each has `note`, what it was for, and a stock purchase its `stockSplit` among the groups (byOwner when the owner set it, mismatch when its note lines don't add up). `q` searches: an entry's code (E-12, or 12) finds it on any date; words find entries in the period by who was paid or what it was for. Amounts are kobo.",
   schema: z.object({
     start: z.string(),
     end: z.string(),
@@ -16,11 +16,24 @@ export default defineAction({
     category: z.string().optional(),
     business: z.enum(["lounge", "hub"]).optional(),
     stockGroup: z.enum(STOCK_KEYS as [StockKey, ...StockKey[]]).optional(),
+    q: z
+      .string()
+      .optional()
+      .describe(
+        "An entry's code (E-12) on any date, or words in the payee or note",
+      ),
   }),
   http: { method: "GET" },
-  run: async ({ start, end, status, category, business, stockGroup }) => {
+  run: async ({ start, end, status, category, business, stockGroup, q }) => {
     const orgId = await memberOrg();
     const filters = { sql: "", args: [] as unknown[] };
+    const search = q?.trim() ?? "";
+    // "E-1190", "e1190", "E 1190" or "1190": that entry, whatever the period.
+    const codeAsked = /^(e\s*-?\s*)?(\d+)$/i.exec(search);
+    if (codeAsked) {
+      filters.sql += " AND e.code = ?";
+      filters.args.push(`E-${Number(codeAsked[2])}`);
+    }
     if (status) {
       filters.sql += " AND e.status = ?";
       filters.args.push(status);
@@ -40,10 +53,19 @@ export default defineAction({
          FROM expenses e
          LEFT JOIN businesses b ON b.id = e.business_id
          LEFT JOIN expense_categories c ON c.id = e.category_id
-        WHERE e.org_id = ? AND e.occurred_on >= ? AND e.occurred_on <= ?${filters.sql}
+        WHERE e.org_id = ?${codeAsked ? "" : " AND e.occurred_on >= ? AND e.occurred_on <= ?"}${filters.sql}
         ORDER BY e.occurred_on DESC`,
-      [orgId, start, end, ...filters.args],
+      [orgId, ...(codeAsked ? [] : [start, end]), ...filters.args],
     );
+    // Words: every one must appear in the payee or the note as shown.
+    if (search && !codeAsked) {
+      const words = search.toLowerCase().split(/\s+/);
+      found = found.filter((e) => {
+        const text =
+          `${e.vendor} ${expenseNote(e.raw_text as string) ?? ""}`.toLowerCase();
+        return words.every((w) => text.includes(w));
+      });
+    }
     const splits = await purchaseSplits(orgId, found as any);
     if (stockGroup)
       found = found.filter((e) =>
