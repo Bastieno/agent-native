@@ -144,7 +144,9 @@ await check("drinks are told apart", () => {
   assert.deepEqual(one("A pack of Monster"), ["energy"]);
   assert.deepEqual(one("1 pack red bull"), ["energy"]);
   assert.deepEqual(one("1 carton origin bitter"), ["bitters"]);
-  assert.deepEqual(one("Black bullet"), ["bitters"]);
+  assert.deepEqual(one("Black bullet"), ["energy"]);
+  assert.deepEqual(one("1 pack smirnoff double black"), ["energy"]);
+  assert.deepEqual(one("1 crate smirnoff ice"), ["beer"]);
   assert.deepEqual(one("For liquor"), ["liquor"]);
   assert.deepEqual(one("2 bottles red label"), ["liquor"]);
   assert.deepEqual(one("1 pack maltina"), ["soft"]);
@@ -181,16 +183,18 @@ await check("sale items are grouped by name and Moniebook category", () => {
     ["POWER HORSE", "Drinks", "energy"],
     ["ORIGIN BEER", "Drinks", "beer"],
     ["GUINNESS MEDIUM STOUT", "Drinks", "beer"],
-    ["Smirnoff Double Black Can", "Drinks", "beer"],
+    ["Smirnoff Double Black Can", "Drinks", "energy"],
     ["SMIRNOFF BIG", "Drinks", "beer"],
     ["ORIGIN BITTER", "Drinks", "bitters"],
-    ["Black Bullet", "Drinks", "bitters"],
+    ["Black Bullet", "Drinks", "energy"],
+    ["Black Bullet", "Energy drinks", "energy"],
     ["RED LABEL", "Liquors", "liquor"],
     ["Chicken and Chips (Bundled)", "Meals", "meals"],
     ["Shawarma with Extra Chicken", "Meals", "shawarma"],
     ["Combo 2 Chicken and Chips + 1 Shawarma", "Meals", "meals"],
     ["Double Sausage Shawarma (Bundled)", "Shawarma", "shawarma"],
     ["Heineken", "Beer", "beer"],
+    ["More", "Beer", "beer"],
     ["HUB MONTHLY SUBSCRIPTION PREMIUM", "Subscription", null],
     ["Something", null, null],
   ];
@@ -339,13 +343,14 @@ await check(
   },
 );
 
-await check("Chivita Active and More are soft drinks", () => {
+// More is a beer (the owner, 2026-11-24).
+await check("Chivita Active is a soft drink and More a beer", () => {
   const m = asMap(
     splitStock("2 packs coke, 1 active, 1 More, 5 packs water", k(47450), {
       groupCosts: costs,
     }),
   );
-  assert.deepEqual(Object.keys(m).sort(), ["soft", "water"]);
+  assert.deepEqual(Object.keys(m).sort(), ["beer", "soft", "water"]);
 });
 
 await finish();

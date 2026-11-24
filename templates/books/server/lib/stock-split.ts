@@ -49,28 +49,30 @@ const RULES: [RegExp, Key][] = [
   [/\bsausages?\b/g, "shawarma"],
   [/\bbread\b/g, "shawarma"],
   // Drinks
-  [/\bred\s*bull\b|\bmonster\b|\bpower\s*horse\b/g, "energy"],
+  // Black Bullet and Smirnoff Double Black are Energy drinks (the owner,
+  // 2026-11-24), as in Moniebook.
   [
-    /\b((or[iy]j?g?in|orijin|arigin|action)\s+)?bitters?\b|\bblack\s*bullet\b|\bsatibo\b/g,
+    /\bred\s*bull\b|\bmonster\b|\bpower\s*horse\b|\bblack\s*bullet\b|\b(smirnoff\s+)?d[eo]u?ble\s*black\b/g,
+    "energy",
+  ],
+  [
+    /\b((or[iy]j?g?in|orijin|arigin|action)\s+)?bitters?\b|\bsatibo\b/g,
     "bitters",
   ],
   [/\bmalta\s+guinness\b|\bmalt\w*\b|\bmall?ina\b|\bmaitina\b/g, "soft"],
   [/\bsmirnoff\s+vodka\b/g, "liquor"],
-  [
-    /\bsmirnoff(\s+(ice|big|d[eo]u?ble\s*black))?\b|\bd[eo]u?ble\s*black\b/g,
-    "beer",
-  ],
+  [/\bsmirnoff(\s+(ice|big))?\b/g, "beer"],
   [
     /\bliquors?\b|\bwines?\b|\bwhisk(e)?y\b|\bvodka\b|\btequila\b|\bgin\b|\brum\b|\bbrandy\b|\bcognac\b|\bchampagne\b|\bjameson\b|\bjack\s*daniels?\b|\bred\s*label\b|\bimper[il]?al\b|\b(william\s*)?lawson\b|\bcaptain\s*morgan\b|\bbacardi\b|\bolmeca\b|\bsierra\b|\bmartini\b|\bcarlo\s*rossi\b|\bfour\s*cousins?\b|\bnederburg\b|\bandre\b|\b4\s*th\s*street\b|\bbest\s*classic\b|\b8\s*pm\b|\bhennessy\b|\bbaileys\b|\bcampari\b|\broyal\s*circle\b|\bfrontera\b|\brobertson\b|\bbree\b|\bagor\b/g,
     "liquor",
   ],
   [
-    /\bbeers?\b|\bheinek\w*\b|\bbudweiser\b|\bor[iy]j?g?in\b|\borijin\b|\barigin\b|\bgold\w*berg\b|\bgolaberg\b|\btro[ph]+[iy]+\b|\bstar\b|\bradd?[il]?er\b|\braddier\b|\b[tl]iger\b|\bcastle(\s+lite)?\b|\bflying\s*fish\b|\bthree\s*three\b|\bdesperados?\b|\bguin+es+\b|\bstouts?\b|\blegend\b|\bgulder\b|\bhero\b/g,
+    /\bbeers?\b|\bheinek\w*\b|\bbudweiser\b|\bor[iy]j?g?in\b|\borijin\b|\barigin\b|\bgold\w*berg\b|\bgolaberg\b|\btro[ph]+[iy]+\b|\bstar\b|\bradd?[il]?er\b|\braddier\b|\b[tl]iger\b|\bcastle(\s+lite)?\b|\bflying\s*fish\b|\bthree\s*three\b|\bdesperados?\b|\bguin+es+\b|\bstouts?\b|\blegend\b|\bgulder\b|\bhero\b|^\W*\d+\s+more\b/g,
     "beer",
   ],
   [/\bwa[tl]er\b/g, "water"],
   [
-    /\bcoke\b|\bfanta\b|\bsprite\b|\bpepsi\b|\b7\s*up\b|\bfayrouz\b|\bholl?an[dc]ia\b|\bviju\b|\bex[ol]tic\b|\bexolic\b|\bchivita\b|\bactive\b|^\W*\d+\s+more\b|\b(5|five)\s*alive\b|\bcoco\s*samba\b|\bsoft\s*drinks?\b|\byogh?urt\b|\bmilk\b|\bschweppes\b|\bjuice\b/g,
+    /\bcoke\b|\bfanta\b|\bsprite\b|\bpepsi\b|\b7\s*up\b|\bfayrouz\b|\bholl?an[dc]ia\b|\bviju\b|\bex[ol]tic\b|\bexolic\b|\bchivita\b|\bactive\b|\b(5|five)\s*alive\b|\bcoco\s*samba\b|\bsoft\s*drinks?\b|\byogh?urt\b|\bmilk\b|\bschweppes\b|\bjuice\b/g,
     "soft",
   ],
   // Shared: general items used across the menu
