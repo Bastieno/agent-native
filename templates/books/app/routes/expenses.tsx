@@ -295,7 +295,7 @@ function ExpenseBody({
           )}
         </div>
       </SheetHeader>
-      <div className="space-y-4 px-4 pb-6">
+      <div className="space-y-4 px-4 pt-4 pb-6">
         {expense.receiptFileId && (
           <a
             href={receiptUrl(expense.receiptFileId)}
