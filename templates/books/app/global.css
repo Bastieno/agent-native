@@ -77,6 +77,15 @@
     font-family: "Inter", sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+  /* The date picker's icon sits at the field's right edge, not after the date.
+     The field's inner box only fits its content, so the icon is positioned. */
+  input[type="date"] {
+    position: relative;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0.75rem;
+  }
 }
 
 ::-webkit-scrollbar {
