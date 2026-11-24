@@ -91,8 +91,10 @@ for (const { org_id: orgId } of orgs) {
       business: "hub",
     });
     // Weeldrop is a filling station: fuel there is the owner's car.
-    for (const payee of ["WEELDROP LOGISTICS", "WEELDRCP LOGISTICS"])
-      await savePayeeRule(orgId, { payee, category: OWNERS_PAY });
+    await savePayeeRule(orgId, {
+      payee: "WEELDROP LOGISTICS",
+      category: OWNERS_PAY,
+    });
   }
   const staff = new Map(STAFF);
   const ids = new Map(
