@@ -10,6 +10,12 @@
  * or come after the tag. Shared by the slip reader and the Settings guide.
  */
 
+import {
+  STOCK_GROUPS,
+  stockKeyName,
+  type StockGroupId,
+} from "./stock-groups.js";
+
 export interface NarrationTag {
   tag: string;
   category: string;
@@ -17,6 +23,8 @@ export interface NarrationTag {
   business: "lounge" | "hub" | null;
   /** A narration that uses this tag. */
   example: string;
+  /** Lounge stock for one menu group (Water, Beer, Shawarma, …). */
+  stockGroup?: StockGroupId;
 }
 
 export const NARRATION_TAGS: NarrationTag[] = [
@@ -26,6 +34,15 @@ export const NARRATION_TAGS: NarrationTag[] = [
     business: "lounge",
     example: "LOUNGE STOCK 5 packs chicken, 2 crates eggs",
   },
+  ...STOCK_GROUPS.map(
+    (g): NarrationTag => ({
+      tag: g.tag,
+      category: "Food & drink stock",
+      business: "lounge",
+      example: g.example,
+      stockGroup: g.id,
+    }),
+  ),
   {
     tag: "FLOAT",
     category: "Manager float (not itemised)",
@@ -194,6 +211,7 @@ export interface ParsedNarration {
   business: "lounge" | "hub" | null;
   details: string;
   tag: string;
+  stockGroup?: StockGroupId;
 }
 
 /** Reads a narration written in the format; null when it isn't. */
@@ -228,6 +246,7 @@ export function parseNarration(
     business: tag.business === null ? null : (business ?? tag.business),
     details: rest,
     tag: tag.tag,
+    ...(tag.stockGroup ? { stockGroup: tag.stockGroup } : {}),
   };
 }
 
@@ -238,6 +257,13 @@ export function narrationGuide(): string {
     "BUSINESS TAG what it was for",
     "BUSINESS is LOUNGE or HUB. Leave it out for the usual one: Diesel, repairs and internet are the Hub's, the rest the Lounge's.",
     "",
-    ...NARRATION_TAGS.map((t) => `${t.tag}: ${t.category}. e.g. ${t.example}`),
+    "Lounge stock: one payment per menu group, with the amount on each line. Nylon, serviette and transport count as Shared; gas goes with the group it is written under.",
+    ...NARRATION_TAGS.filter((t) => t.stockGroup).map(
+      (t) => `${t.tag}: ${stockKeyName(t.stockGroup!)}. e.g. ${t.example}`,
+    ),
+    "",
+    ...NARRATION_TAGS.filter((t) => !t.stockGroup).map(
+      (t) => `${t.tag}: ${t.category}. e.g. ${t.example}`,
+    ),
   ].join("\n");
 }

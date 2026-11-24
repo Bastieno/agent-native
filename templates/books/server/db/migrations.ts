@@ -389,4 +389,19 @@ export const BOOKS_MIGRATIONS: MigrationEntry[] = [
     visibility TEXT NOT NULL DEFAULT 'private'
     )`,
   },
+  {
+    // The owner's own split of a stock purchase among the Lounge's menu
+    // groups; without rows the split is read from the purchase's note.
+    version: 37,
+    sql: `CREATE TABLE IF NOT EXISTS stock_splits (
+    id TEXT PRIMARY KEY,
+    expense_id TEXT NOT NULL,
+    stock_group TEXT NOT NULL,
+    amount INTEGER NOT NULL,
+    created_at TEXT NOT NULL,
+    owner_email TEXT NOT NULL DEFAULT 'local@localhost',
+    org_id TEXT,
+    visibility TEXT NOT NULL DEFAULT 'private'
+    )`,
+  },
 ];

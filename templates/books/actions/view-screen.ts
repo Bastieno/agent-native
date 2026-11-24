@@ -26,8 +26,14 @@ export default defineAction({
       view?: string;
       expenseCode?: string;
       loanCode?: string;
+      stockGroup?: string;
       digestId?: string;
     };
+    if (nav.stockGroup)
+      screen.filter = {
+        stockGroup: nav.stockGroup,
+        hint: "list-expenses with this stockGroup lists these purchases; set-stock-split files one under a menu group",
+      };
     if (nav.expenseCode)
       screen.selected = {
         expenseCode: nav.expenseCode,

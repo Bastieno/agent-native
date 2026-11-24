@@ -170,6 +170,16 @@ export const loanRepayments = table("loan_repayments", {
   ...ownableColumns(),
 });
 
+/** The owner's split of a stock purchase among the menu groups (kobo). */
+export const stockSplits = table("stock_splits", {
+  id: text("id").primaryKey(),
+  expenseId: text("expense_id").notNull(),
+  stockGroup: text("stock_group").notNull(),
+  amount: integer("amount").notNull(),
+  ...created,
+  ...ownableColumns(),
+});
+
 export const receiptFiles = table("receipt_files", {
   id: text("id").primaryKey(),
   mimeType: text("mime_type").notNull(),

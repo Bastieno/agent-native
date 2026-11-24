@@ -26,6 +26,8 @@ lettuce cucumber corn ketchup mayonnaise mayo bama sauce soy
 water coke fanta sprite pepsi malt maltina fayrouz hollandia viju exotic active chivita
 beer stout heineken budweiser guinness star trophy origin smirnoff desperado raddler goldberg
 jameson liquor wine whisky ice
+monster bull horse energy bitter bitters bullet satibo tiger castle lite legend flying desperados
+vodka tequila rum brandy cognac malta soft liquors whiskey spaghetti fillet gas refill cling film
 gas diesel fuel petrol generator token light lights electricity electric electrical power solar
 inverter battery batteries bulb bulbs lamp lamps wire wires cable cables socket switch extension
 data airtime internet network subscription starlink fiberx dstv netflix router

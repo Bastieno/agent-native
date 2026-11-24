@@ -5,6 +5,7 @@ import {
   IconCircleCheck,
   IconDotsVertical,
   IconFileZip,
+  IconX,
 } from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
 import { toast } from "sonner";
@@ -44,6 +45,8 @@ import {
   useSetPageTitle,
 } from "@/components/layout/HeaderActions";
 import { Pagination, usePagination } from "@/components/Pagination";
+import { StockSplitBox, type StockSplitValue } from "@/components/StockSplit";
+import { stockKeyName, type StockKey } from "@shared/stock-groups";
 import { PeriodPicker, usePeriod } from "@/components/PeriodPicker";
 import { BUSINESS_NAMES, naira, receiptUrl, shortDay } from "@/lib/books";
 import { readChatExport } from "@shared/chat-export";
@@ -65,6 +68,7 @@ type Expense = {
   receiptFileId: string | null;
   isCost?: boolean;
   note?: string | null;
+  stockSplit?: StockSplitValue | null;
 };
 
 /** What the expense was for: the slip's note, else who was paid (app entries name the vendor). */
@@ -315,6 +319,14 @@ function ExpenseSheet({
               />
             </div>
           </div>
+          {expense.stockSplit && (
+            <StockSplitBox
+              code={expense.code}
+              amount={expense.amount}
+              split={expense.stockSplit}
+              canEdit={canEdit}
+            />
+          )}
           <div className="space-y-1.5">
             <Label>Paid with</Label>
             <Select
@@ -393,10 +405,14 @@ export default function ExpensesPage() {
     | "confirmed"
     | "needs_review"
     | undefined;
+  const stockGroup = (params.get("stockGroup") ?? undefined) as
+    | StockKey
+    | undefined;
   const query = {
     start,
     end,
     ...(category ? { category } : {}),
+    ...(stockGroup ? { stockGroup } : {}),
     ...(business ? { business } : {}),
     ...(status ? { status } : {}),
   };
@@ -495,7 +511,7 @@ export default function ExpensesPage() {
     );
   }
 
-  const filtered = !!(category || business || status);
+  const filtered = !!(category || business || status || stockGroup);
   return (
     <div className="@container flex min-h-full flex-1 flex-col gap-4 p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -543,13 +559,31 @@ export default function ExpensesPage() {
               <SelectItem value="confirmed">Confirmed</SelectItem>
             </SelectContent>
           </Select>
+          {stockGroup && (
+            <Button
+              variant="secondary"
+              size="sm"
+              className="h-8 gap-1"
+              aria-label="Show every menu group"
+              onClick={() => setParam("stockGroup", null)}
+            >
+              Stock · {stockKeyName(stockGroup)}
+              <IconX className="h-3.5 w-3.5" />
+            </Button>
+          )}
           {filtered && (
             <Button
               variant="ghost"
               size="sm"
               onClick={() => {
                 const next = new URLSearchParams(params);
-                for (const k of ["category", "business", "status", "page"])
+                for (const k of [
+                  "category",
+                  "business",
+                  "status",
+                  "stockGroup",
+                  "page",
+                ])
                   next.delete(k);
                 setParams(next, { replace: true });
               }}
@@ -562,9 +596,10 @@ export default function ExpensesPage() {
           <div className="text-sm text-muted-foreground">
             {expenses.length.toLocaleString("en-NG")} expenses ·{" "}
             <span className="font-medium text-foreground tabular-nums">
-              {naira(data.total)}
+              {naira(stockGroup ? (data.stockTotal ?? 0) : data.total)}
             </span>
-            {data.moved > 0 && (
+            {stockGroup && <span> in {stockKeyName(stockGroup)}</span>}
+            {!stockGroup && data.moved > 0 && (
               <span className="ml-1">
                 (+ {naira(data.moved)} moved, not a cost)
               </span>

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { IconHistory, IconUpload } from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
@@ -130,6 +131,80 @@ function UploadButton() {
   );
 }
 
+/** Sales set against the stock bought for each Lounge menu group. */
+function MenuGroups({ start, end }: { start: string; end: string }) {
+  const { data } = useActionQuery("get-stock-groups", { start, end });
+  if (!data) return null;
+  const shown = data.groups.filter((g) => g.sales > 0 || g.bought > 0);
+  if (!shown.length && !data.unsorted.bought) return null;
+  const stock = (key: string) =>
+    `/expenses?stockGroup=${key}&start=${start}&end=${end}`;
+  return (
+    <Card>
+      <CardHeader className="pb-2">
+        <CardTitle className="text-sm font-medium">
+          Lounge menu groups
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <FiguresTable
+          columns={["Sales", "Stock bought", "Left after stock"]}
+          rows={[
+            ...shown.map((g) => ({
+              name: g.name,
+              cells: [
+                { value: naira(g.sales) },
+                {
+                  value: naira(g.bought),
+                  className: "text-muted-foreground",
+                  ...(g.count ? { href: stock(g.group) } : {}),
+                },
+                {
+                  value: naira(g.difference),
+                  className: g.difference < 0 ? "text-destructive" : "",
+                },
+              ],
+            })),
+            ...(data.shared.bought
+              ? [
+                  {
+                    name: "Shared (nylon, serviette, transport)",
+                    cells: [
+                      { value: "" },
+                      {
+                        value: naira(data.shared.bought),
+                        className: "text-muted-foreground",
+                        href: stock("shared"),
+                      },
+                      { value: "" },
+                    ],
+                  },
+                ]
+              : []),
+          ]}
+        />
+        {data.unsorted.bought > 0 && (
+          <p className="mt-3 text-xs text-muted-foreground">
+            <Link
+              to={stock("unsorted")}
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+            >
+              {naira(data.unsorted.bought)} of stock is not sorted
+            </Link>{" "}
+            ({data.unsorted.count.toLocaleString("en-NG")}{" "}
+            {data.unsorted.count === 1 ? "purchase" : "purchases"}, floats
+            included). File them under a group to make these figures complete.
+          </p>
+        )}
+        <p className="mt-2 text-xs text-muted-foreground">
+          Stock is counted on the day it was bought, so a week or a day can look
+          high or low; compare over a month.
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
 const chartConfig = {
   moneyIn: { label: "Money in", color: "var(--money-in)" },
 } satisfies ChartConfig;
@@ -245,6 +320,8 @@ export default function SalesPage() {
               )}
             </CardContent>
           </Card>
+
+          <MenuGroups start={start} end={end} />
 
           <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
             <Card>

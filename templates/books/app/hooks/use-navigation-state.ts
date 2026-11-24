@@ -15,6 +15,8 @@ export interface NavigationState {
   expenseCode?: string;
   /** The loan open on the Loans page: its Money out code. */
   loanCode?: string;
+  /** Money out narrowed to one Lounge menu group's stock (shawarma, unsorted, …). */
+  stockGroup?: string;
   digestId?: string;
   start?: string;
   end?: string;
@@ -34,6 +36,9 @@ export function useNavigationState() {
       path: appPath(location.pathname),
       ...(params.get("expense") ? { expenseCode: params.get("expense")! } : {}),
       ...(params.get("loan") ? { loanCode: params.get("loan")! } : {}),
+      ...(params.get("stockGroup")
+        ? { stockGroup: params.get("stockGroup")! }
+        : {}),
       ...(digestMatch ? { digestId: digestMatch[1] } : {}),
       ...(params.get("start") ? { start: params.get("start")! } : {}),
       ...(params.get("end") ? { end: params.get("end")! } : {}),

@@ -55,6 +55,8 @@ export const ACTION_POLICY: Record<string, Audience> = {
   "view-screen": "everyone",
   navigate: "everyone",
   "list-loans": "everyone",
+  "get-stock-groups": "everyone",
+  "set-stock-split": "owner",
   "record-loan-repayment": "owner",
   "delete-loan-repayment": "owner",
   "set-loan-status": "owner",

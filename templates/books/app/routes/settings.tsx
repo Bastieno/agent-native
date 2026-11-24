@@ -17,6 +17,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSetPageTitle } from "@/components/layout/HeaderActions";
 import { NARRATION_TAGS, narrationGuide } from "@shared/narration";
+import { stockKeyName } from "@shared/stock-groups";
 import { AssistantSettings } from "@/components/AssistantKey";
 
 /** Who on the payroll works for which business: their salaries go there. */
@@ -74,7 +75,10 @@ function StaffList({ canEdit }: { canEdit: boolean }) {
 
 /** How to write the note on a transfer so Books files it without guessing. */
 function TransferNotes() {
-  const running = NARRATION_TAGS.filter((t) => t.business !== null);
+  const stock = NARRATION_TAGS.filter((t) => t.stockGroup);
+  const running = NARRATION_TAGS.filter(
+    (t) => t.business !== null && !t.stockGroup,
+  );
   const notCosts = NARRATION_TAGS.filter((t) => t.business === null);
   const table = (rows: typeof NARRATION_TAGS) => (
     <div className="divide-y divide-border rounded-lg border border-border">
@@ -85,7 +89,7 @@ function TransferNotes() {
         >
           <span className="font-mono text-xs font-semibold">{t.tag}</span>
           <span className="min-w-0">
-            {t.category}
+            {t.stockGroup ? stockKeyName(t.stockGroup) : t.category}
             <span className="block break-words font-mono text-xs text-muted-foreground sm:truncate">
               {t.example}
             </span>
@@ -135,6 +139,15 @@ function TransferNotes() {
         >
           <IconCopy className="mr-2 h-4 w-4" /> Copy the guide for WhatsApp
         </Button>
+      </div>
+      <div className="space-y-2">
+        <h3 className="text-sm font-medium">Lounge stock, by menu group</h3>
+        <p className="text-xs text-muted-foreground">
+          One payment per group, with the amount on each line. Nylon, serviette
+          and transport are counted as Shared; gas goes with the group it is
+          written under.
+        </p>
+        {table(stock)}
       </div>
       <div className="space-y-2">
         <h3 className="text-sm font-medium">Running costs</h3>

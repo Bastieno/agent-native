@@ -112,6 +112,25 @@ text you already have. Loans, profit payouts and commissions stay pending (they
 are not running costs), as do slips it can't read (Providus, photos). Read
 those with `record-expense-from-receipt`.
 
+**Lounge menu groups** (Money in, "Lounge menu groups"): stock bought is set
+against sales for Water, Soft drinks, Energy drinks, Beer, Bitters, Liquors,
+Meals and Shawarma over a period (`get-stock-groups`). A stock purchase (Food &
+drink stock, or a manager float) is split from its note when figures are read:
+a note tagged with a group (`SHAWARMA`, `MEALS`, `BEER`, `SOFT`, `WATER`,
+`ENERGY`, `BITTERS`, `LIQUOR`) is that group's; otherwise each line is placed
+by its items and, with an amount on each line, split line by line. Nylon,
+serviette, transport (Tf) and other general items are **Shared**; gas and pepper go
+with the rest of the note; chicken fillet is Shawarma, other chicken Meals;
+floats, staff lunches, "for drinks" and mixed drink lists without amounts are
+**Not sorted** for the owner to file. `list-expenses` `stockGroup` lists one
+group's purchases (`stockGroup: "unsorted"` for those to file), each with its
+`stockSplit`; `set-stock-split` files one under a `group` or `parts` (naira,
+adding up to what was paid), and empty `parts` goes back to the note. Sale items
+are grouped by Moniebook category when it names a group, else by item name
+(Drinks split into water, soft, energy, beer, bitters). Stock is counted on the
+day it was bought, so compare over a month. Nothing here changes expenses or
+profit.
+
 **Loans** (the Loans page, `/loans`): loans the owner gives out. Every Money out
 entry filed under Loans & repayments is a loan (payee = borrower), so filing one
 is how a loan is added. `list-loans` (status owed by default, or paid,

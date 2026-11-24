@@ -6,12 +6,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Link } from "react-router";
 import { cn } from "@/lib/utils";
 
 export interface FiguresRow {
   name: string;
   /** One per column, already formatted. */
-  cells: { value: string; className?: string }[];
+  cells: { value: string; className?: string; href?: string }[];
   strong?: boolean;
 }
 
@@ -49,7 +50,7 @@ export function FiguresTable({
                       r.cells[i]?.className,
                     )}
                   >
-                    {r.cells[i]?.value}
+                    <Value cell={r.cells[i]} />
                   </dd>
                 </div>
               ))}
@@ -77,7 +78,7 @@ export function FiguresTable({
                   key={i}
                   className={cn("text-right tabular-nums", c.className)}
                 >
-                  {c.value}
+                  <Value cell={c} />
                 </TableCell>
               ))}
             </TableRow>
@@ -85,5 +86,16 @@ export function FiguresTable({
         </TableBody>
       </Table>
     </div>
+  );
+}
+
+function Value({ cell }: { cell?: FiguresRow["cells"][number] }) {
+  if (!cell) return null;
+  return cell.href ? (
+    <Link to={cell.href} className="underline-offset-4 hover:underline">
+      {cell.value}
+    </Link>
+  ) : (
+    <>{cell.value}</>
   );
 }
