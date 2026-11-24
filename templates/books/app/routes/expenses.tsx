@@ -5,6 +5,8 @@ import {
   IconCircleCheck,
   IconDotsVertical,
   IconFileZip,
+  IconChevronLeft,
+  IconChevronRight,
   IconSearch,
   IconX,
 } from "@tabler/icons-react";
@@ -207,13 +209,38 @@ function SearchBox({
   );
 }
 
-function ExpenseSheet({
+interface Step {
+  /** Place in the list showing, from 1; null once it has left the list. */
+  at: number | null;
+  total: number;
+  prev: (() => void) | null;
+  next: (() => void) | null;
+}
+
+/**
+ * The open entry. The sheet stays open while Previous and Next move through
+ * the list showing (filters and search included), and Confirm moves on to the
+ * next entry, so a run of entries is checked without closing it.
+ */
+function ExpenseSheet(
+  props: Omit<Parameters<typeof ExpenseBody>[0], "step"> & { step: Step },
+) {
+  return (
+    <Sheet open onOpenChange={(open) => !open && props.onClose()}>
+      <SheetContent className="w-full overflow-y-auto sm:max-w-md lg:max-w-lg xl:max-w-xl">
+        <ExpenseBody key={props.expense.code} {...props} />
+      </SheetContent>
+    </Sheet>
+  );
+}
+
+function ExpenseBody({
   expense,
   categories,
   noBusiness,
   canEdit,
-  onClose,
   onSave,
+  step,
 }: {
   expense: Expense;
   categories: string[];
@@ -221,6 +248,7 @@ function ExpenseSheet({
   canEdit: boolean;
   onClose: () => void;
   onSave: (patch: Partial<Expense> & { amountNaira?: number }) => void;
+  step: Step;
 }) {
   const [amount, setAmount] = useState(String(expense.amount / 100));
   // An expense is confirmed only once it is filed.
@@ -231,198 +259,226 @@ function ExpenseSheet({
       : null;
   const [imageFailed, setImageFailed] = useState(false);
   return (
-    <Sheet open onOpenChange={(open) => !open && onClose()}>
-      <SheetContent className="w-full overflow-y-auto sm:max-w-md lg:max-w-lg xl:max-w-xl">
-        <SheetHeader>
-          <SheetTitle className="line-clamp-2">
-            {whatForLine(expense)}
-          </SheetTitle>
+    <>
+      <SheetHeader>
+        <SheetTitle className="line-clamp-2">{whatForLine(expense)}</SheetTitle>
+        <div className="flex items-center justify-between gap-2">
           <p className="text-sm text-muted-foreground">
             {expense.code} · {naira(expense.amount)}
           </p>
-        </SheetHeader>
-        <div className="space-y-4 px-4 pb-6">
-          {expense.receiptFileId && (
-            <a
-              href={receiptUrl(expense.receiptFileId)}
-              target="_blank"
-              rel="noreferrer"
-              className="block text-sm text-muted-foreground hover:text-foreground"
-            >
-              {imageFailed ? (
-                "Open the receipt"
-              ) : (
-                <img
-                  src={receiptUrl(expense.receiptFileId)}
-                  alt="Receipt"
-                  onError={() => setImageFailed(true)}
-                  className="max-h-80 w-full rounded-md border border-border object-contain"
-                />
-              )}
-            </a>
-          )}
-          <div className="space-y-1.5">
-            <Label htmlFor="note">What for</Label>
-            <Textarea
-              id="note"
-              disabled={!canEdit}
-              defaultValue={expense.note ?? ""}
-              placeholder="e.g. 5 packs sausages"
-              rows={Math.min(
-                8,
-                Math.max(2, (expense.note ?? "").split("\n").length),
-              )}
-              onBlur={(e) => {
-                const v = e.target.value.trim();
-                if (v && v !== (expense.note ?? "")) onSave({ note: v });
-              }}
-            />
-          </div>
-          <div className="space-y-1.5">
-            <Label htmlFor="vendor">Paid to</Label>
-            <Input
-              id="vendor"
-              disabled={!canEdit}
-              defaultValue={expense.vendor}
-              onBlur={(e) => {
-                const v = e.target.value.trim();
-                if (v && v !== expense.vendor) onSave({ vendor: v });
-              }}
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="space-y-1.5">
-              <Label>Category</Label>
-              <Select
-                disabled={!canEdit}
-                value={expense.category ?? undefined}
-                onValueChange={(v) =>
-                  // Owner's pay and money moved belong to no business.
-                  onSave(
-                    noBusiness.includes(v)
-                      ? { category: v, business: null }
-                      : { category: v },
-                  )
-                }
+          {step.total > 1 && (
+            <div className="flex shrink-0 items-center gap-1">
+              <span className="mr-1 text-xs tabular-nums text-muted-foreground">
+                {step.at ? `${step.at} of ${step.total}` : `${step.total} left`}
+              </span>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-7 w-7"
+                aria-label="Previous entry"
+                disabled={!step.prev}
+                onClick={() => step.prev?.()}
               >
-                <SelectTrigger>
-                  <SelectValue placeholder="Choose" />
-                </SelectTrigger>
-                <SelectContent>
-                  {categories.map((c) => (
-                    <SelectItem key={c} value={c}>
-                      {c}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                <IconChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-7 w-7"
+                aria-label="Next entry"
+                disabled={!step.next}
+                onClick={() => step.next?.()}
+              >
+                <IconChevronRight className="h-4 w-4" />
+              </Button>
             </div>
-            <div className="space-y-1.5">
-              <Label>Business</Label>
-              {expense.category && noBusiness.includes(expense.category) ? (
-                <div className="flex h-9 items-center truncate rounded-md border border-dashed border-border px-3 text-sm text-muted-foreground">
-                  {businessNote(expense.category)}
-                </div>
-              ) : (
-                <Select
-                  disabled={!canEdit}
-                  value={expense.business ?? undefined}
-                  onValueChange={(v) => onSave({ business: v })}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Choose" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="lounge">Lounge</SelectItem>
-                    <SelectItem value="hub">Hub</SelectItem>
-                    <SelectItem value="both">Both (half each)</SelectItem>
-                  </SelectContent>
-                </Select>
-              )}
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="amount">Amount (₦)</Label>
-              <Input
-                id="amount"
-                inputMode="decimal"
-                disabled={!canEdit}
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                onBlur={() => {
-                  const n = Number(amount.replace(/,/g, ""));
-                  if (n > 0 && Math.round(n * 100) !== expense.amount)
-                    onSave({ amountNaira: n });
-                }}
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="date">Date</Label>
-              <Input
-                id="date"
-                type="date"
-                disabled={!canEdit}
-                defaultValue={expense.occurredOn}
-                onBlur={(e) =>
-                  e.target.value &&
-                  e.target.value !== expense.occurredOn &&
-                  onSave({ occurredOn: e.target.value })
-                }
-              />
-            </div>
-          </div>
-          {expense.stockSplit && (
-            <StockSplitBox
-              code={expense.code}
-              amount={expense.amount}
-              split={expense.stockSplit}
-              canEdit={canEdit}
-            />
           )}
+        </div>
+      </SheetHeader>
+      <div className="space-y-4 px-4 pb-6">
+        {expense.receiptFileId && (
+          <a
+            href={receiptUrl(expense.receiptFileId)}
+            target="_blank"
+            rel="noreferrer"
+            className="block text-sm text-muted-foreground hover:text-foreground"
+          >
+            {imageFailed ? (
+              "Open the receipt"
+            ) : (
+              <img
+                src={receiptUrl(expense.receiptFileId)}
+                alt="Receipt"
+                onError={() => setImageFailed(true)}
+                className="max-h-80 w-full rounded-md border border-border object-contain"
+              />
+            )}
+          </a>
+        )}
+        <div className="space-y-1.5">
+          <Label htmlFor="note">What for</Label>
+          <Textarea
+            id="note"
+            disabled={!canEdit}
+            defaultValue={expense.note ?? ""}
+            placeholder="e.g. 5 packs sausages"
+            rows={Math.min(
+              8,
+              Math.max(2, (expense.note ?? "").split("\n").length),
+            )}
+            onBlur={(e) => {
+              const v = e.target.value.trim();
+              if (v && v !== (expense.note ?? "")) onSave({ note: v });
+            }}
+          />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="vendor">Paid to</Label>
+          <Input
+            id="vendor"
+            disabled={!canEdit}
+            defaultValue={expense.vendor}
+            onBlur={(e) => {
+              const v = e.target.value.trim();
+              if (v && v !== expense.vendor) onSave({ vendor: v });
+            }}
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1.5">
-            <Label>Paid with</Label>
+            <Label>Category</Label>
             <Select
               disabled={!canEdit}
-              value={expense.paidWith}
-              onValueChange={(v) => onSave({ paidWith: v })}
+              value={expense.category ?? undefined}
+              onValueChange={(v) =>
+                // Owner's pay and money moved belong to no business.
+                onSave(
+                  noBusiness.includes(v)
+                    ? { category: v, business: null }
+                    : { category: v },
+                )
+              }
             >
               <SelectTrigger>
-                <SelectValue />
+                <SelectValue placeholder="Choose" />
               </SelectTrigger>
               <SelectContent>
-                {["cash", "transfer", "card", "unknown"].map((m) => (
-                  <SelectItem key={m} value={m}>
-                    {m[0].toUpperCase() + m.slice(1)}
+                {categories.map((c) => (
+                  <SelectItem key={c} value={c}>
+                    {c}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
-          {expense.status === "confirmed" ? (
-            <div className="flex items-center justify-center gap-2 rounded-md border border-border py-2.5 text-sm text-muted-foreground">
-              <IconCircleCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              Confirmed. Changes still save as you make them.
-            </div>
-          ) : (
-            canEdit && (
-              <div className="space-y-1.5">
-                <Button
-                  className="w-full"
-                  disabled={!!missing}
-                  onClick={() => onSave({ status: "confirmed" })}
-                >
-                  Confirm
-                </Button>
-                {missing && (
-                  <p className="text-center text-xs text-muted-foreground">
-                    {missing}
-                  </p>
-                )}
+          <div className="space-y-1.5">
+            <Label>Business</Label>
+            {expense.category && noBusiness.includes(expense.category) ? (
+              <div className="flex h-9 items-center truncate rounded-md border border-dashed border-border px-3 text-sm text-muted-foreground">
+                {businessNote(expense.category)}
               </div>
-            )
-          )}
+            ) : (
+              <Select
+                disabled={!canEdit}
+                value={expense.business ?? undefined}
+                onValueChange={(v) => onSave({ business: v })}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Choose" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="lounge">Lounge</SelectItem>
+                  <SelectItem value="hub">Hub</SelectItem>
+                  <SelectItem value="both">Both (half each)</SelectItem>
+                </SelectContent>
+              </Select>
+            )}
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="amount">Amount (₦)</Label>
+            <Input
+              id="amount"
+              inputMode="decimal"
+              disabled={!canEdit}
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              onBlur={() => {
+                const n = Number(amount.replace(/,/g, ""));
+                if (n > 0 && Math.round(n * 100) !== expense.amount)
+                  onSave({ amountNaira: n });
+              }}
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="date">Date</Label>
+            <Input
+              id="date"
+              type="date"
+              disabled={!canEdit}
+              defaultValue={expense.occurredOn}
+              onBlur={(e) =>
+                e.target.value &&
+                e.target.value !== expense.occurredOn &&
+                onSave({ occurredOn: e.target.value })
+              }
+            />
+          </div>
         </div>
-      </SheetContent>
-    </Sheet>
+        {expense.stockSplit && (
+          <StockSplitBox
+            code={expense.code}
+            amount={expense.amount}
+            split={expense.stockSplit}
+            canEdit={canEdit}
+          />
+        )}
+        <div className="space-y-1.5">
+          <Label>Paid with</Label>
+          <Select
+            disabled={!canEdit}
+            value={expense.paidWith}
+            onValueChange={(v) => onSave({ paidWith: v })}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {["cash", "transfer", "card", "unknown"].map((m) => (
+                <SelectItem key={m} value={m}>
+                  {m[0].toUpperCase() + m.slice(1)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        {expense.status === "confirmed" ? (
+          <div className="flex items-center justify-center gap-2 rounded-md border border-border py-2.5 text-sm text-muted-foreground">
+            <IconCircleCheck className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+            Confirmed. Changes still save as you make them.
+          </div>
+        ) : (
+          canEdit && (
+            <div className="space-y-1.5">
+              <Button
+                className="w-full"
+                disabled={!!missing}
+                onClick={() => {
+                  onSave({ status: "confirmed" });
+                  step.next?.();
+                }}
+              >
+                {step.next ? "Confirm and next" : "Confirm"}
+              </Button>
+              {missing && (
+                <p className="text-center text-xs text-muted-foreground">
+                  {missing}
+                </p>
+              )}
+            </div>
+          )
+        )}
+      </div>
+    </>
   );
 }
 
@@ -495,6 +551,33 @@ export default function ExpensesPage() {
   // One page at a time; the page is in the address, so a row opened and
   // closed, or a reload, keeps the place.
   const paged = usePagination(expenses);
+  // Where the open entry sits in the list showing. Once it leaves the list
+  // (confirmed under "To review"), the entry that took its place is next.
+  const lastAt = useRef(0);
+  const at = expenses.findIndex((e) => e.code === selectedCode);
+  if (at >= 0) lastAt.current = at;
+  const prevAt = at >= 0 ? at - 1 : lastAt.current - 1;
+  const nextAt = at >= 0 ? at + 1 : lastAt.current;
+  const goTo = (i: number) => {
+    const e = expenses[i];
+    if (!e) return;
+    const nextParams = new URLSearchParams(params);
+    nextParams.set("expense", e.code);
+    // Keep the list behind on the entry's page, so closing lands there.
+    const pageNo = Math.floor(i / paged.pageSize) + 1;
+    if (pageNo <= 1) nextParams.delete("page");
+    else nextParams.set("page", String(pageNo));
+    setParams(nextParams, { replace: true, preventScrollReset: true });
+  };
+  const step = {
+    at: at >= 0 ? at + 1 : null,
+    total: expenses.length,
+    prev: expenses[prevAt] && prevAt >= 0 ? () => goTo(prevAt) : null,
+    next:
+      expenses[nextAt] && expenses[nextAt].code !== selectedCode
+        ? () => goTo(nextAt)
+        : null,
+  };
   const categories: string[] = settings?.expenseCategories ?? [];
 
   function setParam(key: string, value: string | null) {
@@ -786,8 +869,8 @@ export default function ExpensesPage() {
       {data && <Pagination {...paged} noun="expenses" />}
       {selected && (
         <ExpenseSheet
-          key={selected.code}
           expense={selected}
+          step={step}
           categories={categories}
           noBusiness={settings?.noBusinessCategories ?? []}
           canEdit={!!settings?.canEdit}
