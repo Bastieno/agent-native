@@ -30,6 +30,17 @@ export default defineAction({
         name,
       })),
     );
+    // WhatsApp is heard only once it is switched on as well as keyed. The
+    // framework keeps that switch in integration_configs, one row per platform.
+    const [wa] = await rows<{ config_data: string }>(
+      `SELECT config_data FROM integration_configs WHERE platform = 'whatsapp' AND config_key = 'default'`,
+    ).catch(() => []);
+    let whatsappOn = false;
+    try {
+      whatsappOn = !!JSON.parse(wa?.config_data ?? "{}").enabled;
+    } catch {
+      whatsappOn = false;
+    }
     const [job] = await rows(
       `SELECT id FROM resources WHERE path = 'jobs/books-digests.md' LIMIT 1`,
     ).catch(() => []);
@@ -53,7 +64,14 @@ export default defineAction({
       connections: {
         whatsapp: !!(
           process.env.WHATSAPP_ACCESS_TOKEN &&
-          process.env.WHATSAPP_PHONE_NUMBER_ID
+          process.env.WHATSAPP_PHONE_NUMBER_ID &&
+          whatsappOn
+        ),
+        /** Keys are set but WhatsApp is not switched on yet. */
+        whatsappKeysOnly: !!(
+          process.env.WHATSAPP_ACCESS_TOKEN &&
+          process.env.WHATSAPP_PHONE_NUMBER_ID &&
+          !whatsappOn
         ),
         moniepoint: !!process.env.MONIEPOINT_WEBHOOK_SECRET,
         cron: !!process.env.CRON_SECRET,

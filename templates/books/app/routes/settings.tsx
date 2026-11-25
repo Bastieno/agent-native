@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { IconCopy, IconPlus, IconTrash } from "@tabler/icons-react";
-import { useActionMutation, useActionQuery } from "@agent-native/core/client";
+import {
+  agentNativePath,
+  useActionMutation,
+  useActionQuery,
+} from "@agent-native/core/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -213,6 +217,22 @@ export default function SettingsPage() {
 
   if (!data) return null;
   const canEdit = data.canEdit;
+  // The framework's own switch: Books listens on WhatsApp only once it is on.
+  const switchOnWhatsApp = async () => {
+    const res = await fetch(
+      agentNativePath("/_agent-native/integrations/whatsapp/enable"),
+      { method: "POST", headers: { "X-Agent-Native-CSRF": "1" } },
+    ).catch(() => null);
+    const body = res ? await res.json().catch(() => null) : null;
+    if (!res?.ok || body?.error) {
+      toast.error(
+        body?.error ?? "WhatsApp could not be switched on. Try again.",
+      );
+      return;
+    }
+    toast.success("WhatsApp switched on");
+    qc.invalidateQueries({ queryKey: ["action", "get-settings"] });
+  };
   const done = {
     onSuccess: () => toast.success("Saved"),
     onError: (e: Error) => {
@@ -476,15 +496,19 @@ export default function SettingsPage() {
               </span>
             </div>
           ))}
+          {canEdit && data.connections.whatsappKeysOnly && (
+            <Button size="sm" variant="outline" onClick={switchOnWhatsApp}>
+              Switch on WhatsApp
+            </Button>
+          )}
           {canEdit && !data.connections.digestJob && (
             <Button size="sm" onClick={() => setUp.mutate({}, done)}>
               Switch on digests
             </Button>
           )}
           <p className="text-xs text-muted-foreground">
-            Keys for WhatsApp and Moniepoint are added in the setup checklist.
-            Books organisation id:{" "}
-            <code className="select-all">{data.orgId}</code>
+            Keys for WhatsApp and Moniepoint are set on the server. Books
+            organisation id: <code className="select-all">{data.orgId}</code>
           </p>
         </TabsContent>
       </Tabs>
