@@ -1416,6 +1416,17 @@ export function createIntegrationsPlugin(
           return status;
         }
 
+        // ─── GET /:platform/webhook ────────────────────────────
+        // Platforms that confirm a webhook URL with a GET handshake (WhatsApp
+        // sends hub.mode/hub.verify_token/hub.challenge) are answered by
+        // their adapter; anything it doesn't recognise is refused.
+        if (action === "webhook" && method === "GET") {
+          const verification = await adapter.handleVerification(event);
+          if (verification.handled) return verification.response ?? "ok";
+          setResponseStatus(event, 403);
+          return { error: "Verification failed" };
+        }
+
         // ─── POST /:platform/webhook ───────────────────────────
         if (action === "webhook" && method === "POST") {
           // Google Docs push notifications bypass the normal webhook flow —

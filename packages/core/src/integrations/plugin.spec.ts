@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { PlatformAdapter } from "./types.js";
 import { createIntegrationsPlugin } from "./plugin.js";
+import { whatsappAdapter } from "./adapters/whatsapp.js";
 
 const getSessionMock = vi.hoisted(() => vi.fn());
 const saveIntegrationConfigMock = vi.hoisted(() => vi.fn());
@@ -227,6 +228,29 @@ describe("integrations plugin routes", () => {
 
     expect(result.status).toBe(200);
     expect(result.body).toEqual({ challenge: "qa-challenge" });
+  });
+
+  // Meta confirms a WhatsApp webhook URL with a GET carrying hub.* params
+  // before it will send any messages to it.
+  it("answers WhatsApp's GET verification with the challenge", async () => {
+    process.env.WHATSAPP_VERIFY_TOKEN = "qa-verify-token";
+    try {
+      const nitroApp = createNitroApp();
+      await createIntegrationsPlugin({ adapters: [whatsappAdapter()] })(
+        nitroApp,
+      );
+      const query = (token: string) =>
+        `/_agent-native/integrations/whatsapp/webhook?hub.mode=subscribe&hub.verify_token=${token}&hub.challenge=8675309`;
+
+      const ok = await dispatch(nitroApp, query("qa-verify-token"), "GET");
+      expect(ok.status).toBe(200);
+      expect(String(ok.body)).toBe("8675309");
+
+      const wrong = await dispatch(nitroApp, query("wrong-token"), "GET");
+      expect(wrong.status).toBe(403);
+    } finally {
+      delete process.env.WHATSAPP_VERIFY_TOKEN;
+    }
   });
 
   it("refuses unsigned task processing in production when A2A_SECRET is missing", async () => {
