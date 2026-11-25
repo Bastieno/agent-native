@@ -335,7 +335,7 @@ export function whatsappAdapter(): PlatformAdapter {
     },
 
     formatAgentResponse(text: string): OutgoingMessage {
-      return { text, platformContext: {} };
+      return { text: markdownToWhatsApp(text), platformContext: {} };
     },
 
     async getStatus(_baseUrl?: string): Promise<IntegrationStatus> {
@@ -394,4 +394,34 @@ function splitMessage(text: string, maxLength: number): string[] {
     remaining = remaining.slice(splitIdx).trimStart();
   }
   return chunks;
+}
+
+/**
+ * The agent writes Markdown; WhatsApp has its own marks (one asterisk for
+ * bold, one tilde for strike) and shows the rest literally, so `**bold**`
+ * arrives with stray asterisks. Spans are bounded so a crafted message can't
+ * make the patterns backtrack badly.
+ */
+export function markdownToWhatsApp(text: string): string {
+  return (
+    text
+      .slice(0, WHATSAPP_MAX_LENGTH * 4)
+      // [label](url) → label (url): WhatsApp links bare URLs itself.
+      .replace(
+        /\[([^\]\n]{1,500})\]\((https?:\/\/[^)\s]{1,2000})\)/g,
+        "$1 ($2)",
+      )
+      // Headings become a bold line.
+      .replace(
+        /^[ \t]{0,3}#{1,6}[ \t]+([^\n]{1,500}?)[ \t]*#*[ \t]*$/gm,
+        "*$1*",
+      )
+      // **bold** and __bold__ → *bold*.
+      .replace(/\*\*([^*\n]{1,1000})\*\*/g, "*$1*")
+      .replace(/__([^_\n]{1,1000})__/g, "*$1*")
+      // ~~strike~~ → ~strike~.
+      .replace(/~~([^~\n]{1,1000})~~/g, "~$1~")
+      // "- item" / "* item" bullets → "• item".
+      .replace(/^([ \t]{0,6})[-*][ \t]+/gm, "$1• ")
+  );
 }

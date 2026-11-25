@@ -148,3 +148,28 @@ describe("whatsapp adapter media", () => {
     ).rejects.toThrow(/too large/i);
   });
 });
+
+// WhatsApp bolds *one* asterisk pair; Markdown's ** shows stray asterisks.
+describe("whatsapp adapter formatting", () => {
+  const format = (text: string) =>
+    whatsappAdapter().formatAgentResponse(text).text;
+
+  it("turns Markdown bold, headings and bullets into WhatsApp's own", () => {
+    expect(
+      format(
+        "## Today\n**Latest day:** Wed 11 Nov\n- Income: 67,900\n* Expenses: 44,000",
+      ),
+    ).toBe(
+      "*Today*\n*Latest day:* Wed 11 Nov\n• Income: 67,900\n• Expenses: 44,000",
+    );
+  });
+
+  it("keeps a link readable and leaves WhatsApp formatting alone", () => {
+    expect(format("See [the report](https://x.test/r/1)")).toBe(
+      "See the report (https://x.test/r/1)",
+    );
+    expect(format("*already bold* and _italic_ and ~~gone~~")).toBe(
+      "*already bold* and _italic_ and ~gone~",
+    );
+  });
+});

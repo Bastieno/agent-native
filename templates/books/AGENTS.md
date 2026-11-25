@@ -199,6 +199,9 @@ their number is allowed). Each acts as that person.
   before resending with `confirmDuplicate: true`.
 - Amounts in replies are naira with commas (₦45,000). Never quote customer or
   sender names.
+- Write replies as plain text: **no emojis** (no ✅, ⚠️ or the like), short
+  lines, and a heading only when the reply has several parts. Bold and bullets
+  are converted to WhatsApp's own marks, so use them sparingly.
 
 ## Mounted Workspace Routing
 
