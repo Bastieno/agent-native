@@ -56,7 +56,7 @@ const RULES: [RegExp, Key][] = [
     "energy",
   ],
   [
-    /\b((or[iy]j?g?in|orijin|arigin|action)\s+)?bitters?\b|\bsatibo\b/g,
+    /\b((or[iy]j?g?in|orijin|arigin|action)\s+)?bitters?\b|\bsatibo\b|\bcoco\s*samba\b/g,
     "bitters",
   ],
   [/\bmalta\s+guinness\b|\bmalt\w*\b|\bmall?ina\b|\bmaitina\b/g, "soft"],
@@ -72,7 +72,7 @@ const RULES: [RegExp, Key][] = [
   ],
   [/\bwa[tl]er\b/g, "water"],
   [
-    /\bcoke\b|\bfanta\b|\bsprite\b|\bpepsi\b|\b7\s*up\b|\bfayrouz\b|\bholl?an[dc]ia\b|\bviju\b|\bex[ol]tic\b|\bexolic\b|\bchivita\b|\bactive\b|\b(5|five)\s*alive\b|\bcoco\s*samba\b|\bsoft\s*drinks?\b|\byogh?urt\b|\bmilk\b|\bschweppes\b|\bjuice\b/g,
+    /\bcoke\b|\bfanta\b|\bsprite\b|\bpepsi\b|\b7\s*up\b|\bfayrouz\b|\bholl?an[dc]ia\b|\bviju\b|\bex[ol]tic\b|\bexolic\b|\bchivita\b|\bactive\b|\b(5|five)\s*alive\b|\bsoft\s*drinks?\b|\byogh?urt\b|\bmilk\b|\bschweppes\b|\bjuice\b/g,
     "soft",
   ],
   // Shared: general items used across the menu

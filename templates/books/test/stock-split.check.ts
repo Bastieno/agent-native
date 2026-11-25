@@ -145,6 +145,8 @@ await check("drinks are told apart", () => {
   assert.deepEqual(one("1 pack red bull"), ["energy"]);
   assert.deepEqual(one("1 carton origin bitter"), ["bitters"]);
   assert.deepEqual(one("Black bullet"), ["energy"]);
+  // Coco Samba is a Bitters item in Moniebook (the owner, 2026-11-25).
+  assert.deepEqual(one("2 packs coco samba"), ["bitters"]);
   assert.deepEqual(one("1 pack smirnoff double black"), ["energy"]);
   assert.deepEqual(one("1 crate smirnoff ice"), ["beer"]);
   assert.deepEqual(one("For liquor"), ["liquor"]);
@@ -188,6 +190,8 @@ await check("sale items are grouped by name and Moniebook category", () => {
     ["ORIGIN BITTER", "Drinks", "bitters"],
     ["Black Bullet", "Drinks", "energy"],
     ["Black Bullet", "Energy drinks", "energy"],
+    ["Coco Samba", "Drinks", "bitters"],
+    ["Coco Samba", "Bitters", "bitters"],
     ["RED LABEL", "Liquors", "liquor"],
     ["Chicken and Chips (Bundled)", "Meals", "meals"],
     ["Shawarma with Extra Chicken", "Meals", "shawarma"],
