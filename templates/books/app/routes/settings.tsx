@@ -215,13 +215,16 @@ export default function SettingsPage() {
   const canEdit = data.canEdit;
   const done = {
     onSuccess: () => toast.success("Saved"),
-    onError: (e: Error) =>
+    onError: (e: Error) => {
+      // The action's own message, without the "Action … failed:" prefix.
+      const message = e.message.replace(/^Action [\w-]+ failed:\s*/, "");
       // Someone not yet in Books has to be invited before they can be added.
-      /Invite them first/.test(e.message)
-        ? toast.error(e.message, {
-            action: { label: "Invite", onClick: () => navigate("/team") },
-          })
-        : toast.error(e.message),
+      if (/Invite them first/.test(message))
+        toast.error(message, {
+          action: { label: "Invite", onClick: () => navigate("/team") },
+        });
+      else toast.error(message);
+    },
   };
 
   return (
