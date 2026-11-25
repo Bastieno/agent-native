@@ -1,4 +1,11 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLocation,
+} from "react-router";
 import { useCallback, useState } from "react";
 import { useNavigationState } from "@/hooks/use-navigation-state";
 import {
@@ -116,8 +123,13 @@ function AppContent() {
   );
 }
 
+/** Pages anyone can open: rendered on the server, without the signed-in app. */
+const PUBLIC_PAGES = new Set(["/privacy"]);
+
 export default function Root() {
+  const { pathname } = useLocation();
   const [queryClient] = useState(() => new QueryClient());
+  if (PUBLIC_PAGES.has(pathname.replace(/\/+$/, "") || "/")) return <Outlet />;
   return (
     <ClientOnly fallback={<DefaultSpinner />}>
       <ThemeProvider

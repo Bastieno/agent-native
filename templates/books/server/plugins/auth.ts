@@ -12,6 +12,8 @@ export default createAuthPlugin({
     // Only two build ids: lets a tab (or a check after a deploy) see a new version.
     "/api/books/version",
     "/api/moniepoint/webhook",
+    // The privacy policy: the link Meta checks for the WhatsApp app.
+    "/privacy",
   ],
   marketing: {
     appName: appTitle,
