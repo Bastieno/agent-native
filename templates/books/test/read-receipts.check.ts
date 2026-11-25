@@ -62,7 +62,8 @@ await check("records readable slips as needs_review with a guess", async () => {
     `SELECT e.vendor, e.amount, e.status, e.source, e.occurred_on, e.paid_with, c.name AS category, b.slug AS business
      FROM expenses e JOIN expense_categories c ON c.id = e.category_id JOIN businesses b ON b.id = e.business_id`,
   );
-  assert.equal(e.vendor, "ADA OKORO 0123456789");
+  // The account number printed after the name is left off.
+  assert.equal(e.vendor, "ADA OKORO");
   assert.equal(Number(e.amount), 2_300_000);
   assert.equal(e.status, "needs_review");
   assert.equal(e.source, "history");

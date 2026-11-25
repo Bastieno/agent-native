@@ -66,7 +66,11 @@ export function readChatExport(zip: Uint8Array): ChatMessage[] {
   const chatName =
     Object.keys(files).find((n) => n.endsWith("_chat.txt")) ??
     Object.keys(files).find((n) => n.toLowerCase().endsWith(".txt"));
-  if (!chatName) throw new Error("This zip has no WhatsApp chat in it.");
+  if (!chatName) {
+    const photos = loosePhotos(files);
+    if (photos.length) return photos;
+    throw new Error("This zip has no WhatsApp chat in it.");
+  }
   const byBase = new Map<string, Uint8Array>();
   for (const [name, bytes] of Object.entries(files))
     byBase.set(name.split("/").pop()!, bytes);
@@ -111,4 +115,47 @@ export function readChatExport(zip: Uint8Array): ChatMessage[] {
     }
   }
   return out;
+}
+
+/** WhatsApp's own media names: PHOTO-2026-11-12-09-30-20 (iOS), IMG-20261113-WA0004 (Android). */
+const IOS_NAME =
+  /^(?:\d+-)?PHOTO-(\d{4})-(\d\d)-(\d\d)-(\d\d)-(\d\d)-(\d\d)\.\w+$/;
+const ANDROID_NAME = /^(?:IMG|DOC)-(\d{4})(\d\d)(\d\d)-WA\d+\.\w+$/;
+
+/**
+ * Photos saved out of WhatsApp and zipped without the chat: each is dated by
+ * its own name (Lagos time; Android names carry the day only). Files not named
+ * that way are left out, since nothing says when they were sent.
+ */
+function loosePhotos(files: Record<string, Uint8Array>): ChatMessage[] {
+  const out: ChatMessage[] = [];
+  for (const [path, bytes] of Object.entries(files)) {
+    const name = path.split("/").pop()!;
+    if (path.startsWith("__MACOSX/") || name.startsWith(".")) continue;
+    const ios = name.match(IOS_NAME);
+    const android = ios ? null : name.match(ANDROID_NAME);
+    if (!ios && !android) continue;
+    const at = ios
+      ? instant(ios[3], ios[2], ios[1], ios[4], ios[5], ios[6], undefined)
+      : instant(
+          android![3],
+          android![2],
+          android![1],
+          "0",
+          "0",
+          "0",
+          undefined,
+        );
+    out.push({
+      at,
+      sender: "",
+      text: "",
+      attachment: {
+        fileName: name,
+        mimeType: mimeFor(name),
+        dataBase64: bytesToBase64(bytes),
+      },
+    });
+  }
+  return out.sort((a, b) => a.at.localeCompare(b.at));
 }

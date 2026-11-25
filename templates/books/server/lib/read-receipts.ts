@@ -5,6 +5,7 @@ import { staffBusiness } from "./staff.js";
 import { createExpense } from "./expenses.js";
 import { readReceiptText } from "./receipt-text.js";
 import { loadPayeeRules, matchPayeeRule } from "./payee-rules.js";
+import { knownPayees, tidyPayee } from "./payee-name.js";
 import { rows, run } from "./sql.js";
 
 export interface ReceiptText {
@@ -39,6 +40,7 @@ export async function recordReceiptsFromText(
 ): Promise<ReceiptOutcome[]> {
   const out: ReceiptOutcome[] = [];
   const rules = await loadPayeeRules(orgId);
+  const known = await knownPayees(orgId);
   for (const item of items) {
     const id = item.pendingReceiptId;
     const [p] = await rows(
@@ -63,6 +65,8 @@ export async function recordReceiptsFromText(
       continue;
     }
     const r = read.receipt;
+    // Without the account number, and in the spelling the owner confirmed.
+    r.payee = tidyPayee(r.payee, known);
     const guessed = guessExpense(r.note ? correctNote(r.note) : null, r.kind);
     // A note that says commission or settlement waits for the owner, even from a known payee.
     // A note in the transfer-note format says what it was; a payee rule doesn't override it.

@@ -130,4 +130,26 @@ await check("the export reader runs without Node's Buffer", async () => {
   );
   assert.doesNotMatch(src, /Buffer\./);
 });
+// Photos saved straight out of WhatsApp, zipped with no chat: each is dated
+// by its own name (Lagos time), and anything not dated so is left out.
+check("a zip of loose photos is dated by the photos' names", () => {
+  const m = readChatExport(
+    zipSync({
+      "Whatsapp export/PHOTO-2026-11-12-09-30-20.jpg": new Uint8Array([1]),
+      "Whatsapp export/PHOTO-2026-11-11-18-08-34.jpg": new Uint8Array([2]),
+      "Whatsapp export/IMG-20261113-WA0004.jpg": new Uint8Array([3]),
+      "Whatsapp export/notes.jpg": new Uint8Array([4]),
+      "__MACOSX/Whatsapp export/._PHOTO-2026-11-12-09-30-20.jpg":
+        new Uint8Array([5]),
+    }),
+  );
+  assert.deepEqual(
+    m.map((x) => [x.at, x.attachment?.fileName]),
+    [
+      ["2026-11-11T17:08:34.000Z", "PHOTO-2026-11-11-18-08-34.jpg"],
+      ["2026-11-12T08:30:20.000Z", "PHOTO-2026-11-12-09-30-20.jpg"],
+      ["2026-11-12T23:00:00.000Z", "IMG-20261113-WA0004.jpg"],
+    ],
+  );
+});
 await finish();
