@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { IconCopy, IconPlus, IconTrash } from "@tabler/icons-react";
 import { useActionMutation, useActionQuery } from "@agent-native/core/client";
@@ -180,6 +180,7 @@ type Person = {
 export default function SettingsPage() {
   useSetPageTitle("Settings");
   const [params, setParams] = useSearchParams();
+  const navigate = useNavigate();
   const qc = useQueryClient();
   const { data } = useActionQuery("get-settings", {});
   // On a phone the tabs scroll sideways: keep the open one in view.
@@ -214,7 +215,13 @@ export default function SettingsPage() {
   const canEdit = data.canEdit;
   const done = {
     onSuccess: () => toast.success("Saved"),
-    onError: (e: Error) => toast.error(e.message),
+    onError: (e: Error) =>
+      // Someone not yet in Books has to be invited before they can be added.
+      /Invite them first/.test(e.message)
+        ? toast.error(e.message, {
+            action: { label: "Invite", onClick: () => navigate("/team") },
+          })
+        : toast.error(e.message),
   };
 
   return (
@@ -240,6 +247,19 @@ export default function SettingsPage() {
             Who gets the digests. Their WhatsApp number is also the number Books
             listens to for them; a partner can ask questions but not change
             anything.
+            {canEdit && (
+              <>
+                {" "}
+                Someone new is{" "}
+                <Link
+                  to="/team"
+                  className="text-foreground underline underline-offset-4"
+                >
+                  invited to Books
+                </Link>{" "}
+                first.
+              </>
+            )}
           </p>
           {people.map((p, i) => (
             <div
